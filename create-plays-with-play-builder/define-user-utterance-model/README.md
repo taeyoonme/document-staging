@@ -30,7 +30,7 @@ Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` 
 예상 발화 작성에 대한 자세한 내용은 [예상 발화 작성 가이드라인](../../voice-service-design-guideline/create-custom-utterances.md) 및 [예상 발화 작성 가이드](how-to-write-customer-utterances.md)를 참고하세요.
 {% endhint %}
 
-![](../../.gitbook/assets/ch3_322_c03%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_c03-1.png)
 
 위 1\) ~ 3\)의 과정을 연속 이미지로 보면 다음과 같습니다.
 
@@ -42,7 +42,7 @@ Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` 
 
 5\) 이 팝업에서 적절한 Type을 클릭하면 자동으로 지정됩니다.
 
-![](../../.gitbook/assets/ch3_322_c06%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_c06-1.png)
 
 그러나 현재는 '명동'이라는 Entity에 적합한 Type이 없으므로, 새로 만들어 보겠습니다.
 
@@ -50,7 +50,7 @@ Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` 
 
 * 발화 문장을 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역을 마우스 왼쪽 버튼으로 클릭하면 문장이 추가됩니다.  
 
-![](../../.gitbook/assets/ch3_322_c07%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_c07-1.png)
 
 이제 위의 Entity Type 목록에 'LOCATION'이 추가된 것을 볼 수 있습니다.
 
@@ -83,7 +83,7 @@ Intent를 더 추가하고 싶다면 계속 추가가 가능하며, 추가 가�
 다음의 내용을 참고하세요.
 
 * [예상 발화 작성 가이드](how-to-write-customer-utterances.md)를 참고하세요.
-* Play Builder에서는 예상 발화를 파일로 업로드할 수 있도록 지원하고 있습니다. 
+* Play Builder에서는 예상 발화를 파일로 업로드할 수 있도록 지원하고 있습니다.
 
   예상 발화 및 Entity 업로드 가이드와 Built-in Intent에 대한 자세한 내용은 [Built-in Intent](built-in-intents.md)를 참고하세요.
 {% endhint %}
@@ -100,13 +100,13 @@ Entity는 Type을 기준으로 생성하고 정의하며 Entity Type은 Custom�
 
 2\) Entity Type List에서 'LOCATION'이라는 Entity Type을 선택합니다.
 
-![](../../.gitbook/assets/ch3_322_c11%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_c11-1.png)
 
 3\) 화면에 표시한 '대표값'에 있는 인풋박스를 통해 '교동', '역삼동', '면목동'을 입력합니다.
 
 * 텍스트를 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역을 마우스 왼쪽 버튼으로 클릭하면 Entity가 등록됩니다.
 
-![](../../.gitbook/assets/ch3_322_c12%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_c12-1.png)
 
 ### 동의어 Entity 추가하기 \(Entity 정규화\)
 
@@ -127,13 +127,13 @@ Entity는 Type을 기준으로 생성하고 정의하며 Entity Type은 Custom�
 * '에스케이'는 실제 구단명이 아니지만 흔히 불리는 이름이므로 추가를 하는 것이 좋습니다.
 * 또한 애칭, 약어, 영문 이름 혹은 정확하지는 않지만 불릴 가능성이 있는 이름이 있다면 함께 Entity로 추가해 주는 것도 좋습니다.
 
-![](../../.gitbook/assets/ch3_322_c14%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_c14-1.png)
 
 4\) Entity 입력을 완료한 후 `Play 저장` 버튼을 클릭하면 'CLUBNAME' Custom Entity Type의 생성이 완료됩니다.
 
 이렇게 Entity Type을 정의해 두면, 사용자가 '에스케이와이번스', '에스케이와이번즈', 'SK와이번스', 'SK와이번즈', 'SK', '에스케이', '스크' 중 하나를 발화했다고 분석되었을 때, Play Builder가 '에스케이와이번스'라는 정규화 처리된 대표값을 전달하게 됩니다. 이러한 정규화 과정은 Play를 만들 때 많은 수고를 덜어주게 됩니다.
 
-![](../../.gitbook/assets/ch3_322_01%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_01-1.png)
 
 ### Built-in Entity Type
 
@@ -147,7 +147,7 @@ Built-in Entity Type는 정책상 Type 내에 있는 Entity 목록 전체를 열
 
 특정 텍스트가 어떤 Type의 Entity에 포함되어 있는지 검색하는 기능을 제공할 예정이며, 이 검색을 통해 '오늘'을 입력하면 'BID\_DT\_DAY'라는 검색 결과\(반환값\)를 얻을 수 있습니다.
 
-![](../../.gitbook/assets/ch3_322_c16%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_c16-1.png)
 
 Built-in Entity Type도 Custom Entity Type과 마찬가지로 일부 Type에 대해 정규화\(대표값-동의어 관계\)를 제공하고 있습니다.\(대푯값이 표준어이지만, '대표값'으로 표현하겠습니다.\)
 
@@ -157,7 +157,7 @@ Built-in Entity Type도 Custom Entity Type과 마찬가지로 일부 Type에 대
 
 정규화 규칙을 제공하는 Type이라고 하더라도 상세 화면에서 보여지는 대표값이 해당 Type의 모든 Entity를 의미하는 것은 아닙니다.
 
-![](../../.gitbook/assets/ch3_322_02%20%281%29.png)
+![](../../.gitbook/assets/ch3_322_02-1.png)
 
 {% hint style="info" %}
 함께 보면 좋은 도움말

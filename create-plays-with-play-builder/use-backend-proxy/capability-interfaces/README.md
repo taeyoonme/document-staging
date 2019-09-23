@@ -10,19 +10,19 @@ Play에서 Capability Interface를 활용하는 방법에 대한 자세한 내�
 
 Capability Interface는 다음의 세 요소로 구성되어 있습니다.
 
-**Built-in Intent**   
- Built-in Intent는 자주 사용될 것으로 예상되거나 꼭 정의해야 하는 발화들을 미리 훈련시켜 제공하는 Intent입니다.  
+**Built-in Intent**  
+Built-in Intent는 자주 사용될 것으로 예상되거나 꼭 정의해야 하는 발화들을 미리 훈련시켜 제공하는 Intent입니다.  
 별도로 학습 문장을 등록하지 않아도 되도록 기본으로 제공되는 Intent이며, Action 정의\(기능 정의\) 시에 바로 사용할 수 있습니다.
 
-**Directive**   
- Play가 디바이스의 특정 기능을 제어하기 위한 명령어입니다.
+**Directive**  
+Play가 디바이스의 특정 기능을 제어하기 위한 명령어입니다.
 
-**Event**   
- 디바이스에서 특정 기능을 실행시키는 과정에서 디바이스의 상태가 변했을 때 Play로 전송됩니다.
+**Event**  
+디바이스에서 특정 기능을 실행시키는 과정에서 디바이스의 상태가 변했을 때 Play로 전송됩니다.
 
 Built-in Intent, Directive, Event는 스피커와 Play 사이에서 다음과 같은 방향으로 전달됩니다.
 
-![](../../../.gitbook/assets/ch3_333_01%20%281%29.png)
+![](../../../.gitbook/assets/ch3_333_01-1.png)
 
 ## Built-in Intent
 
@@ -42,7 +42,7 @@ Play는 Backend proxy로부터 Directive를 넘겨받아 디바이스로 전달�
 
 Directive 구현에 대한 자세한 내용은 은 [Backend proxy API Reference](../backend-proxy-api-reference.md)를 참고해 주세요.
 
-![](../../../.gitbook/assets/ch3_333_02%20%281%29.png)
+![](../../../.gitbook/assets/ch3_333_02-1.png)
 
 Directive가 정의된 Play를 사용하기 위해서 일반적으로 사용자는 "아리아 AA뮤직에서 최신 음악 틀어줘"와 같이 Play의 호출 이름\(Invocation name\)을 함께 발화해야 합니다.
 

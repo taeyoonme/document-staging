@@ -22,11 +22,11 @@ NLG Translator를 입력하는 방법은 다음과 같습니다.
 
 1. Play Builder 홈 화면에서 NLG Translator를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Translator` &gt; `+NLG Translator 추가`를 클릭합니다.
 
-   ![](../.gitbook/assets/ch3_324_c01.png) 
+   ![](../.gitbook/assets/ch3_324_c01.png)
 
 2. Translator의 Filter명을 입력하고, 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-   ![](../.gitbook/assets/ch3_324_c02.png)   
+   ![](../.gitbook/assets/ch3_324_c02.png)
 
 이렇게 Translator가 적용된 `{{status}}` Parameter에 "01"이라는 값이 들어오면 Translator가 "맑겠습니다."라는 텍스트로 변환시키게 됩니다.
 
@@ -45,11 +45,11 @@ NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점�
 
 1. Play Builder 홈 화면에서 NLG Normalizer를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Normalizer` &gt; `+NLG Normalizer 추가`를 클릭합니다.
 
-   ![](../.gitbook/assets/ch3_324_c04%20%281%29.png)
+   ![](../.gitbook/assets/ch3_324_c04-1.png)
 
 2. Normalizer의 Filter명을 입력하고, 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-   ![](../.gitbook/assets/ch3_324_c05%20%281%29.png)
+   ![](../.gitbook/assets/ch3_324_c05-1.png)
 
 3. NLG Normalizer의 자동 완성 기능으로 적용하기 위한 기호는 = 이며, 사용 방법은 NLG Translator와 같습니다.
 
@@ -73,7 +73,7 @@ NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점�
 
 1. NLF Function의 자동완성을 위한 기호는 : 이며, 사용 방법은 NLG Translator와 같습니다.
 
-   ![](../.gitbook/assets/ch3_323412_c03%20%281%29.gif)
+   ![](../.gitbook/assets/ch3_323412_c03-1.gif)
 
 {% hint style="info" %}
 **Filter의 중첩 사용**

@@ -3,8 +3,8 @@
 특정 사용자 그룹을 초대하여, Private Play를 사용할 수 있도록 권한을 부여하고 관리하는 기능입니다. 자사 임직원 또는 단체에 소속된 회원만 초대하여 회원들의 NUGU 디바이스에서 Private Play를 사용하게 할 수 있습니다. 초대된 사용자가 초대 승인 및 인증 절차를 완료하면, Private Play 이용이 가능합니다.
 
 {% hint style="info" %}
-초대 받은 사용자는 초대장을 확인하고, Private Play 사용에 동의해야 해당 서비스를 이용할 수 있습니다.   
- 초대장 인증\(사용자 인증\)에 대한 자세한 내용은 [초대장 인증\(사용자 인증\)](./#user-verification)을 참고하세요.
+초대 받은 사용자는 초대장을 확인하고, Private Play 사용에 동의해야 해당 서비스를 이용할 수 있습니다.  
+초대장 인증\(사용자 인증\)에 대한 자세한 내용은 [초대장 인증\(사용자 인증\)](./#user-verification)을 참고하세요.
 {% endhint %}
 
 ## 초대장 작성 <a id="create-an-invitation"></a>
@@ -13,13 +13,13 @@
 
 1. `NUGU developers` &gt; `NUGU biz` &gt; `사용자 그룹 관리` &gt; `초대장 편집` 메뉴에서 기본 제공되는 템플릿의 `편집` 버튼을 클릭하여 편집 모드로 전환합니다.
 
-   ![](../../.gitbook/assets/ch6_631_c01%20%281%29.png)
+   ![](../../.gitbook/assets/ch6_631_c01-1.png)
 
 2. 초대 주체명\(개인, 기업, 단체명\), 사용자의 문의 사항에 대해 응대할 수 있는 연락처 정보\(이메일, 전화번호\)들을 입력하고 `저장` 버튼을 클릭하면 초대장 작성이 완성됩니다.
    * 입력 필드는 최소 1자 이상 최대 60자까지 입력할 수 있습니다.
    * 초대 주체명, 연락처 정보\(이메일, 전화번호\)는 필수 입력 정보입니다.
 
-     ![](../../.gitbook/assets/ch6_631_c02%20%281%29.png)
+     ![](../../.gitbook/assets/ch6_631_c02-1.png)
 
 ## 사용자 등록 및 초대 <a id="invite-enrolled-user"></a>
 
@@ -32,11 +32,11 @@
      ![](../../.gitbook/assets/ch6_632_c01.png)
 2. Play 선택 항목에서 `+Private Play` 버튼을 클릭하여 사용자에게 제공할 Private Play를 선택합니다.\(최대 3개까지 선택할 수 있습니다.\)
 
-   ![](../../.gitbook/assets/ch6_632_c02%20%281%29.png)
+   ![](../../.gitbook/assets/ch6_632_c02-1.png)
 
 3. 사용자 등록 및 Private Play 선택을 완료한 후 `초대` 버튼을 클릭하면 등록한 사용자에게 이메일로 초대장이 발송됩니다.
 
-   ![](../../.gitbook/assets/ch6_632_c03%20%281%29.png)
+   ![](../../.gitbook/assets/ch6_632_c03-1.png)
 
 {% hint style="info" %}
 이메일로 발송된 초대장의 유효 기간은 72시간입니다. 유효 기간이 경과한 후에는 초대장을 다시 발송해야 합니다.
@@ -76,7 +76,7 @@ Private Play 사용자는 언제든지 NUGU App에서 Private Play 이용 권한
 
 또한 Private Play 사용이 승인된 사용자를 삭제할 수 있으며, 사용자 삭제 시에는 사용자\(user\)에게 제공된 Private Play 사용 권한이 해제됩니다.
 
-![](../../.gitbook/assets/ch6_635_c01%20%281%29.png)
+![](../../.gitbook/assets/ch6_635_c01-1.png)
 
 {% hint style="info" %}
 Private Play 사용 권한이 삭제된 사용자에게 권한을 재부여하고자 할 경우에는 신규 초대장을 발송해야 합니다.

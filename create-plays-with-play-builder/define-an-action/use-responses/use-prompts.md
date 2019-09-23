@@ -7,7 +7,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
 | 구성 요소 | 하위 구성 요소 | 특징 | 자동완성 단축키 |
 | :--- | :--- | :--- | :--- |
 | 일반 텍스트 |  | '가나다'와 같은 일반적인 텍스트를 그대로 읽어 발화합니다. | 지원 안 함 |
-| Parameter |  | {{parameter\_name}}와 같은 형태로 사용하며, Parameter에 담긴 값을 텍스트로 변형하여 발화합니다.   Parameter 사용법에 대한 자세한 내용은 [Parameter 사용하기](../use-parameters/)를 참고하세요. | {{ |
+| Parameter |  | 와 같은 형태로 사용하며, Parameter에 담긴 값을 텍스트로 변형하여 발화합니다.   Parameter 사용법에 대한 자세한 내용은 [Parameter 사용하기](../use-parameters/)를 참고하세요. | {{ |
 | Response Filter | NLG Translator | Parameter와 항상 결합하여 사용되며, 단독으로 쓰일 수 없습니다. | &gt; |
 |  | NLG Normalizer | Parameter에 담겨 있는 값이 Filter의 Source와 100% 일치할 경우에만 동작합니다. | = |
 |  | NLG Function | Response Filter에 대한 자세한 내용은 [Response Filter](../../define-response-filters.md)를 참고하세요. | : |
@@ -37,7 +37,7 @@ Prompt는 사용 위치에 따라 다음과 같이 구분됩니다.
 
 #### Silent Prompt Updated <a id="silent-prompt"></a>
 
-사용자에게 빈 응답을 전달하고 싶을 경우, Silent Prompt를 사용할 수 있습니다. Silent Prompt는 Prompt 입력 창 우측의  버튼을 눌러 설정 가능합니다. Silent Prompt를 응답으로 설정하면, 아무 발화 없이 대기 모드로 넘어가거나 세션이 종료되므로 꼭 필요한 경우에만 사용하는 것이 좋습니다. Silent Prompt는 모든 유형의 Prompt에서 사용할 수 있습니다.
+사용자에게 빈 응답을 전달하고 싶을 경우, Silent Prompt를 사용할 수 있습니다. Silent Prompt는 Prompt 입력 창 우측의 버튼을 눌러 설정 가능합니다. Silent Prompt를 응답으로 설정하면, 아무 발화 없이 대기 모드로 넘어가거나 세션이 종료되므로 꼭 필요한 경우에만 사용하는 것이 좋습니다. Silent Prompt는 모든 유형의 Prompt에서 사용할 수 있습니다.
 
 ## 조사 처리하기 <a id="process-postpositions"></a>
 
@@ -47,11 +47,11 @@ Prompt를 입력할 때 일반 문장은 작성자가 입력한 조사를 그대
 
 Parameter의 `}}` 기호 뒤에 / 입력하면 조사의 자동완성 창이 표시됩니다. 이 창에서 원하는 조사를 선택합니다.
 
-![](../../../.gitbook/assets/ch3_323411_01%20%281%29.png)
+![](../../../.gitbook/assets/ch3_323411_01-1.png)
 
 다음과 같이 중괄호 사이에 대표 조사가 입력되지만, 실제 발화 시에는 Parameter 마지막 글자의 받침 여부 따라 조사가 변환되어 출력됩니다.
 
-![](../../../.gitbook/assets/ch3_323411_02%20%281%29.png)
+![](../../../.gitbook/assets/ch3_323411_02-1.png)
 
 자동완성을 사용하지 않더라도 parameter의 `}}` 사이에 조사를 직접 입력해도 정상 동작합니다.
 
@@ -105,7 +105,7 @@ Play Builder는 입력한 Prompt를 음성으로 변환시킬 때 개별적으�
 
 ![](../../../.gitbook/assets/ch3_323413_c03.png)
 
-2\) Output 정의 영역에서 발화 옵션을 변경할 Prompt의 우측  버튼을 클릭하여 옵션을 설정한 후 \[Play 저장\] 버튼을 클릭합니다.
+2\) Output 정의 영역에서 발화 옵션을 변경할 Prompt의 우측 버튼을 클릭하여 옵션을 설정한 후 \[Play 저장\] 버튼을 클릭합니다.
 
 * 변경 가능한 옵션은 전체 발화 옵션과 같습니다.
 
@@ -117,7 +117,7 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
 
 태그들은 기본적으로 `<태그 속성="속성값">` 형태로 구성됩니다. 이 태그는 직접 입력하지 않아도 되도록 Prompt 문장 입력창에서 자동완성으로 제공하고 있습니다. 문장 입력 중 특수문자 `<`를 입력한 뒤 자동완성창에서 세 가지 기능 중 적용할 옵션을 선택합니다.
 
-![](../../../.gitbook/assets/ch3_323413_01%20%281%29.png)
+![](../../../.gitbook/assets/ch3_323413_01-1.png)
 
 | 발화 옵션 | 설명 |
 | :--- | :--- |
@@ -140,7 +140,7 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
 |  | 한자 숫자 읽기 | 숫자를 '일, 이, 삼, 사'와 같이 읽습니다.   자릿수를 포함하여 '백십구'와 같이 읽습니다.   '경'\(10의 16제곱\) 단위까지 읽습니다. | num\_hanja | `[n]` |
 |  | 한글 숫자 읽기 | 숫자를 '한, 두, 세, 네'와 같이 읽습니다. | num\_kor | `[n]` |
 |  | 영어 숫자 읽기 | 숫자를 '원, 투, 쓰리, 포'와 같이 읽습니다.   Trillion\(10의 12제곱\) 단위까지 읽습니다. | num\_eng | `[n]` |
-|  | 날짜 읽기 | '이천십팔년 삼월 구일'과 같이 날짜로 읽습니다.   '삼월 구일'과 같이 특정 날짜로 읽거나,   '삼월 구일에서 사월 십일'과 같이 범위로 읽는 것을 지원합니다. | date | 특정 날   `[yyyy]-[mm]-[dd]`  `[yyyy]:[mm]:[dd]`  `[yyyy]/[mm]/[dd]`  `[yyyy].[mm].[dd]`  `[mm]-[dd]`  `[mm]/[dd]`  `[mm].[dd]`    범위  `[yyyy]-[mm]-[dd]~[yyyy]-[mm]-[dd]`  `[yyyy]:[mm]:[dd]~[yyyy]:[mm]:[dd]`  `[yyyy]/[mm]/[dd]~[yyyy]/[mm]/[dd]`  `[yyyy].[mm].[dd]~[yyyy].[mm].[dd]`  `[mm]-[dd]~[mm]-[dd]`  `[mm]/[dd]~[mm]/[dd]`  `[mm].[dd]~[mm].[dd]`  |
+|  | 날짜 읽기 | '이천십팔년 삼월 구일'과 같이 날짜로 읽습니다.   '삼월 구일'과 같이 특정 날짜로 읽거나,   '삼월 구일에서 사월 십일'과 같이 범위로 읽는 것을 지원합니다. | date | 특정 날   `[yyyy]-[mm]-[dd]`  `[yyyy]:[mm]:[dd]`  `[yyyy]/[mm]/[dd]`  `[yyyy].[mm].[dd]`  `[mm]-[dd]`  `[mm]/[dd]`  `[mm].[dd]`    범위  `[yyyy]-[mm]-[dd]~[yyyy]-[mm]-[dd]`  `[yyyy]:[mm]:[dd]~[yyyy]:[mm]:[dd]`  `[yyyy]/[mm]/[dd]~[yyyy]/[mm]/[dd]`  `[yyyy].[mm].[dd]~[yyyy].[mm].[dd]`  `[mm]-[dd]~[mm]-[dd]`  `[mm]/[dd]~[mm]/[dd]`  `[mm].[dd]~[mm].[dd]` |
 |  | 시간 읽기 | '열한시 삽십분 사십오초'와 같이 시간으로 읽습니다.   'hh시 mm분 ss초, hh시 mm분'과 같이 특정 시간으로 읽거나   'hh시 mm분 ss초에서 hh시 mm분 ss초, hh시 mm분에서   hh시 mm분'처럼 범위로 읽는 것을 지원합니다. | time | 특정 시간   `[hh]:[mm]:[ss]`   `[mm]:[ss]`     기간   `[hh]:[mm]:[ss]~[hh]:[mm]:[ss]`   `[hh]:[mm]:[ss]-[hh]:[mm]:[ss]`   `[mm]:[ss]~[mm]:[ss]`   `[mm]:[ss]-[mm]:[ss]` |
 |  | 단위 읽기 | '칠미터, 칠그램'과 같이 단위로 읽습니다.   139개의 단위를 읽기 지원합니다.   \([발화 옵션에서 UNIT 태그로 지원 단위 목록](use-prompts.md#list-of-unit-tags-supported-by-utterance-options)\) | unit | \[n\]\[unit\] |
 |  | 주소 읽기 | '팔십삼 다시 일'과 같이 지번 주소의 지번을 읽습니다. | address | `[n]-[n]` |

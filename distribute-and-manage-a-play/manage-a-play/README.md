@@ -29,7 +29,7 @@
 
 1. 관리 현황 리스트에서 상태를 변경할 Play를 클릭하여 선택합니다.
 
-   ![](../../.gitbook/assets/ch5_532_c01%20%281%29.png)
+   ![](../../.gitbook/assets/ch5_532_c01-1.png)
 
 2. 상태 정보 항목의 `Enable` 또는 `Disable` 버튼을 클릭한 후, 상태 변경 확인창에서 \[확인\] 버튼을 클릭하여 상태를 변경합니다.
 
@@ -53,13 +53,13 @@ Play의 상태 변경\(Enable → Disable, Disable → Enable\)은 자유롭게 
 
 1. 관리 현황 리스트에서 삭제할 Play를 클릭하여 선택합니다.
 
-   ![](../../.gitbook/assets/ch5_533_c01%20%281%29.png)
+   ![](../../.gitbook/assets/ch5_533_c01-1.png)
 
 2. 화면 상단의 `삭제` 버튼을 클릭합니다. 팝업 안내에 따라 운영자에게 Play 삭제를 요청하면 됩니다.
 
-   ![](../../.gitbook/assets/ch5_533_c02%20%281%29.png)
+   ![](../../.gitbook/assets/ch5_533_c02-1.png)
 
-   ![](../../.gitbook/assets/ch5_533_c03%20%281%29.png)
+   ![](../../.gitbook/assets/ch5_533_c03-1.png)
 
 {% hint style="info" %}
 * 서비스 중인 Play는 운영자의 확인을 거쳐야 삭제가 가능합니다.

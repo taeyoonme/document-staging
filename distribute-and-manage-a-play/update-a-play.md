@@ -12,7 +12,7 @@ Play가 배포되면 Play는 상용 서비스 상태가 되며, Play 등록 현�
 
 2. Play 리스트에서 등록할 Play를 선택하고 `다음` 버튼을 클릭합니다.
 
-   ![](../.gitbook/assets/ch5_521_c02%20%281%29.png)
+   ![](../.gitbook/assets/ch5_521_c02-1.png)
 
 3. Snapshot 버전 리스트에서 등록할 버전을 선택하고 `확인` 버튼을 클릭합니다.
 

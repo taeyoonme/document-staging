@@ -17,9 +17,9 @@ Play가 동작하는 과정에서 정상적인 응답을 하지 못하는 경우
 
      입력창에 처음 입력하는 Prompt의 유형은 종료 Prompt로, 두번째로 입력하는 Prompt는 대기 Prompt로 자동 설정됩니다.
 
-   * 예외 상황의 Prompt는 스택으로 구성되어, LIFO\(Last In First Out\)로 동작합니다. 
+   * 예외 상황의 Prompt는 스택으로 구성되어, LIFO\(Last In First Out\)로 동작합니다.
 
-     ![](../../.gitbook/assets/ch3_3235_c02.gif)  
+     ![](../../.gitbook/assets/ch3_3235_c02.gif)
 
 예외 상황은 일반적으로 두 가지 종류가 있습니다.
 
@@ -44,7 +44,7 @@ Exception Prompt에서는 무엇이 문제인지를 간단하게 안내한 뒤, 
 
 사용자로 부터 목적 시간이나 날짜를 입력 받는 Play에서는, '2월 31일'과 같이 특정 월을 나타내는 Entity와 특정 일을 나타내는 Entity의 조합이 맞지 않는 경우가 발생할 수도 있습니다. 이런 경우도 \(2\)에 해당하며 예외 상황으로 등록하고 다시 입력받을 수 있습니다.
 
-![](../../.gitbook/assets/ch3_3235_c05%20%281%29.png)
+![](../../.gitbook/assets/ch3_3235_c05-1.png)
 
 사용자 발화의 Entity를 체크하는 예외 상황을 등록했다면, 이 Exception Code가 동작하는 과정은 다음과 같습니다.
 

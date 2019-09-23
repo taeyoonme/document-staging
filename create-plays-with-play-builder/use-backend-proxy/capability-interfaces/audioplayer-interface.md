@@ -2,9 +2,7 @@
 
 Play가 스트리밍 URL을 통한 오디오 파일 재생 기능을 포함한다면 AudioPlayer Interface를 사용하도록 설정을 해야 스피커에서 오디오 파일 재생이 가능합니다. 오디오 파일의 재생은 스트리밍 방식으로만 가능하고, 재생을 시작하려면 Play Directive에 스트리밍 URL을 전달해야 합니다.
 
-AudioPlayer Interface는 오디오 파일의 재생 외에 플레이어의 다양한 상태를 확인할 수 있는 이벤트와 동작을 제어하기 위한 Directive로 구성이 되어 있습니다. 또한 Built-in Intent들을 기본적으로 제공하기 때문에 오디오 파일 제어를 위한 언어 학습 모델을 별도로 만들 필요가 없습니다.   
-  
-
+AudioPlayer Interface는 오디오 파일의 재생 외에 플레이어의 다양한 상태를 확인할 수 있는 이벤트와 동작을 제어하기 위한 Directive로 구성이 되어 있습니다. 또한 Built-in Intent들을 기본적으로 제공하기 때문에 오디오 파일 제어를 위한 언어 학습 모델을 별도로 만들 필요가 없습니다.
 
 ## 지원하는 스트리밍 포맷
 
@@ -27,7 +25,7 @@ AudioPlayer Interface는 사용자의 발화와 스트리밍 상태의 변경에
 
 Play는 스피커의 오디오 플레이어의 상태와 사용자의 발화에 따라 적절한 처리를 할 수 있도록 개발해야 합니다. 여기서는 AudioPlayer Interface에서 제공하는 Built-in Intent, Directive, Event에 대해 설명합니다.
 
-![](../../../.gitbook/assets/ch3_3331_01%20%281%29.png)
+![](../../../.gitbook/assets/ch3_3331_01-1.png)
 
 | No | 상태\(State\) | 설명 |
 | :--- | :--- | :--- |
@@ -83,9 +81,7 @@ Intents 등록에 대한 자세한 내용은 [User Utterance Model 정의하기\
 
 Play Builder에서 Action을 정의하지 않는 경우 Fallback Action에 등록한 문장이 응답으로 나오기 때문에 지원하지 않는 기능이라도 적절한 답변을 보내주는 것을 권장합니다.
 
-예를 들어, 셔플 기능을 지원하지 않는 경우 Action을 생성하고 응답으로 "랜덤 재생은 지원하지 않습니다."라고 명확히 안내해주는 것이 좋습니다.   
-  
-
+예를 들어, 셔플 기능을 지원하지 않는 경우 Action을 생성하고 응답으로 "랜덤 재생은 지원하지 않습니다."라고 명확히 안내해주는 것이 좋습니다.
 
 ## Directives
 
@@ -122,7 +118,7 @@ Play Builder에서 Action을 정의하지 않는 경우 Fallback Action에 등�
 
 audioItem.stream.progressReport는 오디오의 시작 시간을 기준으로 절대 위치에 해당하는 시간에 이벤트를 발생시켜야 합니다. 아래의 그림처럼 Play Directive에 의해 시작하는 위치와 무관하게 시작을 기준으로 설정한 시간이 되는 경우 이벤트가 발생됩니다.
 
-![](../../../.gitbook/assets/ch3_3331_02%20%281%29.png)
+![](../../../.gitbook/assets/ch3_3331_02-1.png)
 
 #### Stop Directive
 

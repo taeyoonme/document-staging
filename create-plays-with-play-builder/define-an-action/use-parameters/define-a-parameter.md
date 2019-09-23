@@ -16,7 +16,7 @@ Parameter의 사용 방법을 알아보기 위해, 다음과 같이 사용자에
 
 1. 우선, `User Utterance Model` &gt; `Custom Intents` 페이지에서 다음과 같이 예상 발화를 입력하고 Entity를 지정해줍니다.
 
-   ![](../../../.gitbook/assets/ch3_3233_c01.png)  
+   ![](../../../.gitbook/assets/ch3_3233_c01.png)
 
    * 시간, 날짜 표현은 Built-in Entity Type에서 선택합니다.
    * 동 이름은 Custom Entity Type으로 추가합니다.
@@ -25,7 +25,7 @@ Parameter의 사용 방법을 알아보기 위해, 다음과 같이 사용자에
 3. Action List에서 'answer.weather'라는 Action을 선택합니다.
 4. 응답에 필요한 정보 가져오기 영역의 Utterance Parameter 입력 필드에 Parameter명을 입력하고 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-   ![](../../../.gitbook/assets/ch3_3233_c02.png) 
+   ![](../../../.gitbook/assets/ch3_3233_c02.png)
 
    * 영자, 숫자, 특수문자인 언더바\(`_`\), 하이픈\(`-`\)만 사용하여 40자 이내에서 작성할 수 있으며, Play 내에서 같은 이름을 중복해서 등록할 수 없습니다.
    * 이번 예에서는 '오늘'과 같이 특정일을 담을 Parameter와 '면목동'과 같이 지역을 담을 Parameter를 담을 2개의 Utterance Parameter를 만듭니다.

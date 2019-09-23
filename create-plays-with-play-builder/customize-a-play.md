@@ -19,7 +19,7 @@ NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경�
 현재는 AudioPlayer Interface만 지원합니다. 자세한 내용은 [AudioPlayer Interface 지원하는 Play 만들기](create-a-play-with-audioplayer/)를 참고하세요.
 {% endhint %}
 
-![](../.gitbook/assets/customize-a-play2%20%281%29.jpg)
+![](../.gitbook/assets/customize-a-play2-1.jpg)
 
 **④ 합성음 목소리**
 
@@ -37,7 +37,7 @@ NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경�
 | 용도 | 대화, 안내 | 정보 전달 |
 
 **⑤ Prompt 발화 옵션**  
-음성 합성의 속성을 조절하는 옵션입니다. 발화 속도, 음의 높낮이, 문장 간 묵음의 길이, 끊어 읽을 때의 묵음 길이를 각각 설정할 수 있습니다. 이 페이지에서의 설정은 이 Play 내에 모든 prompt 발화 옵션을 일괄 조정하는 옵션입니다. `발화 옵션 적용하기` 버튼을 클릭한 이후에 만들어진 prompt부터 옵션이 적용되며, 각 문장 우측의  버튼을 통해 확인이 가능합니다.
+음성 합성의 속성을 조절하는 옵션입니다. 발화 속도, 음의 높낮이, 문장 간 묵음의 길이, 끊어 읽을 때의 묵음 길이를 각각 설정할 수 있습니다. 이 페이지에서의 설정은 이 Play 내에 모든 prompt 발화 옵션을 일괄 조정하는 옵션입니다. `발화 옵션 적용하기` 버튼을 클릭한 이후에 만들어진 prompt부터 옵션이 적용되며, 각 문장 우측의 버튼을 통해 확인이 가능합니다.
 
 {% hint style="info" %}
 발화 옵션에 대한 자세한 내용은 [발화 옵션 사용하기](define-an-action/use-responses/use-prompts.md#use-utterance-options)를 참고하세요.
@@ -81,5 +81,5 @@ Intent\(혹은 precondition\)와 Action과의 관계 및 Action Tree를 보여�
 
 빌드 이력\(History\)을 확인할 수 있습니다. 또한, 이 페이지에서도 `Play 빌드` 버튼을 이용하여 Play를 빌드할 수 있습니다.
 
-![](../.gitbook/assets/ch3_321_c05%20%281%29.png)
+![](../.gitbook/assets/ch3_321_c05-1.png)
 

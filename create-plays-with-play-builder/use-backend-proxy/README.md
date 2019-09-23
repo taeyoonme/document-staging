@@ -11,7 +11,7 @@ Play에서는 사용자의 발화를 분석한 내용을 기반으로 적절한 
 
 NUGU 플랫폼의 Dialog Manager는 지정된 포맷\(Backend proxy API 규격\)으로 요청을 하기 때문에 외부 서비스의 REST API 포맷이 Backend proxy API 규격과 다르다면 포맷을 변환해주기 위한 Backend proxy 서버를 개발해야 합니다.
 
-![](../../.gitbook/assets/ch3_33_01%20%281%29.png)
+![](../../.gitbook/assets/ch3_33_01-1.png)
 
 이 서버는 Play Builder를 통해 Play를 만드는 과정에서 정의한 파라미터와 [Backend proxy API Reference](backend-proxy-api-reference.md)에서 제공하는 규격을 사용하여 직접 개발해야 합니다.
 
@@ -48,7 +48,7 @@ REST API URL 생성 규칙은 다음과 같습니다.
 
 ![](../../.gitbook/assets/ch3_33_c01.png)
 
-![](../../.gitbook/assets/ch3_33_c02%20%281%29.png)
+![](../../.gitbook/assets/ch3_33_c02-1.png)
 
 ## Request Body
 
@@ -92,9 +92,9 @@ REST API 요청에 대한 응답으로 생성되는 Body는 Request Body의 acti
 
 1. Request의 action.parameters에 사용된 KEY는 모두 Response의 "output" 내의 KEY로 정의되어야 합니다.
 2. "output" 내의 KEY는 Request와 다르게 "type", "value" 필드를 갖지 않고, string 타입의 값\(VALUE\)만을 포함합니다.
-3. Utterance Parameter와 Backend Parameter 모두 Backend proxy에 요청을 한 뒤에 값이 바뀔 수 있습니다.  
+3. Utterance Parameter와 Backend Parameter 모두 Backend proxy에 요청을 한 뒤에 값이 바뀔 수 있습니다.
 
-   \(Request에서 값을 갖거나 null일 수 있으며, Response에서는 요청 값을 그대로 갖거나 변경되거나 null이 될 수 있습니다.\)  
+   \(Request에서 값을 갖거나 null일 수 있으며, Response에서는 요청 값을 그대로 갖거나 변경되거나 null이 될 수 있습니다.\)
 
 {% hint style="info" %}
 Response에서 모든 값을 그대로 똑같이 포함하는 이유는 입출력이 명확히 구분되지 않기 때문입니다.  

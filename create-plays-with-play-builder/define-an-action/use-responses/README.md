@@ -8,13 +8,11 @@ Response는 사용자의 발화를 입력 받았을 때 Play가 내놓게 되는
 
 Response는 Prompt와 Directive로 구분할 수 있습니다.
 
-**Prompt**   
-
+**Prompt**
 
 * 스피커로 내보내게 될 메시지입니다.
 
-**Directive**   
-
+**Directive**
 
 * 디바이스를 제어하는 명령입니다.
 * Capability Interface를 사용하는 Play만 사용할 수 있습니다.
@@ -23,12 +21,11 @@ Prompt는 모든 Action이 가질 수 있는 유형의 Response이며, 필요에
 
 * 기본 상태의 Output 설정 화면   
 
-
-  ![](../../../.gitbook/assets/ch3_3234_c01.png)
+![](../../../.gitbook/assets/ch3_3234_c01.png)
 
 * Capability Interface를 하나 이상 `ON` 한 경우의 Output 설정 화면
 
-  ![](../../../.gitbook/assets/ch3_3234_c02.png)  
+  ![](../../../.gitbook/assets/ch3_3234_c02.png)
 
 다음 장에서 Prompt와 Directive 사용법에 대해 알아보도록 하겠습니다.
 
