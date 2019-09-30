@@ -4,17 +4,17 @@
 
 info. 및 media layer 동작 후 해당 layer\(play명\)을 일정 시간 동안 저장\(유지\)하고, 해당 시간 내에 발화된 명령이 저장된 play에서 지원하는 명령이면 해당 play로 routing하는 정책
 
-![](../../.gitbook/assets/image%20%289%29.png)
+![](../../.gitbook/assets/image%20%2810%29.png)
 
 Context 구
 
 Context는 Sound Context와 Display Context로 나뉨 스피커\(예:NU100\)에서는 Sound Context만 관리 Display가 있는 디바이스\(예:NU300\)에서는 Sound Context와 Display Context를 구분해서 관리
 
-![](../../.gitbook/assets/image%20%2811%29.png)
-
-
-
 ![](../../.gitbook/assets/image%20%2812%29.png)
+
+
+
+![](../../.gitbook/assets/image%20%2813%29.png)
 
 Context별 유지 시간
 
@@ -26,13 +26,13 @@ Context별 유지 시간
 
 -   Sound와 Display Context 중 하나라도 있으면 최종 Context는 유지함
 
-![](../../.gitbook/assets/image%20%288%29.png)
+![](../../.gitbook/assets/image%20%289%29.png)
 
 
 
 Layer별 Context 유지 정책 \(Single layer\)
 
-![](../../.gitbook/assets/image%20%287%29.png)
+![](../../.gitbook/assets/image%20%288%29.png)
 
 
 
@@ -86,7 +86,7 @@ Context 유지 상태에서 들어온 명령에 대한 play routing 정책
 
 
 
-![](../../.gitbook/assets/image%20%286%29.png)
+![](../../.gitbook/assets/image%20%287%29.png)
 
 
 

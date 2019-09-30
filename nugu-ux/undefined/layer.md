@@ -30,11 +30,11 @@ NUGU 서비스 Layer 정의는 다음과 같습니다.
 
 NU300 layer
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image%20%286%29.png)
 
 Btv layer 정
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image%20%2811%29.png)
 
 T map layer 정
 
