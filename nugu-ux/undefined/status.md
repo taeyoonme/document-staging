@@ -1,4 +1,4 @@
-# NUGU States
+# NUGU Agent States
 
 NUGU Agent
 
