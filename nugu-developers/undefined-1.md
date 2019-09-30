@@ -46,12 +46,16 @@
         &#xD544;&#xC218; &#xAD6C;&#xC131; &#xC694;&#xC18C;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left">Built-in Intent</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Custom Intent</td>
+      <td style="text-align:left">Play&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xC0AC;&#xB78C;&#xC774; &#xC0DD;&#xC131;&#xD55C;
+        Intent&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left">Custom Intent</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Built-in Intent</td>
+      <td style="text-align:left">NUGU Platform&#xC5D0;&#xC11C; &#xBBF8;&#xB9AC; &#xB9CC;&#xB4E4;&#xC5B4;
+        &#xD6C8;&#xB828;&#xC2DC;&#xCF1C;&#xB454; Intent &#xC785;&#xB2C8;&#xB2E4;.
+        Custom Intent&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xBC29;&#xBC95;&#xC73C;&#xB85C;
+        Action&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left">Entity</td>
@@ -100,8 +104,22 @@
         &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">Backend proxy</td>
+      <td style="text-align:left">&#xC678;&#xBD80; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD544;&#xC694;&#xD55C;
+        &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC838;&#xC640;&#xC11C; &#xC751;&#xB2F5;&#xC744;
+        &#xC0DD;&#xC131;&#xD574;&#xC57C; &#xD558;&#xB294; &#xACBD;&#xC6B0;, &#xC678;&#xBD80;
+        &#xC11C;&#xBC84;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xB300;&#xD654;
+        &#xAD00;&#xB9AC;&#xC790;&#xC5D0;&#xAC8C; &#xC815;&#xBCF4;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294;
+        &#xC11C;&#xBC84;&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">Capability interface</td>
+      <td style="text-align:left">&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC758; &#xC5EC;&#xB7EC; &#xAE30;&#xB2A5;&#xC744;
+        &#xC81C;&#xC5B4;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xADDC;&#xACA9;&#xC73C;&#xB85C;,
+        &#xC751;&#xB2F5;&#xC744; &#xC7AC;&#xC0DD;&#xD558;&#xB294; &#xAE30;&#xB2A5;
+        &#xC678;&#xC5D0; &#xC624;&#xB514;&#xC624; &#xC7AC;&#xC0DD;, &#xBB34;&#xB4DC;&#xB4F1;
+        &#xC81C;&#xC5B4;, &#xC74C;&#xB7C9; &#xC870;&#xC808; &#xB4F1; &#xB2E4;&#xC591;&#xD55C;
+        &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left"></td>
@@ -138,9 +156,9 @@ Voice chrome
 
 Display template
 
-Intent : built-in intent / custom intent
 
-Entity : built-in entity / custom entity
+
+
 
 DM
 
@@ -152,11 +170,9 @@ TTS
 
 Wake-up detector
 
-Play : public play, priave play, built-in play
 
-Play builder : capability interface, backend proxy
 
-NUGU biz
+
 
 NUGU SDK 
 
