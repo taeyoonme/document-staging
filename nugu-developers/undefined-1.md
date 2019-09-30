@@ -122,24 +122,42 @@
         &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">NUGU Biz</td>
+      <td style="text-align:left">Play&#xB97C; &#xB9CC;&#xB4E0; &#xAE30;&#xD68D;/&#xAC1C;&#xBC1C;&#xC790;&#xAC00;
+        &#xD2B9;&#xC815; &#xB514;&#xBC14;&#xC774;&#xC2A4;(Shared device) &#xB610;&#xB294;
+        &#xD2B9;&#xC815; &#xC0AC;&#xC6A9;&#xC790; &#xADF8;&#xB8F9;(Enrolled User)
+        &#xB300;&#xC0C1;&#xC5D0; &#xD55C;&#xD558;&#xC5EC; &#xD574;&#xB2F9; Play&#xB97C;
+        &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xAD00;&#xB9AC;&#xD558;&#xB294;
+        &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xD234;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">ASR</td>
+      <td style="text-align:left">Auto Speech Recognition&#xC758; &#xC904;&#xC784;&#xB9D0;&#xB85C; &#xC74C;&#xC131;&#xC778;&#xC2DD;
+        &#xC5D4;&#xC9C4;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">NLU</td>
+      <td style="text-align:left">Natural Language Understanding&#xC73C;&#xB85C; &#xC790;&#xC5F0;&#xC5B4;&#xC774;&#xD574;
+        &#xC5D4;&#xC9C4;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">TTS</td>
+      <td style="text-align:left">Text To Speech&#xB85C; &#xC74C;&#xC131;&#xD569;&#xC131; &#xC5D4;&#xC9C4;&#xC744;
+        &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">DM</td>
+      <td style="text-align:left">Dialog Management&#xB85C; &#xB300;&#xD654;&#xCC98;&#xB9AC; &#xC5D4;&#xC9C4;&#xC744;
+        &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">NUGU SDK</td>
+      <td style="text-align:left">&#xC81C;&#xD734;&#xC0AC;&#xC758; &#xB2E4;&#xC591;&#xD55C; &#xB514;&#xBC14;&#xC774;&#xC2A4;
+        &#xB610;&#xB294; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB4F1;&#xC5D0;&#xC11C;
+        NUGU &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0; &#xC5F0;&#xB3D9;&#xD558;&#xC5EC;
+        &#xC74C;&#xC131;&#xBA85;&#xB839; &#xAE30;&#xBC18;&#xC758; NUGU &#xAE30;&#xB2A5;&#xC744;
+        &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC9C0;&#xC6D0;&#xD558;&#xB294;
+        Software Developement Kit&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
   </tbody>
 </table>
