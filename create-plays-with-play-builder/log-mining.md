@@ -25,19 +25,36 @@
 
 ## NLU 분석 실패 {#no-nlu-result}
 
-이 도구는 NLU 분석을 할 수 없는 사용자 발화를 보여줍니다. NLU 분석 결과가 없는 것은 Play 개발자가 요청한 학습 데이터를 기반으로 생성된 User Utterance Model 만으로는 NLU 엔진이 해당 발화를 분석할 수 없는 경우를 의미합니다. 이를 해결하기 위해서는 (1) 해당 문장을 기존 Intent의 예상 발화로 추가하거나, (2) 새로운 Intent를 생성하고 해당 Intent를 처리하는 Action을 만들거나, (3) 발화 내의 특정 단어를 Entity로 추가하여 Model을 수정하는 것을 권장합니다. 
+Play 개발자가 요청한 학습 데이터를 기반으로 생성된 User Utterance Model 만으로는 NLU 엔진이 해당 발화를 분석할 수 없는 경우 해당 발화를 보여주며, 그 중 해결 방안을 제안할 수 있는 경우 이를 보여줍니다. 이 도구가 제시하는 해결 방안은 크게 두 가지 `Entity 등록`과 `용언 등록`이 있습니다.
 
-![](../images/create-plays-with-play-builder/log-mining-no-nlu-result.png)
+![](/images/create-plays-with-play-builder/log-mining-no-nlu-result.png)
 
-#### 이 문장과 유사한 훈련 문장이 있는 Intent
+#### 추천 해결 방안 1 : Entity 등록 {#log-mining-entity}
+
+NLU 분석 실패 발화 내의 특정 단어가 Entity일 가능성이 있어서 Entity로 등록할 필요가 있다고 분석되는 경우에 추천 방안이 제시됩니다. 이 추천 결과를 통해 (1) 해당 문장 자체를 기존 Intent의 예상 발화로 추가하거나, (2) 발화 내의 특정 단어를 Entity로 추가하여 Model을 수정하는 것을 권장합니다. 
+
+![](/images/create-plays-with-play-builder/log-mining-entity.png)
+
+##### (1) 이 문장과 유사한 훈련 문장이 있는 Intent
 
 `NLU 분석 실패` 도구는 사용자 발화와 유사하다고 분석되는 훈련 문장(예상 발화)이 있는 경우 그 문장과 Intent를 모두 보여줍니다. 이 도구는 문장의 패턴을 통해 유사한 훈련 문장을 찾기 때문에 실제 의미는 다른 문장이 분석 결과로 제안될 수 있으며, 여러 문장이 동시에 노출될 수도 있습니다. 분석 결과 중 사용자 발화의 의도라고 판단되는 Intent가 있다면, 우측의 버튼을 통해 분석 대상을 Intent의 학습 문장으로 추가할 수 있습니다. 사용자 발화를 여러 Intent의 훈련 문장으로 추가하는 경우 원하는 분석 결과를 얻을 수 없으므로, 하나의 Intent에만 추가하는 것을 권장합니다.
 
-#### 이 문장 내 Entity 등록을 추천하는 텍스트
+##### (2) 이 문장 내 Entity 등록을 추천하는 텍스트
 
 사용자 발화에 포함된 텍스트 중 Entity 등록을 추천하는 단어가 있는 경우 그 텍스트들을 노출하며, 각 텍스트들과 유사한 텍스트가 포함된 Entity Type 들을 추천합니다. 하나의 텍스트에는 여러 Entity Type이 추천될 수 있습니다. 이 경우도 하나의 텍스트는 하나의 Entity Type에만 추가하는 것을 권장합니다. 
 
 <br>
+
+#### 추천 해결 방안 2 : 용언 등록 {#log-mining-verb}
+
+NLU 분석의 원인이 용언인 경우, 그 문장과 유사한 의미로 분석되는 학습 문장 및 Intent을 추천합니다. 이 용언은 기존 데이터에 포함되지 않은 새로운 용언일 가능성이 높습니다. 이 용언과 기존 학습 문장을 조합하여 새로운 학습 문장 및 Intent를 추천하게 되며, 이때 학습 문장에 Entity 태깅이 필요하다면, Entity 태깅된 학습 문장이 추천됩니다.
+
+![](/images/create-plays-with-play-builder/log-mining-verb.png)
+
+추천된 문장의 의도가 Intent와 유사하다고 판단된다면, 우측 버튼을 통해 훈련 문장으로 추가하는 것을 권장합니다.
+ 
+ <br>
+
 
 {% hint style='info' %}
 `실패 발화 분석`도구의 분석 기간은 Play 배포에 의해 결정됩니다. 배포 시점 이후의 가장 빠른 로그가 분석 시점이 되며, 해당 배포 Play 버전의 마지막 로그가 분석 종점이 됩니다. 분석은 하루에 한 번, 오전 4 ~ 6시 사이에 진행 됩니다.
