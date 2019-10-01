@@ -1,8 +1,192 @@
 # NUGU Device
 
+## 
+
+NUGU 에이전트를 탑재한 기기의 상태나 조작 방식에서도 일관적 사용자 경험을 제공하는 것이 필요합니다. 기기 상태에 따른 동작은 어떠한지, 어떤 물리 버튼이 제공 가능한지, 조명에 따른 의미는 어떠한지, 소리는 어떤 기준으로 제공하는 지와 같은 항목이 이에 해당합니다.
+
+* 기기 상태
+* 버튼
+* 조명
+* 소리
+* 초기 기기 상태
+
+## Device States
+
+대화의 단계에 따른 에이전트 상태에 더하여, 기기의 마이크가 꺼져 있는 상태이거나 음소거 상태와 같이 기기 자체에도 상태의 변화가 있으며, 이를 기기 상태라고 합니다. 기기 상태는 아래와 같이 구분될 수 있습니다.
+
+**음소거 \(Mute\)**
+
+기기의 소리가 출력되지 않는 상태입니다. 음소거 상태는 기기의 비프음이나 사운드, Prompt 등 기기에서 제공하는 모든 소리에 적용이 됩니다. 따라서 음소거 상태일 때는 speaking 또는 playing 상태가 되었을 때 Prompt나 사운드, 비프음을 볼륨 레벨 0으로 출력합니다. 단, alert형 안내\(알람 울림, 타이머 울림, Notification 울림, 전화벨 울림\)가 실행될 때는 음소거 상태일지라로 원래 음량으로 실행됩니다.
+
+**마이크 켜짐/꺼짐 \(Microphone on/off\)**
+
+NUGU 디바이스의 음성인식 마이크가 꺼져 있는 상태로, 이 상태에서는 음성으로 에이전트를 wake up할 수 없습니다. 마이크가 꺼져 있는 상태에서 호출 버튼을 누를 경우, 마이크가 켜지고 listening - passive 상태로 변경됩니다. 한번 마이크가 켜지면 해당 상태는 유지됩니다.
+
+**야간 모드 \(Night mode\)**
+
+디스플레이가 있는 디바이스에서 전원 절약을 위하 스크린 표시가 최소화된 상태입니다.
+
+**화면 켜짐/꺼짐 \(Screen on/off\)**
+
+디스플레이가 있는 디바이스에서 화면이 켜져있거나 꺼져있는 상태입니다.
+
+**무드등 켜짐/꺼짐 \(Moodlight on/off\)**
+
+조명 기능이 있는 디바이스에서 조명이 켜져있거나 꺼져있는 상태입니다.
+
+**네트워크 미연결 \(Disconnected network\)**
+
+기기가 네트워크에 연결되지 않은 상태를 말합니다. 이 상태에서는 wake up시 곧바로 네트워크가 연결되어 있지 않음을 알려주는 Prompt를 제공합니다.
+
+**초기 기기 상태**
+
+NUGU 기기의 초기 상태는 다음과 같습니다. 마이크\(Microphone\) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off
 
 
-### NUGU 기기
+
+
+
+**Time-out 정책**
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left"></th>
+      <th style="text-align:left"><b>NU100</b>
+      </th>
+      <th style="text-align:left"><b>NU110</b>
+      </th>
+      <th style="text-align:left"><b>NU200</b>
+      </th>
+      <th style="text-align:left"><b>NU300</b>
+      </th>
+      <th style="text-align:left"><b>Btv x NUGU</b>
+      </th>
+      <th style="text-align:left"><b>App</b>
+      </th>
+      <th style="text-align:left"><b>Tmap x NUGU</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p><b>&#xBBF8;&#xBC1C;&#xD654; &#xB300;&#xAE30; &#xC2DC;&#xAC04;</b>
+        </p>
+        <p><b>(Wake up &#xD6C4; &#xC885;&#xB8CC;&#xAE4C;&#xC9C0; &#xB300;&#xAE30; &#xC2DC;&#xAC04;)</b>
+        </p>
+      </td>
+      <td style="text-align:left"><b>7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>5&#xCD08;</b>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>DM&#xC0C1;&#xD0DC; &#xBBF8;&#xBC1C;&#xD654; &#xB300;&#xAE30; &#xC2DC;&#xAC04;</b>
+        </p>
+        <p><b>(DM &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xC885;&#xB8CC;&#xAE4C;&#xC9C0; &#xB300;&#xAE30; &#xC2DC;&#xAC04;)</b>
+        </p>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 5&#xCD08;</b>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>EPD Time</b>
+        </p>
+        <p><b>(&#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654; &#xC911; &#xACF5;&#xBC31; &#xD5C8;&#xC6A9; &#xC2DC;&#xAC04;)</b>
+        </p>
+      </td>
+      <td style="text-align:left"><b>0.7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>0.7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>0.7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>0.7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>0.7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>0.7&#xCD08;</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>0.7&#xCD08;</b>
+        </p>
+        <p><b>(SMS&#xC758; &#xACBD;&#xC6B0; 1.2&#xCD08;)</b>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>Max Record Time</b>
+        </p>
+        <p><b>(&#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654; &#xCD5C;&#xB300; &#xB179;&#xC74C; &#xC2DC;&#xAC04;)</b>
+        </p>
+      </td>
+      <td style="text-align:left"><b>10&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>10&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>10&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>10&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>10&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>10&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>10&#xCD08;</b>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p><b>&#xBA85;&#xB839; &#xC218;&#xD589; &#xD6C4; &#xD654;&#xBA74; &#xC720;&#xC9C0; &#xC2DC;&#xAC04;</b>
+        </p>
+        <p><b>(Btv &#xD558;&#xD504; &#xC708;&#xB3C4;&#xC6B0;, NU300  &#xD654;&#xBA74;)</b>
+        </p>
+      </td>
+      <td style="text-align:left"><b>-</b>
+      </td>
+      <td style="text-align:left"><b>-</b>
+      </td>
+      <td style="text-align:left"><b>-</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>TTS &#xC644;&#xB8CC; &#xD6C4; 7&#xCD08;</b>
+      </td>
+      <td style="text-align:left"><b>-</b>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 NUGU 에이전트를 탑재한 기기의 상태나 조작 방식에서도 일관적 사용자 경험을 제공하는 것이 필요합니다. 기기 상태에 따른 동작은 어떠한지, 어떤 물리 버튼이 제공 가능한지, 조명에 따른 의미는 어떠한지, 소리는 어떤 기준으로 제공하는 지와 같은 항목이 이에 해당합니다.
 
@@ -17,13 +201,7 @@ NUGU 에이전트를 탑재한 기기의 상태나 조작 방식에서도 일관
     </tr>
   </thead>
   <tbody></tbody>
-</table>#### 
-
-#### 
-
-#### 
-
-#### 버튼
+</table>#### 버튼
 
 NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. 기기에 따라 제공되지 않거나 추가적인 버튼이 제공될 수 있습니다.
 
@@ -62,7 +240,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>&#xB9C8;&#xC774;&#xD06C; &#xB044;&#xAE30; &#xBC84;&#xD2BC;</b>
+      <td style="text-align:left"><b>&#xB9C8;&#xC774;&#xD06C; &#xB044;&#xAE30; &#xBC84;&#xD2BC;                      </b>
       </td>
       <td style="text-align:left">
         <p>&#xAE30;&#xAE30;&#xC758; &#xB9C8;&#xC774;&#xD06C;&#xB97C; &#xB055;&#xB2C8;&#xB2E4;.</p>
@@ -110,7 +288,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
 
 •        버튼을 눌렀을 때 버튼이 눌렸다는 것을 사용자에게 피드백 해야 하며, 소리 또는 LED로 피드백 합니다.
 
-•        버튼을 길게 누르거나, 2개 이상의 버튼 조합으로 기능이 실행되도록 할 수 있습니다. 이렇게 동작하는 방식은 사용자가 인지하고 사용하기 어려우므로 자주 사용하지 않는 기능이나, 쉽게 실행되어서는 안되는 기능을 제공할 때 사용하도록 합니다.  
+•  버튼을 길게 누르거나, 2개 이상의 버튼 조합으로 기능이 실행되도록 할 수 있습니다. 이렇게 동작하는 방식은 사용자가 인지하고 사용하기 어려우므로 자주 사용하지 않는 기능이나, 쉽게 실행되어서는 안되는 기능을 제공할 때 사용하도록 합니다.  
 
 
 #### 
@@ -278,7 +456,7 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
 
  ****
 
-![](../.gitbook/assets/undefined.png)
+![](../../.gitbook/assets/undefined.png)
 
 **호출 효과 \(Wake up success\)**
 
@@ -310,13 +488,13 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
   </tbody>
 </table>**호출어 발화 시**
 
-![](../.gitbook/assets/undefined%20%286%29.png)
+![](../../.gitbook/assets/undefined%20%286%29.png)
 
 **Slot-filling 시**
 
  ****
 
-![](../.gitbook/assets/slot-filling.png)
+![](../../.gitbook/assets/slot-filling.png)
 
 \*\*\*\*
 
@@ -349,7 +527,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
         </td>
     </tr>
   </tbody>
-</table>![](../.gitbook/assets/endlisten.png)
+</table>![](../../.gitbook/assets/endlisten.png)
 
 \*\*\*\*
 
@@ -400,13 +578,13 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 
  ****
 
-![](../.gitbook/assets/1.png)
+![](../../.gitbook/assets/1.png)
 
 **Slot-filling을 위한 listening 상태에서 타임아웃 시**
 
  ****
 
-![](../.gitbook/assets/undefined%20%282%29.png)
+![](../../.gitbook/assets/undefined%20%282%29.png)
 
 \*\*\*\*
 
@@ -420,7 +598,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 
  ****
 
-![](../.gitbook/assets/undefined%20%283%29.png)
+![](../../.gitbook/assets/undefined%20%283%29.png)
 
 **서비스 효과음\(Service Responsed Feedback\)**
 
@@ -469,7 +647,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
   </tbody>
 </table> ****
 
-![](../.gitbook/assets/undefined%20%281%29.png)
+![](../../.gitbook/assets/undefined%20%281%29.png)
 
 **볼륨 제어 \(Volume up/down\)**
 
@@ -525,5 +703,5 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 
 \*\*\*\*
 
-![](../.gitbook/assets/undefined%20%285%29.png)
+![](../../.gitbook/assets/undefined%20%285%29.png)
 
