@@ -133,23 +133,38 @@ func login() {
 {% code-tabs %}
 {% code-tabs-item title="VIewController.swift" %}
 ```swift
-func enableNuguService() {
-    let client = NuguClient.Builder.build()
-    
-    /// Using result by NUGU-login
-    client.authorizationManager.payload = AuthorizationPayload(
-        type: "{type for access-token}",
-        accessToken: "{access-token}",
-        expireDate: "{expire-date for access-token}"
-    )
-    
-    /// Using nugu service    
-    client.networkManager.connect()
-    ...
-    ...
-    
-    /// Using capability agents
-    client.asrAgent.~~
+let client = NuguClient.Builder.build()
+
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        /// Using result by NUGU-login
+        client.authorizationManager.payload = AuthorizationPayload(
+            type: "{type for access-token}",
+            accessToken: "{access-token}",
+            expireDate: "{expire-date for access-token}"
+        )
+
+        /// Using nugu service    
+        client.networkManager.connect()
+        
+        /// Set delegate
+        client.asrAgent.delegate = self
+    }
+
+    func recognize() {
+        /// Using capability agents (Automatic Speech Recognition)
+        client.asrAgent.startRecognition()
+    }
+}
+
+// MARK: - ASRAgentDelegate
+
+extension ViewController: ASRAgentDelegate {
+    func asrAgentDidChange(state: ASRState) {
+        // Observe state
+    }
 }
 ```
 {% endcode-tabs-item %}
