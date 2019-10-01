@@ -30,6 +30,7 @@
     * [iOS](nugu-sdk/platform/ios/README.md)
       * [시작하기](nugu-sdk/platform/ios/undefined.md)
       * [구성요소 소개](nugu-sdk/platform/ios/undefined-1.md)
+      * [Advanced](nugu-sdk/platform/ios/advanced.md)
     * [Android](nugu-sdk/platform/android/README.md)
       * [시작하기](nugu-sdk/platform/android/undefined.md)
     * [Linux](nugu-sdk/platform/linux/README.md)

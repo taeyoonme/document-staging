@@ -2,9 +2,11 @@
 
 ## Using the SDK
 
+### Step 1: Check your application
 
-
-### Step 1: Get the latest version of Xcode
+* Xcode 11.0 or later
+* Swift 5.1
+* iOS 10.0 or later
 
 ### Step 2: Install the SDK
 
@@ -15,6 +17,7 @@
 ```ruby
 target 'Your_Application' do
   pod 'NuguDefaultClient'
+  pod 'NuguLoginKit'
 end
 ```
 {% endcode-tabs-item %}
@@ -36,13 +39,34 @@ See "" on Github
  NuguLoginKit 을 통해 제공되는 API 입니다.
 {% endhint %}
 
+```swift
+import NuguLoginKit
+```
+
 #### Type1
+
+> Acquire access-token \(using SFSafariViewController\)
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
 ```swift
-
-
+func login() {
+    OAuthManager<Type1>.shared.loginTypeInfo = Type1(
+        clientId: "{client-id}",
+        clientSecret: "{client-secret}",
+        redirectUri: "{redirect-uri}",
+        deviceUniqueId: "{device-unique-id}"
+    )
+    
+    OAuthManager<Type1>.shared.loginBySafariViewController(self) { (result) in
+        switch result {
+        case .success(let authInfo):
+            // Save authInfo
+        case .failure(let error):
+            // Occured error
+        }
+    }
+}
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -50,8 +74,6 @@ See "" on Github
 {% code-tabs %}
 {% code-tabs-item title="AppDelegate.swift" %}
 ```swift
-import NuguLoginKit
-
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     let handled = OAuthManager<Type1>.shared.handle(open: url, options: options)
     return handled
@@ -60,11 +82,76 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+> Refresh access-token \(silently method\)
+
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+func refresh() {
+    OAuthManager<Type1>.shared.refreshToken(by: "{refresh-token}") { (result) in
+        switch result {
+        case .success(let authInfo):
+            // Save authInfo
+        case .failure(let error):
+            // Occured error
+        }
+    }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 #### Type2
 
+> Acquire access-token \(always silently method\)
 
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+func login() {
+    OAuthManager<Type2>.shared.loginTypeInfo = Type2(
+        clientId: "{client-id}",
+        clientSecret: "{client-secret}",
+        deviceUniqueId: "{device-unique-id}"
+    )
+    
+    OAuthManager<Type2>.shared.login() { (result) in
+        switch result {
+        case .success(let authInfo):
+            // Save authInfo
+        case .failure(let error):
+            // Occured error
+        }
+    }
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ### Step 5: Using NUGU Service in your application
 
-
+{% code-tabs %}
+{% code-tabs-item title="VIewController.swift" %}
+```swift
+func enableNuguService() {
+    let client = NuguClient.Builder.build()
+    
+    /// Using result by NUGU-login
+    client.authorizationManager.payload = AuthorizationPayload(
+        type: "{type for access-token}",
+        accessToken: "{access-token}",
+        expireDate: "{expire-date for access-token}"
+    )
+    
+    /// Using nugu service    
+    client.networkManager.connect()
+    ...
+    ...
+    
+    /// Using capability agents
+    client.asrAgent.~~
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
