@@ -4,16 +4,19 @@
 NUGU Voice chrome은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU 음성 동작과 관련된 상태를 버튼 및 그래픽/색상으로 표현합니다.   
 Voice chrome 외에 디스플레이 기능을 추가하기 위해 LED를 사용할 수도 있습니다.
 
-
+|  |  |  |
+| :--- | :--- | :--- |
+|  |  |  |
+|  |  |  |
 
 ### **NUGU Voice Chrome Color**
 
 | Color | RGB | CMYK | Pantone |
 | :--- | :--- | :--- | :--- |
-| ![](../../.gitbook/assets/color_nugublue.png) ****NUGU Blue | 0,158, 255 \(\#009DFF\) | 85, 21, 0, 0 | 2925C |
-| ![](../../.gitbook/assets/color_green.png) Green | 0, 230, 136 \(\#00E688\) | 48, 0, 45, 0 | 2412C |
-| ![](../../.gitbook/assets/color_red.png) Red | 255, 58, 0 \(\#FF3A00\) | 0, 77, 100, 0 | 1655C |
-| ![](../../.gitbook/assets/color_white.png) White | 255, 255, 255 \(\#FFFFFF\) | 0, 0, 0, 0 |  |
+| ![](../.gitbook/assets/color_nugublue.png) ****NUGU Blue | 0,158, 255 \(\#009DFF\) | 85, 21, 0, 0 | 2925C |
+| ![](../.gitbook/assets/color_green.png) Green | 0, 230, 136 \(\#00E688\) | 48, 0, 45, 0 | 2412C |
+| ![](../.gitbook/assets/color_red.png) Red | 255, 58, 0 \(\#FF3A00\) | 0, 77, 100, 0 | 1655C |
+| ![](../.gitbook/assets/color_white.png) White | 255, 255, 255 \(\#FFFFFF\) | 0, 0, 0, 0 |  |
 
 ### \*\*\*\*
 

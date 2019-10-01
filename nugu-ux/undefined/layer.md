@@ -8,7 +8,7 @@ NUGU 서비스 Layer 정의는 다음과 같습니다.
 | 정의 | 예시 |  |
 | :--- | :--- | :--- |
 | Alert | 특정 조건 부합 시 NUGU agent가 스스로 깨어나 알를 제공하고 있는 상태 | Alert: 알람 울림 / 타이머 울림 / Notification 울림 |
-| Call \(In-call\) | 통화 중 상태 | 통화 상대와 대화 중 |
+| Call \(In-call\)                   | 통화 중 상태 | 통화 상대와 대화 중 |
 | Call \(Incoming call\) | 전화 수신 중 상태 | 전화수신음 표출 |
 | Call \(Outgoing call\) | 전화 발신 중 상태 | 전화 발신음 표출 |
 | Information | TTS로 정보를 제공하고 있는 상태 | 날씨/운세 등의 서비스에서 TTS로 정보를 제공 |

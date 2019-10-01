@@ -2,8 +2,8 @@
 
 사용자와 NUGU 에이전트 간 대화는 사용자의 발화에 대하여 NUGU 에이전트가 동작\(Action\)을 실행하기 까지의 흐름을 의미합니다.
 
-{% hint style="info" %}
-Action 구현에 대한 자세한 내용은 [Action 정의하기](../../nugu-play/create-plays-with-play-builder/define-an-action/)를 참고하세요.
+{% hint style="success" %}
+Action 구현에 대한 자세한 내용은 [Action 정의하기](../nugu-play/create-plays-with-play-builder/define-an-action/)를 참고하세요.
 {% endhint %}
 
 대화의 유형은 크게 ‘Single-turn 대화’와 ‘Multi-turn 대화’로 구분할 수 있습니다.
@@ -36,7 +36,7 @@ Action 구현에 대한 자세한 내용은 [Action 정의하기](../../nugu-pla
 
 {% hint style="info" %}
 음성으로 응답하는 것을 Prompt 응답, 동작을 실행하는 것을 Directive 응답이라고 합니다.  
-자세한 내용은 [Response 사용하기](../../nugu-play/create-plays-with-play-builder/define-an-action/use-responses/)를 참고하세요.
+자세한 내용은 [Response 사용하기](../nugu-play/create-plays-with-play-builder/define-an-action/use-responses/)를 참고하세요.
 {% endhint %}
 
 ### 명령의 대안 실행
@@ -143,7 +143,7 @@ Slot-filling 문장 작성 시에는 아래의 항목들을 고려해야 합니�
 * 부족한 필수 Entity\(Required Entity\)에 대해서만 Slot-filling하며, 선택적인 Entity\(Optional Entity\)에 대해서는 기본값으로 설정하여 Slot-filling의 횟수를 최소화하도록 합니다.
 
 {% hint style="info" %}
-Slot-filling 구현에 대한 자세한 내용은 [필수 Entity 정의하기\(Slot-Filling Prompt\)](../../nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt.md)를 참고하세요
+Slot-filling 구현에 대한 자세한 내용은 [필수 Entity 정의하기\(Slot-Filling Prompt\)](../nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt.md)를 참고하세요
 {% endhint %}
 
 ### 다음 명령 요청

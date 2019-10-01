@@ -1,2 +1,2 @@
-# NUGU UX
+# Play Design Guide
 

@@ -1,2 +1,0 @@
-# Display design guide
-
