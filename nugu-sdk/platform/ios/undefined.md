@@ -141,9 +141,9 @@ class ViewController: UIViewController {
         
         /// Using result by NUGU-login
         client.authorizationManager.payload = AuthorizationPayload(
-            type: "{type for access-token}",
+            type: "{type of access-token}",
             accessToken: "{access-token}",
-            expireDate: "{expire-date for access-token}"
+            expireDate: "{expire-date of access-token}"
         )
 
         /// Using nugu service    
