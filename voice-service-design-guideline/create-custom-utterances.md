@@ -9,7 +9,7 @@
 사용자 발화 문장의 구성 요소는 기기를 Wake-up시키는 호출어\(Invocation Word\) 외에 Entity와 Intent로 구분될 수 있습니다.
 
 {% hint style="info" %}
-Entity와 Intent에 대한 자세한 내용은 [Intent와 Entity](../nugu-play-kit/intents-and-entities.md)를 참고하세요.
+Entity와 Intent에 대한 자세한 내용은 [Intent와 Entity](../nugu-developers-an-overview/intents-and-entities.md)를 참고하세요.
 {% endhint %}
 
 사용자 예상 발화 문장을 디자인할 때는 다음 사항을 고려해야 합니다.

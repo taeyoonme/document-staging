@@ -202,7 +202,7 @@ NUGU App과 Play Ground\(스토어\)를 통해 보여줄 Play 아이콘을 등�
 2. **큰 아이콘**: 512 X 512 px 사이즈의 이미지 파일로 향후 Play Ground\(스토어\) 등에서 사용할 예정입니다.
 
 {% hint style="info" %}
-아이콘 등록에 관한 사항은 [아이콘 등록](../../undefined/register-icon.md)를 참고하세요.
+아이콘 등록에 관한 사항은 [아이콘 등록](../../reference/register-icon.md)를 참고하세요.
 {% endhint %}
 
 {% hint style="info" %}
