@@ -45,6 +45,28 @@ import NuguLoginKit
 
 #### Type1
 
+> Add URL scheme in info.plist
+
+{% code-tabs %}
+{% code-tabs-item title="info.plist" %}
+```text
+<plist version="1.0">
+  <dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>nugu.user.{pocId}</string>
+      </array>
+      </dict>
+    </array>
+  </dict>
+</plist>
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
 > Acquire access-token \(using SFSafariViewController\)
 
 {% code-tabs %}
