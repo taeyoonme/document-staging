@@ -288,9 +288,9 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
         </td>
     </tr>
   </tbody>
-</table>{% file src="../../../.gitbook/assets/bootcomplete\_3800ms.ogg" caption="전원 켜짐 완료음" %}
+</table>{% file src="../../.gitbook/assets/bootcomplete\_3800ms.ogg" caption="전원 켜짐 완료음" %}
 
-![](../../../.gitbook/assets/undefined.png)
+![](../../.gitbook/assets/undefined.png)
 
 **호출 효과 \(Wake up success\)**
 
@@ -316,15 +316,15 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
       </td>
     </tr>
   </tbody>
-</table>{% file src="../../../.gitbook/assets/start\_listening\_500ms-1.wav" caption="호출 효과음" %}
+</table>{% file src="../../.gitbook/assets/start\_listening\_500ms-1.wav" caption="호출 효과음" %}
 
 **호출어 발화 시**
 
-![](../../../.gitbook/assets/undefined%20%287%29.png)
+![](../../.gitbook/assets/undefined%20%287%29.png)
 
 **Slot-filling 시**
 
-![](../../../.gitbook/assets/slot-filling.png)
+![](../../.gitbook/assets/slot-filling.png)
 
 \*\*\*\*
 
@@ -352,9 +352,9 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
         </td>
     </tr>
   </tbody>
-</table>{% file src="../../../.gitbook/assets/end\_listening\_500ms.wav" caption="인식 완료음" %}
+</table>{% file src="../../.gitbook/assets/end\_listening\_500ms.wav" caption="인식 완료음" %}
 
-![](../../../.gitbook/assets/endlisten.png)
+![](../../.gitbook/assets/endlisten.png)
 
 
 
@@ -401,15 +401,15 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>{% file src="../../../.gitbook/assets/responsefail\_500ms.wav" caption="응답 실패음" %}
+</table>{% file src="../../.gitbook/assets/responsefail\_500ms.wav" caption="응답 실패음" %}
 
 잡음 / 1음절 발화 / 블랙 리스트 발화 시 
 
-![](../../../.gitbook/assets/1.png)
+![](../../.gitbook/assets/1.png)
 
 Slot-filling을 위한 listening 상태에서 타임아웃 시 
 
-![](../../../.gitbook/assets/undefined%20%282%29.png)
+![](../../.gitbook/assets/undefined%20%282%29.png)
 
 **전원 꺼짐 \(Power off\)**
 
@@ -419,7 +419,7 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
 | :--- | :--- |
 | 전원을 끌 경우 | On/Off 설정 없으며 항상 소리를 제공 •  기기별로 설정 가능 |
 
-![](../../../.gitbook/assets/undefined%20%283%29.png)
+![](../../.gitbook/assets/undefined%20%283%29.png)
 
 \*\*\*\*
 
@@ -461,7 +461,7 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
       style="text-align:left">&#xBB34;&#xB4DC;&#xB4F1; &#xC81C;&#xC5B4;&#xC74C; &#xC7AC;&#xC0DD; X</td>
     </tr>
   </tbody>
-</table>![](../../../.gitbook/assets/undefined%20%281%29.png)
+</table>![](../../.gitbook/assets/undefined%20%281%29.png)
 
 **볼륨 제어 \(Volume up/down\)**
 
@@ -472,7 +472,7 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
 | 볼륨을 높일  | O | O |
 | 볼륨을 낮출 때 | O | O |
 
-![](../../../.gitbook/assets/2.png)
+![](../../.gitbook/assets/2.png)
 
 \*\*\*\*
 
