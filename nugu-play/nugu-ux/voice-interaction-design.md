@@ -37,7 +37,7 @@
   </thead>
   <tbody></tbody>
 </table>{% hint style="success" %}
-Utterance model 구현에 대한 자세한 내용은 [예상 발화 작성 가이드](../nugu-play/create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances.md)를 참고하세요.
+Utterance model 구현에 대한 자세한 내용은 [예상 발화 작성 가이드](../create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances.md)를 참고하세요.
 {% endhint %}
 
 

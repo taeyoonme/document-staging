@@ -6,5 +6,5 @@
 
 | NUGU 로고 표 | 애니메이 |
 | :--- | :--- |
-| ![](../.gitbook/assets/nugu_booting.png)  | ![](../.gitbook/assets/nugu_booting_ani.png)  |
+| ![](../../../.gitbook/assets/nugu_booting.png)  | ![](../../../.gitbook/assets/nugu_booting_ani.png)  |
 
