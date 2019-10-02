@@ -35,9 +35,11 @@ NUGU inside 배경은 기기나 제품, 재질 등에 따라 맞게 적용해야
 
 서비스 브랜드 로고와 NUGU inside 마크가 조합된 형태는 브랜드 로고 우측이나 하단에 마크가 위치하며, 예시와 같은 간격을 두고 사용합니다. 
 
-![&#xAC00;&#xB85C; &#xC870;&#xD569;&#xD615;](../.gitbook/assets/inside_guide_btv.png)
+![&#xAC00;&#xB85C; &#xC870;&#xD569;&#xD615;](../.gitbook/assets/inside_guide_btv%20%283%29.png)
 
 ![&#xC138;&#xB85C; &#xC870;&#xD569;&#xD615;](../.gitbook/assets/inside_guide_btv2.png)
+
+
 
 ### 기기 적용
 
