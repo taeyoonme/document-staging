@@ -320,7 +320,7 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
 
 **호출어 발화 시**
 
-![](../.gitbook/assets/undefined%20%286%29.png)
+![](../.gitbook/assets/undefined%20%287%29.png)
 
 **Slot-filling 시**
 

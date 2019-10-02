@@ -1,10 +1,6 @@
-# 대화 흐름 디자인하기
+# 대화 흐름 디자인
 
 사용자와 NUGU 에이전트 간 대화는 사용자의 발화에 대하여 NUGU 에이전트가 동작\(Action\)을 실행하기 까지의 흐름을 의미합니다.
-
-{% hint style="success" %}
-Action 구현에 대한 자세한 내용은 [Action 정의하기](../nugu-play/create-plays-with-play-builder/define-an-action/)를 참고하세요.
-{% endhint %}
 
 대화의 유형은 크게 ‘Single-turn 대화’와 ‘Multi-turn 대화’로 구분할 수 있습니다.
 
@@ -142,7 +138,7 @@ Slot-filling 문장 작성 시에는 아래의 항목들을 고려해야 합니�
 * 사용자에게서 얻고자 하는 답변이 ‘예/아니오’인지, 추가 정보인지에 따라 질문을 구성합니다.
 * 부족한 필수 Entity\(Required Entity\)에 대해서만 Slot-filling하며, 선택적인 Entity\(Optional Entity\)에 대해서는 기본값으로 설정하여 Slot-filling의 횟수를 최소화하도록 합니다.
 
-{% hint style="info" %}
+{% hint style="success" %}
 Slot-filling 구현에 대한 자세한 내용은 [필수 Entity 정의하기\(Slot-Filling Prompt\)](../nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt.md)를 참고하세요
 {% endhint %}
 
@@ -164,5 +160,9 @@ Slot-filling 구현에 대한 자세한 내용은 [필수 Entity 정의하기\(S
 **사용자**: 모짜르트의 애국가 들려줘.  
 **NUGU**: 제가 처리할 수 없는 조합이네요. ← 답변  
 다시 한번 말씀해주시겠어요? \(Listening 상태\) ← 다음 명령 요청
+{% endhint %}
+
+{% hint style="success" %}
+Action 구현에 대한 자세한 내용은 [Action 정의하기](../nugu-play/create-plays-with-play-builder/define-an-action/)를 참고하세요.
 {% endhint %}
 
