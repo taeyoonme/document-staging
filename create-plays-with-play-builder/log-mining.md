@@ -27,7 +27,7 @@
 
 이 도구는 NLU 분석을 할 수 없는 사용자 발화를 보여줍니다. NLU 분석 결과가 없는 것은 Play 개발자가 요청한 학습 데이터를 기반으로 생성된 User Utterance Model 만으로는 NLU 엔진이 해당 발화를 분석할 수 없는 경우를 의미합니다. 이를 해결하기 위해서는 (1) 해당 문장을 기존 Intent의 예상 발화로 추가하거나, (2) 새로운 Intent를 생성하고 해당 Intent를 처리하는 Action을 만들거나, (3) 발화 내의 특정 단어를 Entity로 추가하여 Model을 수정하는 것을 권장합니다. 
 
-![](../images/create-plays-with-play-builder/log-mining-no-nlu-result.png)
+![](../.gitbook/assets/log-mining-no-nlu-result.png)
 
 #### 이 문장과 유사한 훈련 문장이 있는 Intent
 

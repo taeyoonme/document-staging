@@ -38,11 +38,11 @@ NUGU Voice chrome은 5개의 상태를 가지고 있고, 표현은 구분된 상
 
 \[동작설명\]
 
-* 사용자가 호출어를 부르거나 Idle 버튼을 눌러 클라이언트가 **사용자 발화 입력 대기 모드**로 진입하면 **Listening-Passive** 동작을 재생합니다. \(![\(warning\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/warning.svg) 사용자가 호출어를 부르는 동작만 수행하는 기기에는 Idle 버튼을 표시하지 않을 수도 있습니다.\)
+* 사용자가 호출어를 부르거나 Idle 버튼을 눌러 클라이언트가 **사용자 발화 입력 대기 모드**로 진입하면 **Listening-Passive** 동작을 재생합니다. \(![\(warning\)](../.gitbook/assets/warning.svg) 사용자가 호출어를 부르는 동작만 수행하는 기기에는 Idle 버튼을 표시하지 않을 수도 있습니다.\)
 * **Listening-Passive** 동작을 사용자의 실제 음성 입력이 시작되기 전까지 반복 재생합니다.
 * 사용자의 실제 음성이 입력되기 시작하여 클라이언트가 **사용자 발화 입력 중** 모드로 진입하면 사용자의 음성 입력이 끝날 때까지 **Listening-Active** 동작을 반복 재생합니다.
 * 사용자의 입력이 끝나고 클라이언트가 **입력된 사용자 발화를 분석하는 상태**로 진입하면 응답을 출력하거나 결과 화면을 보여주기 전까지 **Processing** 동작을 반복 재생합니다.
-* 응답\(TTS\)을 출력할 때는 **Speaking** 동작을 TTS가 종료될 때까지 반복 재생합니다. Speaking 및 Speaking-Error 상태 그래픽은 TTS로만 안내되는 경우에는 표출하지 않을 수 있습니다. \(![\(warning\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/warning.svg) Speaking 동작 표현은 Medium, Large, X-Large 화면크기의 기기에만 적용됩니다.\)
+* 응답\(TTS\)을 출력할 때는 **Speaking** 동작을 TTS가 종료될 때까지 반복 재생합니다. Speaking 및 Speaking-Error 상태 그래픽은 TTS로만 안내되는 경우에는 표출하지 않을 수 있습니다. \(![\(warning\)](../.gitbook/assets/warning.svg) Speaking 동작 표현은 Medium, Large, X-Large 화면크기의 기기에만 적용됩니다.\)
 * 사용자 요청에 대해 필요한 작업을 모두 수행하면 클라이언트가 **Idle** 상태로 진입하게 됩니다.
 
 
