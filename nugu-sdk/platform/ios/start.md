@@ -49,7 +49,7 @@ import NuguLoginKit
 
 {% code-tabs %}
 {% code-tabs-item title="info.plist" %}
-```text
+```markup
 <plist version="1.0">
   <dict>
     <key>CFBundleURLTypes</key>
@@ -73,14 +73,14 @@ import NuguLoginKit
 {% code-tabs-item title="ViewController.swift" %}
 ```swift
 func login() {
-    OAuthManager<Type1>.shared.loginTypeInfo = Type1(
+    OAuthManager<Type1>.shared.provider = Type1(
         clientId: "{client-id}",
         clientSecret: "{client-secret}",
         redirectUri: "{redirect-uri}",
         deviceUniqueId: "{device-unique-id}"
     )
     
-    OAuthManager<Type1>.shared.loginBySafariViewController(self) { (result) in
+    OAuthManager<Type1>.shared.loginBySafariViewController(from: self) { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo
@@ -131,7 +131,7 @@ func refresh() {
 {% code-tabs-item title="ViewController.swift" %}
 ```swift
 func login() {
-    OAuthManager<Type2>.shared.loginTypeInfo = Type2(
+    OAuthManager<Type2>.shared.provider = Type2(
         clientId: "{client-id}",
         clientSecret: "{client-secret}",
         deviceUniqueId: "{device-unique-id}"
@@ -151,6 +151,24 @@ func login() {
 {% endcode-tabs %}
 
 ### Step 5: Using NUGU Service in your application
+
+> NUGU서비스를 이용하기 위해서는 AVAudioSession의 Category를 .playAndRecord로 설정이 필요합니다. \(문구 변경 예정\)
+
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+func setAudioSession() throws {
+    try AVAudioSession.sharedInstance().setCategory(
+        .playAndRecord,
+        mode: .default,
+        options: [.defaultToSpeaker, .allowBluetoothA2DP]
+    )
+}
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+> NuguClient Instance를 생성한 후 다음과 같이 음성명령을 요청할 수 있습니다. \(문구 변경 예정\)
 
 {% code-tabs %}
 {% code-tabs-item title="VIewController.swift" %}
@@ -191,4 +209,8 @@ extension ViewController: ASRAgentDelegate {
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+## See Also
+
+> Sample App을 통해 좀 더 구체적인 사용 방법을 확인하세요. \(문구 변경 예정\)
 
