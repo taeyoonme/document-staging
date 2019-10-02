@@ -25,8 +25,8 @@
 
 ### 1. 새로운 기능
 
-* Utterance Model 학습 문장 분석 도구 추가 : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/define-user-utterance-model/corpus-inspection.md)
-* 합성음 목소리 '벨' 추가 : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/customize-a-play.md#setting)
+* Utterance Model 학습 문장 분석 도구 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-user-utterance-model/corpus-inspection.md)
+* 합성음 목소리 '벨' 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/customize-a-play.md#setting)
 
 ### 2. 향상/변경된 기능
 
@@ -49,13 +49,13 @@
 
 ### 1. 새로운 기능
 
-* Action 중복 생성을 줄이기 위한 Common Action 추가 : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions.md)
-* Play 내에서 공통으로 사용할 수 있는 Global Backend Parameter 추가 : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/customize-a-play.md#setting-backend-proxy)
-* Response에서 효과음 추가 : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts.md#skml-tag)
+* Action 중복 생성을 줄이기 위한 Common Action 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions.md)
+* Play 내에서 공통으로 사용할 수 있는 Global Backend Parameter 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/customize-a-play.md#setting-backend-proxy)
+* Response에서 효과음 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts.md#skml-tag)
 
 ### 2. 향상/변경된 기능
 
-* Utterance Parameter에 Entity mapping 방식 변경 : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping.md)
+* Utterance Parameter에 Entity mapping 방식 변경 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping.md)
 * Entity value 및 동의어 입력 시 허용 특수기호 추가
 
   ' \(Apostrophe\), & \(Ampersand\), - \(Hyphen\)
@@ -77,10 +77,10 @@
 
 ### 1. 새로운 기능
 
-* 멀티턴 대화 지원 \(Response + Branch Action\) : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions.md) 
-* AudioPlayer Interface용 Display Interface 추가 : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md)
-* 다른 Intent 에서 Entity type 더 가져오기 기능 추가 : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions.md#multi-turn-branch)
-* Silent Prompt : [자세히 알아보기](../nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts.md#silent-prompt)
+* 멀티턴 대화 지원 \(Response + Branch Action\) : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions.md) 
+* AudioPlayer Interface용 Display Interface 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md)
+* 다른 Intent 에서 Entity type 더 가져오기 기능 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions.md#multi-turn-branch)
+* Silent Prompt : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts.md#silent-prompt)
 
 ### 2. 향상/변경된 기능
 

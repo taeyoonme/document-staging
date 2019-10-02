@@ -209,6 +209,6 @@ Content-Length:
    ![](../../.gitbook/assets/nugu-app-play-card-1.png)
 
 {% hint style="info" %}
-Play를 등록하는 방법은 [Play 정보 등록](../play-registration-and-review/register-a-play/)을 참고하세요.
+Play를 등록하는 방법은 [Play 정보 등록](../play-registration-and-review/register-a-play.md)을 참고하세요.
 {% endhint %}
 

@@ -66,7 +66,7 @@ Initial Parameter를 정의했으나, 실제로 Backend proxy에서 Initial Para
 Play의 상태가 등록중, 심사대기, 심사반려, 심사중, 심사완료, 배포대기 중인 경우에 스피커에서 테스트가 가능합니다. ![](../../.gitbook/assets/play-status-is-registered.png)
 
 {% hint style="info" %}
-Play를 등록하는 방법은 [Play 정보 등록](../play-registration-and-review/register-a-play/)을 참고하세요.
+Play를 등록하는 방법은 [Play 정보 등록](../play-registration-and-review/register-a-play.md)을 참고하세요.
 {% endhint %}
 
 {% hint style="danger" %}

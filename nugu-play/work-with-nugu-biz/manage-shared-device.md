@@ -28,16 +28,16 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 1. `NUGU developers` &gt; `NUGU biz` &gt; `전용 디바이스 관리` 메뉴에서 `디바이스 그룹 생성` 버튼을 클릭합니다.
 
-   ![](../../../.gitbook/assets/ch6_623_c01.png)
+   ![](../../.gitbook/assets/ch6_623_c01.png)
 
 2. 디바이스 그룹 생성 팝업에서 생성할 디바이스 그룹의 기본 정보\(디바이스 그룹명, 디바이스 그룹 설명, 주소\)를 입력하고 `생성` 버튼을 클릭하면 그룹이 생성됩니다.
    * 특정 주소 정보가 필요한 서비스\(예: 날씨\)의 경우, 주소를 등록하면 등록한 주소지를 기준으로 서비스가 제공됩니다.
 
-     ![](../../../.gitbook/assets/ch6_623_c02.png)
+     ![](../../.gitbook/assets/ch6_623_c02.png)
 
    * 디바이스 그룹 현황 리스트에 생성한 디바이스 그룹이 표시됩니다.
 
-     ![](../../../.gitbook/assets/ch6_623_c03-1.png)
+     ![](../../.gitbook/assets/ch6_623_c03-1.png)
 
 ## Setup Tool 설치 및 디바이스 등록 <a id="installsetuptoolsandregistershareddevice"></a>
 
@@ -45,7 +45,7 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 1. `NUGU developers` &gt; `NUGU biz` &gt; `전용 디바이스 관리` 메뉴에서 `Setup Tool 다운로드` 버튼을 클릭하여 설치 파일을 내려받아 프로그램을 설치합니다.
 
-   ![](../../../.gitbook/assets/ch6_624_c01-1.png)
+   ![](../../.gitbook/assets/ch6_624_c01-1.png)
 
 {% hint style="info" %}
 디바이스 Setup Tool은 Window 7 이상에서만 사용할 수 있습니다. Mac에서는 이용할 수 없습니다.
@@ -53,11 +53,11 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 1. Setup Tool 프로그램을 실행하고, 전용 디바이스를 등록할 디바이스 그룹명을 선택하고 `다음` 버튼을 클릭합니다.
 
-   ![](../../../.gitbook/assets/ch6_624_c02-1.png)
+   ![](../../.gitbook/assets/ch6_624_c02-1.png)
 
 2. `디바이스 검색` 버튼을 클릭하여 전용 디바이스로 등록할 디바이스를 검색 및 선택한 후 `다음` 버튼을 클릭합니다.
 
-   ![](../../../.gitbook/assets/ch6_624_c03-1.png)
+   ![](../../.gitbook/assets/ch6_624_c03-1.png)
 
 {% hint style="info" %}
 * 디바이스 검색 시 디바이스 등록 번호로 노출이 됩니다. 등록 번호는 스피커 제품 하단에 명시되어 있습니다. 단, NUGU mini\(NU200\) 디바이스는 “NU-110XXXX”형태의 번호가 등록번호입니다.
@@ -66,11 +66,11 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 1. `Wi-Fi 검색` 버튼을 클릭하여 전용 디바이스에 등록하려는 Wi-Fi 네트워크를 선택한 후 `다음` 버튼을 클릭하여 네트워크를 설정합니다.
 
-   ![](../../../.gitbook/assets/ch6_624_c04-1.png)
+   ![](../../.gitbook/assets/ch6_624_c04-1.png)
 
 2. 네트워크 설정을 완료한 후 `다음` 버튼을 클릭하여 NUGU developers에 전용 디바이스로 등록을 요청합니다.
 
-   ![](../../../.gitbook/assets/ch6_624_c05.png)
+   ![](../../.gitbook/assets/ch6_624_c05.png)
 
 {% hint style="info" %}
 보안 네트워크는 암호를 입력해야 합니다.
@@ -78,11 +78,11 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 1. 디바이스 상태가 디바이스 등록 완료로 모두 변경되면 `다음` 버튼을 클릭합니다.
 
-   ![](../../../.gitbook/assets/ch6_624_c06.png)
+   ![](../../.gitbook/assets/ch6_624_c06.png)
 
 2. 디바이스 최종 등록 완료 메시지가 표시되면 `확인` 버튼을 클릭하여 작업을 종료합니다.
 
-   ![](../../../.gitbook/assets/ch6_624_c07-1.png)
+   ![](../../.gitbook/assets/ch6_624_c07-1.png)
 
 {% hint style="info" %}
 디바이스는 한 번에 최대 25대씩 등록할 수 있습니다.
@@ -98,15 +98,15 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 1. `NUGU developers**)] >`NUGU biz`>`전용 디바이스 관리\` 페이지의 디바이스 그룹 현황 리스트에서 정보를 수정할 디바이스 그룹명을 클릭하여 선택합니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c01-1.png)
+   ![](../../.gitbook/assets/ch6_625_c01-1.png)
 
 2. 상세 보기 페이지의 기본 정보 항목에 있는 `수정` 버튼을 클릭한 후 그룹명, 그룹설명, 주소 등의 기본 정보를 변경합니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c02-1.png)
+   ![](../../.gitbook/assets/ch6_625_c02-1.png)
 
 디바이스 그룹을 삭제하려면, 디바이스 그룹 현황 리스트에서 삭제할 디바이스 그룹 선택 후 `디바이스 그룹 삭제` 버튼을 클릭합니다.
 
-![](../../../.gitbook/assets/ch6_625_c03.png)
+![](../../.gitbook/assets/ch6_625_c03.png)
 
 {% hint style="info" %}
 디바이스 그룹을 삭제하면 그룹에 등록된 디바이스의 전용 디바이스 등록이 해제되며, 전용 디바이스 이용이 중지됩니다.
@@ -118,11 +118,11 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 1. `NUGU developers` &gt; `NUGU biz` &gt; `전용 디바이스 관리` 페이지의 디바이스 그룹 현황 리스트에서 서비스 계정을 연동할 디바이스 그룹명을 클릭하여 선택합니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c04-1.png)
+   ![](../../.gitbook/assets/ch6_625_c04-1.png)
 
 2. 디바이스 그룹 상세 페이지의 서비스 계정 연동 항목에서, 계정을 연결할 서비스의 `로그인` 버튼을 클릭합니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c05.png)
+   ![](../../.gitbook/assets/ch6_625_c05.png)
 
 3. 계정 연결 로그인 설정 팝업창에서 해당 서비스에 연결할 아이디와 비밀번호를 입력한 후 `연결하기` 버튼을 클릭하여 계정을 연결합니다.
 
@@ -130,7 +130,7 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
    * 연동 중인 서비스 계정을 해제하려면, 해제할 서비스의 `연결해제` 버튼을 클릭합니다.
 
-     ![](../../../.gitbook/assets/ch6_625_c06-1.png)
+     ![](../../.gitbook/assets/ch6_625_c06-1.png)
 
 ### 등록된 디바이스 삭제
 
@@ -138,11 +138,11 @@ Setup Tool을 통해 디바이스 그룹에 등록한 전용 디바이스를 삭
 
 1. `NUGU developers` &gt; `NUGU biz` &gt; `전용 디바이스 관리` 페이지의 디바이스 그룹 현황 리스트에서 등록된 디바이스를 삭제할 디바이스 그룹명을 클릭하여 선택합니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c07-1.png)
+   ![](../../.gitbook/assets/ch6_625_c07-1.png)
 
 2. 상세 페이지의 등록된 디바이스 항목에서 삭제할 디바이스를 선택한 후 \[- \*\*디바이스 삭제\` 버튼을 클릭합니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c08.png)
+   ![](../../.gitbook/assets/ch6_625_c08.png)
 
 {% hint style="info" %}
 디바이스를 삭제하면 전용 디바이스 등록이 해제됩니다.
@@ -156,15 +156,15 @@ Setup Tool을 통해 디바이스 그룹에 등록한 전용 디바이스를 삭
 
 1. `NUGU developers` &gt; `NUGU biz` &gt; `전용 디바이스 관리` 페이지의 디바이스 그룹 현황 리스트에서 Private Play 추가 또는 삭제할 디바이스 그룹명을 클릭하여 선택합니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c09.png)
+   ![](../../.gitbook/assets/ch6_625_c09.png)
 
 2. 상세 페이지의 Private Play 항목에서 `+ Play 추가` 버튼을 클릭하여 Private Play 추가할 수 있습니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c10-1.png)
+   ![](../../.gitbook/assets/ch6_625_c10-1.png)
 
 3. 등록한 Private Play를 삭제하려면, 삭제할 Private Play를 선택하고 `- Play 삭제` 버튼을 클릭합니다.
 
-   ![](../../../.gitbook/assets/ch6_625_c11.png)
+   ![](../../.gitbook/assets/ch6_625_c11.png)
 
 ## 전용 디바이스의 서비스 이용 제한 <a id="limitservicesforshareddevice"></a>
 

@@ -7,8 +7,8 @@ NUGU biz는 NUGU 디바이스를 대규모로 관리하고, Private Play를 사�
 NUGU biz에서 제공하는 기능을 이용하기 위해서는 먼저, NUGU developers에 회원 가입을 해야 합니다.
 
 * [주요 개념](nugu-biz-concept.md#nugu-biz-concept)
-* [전용 디바이스 관리](manage-shared-device/)
-* [사용자 그룹 관리](manage-enrolled-user/)
+* [전용 디바이스 관리](manage-shared-device.md)
+* [사용자 그룹 관리](manage-enrolled-user.md)
 
 ## 전용 디바이스 관리\(Shared Device\)
 
