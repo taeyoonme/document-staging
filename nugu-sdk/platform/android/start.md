@@ -27,7 +27,39 @@ dependencies {
 
 ### Using NUGU in your application
 
+#### Create NuguAndroidClient instance
 
+1. Create AuthDelegate. Use NuguOAuth at NLK to create.
 
+```kotlin
+val authDelegate = NuguOAuth.create( object : CredentialInterface {
+            override fun getCredentials(): String {
+                // return stored credentials, or empty string if not exist.
+                return PreferenceHelper.credentials(context)
+            }
 
+            override fun setCredentials(credentials: String) {
+                // save credentials if you want or nothing to do
+                PreferenceHelper.credentials(context, credentials)
+            }
+        })
+```
+
+2. Create AudioProvider. Use AudioSourceManager as default implementation.
+
+```kotlin
+val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
+```
+
+3. Create NuguAndroidClient & start ASR.
+
+```kotlin
+val client = NuguAndroidClient.Builder(
+    context,    // Android Context
+    authDelegate,
+    audioProvider
+).build()
+
+client.asrAgent?.startRecognition()
+```
 
