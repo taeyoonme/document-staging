@@ -19,6 +19,15 @@ dependencies {
 }
 ```
 
+### Setup Permissions
+
+Add permissions in manifest.
+
+```markup
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
 ### Login to NUGU
 
 #### Type1 \(Authorization Code\)
