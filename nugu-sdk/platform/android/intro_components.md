@@ -11,6 +11,9 @@ The SDK consist of following components. Look at diagram.
 5. NALP\(Nugu Android Library Porting\) : This ports the android framework's components such as MediaPlayer for use in the NC.
 6. NELP\(Nugu External Library Porting\) : This ports the external library such as [JadeMarble](https://tde.sktelecom.com/stash/projects/ROMAINE/repos/jademarble-android/browse), SilverTray for use in the NC
 7. NUX\(Nugu UX kit\) : Provide an UX components that follow NUGU's design guide.
+8. NLK\(Nugu Login Kit\) : Provide a utility class to login Nugu briefly.
+
+![&#xAD6C;&#xC131;&#xC694;&#xC18C;&#xAC04; &#xC758;&#xC874;&#xC131; &#xB2E4;&#xC774;&#xC5B4;&#xADF8;&#xB7A8;](../../../.gitbook/assets/opensdk-android-components.png)
 
 ## Components
 
