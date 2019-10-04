@@ -66,9 +66,140 @@ NUGU SDK는 아래의 패키지들을 제공하고 있습니다. 동작을 위�
 
 아래 명령을 통해 시스템에 설치할 수 있습니다.
 
-```text
-sudo apt install libnugu libnugu-plugins-default libnugu-dev libnugu-examples
+```bash
+sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-examples
 ```
 
-## 
+## Sample application
+
+본격적으로 개발을 시작하기 전에 먼저 NUGU SDK의 기능을 확인해 볼 수 있도록 아래와 같이 2가지 샘플을 제공하고 있습니다.
+
+* 인증을 위한 OAuth2 예제 - Python으로 작성된 Web 기반의 OAuth2 client sample
+* 기능 동작 확인을 위한 예제 - 콘솔에서 동작하는 텍스트 기반의 Sample application
+
+위 샘플들은 `libnugu-examples` 패키지안에 모두 포함되어 있으며, 아래 파일들이 설치됩니다.
+
+| 파 | 설 |
+| :--- | :--- |
+| /usr/bin/nugu\_oob\_server | OAuth2 인증을 위한 웹서버 - Python script, 8080 포트 사용 |
+| /usr/bin/nugu\_sample | 콘솔 기반의 Sample application |
+| /usr/bin/nugusdk\_start\_sample | 저장된 인증 토큰 값을 읽어서 환경 변수로 설정해주는 Shell script |
+| /lib/systemd/system/nugu\_oob.service | 시스템 시작시 OAuth2 인증 웹서버를 자동으로 실행시키기 위한 systemd 설정 파일 |
+
+### OAuth2 인증
+
+웹브라우저를 통해 [http://lvh.me:8080 ](http://lvh.me:8080%20)주소\(lvh.me는 localhost와 같습니다\)로 접속하면 아래와 같이 OAuth2 인증을 위한 샘플 화면이 나타납니다.
+
+... {이미지 캡쳐 삽입} ...
+
+인증을 위해 미리 발급받은 `poc_id`, `client_id`, `client_secret`을 입력하고, 테스트 하려는 디바이스를 구분하기 위해 `device serial`에 중복되지 않는 임의의 값\(예: mydevice1234\)을 입력 한 후 **Save** 버튼을 눌러 저장합니다.
+
+... {이미지 캡쳐 삽입} ...
+
+이제 **Get OAuth2 token** 링크를 눌러 인증을 진행하면, 아래와 같이최종적으로 `access_token`을 얻을 수 있습니다.
+
+... {이미지 캡쳐 삽입} ...
+
+위 정보들은 `/var/lib/nugu/nugu-auth.json` 파일에 아래 JSON 형태로 저장됩니다. 따라서, 필요시 아래 파일에서 원하는 값을 읽어서 사용할 수 있습니다.
+
+```javascript
+{
+    "refresh_token" : "...",
+    "access_token" : "...",
+    "expires_in" : ...,
+    "token_type" : "Bearer",
+    "expires_at" : ...,
+    "jti" : "..."
+}
+```
+
+### Sample application
+
+Sample application은 환경 변수를 통해 인증 정보를 전달받아서 실행합니다. 따라서, 아래와 같이 직접 환경 변수를 설정한 뒤 실행하거나, nugusdk\_start\_sample Shell script를 사용해서 실행할 수 있습니다.
+
+{% tabs %}
+{% tab title="Shell script 사용" %}
+```bash
+$ nugusdk_start_sample /usr/bin/nugu_sample
+```
+{% endtab %}
+
+{% tab title="직접 실행" %}
+```bash
+$ export NUGU_TOKEN=...
+$ /usr/bin/nugu_sample
+```
+{% endtab %}
+{% endtabs %}
+
+정상적으로 실행이 되면, 아래와 같이 텍스트 기반의 UI가 콘솔에 표시됩니다.
+
+```bash
+=======================================================
+NUGU SDK Command (Connected)
+=======================================================
+w : start wakeup
+l : start listening
+s : stop listening
+t : text input
+c : connect
+d : disconnect
+q : quit
+-------------------------------------------------------
+Select Command >
+```
+
+각 명령에 대한 설명은 아래와 같습니다.
+
+| 명령 | 설명 |
+| :--- | :--- |
+| `w` | 정해진 Wake word\('아리아'\)를 통해 wake-up 하기 위한 상태로 진입합니다. |
+| `l` | wake-up 없이 바로 음성 발화를 NUGU 서비스에 전달합니다. 발화가 끝나면 NUGU 서비스에서 응답\(TTS\)이 오고, 자동으로 wake-up 대기 상태로 전환됩니다. |
+| `s` | 발화를 강제로 중지 시킵니다. |
+| `t` | 텍스트\(예: "오늘 며이야"\)를 NUGU 서비스에 전달합니다. 음성 발화와 동일하게 NUGU 서비스에서 응답을 받을 수 있습니다. |
+| `c` | NUGU 서비스와 네트워크를 연결합니다. 참고로, Sample application 실행시 자동으로 연결을 시도합니다. |
+| `d` | NUGU 서비스와 네트워크 연결을 끊습니다. |
+| `q` | Sample application을 종료합니다. |
+
+이제 `w` 명령을 통한 실제 사용 예제를 보여 드리겠습니다.
+
+```bash
+Select Command > w
+[Wakeup] wakeup detecting...
+```
+
+상태가 wakeup detecting 모드로 전환된 것을 확인할 수 있습니다. 이제 "**아리아**" 라고 발화를 하면 아래와 같이 wakeup이 되고, 자동으로 사용자의 음성을 듣기 위해 Listening 모드로 전환됩니다.
+
+```bash
+[Wakeup] wakeup detected
+[ASR] LISTENING
+```
+
+이제 "**오늘 며칠이야**" 라고 발화를 하면 Recognizing으로 상태로 바뀌면서 음성 데이터를 NUGU 서비스로 전송하게 됩니다. 사용자 발화가 다 끝나면 NUGU 서비스로부터 응답을 받기 위해 Busy 상태로 전환됩니다.
+
+```bash
+[ASR] RECOGNIZING
+[ASR] BUSY
+```
+
+NUGU 서비스로부터 응답이 오면 해당 발화에 대한 인식 결과를 보여주고 자동으로 다시 Wakeup 대기 상태로 전환됩니다. 그리고 발화에 대한 결과로 TTS 음성을 출력합니다.
+
+```bash
+[ASR] onComplete : 오늘 며칠이야
+[ASR] IDLE
+[Wakeup] wakeup detecting...
+[TTS] tts playing...
+[TTS] text : 오늘은 10월 4일 금요일입니다.
+[TTS] tts playing finished
+```
+
+## Create your first application
+
+API ...
+
+Build ...
+
+
+
+
 
