@@ -1,32 +1,48 @@
 # 시작하기
 
-### Check your application
+## 개발환경 설정하기
 
-* android 5.0\(api level 21\) or later \(api level 19,20 also supported, but  tls v1.2 required\)
+### 최소 요구사항
 
-### Setup Dependency
+* Android 5.0\(api level 21\) or later \(api level 19,20 also supported, but  tls v1.2 required\)
 
-At application module's build gradle, add dependencies.
+### 레포지토리 추가하기
+
+프로젝트의 build.gradle에 다음 레포지토리를 추가한다.
 
 ```groovy
-dependencies {
-    // Nugu Android Client
-    implementation "com.skt.nugu:nac:${latestVersion}"
-    // Nugu Android UX Kit
-    implementation "com.skt.nugu:nux:${latestVersion}"
-    // Nugu Android Login Kit
-    implementation "com.skt.nugu:nlk:${latestVersion}"
+repositories {
+    jcenter()
 }
 ```
 
-### Setup Permissions
+### 의존성 추가하기
 
-Add permissions in manifest.
+어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가한다.  
+\(전체 라이브러리에 대한 의존성은 여기서 확인할 수 있다\)
+
+```groovy
+dependencies {
+    // Nugu Android Helper
+    implementation "com.skt.nugu:nugu-android-helper:${latestVersion}"
+    // Nugu Android UX Kit
+    implementation "com.skt.nugu:nugu-ux-kit:${latestVersion}"
+    // Nugu Android Login Kit
+    implementation "com.skt.nugu:nugu-login-kit:${latestVersion}"
+}
+```
+
+### 앱 권한 설정하기
+
+AndroidManifest.xml에 아래 필수 권한을 추가한다.  
+\(android.permission.RECORD\_AUDIO 권한은 runtime에 요청하여 획득해야한다\)
 
 ```markup
 <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
+
+## SDK 사용하기
 
 ### Login to NUGU
 
