@@ -4,7 +4,7 @@
 부팅 화면은 NUGU 로고와 그래픽 요소로 애니메이션이 적용되어 있습니다.   
 화면 비율과 로고는 같은 비율로 표시해야 합니다.
 
-| NUGU 로고 표 | 애니메이 |
+| NUGU 로고 표시  | 애니메이션  |
 | :--- | :--- |
 | ![](../../.gitbook/assets/nugu_booting.png)  | ![](../../.gitbook/assets/nugu_booting_ani.png)  |
 

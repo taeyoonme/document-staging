@@ -32,7 +32,96 @@ Add permissions in manifest.
 
 #### Type1 \(Authorization Code\)
 
+> Add url scheme in strings.xml
+
+Open the file strings.xml and add the value of the _nugu\_redirect\_scheme_, _nugu\_redirect\_host_ For example, If redirectUri is issued as **"example: // sample"**
+
+In _strings.xml_
+
+```markup
+<string name="nugu_redirect_scheme">example</string>
+<string name="nugu_redirect_host">sample</string>
+```
+
+> Initializes, creates a new authClient for TYPE1
+
+Change the issued clientId, clientSecret, redirectUri information.
+
+```kotlin
+private val authClient by lazy {
+    // Configure Nugu OAuth Options
+    val options = NuguOAuthOptions.Builder()
+        .clientId("{your-client-id}")
+        .clientSecret("{your-client-secret}")
+        .redirectUri("{your-redirect-url}")
+        /*.deviceUniqueId("{your-device-uniqueId}") //optional*/ 
+        .build()
+    ClientManager.getAuthClient(options)
+}
+```
+
+> Authentication to NUGU OAuth platform
+
+login is done via call the loginWithBrowser\(\) method on the ClientManager.getAuthClient\(\). After the call, you can receive the result from NuguOAuthInterface.OnLoginListener.
+
+```kotlin
+authClient.loginWithBrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
+            override fun onSuccess() {
+            // Called when the request is successful.
+            }
+
+            override fun onError(reason: String) {
+            // Called when the request failed.
+            }
+        })
+```
+
+> Refresh access-token \(silently method\)
+
+```kotlin
+authClient.refreshToken(object : NuguOAuthInterface.OnLoginListener {
+            override fun onSuccess() {
+            // Called when the request is successful.
+            }
+
+            override fun onError(reason: String) {
+            // Called when the request failed.
+            }
+        })
+```
+
 #### Type2 \(Client Credentials\)
+
+> Initializes, creates a new authClient for TYPE2
+
+Change the issued clientId, clientSecret information.
+
+```kotlin
+private val authClient by lazy {
+    // Configure Nugu OAuth Options
+    val options = NuguOAuthOptions.Builder()
+        .clientId("{your-client-id}")
+        .clientSecret("{your-client-secret}")
+        /*.deviceUniqueId("{your-device-uniqueId}") //optional*/ 
+        .build()
+    ClientManager.getAuthClient(options)
+}
+```
+
+> Authentication to NUGU OAuth platform
+
+```kotlin
+authClient.loginWithCredentials(object : NuguOAuthInterface.OnLoginListener {
+        override fun onSuccess() {
+            // Called when the request is successful.
+        }
+
+        override fun onError(reason: String) {
+            // Called when the request failed.
+
+        }
+)
+```
 
 ### Using NUGU in your application
 
