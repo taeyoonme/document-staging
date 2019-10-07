@@ -19,7 +19,7 @@ NUGU SDK는 총 7개의 다음과 같은 모듈들로 구성되어 있습니다.
 6. Nugu UX Kit : Nugu의 디자인 가이드를 준수하는 UX 요소를 포함합니다.
 7. Nugu Login Kit : Nugu에 쉽게 로그인할 수 있도록 도와주는 기능을 제공합니다.
 
-위 구성요소 중에서 Nugu 서비스 개발에 **필수 모듈은 Nugu Interface, Nugu Core 두 가지** 입니다.
+위 구성요소 중 Nugu 서비스 개발에 필요한 **필수 모듈은 Nugu Interface와 Nugu Core 두 가지** 로 **Java를 지원하는 모든 기기에서 동작할 수 있게 이루어져 있습니다.**
 
 ### 의존성 추가하기
 

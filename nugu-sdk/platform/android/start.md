@@ -2,11 +2,11 @@
 
 ## 개발환경 설정하기
 
-### Step1. 최소 요구사항
+### 최소 요구사항
 
 * Android 5.0\(api level 21\) or later \(api level 19,20 also supported, but  tls v1.2 required\)
 
-### Step2. 레포지토리 추가하기
+### 레포지토리 추가하기
 
 프로젝트의 build.gradle에 레포지토리를 추가합니다.
 
@@ -16,7 +16,7 @@ repositories {
 }
 ```
 
-### Step3. 의존성 추가하기
+### 의존성 추가하기
 
 어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니.  
 \(전체 라이브러리에 대한 의존성은 여기를 참조\)
@@ -32,7 +32,7 @@ dependencies {
 }
 ```
 
-### Step4. 앱 권한 설정하기
+### 앱 권한 설정하기
 
 AndroidManifest.xml에 아래 필수 권한을 추가합니다.  
 \(android.permission.RECORD\_AUDIO 권한은 runtime에 요청하여 획득해야 합니다.\)
@@ -44,7 +44,7 @@ AndroidManifest.xml에 아래 필수 권한을 추가합니다.
 
 ## SDK 사용하기
 
-### NUGU에 로그인하는 방법
+### Step1. NUGU에 로그인하는 방법
 
 #### Type1 \(Authorization Code\)
 
@@ -106,7 +106,7 @@ authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginLis
         })
 ```
 
-### NUGU 서비스 사용하기
+### Step2. NUGU 서비스 사용하기
 
 로그인 후, 모든 NUGU의 기능을 사용할 수 있습니다. 여기서는 음성인식을 시작하는 기본적인 방법을 설명하겠습니다.
 
