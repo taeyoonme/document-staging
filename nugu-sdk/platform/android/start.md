@@ -48,20 +48,18 @@ AndroidManifest.xml에 아래 필수 권한을 추가합니다.
 
 #### Type1 \(Authorization Code\)
 
-> Add url scheme in strings.xml
+> 리소스 수정
 
-Open the file strings.xml and add the value of the _nugu\_redirect\_scheme_, _nugu\_redirect\_host_ For example, If redirectUri is issued as **"example: // sample"**
-
-In _strings.xml_
+values/_strings_._xml_ 파일_을 열고_ _nugu\_redirect\_scheme, nugu\_redirect\_host 를 추가 합니다._ 예를들어 redirectUri 는\(은\)  **"example: // sample"** 라면 아래와 같이 2개 라인이 추가 됩니다.
 
 ```markup
 <string name="nugu_redirect_scheme">example</string>
 <string name="nugu_redirect_host">sample</string>
 ```
 
-> Initializes, creates a new authClient for TYPE1
+> 초기화,  client 생성
 
-Change the issued clientId, clientSecret, redirectUri information.
+발급받은 clientId, clientSecret, redirectUri 로 변경
 
 ```kotlin
 private val authClient by lazy {
@@ -76,9 +74,9 @@ private val authClient by lazy {
 }
 ```
 
-> Authentication to NUGU OAuth platform
+> OAuth 인증
 
-login is done via call the loginWithBrowser\(\) method on the ClientManager.getAuthClient\(\). After the call, you can receive the result from NuguOAuthInterface.OnLoginListener.
+로그인은 loginByWebbrowser\(\) method를 호출후에 NuguOAuthInterface.OnLoginListener를 통해 인증 결과를 받습니다.
 
 ```kotlin
 authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
@@ -93,7 +91,7 @@ authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInte
         })
 ```
 
-> Refresh access-token \(silently method\)
+이미 refresh-Token을 발급 받은 상태라면,  loginByWebbrowser\(\) method를 호출하지 말고 silentLogin method를 실행하여 토큰을 갱신 할수 있습니다.
 
 ```kotlin
 authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
