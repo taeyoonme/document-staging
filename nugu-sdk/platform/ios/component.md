@@ -15,3 +15,5 @@ RxSwift
 
 ### 다이어그램
 
+![](../../../.gitbook/assets/ios-nugu-sdk-architecture.png)
+
