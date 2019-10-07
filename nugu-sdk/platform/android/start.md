@@ -70,9 +70,9 @@ private val authClient by lazy {
         .clientId("{your-client-id}")
         .clientSecret("{your-client-secret}")
         .redirectUri("{your-redirect-url}")
-        /*.deviceUniqueId("{your-device-uniqueId}") //optional*/ 
+        .deviceUniqueId("{your-device-uniqueId}")
         .build()
-    ClientManager.getAuthClient(options)
+    NuguOAuth.getInstance(options)
 }
 ```
 
@@ -82,12 +82,13 @@ login is done via call the loginWithBrowser\(\) method on the ClientManager.getA
 
 ```kotlin
 authClient.loginWithBrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
-            override fun onSuccess() {
-            // Called when the request is successful.
+            override fun onSuccess(credentials: Credentials) {
+                // Save Credentials
+                client.accessToken = credentials.accessToken
             }
 
             override fun onError(reason: String) {
-            // Called when the request failed.
+                // Called when the request failed.
             }
         })
 ```
@@ -95,13 +96,14 @@ authClient.loginWithBrowser( activity = this, listener = object : NuguOAuthInter
 > Refresh access-token \(silently method\)
 
 ```kotlin
-authClient.refreshToken(object : NuguOAuthInterface.OnLoginListener {
-            override fun onSuccess() {
-            // Called when the request is successful.
+authClient.refreshToken("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
+            override fun onSuccess(credentials: Credentials) {
+                // Save Credentials
+                client.accessToken = credentials.accessToken
             }
 
             override fun onError(reason: String) {
-            // Called when the request failed.
+                // Called when the request failed.
             }
         })
 ```
@@ -118,9 +120,9 @@ private val authClient by lazy {
     val options = NuguOAuthOptions.Builder()
         .clientId("{your-client-id}")
         .clientSecret("{your-client-secret}")
-        /*.deviceUniqueId("{your-device-uniqueId}") //optional*/ 
+        .deviceUniqueId("{your-device-uniqueId}")
         .build()
-    ClientManager.getAuthClient(options)
+    NuguOAuth.getInstance(options)
 }
 ```
 
@@ -128,13 +130,13 @@ private val authClient by lazy {
 
 ```kotlin
 authClient.loginWithCredentials(object : NuguOAuthInterface.OnLoginListener {
-        override fun onSuccess() {
-            // Called when the request is successful.
+        override fun onSuccess(credentials: Credentials) {
+            // Save Credentials
+            client.accessToken = credentials.accessToken
         }
 
         override fun onError(reason: String) {
             // Called when the request failed.
-
         }
 )
 ```
@@ -146,17 +148,7 @@ authClient.loginWithCredentials(object : NuguOAuthInterface.OnLoginListener {
 1. Create AuthDelegate. Use NuguOAuth at NLK to create.
 
 ```kotlin
-val authDelegate = NuguOAuth.create( object : CredentialInterface {
-            override fun getCredentials(): String {
-                // return stored credentials, or empty string if not exist.
-                return PreferenceHelper.credentials(context)
-            }
-
-            override fun setCredentials(credentials: String) {
-                // save credentials if you want or nothing to do
-                PreferenceHelper.credentials(context, credentials)
-            }
-        })
+val authDelegate = NuguOAuth.create()
 ```
 
 2. Create AudioProvider. Use AudioSourceManager as default implementation.
