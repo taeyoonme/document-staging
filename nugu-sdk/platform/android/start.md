@@ -2,11 +2,11 @@
 
 ## 개발환경 설정하기
 
-### 최소 요구사항
+### Step1. 최소 요구사항
 
 * Android 5.0\(api level 21\) or later \(api level 19,20 also supported, but  tls v1.2 required\)
 
-### 레포지토리 추가하기
+### Step2. 레포지토리 추가하기
 
 프로젝트의 build.gradle에 레포지토리를 추가합니다.
 
@@ -16,7 +16,7 @@ repositories {
 }
 ```
 
-### 의존성 추가하기
+### Step3. 의존성 추가하기
 
 어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니.  
 \(전체 라이브러리에 대한 의존성은 여기를 참조\)
@@ -32,7 +32,7 @@ dependencies {
 }
 ```
 
-### 앱 권한 설정하기
+### Step4. 앱 권한 설정하기
 
 AndroidManifest.xml에 아래 필수 권한을 추가합니다.  
 \(android.permission.RECORD\_AUDIO 권한은 runtime에 요청하여 획득해야 합니다.\)
@@ -106,39 +106,6 @@ authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginLis
                 // Called when the request failed.
             }
         })
-```
-
-#### Type2 \(Client Credentials\)
-
-> Initializes, creates a new authClient for TYPE2
-
-Change the issued clientId, clientSecret information.
-
-```kotlin
-private val authClient by lazy {
-    // Configure Nugu OAuth Options
-    val options = NuguOAuthOptions.Builder()
-        .clientId("{your-client-id}")
-        .clientSecret("{your-client-secret}")
-        .deviceUniqueId("{your-device-uniqueId}")
-        .build()
-    NuguOAuth.getInstance(options)
-}
-```
-
-> Authentication to NUGU OAuth platform
-
-```kotlin
-authClient.login(object : NuguOAuthInterface.OnLoginListener {
-        override fun onSuccess(credentials: Credentials) {
-            // Save Credentials
-            client.accessToken = credentials.accessToken
-        }
-
-        override fun onError(reason: String) {
-            // Called when the request failed.
-        }
-)
 ```
 
 ### NUGU 서비스 사용하기
