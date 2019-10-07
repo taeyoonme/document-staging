@@ -2,7 +2,6 @@
 
 * [NUGU developers 소개](README.md)
 * [NUGU SDK](nugu-sdk/README.md)
-  * [Overview](nugu-sdk/app.md)
   * [Authentication](nugu-sdk/authentication/README.md)
     * [Using OAuth 2.0](nugu-sdk/authentication/using-oauth-2.0.md)
   * [Platform](nugu-sdk/platform/README.md)
