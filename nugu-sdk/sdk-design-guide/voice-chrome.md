@@ -22,12 +22,12 @@ Idle 상태의 버튼은 '**NUGU Voice button**'이며, 상태 그래픽은 '**C
 
 | **State** | **동작** | **설명** |
 | :--- | :--- | :--- |
-| **Idle** |   | Wake-up 가능한 대기 상태 |
-| **Listening-Passive** | ![](../../.gitbook/assets/01-listening-passive.gif)  | 사용자 발화 입력 대기 상태 |
-| **Listening-Active** | ![](../../.gitbook/assets/02-listening-active.gif)  | 사용자 발화 입력 중 상태 |
-| **Processing** | ![](../../.gitbook/assets/03-processing.gif) | 입력된 사용자 발화를 분석하는 상태 |
-| **Speaking** |  | 정보/동작에 대해서 TTS 답변하는 상태 |
-| **Speaking-Error** |  | 에러로 인하여 정상 동작, 답변을 할 수 없는 상태 |
+| **Idle** |  ![](../../.gitbook/assets/00-idle%20%282%29.png) | Wake-up 가능한 대기 상태 |
+| **Listening-Passive** |  ![](../../.gitbook/assets/01-listening-passive_128.gif) | 사용자 발화 입력 대기 상태 |
+| **Listening-Active** |  ![](../../.gitbook/assets/02-listening-active_128.gif)  | 사용자 발화 입력 중 상태 |
+| **Processing** |  ![](../../.gitbook/assets/03-processing_128.gif)  | 입력된 사용자 발화를 분석하는 상태 |
+| **Speaking** | ![](../../.gitbook/assets/04-speaking_128.gif)  | 정보/동작에 대해서 TTS 답변하는 상태 |
+| **Speaking-Error** | ![](../../.gitbook/assets/05-speaking-error_128.gif) | 에러로 인하여 정상 동작, 답변을 할 수 없는 상태 |
 
 \[동작설명\]
 
