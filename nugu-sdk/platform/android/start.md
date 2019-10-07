@@ -8,7 +8,7 @@
 
 ### 레포지토리 추가하기
 
-프로젝트의 build.gradle에 다음 레포지토리를 추가한다.
+프로젝트의 build.gradle에 레포지토리를 추가합니다.
 
 ```groovy
 repositories {
@@ -18,8 +18,8 @@ repositories {
 
 ### 의존성 추가하기
 
-어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가한다.  
-\(전체 라이브러리에 대한 의존성은 여기서 확인할 수 있다\)
+어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니.  
+\(전체 라이브러리에 대한 의존성은 여기를 참조\)
 
 ```groovy
 dependencies {
@@ -34,8 +34,8 @@ dependencies {
 
 ### 앱 권한 설정하기
 
-AndroidManifest.xml에 아래 필수 권한을 추가한다.  
-\(android.permission.RECORD\_AUDIO 권한은 runtime에 요청하여 획득해야한다\)
+AndroidManifest.xml에 아래 필수 권한을 추가합니다.  
+\(android.permission.RECORD\_AUDIO 권한은 runtime에 요청하여 획득해야 합니다.\)
 
 ```markup
 <uses-permission android:name="android.permission.RECORD_AUDIO"/>
@@ -44,7 +44,7 @@ AndroidManifest.xml에 아래 필수 권한을 추가한다.
 
 ## SDK 사용하기
 
-### Login to NUGU
+### NUGU에 로그인하는 방법
 
 #### Type1 \(Authorization Code\)
 
@@ -141,7 +141,9 @@ authClient.login(object : NuguOAuthInterface.OnLoginListener {
 )
 ```
 
-### Using NUGU in your application
+### NUGU 서비스 사용하기
+
+로그인 후, 모든 NUGU의 기능을 사용할 수 있습니다. 여기서는 음성인식을 시작하는 기본적인 방법을 설명하겠습니다.
 
 #### Create NuguAndroidClient instance
 

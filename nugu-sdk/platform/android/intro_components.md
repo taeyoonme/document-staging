@@ -2,7 +2,7 @@
 
 ## Overview
 
-The SDK consist of following components. Look at diagram.
+NUGU SDK는 총 7개의 컴포넌트들로 구성되어 있다.The SDK consist of following components. Look at diagram.
 
 1. NIL\(Nugu Interface Layer\) : Provide interfaces to communicate with NUGU SDK.
 2. NC\(Nugu Core\) : This component implements core logic for NUGU service.
