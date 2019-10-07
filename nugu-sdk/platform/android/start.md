@@ -81,7 +81,7 @@ private val authClient by lazy {
 login is done via call the loginWithBrowser\(\) method on the ClientManager.getAuthClient\(\). After the call, you can receive the result from NuguOAuthInterface.OnLoginListener.
 
 ```kotlin
-authClient.loginWithBrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
+authClient.loginWithWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
                 // Save Credentials
                 client.accessToken = credentials.accessToken
@@ -96,7 +96,7 @@ authClient.loginWithBrowser( activity = this, listener = object : NuguOAuthInter
 > Refresh access-token \(silently method\)
 
 ```kotlin
-authClient.refreshToken("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
+authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
                 // Save Credentials
                 client.accessToken = credentials.accessToken
@@ -129,7 +129,7 @@ private val authClient by lazy {
 > Authentication to NUGU OAuth platform
 
 ```kotlin
-authClient.loginWithCredentials(object : NuguOAuthInterface.OnLoginListener {
+authClient.login(object : NuguOAuthInterface.OnLoginListener {
         override fun onSuccess(credentials: Credentials) {
             // Save Credentials
             client.accessToken = credentials.accessToken
