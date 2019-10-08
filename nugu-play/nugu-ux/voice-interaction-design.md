@@ -1,6 +1,6 @@
-# 사용자 발화\(Utterance\) 디자인
+# 사용자 발화\(User Utterance\) 예상 하기
 
-예상 발화 디자인은 사용자가 특정 기능을 요청하기 위하여 발화할 음성 명령을 정의하는 단계로서, 다음과 같은 사항을 고려하여야 합니다.
+예상 발화 디자인은 사용자가 특정 기능을 요청하기 위하여 발화할 음성 명령을 예측하여 정의하는 단계로서, 다음과 같은 사항을 고려하여야 합니다.
 
 ## **발화의 범용성**
 
@@ -37,7 +37,7 @@
   </thead>
   <tbody></tbody>
 </table>{% hint style="success" %}
-Utterance model 구현에 대한 자세한 내용은 [예상 발화 작성 가이드](../create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances.md)를 참고하세요.
+User Utterance Model 구현에 대한 자세한 내용은 [예상 발화 작성 가이드](../create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances.md)를 참고하세요.
 {% endhint %}
 
 

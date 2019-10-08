@@ -1,12 +1,10 @@
-# 용어의 정의
-
-
+# 용어 정의
 
 <table>
   <thead>
     <tr>
       <th style="text-align:left">&#xC6A9;&#xC5B4;</th>
-      <th style="text-align:left">&#xC758;</th>
+      <th style="text-align:left">&#xC815;&#xC758;</th>
     </tr>
   </thead>
   <tbody>
@@ -66,7 +64,7 @@
         &#xAC1C;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left">Play &#xD638;&#xCD9C; &#xC774;</td>
+      <td style="text-align:left">Play &#xD638;&#xCD9C; &#xC774;&#xB984;</td>
       <td style="text-align:left">Play &#xD638;&#xCD9C; &#xC774;&#xB984;&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xAC00;
         Play&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBC1C;&#xD654;&#xD558;&#xB294;
         &#xACE0;&#xC720;&#xD55C; &#xC774;&#xB984;&#xC744; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.
@@ -76,7 +74,7 @@
         &#xC9C4;&#xC785;&#xD558;&#xC5EC; &#xD574;&#xB2F9; Play&#xC758; &#xAE30;&#xB2A5;&#xC744;
         &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
         <br
-        />&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="../nugu-play/play-registration-and-review/register-a-play.md#define-an-invocation-name">&#xD638;&#xCD9C; &#xC774;&#xB984; &#xC815;&#xC758;&#xD558;&#xAE30;</a>&#xB97C;
+        />&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="nugu-play/play-registration-and-review/register-a-play.md#define-an-invocation-name">&#xD638;&#xCD9C; &#xC774;&#xB984; &#xC815;&#xC758;&#xD558;&#xAE30;</a>&#xB97C;
         &#xCC38;&#xACE0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
