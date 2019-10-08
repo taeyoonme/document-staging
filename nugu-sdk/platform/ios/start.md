@@ -26,29 +26,28 @@ end
 
 {% tab title="Manually" %}
 Github Repository를 통해 다운로드 받아 직접 빌드할 수 있습니다.   
-구성요소 별 자세한 내용은 '구성요소' 탭에서 확인이 가능합니다.
+자세한 내용은 [구성요소](component.md) 탭에서 확인이 가능합니다.
 
-* See "[https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios)" on Github
-* See "[https://github.com/nugu-developers/nugu-login-kit-ios](https://github.com/nugu-developers/nugu-login-kit-ios)" on Github
+* NuguClientKit: [https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios)
+* NuguLoginKit: [https://github.com/nugu-developers/nugu-login-kit-ios](https://github.com/nugu-developers/nugu-login-kit-ios)
 {% endtab %}
 {% endtabs %}
 
 ### Step 3: NUGU PoC 생성하기
 
-{% hint style="info" %}
+{% hint style="warning" %}
 NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
-더 자세한 내용은 [https://developers.nugu.co.kr/\#/sdk/nuguSdkInfo](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
+더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [https://developers.nugu.co.kr/\#/sdk/pocList](https://developers.nugu.co.kr/#/sdk/pocList)로 이동해서, ClientID, ClientSecret, Redirect URI 정보를 확인하세요. \(Redirect URI는 nugu.user.{pocID}://auth로 입력합니다.\)
+제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서, ClientID, ClientSecret, Redirect URI 정보를 확인하세요. \(Redirect URI는 nugu.user.{pocID}://auth로 입력합니다.\)
 
 ### Step 4: NUGU에 로그인하기
 
 {% hint style="info" %}
-NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다. 
+NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
+더 자세한 내용은 [Using OAuth 2.0](../../authentication/using-oauth-2.0.md)에서 확인이 가능합니다.
 {% endhint %}
-
-{% page-ref page="../../authentication/using-oauth-2.0.md" %}
 
 > NuguLoginKit 불러오기
 
@@ -97,7 +96,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-> 인 앱 브라우를 통해 로그인
+> 인 앱 브라우저를 통해 로그인
 
 Step 3에서 생성한 디바이스의 정보를 이용하여 다음과 같이 OAuthManager를 통해 값을 설정한 후에 인 앱 브라우저\(SFSafariViewController\)를 이용한 T-ID 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
 
