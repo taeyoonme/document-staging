@@ -12,7 +12,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668001">AirflowControl</a>
+      <td style="text-align:left"><a href="airflowcontrol-interface.md"> AirflowControl</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xD48D;&#xB7C9;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
@@ -40,7 +40,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668000">AirQualityControl</a>
+      <td style="text-align:left"> <a href="airqualitycheck-interface.md">AirQualityCheck</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC5D0;&#xC11C; &#xC8FC;&#xBCC0; &#xACF5;&#xAE30; &#xC0C1;&#xD0DC;&#xB97C;
@@ -62,7 +62,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668002">BrightnessControl</a>
+      <td style="text-align:left"> <a href="brightnesscontrol-interface.md">BrightnessControl</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xBC1D;&#xAE30;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
@@ -74,7 +74,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668003">ChargeControl</a>
+      <td style="text-align:left"> <a href="chargecontrol-interface.md">ChargeControl</a>
       </td>
       <td style="text-align:left">NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xCDA9;&#xC804;&#xAD00;&#xB828; &#xAE30;&#xB2A5;&#xB4E4;&#xC5D0;
@@ -85,7 +85,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668004">ColorControl</a>
+      <td style="text-align:left"> <a href="colorcontrol-interface.md">ColorControl</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xC124;&#xC815;&#xB41C; &#xC0C9; &#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
@@ -96,7 +96,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668005">DeviceTemperatureControl</a>
+      <td style="text-align:left"> <a href="devicetemperaturecontrol-interface.md">DeviceTemperatureControl</a>
       </td>
       <td style="text-align:left">NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice &#xC790;&#xCCB4;&#xC758; &#xC628;&#xB3C4;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
@@ -115,7 +115,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668006">HumidityControl</a>
+      <td style="text-align:left"> <a href="humiditycontrol-interface.md">HumidityControl</a>
       </td>
       <td style="text-align:left">NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xC2B5;&#xB3C4;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
@@ -133,7 +133,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668007">ModeControl</a>
+      <td style="text-align:left"> <a href="modecontrol-interface.md">ModeControl</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xBAA8;&#xB4DC;&#xC124;&#xC815;&#xBC29;&#xC2DD;&#xC5D0;
@@ -166,7 +166,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668008">PowerCheck</a>
+      <td style="text-align:left"> <a href="powercheck-interface.md">PowerCheck</a>
       </td>
       <td style="text-align:left">NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xC804;&#xB825;&#xB7C9;&#xAD00;&#xB828; &#xC870;&#xD68C;&#xBC29;&#xC2DD;&#xC5D0;
@@ -182,7 +182,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668009">PowerControl</a>
+      <td style="text-align:left"> <a href="powercontrol-interface.md">PowerControl</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xC804;&#xC6D0;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
@@ -229,7 +229,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668010">SetTimeControl</a>
+      <td style="text-align:left"> <a href="settimecontrol-interface.md">SetTimeControl</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xC81C;&#xC5B4;&#xC2DC;&#xAC04;&#xC124;&#xC815;&#xBC29;&#xC2DD;&#xC5D0;
@@ -257,7 +257,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668011">StateCheck</a>
+      <td style="text-align:left"> <a href="statecheck-interface.md">StateCheck</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xC0C1;&#xD0DC;&#xC870;&#xD68C;&#xBC29;&#xC2DD;&#xC5D0;
@@ -276,7 +276,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668012">TemperatureControl</a>
+      <td style="text-align:left"> <a href="temperaturecontrol-interface.md">TemperatureControl</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xC628;&#xB3C4;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
@@ -294,3 +294,4 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
     </tr>
   </tbody>
 </table>
+

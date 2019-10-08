@@ -6,17 +6,17 @@ NUGU스마트홈을 통해 스마트홈 기기를 제어할 때 Capability나 Di
 
 | SmartHomeAttribute | Description |
 | :--- | :--- |
-| airflowType | 설정하고자 하는 airflowType의 사용자 발화 정보. 해당 parameter의 value는 Device Discovery 당시 Response한 supprtedAirflowTypes 중 하나로 요청됩니다. |
-| airflowDelta | airflowType을 몇 단계 조절할지에 대한 사용자 발화 정보입니다. 해당 parameter가 없을 경우에는 1단계를 올리도록 설정해야 합니다. |
-| brightnessLevel | 사용자가 SmartHomeDevice에 설정하고자 하는 밝기의 발화 정보입니다. 1부터 100까지 설정할 수 있습니다. |
-| brightnessDelta | 설정 밝기를 몇 단계 조절지에 대한 사용자 발화 정보입니다. 해당 정보가 없을 경우 1단계를 올리도록 설정합니다. |
-| colorType | 사용자가 SmartHomeDevice에 설정하고자 하는 색상 정보입니다. |
-| deviceTemperatureLevel | 사용자가 SmartHomeDevice에 설정하고자 하는 자체설정온도의 발화정보입니다. |
-| humidityLevel | 사용자가 SmartHomeDevice에 설정하고자 하는 습도의 발화 정보입니다. %단위입니다. |
-| humidityDelta | 설정습도를 몇 % 조절지에 대한 사용자 발화 정보입니다. 해당 정보가 없을 경우 humidityStep만큼 올리도록 설정합니다. |
-| mode | 설정하고자 하는 mode의 사용자 발화 정보, 해당 parameter의 value는 Device Discovery 당시 응답한 supportedModes 중 하나로 요청됩니다. |
-| temperatureLevel | 사용자가 SmartHomeDevice에 설정하고자 하는 온도\(섭씨\)의 발화 정보입니다. |
-| temperatureDelta | 설정온도를 몇 도\(섭씨\) 올릴지에 대한 사용자 발화 정보입니다. 해당 정보가 없을 경우에는 temperatureStep만큼 올리도록 설정합니다. |
+| [airflowType](smarthomeattribute.md#airflowtype) | 설정하고자 하는 airflowType의 사용자 발화 정보. 해당 parameter의 value는 Device Discovery 당시 Response한 supprtedAirflowTypes 중 하나로 요청됩니다. |
+| [airflowDelta](smarthomeattribute.md#airflowdelta) | airflowType을 몇 단계 조절할지에 대한 사용자 발화 정보입니다. 해당 parameter가 없을 경우에는 1단계를 올리도록 설정해야 합니다. |
+| [brightnessLevel](smarthomeattribute.md#brightnesslevel) | 사용자가 SmartHomeDevice에 설정하고자 하는 밝기의 발화 정보입니다. 1부터 100까지 설정할 수 있습니다. |
+| [brightnessDelta](smarthomeattribute.md#brightnessdelta) | 설정 밝기를 몇 단계 조절지에 대한 사용자 발화 정보입니다. 해당 정보가 없을 경우 1단계를 올리도록 설정합니다. |
+| [colorType](smarthomeattribute.md#colortype) | 사용자가 SmartHomeDevice에 설정하고자 하는 색상 정보입니다. |
+| [deviceTemperatureLevel](smarthomeattribute.md#devicetemperaturelevel) | 사용자가 SmartHomeDevice에 설정하고자 하는 자체설정온도의 발화정보입니다. |
+| [humidityLevel](smarthomeattribute.md#humiditylevel) | 사용자가 SmartHomeDevice에 설정하고자 하는 습도의 발화 정보입니다. %단위입니다. |
+| [humidityDelta](smarthomeattribute.md#humiditydelta) | 설정습도를 몇 % 조절지에 대한 사용자 발화 정보입니다. 해당 정보가 없을 경우 humidityStep만큼 올리도록 설정합니다. |
+| [mode](smarthomeattribute.md#mode) | 설정하고자 하는 mode의 사용자 발화 정보, 해당 parameter의 value는 Device Discovery 당시 응답한 supportedModes 중 하나로 요청됩니다. |
+| [temperatureLevel](smarthomeattribute.md#temperaturelevel) | 사용자가 SmartHomeDevice에 설정하고자 하는 온도\(섭씨\)의 발화 정보입니다. |
+| [temperatureDelta](smarthomeattribute.md#temperaturedelta) | 설정온도를 몇 도\(섭씨\) 올릴지에 대한 사용자 발화 정보입니다. 해당 정보가 없을 경우에는 temperatureStep만큼 올리도록 설정합니다. |
 
 ## Attribute Details
 
@@ -456,54 +456,207 @@ Related to [HumidityControl Interface](smarthomecapability/humiditycontrol-inter
 | 냉방모드 | COLD |
 | 난방모드 | HEAT |
 | 제습모드 | DEHUMIDITY |
-| 송풍모 | AIR\_BLAST |
+| 송풍모드 | AIR\_BLAST |
 | 쾌적모드 | COMFORT |
 | 스마트쾌적모드 | COMFORT\_SOFT |
 | 둘레바람모드 | SMART\_COMFORT |
-| 아기모 | INDIRECT\_WIND |
+| 아기모드 | INDIRECT\_WIND |
 | 자동모드 | BABY |
-| 공기청정모 | AUTO\_CLEAN |
-| 아로마모 | AROMA |
-| 절전모 | ENERGY\_SAVING |
-| 난방모 |  |
-| 실내난방모드 |  |
-| 외출모드 |  |
-| 온수전용모 |  |
-| 온돌난방모 |  |
-| 수동모드 |  |
-| 급속모 |  |
-| 황사모 |  |
-| 취침모 |  |
-| 청정모 |  |
-| 정음모 |  |
-| 저소음모 |  |
-| 가습청정모드 |  |
-| 순환청정모드 |  |
-| 베이비케어모드 |  |
-| 듀얼청정모드 |  |
-| 에어워셔모드 |  |
-| HEPA에어워셔모 |  |
-| 공기청정모드 |  |
-| 포시즌모드 |  |
-| 쾌적제습모드 |  |
-| 빨래건조모드 |  |
-| 쾌면모드 |  |
-| 자동제습모드 |  |
-| 수동제습모 |  |
-| 의류건조모드 |  |
-| 신발건조모 |  |
-| 정숙모드 |  |
-| 연속제습모드 |  |
-| 연속모드 |  |
-| 정숙연속모 |  |
-| 급속냉동모드 |  |
-| 특급모드 |  |
-| 스마트파워모드 |  |
-| 차일드락모 |  |
-| 음소거모 |  |
-| 반복예약난방모 |  |
-| 온수모드 |  |
-| 자동무풍모드 |  |
-| 24시간 예약난방모 |  |
-| 냉방PMV모 |  |
+| 공기청정모드 | AUTO\_CLEAN |
+| 아로마모드 | AROMA |
+| 절전모드 | ENERGY\_SAVING |
+| 난방모 | HEAT |
+| 실내난방모드 | HEAT\_ROOM |
+| 외출모드 | OUTSIDE |
+| 온수전용모 | HOTWATER\_ONLY |
+| 온돌난방모 | HEAT\_FLOOR |
+| 수동모드 | HAND |
+| 급속모드 | RAPIDITY |
+| 황사모드 | YELLOW\_DUST |
+| 취침모드 | SLEEP |
+| 청정모드 | CLEAN |
+| 정음모드 | SILENT |
+| 저소음모드 | LOW\_NOISE |
+| 가습청정모드 | HUMIDIFICATION\_AIR\_CLEAN |
+| 순환청정모드 | CIRCULAR\_AIR\_CLEAN |
+| 베이비케어모드 | BABY\_CARE |
+| 듀얼청정모드 | DUAL\_AIR\_CLEAN |
+| 에어워셔모드 | AIR\_WASHER |
+| HEPA에어워셔모 | HEPA\_AIR\_WASHER |
+| 공기청정모드 | AIR\_CLEAN |
+| 포시즌모드 | FOUR\_SEASON |
+| 쾌적제습모드 | COMPORT\_DEHUMIDIFICATION |
+| 빨래건조모드 | WASHING\_DRY |
+| 쾌면모드 | SLEEP |
+| 자동제습모드 | AUTO\_DEHUMIDIFICATION |
+| 수동제습모 | HAND\_DEHUMIDIFICATION |
+| 의류건조모드 | CLOTHES\_DRY |
+| 신발건조모 | SHOES\_DRY |
+| 정숙모드 | QUIET |
+| 연속제습모드 | CONTINUITY\_DEHUMIDIFICATION |
+| 연속모드 | CONTINUITY |
+| 정숙연속모 | QUIET\_CONTINUITY |
+| 급속냉동모드 | RAPID\_FREEZE |
+| 특급모드 | EXPRESS |
+| 스마트파워모드 | SMART\_POWER |
+| 차일드락모 | CHILD\_LOCK |
+| 음소거모 | MUTE |
+| 반복예약난방모 | REPEAT\_BOOKING\_HEAT |
+| 온수모드 | HOTWATER |
+| 자동무풍모드 | AUTO\_NOWIND |
+| 24시간 예약난방모 | 24\_PREHEATING |
+| 냉방PMV모 | COOLING\_PMV |
+
+Attribute 사용 예시
+
+```scheme
+SetMode Directive Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)
+    
+    
+{
+  "version": 1,
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
+  "action": {
+    "command": {
+      "smartHomeCapability": "ModeControl",
+      "smartHomeDirective": "SetMode",
+      "parameters": {
+        "mode": "COLD"
+      }
+    },
+    "smartHomeDevices": [
+      {
+        "id": "1234567",
+        "deviceTypeCode": "AIR_CONDITIONER",
+        "deviceTypeName": "에어컨",
+        "deviceModelName": "example air_conditioner",
+        "friendlyName": "거실",
+        "manufacturer": "example manufacturer",
+        "supportedCapabilities": {
+          "modeControl": {
+            "supportedModes": [
+              "COLD",
+              "DEHUMIDITY",
+              "COMFORT",
+              "AIR_BLAST",
+              "ENERGY_SAVING"
+            ]
+          }
+        },
+        "customData": {
+          "foo": "bar"
+        }
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
+}
+```
+
+Related to [ModeControl Interface](smarthomecapability/modecontrol-interface.md)
+
+### temperatureLevel
+
+스마트홈 기기에 설정하고자 하는 주변 온도 정보입니다. 섭씨 온도 단위를 지원합니다.
+
+Attribute 사용 예시
+
+```scheme
+SetTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)
+    
+    
+{
+  "version": 1,
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
+  "action": {
+    "command": {
+      "smartHomeCapability": "TemperatureControl",
+      "smartHomeDirective": "SetTemperature",
+      "parameters": {
+          "temperatureLevel": "20"
+      }
+    },
+    "smartHomeDevices": [
+      {
+        "id": "1234567",
+        "deviceTypeCode": "AIR_CONDITIONER",
+        "deviceTypeName": "에어컨",
+        "deviceModelName": "example air_conditioner",
+        "friendlyName": "거실",
+        "manufacturer": "example manufacturer",
+        "supportedCapabilities": {
+          "temperatureControl": {}
+        },
+        "customData": {
+          "foo": "bar"
+        },
+        "connectionStatus": true
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
+}
+```
+
+Related to [TemperatureControl Interface](smarthomecapability/temperaturecontrol-interface.md)
+
+### temperatureDelta
+
+스마트홈 기기의 설정된 온도를 조절하기 위한 단위 표현입니다. 섭씨 온도 단위를 지원합니다.
+
+Attribute 사용 예시
+
+```scheme
+IncreaseTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)
+    
+    
+{
+  "version": 1,
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
+  "action": {
+    "command": {
+      "smartHomeCapability": "TemperatureControl",
+      "smartHomeDirective": "IncreaseTemperature",
+      "parameters": {
+          "temperatureDelta": "3"
+      }
+    },
+    "smartHomeDevices": [
+      {
+        "id": "1234567",
+        "deviceTypeCode": "AIR_CONDITIONER",
+        "deviceTypeName": "에어컨",
+        "deviceModelName": "example air_conditioner",
+        "friendlyName": "거실",
+        "manufacturer": "example manufacturer",
+        "supportedCapabilities": {
+          "temperatureControl": {}
+        },
+        "customData": {
+          "foo": "bar"
+        },
+        "connectionStatus": true
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
+}
+```
+
+Related to [TemperatureControl Interface](smarthomecapability/temperaturecontrol-interface.md)
 
