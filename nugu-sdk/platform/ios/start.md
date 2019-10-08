@@ -243,5 +243,5 @@ NUGU SDK의 Github Repository를 통해 NUGU Components의 주요 기능들을 �
 
 > Sample Application
 
-NuguClientKit Github의 Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
+[NuguClientKit Github Repository](https://github.com/nugu-developers/nugu-client-kit-ios)에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
 
