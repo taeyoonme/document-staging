@@ -10,8 +10,6 @@ Linux SDK는 개발자들이 원하는 기능을 구현할 수 있도록 C/C++ A
 * SDK 자체에서 plug-in 구조를 지원하여, 디바이스 특성에 따라 쉽게 Porting 가능. \(GStreamer, PortAudio, Opus decoder 등의 기본 plug-in 함께 제공\)
 * GMainloop 기반으로 구현되어 event-driven 방식의 Application 개발 용이.
 
-또한, Linux SDK에 포함되어 있는 Sample application을 통해 쉽게 동작을 테스트해 볼 수 있습니다.
-
 ## Supported platforms
 
 Linux SDK는 현재 Ubuntu Linux를 공식적으로 지원하고 있습니다. 지원하는 버전은 **Xenial**\(16.04\)과 **Bionic**\(18.04\)이고, 차후 Ubuntu에서 새로운 LTS\(Long Term Support\) 버전이 Release 될 경우 지원 목록에 추가될 수 있습니다.

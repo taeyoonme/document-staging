@@ -2,11 +2,11 @@
 
 ## Install the SDK
 
-Linux SDK는 `deb` 파일을 쉽게 다운로드 받아 설치하여 사용할 수 있도록 Ubuntu에서 제공하는 [PPA](https://launchpad.net/~nugulinux/+archive/ubuntu/sdk)\([https://launchpad.net](https://launchpad.net)\)를 사용하고 있습니다.
+Linux SDK는 패키지\(`*.deb` 파일\)들을 쉽게 다운로드 받아 설치할 수 있도록 Ubuntu에서 제공하는 [PPA](https://launchpad.net/~nugulinux/+archive/ubuntu/sdk)\([https://launchpad.net](https://launchpad.net)\)에 관련 파일들을 올려 놓았습니다.
 
 ### PPA 추가하기
 
-아래 명령을 통해 시스템에 Linux SDK PPA를 추가할 수 있습니다.
+아래 명령을 통해 시스템에 PPA를 추가할 수 있습니다.
 
 {% tabs %}
 {% tab title="Ubuntu" %}
@@ -33,13 +33,14 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 
 ```bash
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 5DE933034EEA59C4
+sudo apt-get update
 ```
 {% endtab %}
 {% endtabs %}
 
-### 설치하기
+### 패키지 설치하기
 
-Linux SDK는 아래의 패키지들을 제공하고 있습니다. 기본적인 동작을 위해서 `libnugu`와 `libnugu-plugins-default` 패키지가 필요하며 개발시에는 빌드를 위해 `libnugu-dev` 패키지가 추가로 필요합니다.
+Linux SDK는 아래의 패키지들로 구성되어 있습니다. 
 
 | 패키지 | 설명 |
 | :--- | :--- |
@@ -47,6 +48,8 @@ Linux SDK는 아래의 패키지들을 제공하고 있습니다. 기본적인 �
 | `libnugu-plugins-default` | NUGU SDK Default plugins - `gstreamer.so`, `opus.so`, `portaudio.so` 등 |
 | `libnugu-dev` | NUGU SDK 개발에 필요한 파일 - header files\(`*.h`, `*.hh`\), pkg-config\(`nugu.pc`\) 및 `libnugu.so` |
 | `libnugu-examples` | NUGU SDK Examples \(콘솔 기반의 샘플 프로그램 및 OAuth2 클라이언트\) |
+
+기본적인 동작을 위해서 `libnugu`와 `libnugu-plugins-default` 패키지가 필요하며, 개발시에는 빌드를 위해 `libnugu-dev` 패키지가 추가로 필요합니다.
 
 아래 명령을 통해 시스템에 설치할 수 있습니다.
 
@@ -56,7 +59,7 @@ sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-example
 
 ## Sample application
 
-본격적으로 개발을 시작하기 전에 먼저 Linux SDK의 기능을 확인해 볼 수 있도록 아래와 같이 2가지 샘플을 제공하고 있습니다.
+Linux SDK는 아래와 같이 2가지 샘플을 제공하고 있습니다.
 
 * 인증을 위한 OAuth2 예제 - Python으로 작성된 Web 기반의 OAuth2 client sample
 * SDK 기능 동작을 테스트하기 위한 예제 - 콘솔에서 동작하는 텍스트 기반의 Sample application
