@@ -106,7 +106,8 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;&#xAE30;</td>
+      <td style="text-align:left"><a href="undefined-16.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;&#xAE30;</a>
+      </td>
       <td style="text-align:left">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;&#xAE30;&#xB294; &#xB85C;&#xBD07;&#xCCAD;&#xC18C;&#xAE30;
         &#xCCAD;&#xC18C; &#xC2DC;&#xC791; &#xBC0F; &#xC911;&#xC9C0; &#xB4F1;&#xC758;
         &#xB3D9;&#xC791; &#xC81C;&#xC5B4; &#xAE30;&#xB2A5;&#xACFC; &#xCDA9;&#xC804;
