@@ -1,6 +1,6 @@
 # 시작하기
 
-## Step 1: Install the SDK
+## Install the SDK
 
 Linux SDK는 패키지\(`*.deb` 파일\)들을 쉽게 다운로드 받아 설치할 수 있도록 Ubuntu에서 제공하는 [PPA](https://launchpad.net/~nugulinux/+archive/ubuntu/sdk)\([https://launchpad.net](https://launchpad.net)\)에 관련 파일들을 올려 놓았습니다.
 
@@ -57,7 +57,7 @@ Linux SDK는 아래의 패키지들로 구성되어 있습니다.
 sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-examples
 ```
 
-## Step 2: Sample application
+## Sample application
 
 Linux SDK는 아래와 같이 2가지 샘플을 제공하고 있습니다.
 
@@ -243,7 +243,7 @@ NUGU 서비스로부터 응답이 오면 해당 발화에 대한 인식 결과�
 [TTS] tts playing finished
 ```
 
-## Step 3: Create your first application
+## Create your first application
 
 ### Linux SDK API를 사용하여 코드 작성
 
