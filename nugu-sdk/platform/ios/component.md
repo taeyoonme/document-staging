@@ -6,7 +6,9 @@
 
 ### 구성요소 상세
 
-NUGU는 필수 Framework인 NuguCore, NuguInterface
+{% hint style="info" %}
+NUGU SDK를 통한 개발을 위해서는 NuguCore, NuguInterface Framework를 필수로 포함해야 합니다.
+{% endhint %}
 
 * NUGU Framework \(Common\)
   * **NuguCore**: NUGU 서비스 이용에 필요한 구성요소들의 기본 구현을 제공합니다.
