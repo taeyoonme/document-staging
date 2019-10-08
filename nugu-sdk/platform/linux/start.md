@@ -1,30 +1,8 @@
 # 시작하기
 
-## Introduction
-
-NUGU SDK는 Linux 기반의 다양한 임베디드 장치에 NUGU 서비스를 쉽게 동작시키기 위해 Linux SDK를 제공합니다. 
-
-Linux SDK는 개발자들이 원하는 기능을 구현할 수 있도록 C/C++ API와 문서를 제공하고 있으며, 아래와 같은 특징을 가지고 있습니다.
-
-* deb 패키지\(데비안 패키지\)로 배포하여 쉽게 설치 가능.
-* SDK 자체에서 plug-in 구조를 지원하여, 디바이스 특성에 따라 쉽게 Porting 가능. \(GStreamer, PortAudio, Opus decoder 등의 기본 plug-in 함께 제공\)
-* GMainloop 기반으로 구현되어 event-driven 방식의 Application 개발 용이.
-
-또한, Linux SDK에 포함되어 있는 Sample application을 통해 쉽게 동작을 테스트해 볼 수 있습니다.
-
-## Supported platforms
-
-Linux SDK는 현재 Ubuntu 리눅스를 공식적으로 지원하고 있습니다. 지원하는 버전은 **Xenial**\(16.04\)과 **Bionic**\(18.04\)이고, 차후 Ubuntu에서 새로운 LTS\(Long Term Support\) 버전이 Release 될 경우 지원 목록에 추가될 수 있습니다.
-
-그리고, 다양한 장치를 지원하기 위해 64bit x86, arm\(armhf, arm64\) architecture를 지원합니다.
-
-{% hint style="info" %}
-사용 중인 Linux가 Debian 계열의 리눅스\(deb 패키지 설치가 가능\)일 경우, NUGU SDK 설치가 가능 할 수 있습니다. 하지만 현재는 Ubuntu만 공식적으로 지원하고 있기 때문에 다른 배포판에 대한 이슈 대응은 늦어질 수 있습니다.
-{% endhint %}
-
 ## Install the SDK
 
-Linux SDK는 개발에 필요한 Library와 Header 파일들은 `deb` 패키지\(데비안 소프트웨어 패키지 포맷\) 형태로 배포하고 있습니다. 또한 개발자들이 `deb` 파일을 쉽게 다운로드 받아 설치하여 사용할 수 있도록 Ubuntu에서 제공하는 [PPA](https://launchpad.net/~nugulinux/+archive/ubuntu/sdk)\([https://launchpad.net](https://launchpad.net)\)를 사용하고 있습니다.
+Linux SDK는 `deb` 파일을 쉽게 다운로드 받아 설치하여 사용할 수 있도록 Ubuntu에서 제공하는 [PPA](https://launchpad.net/~nugulinux/+archive/ubuntu/sdk)\([https://launchpad.net](https://launchpad.net)\)를 사용하고 있습니다.
 
 ### PPA 추가하기
 
@@ -89,7 +67,7 @@ sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-example
 | :--- | :--- |
 | `/usr/bin/nugu_oob_server` | OAuth2 인증을 위한 웹서버 - Python script, `8080` 포트 사용 |
 | `/usr/bin/nugu_sample` | 콘솔 기반의 Sample application |
-| `/usr/bin/nugusdk_start_sample` | 저장된 인증 토큰 값을 읽어서 환경 변수로 설정해주는 ㄴshell script |
+| `/usr/bin/nugusdk_start_sample` | 저장된 인증 토큰 값을 읽어서 환경 변수로 설정해주는 shell script |
 | `/lib/systemd/system/nugu_oob.service` | 시스템 시작시 OAuth2 인증 웹서버를 자동으로 실행시키기 위한 systemd 설정 파일 |
 
 ### OAuth2 인증 예제
@@ -417,14 +395,14 @@ int main()
 }
 ```
 
-### Build
+### Build & Run
 
 이제 위에서 작성된 코드를 빌드해 보겠습니다.
 
 Linux SDK는 빌드를 쉽게 하기 위해 `pkg-config` 파일을 제공합니다. 따라서, 아래와 같이 `nugu.pc`를 사용하면 include path와 library 이름이 자동으로 설정됩니다.
 
 ```bash
-g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello
+$ g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello
 ```
 
 이제 실행해 보겠습니다.
@@ -436,14 +414,25 @@ $ export NUGU_TOKEN=xxxx
 # 프로그램 실행
 $ ./hello
 듣고 있습니다.
+```
+
+토큰 설정 후 프로그램을 실행하면 NUGU 서버에 연결한 후 음성 인식을 위한 대기상태로 진입합니다.
+
+```bash
+$ ./hello
+듣고 있습니다.
 발화를 인식중입니다.
 처리중입니다.
 오늘 며칠이야
 ```
 
-토큰 설정 후 프로그램을 실행하면 NUGU 서버에 연결한 후 음성 인식을 위한 대기상태로 진입합니다.
-
 이제 "오늘 며칠이야" 라고 발화를 하면, 발화를 인식중이라는 상태로 전환되고 인식 결과를 받으면 화면에 표시하게 됩니다. 그리고 NUGU 서버로부터 TTS 데이터를 받아 "오늘은 10월 16일 수요일 이에요"라는 음성이 스피커를 통해 출력됩니다.
+
+## Download the SDK source code
+
+아래 Github 주소를 통해 Linux SDK 소스 코드를 다운로드 받을 수 있습니다.
+
+{% embed url="https://github.com/nugu-developers/nugu-linux" %}
 
 
 
