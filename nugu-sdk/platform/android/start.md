@@ -71,7 +71,7 @@ values/_strings_._xml_ 파일_을 열고_ _nugu\_redirect\_scheme, nugu\_redirec
 
 > 초기화,  client 생성
 
-발급받은 clientId, clientSecret, redirectUri 로 변경
+developers에서 발급받은 clientId, clientSecret, redirectUri 로 변경합니다. 
 
 ```kotlin
 private val authClient by lazy {
