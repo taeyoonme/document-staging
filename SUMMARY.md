@@ -10,7 +10,7 @@
       * [구성요소](nugu-sdk/platform/ios/component.md)
     * [Android](nugu-sdk/platform/android/README.md)
       * [시작하기](nugu-sdk/platform/android/start.md)
-      * [구성요소 소개](nugu-sdk/platform/android/intro_components.md)
+      * [구성요소](nugu-sdk/platform/android/intro_components.md)
     * [Linux](nugu-sdk/platform/linux/README.md)
       * [시작하기](nugu-sdk/platform/linux/start.md)
       * [구성요소](nugu-sdk/platform/linux/undefined.md)

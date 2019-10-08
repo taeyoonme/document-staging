@@ -32,7 +32,7 @@ Key Terms
 1. Discovery - 사용자가 발화로 제어 가능한 디바이스를 탐색하는 기능. Discovery 를 위해서는 Discovery 요청을 처리할 수 있는 SmartHomeBackendProxy 서버를 개발해야 함. Discovery 가 된 디바이스는 NUGU App 의 스마트홈에 노출되며 별칭을 설정하여 발화로 제어할 수 있어야 함. 제어를 위해서는 Control 요청을 처리하는 SmartHomeBackendProxy 서버를 개발해야 함.
 2. Control - SmartHomeBackendProxy 가 받게 되는 기기 제어 요청. 이 요청을 처리하기 위해서는 기기를 제어하기 위한 SmartHomeBackendProxy 서버를 개발해야 함.
 3. SmartHomeBackendProxy - Discovery, Control 요청을 처리하는 서버.
-4. OAuth2 - OAuth2 인증에 필요한 정보 입력 필요. \(Prebuilt play builder 화면 예시\)
+4. OAuth2 - OAuth2 인증에 필요한 정보 입력 필요.
 
 NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU Developers Support 내에 문의사항/제휴제안을 통해 등록해주세요.
 {% endhint %}
