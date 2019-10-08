@@ -108,23 +108,24 @@ authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginLis
 
 ### Step2. NUGU 서비스 사용하기
 
-로그인 후, 모든 NUGU의 기능을 사용할 수 있습니다. 여기서는 음성인식을 시작하는 기본적인 방법을 설명하겠습니다.
+로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는  Nugu의 모든 기능을 손쉽게 이용할 수 있도 SDK에서 제공하는 NuguAndroidClient 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
 
-#### Create NuguAndroidClient instance
-
-1. Create AuthDelegate. Use NuguOAuth at NLK to create.
+1. 인증 정보 처리를 위임할 AuthDelegate를 정의합니다.
 
 ```kotlin
 val authDelegate = NuguOAuth.create()
 ```
 
-2. Create AudioProvider. Use AudioSourceManager as default implementation.
+2. 음성인식에 사용할 기본 AudioProvider를 생성합니다.   
+\(잘 동작하는 AudioProvider를 구현하는 것은 성가신 작업이기에 SDK에서 기본제공하는 클래스들을 이용합니다.\)
 
 ```kotlin
+// AudioSourceManager : AudioProvider에 대한 기본 구현 클래스
+// AudioRecordSourceFactory : Android의 AudioRecord를 소스로 사용하는 SDK에서 제공
 val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
 ```
 
-3. Create NuguAndroidClient & start ASR.
+3. 이제 NuguAndroidClient의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.
 
 ```kotlin
 val client = NuguAndroidClient.Builder(
@@ -133,6 +134,8 @@ val client = NuguAndroidClient.Builder(
     audioProvider
 ).build()
 
+client.asrAgent?.addOnResultListener(...)
+client.asrAgent?.addOnStateChangeListener(...)
 client.asrAgent?.startRecognition()
 ```
 
