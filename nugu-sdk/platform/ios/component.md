@@ -4,7 +4,7 @@
 
 ![](../../../.gitbook/assets/ios-open-sdk-architecture-3.png)
 
-### 구성요소
+### 구성요소 목록
 
 {% hint style="info" %}
 NUGU SDK를 통한 개발을 위해서는 NuguCore, NuguInterface Framework를 필수로 포함해야 합니다.
@@ -13,9 +13,9 @@ NUGU SDK를 통한 개발을 위해서는 NuguCore, NuguInterface Framework를 �
 * NUGU Framework \(Common\)
   * **NuguCore**: NUGU 서비스 이용에 필요한 구성요소들의 기본 구현을 제공합니다.
   * **NuguInterface**: NUGU SDK를 구성할 때 필요한 Protocol과 Enum을 제공합니다.
-  * NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기을 제공합니다.
+  * NuguClientKit: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
 * NUGU Framework \(Depends on platform\)
-  * NuguLoginKit: NUGU 서비스 이용을 위한 OAuth 인증을 도와주는 기을 제공합니다.
+  * NuguLoginKit: NUGU 서비스 이용을 위한 OAuth 인증을 도와주는 기능을 제공합니다.
 * Internal Framework
   * KeenSense: NUGU의 키워드를 감지하는 기능을 제공합니다.
   * JadeMarble: 발화의 시작과 끝을 감지하는 기능을 제공합니다.

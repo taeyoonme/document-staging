@@ -8,26 +8,38 @@ SmartHome의 Error는 SmartHomeBackendProxy에서 모든 처리가 불가한 Glo
 
 ### Global-level error
 
-Success Sample response
-
 ```scheme
-{
-  "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
-  "data":[
-      ...
-  ]
-}
-```
+Service Provider에 공통 exception으로 처리하고자 하는 경우 사용합니다.
 
-Fail Sample response
+예1)
 
-```scheme
-// Service Provider에 공통 exception으로 처리하고자 하는 경우 사용합니다.
 {
   "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
   "error": {
-    "code": 404, // HTTP status code
-    "message": "error message"
+    "code": 401, // HTTP status code
+    "message": "invalid token"
+  }
+}
+
+예2)
+
+
+
+{
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
+  "error": {
+    "code": 429, // HTTP status code
+    "message": "Too many requests, 요청 한도를 넘었니다."
+  }
+}
+
+예3)
+
+{
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
+  "error": {
+    "code": 503, // HTTP status code
+    "message": "Service Unavailable, 소프트웨어 업데이트 중입니다."
   }
 }
 ```
