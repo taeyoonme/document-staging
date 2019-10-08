@@ -8,5 +8,5 @@ NUGU SDK는 iOS, Android, Linux 플랫폼을 지원합니다. 각각의 플랫�
 
 ![](../../.gitbook/assets/open-sdk-architecture.png)
 
-
+NUGU SDK의 상세한 구조는 각각의 플랫폼 별 페이지를 통해 확인하실 수 있습니다.
 

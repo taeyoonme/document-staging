@@ -183,7 +183,17 @@ func setAudioSession() throws {
 
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. NuguClient 인스턴스를 생성합니다. 
+1. NuguClientKit을 불러옵니다.
+
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+import NuguClientKit
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+2. NuguClient 인스턴스를 생성합니다. 
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -193,7 +203,7 @@ let client = NuguClient.Builder.build()
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-2. 로그인 결과로 받은 Access-token을 NuguClient 인스턴스에 설정합니다.
+3. 로그인 결과로 받은 Access-token을 NuguClient 인스턴스에 설정합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -203,7 +213,7 @@ client.accessToken = "{access-token}"
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-3. NetworkManager를 통해 NUGU서버와 연결합니다.
+4. NetworkManager를 통해 NUGU서버와 연결합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -213,37 +223,25 @@ client.networkManager.connect()
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-4. 음성인식을 요청합니다. 이 때, 음성인식 상태를 알기 위해서는 delegate를 설정합니다.
+5. NUGU 서버와의 연결 이후 음성인식을 요청합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="VIewController.swift" %}
 ```swift
-class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        client.asrAgent.delegate = self
-    }
-
-    func recognize() {
-        client.asrAgent.startRecognition()
-    }
-}
-
-// MARK: - ASRAgentDelegate
-
-extension ViewController: ASRAgentDelegate {
-    func asrAgentDidChange(state: ASRState) {
-        // Observe state
-    }
-}
+client.asrAgent.startRecognition()
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
 ## 더 알아보기
 
-NUGU SDK의 Github Repository를 통해 NUGU Components의 주요 기능들을 확인하실 수 있습니다.   
-구성요소 소개 페이지에서 필요한 구성요소를 확인하고, 해당 구성요소의 Repository에서 Readme를 통해 더 자세한 정보를 얻을 수 있습니다.   
-또한, NuguClientKit Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
+> 구성요소 알아보기
+
+NUGU SDK의 Github Repository를 통해 NUGU Components의 주요 기능들을 확인하실 수 있습니다. 구성요소 소개 페이지에서 필요한 구성요소를 확인하고, 해당 구성요소의 Repository에서 Readme를 통해 더 자세한 정보를 얻을 수 있습니다. 
+
+{% page-ref page="component.md" %}
+
+> Sample Application
+
+NuguClientKit Github의 Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
 
