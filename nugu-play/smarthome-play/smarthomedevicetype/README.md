@@ -14,7 +14,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><a href="undefined.md">&#xAC00;&#xC2A4;&#xCC28;&#xB2E8;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-1.md">&#xAC00;&#xC2A4;&#xCC28;&#xB2E8;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xAC00;&#xC2A4;&#xCC28;&#xB2E8;&#xAE30;&#xB294; &#xB2EB;&#xB294; &#xAE30;&#xB2A5;&#xC744;
         &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xC548;&#xC804; &#xC0C1;&#xC758;
@@ -25,7 +25,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-2.md">&#xAC00;&#xC2B5;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xAC00;&#xC2B5;&#xAE30;&#xB294; &#xD48D;&#xB7C9; &#xC81C;&#xC5B4; &#xB4F1;&#xC744;
         &#xD1B5;&#xD574; &#xC8FC;&#xBCC0;&#xC758; &#xC2B5;&#xB3C4;&#xC0C1;&#xD0DC;&#xB97C;
@@ -47,7 +47,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-20.md">&#xAC74;&#xC870;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-3.md">&#xAC74;&#xC870;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xAC74;&#xC870;&#xAE30;&#xB294; &#xC804;&#xC6D0; &#xC790;&#xCCB4;&#xB97C;
         &#xCF1C;&#xAC70;&#xB098; &#xB044;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xB2A5;&#xC744;
@@ -57,7 +57,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-19.md">&#xACF5;&#xAE30;&#xC13C;&#xC11C;</a>
+      <td style="text-align:left"><a href="type-4.md">&#xACF5;&#xAE30;&#xC13C;&#xC11C;</a>
       </td>
       <td style="text-align:left">&#xACF5;&#xAE30;&#xC13C;&#xC11C;&#xC5D0;&#xC11C; &#xCE21;&#xC815;&#xD55C;
         &#xC8FC;&#xBCC0; &#xACF5;&#xAE30; &#xC0C1;&#xD0DC; &#xC870;&#xD68C; &#xAE30;&#xB2A5;&#xC744;
@@ -66,7 +66,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-4-1.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;&#xB294; &#xC804;&#xC6D0; &#xC81C;&#xC5B4;
         &#xBC0F; &#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30; &#xC790;&#xCCB4;&#xC758;
@@ -91,7 +91,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-17.md">&#xB0C9;&#xC7A5;&#xACE0;</a>
+      <td style="text-align:left"><a href="type-5.md">&#xB0C9;&#xC7A5;&#xACE0;</a>
       </td>
       <td style="text-align:left">&#xB0C9;&#xC7A5;&#xACE0;&#xB294; &#xAC01; &#xBAA8;&#xB378;&#xBCC4;&#xB85C;
         &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xBAA8;&#xB4DC; &#xC124;&#xC815; &#xAE30;&#xB2A5;
@@ -106,7 +106,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-16.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-6.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;&#xAE30;&#xB294; &#xB85C;&#xBD07;&#xCCAD;&#xC18C;&#xAE30;
         &#xCCAD;&#xC18C; &#xC2DC;&#xC791; &#xBC0F; &#xC911;&#xC9C0; &#xB4F1;&#xC758;
@@ -121,7 +121,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-15.md">&#xBCF4;&#xC77C;</a>
+      <td style="text-align:left"><a href="type-7.md">&#xBCF4;&#xC77C;</a>
       </td>
       <td style="text-align:left">&#xBCF4;&#xC77C;&#xB7EC;&#xB294; &#xACF5;&#xAC04;&#xC5D0; &#xB300;&#xD55C;
         &#xB09C;&#xBC29; &#xC81C;&#xC5B4; &#xC7A5;&#xCE58;&#xB85C; &#xBCF4;&#xC77C;&#xB7EC;
@@ -143,7 +143,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-8.md">&#xC120;&#xD48D;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xC120;&#xD48D;&#xAE30;&#xB294; &#xC120;&#xD48D;&#xAE30; &#xB3D9;&#xC791;&#xC744;
         &#xC704;&#xD55C; &#xC804;&#xC6D0; &#xC81C;&#xC5B4; &#xAE30;&#xB2A5; &#xBC0F;
@@ -164,7 +164,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-13.md">&#xC138;&#xD0C1;</a>
+      <td style="text-align:left"><a href="type-9.md">&#xC138;&#xD0C1;</a>
       </td>
       <td style="text-align:left">&#xC138;&#xD0C1;&#xAE30;&#xB294; &#xC804;&#xC6D0; &#xC790;&#xCCB4;&#xB97C;
         &#xCF1C;&#xAC70;&#xB098; &#xB044;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xB2A5;&#xC744;
@@ -174,7 +174,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-12.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xC2A4;&#xC704;</a>
+      <td style="text-align:left"><a href="type-10.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xC2A4;&#xC704;</a>
       </td>
       <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xC2A4;&#xC704;&#xCE58;&#xB294; &#xC2A4;&#xC704;&#xCE58;&#xB97C;
         &#xD1B5;&#xD574; &#xC81C;&#xC5B4;&#xD558;&#xB294; &#xCD5C;&#xC885; &#xAE30;&#xAE30;&#xC758;
@@ -192,7 +192,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
+      <td style="text-align:left"><a href="type-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
       </td>
       <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;&#xADF8;&#xB294; &#xD50C;&#xB7EC;&#xADF8;&#xC758;
         &#xC804;&#xC6D0; &#xC81C;&#xC5B4; &#xAE30;&#xB2A5;, &#xD50C;&#xB7EC;&#xADF8;&#xB97C;
@@ -209,7 +209,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-10.md">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-12.md">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;&#xB294; &#xC804;&#xC6D0; &#xC790;&#xCCB4;&#xB97C;
         &#xCF1C;&#xAC70;&#xB098; &#xB044;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xB2A5;&#xC744;
@@ -225,7 +225,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-9.md">&#xC5D0;&#xB108;&#xC9C0;&#xBBF8;&#xD130;</a>
+      <td style="text-align:left"><a href="type-13.md">&#xC5D0;&#xB108;&#xC9C0;&#xBBF8;&#xD130;</a>
       </td>
       <td style="text-align:left">&#xC5D0;&#xB108;&#xC9C0;&#xBBF8;&#xD130;&#xB294; &#xC804;&#xB825;&#xC0AC;&#xC6A9;&#xB7C9;&#xC744;
         &#xCE21;&#xC815;&#xD558;&#xB294; &#xAE30;&#xAE30;&#xB85C; &#xD604;&#xC7AC;
@@ -237,7 +237,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+      <td style="text-align:left"><a href="type-14.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
       </td>
       <td style="text-align:left">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;&#xB294; &#xC5D0;&#xC5B4;&#xC6CC;&#xC154;
         &#xAE30;&#xAE30;&#xC758; &#xC804;&#xC6D0; &#xC81C;&#xC5B4; &#xAE30;&#xB2A5;,
@@ -264,7 +264,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+      <td style="text-align:left"><a href="type-15.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
       </td>
       <td style="text-align:left">&#xC5D0;&#xC5B4;&#xCEE8;&#xC740; &#xACF5;&#xAC04;&#xC5D0; &#xB300;&#xD55C;
         &#xB0C9;&#xBC29; &#xC628;&#xB3C4; &#xC870;&#xC808; &#xC7A5;&#xCE58;&#xB85C;
@@ -292,7 +292,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-6.md">&#xC5F4;&#xB9BC;&#xAC10;&#xC9C0;&#xC13C;</a>
+      <td style="text-align:left"><a href="type-16.md">&#xC5F4;&#xB9BC;&#xAC10;&#xC9C0;&#xC13C;</a>
       </td>
       <td style="text-align:left">&#xC5F4;&#xB9BC;&#xAC10;&#xC9C0;&#xC13C;&#xC11C;&#xB294; &#xD604;&#xC7AC;
         &#xC13C;&#xC11C;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xC870;&#xD68C;&#xD558;&#xB294;
@@ -302,7 +302,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-5.md">&#xC624;&#xBE10;</a>
+      <td style="text-align:left"><a href="type-17.md">&#xC624;&#xBE10;</a>
       </td>
       <td style="text-align:left">&#xC624;&#xBE10;&#xC740; &#xC804;&#xC6D0; &#xC81C;&#xC5B4; &#xAE30;&#xB2A5;
         &#xBC0F; &#xC624;&#xBE10; &#xAE30;&#xAE30; &#xC790;&#xCCB4;&#xC758; &#xC628;&#xB3C4;&#xB97C;
@@ -320,7 +320,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-4.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;</a>
+      <td style="text-align:left"><a href="type-18.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;</a>
       </td>
       <td style="text-align:left">&#xC758;&#xB958;&#xAD00;&#xB9AC;&#xAE30;&#xB294; &#xC804;&#xC6D0; &#xC790;&#xCCB4;&#xB97C;
         &#xCF1C;&#xAC70;&#xB098; &#xB044;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xB2A5;&#xC744;
@@ -336,7 +336,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
         </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-3.md">&#xC815;&#xC218;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-19.md">&#xC815;&#xC218;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xC815;&#xC218;&#xAE30;&#xB294; &#xD604;&#xC7AC; &#xAE30;&#xAE30;&#xC758;
         &#xC0C1;&#xD0DC;&#xB97C; &#xC870;&#xD68C;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC744;
@@ -345,7 +345,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+      <td style="text-align:left"><a href="type-20.md">&#xC81C;&#xC2B5;&#xAE30;</a>
       </td>
       <td style="text-align:left">&#xC81C;&#xC2B5;&#xAE30;&#xB294; &#xB3D9;&#xC791;&#xC744; &#xC704;&#xD55C;
         &#xC804;&#xC6D0; &#xC81C;&#xC5B4; &#xAE30;&#xB2A5; &#xBC0F; &#xBAA9;&#xD45C;
@@ -368,7 +368,7 @@ NUGU스마트홈은 다양한 SmartHome DeviceType을 지원하고 있습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><a href="undefined-1.md">&#xC870;&#xBA85;</a>
+      <td style="text-align:left"><a href="type-21.md">&#xC870;&#xBA85;</a>
       </td>
       <td style="text-align:left">&#xC870;&#xBA85;&#xC740; &#xC804;&#xC6D0; &#xC81C;&#xC5B4; &#xAE30;&#xB2A5;
         &#xBC0F; &#xBAA8;&#xB378;&#xC5D0; &#xB530;&#xB978; &#xBC1D;&#xAE30; &#xC870;&#xC808;,

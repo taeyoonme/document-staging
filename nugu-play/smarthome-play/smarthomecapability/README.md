@@ -25,17 +25,17 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xC788;&#xB294; &#xBAA8;&#xB4E0; SmartHomeDevice&#xB97C; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
       <td
       style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-2.md">&#xAC00;&#xC2B5;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-4-1.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-8.md">&#xC120;&#xD48D;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        <p><a href="../smarthomedevicetype/type-14.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        <p><a href="../smarthomedevicetype/type-15.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-20.md">&#xC81C;&#xC2B5;&#xAE30;</a>
         </p>
         </td>
     </tr>
@@ -51,13 +51,13 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xC791;&#xC744;&#xC218;&#xB85D; &#xACF5;&#xAE30;&#xC9C8;&#xC774; &#xC88B;&#xC740;
         &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
       <td style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-19.md">&#xACF5;&#xAE30;&#xC13C;&#xC11C;</a>
+        <p><a href="../smarthomedevicetype/type-4.md">&#xACF5;&#xAE30;&#xC13C;&#xC11C;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-4-1.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        <p><a href="../smarthomedevicetype/type-14.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        <p><a href="../smarthomedevicetype/type-15.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
         </p>
       </td>
     </tr>
@@ -70,7 +70,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xAE30;&#xAE30;&#xC758; &#xBC1D;&#xAE30;&#xB294; 1&#xBD80;&#xD130; 100&#xB2E8;&#xACC4;&#xB85C;
         &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
       <td
-      style="text-align:left"><a href="../smarthomedevicetype/undefined-1.md">&#xC870;&#xBA85;</a>
+      style="text-align:left"><a href="../smarthomedevicetype/type-21.md">&#xC870;&#xBA85;</a>
         </td>
     </tr>
     <tr>
@@ -81,7 +81,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xCDA9;&#xC804;
         &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xB294; &#xBAA8;&#xB4E0; SmartHomeDevice&#xB97C;
         &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
-      <td style="text-align:left"><a href="../smarthomedevicetype/undefined-16.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;</a>
+      <td style="text-align:left"><a href="../smarthomedevicetype/type-6.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;</a>
       </td>
     </tr>
     <tr>
@@ -92,7 +92,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xC2A4;&#xB9C8;&#xD2B8;
         &#xC870;&#xBA85; &#xB4F1;&#xC758; &#xC0C9;&#xC0C1; &#xBCC0;&#xACBD;&#xC744;
         &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
-      <td style="text-align:left"><a href="../smarthomedevicetype/undefined-1.md">&#xC870;&#xBA85;</a>
+      <td style="text-align:left"><a href="../smarthomedevicetype/type-21.md">&#xC870;&#xBA85;</a>
       </td>
     </tr>
     <tr>
@@ -108,9 +108,9 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xAD6C;&#xC131;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
       <td
       style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-17.md">&#xB0C9;&#xC7A5;&#xACE0;</a>
+        <p><a href="../smarthomedevicetype/type-5.md">&#xB0C9;&#xC7A5;&#xACE0;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-5.md">&#xC624;&#xBE10;</a>
+        <p><a href="../smarthomedevicetype/type-17.md">&#xC624;&#xBE10;</a>
         </p>
         </td>
     </tr>
@@ -126,9 +126,9 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xAC00;&#xC9C4; SmartHomeDevice&#xB4E4;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
       <td
       style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        <p><a href="../smarthomedevicetype/type-14.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-20.md">&#xC81C;&#xC2B5;&#xAE30;</a>
         </p>
         </td>
     </tr>
@@ -147,21 +147,21 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xC801;&#xD569;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xC5B4;&#xD558;&#xAC8C;
         &#xB429;&#xB2C8;&#xB2E4;.</td>
       <td style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-2.md">&#xAC00;&#xC2B5;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-4-1.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-17.md">&#xB0C9;&#xC7A5;&#xACE0;</a>
+        <p><a href="../smarthomedevicetype/type-5.md">&#xB0C9;&#xC7A5;&#xACE0;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-15.md">&#xBCF4;&#xC77C;</a>
+        <p><a href="../smarthomedevicetype/type-7.md">&#xBCF4;&#xC77C;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-8.md">&#xC120;&#xD48D;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        <p><a href="../smarthomedevicetype/type-14.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        <p><a href="../smarthomedevicetype/type-15.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-20.md">&#xC81C;&#xC2B5;&#xAE30;</a>
         </p>
       </td>
     </tr>
@@ -175,9 +175,9 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xB4F1;&#xC758; &#xC870;&#xD68C; &#xAE30;&#xB2A5;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
       <td
       style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
+        <p><a href="../smarthomedevicetype/type-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-9.md">&#xC5D0;&#xB108;&#xC9C0;&#xBBF8;&#xD130;</a>
+        <p><a href="../smarthomedevicetype/type-13.md">&#xC5D0;&#xB108;&#xC9C0;&#xBBF8;&#xD130;</a>
         </p>
         </td>
     </tr>
@@ -192,39 +192,39 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         SmartHomeDevice&#xB97C; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
       <td
       style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined.md">&#xAC00;&#xC2A4;&#xCC28;&#xB2E8;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-1.md">&#xAC00;&#xC2A4;&#xCC28;&#xB2E8;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-2.md">&#xAC00;&#xC2B5;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-20.md">&#xAC74;&#xC870;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-3.md">&#xAC74;&#xC870;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-4-1.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-16.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;</a>
+        <p><a href="../smarthomedevicetype/type-6.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-15.md">&#xBCF4;&#xC77C;</a>
+        <p><a href="../smarthomedevicetype/type-7.md">&#xBCF4;&#xC77C;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-8.md">&#xC120;&#xD48D;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-13.md">&#xC138;&#xD0C1;</a>
+        <p><a href="../smarthomedevicetype/type-9.md">&#xC138;&#xD0C1;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-12.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xC2A4;&#xC704;</a>
+        <p><a href="../smarthomedevicetype/type-10.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xC2A4;&#xC704;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
+        <p><a href="../smarthomedevicetype/type-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-10.md">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-12.md">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        <p><a href="../smarthomedevicetype/type-14.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        <p><a href="../smarthomedevicetype/type-15.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-5.md">&#xC624;&#xBE10;</a>
+        <p><a href="../smarthomedevicetype/type-17.md">&#xC624;&#xBE10;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-4.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;</a>
+        <p><a href="../smarthomedevicetype/type-18.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-20.md">&#xC81C;&#xC2B5;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-1.md">&#xC870;&#xBA85;</a>
+        <p><a href="../smarthomedevicetype/type-21.md">&#xC870;&#xBA85;</a>
         </p>
         </td>
     </tr>
@@ -238,21 +238,21 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xB4F1;&#xC744; &#xAD00;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
       <td
       style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-2.md">&#xAC00;&#xC2B5;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-4-1.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-15.md">&#xBCF4;&#xC77C;</a>
+        <p><a href="../smarthomedevicetype/type-7.md">&#xBCF4;&#xC77C;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-8.md">&#xC120;&#xD48D;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
+        <p><a href="../smarthomedevicetype/type-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        <p><a href="../smarthomedevicetype/type-14.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        <p><a href="../smarthomedevicetype/type-15.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-20.md">&#xC81C;&#xC2B5;&#xAE30;</a>
         </p>
         </td>
     </tr>
@@ -263,15 +263,15 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         SmartHomeDevice&#xC758; &#xC0C1;&#xD0DC;&#xC870;&#xD68C;&#xBC29;&#xC2DD;&#xC5D0;
         &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;.</td>
       <td style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-10.md">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;</a>
+        <p><a href="../smarthomedevicetype/type-12.md">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-6.md">&#xC5F4;&#xB9BC;&#xAC10;&#xC9C0;&#xC13C;</a>
+        <p><a href="../smarthomedevicetype/type-16.md">&#xC5F4;&#xB9BC;&#xAC10;&#xC9C0;&#xC13C;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-5.md">&#xC624;&#xBE10;</a>
+        <p><a href="../smarthomedevicetype/type-17.md">&#xC624;&#xBE10;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-4.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;<br /></a>
+        <p><a href="../smarthomedevicetype/type-18.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;<br /></a>
           <a
-          href="../smarthomedevicetype/undefined-3.md">&#xC815;&#xC218;&#xAE30;</a>
+          href="../smarthomedevicetype/type-19.md">&#xC815;&#xC218;&#xAE30;</a>
         </p>
       </td>
     </tr>
@@ -286,9 +286,9 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         &#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30;&#xC758; &#xC81C;&#xC5B4;
         &#xBA85;&#xB839;&#xC785;&#xB2C8;&#xB2E4;.</td>
       <td style="text-align:left">
-        <p><a href="../smarthomedevicetype/undefined-15.md">&#xBCF4;&#xC77C;</a>
+        <p><a href="../smarthomedevicetype/type-7.md">&#xBCF4;&#xC77C;</a>
         </p>
-        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        <p><a href="../smarthomedevicetype/type-15.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
         </p>
       </td>
     </tr>
