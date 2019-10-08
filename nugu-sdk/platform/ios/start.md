@@ -37,10 +37,10 @@ Github Repository를 통해 다운로드 받아 직접 빌드할 수 있습니�
 
 {% hint style="info" %}
 NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
-더 자세한 내용은 [https://stg-developers.nugu.co.kr/\#/sdk/nuguSdkInfo](https://stg-developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
+더 자세한 내용은 [https://developers.nugu.co.kr/\#/sdk/nuguSdkInfo](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [https://stg-developers.nugu.co.kr/\#/sdk/pocList](https://stg-developers.nugu.co.kr/#/sdk/pocList)로 이동해서, ClientID, ClientSecret, Redirect URI 정보를 확인하세요. \(Redirect URI는 nugu.user.{pocID}://auth로 입력합니다.\)
+제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [https://developers.nugu.co.kr/\#/sdk/pocList](https://developers.nugu.co.kr/#/sdk/pocList)로 이동해서, ClientID, ClientSecret, Redirect URI 정보를 확인하세요. \(Redirect URI는 nugu.user.{pocID}://auth로 입력합니다.\)
 
 ### Step 4: NUGU에 로그인하기
 
