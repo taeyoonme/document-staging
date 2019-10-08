@@ -44,7 +44,19 @@ AndroidManifest.xml에 아래 필수 권한을 추가합니다.
 
 ## SDK 사용하기
 
-### Step1. NUGU에 로그인하는 방법
+### Step 1: NUGU 디바이스 생성하기
+
+{% hint style="info" %}
+NUGU 디바이스를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.
+{% endhint %}
+
+https://nugu.developers.co.kr에서 ClientID, ClientSecret, RedirectURI 정보를 발급받으세요.
+
+### Step2. NUGU에 로그인하는 방법
+
+{% hint style="info" %}
+NUGU 서비스를 이용하기 위해서는 OAuth 인증이 필요합니다. 
+{% endhint %}
 
 #### Type1 \(Authorization Code\)
 
@@ -82,7 +94,6 @@ private val authClient by lazy {
 authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
                 // Save Credentials
-                client.accessToken = credentials.accessToken
             }
 
             override fun onError(reason: String) {
@@ -96,8 +107,7 @@ authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInte
 ```kotlin
 authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
-                // Save Credentials
-                client.accessToken = credentials.accessToken
+                // Save Credentials 
             }
 
             override fun onError(reason: String) {
@@ -106,7 +116,7 @@ authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginLis
         })
 ```
 
-### Step2. NUGU 서비스 사용하기
+### Step3. NUGU 서비스 사용하기
 
 로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는  Nugu의 모든 기능을 손쉽게 이용할 수 있도 SDK에서 제공하는 NuguAndroidClient 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
 
