@@ -11,7 +11,7 @@
 ### Step 2: NUGU SDK 설치하기
 
 {% tabs %}
-{% tab title="Cocoapods" %}
+{% tab title="Cocoapods\(권장\)" %}
 {% code-tabs %}
 {% code-tabs-item title="Podfile" %}
 ```ruby
@@ -25,25 +25,34 @@ end
 {% endtab %}
 
 {% tab title="Manually" %}
-You can also download the entire iOS SDK.
+Github Repository를 통해 다운로드 받아 직접 빌드할 수 있습니다.   
+구성요소 별 자세한 내용은 '구성요소' 탭에서 확인이 가능합니다.
 
-See "" on Github
+* See "[https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios)" on Github
+* See "[https://github.com/nugu-developers/nugu-login-kit-ios](https://github.com/nugu-developers/nugu-login-kit-ios)" on Github
 {% endtab %}
 {% endtabs %}
 
-### Step 3: NUGU 디바이스 생성하기
+### Step 3: NUGU PoC 생성하기
 
 {% hint style="info" %}
-NUGU 디바이스를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.
+NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
+더 자세한 내용은 [https://stg-developers.nugu.co.kr/\#/sdk/nuguSdkInfo](https://stg-developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-https://nugu.developers.co.kr에서 ClientID, ClientSecret, RedirectURI 정보를 발급받으세요.
+제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [https://stg-developers.nugu.co.kr/\#/sdk/pocList](https://stg-developers.nugu.co.kr/#/sdk/pocList)로 이동해서, ClientID, ClientSecret, Redirect URI 정보를 확인하세요. \(Redirect URI는 nugu.user.{pocID}://auth로 입력합니다.\)
 
 ### Step 4: NUGU에 로그인하기
 
 {% hint style="info" %}
-NUGU 서비스를 이용하기 위해서는 OAuth 인증이 필요합니다. 
+NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다. 
 {% endhint %}
+
+{% page-ref page="../../authentication/using-oauth-2.0.md" %}
+
+> NuguLoginKit 불러오기
+
+NUGU의 인증서버와 OAuth 인증을 더 쉽게 하기 위해서 NuguLoginKit을 불러옵니다.
 
 ```swift
 import NuguLoginKit
@@ -53,7 +62,7 @@ import NuguLoginKit
 
 > info.plist 파일에 URL Scheme 추가
 
-info.plist 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XCode에서 NUGU를 추가할 Target의 Info 탭을 눌러 URL Types를 추가 후 URL Schemes에 "nugu.user.{pocID}"를 입력니다.\)
+info.plist 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XCode에서 NUGU를 추가할 Target의 Info 탭을 눌러 URL Types를 추가 후 URL Schemes에 "nugu.user.{pocID}"를 입력합니다.\)
 
 {% code-tabs %}
 {% code-tabs-item title="info.plist" %}
@@ -163,7 +172,7 @@ func setAudioSession() throws {
     try AVAudioSession.sharedInstance().setCategory(
         .playAndRecord,
         mode: .default,
-        options: [.defaultToSpeaker, .allowBluetoothA2DP]
+        options: [.defaultToSpeaker]
     )
 }
 ```

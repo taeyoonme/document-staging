@@ -264,11 +264,186 @@ NUGU 서비스로부터 응답이 오면 해당 발화에 대한 인식 결과�
 
 ## Create your first application
 
-API ...
+### Linux SDK API를 사용하여 코드 작성
 
-Build ...
+간략하게 사용자의 음성을 인식해서 NUGU 서버에 전송하고, TTS 응답을 받아 출력하는 Sample application을 개발해 보겠습니다.
 
+먼저, 사용자의 음성을 인식하기 위해 `ASR Capability`를 사용해야 합니다. 아래와 같이 ASR 상태 변화 이벤트를 받을 수 있는 Listener를 작성합니다.
 
+```cpp
+class MyASR : public IASRListener {
+public:
+    virtual ~MyASR() = default;
+
+    void onState(ASRState state)
+    {
+        switch (state) {
+        case ASRState::IDLE:
+            std::cout << "대기 상태" << std::endl;
+            break;
+        case ASRState::EXPECTING_SPEECH:
+            std::cout << "추가 발화 요청" << std::endl;
+            break;
+        case ASRState::LISTENING:
+            std::cout << "듣고 있습니다." << std::endl;
+            break;
+        case ASRState::RECOGNIZING:
+            std::cout << "발화를 인식중입니다." << std::endl;
+            break;
+        case ASRState::BUSY:
+            std::cout << "처리중입니다." << std::endl;
+            break;
+        }
+    }
+
+    void onNone()
+    {
+        std::cout << "인식 결과가 없습니다." << std::endl;
+    }
+
+    /* 중간 인식 결과 */
+    void onPartial(const std::string& text)
+    {
+        std::cout << text << std::endl;
+    }
+
+    /* 최종 인식 결과 */
+    void onComplete(const std::string& text)
+    {
+        std::cout << text << std::endl;
+    }
+
+    void onError(ASRError error)
+    {
+        std::cout << "에러가 발생하였습니다." << std::endl;
+    }
+
+    void onCancel()
+    {
+        std::cout << "취소되었습니다." << std::endl;
+    }
+
+    void setExpectSpeechState(bool is_es_state)
+    {
+        std::cout << "말씀해 주세요." << std::endl;
+    }
+};
+```
+
+이제 서버와의 연결 상태 이벤트를 받을 수 있는 Listener를 구현합니다. 네트워크가 정상적으로 연결되면 `ASR Capability`에 음성 인식을 시작시키는 `startRecognition()` API를 호출합니다.
+
+```cpp
+class MyNetwork : public INetworkManagerListener {
+public:
+    void onConnected()
+    {
+        nugu_client->getASRHandler()->startRecognition();
+    }
+
+    void onDisconnected()
+    {
+    }
+
+    void onError(NetworkError error)
+    {
+        switch (error) {
+        case NetworkError::TOKEN_ERROR:
+            break;
+        case NetworkError::UNKNOWN:
+            break;
+        }
+    }
+};
+```
+
+이제 필요한 부분은 거의 다 작성되었습니다. Application을 동작시키기 위해 `NuguClient`를 생성하고 `GMainLoop`에 연결시키기 위해 아래와 같이 `main()` 함수를 작성합니다.
+
+```cpp
+#include <glib.h>
+#include <interface/capability/asr_interface.hh>
+#include <interface/nugu_client.hh>
+#include <interface/nugu_configuration.hh>
+
+using namespace nuguClientSDK;
+
+/* MyASR */
+class MyASR : public IASRListener {
+    ...
+}
+
+/* MyNetwork */
+class MyNetwork : public INetworkManagerListener {
+    ...
+}
+
+int main()
+{
+    std::unique_ptr<MyASR> my_asr_listener;
+    my_asr_listener = std::unique_ptr<MyASR>(new MyASR());
+
+    nugu_client = std::unique_ptr<NuguClient>(new NuguClient());
+
+    /* Token 설정 */
+    nugu_client->setAccessToken(getenv("NUGU_TOKEN"));
+
+    /* 음성 인식을 위한 Model 파일 설정 */
+    nugu_client->setConfig(NuguConfig::Key::MODEL_PATH, "/home/work/model");
+
+    /* Capability 등록 */
+    nugu_client->getCapabilityBuilder()
+        ->add(CapabilityType::ASR, my_asr_listener.get())
+        ->construct();
+
+    nugu_client->initialize();
+
+    /* Network manager */
+    std::unique_ptr<MyNetwork> network_manager_listener;
+    network_manager_listener = std::unique_ptr<MyNetwork>(new MyNetwork());
+
+    INetworkManager* network_manager = nugu_client->getNetworkManager();
+    network_manager->addListener(network_manager_listener.get());
+
+    network_manager->connect();
+
+    /* GMainLopp 시작 */
+    GMainLoop* loop = g_main_loop_new(NULL, FALSE);
+    g_main_loop_run(loop);
+
+    g_main_loop_unref(loop);
+
+    nugu_client->deInitialize();
+
+    return 0;
+}
+```
+
+### Build
+
+이제 위에서 작성된 코드를 빌드해 보겠습니다.
+
+Linux SDK는 빌드를 쉽게 하기 위해 `pkg-config` 파일을 제공합니다. 따라서, 아래와 같이 `nugu.pc`를 사용하면 include path와 library 이름이 자동으로 설정됩니다.
+
+```bash
+g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello
+```
+
+이제 실행해 보겠습니다.
+
+```bash
+# 먼저 토큰을 설정합니다.
+$ export NUGU_TOKEN=xxxx
+
+# 프로그램 실행
+$ ./hello
+듣고 있습니다.
+발화를 인식중입니다.
+처리중입니다.
+오늘 며칠이야
+```
+
+토큰 설정 후 프로그램을 실행하면 NUGU 서버에 연결한 후 음성 인식을 위한 대기상태로 진입합니다.
+
+이제 "오늘 며칠이야" 라고 발화를 하면, 발화를 인식중이라는 상태로 전환되고 인식 결과를 받으면 화면에 표시하게 됩니다. 그리고 NUGU 서버로부터 TTS 데이터를 받아 "오늘은 10월 16일 수요일 이에요"라는 음성이 스피커를 통해 출력됩니다.
 
 
 

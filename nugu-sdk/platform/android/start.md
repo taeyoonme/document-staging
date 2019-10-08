@@ -86,9 +86,9 @@ private val authClient by lazy {
 }
 ```
 
-> OAuth 인증
+> 웹 브라우저를 통해 로그인
 
-로그인은 loginByWebbrowser\(\) method를 호출후에 NuguOAuthInterface.OnLoginListener를 통해 인증 결과를 받습니다.
+로그인은 loginByWebbrowser\(\) method를 호출후에 NuguOAuthInterface.OnLoginListener를 통해 인증 결과를 받습니다. 
 
 ```kotlin
 authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
@@ -102,10 +102,12 @@ authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInte
         })
 ```
 
-이미 refresh-Token을 발급 받은 상태라면,  loginByWebbrowser\(\) method를 호출하지 말고 silentLogin method를 실행하여 토큰을 갱신 할수 있습니다.
+> 로그인 정보 갱신
+
+이미 refresh-Token을 발급 받은 상태라면,  loginByWebbrowser\(\) method를 호출하지 말고 loginSilently method를 호출하여 웹 브라우저 실행 없이 인증을 갱신 할수 있습니다.
 
 ```kotlin
-authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
+authClient.loginSilently("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
                 // Save Credentials 
             }
