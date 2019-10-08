@@ -371,3 +371,429 @@ IncreaseAirflow Directive response parameter details
 | :--- | :--- | :--- |
 | airflowType | Airflow 증가 후 최종 설정된 SmartHomeDevice의 AirflowType. 해당 parameter의 value로 사용자에게 안내됩니다. | string |
 
+### DecreaseAirflow
+
+**Directive 정보**  
+SmartHomeDevice의 설정 풍량을 감소시킨다.   
+Capability : AirflowControl   
+Directive : DecreaseAirflow
+
+**Voice Command**  
+아리아, {FriendlyName} {DeviceType} 풍량 내려줘.  
+아리아, {FriendlyName} 풍량 1단계 내려서 설정해줘.  
+아리아, {DeviceType} 풍량 2단계 내려줘.
+
+Sample Request
+
+```scheme
+Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/DecreaseAirflow)
+  
+  
+{
+   "version":1,
+   "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
+   "action":{
+      "command":{
+         "smartHomeCapability":"AirflowControl",
+         "smartHomeDirective":"DecreaseAirflow"
+      },
+      "smartHomeDevices":[
+         {
+            "id":"1234567",
+            "deviceTypeCode":"AIR_CONDITIONER",
+            "deviceTypeName":"에어컨",
+            "deviceModelName":"example air_conditioner",
+            "friendlyNameSuggestion":"거실",
+            "manufacturer":"example manufacturer",
+            "supportedCapabilities":{
+               "airflowControl":{
+                  "supportedAirflowTypes":[
+                     "HIGH",
+                     "MIDDLE",
+                     "LOW",
+                     "AUTO"
+                  ]
+               }
+            },
+            "customData":{
+               "foo":"bar"
+            }
+         }
+      ]
+   },
+   "context":{
+      "session":{
+         "id":"example_session_id",
+         "accessToken":"example_access_token"
+      }
+   }
+}
+```
+
+DecreaseAirflow Directive request parameter details
+
+| parameter name | description | type |
+| :--- | :--- | :--- |
+|  | 별도의 파라미터는 없 1단계씩 내려야 합니다. n 단계 내리는 스펙은 추후 지원 예정입니다. |  |
+
+Sample Response
+
+```scheme
+
+{
+    "requestId": "2019071712638a4378649347bdb21643127a0f6d83", <-- request로 받은 값을 그대로 응답
+    "data":[
+        {
+            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
+            "properties": {
+                "airflowType": 강풍 <-- directive 마다 필요한 property 채워서 응답.
+            }
+        }
+    ]
+}
+```
+
+DecreaseAirflow Directive response parameter details
+
+| parameter name | description | type |
+| :--- | :--- | :--- |
+| airflowType | Airflow 감소 후 최종 설정된 SmartHomeDevice의 AirflowType | string |
+
+### SetAirflowMax
+
+**Directive 정보**  
+SmartHomeDevice을 최고 풍량으로 설정한다.   
+Capability : AirflowControl   
+Directive : SetAirflowMax
+
+**Voice Command**  
+아리아, {FriendlyName} {DeviceType} 풍량 최고로 설정해줘.  
+아리아, {FriendlyName} 풍량 가장 높게 해줘  
+아리아, {DeviceType} 풍량 최대로 해줘.
+
+Sample Request
+
+```scheme
+Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/SetAirflowMax)
+  
+  
+{
+   "version":1,
+   "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
+   "action":{
+      "command":{
+         "smartHomeCapability":"AirflowControl",
+         "smartHomeDirective":"SetAirflowMax"
+      },
+      "smartHomeDevices":[
+         {
+            "id":"1234567",
+            "deviceTypeCode":"AIR_CONDITIONER",
+            "deviceTypeName":"에어컨",
+            "deviceModelName":"example air_conditioner",
+            "friendlyNameSuggestion":"거실",
+            "manufacturer":"example manufacturer",
+            "supportedCapabilities":{
+               "airflowControl":{
+                  "supportedAirflowTypes":[
+                     "HIGH",
+                     "MIDDLE",
+                     "LOW",
+                     "AUTO"
+                  ]
+               }
+            },
+            "customData":{
+               "foo":"bar"
+            }
+         }
+      ]
+   },
+   "context":{
+      "session":{
+         "id":"example_session_id",
+         "accessToken":"example_access_token"
+      }
+   }
+}
+```
+
+Sample Response
+
+```scheme
+{
+   "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
+   "data":[
+      {
+         "resultCode":"OK",
+         "smartHomeDevice":{
+            "id":"1234567",
+            "deviceTypeCode":"AIR_CONDITIONER",
+            "deviceTypeName":"에어컨",
+            "deviceModelName":"example air_conditioner",
+            "friendlyNameSuggestion":"거실",
+            "manufacturer":"example manufacturer",
+            "supportedCapabilities":{
+               "airflowControl":{
+                  "supportedAirflowTypes":[
+                     "HIGH",
+                     "MIDDLE",
+                     "LOW",
+                     "AUTO"
+                  ]
+               }
+            },
+            "customData":{
+               "foo":"bar"
+            }
+         },
+         "properties":{
+            "airflowType":"HIGH" <-- 올려서 최종적으로 설정한 풍량 타입 응답.
+         }
+      }
+   ]
+}
+```
+
+SetAirflowMax Directive Response parameter details
+
+| parameter name | description | type |
+| :--- | :--- | :--- |
+| airflowType | Airflow 감소 후 최종 설정 된 SmartHomeDevice의 AirflowType | string |
+
+### SetAirflowMin
+
+**Directive 정보**  
+SmartHomeDevice을 최저 풍량으로 설정한다.   
+Capability : AirflowControl   
+Directive : SetAirflowMin
+
+**Voice Command**  
+아리아, {FriendlyName} {DeviceType} 풍량 최저로 설정해줘.  
+아리아, {FriendlyName} 풍량 가장 낮게 해줘  
+아리아, {DeviceType} 풍량 최소로 해줘.
+
+Sample Request
+
+```scheme
+Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/SetAirflowMin)
+  
+  
+{
+   "version":1,
+   "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
+   "action":{
+      "command":{
+         "smartHomeCapability":"AirflowControl",
+         "smartHomeDirective":"SetAirflowMin"
+      },
+      "smartHomeDevices":[
+         {
+            "id":"1234567",
+            "deviceTypeCode":"AIR_CONDITIONER",
+            "deviceTypeName":"에어컨",
+            "deviceModelName":"example air_conditioner",
+            "friendlyNameSuggestion":"거실",
+            "manufacturer":"example manufacturer",
+            "supportedCapabilities":{
+               "airflowControl":{
+                  "supportedAirflowTypes":[
+                     "HIGH",
+                     "MIDDLE",
+                     "LOW",
+                     "AUTO"
+                  ]
+               }
+            },
+            "customData":{
+               "foo":"bar"
+            }
+         }
+      ]
+   },
+   "context":{
+      "session":{
+         "id":"example_session_id",
+         "accessToken":"example_access_token"
+      }
+   }
+}
+```
+
+Sample Response
+
+```scheme
+{
+   "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
+   "data":[
+      {
+         "resultCode":"OK",
+         "smartHomeDevice":{
+            "id":"1234567",
+            "deviceTypeCode":"AIR_CONDITIONER",
+            "deviceTypeName":"에어컨",
+            "deviceModelName":"example air_conditioner",
+            "friendlyNameSuggestion":"거실",
+            "manufacturer":"example manufacturer",
+            "supportedCapabilities":{
+               "airflowControl":{
+                  "supportedAirflowTypes":[
+                     "HIGH",
+                     "MIDDLE",
+                     "LOW",
+                     "AUTO"
+                  ]
+               }
+            },
+            "customData":{
+               "foo":"bar"
+            }
+         },
+         "properties":{
+            "airflowType":"LOW" <-- 내려서 최종적으로 설정한 풍량 타입 응답.
+         }
+      }
+   ]
+}
+```
+
+SetAirflowMin Directive response parameter details
+
+| parameter name | description | type |
+| :--- | :--- | :--- |
+| airflowType | 설정한 후에 SmartHomeDevice의 airflowType. 해당 parameter의 value로 사용자에게 안내됩니다. | string |
+
+## Error & Exception
+
+ 해당 Capability/Directive에서 응답 시 사용할 수 있는 ErrorCode는 [SmartHomeError](../smarthomeerror.md)를 참조해주시기 바랍니다.
+
+Sample Error Response
+
+```scheme
+{
+  "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
+  "data":[
+     {
+        "resultCode":"DeviceTurnedOff",
+        "smartHomeDevice":{
+           "id":"D68856420232",
+           "deviceTypeCode":"AIR_CONDITIONER",
+           "deviceModelName":"삼성전자 스마트 에어컨",
+           "friendlyName":"거실",
+           "deviceTypeName":"에어컨",
+           "customData":{
+              "foo": "bar"
+           }
+        }
+     }
+  ]
+}
+```
+
+{% hint style="info" %}
+사용자가 여러개 디바이스를 동시에 제어하려고 하는 경우, 아래와 같이 여러 디바이스에 대해 요청이 갈 수 있습니다. 이 때 각각의 기기를 제어한 뒤 제어 결과를 리스트로 응답해야 합니다.
+
+이는 모든 제어 요청에 대해 공통으로 해댱되는 내용입니다.
+
+응답으로는 각 디바이스별 성공/실패 여부를 data의 하위 리스트에 담을 수 있습니다
+{% endhint %}
+
+```scheme
+Request sample
+{
+   "version":1,
+   "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
+   "action":{
+      "command":{
+         "smartHomeCapability":"AirflowControl",
+         "smartHomeDirective":"SetAirflowMin"
+      },
+      "smartHomeDevices":[
+         {
+            "id":"1111",
+            "deviceTypeCode":"AIR_CONDITIONER",
+            "deviceTypeName":"에어컨",
+            "deviceModelName":"example air_conditioner",
+            "friendlyNameSuggestion":"거실",
+            "manufacturer":"example manufacturer",
+            "supportedCapabilities":{
+               "airflowControl":{
+                  "supportedAirflowTypes":[
+                     "HIGH",
+                     "MIDDLE",
+                     "LOW",
+                     "AUTO"
+                  ]
+               }
+            },
+            "customData":{
+               "foo":"bar"
+            }
+         },
+         {
+            "id":"2222",
+            "deviceTypeCode":"AIR_CONDITIONER",
+            "deviceTypeName":"에어컨",
+            "deviceModelName":"example air_conditioner",
+            "friendlyNameSuggestion":"안방",
+            "manufacturer":"example manufacturer",
+            "supportedCapabilities":{
+               "airflowControl":{
+                  "supportedAirflowTypes":[
+                     "HIGH",
+                     "MIDDLE",
+                     "LOW",
+                     "AUTO"
+                  ]
+               }
+            },
+            "customData":{
+               "foo":"bar"
+            }
+         }
+      ]
+   },
+   "context":{
+      "session":{
+         "id":"example_session_id",
+         "accessToken":"example_access_token"
+      }
+   }
+}
+```
+
+```text
+Response Sample
+{
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
+  "data": [
+    {
+      "resultCode": "OK",
+      "smartHomeDevice": {
+        "id": "1111",
+        "deviceTypeCode": "AIR_CONDITIONER",
+        "deviceTypeName": "에어컨",
+        "friendlyName": "거실",
+        "deviceModelName": "example air_conditioner",
+        "customData": {
+          "foo": "bar"
+        }
+      }
+    },
+    {
+      "resultCode": "OK",
+      "smartHomeDevice": {
+        "id": "2222",
+        "deviceTypeCode": "AIR_CONDITIONER",
+        "deviceTypeName": "에어컨",
+        "friendlyName": "안방",
+        "deviceModelName": "example air_conditioner",
+        "customData": {
+          "foo": "bar"
+        }
+      }
+    }
+  ]
+}
+```
+
