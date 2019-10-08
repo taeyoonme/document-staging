@@ -61,7 +61,7 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 5DE93303
 
 ### 설치하기
 
-Linux SDK는 아래의 패키지들을 제공하고 있습니다. 기본적인 동작을 위해서 `libnugu`와 `libnugu-plugins-default` 패키지가 필요하고, 개발\(빌드\)을 위해 `libnugu-dev` 패키지가 추가로 필요합니다.
+Linux SDK는 아래의 패키지들을 제공하고 있습니다. 기본적인 동작을 위해서 `libnugu`와 `libnugu-plugins-default` 패키지가 필요하며 개발시에는 빌드를 위해 `libnugu-dev` 패키지가 추가로 필요합니다.
 
 | 패키지 | 설명 |
 | :--- | :--- |
@@ -182,7 +182,7 @@ Select Command >
   <tbody>
     <tr>
       <td style="text-align:left"><code>w</code> (start wakeup)</td>
-      <td style="text-align:left">&#xC815;&#xD574;&#xC9C4; Wake word(&apos;&#xC544;&#xB9AC;&#xC544;&apos;)&#xB97C;
+      <td style="text-align:left">&#xC815;&#xD574;&#xC9C4; Wake word(&quot;&#xC544;&#xB9AC;&#xC544;&quot;)&#xB97C;
         &#xD1B5;&#xD574; wake-up &#xD558;&#xAE30; &#xC704;&#xD55C; &#xB300;&#xAE30;
         &#xC0C1;&#xD0DC;&#xB85C; &#xC9C4;&#xC785;&#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
