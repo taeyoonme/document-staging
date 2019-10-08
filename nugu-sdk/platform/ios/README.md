@@ -2,7 +2,7 @@
 
 ## Introduction
 
-NUGU SDK는 iOS 모바일 환경에서 누구 서비스를 쉽게 사용할 수 있도록 제공할 수 있도록 iOS SDK를 제공합니다. 
+NUGU SDK는 iOS 환경에서 누구 서비스를 쉽게 사용할 수 있도록 제공할 수 있도록 iOS SDK를 제공합니다. 
 
 ### 언어
 
