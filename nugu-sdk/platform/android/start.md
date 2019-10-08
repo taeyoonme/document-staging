@@ -70,7 +70,7 @@ private val authClient by lazy {
         .redirectUri("{your-redirect-url}")
         .deviceUniqueId("{your-device-uniqueId}")
         .build()
-    NuguOAuth.getInstance(options)
+    NuguOAuth.getClient(options)
 }
 ```
 
@@ -113,7 +113,7 @@ authClient.silentLogin("{refresh-Token}", object : NuguOAuthInterface.OnLoginLis
 1. 인증 정보 처리를 위임할 AuthDelegate를 정의합니다.
 
 ```kotlin
-val authDelegate = NuguOAuth.create()
+val authDelegate = NuguOAuth.getClient()
 ```
 
 2. 음성인식에 사용할 기본 AudioProvider를 생성합니다.   
