@@ -16,7 +16,7 @@
 {% code-tabs-item title="Podfile" %}
 ```ruby
 target 'Your_Application' do
-  pod 'NuguDefaultClient'
+  pod 'NuguClientKit'
   pod 'NuguLoginKit'
 end
 ```
@@ -75,7 +75,7 @@ info.plist 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XC
 
 > 앱 델리게이트 연결
 
-인 앱 브라우저를 통한 인증결과를 NuguLoginKit에서 처리하기 위해 다음과 같이 AppDelegate 클래스에 추가해야 합니다.
+인 앱 브라우저를 통한 인증 결과를 NuguLoginKit에서 처리하기 위해 다음과 같이 AppDelegate 클래스에 추가해야 합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="AppDelegate.swift" %}
@@ -90,7 +90,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 > 인 앱 브라우를 통해 로그인
 
-Step 3에서 생성한 디바이스의 정보를 이용하여 다음과 같이 OAuthManager를 통해 값을 설정한 후에 인 앱 브라우저\(SFSafariViewController\)를 이용한 T-ID 로그인을 시도합니다. 인증절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
+Step 3에서 생성한 디바이스의 정보를 이용하여 다음과 같이 OAuthManager를 통해 값을 설정한 후에 인 앱 브라우저\(SFSafariViewController\)를 이용한 T-ID 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -118,7 +118,7 @@ func login() {
 
 > 로그인 정보 갱신
 
-인 앱 브라우저를 통한 T-ID 로그인이 정상적으로 완료된 후 얻은 Refresh-token이 있다면, 이 후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.
+인 앱 브라우저를 통한 T-ID 로그인이 정상적으로 완료된 후 얻은 Refresh-token이 있다면, 이후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -172,9 +172,9 @@ func setAudioSession() throws {
 
 > NUGU 음성인식 요청
 
-음성인식을 요청하기 위해서는 다음과 같은 Flow를 통해 진행합니다.
+음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. NuguClient 인스턴스를 생성합니다.
+1. NuguClient 인스턴스를 생성합니다. 
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -194,7 +194,7 @@ client.accessToken = "{access-token}"
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-3. NUGU 서버와 연결합니다.
+3. NetworkManager를 통해 NUGU서버와 연결합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}

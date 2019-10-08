@@ -7,7 +7,7 @@
   * [Platform](nugu-sdk/platform/README.md)
     * [iOS](nugu-sdk/platform/ios/README.md)
       * [시작하기](nugu-sdk/platform/ios/start.md)
-      * [구성요소 소개](nugu-sdk/platform/ios/component.md)
+      * [구성요소](nugu-sdk/platform/ios/component.md)
     * [Android](nugu-sdk/platform/android/README.md)
       * [시작하기](nugu-sdk/platform/android/start.md)
       * [구성요소 소개](nugu-sdk/platform/android/intro_components.md)
