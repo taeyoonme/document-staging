@@ -1,8 +1,10 @@
 # 구성요소
 
+## 구성요소 상세
+
 ![](../../../.gitbook/assets/ios-open-sdk-architecture-3.png)
 
-### 구성요소 상세
+### 구성요소
 
 {% hint style="info" %}
 NUGU SDK를 통한 개발을 위해서는 NuguCore, NuguInterface Framework를 필수로 포함해야 합니다.

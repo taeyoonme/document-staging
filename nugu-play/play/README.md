@@ -2,29 +2,41 @@
 
 NUGU스마트홈을 활용해 SmartHomePlay를 제작하면 NUGU 에이전트가 탑재된 다양한 기기에서 음성 인터페이스를 활용하여 스마트홈 기기들을 제어하고 확인할 수 있습니다. 이 문서에서는 NUGU스마트홈을 통해 서비스를 제공하고 싶은 IoT Service Provider에게 규격 및 개발 가이드와 API 레퍼런스, 샘플코드, NUGU SmartHome Playbuilder 사용 가이드 등을 제공합니다. NUGU스마트홈은 계속 개발되고 있으며, 관련 규격들은 지속적으로 업데이트됩니다.
 
-![NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;](../../.gitbook/assets/image%20%2815%29.png)
+![OVERVIEW](../../.gitbook/assets/image%20%2815%29.png)
 
 ## SmartHomePlay 만들기
 
 SmartHomePlay는 스마트홈 관련 기능에 대해 사용자 발화 및 처리로직들이 사전에 정의되어 있는 Prebuilt 유형의 Play입니다. 따라서 SmartHomePlay는 별도로 UtteranceModel 및 Action정의를 하실 필요가 없이 OAUTH 연동 및 SmartHomeBackendProxy 구현만으로 제작할 수 있습니다. SmartHomePlay 역시 NUGU Developers 내 PlayBuilder를 활용해 만들 수 있으며 Play 생성 시 Play 유형을 SmartHome으로 선택해야 합니다. SmartHomePlay를 만들기 위한 순서 및 자세한 내용을 아래를 참조하시기 바랍니다. 
 
-1. NUGU Developers를 통해 PlayBuilder에 접속해주세요.
-2. PlayBuilder에서 우측 하단 "Play 생성"을 선택 해 새로운 Play를 제작합니다. Play유형은 SmartHome으로 선택한 후 Play이름을 입력해야 합니다. Play이름은 PlayBuilder 내에서 사용할 이름입니다. 사용자에게 공개하게 될 Play의 이름은 별도로 등록하게 됩니다.
-3. PlayBuilder를 통해 기본정보를 입력해주세요. 기본정보는 Play이름, Play별칭, 외부 연동 서버\(Backend proxy\)설정, OAuth정보로 구성되어 있습니다.
-   1. Oauth 정보 : SmartHomePlay의 경우 IoT ServiceProvider의 사용자 계정 인증을 NUGU의 사용자 계정과 연동해야 하므로 인증서버 연동이 필수적으로 필요하며 해당 연동은 OAUTH 2.0 규격에 따라 아래 정보가 필요합니다.
-      1. Clinet ID
-      2. Client Secret
-      3. Redirect URI
-      4. Auth URI
-      5. Token Endpoint \(Token URI\)
-      6. Token Refresh URI
-      7. Grant Type
-      8. Scope
-   2. 외부 연동 서버\(backend proxy\) 설정 : NUGU의 사용자 발화체계 및 Action 로직을 IoT Service와 연동해 줄 BackendProxy 서버의 개발이 필수입니다.
-      1. SmartHome BackendProxy는 Discovery와 Control 2개의 역할을 수행합니다. 자세한 내용은 아래 Discovery와 Control을 참조해주세요.
-4. Play의 기본정보 입력을 마친 후 빌드/History 메뉴를 통해 Play빌드를 진행합니다. Play를 빌드한 시점을 기준으로 입력된 정보로 NUGU Developers에서 Play의 등록 및 심사를 진행하실 수 있습니다. 만약 Play의 기본정보가 변경될 경우 새로 빌드하고 이를 NUGU Developers에서 재등록 혹은 업데이트를 진행해야 합니다.
-5. SmartHomePlay의 빌드를 마친 후 NUGU Developers의 관리 &gt; Play등록 메뉴에서 Play등록하기를 통해 Play를 등록 및 심사 요청해야 합니다. Play타입을 Smarthome으로 선택하면 PlayBuilder를 통해 제작한 SmartHomePlay의 리스트를 불러올 수 있습니다. SmartHomePlay의 심사 프로세스는 Custom Play와 동일하지만 Play 심사를 위한 등록 정보는 일부 차이가 있습니다. \(차이 상세 설명\)
-6. SmartHomePlay를 등록한 후 심사대기 및 심사 중 상태일 때 NUGU 클라이언트가 탑재된 기기를 통해 테스트를 진행할 수 있습니다. SmartHomePlay를 제작한 NUGU Developers의 T ID와 동일한 T ID로 NUGU 모바일 앱에 접속해 스마트홈 메뉴에서 신규 기기 등록하기를 선택하면 심사 중인 IoT ServiceProvider의 SmartHomePlay가 보이고 사용자 계정 연동을 통해 스마트홈 기기를 NUGU 앱에 등록해 테스트를 진행할 수 있습니다.
+NUGU Developers를 통해 [PlayBuilder](https://builder.nugu.co.kr/index.html#/playList)에 접속해주세요.
+
+PlayBuilder에서 우측 하단 "Play 생성"을 선택 해 새로운 Play를 제작합니다. Play유형은 SmartHome으로 선택한 후 Play이름을 입력해야 합니다. Play이름은 PlayBuilder 내에서 사용할 이름입니다. 사용자에게 공개하게 될 Play의 이름은 별도로 등록하게 됩니다.
+
+PlayBuilder를 통해 기본정보를 입력해주세요. 기본정보는 Play이름, Play별칭, 외부 연동 서버\(Backend proxy\)설정, OAuth정보로 구성되어 있습니다.
+
+![SmartHome PlayBuilder](../../.gitbook/assets/2019-10-08-5.54.06.png)
+
+{% hint style="info" %}
+Oauth 정보 : SmartHomePlay의 경우 IoT ServiceProvider의 사용자 계정 인증을 NUGU의 사용자 계정과 연동해야 하므로 인증서버 연동이 필수적으로 필요하며 해당 연동은 OAUTH 2.0 규격에 따라 아래 정보가 필요합니다.  
+ 1. Clinet ID  
+ 2. Client Secret  
+ 3. Redirect URI  
+ 4. Auth URI   
+ 5. Token Endpoint \(Token URI\)   
+ 6. Token Refresh URI   
+ 7. Grant Type   
+ 8. Scope
+{% endhint %}
+
+외부 연동 서버\(backend proxy\) 설정 : NUGU의 사용자 발화체계 및 Action 로직을 IoT Service와 연동해 줄 BackendProxy 서버의 개발이 필수입니다.
+
+SmartHome BackendProxy는 Discovery와 Control 2개의 역할을 수행합니다. 자세한 내용은 아래 [Discovery](./#discovery)와 [Control](./#control)을 참조해주세요.
+
+Play의 기본정보 입력을 마친 후 빌드/History 메뉴를 통해 Play빌드를 진행합니다. Play를 빌드한 시점을 기준으로 입력된 정보로 NUGU Developers에서 Play의 등록 및 심사를 진행하실 수 있습니다. 만약 Play의 기본정보가 변경될 경우 새로 빌드하고 이를 NUGU Developers에서 재등록 혹은 업데이트를 진행해야 합니다.
+
+SmartHomePlay의 빌드를 마친 후 NUGU Developers의 관리 &gt; Play등록 메뉴에서 Play등록하기를 통해 Play를 등록 및 심사 요청해야 합니다. Play타입을 Smarthome으로 선택하면 PlayBuilder를 통해 제작한 SmartHomePlay의 리스트를 불러올 수 있습니다. SmartHomePlay의 심사 프로세스는 Custom Play와 동일하지만 Play 심사를 위한 등록 정보는 일부 차이가 있습니다. \(차이 상세 설명\)
+
+SmartHomePlay를 등록한 후 심사대기 및 심사 중 상태일 때 NUGU 클라이언트가 탑재된 기기를 통해 테스트를 진행할 수 있습니다. SmartHomePlay를 제작한 NUGU Developers의 T ID와 동일한 T ID로 NUGU 모바일 앱에 접속해 스마트홈 메뉴에서 신규 기기 등록하기를 선택하면 심사 중인 IoT ServiceProvider의 SmartHomePlay가 보이고 사용자 계정 연동을 통해 스마트홈 기기를 NUGU 앱에 등록해 테스트를 진행할 수 있습니다.
 
 {% hint style="info" %}
 Key Terms
@@ -137,4 +149,8 @@ Control Response 예시
     "parameters": {} <-- directive 마다 필요한 property 채워서 응답.
 }
 ```
+
+
+
+
 
