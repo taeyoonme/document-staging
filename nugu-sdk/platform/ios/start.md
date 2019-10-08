@@ -148,7 +148,7 @@ func refresh() {
 
 ### Step 5: NUGU 서비스 사용하기
 
-> Info.plist 파일에 마이크 권한 문구 추가
+> 마이크 권한 획득
 
 NUGU 서비스는 음성인식을 위하여 마이크 권한이 필요합니다. 마이크 권한 문구를 Info.plist 파일에 추가합니다.
 
@@ -157,6 +157,16 @@ NUGU 서비스는 음성인식을 위하여 마이크 권한이 필요합니다.
 ```markup
 <key>NSMicrophoneUsageDescription</key>
 <string>For speech recognition</string>
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+음성명령을 하기 전에 마이크 권한을 획득해야 합니다.
+
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+AVAudioSession.sharedInstance().requestRecordPermission { hasPermission in }
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
