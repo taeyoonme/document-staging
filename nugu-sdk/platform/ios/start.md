@@ -46,7 +46,7 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Using OAuth 2.0](../../authentication/using-oauth-2.0.md)에서 확인이 가능합니다.
+더 자세한 내용은 [Using OAuth 2.0]()에서 확인이 가능합니다.
 {% endhint %}
 
 > NuguLoginKit 불러오기
