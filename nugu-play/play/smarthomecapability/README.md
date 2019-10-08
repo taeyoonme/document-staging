@@ -2,19 +2,295 @@
 
 SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규격을 의미합니다. 예를 들어 조명의 전원제어 기능을 지원하기 위해서는 PowerControl Interface를 사용할 수 있고, 조명의 밝기제어를 지원하기 위해서는 BrightnessControl Interface를 활용할 수 있습니다. 아래는 NUGU스마트홈이 지원하는 SmartHomeCapability 리스트입니다. Play builder를 통해 SmartHome play를 생성할 때 연동하고자 하는 스마트홈 기기가 지원하는 기능에 따라 SmartHomeCapability를 선택해 사용할 수 있습니다. SmartHomePlay를 제작 시 별도로 사용자 발화문을 정의할 필요가 없으며, SmartHome Device의 종류에 따라 지원하는 Capability가 상이할 수 있습니다. SmartHomeCapability는 1개 이상의 SmartHomeDirective를 보유하고 있고, SmartHomeCapability를 지원할 경우 해당 SmartHomeCapability가 보유하고 있는 모든 SmartHomeDirective를 지원해야 합니다. 하나의 기기가 복수개의 SmartHomeCapability를 지원할 수 있습니다.
 
-| SmartHomeCapability | Description | Supported SmartHomeDevice |
-| :--- | :--- | :--- |
-|  [AirflowControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668001) | NUGU 스마트홈에 등록된 SmartHomeDevice의 풍량제어방식에 대한 설명입니다. 특정 풍량을 설정하거나 풍량 단계를 상향, 하향 조정하는 등의 Directive들로 구성되어 있으며 팬 및 풍량, 풍속을 제어할 수 있는 기능이 있는 모든 SmartHomeDevice를 지원합니다. |  |
-|  [AirQualityControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668000) | NUGU 스마트홈에 등록된 SmartHomeDevice에서 주변 공기 상태를 측정하는 방식에 대한 설명입니다. 공기질은 1부터 10단계까지의 단계로 응답할 수 있으며 숫자가 작을수록 공기질이 좋은 상태입니다. |  |
-|  [BrightnessControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668002) | NUGU 스마트홈에 등록된 SmartHomeDevice의 밝기제어방식에 대한 설명입니다. 스마트홈 기기의 밝기는 1부터 100단계로 제어할 수 있습니다. |  |
-|  [ChargeControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668003) | NUGU스마트홈에 등록된 SmartHomeDevice의 충전관련 기능들에 대한 설명입니다. 충전 기능이 있는 모든 SmartHomeDevice를 지원합니다. |  |
-|  [ColorControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668004) | NUGU 스마트홈에 등록된 SmartHomeDevice의 설정된 색 제어방식에 대한 설명입니다. 스마트 조명 등의 색상 변경을 지원합니다. |  |
-|  [DeviceTemperatureControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668005) | NUGU스마트홈에 등록된 SmartHomeDevice 자체의 온도제어방식에 대한 설명입니다. TemperatureControl Interface가 주변 온도에 대한 제어 명령이라면 DeviceTemperatureControl Interface는 해당 SmartHomeDevice 자체의 온도 설정에 대한 명령으로 구성되어 있습니다. |  |
-|  [HumidityControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668006) | NUGU스마트홈에 등록된 SmartHomeDevice의 습도제어방식에 대한 설명입니다. 제어하고자 하는 습도는 해당 공간의 습도 비율로 %단위로 설정하며 습도를 제어하는 기능을 가진 SmartHomeDevice들을 지원합니다. |  |
-|  [ModeControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668007) | NUGU 스마트홈에 등록된 SmartHomeDevice의 모드설정방식에 대한 설명입니다. NUGU스마트홈에는 사전에 정의된 모드명들이 있으며 다양한 표현을 정규화하여 정의된 모드명으로 제어 요청을 보냅니다. IoT ServiceProvider는 제어 대상인 스마트홈 기기의 특성과 모드명으로 적합한 기능을 제어하게 됩니다. |  |
-|  [PowerCheck](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668008) | NUGU스마트홈에 등록된 SmartHomeDevice의 전력량관련 조회방식에 대한 설명입니다. 스마트홈 기기의 사용전력량, 목표전력량 등의 조회 기능을 지원합니다. |  |
-|  [PowerControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668009) | NUGU 스마트홈에 등록된 SmartHomeDevice의 전원제어방식에 대한 설명입니다. 전원을 켜고 끄거나 동작을 시작, 중지할 수 있는 모든 종류의 SmartHomeDevice를 지원합니다. |  |
-|  [SetTimeControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668010) | NUGU 스마트홈에 등록된 SmartHomeDevice의 제어시간설정방식에 대한 설명입니다. 스마트홈 기기의 종료예약설정 등을 관리할 수 있습니다. |  |
-|  [StateCheck](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668011) | NUGU 스마트홈에 등록된 SmartHomeDevice의 상태조회방식에 대한 설명입니다. |  |
-|  [TemperatureControl](https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668012) | NUGU 스마트홈에 등록된 SmartHomeDevice의 온도제어방식에 대한 설명입니다. TemperatureControl Interface는 주변 온도를 특정 온도로 설정하기 위한 스마트홈 기기의 제어 명령입니다. |  |
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">SmartHomeCapability</th>
+      <th style="text-align:left">Description</th>
+      <th style="text-align:left">Supported SmartHomeDevice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668001">AirflowControl</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xD48D;&#xB7C9;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xD2B9;&#xC815;
+        &#xD48D;&#xB7C9;&#xC744; &#xC124;&#xC815;&#xD558;&#xAC70;&#xB098; &#xD48D;&#xB7C9;
+        &#xB2E8;&#xACC4;&#xB97C; &#xC0C1;&#xD5A5;, &#xD558;&#xD5A5; &#xC870;&#xC815;&#xD558;&#xB294;
+        &#xB4F1;&#xC758; Directive&#xB4E4;&#xB85C; &#xAD6C;&#xC131;&#xB418;&#xC5B4;
+        &#xC788;&#xC73C;&#xBA70; &#xD32C; &#xBC0F; &#xD48D;&#xB7C9;, &#xD48D;&#xC18D;&#xC744;
+        &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xB294; &#xAE30;&#xB2A5;&#xC774;
+        &#xC788;&#xB294; &#xBAA8;&#xB4E0; SmartHomeDevice&#xB97C; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
+      <td
+      style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        </p>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668000">AirQualityControl</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC5D0;&#xC11C; &#xC8FC;&#xBCC0; &#xACF5;&#xAE30; &#xC0C1;&#xD0DC;&#xB97C;
+        &#xCE21;&#xC815;&#xD558;&#xB294; &#xBC29;&#xC2DD;&#xC5D0; &#xB300;&#xD55C;
+        &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xACF5;&#xAE30;&#xC9C8;&#xC740;
+        1&#xBD80;&#xD130; 10&#xB2E8;&#xACC4;&#xAE4C;&#xC9C0;&#xC758; &#xB2E8;&#xACC4;&#xB85C;
+        &#xC751;&#xB2F5;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC22B;&#xC790;&#xAC00;
+        &#xC791;&#xC744;&#xC218;&#xB85D; &#xACF5;&#xAE30;&#xC9C8;&#xC774; &#xC88B;&#xC740;
+        &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-19.md">&#xACF5;&#xAE30;&#xC13C;&#xC11C;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668002">BrightnessControl</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xBC1D;&#xAE30;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;
+        &#xAE30;&#xAE30;&#xC758; &#xBC1D;&#xAE30;&#xB294; 1&#xBD80;&#xD130; 100&#xB2E8;&#xACC4;&#xB85C;
+        &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+      <td
+      style="text-align:left"><a href="../smarthomedevicetype/undefined-1.md">&#xC870;&#xBA85;</a>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668003">ChargeControl</a>
+      </td>
+      <td style="text-align:left">NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xCDA9;&#xC804;&#xAD00;&#xB828; &#xAE30;&#xB2A5;&#xB4E4;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xCDA9;&#xC804;
+        &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xB294; &#xBAA8;&#xB4E0; SmartHomeDevice&#xB97C;
+        &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left"><a href="../smarthomedevicetype/undefined-16.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668004">ColorControl</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xC124;&#xC815;&#xB41C; &#xC0C9; &#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xC2A4;&#xB9C8;&#xD2B8;
+        &#xC870;&#xBA85; &#xB4F1;&#xC758; &#xC0C9;&#xC0C1; &#xBCC0;&#xACBD;&#xC744;
+        &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left"><a href="../smarthomedevicetype/undefined-1.md">&#xC870;&#xBA85;</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668005">DeviceTemperatureControl</a>
+      </td>
+      <td style="text-align:left">NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice &#xC790;&#xCCB4;&#xC758; &#xC628;&#xB3C4;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. TemperatureControl
+        Interface&#xAC00; &#xC8FC;&#xBCC0; &#xC628;&#xB3C4;&#xC5D0; &#xB300;&#xD55C;
+        &#xC81C;&#xC5B4; &#xBA85;&#xB839;&#xC774;&#xB77C;&#xBA74; DeviceTemperatureControl
+        Interface&#xB294; &#xD574;&#xB2F9; SmartHomeDevice &#xC790;&#xCCB4;&#xC758;
+        &#xC628;&#xB3C4; &#xC124;&#xC815;&#xC5D0; &#xB300;&#xD55C; &#xBA85;&#xB839;&#xC73C;&#xB85C;
+        &#xAD6C;&#xC131;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+      <td
+      style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-17.md">&#xB0C9;&#xC7A5;&#xACE0;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-5.md">&#xC624;&#xBE10;</a>
+        </p>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668006">HumidityControl</a>
+      </td>
+      <td style="text-align:left">NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xC2B5;&#xB3C4;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xC81C;&#xC5B4;&#xD558;&#xACE0;&#xC790;
+        &#xD558;&#xB294; &#xC2B5;&#xB3C4;&#xB294; &#xD574;&#xB2F9; &#xACF5;&#xAC04;&#xC758;
+        &#xC2B5;&#xB3C4; &#xBE44;&#xC728;&#xB85C; %&#xB2E8;&#xC704;&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA70;
+        &#xC2B5;&#xB3C4;&#xB97C; &#xC81C;&#xC5B4;&#xD558;&#xB294; &#xAE30;&#xB2A5;&#xC744;
+        &#xAC00;&#xC9C4; SmartHomeDevice&#xB4E4;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
+      <td
+      style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        </p>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668007">ModeControl</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xBAA8;&#xB4DC;&#xC124;&#xC815;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0;&#xB294;
+        &#xC0AC;&#xC804;&#xC5D0; &#xC815;&#xC758;&#xB41C; &#xBAA8;&#xB4DC;&#xBA85;&#xB4E4;&#xC774;
+        &#xC788;&#xC73C;&#xBA70; &#xB2E4;&#xC591;&#xD55C; &#xD45C;&#xD604;&#xC744;
+        &#xC815;&#xADDC;&#xD654;&#xD558;&#xC5EC; &#xC815;&#xC758;&#xB41C; &#xBAA8;&#xB4DC;&#xBA85;&#xC73C;&#xB85C;
+        &#xC81C;&#xC5B4; &#xC694;&#xCCAD;&#xC744; &#xBCF4;&#xB0C5;&#xB2C8;&#xB2E4;.
+        IoT ServiceProvider&#xB294; &#xC81C;&#xC5B4; &#xB300;&#xC0C1;&#xC778; &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;
+        &#xAE30;&#xAE30;&#xC758; &#xD2B9;&#xC131;&#xACFC; &#xBAA8;&#xB4DC;&#xBA85;&#xC73C;&#xB85C;
+        &#xC801;&#xD569;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xC5B4;&#xD558;&#xAC8C;
+        &#xB429;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-17.md">&#xB0C9;&#xC7A5;&#xACE0;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-15.md">&#xBCF4;&#xC77C;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668008">PowerCheck</a>
+      </td>
+      <td style="text-align:left">NUGU&#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xC804;&#xB825;&#xB7C9;&#xAD00;&#xB828; &#xC870;&#xD68C;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;
+        &#xAE30;&#xAE30;&#xC758; &#xC0AC;&#xC6A9;&#xC804;&#xB825;&#xB7C9;, &#xBAA9;&#xD45C;&#xC804;&#xB825;&#xB7C9;
+        &#xB4F1;&#xC758; &#xC870;&#xD68C; &#xAE30;&#xB2A5;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
+      <td
+      style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-9.md">&#xC5D0;&#xB108;&#xC9C0;&#xBBF8;&#xD130;</a>
+        </p>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668009">PowerControl</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xC804;&#xC6D0;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xC804;&#xC6D0;&#xC744;
+        &#xCF1C;&#xACE0; &#xB044;&#xAC70;&#xB098; &#xB3D9;&#xC791;&#xC744; &#xC2DC;&#xC791;,
+        &#xC911;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xB294; &#xBAA8;&#xB4E0; &#xC885;&#xB958;&#xC758;
+        SmartHomeDevice&#xB97C; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
+      <td
+      style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined.md">&#xAC00;&#xC2A4;&#xCC28;&#xB2E8;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-20.md">&#xAC74;&#xC870;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-16.md">&#xB85C;&#xBD07;&#xCCAD;&#xC18C;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-15.md">&#xBCF4;&#xC77C;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-13.md">&#xC138;&#xD0C1;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-12.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xC2A4;&#xC704;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-10.md">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-5.md">&#xC624;&#xBE10;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-4.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-1.md">&#xC870;&#xBA85;</a>
+        </p>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668010">SetTimeControl</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xC81C;&#xC5B4;&#xC2DC;&#xAC04;&#xC124;&#xC815;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;
+        &#xAE30;&#xAE30;&#xC758; &#xC885;&#xB8CC;&#xC608;&#xC57D;&#xC124;&#xC815;
+        &#xB4F1;&#xC744; &#xAD00;&#xB9AC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+      <td
+      style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-21.md">&#xAC00;&#xC2B5;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-18.md">&#xACF5;&#xAE30;&#xCCAD;&#xC815;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-15.md">&#xBCF4;&#xC77C;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-14.md">&#xC120;&#xD48D;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-11.md">&#xC2A4;&#xB9C8;&#xD2B8;&#xD50C;&#xB7EC;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-8.md">&#xC5D0;&#xC5B4;&#xC6CC;&#xC154;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-2.md">&#xC81C;&#xC2B5;&#xAE30;</a>
+        </p>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668011">StateCheck</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xC0C1;&#xD0DC;&#xC870;&#xD68C;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-10.md">&#xC2DD;&#xAE30;&#xC138;&#xCC99;&#xAE30;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-6.md">&#xC5F4;&#xB9BC;&#xAC10;&#xC9C0;&#xC13C;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-5.md">&#xC624;&#xBE10;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-4.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;<br /></a>
+          <a
+          href="../smarthomedevicetype/undefined-3.md">&#xC815;&#xC218;&#xAE30;</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"> <a href="https://tde.sktelecom.com/wiki/pages/viewpage.action?pageId=249668012">TemperatureControl</a>
+      </td>
+      <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
+        SmartHomeDevice&#xC758; &#xC628;&#xB3C4;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
+        &#xB300;&#xD55C; &#xC124;&#xBA85;&#xC785;&#xB2C8;&#xB2E4;. TemperatureControl
+        Interface&#xB294; &#xC8FC;&#xBCC0; &#xC628;&#xB3C4;&#xB97C; &#xD2B9;&#xC815;
+        &#xC628;&#xB3C4;&#xB85C; &#xC124;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD55C;
+        &#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30;&#xC758; &#xC81C;&#xC5B4;
+        &#xBA85;&#xB839;&#xC785;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left">
+        <p><a href="../smarthomedevicetype/undefined-15.md">&#xBCF4;&#xC77C;</a>
+        </p>
+        <p><a href="../smarthomedevicetype/undefined-7.md">&#xC5D0;&#xC5B4;&#xCEE8;</a>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
