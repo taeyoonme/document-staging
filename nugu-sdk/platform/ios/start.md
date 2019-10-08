@@ -198,7 +198,7 @@ import NuguClientKit
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
 ```swift
-let client = NuguClient.Builder.build()
+let client = NuguClient.Builder().build()
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
