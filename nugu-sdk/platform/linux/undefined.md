@@ -4,42 +4,15 @@
 
 Linux SDK는 크게 아래와 같이 구성되어 있습니다.
 
-```text
-/------------------------------------\
-|                                    |
-|             Application            |
-|                                    |
-\------------------------------------/
+![](../../../.gitbook/assets/open-sdk-architecture-linux.png)
 
-                                       ---\
-/------------------------------------\    |
-|                                    |    |
-|            NuguClientKit           |    |
-|                                    |    |
-\------------------------------------/    |
-                                          | C/C++
-/-----------------\     /------------\    |
-|                 |     |            |    |
-|  NuguInterface  |     |  NuguCore  |    |
-|                 |     |            |    |
-\-----------------/     \------------/    |
-                                       ---/
-
-/------------------------------------\
-|                                    |
-|              Plug-in               +----- C
-|                                    |
-|    GStreamer PortAudio Opus ...    |
-\------------------------------------/
-```
-
-Application 개발자를 위해 `NuguClientKit`, `NuguInterface`, `NuguCore` 모듈을 제공하고 있고, 디바이스 특성에 맞게 장치 연동 부분을 쉽게 개발할 수 있도록 Plug-in 개발 모듈을 제공하고 있습니다.
+Application 개발자를 위해 `NuguClientKit`, `NuguInterface`, `NuguCore` 모듈을 제공하고 있고, 디바이스 특성에 맞게 장치 연동 부분을 쉽게 개발할 수 있도록 `Plug-in` 개발 모듈을 제공하고 있습니다.
 
 | 모듈 | 설명 |
 | :--- | :--- |
-| `NuguClientKit` | TODO |
-| `NuguInterface` | TODO |
-| `NuguCore` | TODO |
+| `NuguClientKit` | NUGU 서비스를 쉽게 개발할 수 있는 API를 제공합니다. |
+| `NuguInterface` | Capability를 쉽게 컨트롤할 수 있는 API를 제공합니다. |
+| `NuguCore` | NUGU 서비스 개발에 필요한 구성요소들을 제공합니다. |
 
 ## Dependency
 
