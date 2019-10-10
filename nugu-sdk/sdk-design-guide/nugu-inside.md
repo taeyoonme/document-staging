@@ -7,7 +7,7 @@ NUGU inside 마크는 NUGU의 기술이 탑재되었음을 직접적으로 알�
 
 ![](../../.gitbook/assets/inside_mark.png)
 
-최소 공간 규정은 마크의 NUGU 심의 너비만큼의 여백을 두고 적용합니다.  
+최소 공간 규정은 마크의 NUGU 심볼의 너비만큼의 여백을 두고 적용합니다.  
 마크 최소 크기는 인쇄물일 때 1.2 밀리미터, 화면에 표시할 경우 30 픽셀의 높이를 준수합니다.
 
 ![](../../.gitbook/assets/inside_guide.png)
