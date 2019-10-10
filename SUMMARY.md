@@ -126,7 +126,7 @@
     * [Voice Chrome](nugu-sdk/sdk-design-guide/voice-chrome.md)
     * [NUGU Inside](nugu-sdk/sdk-design-guide/nugu-inside.md)
 * [관련정보](rel-information/README.md)
-  * [NUGU 대화 상태](rel-information/status.md)
+  * [NUGU Agent States](rel-information/status.md)
   * [Layer 정책](rel-information/layer.md)
   * [Icon 등록](rel-information/register-icon.md)
   * [발화 옵션에서 UNIT 태그로 지원하는 단위](rel-information/list-of-unit-tags-supported-by-utterance-options.md)
