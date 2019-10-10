@@ -72,284 +72,157 @@ Service Provider에 공통 exception으로 처리하고자 하는 경우 사용�
 
 Device-level error 발생 시에는 error 원인에 맞는 error code를 응답해야 합니다. 이 때 error code에 따라 함께 응답해야 하는 부가정보\(error property\)가 있는 경우도 있습니다. 아래 NUGU 스마트홈을 통해 제공할 수 있는 error case별 code와 error property를 참조하시기 바랍니다.
 
+| Error code | Error property | description |
+| :--- | :--- | :--- |
+
+
+| NotExistDeviceInSmartHomeBackendProxy |  | 제어 대상 SmartHomeDevice가 SmartHomdeBackendProxy에 존재하지 않는 경우에 대한 에러입니다. NUGU 앱을 통해 등록한 이후 원래 IoT Service에서 삭제한 경우에 발생합니다. |
+| :--- | :--- | :--- |
+
+
+| NoConnectionDevice |  | 해당 SmartHomeDevice의 네트워크 연결 실패에 대한 에러입니다. |
+| :--- | :--- | :--- |
+
+
+| DeviceTurnedOff |  | SmartHomeDevice의 전원이 꺼져 있어 제어가 불가한 상태인 경우의 에러입니다. 해당 제어 명령이 전원을 켤 경우 수행할 수 있다면 이 에러로 응답해야 합니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyTurnOn |  | 해당 SmartHomeDevice가 이미 켜져 있는데 켜달라는 제어 요청을 받은 경우입니다. PowerControl Capability, TurnOn Directive의 제어 명령 시 발생 가능한 에러입니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyTurnOff |  | 해당 SmartHomeDevice가 이미 꺼져 있는데 꺼달라는 제어 요청을 받은 경우입니다. PowerControl Capability, TurnOff Directive의 제어 명령 시 발생 가능 에러입니다. |
+| :--- | :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">Error code</th>
-      <th style="text-align:left">Error property</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">NotExistDeviceInSmartHomeBackendProxy</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC81C;&#xC5B4; &#xB300;&#xC0C1; SmartHomeDevice&#xAC00; SmartHomdeBackendProxy&#xC5D0;
-        &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;
-        &#xB300;&#xD55C; &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;. NUGU &#xC571;&#xC744;
-        &#xD1B5;&#xD574; &#xB4F1;&#xB85D;&#xD55C; &#xC774;&#xD6C4; &#xC6D0;&#xB798;
-        IoT Service&#xC5D0;&#xC11C; &#xC0AD;&#xC81C;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0;
-        &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NoConnectionDevice</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD574;&#xB2F9; SmartHomeDevice&#xC758; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;
-        &#xC5F0;&#xACB0; &#xC2E4;&#xD328;&#xC5D0; &#xB300;&#xD55C; &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">DeviceTurnedOff</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC758; &#xC804;&#xC6D0;&#xC774; &#xAEBC;&#xC838; &#xC788;&#xC5B4;
-        &#xC81C;&#xC5B4;&#xAC00; &#xBD88;&#xAC00;&#xD55C; &#xC0C1;&#xD0DC;&#xC778;
-        &#xACBD;&#xC6B0;&#xC758; &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;. &#xD574;&#xB2F9;
-        &#xC81C;&#xC5B4; &#xBA85;&#xB839;&#xC774; &#xC804;&#xC6D0;&#xC744; &#xCF24;
-        &#xACBD;&#xC6B0; &#xC218;&#xD589;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xBA74;
-        &#xC774; &#xC5D0;&#xB7EC;&#xB85C; &#xC751;&#xB2F5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyTurnOn</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC774;&#xBBF8; &#xCF1C;&#xC838;
-        &#xC788;&#xB294;&#xB370; &#xCF1C;&#xB2EC;&#xB77C;&#xB294; &#xC81C;&#xC5B4;
-        &#xC694;&#xCCAD;&#xC744; &#xBC1B;&#xC740; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.
-        PowerControl Capability, TurnOn Directive&#xC758; &#xC81C;&#xC5B4; &#xBA85;&#xB839;
-        &#xC2DC; &#xBC1C;&#xC0DD; &#xAC00;&#xB2A5;&#xD55C; &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyTurnOff</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC774;&#xBBF8; &#xAEBC;&#xC838;
-        &#xC788;&#xB294;&#xB370; &#xAEBC;&#xB2EC;&#xB77C;&#xB294; &#xC81C;&#xC5B4;
-        &#xC694;&#xCCAD;&#xC744; &#xBC1B;&#xC740; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.
-        PowerControl Capability, TurnOff Directive&#xC758; &#xC81C;&#xC5B4; &#xBA85;&#xB839;
-        &#xC2DC; &#xBC1C;&#xC0DD; &#xAC00;&#xB2A5; &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">TemperatureOutofRange</td>
-      <td style="text-align:left">
+      <th style="text-align:left">TemperatureOutofRange</th>
+      <th style="text-align:left">
         <p>minTemperature</p>
         <p>maxTemperature</p>
-      </td>
-      <td style="text-align:left">SmartHomeDevice&#xC5D0; &#xC124;&#xC815;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294;
+      </th>
+      <th style="text-align:left">SmartHomeDevice&#xC5D0; &#xC124;&#xC815;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294;
         &#xC628;&#xB3C4;&#xAC00; &#xD574;&#xB2F9; SmartHomeDevice&#xC758; &#xC81C;&#xC5B4;
         &#xBC94;&#xC704; &#xBC16;&#xC77C; &#xACBD;&#xC6B0;&#xC5D0; &#xB300;&#xD55C;
         &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;. &#xC81C;&#xC5B4; &#xAC00;&#xB2A5;&#xD55C;
         &#xCD5C;&#xC18C;/&#xCD5C;&#xB300; &#xC628;&#xB3C4; &#xC124;&#xC815; &#xBC94;&#xC704;&#xB97C;
-        &#xD568;&#xAED8; &#xC751;&#xB2F5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
+        &#xD568;&#xAED8; &#xC751;&#xB2F5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table>| AlreadyAtMaxTemp |  | SmartHomeDevice의 설정 온도를 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 온도로 설정되어 있는 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyAtMinTemp |  | SmartHomeDevice의 설정 온도를 내리려고 했을 때 해당 SmartHomeDevice가 이미 최저 온도로 설정되어 있는 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| NotAvailableSetAirflow |  | 해당 SmartHomeDevice가 풍량 조절 불가한 모델일 경우입니다. 동일한 SmartHomeDeviceType 중 풍량 제어가 가능한 모델과 가능하지 않은 모델을 함께 제공하는 IoT ServiceProvider일 경우 해당 응답을 사용할 수 있습니다. |
+| :--- | :--- | :--- |
+
+
+| UnsupportedAirflow |  | 해당 SmartHomeDevice가 지원하지 않는 풍량에 대해 제어 발화가 인입되었을 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyAtMaxAirflow |  | SmartHomeDevice의 설정 풍량을 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 풍량으로 설정되어 있는 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyAtMinAirflow |  | SmartHomeDevice의 설정 풍량을 내리려고 했을 때 해당 SmartHomeDevice가 이미 최저 풍량으로 설정되어 있는 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| UnsupportedMode |  | 해당 SmartHomeDevice가 지원하지 않는 모드에 대해 제어 발화가 인입되었을 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| NotInAvailableMode | mode | SmartHomeDevice가 취소할 수 없는 모드를 취소요청한 경우입니다. 어떤 SmartHomeDevice와 특정 모델들은 다른 모드를 설정해야만 현재 모드를 해제할 수 있는 경우가 있습니다. 이 에러는 그런 모드를 갖는 SmartHomeDevice에 대해 모드 취소 제어가 인입될 경우를 지원합니다. |
+| :--- | :--- | :--- |
+
+
+| SetTimeOutofRange |  | SmartHomeDevice에 종료예약 발화시간이 해당 기기의 지원범위 밖일 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| NotExistSetEndTime |  | SmartHomeDevice에 종료예약취소 요청이 인입되었으나 해당 기기에 설정된 종료예약이 없는 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| UnsupportedSetEndTime |  | 사용자가 요청한 종료예약시간이 미지원하는 시간 단위일 경우\(시간 분단위 등\)입니다. 어떤 스마트홈 기기 및 모델들은 특정 유형으로만 종료예약을 설정할 수 있습니다. 이 에러는 그런 스마트홈 기기 및 모델을 지원합니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyCharging |  | 스마트홈 기기에 충전 요청이 인입되었으나 해당 스마트홈 기기가 이미 충전 중인 상태일 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyStarting |  | 스마트홈 기기에 동작 명령을 내렸을 경우 해당 스마트홈 기기가 이미 동작 상태인 경우입니다. PowerControl Capability의 TurnOn Directive를 동작으로 사용하는 경우를 지원합니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyStopped |  | 스마트홈 기기에 동작 중지 명령을 내렸을 경우 해당 스마트홈 기기가 이미 중지 상태인 경우입니다. PowerControl Capability의 TurnOff Directive를 동작 중지로 사용하는 경우를 지원합니다. |
+| :--- | :--- | :--- |
+
+
+| NotExistDailyPowerTarget |  | 스마트홈 기기 목표전력사용량 조회 시 해당 스마트홈 기기에 설정된 1일 목표전력사용량이 없는 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| NotSupportBrightnessControl |  | 스마트홈 조명이 밝기 조절 불가한 모델일 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| NotSupportChangeColor |  | 스마트홈 조명이 색상 변경 불가한 모델일 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| UnsupportedColorType |  | 스마트홈 조명이 지원하지 않는 색상 타입인 경우입니다. |
+| :--- | :--- | :--- |
+
+
+<table>
+  <thead>
     <tr>
-      <td style="text-align:left">AlreadyAtMaxTemp</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC758; &#xC124;&#xC815; &#xC628;&#xB3C4;&#xB97C; &#xC62C;&#xB9AC;&#xB824;&#xACE0;
-        &#xD588;&#xC744; &#xB54C; &#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC774;&#xBBF8;
-        &#xCD5C;&#xACE0; &#xC628;&#xB3C4;&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4;
-        &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyAtMinTemp</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC758; &#xC124;&#xC815; &#xC628;&#xB3C4;&#xB97C; &#xB0B4;&#xB9AC;&#xB824;&#xACE0;
-        &#xD588;&#xC744; &#xB54C; &#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC774;&#xBBF8;
-        &#xCD5C;&#xC800; &#xC628;&#xB3C4;&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4;
-        &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NotAvailableSetAirflow</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xD48D;&#xB7C9; &#xC870;&#xC808;
-        &#xBD88;&#xAC00;&#xD55C; &#xBAA8;&#xB378;&#xC77C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.
-        &#xB3D9;&#xC77C;&#xD55C; SmartHomeDeviceType &#xC911; &#xD48D;&#xB7C9;
-        &#xC81C;&#xC5B4;&#xAC00; &#xAC00;&#xB2A5;&#xD55C; &#xBAA8;&#xB378;&#xACFC;
-        &#xAC00;&#xB2A5;&#xD558;&#xC9C0; &#xC54A;&#xC740; &#xBAA8;&#xB378;&#xC744;
-        &#xD568;&#xAED8; &#xC81C;&#xACF5;&#xD558;&#xB294; IoT ServiceProvider&#xC77C;
-        &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xC751;&#xB2F5;&#xC744; &#xC0AC;&#xC6A9;&#xD560;
-        &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">UnsupportedAirflow</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0;
-        &#xC54A;&#xB294; &#xD48D;&#xB7C9;&#xC5D0; &#xB300;&#xD574; &#xC81C;&#xC5B4;
-        &#xBC1C;&#xD654;&#xAC00; &#xC778;&#xC785;&#xB418;&#xC5C8;&#xC744; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyAtMaxAirflow</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC758; &#xC124;&#xC815; &#xD48D;&#xB7C9;&#xC744; &#xC62C;&#xB9AC;&#xB824;&#xACE0;
-        &#xD588;&#xC744; &#xB54C; &#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC774;&#xBBF8;
-        &#xCD5C;&#xACE0; &#xD48D;&#xB7C9;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4;
-        &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyAtMinAirflow</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC758; &#xC124;&#xC815; &#xD48D;&#xB7C9;&#xC744; &#xB0B4;&#xB9AC;&#xB824;&#xACE0;
-        &#xD588;&#xC744; &#xB54C; &#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC774;&#xBBF8;
-        &#xCD5C;&#xC800; &#xD48D;&#xB7C9;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4;
-        &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">UnsupportedMode</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0;
-        &#xC54A;&#xB294; &#xBAA8;&#xB4DC;&#xC5D0; &#xB300;&#xD574; &#xC81C;&#xC5B4;
-        &#xBC1C;&#xD654;&#xAC00; &#xC778;&#xC785;&#xB418;&#xC5C8;&#xC744; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NotInAvailableMode</td>
-      <td style="text-align:left">mode</td>
-      <td style="text-align:left">SmartHomeDevice&#xAC00; &#xCDE8;&#xC18C;&#xD560; &#xC218; &#xC5C6;&#xB294;
-        &#xBAA8;&#xB4DC;&#xB97C; &#xCDE8;&#xC18C;&#xC694;&#xCCAD;&#xD55C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.
-        &#xC5B4;&#xB5A4; SmartHomeDevice&#xC640; &#xD2B9;&#xC815; &#xBAA8;&#xB378;&#xB4E4;&#xC740;
-        &#xB2E4;&#xB978; &#xBAA8;&#xB4DC;&#xB97C; &#xC124;&#xC815;&#xD574;&#xC57C;&#xB9CC;
-        &#xD604;&#xC7AC; &#xBAA8;&#xB4DC;&#xB97C; &#xD574;&#xC81C;&#xD560; &#xC218;
-        &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-        &#xC774; &#xC5D0;&#xB7EC;&#xB294; &#xADF8;&#xB7F0; &#xBAA8;&#xB4DC;&#xB97C;
-        &#xAC16;&#xB294; SmartHomeDevice&#xC5D0; &#xB300;&#xD574; &#xBAA8;&#xB4DC;
-        &#xCDE8;&#xC18C; &#xC81C;&#xC5B4;&#xAC00; &#xC778;&#xC785;&#xB420; &#xACBD;&#xC6B0;&#xB97C;
-        &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SetTimeOutofRange</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC5D0; &#xC885;&#xB8CC;&#xC608;&#xC57D; &#xBC1C;&#xD654;&#xC2DC;&#xAC04;&#xC774;
-        &#xD574;&#xB2F9; &#xAE30;&#xAE30;&#xC758; &#xC9C0;&#xC6D0;&#xBC94;&#xC704;
-        &#xBC16;&#xC77C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NotExistSetEndTime</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC5D0; &#xC885;&#xB8CC;&#xC608;&#xC57D;&#xCDE8;&#xC18C;
-        &#xC694;&#xCCAD;&#xC774; &#xC778;&#xC785;&#xB418;&#xC5C8;&#xC73C;&#xB098;
-        &#xD574;&#xB2F9; &#xAE30;&#xAE30;&#xC5D0; &#xC124;&#xC815;&#xB41C; &#xC885;&#xB8CC;&#xC608;&#xC57D;&#xC774;
-        &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">UnsupportedSetEndTime</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC694;&#xCCAD;&#xD55C; &#xC885;&#xB8CC;&#xC608;&#xC57D;&#xC2DC;&#xAC04;&#xC774;
-        &#xBBF8;&#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xC2DC;&#xAC04; &#xB2E8;&#xC704;&#xC77C;
-        &#xACBD;&#xC6B0;(&#xC2DC;&#xAC04; &#xBD84;&#xB2E8;&#xC704; &#xB4F1;)&#xC785;&#xB2C8;&#xB2E4;.
-        &#xC5B4;&#xB5A4; &#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30; &#xBC0F;
-        &#xBAA8;&#xB378;&#xB4E4;&#xC740; &#xD2B9;&#xC815; &#xC720;&#xD615;&#xC73C;&#xB85C;&#xB9CC;
-        &#xC885;&#xB8CC;&#xC608;&#xC57D;&#xC744; &#xC124;&#xC815;&#xD560; &#xC218;
-        &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xC5D0;&#xB7EC;&#xB294; &#xADF8;&#xB7F0;
-        &#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30; &#xBC0F; &#xBAA8;&#xB378;&#xC744;
-        &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyCharging</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30;&#xC5D0; &#xCDA9;&#xC804;
-        &#xC694;&#xCCAD;&#xC774; &#xC778;&#xC785;&#xB418;&#xC5C8;&#xC73C;&#xB098;
-        &#xD574;&#xB2F9; &#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30;&#xAC00;
-        &#xC774;&#xBBF8; &#xCDA9;&#xC804; &#xC911;&#xC778; &#xC0C1;&#xD0DC;&#xC77C;
-        &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyStarting</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30;&#xC5D0; &#xB3D9;&#xC791;
-        &#xBA85;&#xB839;&#xC744; &#xB0B4;&#xB838;&#xC744; &#xACBD;&#xC6B0; &#xD574;&#xB2F9;
-        &#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30;&#xAC00; &#xC774;&#xBBF8;
-        &#xB3D9;&#xC791; &#xC0C1;&#xD0DC;&#xC778; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.
-        PowerControl Capability&#xC758; TurnOn Directive&#xB97C; &#xB3D9;&#xC791;&#xC73C;&#xB85C;
-        &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB97C; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyStopped</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30;&#xC5D0; &#xB3D9;&#xC791;
-        &#xC911;&#xC9C0; &#xBA85;&#xB839;&#xC744; &#xB0B4;&#xB838;&#xC744; &#xACBD;&#xC6B0;
-        &#xD574;&#xB2F9; &#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30;&#xAC00;
-        &#xC774;&#xBBF8; &#xC911;&#xC9C0; &#xC0C1;&#xD0DC;&#xC778; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.
-        PowerControl Capability&#xC758; TurnOff Directive&#xB97C; &#xB3D9;&#xC791;
-        &#xC911;&#xC9C0;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xB97C;
-        &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NotExistDailyPowerTarget</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xAE30;&#xAE30; &#xBAA9;&#xD45C;&#xC804;&#xB825;&#xC0AC;&#xC6A9;&#xB7C9;
-        &#xC870;&#xD68C; &#xC2DC; &#xD574;&#xB2F9; &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;
-        &#xAE30;&#xAE30;&#xC5D0; &#xC124;&#xC815;&#xB41C; 1&#xC77C; &#xBAA9;&#xD45C;&#xC804;&#xB825;&#xC0AC;&#xC6A9;&#xB7C9;&#xC774;
-        &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NotSupportBrightnessControl</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xC870;&#xBA85;&#xC774; &#xBC1D;&#xAE30;
-        &#xC870;&#xC808; &#xBD88;&#xAC00;&#xD55C; &#xBAA8;&#xB378;&#xC77C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NotSupportChangeColor</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xC870;&#xBA85;&#xC774; &#xC0C9;&#xC0C1;
-        &#xBCC0;&#xACBD; &#xBD88;&#xAC00;&#xD55C; &#xBAA8;&#xB378;&#xC77C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">UnsupportedColorType</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2A4;&#xB9C8;&#xD2B8;&#xD648; &#xC870;&#xBA85;&#xC774; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0;
-        &#xC54A;&#xB294; &#xC0C9;&#xC0C1; &#xD0C0;&#xC785;&#xC778; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">HumidityOutofRange</td>
-      <td style="text-align:left">
+      <th style="text-align:left">HumidityOutofRange</th>
+      <th style="text-align:left">
         <p>minHumidity</p>
         <p>maxHumidity</p>
-      </td>
-      <td style="text-align:left">SmartHomeDevice&#xC5D0; &#xC124;&#xC815;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294;
+      </th>
+      <th style="text-align:left">SmartHomeDevice&#xC5D0; &#xC124;&#xC815;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294;
         &#xC2B5;&#xB3C4;&#xAC00; &#xD574;&#xB2F9; SmartHomeDevice&#xC758; &#xC81C;&#xC5B4;
         &#xBC94;&#xC704; &#xBC16;&#xC77C; &#xACBD;&#xC6B0;&#xC5D0; &#xB300;&#xD55C;
         &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;. &#xC81C;&#xC5B4; &#xAC00;&#xB2A5;&#xD55C;
         &#xCD5C;&#xC18C;/&#xCD5C;&#xB300; &#xC2B5;&#xB3C4; &#xC124;&#xC815; &#xBC94;&#xC704;&#xB97C;
-        &#xD568;&#xAED8; &#xC751;&#xB2F5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
+        &#xD568;&#xAED8; &#xC751;&#xB2F5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</th>
     </tr>
-    <tr>
-      <td style="text-align:left">AlreadyAtMaxHumidity</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC758; &#xC124;&#xC815; &#xC2B5;&#xB3C4;&#xB97C; &#xC62C;&#xB9AC;&#xB824;&#xACE0;
-        &#xD588;&#xC744; &#xB54C; &#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC774;&#xBBF8;
-        &#xCD5C;&#xACE0; &#xC2B5;&#xB3C4;&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4;
-        &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">AlreadyAtMinHumidity</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">SmartHomeDevice&#xC758; &#xC124;&#xC815; &#xC2B5;&#xB3C4;&#xB97C; &#xB0B4;&#xB9AC;&#xB824;&#xACE0;
-        &#xD588;&#xC744; &#xB54C; &#xD574;&#xB2F9; SmartHomeDevice&#xAC00; &#xC774;&#xBBF8;
-        &#xCD5C;&#xC800; &#xC2B5;&#xB3C4;&#xB85C; &#xC124;&#xC815;&#xB418;&#xC5B4;
-        &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NotSupportedInCurrentMode</td>
-      <td style="text-align:left">mode</td>
-      <td style="text-align:left">&#xD604;&#xC7AC; &#xC124;&#xC815;&#xB41C; &#xBAA8;&#xB4DC;&#xC5D0;&#xC11C;
-        &#xC694;&#xCCAD;&#xD55C; &#xAE30;&#xB2A5;&#xC744; &#xC218;&#xD589;&#xD560;
-        &#xC218; &#xC5C6;&#xC744; &#xB54C;&#xC5D0; &#xB300;&#xD55C; &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">DeviceInSleepMode</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC81C;&#xC5B4; &#xB300;&#xC0C1;&#xC778; &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;
-        &#xAE30;&#xAE30;&#xAC00; &#xC2AC;&#xB7A9;&#xBAA8;&#xB4DC; &#xD639;&#xC740;
-        &#xC808;&#xC804; &#xBAA8;&#xB4DC;&#xC5EC;&#xC11C; &#xC81C;&#xC5B4;&#xC5D0;
-        &#xC2E4;&#xD328;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0; &#xB300;&#xD55C; &#xC5D0;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NoControlAuthority</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">ServiceProvider&#xB85C;&#xBD80;&#xD130; &#xC81C;&#xC5B4;&#xAD8C;&#xC744;
-        &#xBC1B;&#xC9C0; &#xBABB;&#xD574; &#xC77C;&#xC2DC;&#xC801;&#xC73C;&#xB85C;
-        &#xC74C;&#xC131;&#xC81C;&#xC5B4;&#xAC00; &#xBD88;&#xAC00;&#xB2A5;&#xD55C;
-        &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;. ServiceProvider&#xBCC4;&#xB85C;
-        &#xC81C;&#xC5B4; &#xAC00;&#xB2A5;&#xD55C; &#xC0C1;&#xD0DC;&#xC5D0; &#xB300;&#xD55C;
-        &#xAC00;&#xC774;&#xB4DC; &#xC804;&#xB2EC;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-  </tbody>
-</table>{% hint style="info" %}
+  </thead>
+  <tbody></tbody>
+</table>| AlreadyAtMaxHumidity |  | SmartHomeDevice의 설정 습도를 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 습도로 설정되어 있는 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| AlreadyAtMinHumidity |  | SmartHomeDevice의 설정 습도를 내리려고 했을 때 해당 SmartHomeDevice가 이미 최저 습도로 설정되어 있는 경우입니다. |
+| :--- | :--- | :--- |
+
+
+| NotSupportedInCurrentMode | mode | 현재 설정된 모드에서 요청한 기능을 수행할 수 없을 때에 대한 에러입니다. |
+| :--- | :--- | :--- |
+
+
+| DeviceInSleepMode |  | 제어 대상인 스마트홈 기기가 슬랩모드 혹은 절전 모드여서 제어에 실패한 경우에 대한 에러입니다. |
+| :--- | :--- | :--- |
+
+
+| NoControlAuthority |  | ServiceProvider로부터 제어권을 받지 못해 일시적으로 음성제어가 불가능한 경우입니다. ServiceProvider별로 제어 가능한 상태에 대한 가이드 전달이 필요합니다. |
+| :--- | :--- | :--- |
+
+
+{% hint style="info" %}
 SmartHomeError는 계속해서 업데이트됩니다.
 {% endhint %}
 

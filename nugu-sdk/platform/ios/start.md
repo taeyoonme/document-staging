@@ -25,7 +25,7 @@ end
 {% endtab %}
 
 {% tab title="Manually" %}
-Github Repository를 통해 다운로드 받아 직접 빌드할 수 있습니다.   
+Github Repository를 통해 다운로드 받아 직접 빌드할 수 있습니다.  
 자세한 내용은 [구성요소](component.md) 탭에서 확인이 가능합니다.
 
 * NuguClientKit: [https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios)
@@ -46,7 +46,7 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Using OAuth 2.0]()에서 확인이 가능합니다.
+더 자세한 내용은 [Using OAuth 2.0](start.md)에서 확인이 가능합니다.
 {% endhint %}
 
 > NuguLoginKit 불러오기
@@ -110,7 +110,7 @@ func login() {
         redirectUri: "{redirect-uri}",
         deviceUniqueId: "{device-unique-id}"
     )
-    
+
     OAuthManager<Type1>.shared.loginBySafariViewController(from: self) { (result) in
         switch result {
         case .success(let authInfo):
@@ -202,7 +202,7 @@ import NuguClientKit
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-2. NuguClient 인스턴스를 생성합니다. 
+1. NuguClient 인스턴스를 생성합니다. 
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -212,27 +212,27 @@ let client = NuguClient.Builder().build()
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-3. 로그인 결과로 받은 Access-token을 NuguClient 인스턴스에 설정합니다.
+1. 로그인 결과로 받은 Access-token을 NuguClient 인스턴스에 설정합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
 ```swift
-client.accessToken = "{access-token}" 
+client.accessToken = "{access-token}"
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-4. NetworkManager를 통해 NUGU서버와 연결합니다.
+1. NetworkManager를 통해 NUGU서버와 연결합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
 ```swift
-client.networkManager.connect() 
+client.networkManager.connect()
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-5. NUGU 서버와의 연결 이후 음성인식을 요청합니다.
+1. NUGU 서버와의 연결 이후 음성인식을 요청합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="VIewController.swift" %}
@@ -246,7 +246,7 @@ client.asrAgent.startRecognition()
 
 > 구성요소 알아보기
 
-NUGU SDK의 Github Repository를 통해 NUGU Components의 주요 기능들을 확인하실 수 있습니다. 구성요소 소개 페이지에서 필요한 [구성요소](component.md)를 확인하고, 해당 구성요소의 Repository에서 Readme를 통해 더 자세한 정보를 얻을 수 있습니다. 
+NUGU SDK의 Github Repository를 통해 NUGU Components의 주요 기능들을 확인하실 수 있습니다. 구성요소 소개 페이지에서 필요한 [구성요소](component.md)를 확인하고, 해당 구성요소의 Repository에서 Readme를 통해 더 자세한 정보를 얻을 수 있습니다.
 
 > Sample Application
 

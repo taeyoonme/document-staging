@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
- 
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -50,7 +50,7 @@ SmartHomeDevice Attribute Parameters
 
 | Attribute | Description |
 | :--- | :--- |
-| supportedAirflowTypes |  해당 SmartHomeDevice가 지원하는 AirflowType의 명칭입니다. AirflowType은 NUGU스마트홈에서 지원하는 명칭 중 선택해서 응답할 수 있으며, 지원하는 AirflowType의 명칭은 [AirflowType](../smarthomeattribute.md#airflowtype)를 참조하시기 바랍니다. 지원하는 AirflowType은 각 Device별로 Array 형태로 복수개 전달할 수 있습니다. |
+| supportedAirflowTypes | 해당 SmartHomeDevice가 지원하는 AirflowType의 명칭입니다. AirflowType은 NUGU스마트홈에서 지원하는 명칭 중 선택해서 응답할 수 있으며, 지원하는 AirflowType의 명칭은 [AirflowType](../smarthomeattribute.md#airflowtype)를 참조하시기 바랍니다. 지원하는 AirflowType은 각 Device별로 Array 형태로 복수개 전달할 수 있습니다. |
 | customData | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다. customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 | connectionStatus | 디바이스 연결상태. 현재 제어가 불가능한 상태의 디바이스인 경우 false 로 응답해야 합니다. |
 
@@ -74,8 +74,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/SetAirflow)
-  
-  
+
+
 {
    "version":1,
    "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -176,8 +176,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/AskAirflow)
-  
-  
+
+
 {
    "version":1,
    "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -279,8 +279,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/IncreaseAirflow)
-  
-  
+
+
 {
    "version":1,
    "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -374,8 +374,8 @@ IncreaseAirflow Directive response parameter details
 ### DecreaseAirflow
 
 **Directive 정보**  
-SmartHomeDevice의 설정 풍량을 감소시킨다.   
-Capability : AirflowControl   
+SmartHomeDevice의 설정 풍량을 감소시킨다.  
+Capability : AirflowControl  
 Directive : DecreaseAirflow
 
 **Voice Command**  
@@ -387,8 +387,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/DecreaseAirflow)
-  
-  
+
+
 {
    "version":1,
    "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -439,7 +439,6 @@ DecreaseAirflow Directive request parameter details
 Sample Response
 
 ```scheme
-
 {
     "requestId": "2019071712638a4378649347bdb21643127a0f6d83", <-- request로 받은 값을 그대로 응답
     "data":[
@@ -462,8 +461,8 @@ DecreaseAirflow Directive response parameter details
 ### SetAirflowMax
 
 **Directive 정보**  
-SmartHomeDevice을 최고 풍량으로 설정한다.   
-Capability : AirflowControl   
+SmartHomeDevice을 최고 풍량으로 설정한다.  
+Capability : AirflowControl  
 Directive : SetAirflowMax
 
 **Voice Command**  
@@ -475,8 +474,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/SetAirflowMax)
-  
-  
+
+
 {
    "version":1,
    "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -564,8 +563,8 @@ SetAirflowMax Directive Response parameter details
 ### SetAirflowMin
 
 **Directive 정보**  
-SmartHomeDevice을 최저 풍량으로 설정한다.   
-Capability : AirflowControl   
+SmartHomeDevice을 최저 풍량으로 설정한다.  
+Capability : AirflowControl  
 Directive : SetAirflowMin
 
 **Voice Command**  
@@ -577,8 +576,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/SetAirflowMin)
-  
-  
+
+
 {
    "version":1,
    "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -665,7 +664,7 @@ SetAirflowMin Directive response parameter details
 
 ## Error & Exception
 
- 해당 Capability/Directive에서 응답 시 사용할 수 있는 ErrorCode는 [SmartHomeError](../smarthomeerror.md)를 참조해주시기 바랍니다.
+해당 Capability/Directive에서 응답 시 사용할 수 있는 ErrorCode는 [SmartHomeError](../smarthomeerror.md)를 참조해주시기 바랍니다.
 
 Sample Error Response
 

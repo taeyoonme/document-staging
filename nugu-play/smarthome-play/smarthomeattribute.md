@@ -28,7 +28,7 @@ IoT ServiceProvider 및 제품에 따라 지원하는 Attribute 값이 상이할
 
 지원풍량정보
 
-| AirflowType  | AirflowType Code |
+| AirflowType | AirflowType Code |
 | :--- | :--- |
 | 미풍 | BREEZE |
 | 약풍 | LOW |
@@ -39,20 +39,19 @@ IoT ServiceProvider 및 제품에 따라 지원하는 Attribute 값이 상이할
 | 수면풍, 취침풍 | SLEEPINGWIND |
 | 쾌면풍 | PLEASANTSLEEP |
 | 자동풍 | AUTOWIND |
-| 자 | STOP |
-| 정 | Speed1 |
-| 1단\(계\) | Speed2 |
-| 2단\(계\) | Speed3 |
-| 3단\(계\) | Speed4 |
-| 4단\(계\) | Speed5 |
-| 5단\(계\) | Speed6 |
+| 정지 | STOP |
+| 1단\(계\) | Speed1 |
+| 2단\(계\) | Speed2 |
+| 3단\(계\) | Speed3 |
+| 4단\(계\) | Speed4 |
+| 5단\(계\) | Speed5 |
 
 Attribute 사용 예시
 
 ```scheme
 SetAirflow Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-   
-   
+
+
 {
    "version":1,
    "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -106,15 +105,15 @@ Airflow를 몇 단계 조절할지에 대한 Attribute value입니다. 해당 At
 
 {% hint style="info" %}
 **Increase / Decrease를 위한 AirflowType의 세기 단위**  
-미풍 &lt; 약풍 &lt; 중풍  &lt; 강풍 &lt; 터보, 1단 &lt; 2단 &lt; 3단 &lt; 4단 &lt; 5단 순으로 조정되며 이외에는 세기 단위에 포함되지 않은 특수풍으로 구분합니다.
+미풍 &lt; 약풍 &lt; 중풍 &lt; 강풍 &lt; 터보, 1단 &lt; 2단 &lt; 3단 &lt; 4단 &lt; 5단 순으로 조정되며 이외에는 세기 단위에 포함되지 않은 특수풍으로 구분합니다.
 {% endhint %}
 
 Attribute 사용 예시
 
 ```text
 IncreaseAirflow Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-   
-   
+
+
 {
    "version":1,
    "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -166,8 +165,8 @@ Attribute 사용 예시
 
 ```text
 SetBrightness Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-     
-     
+
+
 {
   "version": 1,
   "requestId": "201909301991140f5a1e97441fa76a699284bc6035",
@@ -214,8 +213,8 @@ Attribute 사용 예시
 
 ```scheme
 IncreaseBrightness Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-     
-     
+
+
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -265,8 +264,8 @@ Attribute 사용 예시
 
 ```scheme
 ChangeColor Directive Request 예시 (POST, /nugu/v1/capabilities/ColorControl/directives/ChangeColor)
-      
-      
+
+
 {
    "version":1,
    "requestId":"20190930213631c172b5214d4abfdbeb5804d8d80d",
@@ -315,8 +314,8 @@ Attribute 사용 예시
 
 ```scheme
 SetDeviceTemperatureLevel Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-     
-     
+
+
 {
     "version": 1,
     "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
@@ -359,8 +358,8 @@ Attribute 사용 예시
 
 ```scheme
 SetHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidity)
-     
-     
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -407,8 +406,8 @@ Attribute 사용 예시
 
 ```scheme
 IncreaseHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/IncreaseHumidity)
-     
-     
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -449,7 +448,7 @@ Related to [HumidityControl Interface](smarthomecapability/humiditycontrol-inter
 
 ### mode
 
-스마트홈 기기를 특정 모드로 설정하고자 할 때 제어 대상 스마트홈 기기에 설정할 모드 정보입니다. NUGU스마트홈에서 지원하는 SmartHomeDeviceType별 모드 정보는 아래와 같습니다. 
+스마트홈 기기를 특정 모드로 설정하고자 할 때 제어 대상 스마트홈 기기에 설정할 모드 정보입니다. NUGU스마트홈에서 지원하는 SmartHomeDeviceType별 모드 정보는 아래와 같습니다.
 
 | MODE | Code |
 | :--- | :--- |
@@ -465,11 +464,11 @@ Related to [HumidityControl Interface](smarthomecapability/humiditycontrol-inter
 | 공기청정모드 | AUTO\_CLEAN |
 | 아로마모드 | AROMA |
 | 절전모드 | ENERGY\_SAVING |
-| 난방모 | HEAT |
+| 난방모드 | HEAT |
 | 실내난방모드 | HEAT\_ROOM |
 | 외출모드 | OUTSIDE |
-| 온수전용모 | HOTWATER\_ONLY |
-| 온돌난방모 | HEAT\_FLOOR |
+| 온수전용모드 | HOTWATER\_ONLY |
+| 온돌난방모드 | HEAT\_FLOOR |
 | 수동모드 | HAND |
 | 급속모드 | RAPIDITY |
 | 황사모드 | YELLOW\_DUST |
@@ -482,37 +481,37 @@ Related to [HumidityControl Interface](smarthomecapability/humiditycontrol-inter
 | 베이비케어모드 | BABY\_CARE |
 | 듀얼청정모드 | DUAL\_AIR\_CLEAN |
 | 에어워셔모드 | AIR\_WASHER |
-| HEPA에어워셔모 | HEPA\_AIR\_WASHER |
+| HEPA에어워셔모드 | HEPA\_AIR\_WASHER |
 | 공기청정모드 | AIR\_CLEAN |
 | 포시즌모드 | FOUR\_SEASON |
 | 쾌적제습모드 | COMPORT\_DEHUMIDIFICATION |
 | 빨래건조모드 | WASHING\_DRY |
 | 쾌면모드 | SLEEP |
 | 자동제습모드 | AUTO\_DEHUMIDIFICATION |
-| 수동제습모 | HAND\_DEHUMIDIFICATION |
+| 수동제습모드 | HAND\_DEHUMIDIFICATION |
 | 의류건조모드 | CLOTHES\_DRY |
-| 신발건조모 | SHOES\_DRY |
+| 신발건조모드 | SHOES\_DRY |
 | 정숙모드 | QUIET |
 | 연속제습모드 | CONTINUITY\_DEHUMIDIFICATION |
 | 연속모드 | CONTINUITY |
-| 정숙연속모 | QUIET\_CONTINUITY |
+| 정숙연속모드 | QUIET\_CONTINUITY |
 | 급속냉동모드 | RAPID\_FREEZE |
 | 특급모드 | EXPRESS |
 | 스마트파워모드 | SMART\_POWER |
-| 차일드락모 | CHILD\_LOCK |
-| 음소거모 | MUTE |
-| 반복예약난방모 | REPEAT\_BOOKING\_HEAT |
+| 차일드락모드 | CHILD\_LOCK |
+| 음소거모드 | MUTE |
+| 반복예약난방모드 | REPEAT\_BOOKING\_HEAT |
 | 온수모드 | HOTWATER |
 | 자동무풍모드 | AUTO\_NOWIND |
-| 24시간 예약난방모 | 24\_PREHEATING |
-| 냉방PMV모 | COOLING\_PMV |
+| 24시간 예약난방모드 | 24\_PREHEATING |
+| 냉방PMV모드 | COOLING\_PMV |
 
 Attribute 사용 예시
 
 ```scheme
 SetMode Directive Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -568,8 +567,8 @@ Attribute 사용 예시
 
 ```scheme
 SetTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -618,8 +617,8 @@ Attribute 사용 예시
 
 ```scheme
 IncreaseTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",

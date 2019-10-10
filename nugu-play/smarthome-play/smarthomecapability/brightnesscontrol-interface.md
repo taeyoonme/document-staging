@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-   
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -54,8 +54,8 @@ NUGU SmartHome BrightnessControl Capability는 SmartHomeDevice의 밝기를 제�
 ### SetBrightness
 
 **Directive 정보**  
-SmartHomeDevice의 밝기를 사용자가 발화한 특정 밝기로 설정한다.   
-Capability : BrightnessControl   
+SmartHomeDevice의 밝기를 사용자가 발화한 특정 밝기로 설정한다.  
+Capability : BrightnessControl  
 Directive : SetBrightness
 
 **Voice Command**  
@@ -66,10 +66,9 @@ Directive : SetBrightness
 Sample Request
 
 ```scheme
-
 Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightness)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "201909301991140f5a1e97441fa76a699284bc6035",
@@ -147,8 +146,8 @@ SetBrightness Directive Response parameter details
 ### IncreaseBrightness
 
 **Directive 정보**  
-SmartHomeDevice의 밝기단계를 올린다.   
-Capability : BrightnessControl   
+SmartHomeDevice의 밝기단계를 올린다.  
+Capability : BrightnessControl  
 Directive : IncreaseBrightness
 
 **Voice Command**  
@@ -160,8 +159,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/IncreaseBrightness)
-    
- 
+
+
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -242,8 +241,8 @@ IncreaseBrightness Directive response parameter details
 ### DecreaseBrightness
 
 **Directive 정보**  
-SmartHomeDevice의 밝기단계를 내린다.   
-Capability : BrightnessLevel   
+SmartHomeDevice의 밝기단계를 내린다.  
+Capability : BrightnessLevel  
 Directive : DecreaseBrightness
 
 **Voice Command**  
@@ -255,8 +254,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/DecreaseBrightness)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -336,8 +335,8 @@ DecreaseBrightness Directive response parameter details
 ### SetBrightnessMax
 
 **Directive 정보**  
-SmartHomeDevice의 밝기를 최고 단계로 설정한다.   
-Capability : BrightnessControl   
+SmartHomeDevice의 밝기를 최고 단계로 설정한다.  
+Capability : BrightnessControl  
 Directive : SetBrightnessMax
 
 **Voice Command**  
@@ -349,8 +348,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMax)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -421,8 +420,8 @@ SetBrightnessMax Directive Response parameter details
 ### SetBrightnessMin
 
 **Directive 정보**  
-SmartHomeDevice의 밝기를 최저 단계로 설정한다.   
-Capability : BrightnessControl   
+SmartHomeDevice의 밝기를 최저 단계로 설정한다.  
+Capability : BrightnessControl  
 Directive : SetBrightnessMin
 
 **Voice Command**  
@@ -434,8 +433,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMin)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",

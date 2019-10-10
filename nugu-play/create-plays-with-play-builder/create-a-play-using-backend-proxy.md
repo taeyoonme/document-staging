@@ -1,14 +1,14 @@
-# Backend proxy 사용하여 Play 만들기
+# 외부 연동 서버 \(Backend proxy\) 연결하기
 
 ## 개요
 
-Backend proxy는 Play Builder에서 응답을 생성하기 위해 필요한 정보를 외부 서버로부터 가져와야 하는 경우 NUGU 플랫폼에서 REST API를 통해 호출하는 서버입니다. Backend proxy
+Backend proxy는 응답을 생성하기 위해 필요한 정보를 외부로부터 가져와야 하는 경우 사용하는 서버입니다. 
 
 {% hint style="info" %}
 개발에 대한 자세한 내용은 [외부 연동 서버\(Backend proxy\)](use-backend-proxy/)를 참고하세요.
 {% endhint %}
 
-![](../../.gitbook/assets/ch3_326_01.png)
+![](../../.gitbook/assets/image-3.png)
 
 Backend proxy는 위 그림과 같이 다음의 경우에 사용합니다.
 
@@ -54,25 +54,26 @@ Backend Parameter, 예외 상황 관리, Capability Interface\(Directive\)와 �
 * **예외 상황**: [예외 상황 관리](define-an-action/manage-exceptions.md)
 {% endhint %}
 
-## 개발
+## Backend proxy 연결 순서
 
 Backend proxy를 사용하기 위해서는 다음과 같은 순서로 진행을 해야 합니다.
 
 1. Backend proxy 서버를 구축합니다.
-   * Backend proxy 개발에 대한 자세한 내용은 [외부 연동 서버\(Backend proxy\)](use-backend-proxy/)를 참고하세요.
+   * Backend proxy 개발에 대한 자세한 내용은 [외부 연동 서버\(Backend proxy\)](use-backend-proxy/)를 참고하세요. 
 2. Backend proxy를 Play와 연결합니다.
    * Play Builder에서 해당 Play의 `General` &gt; `외부 서버 연결 정보` 페이지에서 Backend proxy의 Web URL을 입력합니다.
    * Web URL 입력 시 http:// 또는 https://를 포함하여 작성합니다.
-   * 이 Backend proxy과의 통신이 실패했을 때 사용자에게 전달할 메시지를 '연결 실패 시 prompt'에 입력합니다.
-   * Backend proxy와 Play를 연결하는 자세한 방법은 [Play 설정하기](customize-a-play.md)를 참고하세요.
+   * 이 Backend proxy과의 통신이 실패했을 때 사용자에게 전달할 메시지를 '연결 실패 시 prompt'에 입력합니다. 
 3. Play 개발자는 Backend proxy 개발자와 다음 사항을 공유해야 합니다.
-   * 어떤 Entity Parameter를 정의하였고, 해당 Entity Parameter는 어떠한 값들이 전달이 될 것인가를 전달해야 합니다.
-   * Entity를 정규화 한다면 대표값이 Entity Parameter에 담겨서 전달이 될 것이므로 해당 대표값을 전달해야 합니다. 
-   * 어떠한 Backend Parameter가 필요하고, 해당 parameter에는 어떤 값이 담기기를 기대하는지를 안내해야 합니다. 
-   * Play를 만들어가면서 발생되는 예외 상황들에 대해 안내를 하고 각 상황별 code\(Exception Code\)를 요청해야 합니다. 
-   * Capability Interface를 사용하는 경우 어떤 Intent에서 어떻게 Directive를 내보낼 것인지 논의합니다. 
-4. Backend proxy 개발자와 논의한 바탕으로 Backend Parameter를 활용하고, 예외 상황 Prompt도 입력합니다.
-   * 예외 처리에 대한 자세한 내용은 [예외  상황 관리](define-an-action/manage-exceptions.md)를 참고하세요.
+   * 어떤 Utterance Parameter를 정의하였고, 해당 Utterance Parameter는 어떠한 값들이 전달이 될 것인지 전달해야 합니다. Entity를 정규화 한다면 대표값이 Utterance Parameter에 담겨서 전달이 될 것이므로 해당 대표값을 안내해야 합니다. 
+   * 정의한 Backend Parameter에 어떤 값이 담기기를 기대하는지 안내해야 합니다. 
+   * Play를 만들면서, 예외 상황을 처리해야 한다면 예외 상황 관리에 등록을 하고, 이를 Exception Code로 요청해야 합니다. \(예 : 서버 장애,  잘못된 사용자의 요청 등\) 
+     * 예외 처리에 대한 자세한 내용은 [예외  상황 관리](define-an-action/manage-exceptions.md)를 참고하세요.
+   * Capability Interface를 사용하는 경우 어떤 Intent에서 어떻게 Directive를 내보낼 것인지 논의합니다.  
+4. Backend proxy과 연결할 Action에서 `Backend proxy 사용 여부`를 On으로 설정합니다.
+   * Backend proxy는 어떤 이름의 Action이 자신을 호출할지 알고 있어야 합니다. Backend proxy에서 알지못하는 Action이 호출을 하면, Play는 그  Action에서 멈추게 됩니다. 즉, Play 개발자는 Backend proxy를 호출할 Action을 Backend proxy 개발자에게 전달해야 합니다. 
+   * 트리 내의 어떤 Action도 Backend proxy를 호출할 수 있습니다. 일반적으로 Root Action을 Backend proxy와 연결하여 필요한 파라미터를 받아와서 처리합니다.  
+   * Capability Interface를 사용하는 경우, 트리 최하단에서 응답을 내보내는 Action도 Backend proxy와 연결하여 Directive를 받아와야 합니다.  
 
 {% hint style="info" %}
 이 장과 같이 보면 좋은 도움말

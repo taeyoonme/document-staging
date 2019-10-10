@@ -18,5 +18,3 @@ NUGU SDK는 Android 환경에서 누구 서비스를 쉽게 사용할 수 있도
 Android Kitkat\(4.4\)에서도 동작하지만 TLS v1.2를 사용하도록 설정이 필요합니다.
 {% endhint %}
 
-
-

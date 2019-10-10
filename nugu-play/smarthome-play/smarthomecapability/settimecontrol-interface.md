@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-    
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -51,8 +51,8 @@ NUGU SmartHome SetTimeControl Capability는 종료예약을 설정하는 SetEndT
 ### SetEndTime
 
 **Directive 정보**  
-SmartHomeDevice를 사용자가 발화한 시간에 맞춰 종료 예약 설정한다.   
-Capability : SetTimeControl   
+SmartHomeDevice를 사용자가 발화한 시간에 맞춰 종료 예약 설정한다.  
+Capability : SetTimeControl  
 Directive : SetEndTime
 
 **Voice Command**  
@@ -64,8 +64,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/SetTimeControl/directives/SetEndtime)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -130,8 +130,8 @@ Sample Response
 ### CancelEndTime
 
 **Directive 정보**  
-SmartHomeDevice에 설정된 종료예약을 취소한다.   
-Capability : SetTimeControl   
+SmartHomeDevice에 설정된 종료예약을 취소한다.  
+Capability : SetTimeControl  
 Directive : CancelEndTime
 
 **Voice Command**  
@@ -143,8 +143,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/SetTimeControl/directives/CancelEndtime)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",

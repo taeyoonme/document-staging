@@ -5,7 +5,7 @@
 Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. Prompt를 작성할때 다음과 같은 구성 요소들을 사용할 수 있습니다.
 
 | 구성 요소 | 하위 구성 요소 | 특징 | 자동완성 단축키 |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- | :---: |
 | 일반 텍스트 |  | '가나다'와 같은 일반적인 텍스트를 그대로 읽어 발화합니다. | 지원 안 함 |
 | Parameter |  | 와 같은 형태로 사용하며, Parameter에 담긴 값을 텍스트로 변형하여 발화합니다.   Parameter 사용법에 대한 자세한 내용은 [Parameter 사용하기](../use-parameters/)를 참고하세요. | {{ |
 | Response Filter | NLG Translator | Parameter와 항상 결합하여 사용되며, 단독으로 쓰일 수 없습니다. | &gt; |
@@ -65,7 +65,7 @@ Parameter의 `}}` 기호 뒤에 / 입력하면 조사의 자동완성 창이 표
 #### 조사 처리 시, 받침 유무 판정 규칙
 
 * 알파벳은 미국식 영어로 읽는 것을 한국어로 옮긴다고 간주하고 조사 처리합니다. 
-* 10 g, 1 m와 같이 숫자와 단위가 붙어서 조합되고, [발화 옵션 Say 태그\(단위 속성\)](../../../../rel-information/list-of-unit-tags-supported-by-utterance-options.md)를 처리하지 않은 경우, 10 그램, 1 미터와 같이 단위에 대한 표준어로 변환하여 조사를 붙입니다. 
+* 10 g, 1 m와 같이 숫자와 단위가 붙어서 조합되고, [발화 옵션 Say 태그\(단위 속성\)](../../../../reference/list-of-unit-tags-supported-by-utterance-options.md)를 처리하지 않은 경우, 10 그램, 1 미터와 같이 단위에 대한 표준어로 변환하여 조사를 붙입니다. 
 * 괄호나 특수문자가 포함된다면 제거한 후 처리합니다. 
 * 단위, 한글, 영문, 숫자에 해당하지 않는 경우는 변환하지 않습니다.
 
@@ -109,7 +109,7 @@ Play Builder는 입력한 Prompt를 음성으로 변환시킬 때 개별적으�
 
 * 변경 가능한 옵션은 전체 발화 옵션과 같습니다.
 
-  ![](../../../../.gitbook/assets/ch3_323413_c04.png)
+![](../../../../.gitbook/assets/ch3_323413_c04.png)
 
 ### 문장 내 발화 옵션 태그 추가하기 <a id="skml-tag"></a>
 
@@ -178,5 +178,5 @@ Prompt 내에 사용하는 태그는 텍스트를 직접 입력하여 추가 또
 
 ### 발화 옵션에서 UNIT 태그로 지원하는 단위 목록 <a id="list-of-unit-tags-supported-by-utterance-options"></a>
 
-문장 내 발화 옵션 태그 중 `텍스트 읽기` &gt; `단위 읽기` 태그에서 지원하는 목록은 [단위 목록](../../../../rel-information/list-of-unit-tags-supported-by-utterance-options.md) 문서에서 확인할 수 있습니다.
+문장 내 발화 옵션 태그 중 `텍스트 읽기` &gt; `단위 읽기` 태그에서 지원하는 목록은 [단위 목록](../../../../reference/list-of-unit-tags-supported-by-utterance-options.md) 문서에서 확인할 수 있습니다.
 

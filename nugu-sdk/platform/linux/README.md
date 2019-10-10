@@ -2,7 +2,7 @@
 
 ## Introduction
 
-NUGU SDK는 Linux 기반의 다양한 임베디드 장치에 NUGU 서비스를 쉽게 동작시키기 위해 Linux SDK를 제공합니다. 
+NUGU SDK는 Linux 기반의 다양한 임베디드 장치에 NUGU 서비스를 쉽게 동작시키기 위해 Linux SDK를 제공합니다.
 
 Linux SDK는 개발자들이 원하는 기능을 구현할 수 있도록 C/C++ API와 문서를 제공하고 있으며, 아래와 같은 특징을 가지고 있습니다.
 

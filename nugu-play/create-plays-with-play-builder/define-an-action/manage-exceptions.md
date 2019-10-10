@@ -48,7 +48,7 @@ Exception Prompt에서는 무엇이 문제인지를 간단하게 안내한 뒤, 
 
 사용자 발화의 Entity를 체크하는 예외 상황을 등록했다면, 이 Exception Code가 동작하는 과정은 다음과 같습니다.
 
-![](../../../.gitbook/assets/ch3_3235_01.png)
+![](../../../.gitbook/assets/image-6.png)
 
 ## Exception Prompt를 통해 이동한 대기 상태의 특징
 

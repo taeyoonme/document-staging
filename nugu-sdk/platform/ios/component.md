@@ -38,7 +38,7 @@ NUGU SDK를 통한 개발을 위해서는 NuguCore, NuguInterface Framework를 �
 ### Cocoapods
 
 {% hint style="info" %}
-NUGU iOS SDK는 의존성 관리를 위해 Cocoapods를 지원합니다.   
+NUGU iOS SDK는 의존성 관리를 위해 Cocoapods를 지원합니다.  
 더 자세한 내용은 [https://cocoapods.org](https://cocoapods.org/)에서 확인이 가능합니다.
 {% endhint %}
 
