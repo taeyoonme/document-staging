@@ -73,7 +73,7 @@ NUGU의 페르소나는 20대 후반에서 30대 초반의 여성으로, 차분�
 
 ![NUGU &#xD398;&#xB974;&#xC18C;&#xB098;](../../.gitbook/assets/undefined%20%287%29.png)
 
-![](../../.gitbook/assets/2.png)
+![](../../.gitbook/assets/image-22_1.png)
 
 ### 스타일
 

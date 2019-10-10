@@ -12,5 +12,5 @@ Parameter는 정보를 담아두고 사용하는 일종의 그릇입니다. Play
 
 이러한 Parameter는 정보를 어디서 가져오는가에 따라 Utterance Parameter와 Backend Parameter로 구분됩니다. Utterance Parameter는 사용자의 발화에서 가져온 정보를 담는 Parameter이며, Backend Parameter는 외부 서버 등 사용자의 발화 외의 곳에서 정보를 가져와 담는 Parameter입니다.
 
-![](../../../../.gitbook/assets/ch3_3233_02.png)
+![](../../../../.gitbook/assets/image-5.png)
 

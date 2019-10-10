@@ -2,7 +2,7 @@
 
 NUGU스마트홈을 활용해 SmartHomePlay를 제작하면 NUGU 에이전트가 탑재된 다양한 기기에서 음성 인터페이스를 활용하여 스마트홈 기기들을 제어하고 확인할 수 있습니다. 이 문서에서는 NUGU스마트홈을 통해 서비스를 제공하고 싶은 IoT Service Provider에게 규격 및 개발 가이드와 API 레퍼런스, 샘플코드, NUGU SmartHome Playbuilder 사용 가이드 등을 제공합니다. NUGU스마트홈은 계속 개발되고 있으며, 관련 규격들은 지속적으로 업데이트됩니다.
 
-![OVERVIEW](../../.gitbook/assets/image-15.png)
+![](../../.gitbook/assets/image-10.png)
 
 ## SmartHomePlay 만들기
 
