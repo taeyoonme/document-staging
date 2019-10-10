@@ -25,7 +25,7 @@ Prompt는 모든 Action이 가질 수 있는 유형의 Response이며, 필요에
 
 * Capability Interface를 하나 이상 `ON` 한 경우의 Output 설정 화면
 
-  ![](../../../../.gitbook/assets/ch3_3234_c02.png)
+![](../../../../.gitbook/assets/ch3_3234_c02.png)
 
 다음 장에서 Prompt와 Directive 사용법에 대해 알아보도록 하겠습니다.
 

@@ -74,7 +74,7 @@ Authorization: token TOKEN_STRING
 | context.session.id | string | Y | 대화가 유지되는 동안의 유효한 키 값입니다. |
 | context.session.isNew | boolean | Y | 대화의 처음을 알려주는 값입니다. |
 | context.session.accessToken | string | N | OAuth 2에 사용되는 인증 token입니다. |
-| context.session.isPlay BuilderRequest | bool | N | Play Builder에서 테스트용으로 전달한 요청임을 의미합니다. \(기본값: false\) |
+| context.session.isPlayBuilderRequest | bool | N | Play Builder에서 테스트용으로 전달한 요청임을 의미합니다. \(기본값: false\) |
 | context.device | json | Y |  |
 | context.device.type | string | Y | 현재 사용 중인 디바이스 종류를 나타냅니다. |
 | context.device.state | json | N | 디바이스의 상태를 나타내는 값으로 현재는 정의된 것이 없습니다. |

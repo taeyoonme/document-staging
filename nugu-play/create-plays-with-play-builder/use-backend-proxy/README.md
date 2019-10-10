@@ -1,4 +1,6 @@
-# 외부 연동 서버 \(Backend proxy\)
+# Backend proxy 구축하기
+
+이 페이지는 Backend proxy 개발/구축을 가이드합니다. 
 
 Backend proxy는 다음의 경우에 NUGU 플랫폼에서 REST API를 통해 호출하는 서버입니다.
 

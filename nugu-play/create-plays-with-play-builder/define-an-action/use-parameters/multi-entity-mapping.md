@@ -16,9 +16,15 @@ Utterance Parameter는 사용자의 발화에서 정보를 담아 직접 처리�
 
 ![](../../../../.gitbook/assets/multi-entity-mapping5-1.png)
 
-![](../../../../.gitbook/assets/multi-entity-mapping3-1.png)  
-![](../../../../.gitbook/assets/multi-entity-mapping4.png)  
-위의 경우에서, 사용자가 '아기상어' 라고 발화를 한 경우 SONG\_TITLE 또는 VIDEO\_TITLE로 분석됩니다. 특히, Slot-filling 상황에서라면 사용자는 Entity 하나만 발화할 가능성이 높으며, 사용자는 정상적으로 발화를 해도 Slot-filling이 되지 않게 됩니다. 이런 경우, 가급적 다음과 같이 하나의 Entity로 통합하여 User Utterance Model을 구성하는 것이 좋습니다. ![](../../../../.gitbook/assets/multi-entity-mapping6.png)
+  
+  
+위의 경우에서, 사용자가 '아기상어' 라고 발화를 한 경우 SONG\_TITLE 또는 VIDEO\_TITLE로 분석됩니다. 특히, Slot-filling 상황에서라면 사용자는 Entity 하나만 발화할 가능성이 높으며, 사용자는 정상적으로 발화를 해도 Slot-filling이 되지 않게 됩니다. 이런 경우, 가급적 다음과 같이 하나의 Entity로 통합하여 User Utterance Model을 구성하는 것이 좋습니다. 
+
+![](../../../../.gitbook/assets/multi-entity-mapping6.png)
+
+![](../../../../.gitbook/assets/multi-entity-mapping4.png)
+
+![](../../../../.gitbook/assets/multi-entity-mapping3-1.png)
 
 그러나 Entity type 사이에 중복되는 텍스트를 피할 수 없는 경우, 다음과 같이 Slot-filling 상황에서만 파라미터에 담기도록 Entity를 매핑하여 해결할 수 있습니다.
 
