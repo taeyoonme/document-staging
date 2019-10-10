@@ -33,31 +33,24 @@ NUGU 서비스와 관련한 기기의 상태에 대한 정의는 다음과 같�
     <tr>
       <td style="text-align:left"><b>&#xB9C8;&#xC774;&#xD06C; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0;                            </b>
       </td>
-      <td style="text-align:left">
-        <p>NUGU &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC758; &#xC74C;&#xC131;&#xC778;&#xC2DD;
-          &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xB85C;,
-          &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294; &#xC74C;&#xC131;&#xC73C;&#xB85C;
-          &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB97C; wake up&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;
-          wake-up &#xBC84;&#xD2BC;&#xC744; &#xB204;&#xB97C; &#xACBD;&#xC6B0;, &#xB9C8;&#xC774;&#xD06C;&#xAC00;
-          &#xCF1C;&#xC9C0;&#xACE0; listening - passive &#xC0C1;&#xD0DC;&#xB85C; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xD55C;&#xBC88; &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xCF1C;&#xC9C0;&#xBA74;
-          &#xD574;&#xB2F9; &#xC0C1;&#xD0DC;&#xB294; &#xC720;&#xC9C0;&#xB429;&#xB2C8;&#xB2E4;.</p>
-      </td>
+      <td style="text-align:left">NUGU &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC758; &#xC74C;&#xC131;&#xC778;&#xC2DD;
+        &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xB85C;,
+        &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294; &#xC74C;&#xC131;&#xC73C;&#xB85C;
+        &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB97C; wake up&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&#xC57C;&#xAC04; &#xBAA8;&#xB4DC;                                        </b>
       </td>
       <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;
-        &#xC804;&#xC6D0; &#xC808;&#xC57D;&#xC744; &#xC704;&#xD558; &#xD654; &#xD45C;&#xC2DC;&#xAC00;
-        &#xCD5C;&#xC18C;&#xD654;&#xB41C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
+        &#xC804;&#xC6D0; &#xC808;&#xC57D;&#xC744; &#xC704;&#xD558; &#xD654;&#xBA74;
+        &#xD45C;&#xC2DC;&#xAC00; &#xCD5C;&#xC18C;&#xD654;&#xB41C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&#xD654;&#xBA74; &#xCF1C;&#xC9D0;/&#xAEBC;</b>
       </td>
       <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;
         &#xD654;&#xBA74;&#xC774; &#xCF1C;&#xC838;&#xC788;&#xAC70;&#xB098; &#xAEBC;&#xC838;&#xC788;&#xB294;
-        &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;.</td>
+        &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&#xBB34;&#xB4DC;&#xB4F1; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0; </b>
@@ -81,7 +74,7 @@ NUGU 서비스와 관련한 기기의 상태에 대한 정의는 다음과 같�
   </tbody>
 </table>#### **초기 기기 상태**
 
-NUGU 기기의 초기 상태는 다음과 같습니다. 마이크\(Microphone\) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off
+NUGU 기기의 초기 상태는 다음과 같습니다. 마이크\(Microphone\) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off 
 
 ## 버튼
 
@@ -102,10 +95,11 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
         <p>&#xD638;&#xCD9C;&#xC5B4;&#xB97C; &#xB9D0;&#xD558;&#xB294; &#xAC83;&#xACFC;
           &#xB3D9;&#xC77C;&#xD558;&#xAC8C;, NUGU &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB97C;
           listening-passive &#xC0C1;&#xD0DC;&#xAC00; &#xB418;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>microphone off &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294; &#xD638;&#xCD9C;&#xC5B4;&#xB97C;
-          &#xBC1C;&#xD654;&#xD558;&#xC5EC; &#xAE30;&#xAE30;&#xB97C; listening &#xC0C1;&#xD0DC;&#xB85C;
-          &#xB9CC;&#xB4E4; &#xC218; &#xC5C6;&#xC9C0;&#xB9CC;, &#xD638;&#xCD9C; &#xBC84;&#xD2BC;&#xC744;
-          &#xB204;&#xB974;&#xBA74; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;
+          wake-up &#xBC84;&#xD2BC;&#xC744; &#xB204;&#xB97C; &#xACBD;&#xC6B0;, &#xB9C8;&#xC774;&#xD06C;&#xAC00;
+          &#xCF1C;&#xC9C0;&#xACE0; listening - passive &#xC0C1;&#xD0DC;&#xB85C; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;.
+          &#xD55C;&#xBC88; &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xCF1C;&#xC9C0;&#xBA74;
+          &#xD574;&#xB2F9; &#xC0C1;&#xD0DC;&#xB294; &#xC720;&#xC9C0;&#xB429;&#xB2C8;&#xB2E4;.</p>
       </td>
     </tr>
     <tr>
@@ -117,8 +111,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
         <p>&#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC9C4; &#xC0C1;&#xD0DC; (microphone
           off) &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xC5B4;&#xB97C;
           &#xBC1C;&#xD654;&#xD558;&#xC5EC;&#xB3C4; &#xAE30;&#xAE30;&#xAC00; wake
-          up&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD638;&#xCD9C; &#xBC84;&#xD2BC;&#xC744;
-          &#xB20C;&#xB7EC; wake up &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+          up&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
       </td>
     </tr>
     <tr>
