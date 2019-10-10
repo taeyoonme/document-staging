@@ -1,8 +1,8 @@
-# NUGU Agent States
+# NUGU 대화 상태
 
-## NUGU Agent States
+## NUGU 대화 상태 
 
-NUGU는 NUGU 스피커, T map, Btv 등 다양한 기기에서 서비스 되며, 이러한 기기들을 통해 사용자가 접하는 인공지능 소프트웨어를 NUGU 에이전트라고 하며, NUGU 에이전트의 상태는 크게 idle, listening, processing, responding의 4단계로 나눠질 수 있습니다. 먼저 대기상태\(idle state\)에서 사용자가 호출어\(wake-up word\)를 발화하거나 호출 버튼을 누르면 NUGU 에이전트가 사용자의 명령을 받아들일 수 있는 상태\(listening-passive\)로 변경됩니다. 이때 사용자가 말하기 시작하면 사용자의 발화를 입력 받는 상태\(listening-active\)로 변경되며, 사용자의 발화가 종료되면 동작을 결정하는 단계\(processing\)를 거쳐 명령에 대한 답변이나 동작을 수행\(responding\)하게 됩니다. 각 상태의 기본 흐름은 아래와 같습니다.
+NUGU 대화의 상태는 크게 idle, listening, processing, responding의 4단계로 나눠질 수 있습니다. 먼저 대기상태\(idle state\)에서 사용자가 호출어\(wake-up word\)를 발화하거나 호출 버튼을 누르면 NUGU가 사용자의 명령을 받아들일 수 있는 상태\(listening-passive\)로 변경됩니다. 이때 사용자가 말하기 시작하면 사용자의 발화를 입력 받는 상태\(listening-active\)로 변경되며, 사용자의 발화가 종료되면 동작을 결정하는 단계\(processing\)를 거쳐 명령에 대한 답변이나 동작을 수행\(responding\)하게 됩니다. 각 상태의 기본 흐름은 아래와 같습니다.
 
 ![](../.gitbook/assets/image-21.png)
 
@@ -18,14 +18,14 @@ NUGU는 NUGU 스피커, T map, Btv 등 다양한 기기에서 서비스 되며, 
 | **Responding - Playing** | 콘텐츠를 재생하는 상태 |
 | **Responding - Error** | 발화한 명령에 대한 동작을 수행할 수 없어, 이에 대한 피드백을 제공하는 상태. Speaking 상태 대신 발생 |
 
-사용자가 wake up 시키지 않더라도, NUGU 에이전트가 스스로 깨어나서 동작을 수행하는 경우가 있는데, 이를 alert 상태라고 하며 아래와 같이 나뉠 수 있습니다.
+사용자가 wake up 시키지 않더라도, NUGU가 스스로 깨어나서 동작을 수행하는 경우가 있는데, 이를 alert 상태라고 하며 아래와 같이 나뉠 수 있습니다.
 
 | Alert 상태  | 정의  |
 | :--- | :--- |
 | **Alert - Message**            | 새로운 알림 메시지가 수신된 상태 |
 | **Alert - Sound** | 사운드 알림 수신되어 이를 표출중인 상 \(알람, 타이머, 전화 수신\) |
 
-NUGU 에이전트의 각 상태에서 호출 버튼을 눌렀을 때의 상태 변화는 다음과 같습니다.
+NUGU의 각 상태에서 호출 버튼을 눌렀을 때의 상태 변화는 다음과 같습니다.
 
 <table>
   <thead>
