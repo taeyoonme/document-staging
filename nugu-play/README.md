@@ -1,6 +1,6 @@
 # NUGU play
 
-Play Builder는 Play를 만드는 도구입니다. 좋은 콘텐츠를 보유하고 있는 업체 또는 개인이 NUGU 사용자에게 자신의 서비스를 제공할 수 있도록 도와줍니다. 
+Play Builder는 Play를 만드는 도구입니다. 좋은 콘텐츠를 보유하고 있는 업체 또는 개인이 NUGU 사용자에게 자신의 서비스를 제공할 수 있도록 도와줍니다.
 
 사용자의 발화를 이해하는 User Utterance Model, 그리고 이를 기반으로 기능을 수행하는 Action들을 조합하여 하나의 완결된 Play를 만듭니다. 하나의 Play를 완성하기 위해서는 크게
 
@@ -8,7 +8,7 @@ Play Builder는 Play를 만드는 도구입니다. 좋은 콘텐츠를 보유하
 2. Intent별로 Action을 정의하여 사용자의 요청에 대해 적절한 응답과 동작을 처리할 수 있어야 하며,
 3. 실질적으로 사용자 발화에 대해 응답하거나 동작할 수 있는 Backend proxy API를 연동하는 것이 필요합니다.
 
-Play Builder는 이 모든 기능들을 하나의 통합된 환경에서 GUI 기반으로 제공하고 있습니다. 따라서 개발자가 아니어도 Play Builder를 활용하여 자신만의 Play를 개발할 수 있습니다. Play Builder에서 Play를 만든 후, NUGU play kit에서 다음의 과정을 통해 Play를 이용할 수 있습니다. 
+Play Builder는 이 모든 기능들을 하나의 통합된 환경에서 GUI 기반으로 제공하고 있습니다. 따라서 개발자가 아니어도 Play Builder를 활용하여 자신만의 Play를 개발할 수 있습니다. Play Builder에서 Play를 만든 후, NUGU play kit에서 다음의 과정을 통해 Play를 이용할 수 있습니다.
 
 1. Play 타입과 호출이름\(Invocation name\)을 정합니다. 
 2. 기본 정보/연동 정보 등을 입력하는 심사요청서를 작성합니다.
@@ -45,10 +45,4 @@ Play 호출 이름은 사용자가 Play를 호출하기 위해 발화하는 고�
 {% hint style="info" %}
 Play 생성 시에 이 호출 이름을 정의해야 하고, 호출 이름에 대한 자세한 내용은 [호출 이름 정의하기](play-registration-and-review/register-a-play.md#define-an-invocation-name)를 참고하면 됩니다.
 {% endhint %}
-
-
-
-
-
-
 

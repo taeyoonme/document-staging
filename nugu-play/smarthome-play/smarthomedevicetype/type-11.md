@@ -10,7 +10,7 @@ Discovery Request 예시
 
 ```scheme
 (POST, /nugu/v1/devices)
-    
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -44,7 +44,7 @@ Discovery Response 예시
 
 ## Recommended Capabilities
 
-NUGU스마트홈을 통해 스마트플러그\(PLUG\)를 제어할 때 권장하는 SmartHome Capability 목록입니다. 권장하는 모든 Capability를 지원하지 않아도 되며 스마트홈 기기 자체 기능에 맞추어 제공하고자 하는 Capability 목록을 Discovery 시 응답에 포함해야 합니다. 
+NUGU스마트홈을 통해 스마트플러그\(PLUG\)를 제어할 때 권장하는 SmartHome Capability 목록입니다. 권장하는 모든 Capability를 지원하지 않아도 되며 스마트홈 기기 자체 기능에 맞추어 제공하고자 하는 Capability 목록을 Discovery 시 응답에 포함해야 합니다.
 
 Capability별 상세한 내용은 아래 리스트의 링크를 통해 확인하실 수 있습니다.
 

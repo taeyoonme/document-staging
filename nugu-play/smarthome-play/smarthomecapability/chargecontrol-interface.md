@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-     
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -52,8 +52,8 @@ NUGU스마트홈 ChargeControl Capability는 충전을 요청하는 StartChargin
 ### StartCharging
 
 **Directive 정보**  
-SmartHomeDevice의 충전을 시작한다.   
-Capability : ChargeControl   
+SmartHomeDevice의 충전을 시작한다.  
+Capability : ChargeControl  
 Directive : StartCharging
 
 **Voice Command**  
@@ -65,8 +65,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/StartCharging)
-    
-    
+
+
 {
    "version":1,
    "requestId":"2019093020a1e59d2c95f74908a06c7473f6676783",
@@ -133,8 +133,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/StopCharging)
-    
-    
+
+
 {
    "version":1,
    "requestId":"2019093020a1e59d2c95f74908a06c7473f6676783",
@@ -188,8 +188,8 @@ Sample Response
 ### CheckRemainingBattery
 
 **Directive 정보**  
-SmartHomeDevice의 잔여배터리량을 조회한다.   
-Capability : ChargeControl   
+SmartHomeDevice의 잔여배터리량을 조회한다.  
+Capability : ChargeControl  
 Directive : CheckRemainingBattery
 
 **Voice Command**  
@@ -201,8 +201,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/CheckRemainingBattery)
-    
-    
+
+
 {
    "version":1,
    "requestId":"2019093020a1e59d2c95f74908a06c7473f6676783",

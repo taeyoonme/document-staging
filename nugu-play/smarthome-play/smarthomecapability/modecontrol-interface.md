@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-   
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -52,7 +52,7 @@ SmartHomeDevice Attribute Parameters
 
 | Attribute | Description |
 | :--- | :--- |
-| supportedModes |  해당 SmartHomeDevice가 지원하는 Mode의 명칭입니다. Mode는 NUGU스마트홈에서 지원하는 Mode 명칭 중 선택해서 응답할 수 있으며, 지원하는 Mode의 명칭은 Mode를 참조하시기 바랍니다. 지원하는 Mode는 각 Device별로 Array 형태로 복수개 전달할 수 있습니다. |
+| supportedModes | 해당 SmartHomeDevice가 지원하는 Mode의 명칭입니다. Mode는 NUGU스마트홈에서 지원하는 Mode 명칭 중 선택해서 응답할 수 있으며, 지원하는 Mode의 명칭은 Mode를 참조하시기 바랍니다. 지원하는 Mode는 각 Device별로 Array 형태로 복수개 전달할 수 있습니다. |
 | customData | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다. customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 
 ## Directive
@@ -63,7 +63,7 @@ NUGU SmartHome ModeControl Capability는 Mode를 설정하는 SetMode와 설정�
 
 **Directive 정보**  
 SmartHomeDevice를 사용자가 발화한 모드로 설정한다.  
-Capability : ModeControl   
+Capability : ModeControl  
 Directive : SetMode
 
 **Voice Command**  
@@ -75,8 +75,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)
-   
-   
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -158,8 +158,8 @@ CancelMode 는 모드를 취소하는 기능인데 만약 취소가 불가능한
 {% endhint %}
 
 **Directive 정보**  
-SmartHomeDevice에 사용자가 발화한 모드를 설정 해제한다.   
-Capability : ModeControl   
+SmartHomeDevice에 사용자가 발화한 모드를 설정 해제한다.  
+Capability : ModeControl  
 Directive : CancelMode
 
 **Voice Command**  
@@ -171,8 +171,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/CancelMode)
-   
-   
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",

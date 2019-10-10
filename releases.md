@@ -110,7 +110,7 @@
 * Utterance Parameter에 Entity mapping 방식 변경 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/multi-entity-mapping.md)
 * Entity value 및 동의어 입력 시 허용 특수기호 추가
 
-  ' \(Apostrophe\), & \(Ampersand\), - \(Hyphen\) 
+  ' \(Apostrophe\), & \(Ampersand\), - \(Hyphen\)
 
 * 저장 버튼 동작 수정
 * Entity value 및 동의어 입력 시 띄어쓰기 허용
@@ -136,7 +136,7 @@
 
 ### 2. 향상/변경된 기능
 
-* Entity value 및 동의어 입력 시 특수기호 허용 제외 
+* Entity value 및 동의어 입력 시 특수기호 허용 제외
 
   \_ \(Underbar\)
 
@@ -151,5 +151,5 @@
 
 * Entity value 및 동의어 입력 시 허용 특수기호 추가
 
-  ' \(Apostrophe\), & \(Ampersand\), - \(Hyphen\) 
+  ' \(Apostrophe\), & \(Ampersand\), - \(Hyphen\)
 

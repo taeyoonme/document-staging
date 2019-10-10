@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-    
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -53,8 +53,8 @@ NUGU SmartHome ColorControl Capability는 SmartHomeDevice의 색상변경을 제
 ### ChangeColor
 
 **Directive 정보**  
-SmartHomeDevice의 색상을 사용자가 발화한 색상으로 설정한다.   
-Capability : ColorControl   
+SmartHomeDevice의 색상을 사용자가 발화한 색상으로 설정한다.  
+Capability : ColorControl  
 Directive : ChangeColor
 
 **Voice Command**  
@@ -66,8 +66,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/ColorControl/directives/ChangeColor)
-     
-     
+
+
 {
    "version":1,
    "requestId":"20190930213631c172b5214d4abfdbeb5804d8d80d",
@@ -115,7 +115,6 @@ ChangeColor Directive Request parameter details
 Sample Response
 
 ```scheme
-
 {
     "requestId": "20190930213631c172b5214d4abfdbeb5804d8d80d", <-- request로 받은 값을 그대로 응답
     "data":[

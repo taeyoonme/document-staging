@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-    
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -51,8 +51,8 @@ NUGU SmartHome StateCheck Capability는 SmartHomeDevice의 상태를 조회하�
 ### AskState
 
 **Directive 정보**  
-SmartHomeDevice의 상태를 조회한다.   
-Capability : StateCheck   
+SmartHomeDevice의 상태를 조회한다.  
+Capability : StateCheck  
 Directive : AskState
 
 **Voice Command**  
@@ -64,8 +64,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/StateCheck/directives/AskState)
-     
-     
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -119,7 +119,6 @@ Sample Response
         }
     ]
 }
-
 ```
 
 AskState Directive Response parameter details
@@ -131,8 +130,8 @@ AskState Directive Response parameter details
 ### AskOpenState
 
 **Directive 정보**  
-SmartHomeDevice의 열림상태를 조회한다.   
-Capability : StateCheck   
+SmartHomeDevice의 열림상태를 조회한다.  
+Capability : StateCheck  
 Directive : AskOpenState
 
 **Voice Command**  
@@ -144,8 +143,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/StateCheck/directives/AskOpenState)
-     
-     
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -208,6 +207,4 @@ AskOpenState Directive Response parameter details
 ## Error & Exception
 
 해당 Capability/Directive에서 응답 시 사용할 수 있는 ErrorCode는 [SmartHomeError](../smarthomeerror.md)를 참조해주시기 바랍니다.
-
-
 

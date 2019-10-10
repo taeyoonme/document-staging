@@ -12,7 +12,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><a href="airflowcontrol-interface.md"> AirflowControl</a>
+      <td style="text-align:left"> <a href="airflowcontrol-interface.md">AirflowControl</a>
       </td>
       <td style="text-align:left">NUGU &#xC2A4;&#xB9C8;&#xD2B8;&#xD648;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C;
         SmartHomeDevice&#xC758; &#xD48D;&#xB7C9;&#xC81C;&#xC5B4;&#xBC29;&#xC2DD;&#xC5D0;
@@ -269,7 +269,7 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
         </p>
         <p><a href="../smarthomedevicetype/type-17.md">&#xC624;&#xBE10;</a>
         </p>
-        <p><a href="../smarthomedevicetype/type-18.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;<br /></a>
+        <p><a href="../smarthomedevicetype/type-18.md">&#xC758;&#xB958;&#xAD00;&#xB9AC;<br /></a> 
           <a
           href="../smarthomedevicetype/type-19.md">&#xC815;&#xC218;&#xAE30;</a>
         </p>
@@ -294,4 +294,3 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
     </tr>
   </tbody>
 </table>
-

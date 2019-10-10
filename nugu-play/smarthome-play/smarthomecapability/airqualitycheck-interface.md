@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-   
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -58,8 +58,8 @@ NUGU SmartHome AirQualityCheck Capability는 공기상태를 조회하는 AskAir
 ### AskAirQuality
 
 **Directive 정보**  
-SmartHomeDevice에서 측정한 주변 공기상태를 조회한다.   
-Capability : AirQualityCheck   
+SmartHomeDevice에서 측정한 주변 공기상태를 조회한다.  
+Capability : AirQualityCheck  
 Directive : AskAirQuality
 
 **Voice Command**  
@@ -71,8 +71,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/AirQualityCheck/directives/AskAirQuality)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",

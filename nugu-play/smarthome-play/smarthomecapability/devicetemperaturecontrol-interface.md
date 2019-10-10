@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-   
+
 {
     "userIdentifier": "t6Pv9PLAEmYZilNiloUUnZbVDjXgvUCzwpWY1tPq" (optional, e.g. hue whitelist identifier),
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
@@ -56,8 +56,8 @@ NUGU스마트홈 DeviceTemperatureControl Capability는 SmartHomeDevice의 자�
 ### AskDeviceTemperature
 
 **Directive 정보**  
-SmartHomeDevice에 설정된 자체 온도를 조회한다.   
-Capability : DeviceTemperatureControl   
+SmartHomeDevice에 설정된 자체 온도를 조회한다.  
+Capability : DeviceTemperatureControl  
 Directive : AskDeviceTemperature
 
 **Voice Command**  
@@ -69,8 +69,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-    
-    
+
+
 {
     "version": 1,
     "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
@@ -127,7 +127,7 @@ AskDeviceTemperature Directive Response parameter details
 
 **Directive 정보**  
 SmartHomeDevice의 자체설정온도를 사용자가 발화한 특정 온도로 설정한다.  
-Capability : DeviceTemperatureControl   
+Capability : DeviceTemperatureControl  
 Directive : SetDeviceTemperature
 
 **Voice Command**  
@@ -138,10 +138,9 @@ Directive : SetDeviceTemperature
 Sample Request
 
 ```scheme
-
 Control Request 예시 (POST, /nugu/v1/capabilities/DeviceTemperatureControl/directives/SetDeviceTemperature)
-    
-    
+
+
 {
     "version": 1,
     "requestId": "2019071712638a4378649347bdb21643127a0f6d83",

@@ -40,7 +40,7 @@ sudo apt-get update
 
 ### 패키지 설치하기
 
-Linux SDK는 아래의 패키지들로 구성되어 있습니다. 
+Linux SDK는 아래의 패키지들로 구성되어 있습니다.
 
 | 패키지 | 설명 |
 | :--- | :--- |
@@ -87,7 +87,7 @@ Linux SDK는 아래와 같이 2가지 샘플을 제공하고 있습니다.
 
 ![](../../../.gitbook/assets/linux_oauth_capture_3.png)
 
-위 정보들은 `/var/lib/nugu/nugu-auth.json` 파일에 아래와 같은 JSON 형태로 저장됩니다. 
+위 정보들은 `/var/lib/nugu/nugu-auth.json` 파일에 아래와 같은 JSON 형태로 저장됩니다.
 
 ```javascript
 {
@@ -153,65 +153,67 @@ Select Command >
 
 사용할 수 있는 명령들에 대한 설명은 아래와 같습니다.
 
+| 명령 | 설명 |
+| :--- | :--- |
+
+
+| `w` \(start wakeup\) | 정해진 Wake word\("아리아"\)를 통해 wake-up 하기 위한 대기 상태로 진입합니다. |
+| :--- | :--- |
+
+
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xBA85;&#xB839;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><code>w</code> (start wakeup)</td>
-      <td style="text-align:left">&#xC815;&#xD574;&#xC9C4; Wake word(&quot;&#xC544;&#xB9AC;&#xC544;&quot;)&#xB97C;
-        &#xD1B5;&#xD574; wake-up &#xD558;&#xAE30; &#xC704;&#xD55C; &#xB300;&#xAE30;
-        &#xC0C1;&#xD0DC;&#xB85C; &#xC9C4;&#xC785;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>l</code> (start listening)</td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>l</code> (start listening)</th>
+      <th style="text-align:left">
         <p>wake-up &#xC5C6;&#xC774; &#xBC14;&#xB85C; &#xC74C;&#xC131; &#xBC1C;&#xD654;&#xB97C;
           NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
         <p>&#xBC1C;&#xD654;&#xAC00; &#xB05D;&#xB098;&#xBA74; NUGU &#xC11C;&#xBE44;&#xC2A4;&#xB85C;&#xBD80;&#xD130;
           &#xC751;&#xB2F5;(TTS)&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
         <p>&#xC704; &#xACFC;&#xC815;&#xC774; &#xB05D;&#xB098;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C;
           &#xB2E4;&#xC2DC; wake-up &#xB300;&#xAE30; &#xC0C1;&#xD0DC;&#xB85C; &#xC804;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table>| `s` \(stop listening\) | 발화를 강제로 중지 시킵니다. |
+| :--- | :--- |
+
+
+<table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>s</code> (stop listening)</td>
-      <td style="text-align:left">&#xBC1C;&#xD654;&#xB97C; &#xAC15;&#xC81C;&#xB85C; &#xC911;&#xC9C0; &#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>t</code> (text input)</td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>t</code> (text input)</th>
+      <th style="text-align:left">
         <p>&#xD14D;&#xC2A4;&#xD2B8;(&#xC608;: &quot;&#xC624;&#xB298; &#xBA70;&#xCE60;&#xC774;&#xC57C;&quot;)&#xB97C;
           NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
         <p>&#xC74C;&#xC131; &#xBC1C;&#xD654;&#xC640; &#xB3D9;&#xC77C;&#xD558;&#xAC8C;
           NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0;&#xC11C; &#xC751;&#xB2F5;&#xC744;
           &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
+      </th>
     </tr>
+  </thead>
+  <tbody></tbody>
+</table><table>
+  <thead>
     <tr>
-      <td style="text-align:left"><code>c</code> (connect)</td>
-      <td style="text-align:left">
+      <th style="text-align:left"><code>c</code> (connect)</th>
+      <th style="text-align:left">
         <p>NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C;
           &#xC5F0;&#xACB0;&#xD569;&#xB2C8;&#xB2E4;.</p>
         <p>(&#xCC38;&#xACE0;&#xB85C;, Sample application &#xC2E4;&#xD589;&#xC2DC;
           &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC5F0;&#xACB0;&#xC744; &#xC2DC;&#xB3C4;&#xD569;&#xB2C8;&#xB2E4;.)</p>
-      </td>
+      </th>
     </tr>
-    <tr>
-      <td style="text-align:left"><code>d</code> (disconnect)</td>
-      <td style="text-align:left">NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xC5F0;&#xACB0;&#xB41C; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C;
-        &#xB04A;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>q</code> (quit)</td>
-      <td style="text-align:left">Sample application&#xC744; &#xC885;&#xB8CC;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-  </tbody>
-</table>이제 `w` 명령을 통한 실제 사용 예제를 보여 드리겠습니다.
+  </thead>
+  <tbody></tbody>
+</table>| `d` \(disconnect\) | NUGU 서비스에 연결된 네트워크를 끊습니다. |
+| :--- | :--- |
+
+
+| `q` \(quit\) | Sample application을 종료합니다. |
+| :--- | :--- |
+
 
 ```bash
 Select Command > w
@@ -435,7 +437,5 @@ $ ./hello
 
 아래 Github 주소를 통해 Linux SDK 소스 코드를 다운로드 받을 수 있습니다.
 
-{% embed url="https://github.com/nugu-developers/nugu-linux" %}
-
-
+{% embed url="https://github.com/nugu-developers/nugu-linux" caption="" %}
 

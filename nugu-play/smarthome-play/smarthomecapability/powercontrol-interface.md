@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-  
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -30,7 +30,7 @@ Discovery Sample Response
          "manufacturer":"example_manufacturer",
          "supportedCapabilities":{
             "powerControl":{
- 
+
             }
          },
          "customData":{
@@ -48,12 +48,12 @@ NUGU SmartHome PowerControl Capability는 전원을 켜는 TurnOn, 전원을 끄
 
 ### TurnOn
 
-**Directive 정보**   
-SmartHomeDevice의 전원을 켠다.   
-Capability : PowerControl   
+**Directive 정보**  
+SmartHomeDevice의 전원을 켠다.  
+Capability : PowerControl  
 Directive : TurnOn
 
-**Voice Command**   
+**Voice Command**  
 아리아. {FriendlyName} {DeviceType} 전원 켜줘.  
 아리아, {FriendlyName} 켜줘  
 아리아, {DeviceType} 켜
@@ -62,7 +62,7 @@ Sample Request
 
 ```scheme
 (POST, /nugu/v1/capabilities/PowerControl/directives/TurnOn)
- 
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -116,9 +116,9 @@ Sample Response
 
 ### TurnOff
 
-**Directive 정보**   
-SmartHomeDevice의 전원을 끈다.   
-Capability : PowerControl   
+**Directive 정보**  
+SmartHomeDevice의 전원을 끈다.  
+Capability : PowerControl  
 Directive : TurnOff
 
 **Voice Command**  
@@ -130,7 +130,7 @@ Sample Request
 
 ```scheme
 (POST, /nugu/v1/capabilities/PowerControl/directives/TurnOff)
- 
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -185,6 +185,4 @@ Sample Response
 ## Error & Exception
 
 해당 Capability/Directive에서 응답 시 사용할 수 있는 ErrorCode는 [SmartHomeError](../smarthomeerror.md)를 참조해주시기 바랍니다.
-
-
 

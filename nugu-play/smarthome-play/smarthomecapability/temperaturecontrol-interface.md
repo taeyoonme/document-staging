@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-  
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -54,8 +54,8 @@ NUGU SmartHome TemperatureControl Capability는 설정온도 및 실제온도를
 ### AskTemperature
 
 **Directive 정보**  
-SmartHomeDeivce에서 측정한 실제온도와 SmartHomeDevice에 설정된 설정온도를 조회한다.   
-Capability : TemperatureControl   
+SmartHomeDeivce에서 측정한 실제온도와 SmartHomeDevice에 설정된 설정온도를 조회한다.  
+Capability : TemperatureControl  
 Directive : AskTemperature
 
 **Voice Command**  
@@ -67,8 +67,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/AskTemperature)
-   
-   
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -133,8 +133,8 @@ AskTemperature Directive Response parameter details
 ### SetTemperature
 
 **Directive 정보**  
-SmartHomeDevice의 설정온도를 사용자가 발화한 특정 온도로 설정한다.   
-Capability : TemperatureControl   
+SmartHomeDevice의 설정온도를 사용자가 발화한 특정 온도로 설정한다.  
+Capability : TemperatureControl  
 Directive : SetTemperature
 
 **Voice Command**  
@@ -146,8 +146,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)
-   
-   
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -218,8 +218,8 @@ SetTemperature Directive Response parameter details
 ### IncreaseTemperature
 
 **Directive 정보**  
-SmartHomeDevice의 설정온도를 증가시킨다.   
-Capability : TemperatureControl   
+SmartHomeDevice의 설정온도를 증가시킨다.  
+Capability : TemperatureControl  
 Directive : IncreaseTemperature
 
 **Voice Command**  
@@ -231,8 +231,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)
-   
-   
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -303,8 +303,8 @@ IncreaseTemperature Directive response parameter details
 ### DecreaseTemperature
 
 **Directive 정보**  
-SmartHomeDevice의 설정 온도를 감소시킨다.   
-Capability : TemperatureControl   
+SmartHomeDevice의 설정 온도를 감소시킨다.  
+Capability : TemperatureControl  
 Directive : DecreaseTemperature
 
 **Voice Command**  
@@ -316,8 +316,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/DecreaseTemperature)
-   
-   
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -388,8 +388,8 @@ DecreaseTemperature Directive response parameter details
 ### SetTemperatureMax
 
 **Directive 정보**  
-SmartHomeDevice를 최고 설정온도로 설정한다.   
-Capability : TemperatureControl   
+SmartHomeDevice를 최고 설정온도로 설정한다.  
+Capability : TemperatureControl  
 Directive : SetTemperatureMax
 
 **Voice Command**  
@@ -401,8 +401,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMax)
-   
-   
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -465,8 +465,8 @@ SetTemperatureMax Directive Response parameter details
 ### SetTemperatureMin
 
 **Directive 정보**  
-SmartHomeDevice를 최저 설정온도로 설정한다.   
-Capability : TemperatureControl   
+SmartHomeDevice를 최저 설정온도로 설정한다.  
+Capability : TemperatureControl  
 Directive : SetTemperatureMin
 
 **Voice Command**  
@@ -478,8 +478,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMin)
-   
-   
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",

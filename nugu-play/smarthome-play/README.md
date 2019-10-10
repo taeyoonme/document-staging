@@ -2,11 +2,11 @@
 
 NUGU스마트홈을 활용해 SmartHomePlay를 제작하면 NUGU 에이전트가 탑재된 다양한 기기에서 음성 인터페이스를 활용하여 스마트홈 기기들을 제어하고 확인할 수 있습니다. 이 문서에서는 NUGU스마트홈을 통해 서비스를 제공하고 싶은 IoT Service Provider에게 규격 및 개발 가이드와 API 레퍼런스, 샘플코드, NUGU SmartHome Playbuilder 사용 가이드 등을 제공합니다. NUGU스마트홈은 계속 개발되고 있으며, 관련 규격들은 지속적으로 업데이트됩니다.
 
-![OVERVIEW](../../.gitbook/assets/image%20%2815%29.png)
+![OVERVIEW](../../.gitbook/assets/image-15.png)
 
 ## SmartHomePlay 만들기
 
-SmartHomePlay는 스마트홈 관련 기능에 대해 사용자 발화 및 처리로직들이 사전에 정의되어 있는 Prebuilt 유형의 Play입니다. 따라서 SmartHomePlay는 별도로 UtteranceModel 및 Action정의를 하실 필요가 없이 OAUTH 연동 및 SmartHomeBackendProxy 구현만으로 제작할 수 있습니다. SmartHomePlay 역시 NUGU Developers 내 PlayBuilder를 활용해 만들 수 있으며 Play 생성 시 Play 유형을 SmartHome으로 선택해야 합니다. SmartHomePlay를 만들기 위한 순서 및 자세한 내용을 아래를 참조하시기 바랍니다. 
+SmartHomePlay는 스마트홈 관련 기능에 대해 사용자 발화 및 처리로직들이 사전에 정의되어 있는 Prebuilt 유형의 Play입니다. 따라서 SmartHomePlay는 별도로 UtteranceModel 및 Action정의를 하실 필요가 없이 OAUTH 연동 및 SmartHomeBackendProxy 구현만으로 제작할 수 있습니다. SmartHomePlay 역시 NUGU Developers 내 PlayBuilder를 활용해 만들 수 있으며 Play 생성 시 Play 유형을 SmartHome으로 선택해야 합니다. SmartHomePlay를 만들기 위한 순서 및 자세한 내용을 아래를 참조하시기 바랍니다.
 
 NUGU Developers를 통해 [PlayBuilder](https://builder.nugu.co.kr/index.html#/playList)에 접속해주세요.
 
@@ -18,14 +18,14 @@ PlayBuilder를 통해 기본정보를 입력해주세요. 기본정보는 Play�
 
 {% hint style="info" %}
 Oauth 정보 : SmartHomePlay의 경우 IoT ServiceProvider의 사용자 계정 인증을 NUGU의 사용자 계정과 연동해야 하므로 인증서버 연동이 필수적으로 필요하며 해당 연동은 OAUTH 2.0 규격에 따라 아래 정보가 필요합니다.  
- 1. Clinet ID  
- 2. Client Secret  
- 3. Redirect URI  
- 4. Auth URI   
- 5. Token Endpoint \(Token URI\)   
- 6. Token Refresh URI   
- 7. Grant Type   
- 8. Scope
+1. Clinet ID  
+2. Client Secret  
+3. Redirect URI  
+4. Auth URI  
+5. Token Endpoint \(Token URI\)  
+6. Token Refresh URI  
+7. Grant Type  
+8. Scope
 {% endhint %}
 
 외부 연동 서버\(backend proxy\) 설정 : NUGU의 사용자 발화체계 및 Action 로직을 IoT Service와 연동해 줄 BackendProxy 서버의 개발이 필수입니다.
@@ -59,7 +59,7 @@ Discovery Request Sample
 
 ```text
 Discovery Request 예시 (POST, /nugu/v1/devices)
-  
+
 {
     "userIdentifier": "t6Pv9PLAEmYZilNiloUUnZbVDjXgvUCzwpWY1tPq" (optional, e.g. hue whitelist identifier),
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
@@ -70,8 +70,8 @@ Discovery Response Sample
 
 ```text
 Discovery Response 예시
-  
-  
+
+
 {
     "devices": [{
         "id": "D1234567",
@@ -107,8 +107,8 @@ Control Request Sample
 
 ```text
 Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-  
-  
+
+
 {
     "version": 1,
     "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
@@ -144,15 +144,11 @@ Control Response Sample
 
 ```text
 Control Response 예시
-  
+
 {
     "resultCode": "OK" <-- 에러일 경우 에러코드 응답,
     "requestId": "2019071712638a4378649347bdb21643127a0f6d83", <-- request로 받은 값을 그대로 응답
     "parameters": {} <-- directive 마다 필요한 property 채워서 응답.
 }
 ```
-
-
-
-
 

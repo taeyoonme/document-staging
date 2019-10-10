@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-   
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -50,8 +50,8 @@ NUGU스마트홈 HumidityControl Capability는 설정습도 및 실제습도를 
 ### AskHumidity
 
 **Directive 정보**  
-SmartHomeDevice에서 측정한 실제습도와 SmartHomeDevice에 설정된 설정습도를 조회한다.   
-Capability : HumidityControl   
+SmartHomeDevice에서 측정한 실제습도와 SmartHomeDevice에 설정된 설정습도를 조회한다.  
+Capability : HumidityControl  
 Directive : AskHumidity
 
 **Voice Command**  
@@ -63,8 +63,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/AskHumidity)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -124,8 +124,8 @@ AskHumidity Directive Response parameter details
 ### SetHumidity
 
 **Directive 정보**  
-SmartHomeDevice의 설정습도를 사용자가 발화한 특정 습도로 설정한다.   
-Capability : HumidityControl   
+SmartHomeDevice의 설정습도를 사용자가 발화한 특정 습도로 설정한다.  
+Capability : HumidityControl  
 Directive : SetHumidity
 
 **Voice Command**  
@@ -137,8 +137,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidity)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -207,8 +207,8 @@ SetHumidity Directive Response parameter details
 ### IncreaseHumidity
 
 **Directive 정보**  
-SmartHomeDevice의 설정습도를 증가시킨다.   
-Capability : HumidityControl   
+SmartHomeDevice의 설정습도를 증가시킨다.  
+Capability : HumidityControl  
 Directive : IncreaseHumidity
 
 **Voice Command**  
@@ -220,8 +220,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/IncreaseHumidity)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -290,8 +290,8 @@ IncreaseHumidity Directive response parameter details
 ### DecreaseHumidity
 
 **Directive 정보**  
-SmartHomeDevice의 설정 습도를 감소시킨다.   
-Capability : HumidityControl   
+SmartHomeDevice의 설정 습도를 감소시킨다.  
+Capability : HumidityControl  
 Directive : DecreaseHumidity
 
 **Voice Command**  
@@ -303,8 +303,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/DecreaseHumidity)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -373,8 +373,8 @@ DecreaseHumidity Directive response parameter details
 ### SetHumidityMax
 
 **Directive 정보**  
-SmartHomeDevice를 최고 설정습도로 설정한다.   
-Capability : HumidityControl   
+SmartHomeDevice를 최고 설정습도로 설정한다.  
+Capability : HumidityControl  
 Directive : SetHumidityMax
 
 **Voice Command**  
@@ -386,8 +386,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidityMax)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -449,8 +449,8 @@ SetHumidityMax Directive Response parameter details
 ### SetHumidityMin
 
 **Directive 정보**  
-SmartHomeDevice를 최저 설정습도로 설정한다.   
-Capability : HumidityControl   
+SmartHomeDevice를 최저 설정습도로 설정한다.  
+Capability : HumidityControl  
 Directive : SetHumidityMin
 
 **Voice Command**  
@@ -462,8 +462,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidityMin)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",

@@ -38,7 +38,3 @@ Linux SDK는 아래의 외부 library를 사용하고 있습니다. 때문에 �
 | nghttp2 | [https://github.com/nghttp2/nghttp2.git](https://github.com/nghttp2/nghttp2.git) |
 | jsoncpp | [https://github.com/open-source-parsers/jsoncpp.git](https://github.com/open-source-parsers/jsoncpp.git) |
 
-
-
-
-

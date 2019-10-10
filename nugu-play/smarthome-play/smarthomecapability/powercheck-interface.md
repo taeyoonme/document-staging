@@ -10,7 +10,7 @@ Discovery Sample Request
 
 ```scheme
 (POST, /nugu/v1/devices)
-    
+
 {
     "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
@@ -53,8 +53,8 @@ NUGU스마트홈 PowerCheck Capability는 소모 전력량을 조회하는 AskPo
 ### AskPower
 
 **Directive 정보**  
-SmartHomeDevice의 사용 전력량을 조회한다.   
-Capability : PowerCheck   
+SmartHomeDevice의 사용 전력량을 조회한다.  
+Capability : PowerCheck  
 Directive : AskPower
 
 **Voice Command**  
@@ -66,8 +66,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/PowerCheck/directives/AskPower)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -132,8 +132,8 @@ AskPower Directive Response parametert details
 ### AskPowerTarget
 
 **Directive 정보**  
-SmartHomeDevice에 설정된 목표전력사용량을 조회한다.   
-Capability : PowerCheck   
+SmartHomeDevice에 설정된 목표전력사용량을 조회한다.  
+Capability : PowerCheck  
 Directive : AskPowerTarget
 
 **Voice Command**  
@@ -145,8 +145,8 @@ Sample Request
 
 ```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/PowerCheck/directives/AskPowerTarget)
-    
-    
+
+
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
