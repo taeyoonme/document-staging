@@ -92,13 +92,12 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
       <td style="text-align:left"><b>&#xD638;&#xCD9C; &#xBC84;&#xD2BC;</b>
       </td>
       <td style="text-align:left">
-        <p>&#x2022; &#xD638;&#xCD9C;&#xC5B4;&#xB97C; &#xB9D0;&#xD558;&#xB294; &#xAC83;&#xACFC;
+        <p>&#xD638;&#xCD9C;&#xC5B4;&#xB97C; &#xB9D0;&#xD558;&#xB294; &#xAC83;&#xACFC;
           &#xB3D9;&#xC77C;&#xD558;&#xAC8C;, NUGU &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB97C;
           listening-passive &#xC0C1;&#xD0DC;&#xAC00; &#xB418;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#x2022; &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xB294;
-          &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; wake-up &#xBC84;&#xD2BC;&#xC744; &#xB204;&#xB97C;
-          &#xACBD;&#xC6B0;, &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xCF1C;&#xC9C0;&#xACE0;
-          listening - passive &#xC0C1;&#xD0DC;&#xB85C; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;.
+        <p>&#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;
+          wake-up &#xBC84;&#xD2BC;&#xC744; &#xB204;&#xB97C; &#xACBD;&#xC6B0;, &#xB9C8;&#xC774;&#xD06C;&#xAC00;
+          &#xCF1C;&#xC9C0;&#xACE0; listening - passive &#xC0C1;&#xD0DC;&#xB85C; &#xBCC0;&#xACBD;&#xB429;&#xB2C8;&#xB2E4;.
           &#xD55C;&#xBC88; &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xCF1C;&#xC9C0;&#xBA74;
           &#xD574;&#xB2F9; &#xC0C1;&#xD0DC;&#xB294; &#xC720;&#xC9C0;&#xB429;&#xB2C8;&#xB2E4;.</p>
       </td>
@@ -107,10 +106,10 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
       <td style="text-align:left"><b>&#xB9C8;&#xC774;&#xD06C; &#xBC84;&#xD2BC;</b>
       </td>
       <td style="text-align:left">
-        <p>&#x2022; &#xAE30;&#xAE30;&#xC758; &#xB9C8;&#xC774;&#xD06C;&#xB97C; &#xB044;&#xAC70;&#xB098;
+        <p>&#xAE30;&#xAE30;&#xC758; &#xB9C8;&#xC774;&#xD06C;&#xB97C; &#xB044;&#xAC70;&#xB098;
           &#xB2C8;&#xB2E4;.</p>
-        <p>&#x2022; &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC9C4; &#xC0C1;&#xD0DC;
-          (microphone off) &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xC5B4;&#xB97C;
+        <p>&#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC9C4; &#xC0C1;&#xD0DC; (microphone
+          off) &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; &#xD638;&#xCD9C;&#xC5B4;&#xB97C;
           &#xBC1C;&#xD654;&#xD558;&#xC5EC;&#xB3C4; &#xAE30;&#xAE30;&#xAC00; wake
           up&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
       </td>
@@ -119,13 +118,13 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
       <td style="text-align:left"><b>&#xBCFC;&#xB968; &#xC870;&#xC808; &#xBC84;&#xD2BC;                                 </b>
       </td>
       <td style="text-align:left">
-        <p>&#x2022; &#xBCFC;&#xB968; &#xC870;&#xC808; &#xBC84;&#xD2BC;&#xC740; &#xC99D;&#xAC00;
+        <p>&#xBCFC;&#xB968; &#xC870;&#xC808; &#xBC84;&#xD2BC;&#xC740; &#xC99D;&#xAC00;
           &#xBC84;&#xD2BC;&#xACFC; &#xAC10;&#xC18C; &#xBC84;&#xD2BC;&#xC774; &#xAC01;&#xAC01;
           &#xC81C;&#xACF5;&#xB418;&#xBA70;, &#xD55C; &#xBC88; &#xB204;&#xB97C; &#xB54C;&#xB9C8;&#xB2E4;
           &#xC74C;&#xB7C9;&#xC744; &#xC99D;&#xAC10;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#x2022; &#xAE38;&#xAC8C; &#xB204;&#xB974;&#xBA74; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C;
+        <p>&#xAE38;&#xAC8C; &#xB204;&#xB974;&#xBA74; &#xC5F0;&#xC18D;&#xC801;&#xC73C;&#xB85C;
           &#xC74C;&#xB7C9;&#xC744; &#xC99D;&#xAC00; &#xB610;&#xB294; &#xAC10;&#xC18C;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#x2022; &#xC774; &#xBC84;&#xD2BC;&#xC774; &#xB3D9;&#xC791;&#xB420; &#xB54C;&#xB294;
+        <p>&#xC774; &#xBC84;&#xD2BC;&#xC774; &#xB3D9;&#xC791;&#xB420; &#xB54C;&#xB294;
           &#xC99D;&#xAC10;&#xB41C; &#xC74C;&#xB7C9;&#xC774; &#xC5B4;&#xB290; &#xC815;&#xB3C4;&#xC778;&#xC9C0;&#xB97C;
           &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC54C; &#xC218; &#xC788;&#xB3C4;&#xB85D;
           &#xC18C;&#xB9AC; &#xD53C;&#xB4DC;&#xBC31;&#xC774; &#xC81C;&#xACF5;&#xB429;&#xB2C8;&#xB2E4;.</p>
@@ -134,13 +133,13 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
     <tr>
       <td style="text-align:left"><b>&#xC74C;&#xC18C;&#xAC70; &#xBC84;&#xD2BC;</b>
       </td>
-      <td style="text-align:left">&#x2022; &#xAE30;&#xAE30;&#xB97C; &#xC74C;&#xC18C;&#xAC70; &#xC0C1;&#xD0DC;&#xB85C;
+      <td style="text-align:left">&#xAE30;&#xAE30;&#xB97C; &#xC74C;&#xC18C;&#xAC70; &#xC0C1;&#xD0DC;&#xB85C;
         &#xC124;&#xC815;&#xD558;&#xAC70;&#xB098; &#xD574;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&#xBE14;&#xB8E8;&#xD22C;&#xC2A4; &#xBC84;&#xD2BC;</b>
       </td>
-      <td style="text-align:left">&#x2022; &#xBE14;&#xB8E8;&#xD22C;&#xC2A4;&#xB85C; &#xB2E4;&#xB978; &#xAE30;&#xAE30;&#xC640;
+      <td style="text-align:left">&#xBE14;&#xB8E8;&#xD22C;&#xC2A4;&#xB85C; &#xB2E4;&#xB978; &#xAE30;&#xAE30;&#xC640;
         &#xD398;&#xC5B4;&#xB9C1;&#xC744; &#xD558;&#xAC70;&#xB098; &#xD574;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
   </tbody>
