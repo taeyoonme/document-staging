@@ -347,7 +347,7 @@ public:
 #include <interface/nugu_client.hh>
 #include <interface/nugu_configuration.hh>
 
-using namespace nuguClientSDK;
+using namespace NuguClientKit;
 
 /* MyASR */
 class MyASR : public IASRListener {
