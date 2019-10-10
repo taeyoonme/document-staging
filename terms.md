@@ -157,5 +157,10 @@
         &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC9C0;&#xC6D0;&#xD558;&#xB294;
         Software Developement Kit&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
+    <tr>
+      <td style="text-align:left">Prompt</td>
+      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xB418;&#xB294;
+        &#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
+    </tr>
   </tbody>
 </table>

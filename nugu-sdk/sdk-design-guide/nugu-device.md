@@ -9,7 +9,7 @@ NUGU 서비스와 관련한 기기의 상태에 대한 정의는 다음과 같�
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xAE30;&#xAE30; &#xC0C1;</th>
+      <th style="text-align:left">&#xAE30;&#xAE30; &#xC0C1;&#xD0DC;</th>
       <th style="text-align:left">&#xC124;&#xBA85;</th>
     </tr>
   </thead>
@@ -168,7 +168,7 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
       <th style="text-align:left">NU100</th>
       <th style="text-align:left">NU110</th>
       <th style="text-align:left">NU200</th>
-      <th style="text-align:left">&#xC758;</th>
+      <th style="text-align:left">&#xC758;&#xBBF8;</th>
     </tr>
   </thead>
   <tbody>

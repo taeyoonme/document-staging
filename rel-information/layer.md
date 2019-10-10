@@ -4,10 +4,10 @@ NUGU 서비스가 수행하는 동작은 몇 가지 유형\(layer\)으로 나뉠
 
 NUGU 서비스 Layer 정의는 다음과 같습니다.
 
-| Layer 유형 | 설 |
+| Layer 유형 | 정의  |
 | :--- | :--- |
 | Call | 통화 상대와 통화가 연결된 상태 |
-| Alert | 알람 울림 / 타이머 울림 / Notification 울림 |
+| Alert | 알람 울림 / 타이머 울림 / Notification 울림 상 |
 | Information | TTS로 정보를 제공하고 있는 상태 |
 | Media | Streaming으로 미디어\(음악 등\)를 재생하고 있는 상태 |
 
