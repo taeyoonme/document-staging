@@ -270,7 +270,7 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
   <thead>
     <tr>
       <th style="text-align:left">&#xC7AC;&#xC0DD; &#xC870;&#xAC74;</th>
-      <th style="text-align:left">On/Off &#xC124;</th>
+      <th style="text-align:left">On/Off &#xC124;&#xC815;</th>
     </tr>
   </thead>
   <tbody>
@@ -286,7 +286,7 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
   </tbody>
 </table>{% file src="../../.gitbook/assets/bootcomplete\_3800ms.ogg" caption="전원 켜짐 완료음" %}
 
-![](../../.gitbook/assets/undefined.png)
+![](../../.gitbook/assets/undefined%20%282%29.png)
 
 **호출 효과 \(Wake up success\)**
 
@@ -296,7 +296,7 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
   <thead>
     <tr>
       <th style="text-align:left">&#xC7AC;&#xC0DD; &#xC870;&#xAC74;</th>
-      <th style="text-align:left">On/Off &#xC124;</th>
+      <th style="text-align:left">On/Off &#xC124;&#xC815;</th>
     </tr>
   </thead>
   <tbody>
@@ -314,11 +314,11 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
 
 호출어 발화 시
 
-![](../../.gitbook/assets/undefined-7.png)
+![](../../.gitbook/assets/2%20%283%29.png)
 
 Slot-filling 시
 
-![](../../.gitbook/assets/slot-filling.png)
+![](../../.gitbook/assets/undefined%20%2810%29.png)
 
 **인식 완료음 \(End listen\)**
 
@@ -328,7 +328,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
   <thead>
     <tr>
       <th style="text-align:left">&#xC7AC;&#xC0DD; &#xC870;&#xAC74;</th>
-      <th style="text-align:left">On/Off &#xC124;</th>
+      <th style="text-align:left">On/Off &#xC124;&#xC815;</th>
     </tr>
   </thead>
   <tbody>
@@ -344,7 +344,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
   </tbody>
 </table>{% file src="../../.gitbook/assets/end\_listening\_500ms.wav" caption="인식 완료음" %}
 
-![](../../.gitbook/assets/endlisten.png)
+![](../../.gitbook/assets/undefined%20%283%29.png)
 
 #### **응답 실패 \(Response fail\)**
 
@@ -354,7 +354,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
   <thead>
     <tr>
       <th style="text-align:left">&#xC7AC;&#xC0DD; &#xC870;</th>
-      <th style="text-align:left">On/Off &#xC124;</th>
+      <th style="text-align:left">On/Off &#xC124;&#xC815;</th>
     </tr>
   </thead>
   <tbody>
@@ -388,11 +388,11 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 
 잡음 / 1음절 발화 / 블랙 리스트 발화 시
 
-![](../../.gitbook/assets/1.png)
+![](../../.gitbook/assets/2%20%284%29.png)
 
 Slot-filling을 위한 listening 상태에서 타임아웃 시
 
-![](../../.gitbook/assets/undefined-2.png)
+![](../../.gitbook/assets/undefined%20%288%29.png)
 
 **전원 꺼짐 \(Power off\)**
 
@@ -417,9 +417,7 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
       </td>
     </tr>
   </tbody>
-</table>![](../../.gitbook/assets/undefined-3.png)
-
-
+</table>![](../../.gitbook/assets/undefined%20%286%29.png)
 
 ### **2\) 서비스 효과음\(Service Feedback Sound\)**
 
@@ -432,11 +430,11 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
 <table>
   <thead>
     <tr>
-      <th style="text-align:left">&#xC7AC;&#xC0DD; &#xC870;</th>
+      <th style="text-align:left">&#xC7AC;&#xC0DD; &#xC870;&#xAC74;</th>
       <th style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xC5D0; &#xC758;&#xD55C; &#xB3D9;&#xC791;</th>
       <th
       style="text-align:left">&#xD558;&#xB4DC;&#xC6E8;&#xC5B4; &#xBC84;&#xD2BC; &#xC870;&#xC791;&#xC5D0;
-        &#xC758;&#xD55C; &#xB3D9;</th>
+        &#xC758;&#xD55C; &#xB3D9;&#xC791;</th>
     </tr>
   </thead>
   <tbody>
@@ -460,10 +458,10 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
 
 볼륨을 올리거나 내릴 때 제공되는 효과입니다. 볼륨 제어 이후에 소리를 재생하여, 사용자가 변경된 볼륨 크기를 인지할 수 있도록 합니다. 음원이나 Prompt 재생 중에는 재생되고 있는 음원/Prompt로 볼륨 크기를 인지할 수 있으므로 볼륨 제어 효과음을 제공하지 않습니다. 볼륨을 0으로 변경 시에는 볼륨 제어 소리를 재생하여도 음소거 상태이므로 볼륨 제어 소리가 들리지 않게 되며 이는 정상 동작입니다. 하드웨어 버튼으로 볼륨 조절 시에도 소리를 제공하도록 합니다.
 
-| **사용자 발화** | **사용자 발화에 의한 동작** | **하드웨어 버튼 조작에 의한 동** |
+| 사용자 발화 | 사용자 발화에 의한 동작 | 하드웨어 버튼 조작에 의한 동작 **** |
 | :--- | :--- | :--- |
 | 볼륨을 높일 | 볼륨 제어음 재생 O | 볼륨 제어음 재생 O |
 | 볼륨을 낮출 때 | 볼륨 제어음 재생 O | 볼륨 제어음 재생 O |
 
-![](../../.gitbook/assets/2.png)
+![](../../.gitbook/assets/undefined.png)
 
