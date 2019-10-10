@@ -176,11 +176,7 @@ Select Command >
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `s` \(stop listening\) | 발화를 강제로 중지 시킵니다. |
-| :--- | :--- |
-
-
-<table>
+</table><table>
   <thead>
     <tr>
       <th style="text-align:left"><code>t</code> (text input)</th>
@@ -207,11 +203,7 @@ Select Command >
     </tr>
   </thead>
   <tbody></tbody>
-</table>| `d` \(disconnect\) | NUGU 서비스에 연결된 네트워크를 끊습니다. |
-| :--- | :--- |
-
-
-| `q` \(quit\) | Sample application을 종료합니다. |
+</table>| `q` \(quit\) | Sample application을 종료합니다. |
 | :--- | :--- |
 
 

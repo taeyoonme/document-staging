@@ -128,8 +128,9 @@ authClient.loginSilently("{refresh-Token}", object : NuguOAuthInterface.OnLoginL
 val authDelegate = NuguOAuth.getClient()
 ```
 
-2. 음성인식에 사용할 기본 AudioProvider를 생성합니다.   
-\(잘 동작하는 AudioProvider를 구현하는 것은 성가신 작업이기에 SDK에서 기본제공하는 클래스들을 이용합니다.\)
+1. 음성인식에 사용할 기본 AudioProvider를 생성합니다.   
+
+   \(잘 동작하는 AudioProvider를 구현하는 것은 성가신 작업이기에 SDK에서 기본제공하는 클래스들을 이용합니다.\)
 
 ```kotlin
 // AudioSourceManager : AudioProvider에 대한 기본 구현 클래스
@@ -137,7 +138,7 @@ val authDelegate = NuguOAuth.getClient()
 val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
 ```
 
-3. 이제 NuguAndroidClient의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.
+1. 이제 NuguAndroidClient의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.
 
 ```kotlin
 val client = NuguAndroidClient.Builder(
