@@ -19,7 +19,7 @@ repositories {
 ### 의존성 추가하기
 
 어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니.  
-\(전체 라이브러리에 대한 의존성은 여기를 참조\)
+\(전체 라이브러리에 대한 의존성은 [여기](https://github.com/nugu-developers/nugu-android)를 참조\)
 
 ```groovy
 dependencies {
