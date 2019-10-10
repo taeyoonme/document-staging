@@ -1,10 +1,10 @@
-# NUGU Device
+# NUGU 기기
 
-NUGU 에이전트를 탑재한 기기의 상태에 따른 동작, 제공하는 물리적 버튼, 조명, 소리에 대한 가이드는 다음과 같습니다.
+NUGU를 탑재한 기기의 상태에 따른 동작, 제공하는 물리적 버튼, 조명, 소리에 대한 가이드는 다음과 같습니다.
 
-## Device States
+## 기기 상
 
-NUGU 서비스와 관련한 기기의 상태에 대한 정의는 다음과 같습니다.
+NUGU를 탑재한 기기의 상태는 다음과 같습니다.
 
 <table>
   <thead>
@@ -33,29 +33,29 @@ NUGU 서비스와 관련한 기기의 상태에 대한 정의는 다음과 같�
     <tr>
       <td style="text-align:left"><b>&#xB9C8;&#xC774;&#xD06C; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0;                            </b>
       </td>
-      <td style="text-align:left">NUGU &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC758; &#xC74C;&#xC131;&#xC778;&#xC2DD;
-        &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xB85C;,
-        &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294; &#xC74C;&#xC131;&#xC73C;&#xB85C;
-        &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB97C; wake up&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left">NUGU &#xAE30;&#xC758; &#xC74C;&#xC131;&#xC778;&#xC2DD; &#xB9C8;&#xC774;&#xD06C;&#xAC00;
+        &#xAEBC;&#xC838; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xB85C;, &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294;
+        &#xC74C;&#xC131;&#xC73C;&#xB85C; &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB97C;
+        wake up&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&#xC57C;&#xAC04; &#xBAA8;&#xB4DC;                                        </b>
       </td>
-      <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;
+      <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xAE30;&#xC5D0;&#xC11C;
         &#xC804;&#xC6D0; &#xC808;&#xC57D;&#xC744; &#xC704;&#xD558; &#xD654;&#xBA74;
         &#xD45C;&#xC2DC;&#xAC00; &#xCD5C;&#xC18C;&#xD654;&#xB41C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&#xD654;&#xBA74; &#xCF1C;&#xC9D0;/&#xAEBC;</b>
       </td>
-      <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;
+      <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xAE30;&#xC5D0;&#xC11C;
         &#xD654;&#xBA74;&#xC774; &#xCF1C;&#xC838;&#xC788;&#xAC70;&#xB098; &#xAEBC;&#xC838;&#xC788;&#xB294;
         &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
       <td style="text-align:left"><b>&#xBB34;&#xB4DC;&#xB4F1; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0; </b>
       </td>
-      <td style="text-align:left">&#xC870;&#xBA85; &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;
+      <td style="text-align:left">&#xC870;&#xBA85; &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xB294; &#xAE30;&#xC5D0;&#xC11C;
         &#xC870;&#xBA85;&#xC774; &#xCF1C;&#xC838;&#xC788;&#xAC70;&#xB098; &#xAEBC;&#xC838;&#xC788;&#xB294;
         &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
@@ -93,8 +93,8 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
       </td>
       <td style="text-align:left">
         <p>&#x2022; &#xD638;&#xCD9C;&#xC5B4;&#xB97C; &#xB9D0;&#xD558;&#xB294; &#xAC83;&#xACFC;
-          &#xB3D9;&#xC77C;&#xD558;&#xAC8C;, NUGU &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xB97C;
-          listening-passive &#xC0C1;&#xD0DC;&#xAC00; &#xB418;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
+          &#xB3D9;&#xC77C;&#xD558;&#xAC8C;, listening-passive &#xC0C1;&#xD0DC;&#xAC00;
+          &#xB418;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;.</p>
         <p>&#x2022; &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xB294;
           &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C; wake-up &#xBC84;&#xD2BC;&#xC744; &#xB204;&#xB97C;
           &#xACBD;&#xC6B0;, &#xB9C8;&#xC774;&#xD06C;&#xAC00; &#xCF1C;&#xC9C0;&#xACE0;
@@ -151,7 +151,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
 
 ## 조명
 
-NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태 및 사용자 요청에 대한 결과를 피드백할 수 있습니다.
+조명을 이용하여 현재의 상태 및 사용자 요청에 대한 결과를 피드백할 수 있습니다.
 
 다음은 NUGU 기기 모델 별로 사용되고 있는 조명 색상 및 그 의미입니다.
 
@@ -196,8 +196,7 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
         <p>Sky blue &#xAD50;&#xCC28;</p>
       </td>
       <td style="text-align:left">Blue</td>
-      <td style="text-align:left">NUGU &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xAC00; &#xB9D0;&#xD558;&#xACE0;
-        &#xC788;&#xC74C;</td>
+      <td style="text-align:left">NUGU&#xAC00; &#xB9D0;&#xD558;&#xACE0; &#xC788;&#xC74C;</td>
     </tr>
     <tr>
       <td style="text-align:left">Wi-Fi &#xC5F0;&#xACB0; &#xC911;</td>
@@ -251,15 +250,14 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
       <td style="text-align:left">Purple</td>
       <td style="text-align:left">Purple</td>
       <td style="text-align:left">Purple</td>
-      <td style="text-align:left">NUGU &#xC5D0;&#xC774;&#xC804;&#xD2B8;&#xAC00; &#xC5C5;&#xB370;&#xC774;&#xD2B8;
-        &#xC911;&#xC784;</td>
+      <td style="text-align:left">NUGU&#xAC00; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xC911;&#xC784;</td>
     </tr>
   </tbody>
 </table>
 
 ## 소리 
 
-효과음은 음성이 아닌 비프음이나 사운드 등을 의미합니다. 상황 별 정해진 특징적인 효과음을를 제공함으로써 음성으로 설명하지 않고도 상태 및 동작에 대하여 사용자가 인식할 수 있도록 합니다. 효과음은 에이전트 상태를 알리는 데에 사용되는 1\) 기본 효과음과 특정 서비스 동작과 관련된 2\)서비스 효과음로 나뉩니다.
+효과음은 음성이 아닌 비프음이나 사운드 등을 의미합니다. 상황 별 정해진 특징적인 효과음을를 제공함으로써 음성으로 설명하지 않고도 상태 및 동작에 대하여 사용자가 인식할 수 있도록 합니다. 효과음은 대 상태를 알리는 데에 사용되는 1\) 기본 효과음과 특정 서비스 동작과 관련된 2\)서비스 효과음로 나뉩니다.
 
 ### **1\) 기본 효과음\(Basic Feedback Sound\)**
 
@@ -291,7 +289,7 @@ NUGU 에이전트를 탑재한 기기는 조명을 이용하여 현재의 상태
 
 **호출 효과 \(Wake up success\)**
 
-호출어를 발화하여 에이전트가 listening 상태가 되는 순간에 비프음을 제공합니다. 사용자의 발화를 인식할 준비가 되었다는 의미로써, 호출어를 발화하지 않고 호출 버튼을 누른 경우나 필수 entity를 입력받기 위해 speaking 상태 이후 바로 listening 상태가 될 때\(Slot-filling\)에도 해당 비프음이 발생됩니다.
+호출어를 발화하여 대화 상가 listening 상태가 되는 순간에 비프음을 제공합니다. 사용자의 발화를 인식할 준비가 되었다는 의미로써, 호출어를 발화하지 않고 호출 버튼을 누른 경우나 필수 entity를 입력받기 위해 speaking 상태 이후 바로 listening 상태가 될 때\(Slot-filling\)에도 해당 비프음이 발생됩니다.
 
 <table>
   <thead>
@@ -323,7 +321,7 @@ Slot-filling 시
 
 **인식 완료음 \(End listen\)**
 
-Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 종료 되었을때 비프음을 제공합니다. App에서 텍스트 명령 전송 시에는 제공하지 않습니다.
+Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 종료 되었을때 비프음을 제공합니다. NUGU App에서 텍스트 명령 전송 시에는 제공하지 않습니다.
 
 <table>
   <thead>
@@ -349,7 +347,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 
 #### **응답 실패 \(Response fail\)**
 
-사용자의 발화가 제대로 인식되지 않아 정상 동작을 할 수 없는 경우, 응답식 실패 비프음을 재생합니다.
+사용자의 발화가 제대로 인식되지 않아 정상 동작을 할 수 없는 경우, 응답 실패 비프음을 재생합니다.
 
 <table>
   <thead>
@@ -378,8 +376,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
           &#xC0C1;&#xD0DC;&#xAC00; &#xD574;&#xC81C;&#xB41C; &#xACBD;&#xC6B0;</p>
       </td>
       <td style="text-align:left">
-        <p>&#x2022; &#xC560;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158;&#xC5D0;&#xC11C;
-          On/Off &#xC124;&#xC815;&#xC744; &#xC81C;&#xACF5;</p>
+        <p>&#x2022; App&#xC5D0;&#xC11C; On/Off &#xC124;&#xC815;&#xC744; &#xC81C;&#xACF5;</p>
         <p>&#x2022; &#xAE30;&#xBCF8; &#xAC12;&#xC740; ON</p>
         <p>&#x2022; &#xAE30;&#xAE30;&#xBCC4;&#xB85C; &#xC124;&#xC815; &#xAC00;&#xB2A5;</p>
       </td>
