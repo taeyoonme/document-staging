@@ -26,7 +26,7 @@ Discovery Sample Response
       "deviceTypeCode": "AIR_CONDITIONER",
       "deviceTypeName": "에어컨",
       "deviceModelName": "example air_conditioner",
-      "friendlyName": "거실",
+      "friendlyNameSuggestion": "거실",
       "manufacturer": "example manufacturer",
       "supportedCapabilities": {
         "modeControl": {

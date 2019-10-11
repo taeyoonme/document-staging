@@ -25,7 +25,7 @@ Discovery Sample Response
         "deviceTypeCode": "AIR_CONDITIONER",
         "deviceTypeName": "example_device_type",
         "deviceModelName": "example_model_name",
-        "friendlyName": "거실",
+        "friendlyNameSuggestion": "거실",
         "manufacturer": "example_manufacturer",
         "supportedCapabilities": {
           "setTimeControl": {} <-- 이 속성이 존재해야 setTimeControl Capability 사용 가능.

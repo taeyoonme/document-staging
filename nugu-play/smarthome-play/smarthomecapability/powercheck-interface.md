@@ -26,7 +26,7 @@ Discovery Sample Response
          "deviceTypeCode":"PLUG",
          "deviceTypeName":"example_device_type",
          "deviceModelName":"example_model_name",
-         "friendlyName":"모니터",
+         "friendlyNameSuggestion":"모니터",
          "manufacturer":"example_manufacturer",
          "supportedCapabilities":{
             "powerCheck":{}

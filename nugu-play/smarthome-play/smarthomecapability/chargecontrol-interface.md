@@ -22,7 +22,7 @@ Discovery Sample Response
 {
    "id":"12345",
    "deviceTypeCode":"ROBOT_CLEANER",
-   "friendlyName":"거실",
+   "friendlyNameSuggestion":"거실",
    "deviceTypeName":"로봇청소기",
    "deviceModelName":"example_model_name",
    "customData":{

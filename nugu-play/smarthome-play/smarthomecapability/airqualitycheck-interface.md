@@ -25,7 +25,7 @@ Discovery Sample Response
       "deviceTypeCode": "AIR_CLEANER",
       "deviceTypeName": "공기청정기",
       "deviceModelName": "example device_model_name",
-      "friendlyName": "거실",
+      "friendlyNameSuggestion": "거실",
       "manufacturer": "example manufacturer",
       "supportedCapabilities": {
           "airQualityCheck": {} <-- 별도의 파라미터는 없으나 예시와 같이 빈 객체를 응답해야 함.
