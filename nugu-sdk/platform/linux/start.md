@@ -73,33 +73,6 @@ Linux SDK는 아래와 같이 2가지 샘플을 제공하고 있습니다.
 | `/usr/bin/nugusdk_start_sample` | 저장된 인증 토큰 값을 읽어서 환경 변수로 설정해주는 shell script |
 | `/lib/systemd/system/nugu_oob.service` | 시스템 시작시 OAuth2 인증 웹서버를 자동으로 실행시키기 위한 systemd 설정 파일 |
 
-### OAuth2 인증 예제
-
-웹브라우저를 통해 [http://lvh.me:8080 ](http://lvh.me:8080%20)주소\(lvh.me는 localhost와 같습니다\)로 접속하면 아래와 같이 OAuth2 인증을 위한 샘플 화면이 나타납니다.
-
-![](../../../.gitbook/assets/linux_oauth_capture_1.png)
-
-인증을 위해 미리 발급받은 `poc_id`, `client_id`, `client_secret`을 입력하고, 테스트 하려는 디바이스를 구분하기 위해 `device serial`에 중복되지 않는 임의의 값\(예: mydevice1234\)을 입력 한 후 **Save** 버튼을 눌러 저장합니다.
-
-![](../../../.gitbook/assets/linux_oauth_capture_2.png)
-
-이제 **Get OAuth2 token** 링크를 눌러 인증을 진행하면, 아래와 같이최종적으로 `access_token`을 얻을 수 있습니다.
-
-![](../../../.gitbook/assets/linux_oauth_capture_3.png)
-
-위 정보들은 `/var/lib/nugu/nugu-auth.json` 파일에 아래와 같은 JSON 형태로 저장됩니다.
-
-```javascript
-{
-    "refresh_token" : "...",
-    "access_token" : "...",
-    "expires_in" : ...,
-    "token_type" : "Bearer",
-    "expires_at" : ...,
-    "jti" : "..."
-}
-```
-
 ### 음성 인식 처리를 위한 Model 파일 다운로드 받기
 
 NUGU 서비스에서는 음성 인식 처리를 위해 아래의 음성 Model 파일을 필요로 합니다.
@@ -114,128 +87,6 @@ NUGU 서비스에서는 음성 인식 처리를 위해 아래의 음성 Model �
 * `nugu_model_wakeup_net.raw`  - wake word detection에 사용되는 model 파일 \(1/2\)
 * `nugu_model_wakeup_search.raw`  - wake word detection에 사용되는 model 파일 \(2/2\)
 * `nugu_model_epd.raw` - VAD에 사용되는 model 파일
-
-### Sample application 실행하기
-
-Sample application은 환경 변수\(`NUGU_TOKEN`\)를 통해 인증 정보를 전달 받아 실행합니다. 따라서, 직접 환경 변수의 값을를 설정한 후 실행하거나, `nugusdk_start_sample` shell script를 사용해서 실행할 수 있습니다.
-
-{% tabs %}
-{% tab title="Shell script 사용" %}
-```bash
-$ nugusdk_start_sample /usr/bin/nugu_sample -m {model-file-path}
-```
-{% endtab %}
-
-{% tab title="직접 실행" %}
-```bash
-$ export NUGU_TOKEN=...
-$ /usr/bin/nugu_sample -m {model-file-path}
-```
-{% endtab %}
-{% endtabs %}
-
-정상적으로 실행이 되면, 아래와 같이 텍스트 기반의 UI가 콘솔에 표시됩니다.
-
-```bash
-=======================================================
-NUGU SDK Command (Connected)
-=======================================================
-w : start wakeup
-l : start listening
-s : stop listening
-t : text input
-c : connect
-d : disconnect
-q : quit
--------------------------------------------------------
-Select Command >
-```
-
-사용할 수 있는 명령들에 대한 설명은 아래와 같습니다.
-
-| 명령 | 설명 |
-| :--- | :--- |
-
-
-| `w` \(start wakeup\) | 정해진 Wake word\("아리아"\)를 통해 wake-up 하기 위한 대기 상태로 진입합니다. |
-| :--- | :--- |
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><code>l</code> (start listening)</th>
-      <th style="text-align:left">
-        <p>wake-up &#xC5C6;&#xC774; &#xBC14;&#xB85C; &#xC74C;&#xC131; &#xBC1C;&#xD654;&#xB97C;
-          NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xBC1C;&#xD654;&#xAC00; &#xB05D;&#xB098;&#xBA74; NUGU &#xC11C;&#xBE44;&#xC2A4;&#xB85C;&#xBD80;&#xD130;
-          &#xC751;&#xB2F5;(TTS)&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC704; &#xACFC;&#xC815;&#xC774; &#xB05D;&#xB098;&#xBA74; &#xC790;&#xB3D9;&#xC73C;&#xB85C;
-          &#xB2E4;&#xC2DC; wake-up &#xB300;&#xAE30; &#xC0C1;&#xD0DC;&#xB85C; &#xC804;&#xD658;&#xB429;&#xB2C8;&#xB2E4;.</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><code>t</code> (text input)</th>
-      <th style="text-align:left">
-        <p>&#xD14D;&#xC2A4;&#xD2B8;(&#xC608;: &quot;&#xC624;&#xB298; &#xBA70;&#xCE60;&#xC774;&#xC57C;&quot;)&#xB97C;
-          NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xC804;&#xB2EC;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC74C;&#xC131; &#xBC1C;&#xD654;&#xC640; &#xB3D9;&#xC77C;&#xD558;&#xAC8C;
-          NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0;&#xC11C; &#xC751;&#xB2F5;&#xC744;
-          &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table><table>
-  <thead>
-    <tr>
-      <th style="text-align:left"><code>c</code> (connect)</th>
-      <th style="text-align:left">
-        <p>NUGU &#xC11C;&#xBE44;&#xC2A4;&#xC5D0; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xB97C;
-          &#xC5F0;&#xACB0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>(&#xCC38;&#xACE0;&#xB85C;, Sample application &#xC2E4;&#xD589;&#xC2DC;
-          &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC5F0;&#xACB0;&#xC744; &#xC2DC;&#xB3C4;&#xD569;&#xB2C8;&#xB2E4;.)</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>| `q` \(quit\) | Sample application을 종료합니다. |
-| :--- | :--- |
-
-
-```bash
-Select Command > w
-[Wakeup] wakeup detecting...
-```
-
-상태가 wakeup detecting 모드로 전환된 것을 확인할 수 있습니다. 이제 "**아리아**" 라고 발화를 하면 아래와 같이 wakeup이 되고, 자동으로 사용자의 음성을 듣기 위해 Listening 모드로 전환됩니다.
-
-```bash
-[Wakeup] wakeup detected
-[ASR] LISTENING
-```
-
-이제 "**오늘 며칠이야**" 라고 발화를 하면 Recognizing으로 상태로 바뀌면서 음성 데이터를 NUGU 서비스로 전송하게 됩니다. 사용자 발화가 다 끝나면 NUGU 서비스로부터 응답을 받기 위해 Busy 상태로 전환됩니다.
-
-```bash
-[ASR] RECOGNIZING
-[ASR] BUSY
-```
-
-NUGU 서비스로부터 응답이 오면 해당 발화에 대한 인식 결과를 보여주고 자동으로 다시 Wakeup 대기 상태로 전환됩니다. 그리고 발화에 대한 결과로 TTS 음성을 출력합니다.
-
-```bash
-[ASR] onComplete : 오늘 며칠이야
-[ASR] IDLE
-[Wakeup] wakeup detecting...
-[TTS] tts playing...
-[TTS] text : 오늘은 10월 4일 금요일입니다.
-[TTS] tts playing finished
-```
 
 ## Step 3: Create your first application
 
@@ -392,7 +243,7 @@ int main()
 }
 ```
 
-### Build & Run
+### Build
 
 이제 위에서 작성된 코드를 빌드해 보겠습니다.
 
@@ -402,30 +253,9 @@ Linux SDK는 빌드를 쉽게 하기 위해 `pkg-config` 파일을 제공합니�
 $ g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello
 ```
 
-이제 실행해 보겠습니다.
+## 더 알아보기
 
-```bash
-# 먼저 토큰을 설정합니다.
-$ export NUGU_TOKEN=xxxx
-
-# 프로그램 실행
-$ ./hello
-듣고 있습니다.
-```
-
-토큰 설정 후 프로그램을 실행하면 NUGU 서버에 연결한 후 음성 인식을 위한 대기상태로 진입합니다.
-
-```bash
-$ ./hello
-듣고 있습니다.
-발화를 인식중입니다.
-처리중입니다.
-오늘 며칠이야
-```
-
-이제 "오늘 며칠이야" 라고 발화를 하면, 발화를 인식중이라는 상태로 전환되고 인식 결과를 받으면 화면에 표시하게 됩니다. 그리고 NUGU 서버로부터 TTS 데이터를 받아 "오늘은 10월 16일 수요일 이에요"라는 음성이 스피커를 통해 출력됩니다.
-
-## Download the SDK source code
+### Download the SDK source code
 
 아래 Github 주소를 통해 Linux SDK 소스 코드를 다운로드 받을 수 있습니다.
 
