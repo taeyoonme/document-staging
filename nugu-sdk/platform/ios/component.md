@@ -19,11 +19,13 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguInterface` F
   * `JadeMarble`: 발화의 시작과 끝을 감지하는 기능을 제공합니다.
   * `NattyLog`: 디버깅을 위한 로그를 출력을 도와주는 기능을 제공합니다. \(iOS Application 또는 Framework에서 직접 참조 및 사용이 가능합니다.\)
 * External Framework
-  * `RxSwift`: NUGU SDK는 내부적으로 비동기처리 등을 위해 사용하고 있습니다.  \(NUGU SDK의 모든 인터페이스는 RxSwift와 관계없이 제공됩니다.\)
+  * `RxSwift`: NUGU SDK는 내부적으로 비동기처리 등을 위해 사용하고 있습니다.  \(NUGU SDK for iOS의 모든 인터페이스는 RxSwift와 관계없이 제공됩니다.\)
 
 ## Github
 
-| Name | Repository |
+#### NUGU & Internal
+
+| 이름 | 주소 |
 | :--- | :--- |
 | `NuguClientKit` | [https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios) |
 | `NuguCore` | [https://github.com/nugu-developers/nugu-core-ios](https://github.com/nugu-developers/nugu-core-ios) |
@@ -33,6 +35,12 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguInterface` F
 | `KeenSense` | [https://github.com/nugu-developers/keen-sense-ios](https://github.com/nugu-developers/keen-sense-ios) |
 | `JadeMarble` | [https://github.com/nugu-developers/jade-marble-ios](https://github.com/nugu-developers/jade-marble-ios) |
 
+#### External
+
+| 이름 | 주소 |
+| :--- | :--- |
+| `RxSwift` | [https://github.com/ReactiveX/RxSwift](https://github.com/ReactiveX/RxSwift) |
+
 ## CocoaPods
 
 {% hint style="info" %}
@@ -40,7 +48,7 @@ NUGU iOS SDK는 의존성 관리를 위해 CocoaPods를 지원합니다.
 더 자세한 내용은 [https://cocoapods.org](https://cocoapods.org/)에서 확인이 가능합니다.
 {% endhint %}
 
-NUGU SDK의 각각의 구성요소는 CocoaPods를 통해 의존성 관리를 추가할 수 있습니다. NUGU SDK의 구성요소를 재구성할 때, 필요에 맞게 의존성 관리를 추가하면 됩니다.
+NUGU SDK for iOS의 각각의 구성요소는 CocoaPods를 통해 의존성 관리를 추가할 수 있습니다. 구성요소를 재구성할 때, 필요에 맞게 의존성 관리를 추가하면 됩니다.
 
 {% code-tabs %}
 {% code-tabs-item title="Podfile" %}
