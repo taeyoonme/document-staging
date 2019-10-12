@@ -54,13 +54,16 @@ strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가
 
 ### 앱 권한 설정하기
 
-AndroidManifest.xml에 아래 필수 권한을 추가합니다.  
-\(android.permission.RECORD\_AUDIO 권한은 runtime에 요청하여 획득해야 합니다.\)
+AndroidManifest.xml에 아래 필수 권한을 추가합니다.
 
 ```markup
 <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
+
+{% hint style="info" %}
+Manifest에 추가한 android.permission.RECORD\_AUDIO 권한은 런타임에 추가로 요청하여 획득해야 합니다.
+{% endhint %}
 
 ## Step 4: NUGU 사용하기
 
