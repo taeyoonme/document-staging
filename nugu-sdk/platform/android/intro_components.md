@@ -1,12 +1,5 @@
 # 구성요소
 
-NUGU SDK는 총 7개의 다음과 같은 모듈들로 구성되어 있습니다.
-
-* **안드로이드 의존적인 Nugu SDK 모듈 \(4가지\)**
-* **플랫폼 독립적인 Nugu SDK 모듈 \(3가지\)**
-* Nugu SDK를 사용하는데 필요한 기타 내부 라이브러리\(변경 가능\)
-* Nugu SDK를 사용하는 애플리케이션
-
 ![](../../../.gitbook/assets/android-components-diagram.png)
 
 ## 구성요소 목록
@@ -29,5 +22,35 @@ NUGU SDK for Android 를 통한 개발을 위해서는 `NuguCore`, `NuguInterfac
   * `JadeMarble` : 발화의 시작/끝 인식 기능을 제공하는 라이브러리 입니다.
   * `SilverTray` : TTS발화에 대한 NUGU서비스 전용 플레이어입니다.
 
+## Github
 
+#### NUGU
+
+| 이름 | 주소 |
+| :--- | :--- |
+| `nugu-android` | [https://github.com/nugu-developers/nugu-android](%20https://github.com/nugu-developers/nugu-android) |
+
+#### Internal Library
+
+
+
+## Maven
+
+NUGU SDK for Android의 구성요소는 모두 별도로 추가할 수 있습니다.
+
+```groovy
+dependencies {
+    implementation "com.skt.nugu:nugu-core:${nugu_latestVersion}"
+    implementation "com.skt.nugu:nugu-interface:${nugu_latestVersion}"
+    implementation "com.skt.nugu:nugu-client-kit:${nugu_latestVersion}"
+    implementation "com.skt.nugu:nugu-android-helper:${nugu_latestVersion}"
+    implementation "com.skt.nugu:nugu-ux-kit:${nugu_latestVersion}"
+    implementation "com.skt.nugu:nugu-login-kit:${nugu_latestVersion}"
+    implementation "com.skt.nugu:nugu-internal-library-porting:${nugu_latestVersion}"
+    
+    implementation "com.skt.nugu:keensense:${keensense_latestVersion}"
+    implementation "com.skt.nugu:jademarble:${jademarble_latestVersion}"
+    implementation "com.skt.nugu:silvertray:${silvertray_latestVersion}"
+}
+```
 
