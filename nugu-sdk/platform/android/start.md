@@ -1,10 +1,10 @@
 # 시작하기
 
-## 개발환경 설정하기
-
-### 최소 요구사항
+## Step 1:최소 요구사항
 
 * Android 5.0\(api level 21\) or later \(api level 19,20 also supported, but  tls v1.2 required\)
+
+## Step 2: NUGU  SDK 설치하기
 
 ### 레포지토리 추가하기
 
@@ -32,6 +32,26 @@ dependencies {
 }
 ```
 
+## Step 3: 프로젝트 설정하기
+
+### PoC정보 입력하기
+
+발급받은 ClientID, ClientSecret, Redirect URI 정보를 입력합니다.
+
+#### Redirect URI 입력
+
+strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가합니다. 예를들어 redirectUri가 **"example://sample"** 라면 아래와 같이 추가합니다.
+
+```markup
+<string name="nugu_redirect_scheme">example</string>
+<string name="nugu_redirect_host">sample</string>
+```
+
+### 음성 인식 라이브러리 리소스 설정하기
+
+* XXX에서 음성인식용 모델을 다운로드 합니다.
+* 다운로드 받은 파일을 assets 폴더에 추가합니다.
+
 ### 앱 권한 설정하기
 
 AndroidManifest.xml에 아래 필수 권한을 추가합니다.  
@@ -42,15 +62,7 @@ AndroidManifest.xml에 아래 필수 권한을 추가합니다.
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 
-## SDK 사용하기
-
-### Step 1: NUGU 디바이스 생성하기
-
-{% hint style="info" %}
-NUGU 디바이스를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.
-{% endhint %}
-
-[https://nugu.developers.co.kr에서](https://nugu.developers.co.kr에서) ClientID, ClientSecret, RedirectURI 정보를 발급받으세요.
+## Step 4: NUGU 사용하기
 
 ### Step2. NUGU에 로그인하는 방법
 
@@ -59,15 +71,6 @@ NUGU 서비스를 이용하기 위해서는 OAuth 인증이 필요합니다.
 {% endhint %}
 
 #### Type1 \(Authorization Code\)
-
-> 리소스 수정
-
-values/_strings_._xml_ 파일_을 열고_ _nugu\_redirect\_scheme, nugu\_redirect\_host 를 추가 합니다._ 예를들어 redirectUri 는\(은\) **"example: // sample"** 라면 아래와 같이 2개 라인이 추가 됩니다.
-
-```markup
-<string name="nugu_redirect_scheme">example</string>
-<string name="nugu_redirect_host">sample</string>
-```
 
 > 초기화, client 생성
 
@@ -151,4 +154,12 @@ client.asrAgent?.addOnResultListener(...)
 client.asrAgent?.addOnStateChangeListener(...)
 client.asrAgent?.startRecognition()
 ```
+
+## 더 알아보기
+
+### Download the SDK source code
+
+아래 Github 주소를 통해 NUGU SDK for Android 소스 코드를 다운로드 받을 수 있습니다.
+
+{% embed url="https://github.com/nugu-developers/nugu-android" %}
 
