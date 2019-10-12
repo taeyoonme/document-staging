@@ -64,7 +64,7 @@ AndroidManifest.xml에 아래 필수 권한을 추가합니다.
 
 ## Step 4: NUGU 사용하기
 
-### Step2. NUGU에 로그인하는 방법
+### NUGU 로그인 추가
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 인증이 필요합니다.
@@ -121,39 +121,43 @@ authClient.loginSilently("{refresh-Token}", object : NuguOAuthInterface.OnLoginL
         })
 ```
 
-### Step3. NUGU 서비스 사용하기
+### NUGU 음성인식 사용하기
 
-로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 Nugu의 모든 기능을 손쉽게 이용할 수 있도 SDK에서 제공하는 NuguAndroidClient 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
+로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는 NuguAndroidClient 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
 
-1. 인증 정보 처리를 위임할 AuthDelegate를 정의합니다.
+1. 인증 정보 처리를 위임할 AuthDelegate를 정의합니다.   
 
-```kotlin
-val authDelegate = NuguOAuth.getClient()
-```
 
-1. 음성인식에 사용할 기본 AudioProvider를 생성합니다.   
+   ```kotlin
+   val authDelegate = NuguOAuth.getClient()
+   ```
 
-   \(잘 동작하는 AudioProvider를 구현하는 것은 성가신 작업이기에 SDK에서 기본제공하는 클래스들을 이용합니다.\)
+2. 음성인식에 사용할 기본 AudioProvider를 생성합니다.   
 
-```kotlin
-// AudioSourceManager : AudioProvider에 대한 기본 구현 클래스
-// AudioRecordSourceFactory : Android의 AudioRecord를 소스로 사용하는 SDK에서 제공
-val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
-```
+   \(잘 동작하는 AudioProvider를 구현하는 것은 성가신 작업이기에 SDK에서 기본제공하는 클래스들을 이용합니다.\)  
 
-1. 이제 NuguAndroidClient의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.
 
-```kotlin
-val client = NuguAndroidClient.Builder(
-    context,    // Android Context
-    authDelegate,
-    audioProvider
-).build()
+   ```kotlin
+   // AudioSourceManager : AudioProvider에 대한 기본 구현 클래스
+   // AudioRecordSourceFactory : Android의 AudioRecord를 소스로 사용하는 SDK에서 제공
+   val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
 
-client.asrAgent?.addOnResultListener(...)
-client.asrAgent?.addOnStateChangeListener(...)
-client.asrAgent?.startRecognition()
-```
+   ```
+
+3. 이제 NuguAndroidClient의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
+
+
+   ```kotlin
+   val client = NuguAndroidClient.Builder(
+       context,    // Android Context
+       authDelegate,
+       audioProvider
+   ).build()
+
+   client.asrAgent?.addOnResultListener(...)
+   client.asrAgent?.addOnStateChangeListener(...)
+   client.asrAgent?.startRecognition()
+   ```
 
 ## 더 알아보기
 
