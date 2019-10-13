@@ -12,7 +12,7 @@
 
 ```groovy
 repositories {
-    jcenter()
+    mavenCentral()
 }
 ```
 
