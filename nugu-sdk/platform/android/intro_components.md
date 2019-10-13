@@ -34,7 +34,7 @@ NUGU SDK for Android 를 통한 개발을 위해서는 `NuguCore`, `NuguInterfac
 
 
 
-## Maven
+## Download
 
 NUGU SDK for Android의 구성요소는 모두 별도로 추가할 수 있습니다.
 
