@@ -1,12 +1,14 @@
 # 시작하기
 
-## Step 1: 최소 요구사항 확인하기
+## NUGU SDK 사용하기
+
+### Step 1: 최소 요구사항 확인하기
 
 * Xcode 11.0 or later
 * Swift 5.1
 * iOS 10.0 or later
 
-## Step 2: NUGU SDK 설치하기
+### Step 2: NUGU SDK 설치하기
 
 {% tabs %}
 {% tab title="Cocoapods\(권장\)" %}
@@ -31,20 +33,35 @@ Github Repository를 통해 다운로드 받아 직접 빌드할 수 있습니�
 {% endtab %}
 {% endtabs %}
 
-## Step 3: 프로젝트 설정하기
-
-### PoC 정보 입력하기
+### Step 3: NUGU PoC 생성하기
 
 {% hint style="warning" %}
 NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요. 
+제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요. \(Redirect URI는 nugu.user.{pocID}://auth로 입력합니다.\)
 
-#### info.plist 파일에 URL Scheme 추가
+### Step 4: NUGU에 로그인하기
 
-info.plist 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XCode에서 NUGU를 추가할 Target의 Info 탭을 눌러 URL Types를 추가 후 URL Schemes에 "nugu.user.{client-id}"를 입력합니다.\)
+{% hint style="info" %}
+NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
+더 자세한 내용은 [Using OAuth 2.0](start.md)에서 확인이 가능합니다.
+{% endhint %}
+
+> NuguLoginKit 불러오기
+
+NUGU의 인증서버와 OAuth 인증을 더 쉽게 하기 위해서 NuguLoginKit을 불러옵니다.
+
+```swift
+import NuguLoginKit
+```
+
+#### Type1
+
+> info.plist 파일에 URL Scheme 추가
+
+info.plist 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XCode에서 NUGU를 추가할 Target의 Info 탭을 눌러 URL Types를 추가 후 URL Schemes에 "nugu.user.{pocID}"를 입력합니다.\)
 
 {% code-tabs %}
 {% code-tabs-item title="info.plist" %}
@@ -55,7 +72,7 @@ info.plist 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XC
     <dict>
     <key>CFBundleURLSchemes</key>
     <array>
-      <string>nugu.user.{client-id}</string>
+      <string>nugu.user.{pocId}</string>
     </array>
     </dict>
   </array>
@@ -64,49 +81,9 @@ info.plist 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XC
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### 음성 인식 파일 설정하기
+> 앱 델리게이트 연결
 
-#### 다운로드 받기
-
-
-
-#### 설정하기
-
-
-
-### 어플리케이션 권한 설정하기
-
-NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plist 파일에 추가합니다.
-
-{% code-tabs %}
-{% code-tabs-item title="info.plist" %}
-```markup
-<key>NSMicrophoneUsageDescription</key>
-<string>For speech recognition</string>
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-## Step 4: NUGU 사용하기
-
-### NUGU 로그인 추가
-
-{% hint style="info" %}
-NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Using OAuth 2.0](start.md)에서 확인이 가능합니다.
-{% endhint %}
-
-#### NuguLoginKit 불러오기
-
-NUGU의 인증서버와 OAuth 인증을 쉽게 하기 위해서 `NuguLoginKit`을 불러옵니다.
-
-```swift
-import NuguLoginKit
-```
-
-#### 앱 델리게이트 연결
-
-인 앱 브라우저를 통한 인증 결과를 `NuguLoginKit`에서 처리하기 위해 다음과 같이 `AppDelegate` 클래스에 추가해야 합니다.
+인 앱 브라우저를 통한 인증 결과를 NuguLoginKit에서 처리하기 위해 다음과 같이 AppDelegate 클래스에 추가해야 합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="AppDelegate.swift" %}
@@ -119,9 +96,9 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-#### 인 앱 브라우저를 통해 로그인
+> 인 앱 브라우저를 통해 로그인
 
-PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설정한 후에 인 앱 브라우저\(`SFSafariViewController`\)를 이용한 T-ID 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
+Step 3에서 생성한 디바이스의 정보를 이용하여 다음과 같이 OAuthManager를 통해 값을 설정한 후에 인 앱 브라우저\(SFSafariViewController\)를 이용한 T-ID 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -147,9 +124,9 @@ func login() {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-#### 로그인 정보 갱신
+> 로그인 정보 갱신
 
-발급 받은 refresh-token이 이미 있다면, 이 후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.
+인 앱 브라우저를 통한 T-ID 로그인이 정상적으로 완료된 후 얻은 Refresh-token이 있다면, 이후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.
 
 {% code-tabs %}
 {% code-tabs-item title="ViewController.swift" %}
@@ -168,9 +145,20 @@ func refresh() {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-### NUGU 음성인식 사용하기
+### Step 5: NUGU 서비스 사용하기
 
-#### 마이크 권한 획득
+> 마이크 권한 획득
+
+NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plist 파일에 추가합니다.
+
+{% code-tabs %}
+{% code-tabs-item title="info.plist" %}
+```markup
+<key>NSMicrophoneUsageDescription</key>
+<string>For speech recognition</string>
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 음성인식을 요청 하기 전에 마이크 권한을 요청해 획득합니다.
 
@@ -182,7 +170,7 @@ AVAudioSession.sharedInstance().requestRecordPermission { hasPermission in }
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-#### AVAudioSession 설정
+> AVAudioSession Category 설정
 
 NUGU 서비스를 이용하기 위해서는 AVAudioSession의 Category를 .playAndRecord로 설정이 필요합니다.
 
@@ -200,75 +188,67 @@ func setAudioSession() throws {
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-#### NUGU 음성인식 요청
+> NUGU 음성인식 요청
 
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. `NuguClientKit`을 불러옵니다.
+1. NuguClientKit을 불러옵니다.
 
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+import NuguClientKit
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
+1. NuguClient 인스턴스를 생성합니다. 
 
-   {% code-tabs %}
-   {% code-tabs-item title="ViewController.swift" %}
-   ```swift
-   import NuguClientKit
-   ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+let client = NuguClient.Builder().build()
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-2. `NuguClient` 인스턴스를 생성합니다.   
+1. 로그인 결과로 받은 Access-token을 NuguClient 인스턴스에 설정합니다.
 
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+client.accessToken = "{access-token}"
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-   {% code-tabs %}
-   {% code-tabs-item title="ViewController.swift" %}
-   ```swift
-   let client = NuguClient.Builder().build()
-   ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
+1. NetworkManager를 통해 NUGU서버와 연결합니다.
 
-3. 로그인 결과로 받은 Access-token을 `NuguClient` 인스턴스에 설정합니다.  
+{% code-tabs %}
+{% code-tabs-item title="ViewController.swift" %}
+```swift
+client.networkManager.connect()
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
+1. NUGU 서버와의 연결 이후 음성인식을 요청합니다.
 
-   {% code-tabs %}
-   {% code-tabs-item title="ViewController.swift" %}
-   ```swift
-   client.accessToken = "{access-token}"
-   ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
-
-4. `NetworkManager`를 통해 NUGU서버와 연결합니다.  
-
-
-   {% code-tabs %}
-   {% code-tabs-item title="ViewController.swift" %}
-   ```swift
-   client.networkManager.connect()
-   ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
-
-5. NUGU 서버와의 연결 이후 음성인식을 요청합니다.  
-
-
-   {% code-tabs %}
-   {% code-tabs-item title="VIewController.swift" %}
-   ```swift
-   client.asrAgent.startRecognition()
-   ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
+{% code-tabs %}
+{% code-tabs-item title="VIewController.swift" %}
+```swift
+client.asrAgent.startRecognition()
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ## 더 알아보기
 
-### 구성요소 알아보기
+> 구성요소 알아보기
 
 NUGU SDK의 Github Repository를 통해 NUGU Components의 주요 기능들을 확인하실 수 있습니다. 구성요소 소개 페이지에서 필요한 [구성요소](component.md)를 확인하고, 해당 구성요소의 Repository에서 Readme를 통해 더 자세한 정보를 얻을 수 있습니다.
 
-### Sample Application
+> Sample Application
 
-`NuguClientKit` Github Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
-
-{% embed url="https://github.com/nugu-developers/nugu-client-kit-ios" %}
+[NuguClientKit Github Repository](https://github.com/nugu-developers/nugu-client-kit-ios)에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
 
