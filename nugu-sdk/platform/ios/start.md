@@ -194,53 +194,53 @@ func setAudioSession() throws {
 
 1. NuguClientKit을 불러옵니다.
 
-{% code-tabs %}
-{% code-tabs-item title="ViewController.swift" %}
-```swift
-import NuguClientKit
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+    {% code-tabs %}
+    {% code-tabs-item title="ViewController.swift" %}
+    ```swift
+    import NuguClientKit
+    ```
+    {% endcode-tabs-item %}
+    {% endcode-tabs %}
 
 1. NuguClient 인스턴스를 생성합니다. 
 
-{% code-tabs %}
-{% code-tabs-item title="ViewController.swift" %}
-```swift
-let client = NuguClient.Builder().build()
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+    {% code-tabs %}
+    {% code-tabs-item title="ViewController.swift" %}
+    ```swift
+    let client = NuguClient.Builder().build()
+    ```
+    {% endcode-tabs-item %}
+    {% endcode-tabs %}
 
 1. 로그인 결과로 받은 Access-token을 NuguClient 인스턴스에 설정합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="ViewController.swift" %}
-```swift
-client.accessToken = "{access-token}"
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+    {% code-tabs %}
+    {% code-tabs-item title="ViewController.swift" %}
+    ```swift
+    client.accessToken = "{access-token}"
+    ```
+    {% endcode-tabs-item %}
+    {% endcode-tabs %}
 
 1. NetworkManager를 통해 NUGU서버와 연결합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="ViewController.swift" %}
-```swift
-client.networkManager.connect()
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+    {% code-tabs %}
+    {% code-tabs-item title="ViewController.swift" %}
+    ```swift
+    client.networkManager.connect()
+    ```
+    {% endcode-tabs-item %}
+    {% endcode-tabs %}
 
 1. NUGU 서버와의 연결 이후 음성인식을 요청합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="VIewController.swift" %}
-```swift
-client.asrAgent.startRecognition()
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+    {% code-tabs %}
+    {% code-tabs-item title="VIewController.swift" %}
+    ```swift
+    client.asrAgent.startRecognition()
+    ```
+    {% endcode-tabs-item %}
+    {% endcode-tabs %}
 
 ## 더 알아보기
 
