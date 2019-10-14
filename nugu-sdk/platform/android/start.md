@@ -38,7 +38,28 @@ dependencies {
 
 발급받은 ClientID, ClientSecret, Redirect URI 정보를 입력합니다.
 
-#### Redirect URI 입력
+#### ClientID
+
+애플리케이션의 AndroidManifest.xml에 다음 내용을 입력합니다.
+
+```markup
+<manifest>
+    <application>
+    	<!-- ClientId 선언 -->
+        <meta-data
+                android:name="com.skt.nugu.CLIENT_ID"
+                android:value="YOUR_CLIENT_ID_HERE" />
+    </application>
+</manifest>
+```
+
+#### ClientSecret
+
+{% hint style="warning" %}
+외부로 노출되지 않도록 주의
+{% endhint %}
+
+#### Redirect URI
 
 strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가합니다. 예를들어 redirectUri가 **"example://sample"** 라면 아래와 같이 추가합니다.
 
@@ -73,56 +94,52 @@ Manifest에 추가한 android.permission.RECORD\_AUDIO 권한은 런타임에 �
 NUGU 서비스를 이용하기 위해서는 OAuth 인증이 필요합니다.
 {% endhint %}
 
-#### Type1 \(Authorization Code\)
+1. 로그인 정보 설정   
+   developers에서 발급받은 clientSecret 과 기기별 [고유 식별자](https://developer.android.com/training/articles/user-data-ids?hl=ko)인 deviceUniqueId 로 설정합니다.  
 
-> 초기화, client 생성
 
-developers에서 발급받은 clientId, clientSecret, redirectUri 로 변경합니다.
+   ```kotlin
+   private val authClient by lazy {
+       // Configure Nugu OAuth Options
+       val options = NuguOAuthOptions.Builder()
+           .clientSecret("{your-client-secret}")
+           .deviceUniqueId("{your-device-uniqueId}")
+           .build()
+       NuguOAuth.getClient(options)
+   }
+   ```
 
-```kotlin
-private val authClient by lazy {
-    // Configure Nugu OAuth Options
-    val options = NuguOAuthOptions.Builder()
-        .clientId("{your-client-id}")
-        .clientSecret("{your-client-secret}")
-        .redirectUri("{your-redirect-url}")
-        .deviceUniqueId("{your-device-uniqueId}")
-        .build()
-    NuguOAuth.getClient(options)
-}
-```
+2. 웹 브라우저를 통해 로그인  
+   로그인은 loginByWebbrowser\(\) method를 호출후에 NuguOAuthInterface.OnLoginListener를 통해 인증 결과를 받습니다.  
 
-> 웹 브라우저를 통해 로그인
 
-로그인은 loginByWebbrowser\(\) method를 호출후에 NuguOAuthInterface.OnLoginListener를 통해 인증 결과를 받습니다.
+   ```kotlin
+   authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
+               override fun onSuccess(credentials: Credentials) {
+                   // Save Credentials
+               }
 
-```kotlin
-authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
-            override fun onSuccess(credentials: Credentials) {
-                // Save Credentials
-            }
+               override fun onError(reason: String) {
+                   // Called when the request failed.
+               }
+           })
+   ```
 
-            override fun onError(reason: String) {
-                // Called when the request failed.
-            }
-        })
-```
+3. 로그인 정보 갱신  
+   이미 refresh-Token을 발급 받은 상태라면, loginByWebbrowser\(\) method를 호출하지 말고 loginSilently method를 호출하여 웹 브라우저 실행 없이 인증을 갱신 할수 있습니다.  
 
-> 로그인 정보 갱신
 
-이미 refresh-Token을 발급 받은 상태라면, loginByWebbrowser\(\) method를 호출하지 말고 loginSilently method를 호출하여 웹 브라우저 실행 없이 인증을 갱신 할수 있습니다.
+   ```kotlin
+   authClient.loginSilently("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
+               override fun onSuccess(credentials: Credentials) {
+                   // Save Credentials 
+               }
 
-```kotlin
-authClient.loginSilently("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
-            override fun onSuccess(credentials: Credentials) {
-                // Save Credentials 
-            }
-
-            override fun onError(reason: String) {
-                // Called when the request failed.
-            }
-        })
-```
+               override fun onError(reason: String) {
+                   // Called when the request failed.
+               }
+           })
+   ```
 
 ### NUGU 음성인식 사용하기
 
