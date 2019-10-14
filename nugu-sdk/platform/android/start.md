@@ -2,7 +2,11 @@
 
 ## Step 1:최소 요구사항
 
-* Android 5.0\(api level 21\) or later \(api level 19,20 also supported, but  tls v1.2 required\)
+* Android 5.0\(API level 21\) 이
+
+{% hint style="info" %}
+Android 4.4\(API level 19\)에서도 동작하지만, TLS v1.2로 설정이 필요합니다.
+{% endhint %}
 
 ## Step 2: NUGU  SDK 설치하기
 
@@ -12,7 +16,9 @@
 
 ```groovy
 repositories {
-    mavenCentral()
+    maven {
+        url "http://211.108.174.69:8081/nexus/content/repositories/releases/"
+    }
 }
 ```
 
