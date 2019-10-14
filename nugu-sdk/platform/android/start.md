@@ -49,9 +49,9 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요. 
 
-#### ClientID
+#### 리소스와 매니페스트에 정보 추가하기
 
-애플리케이션의 AndroidManifest.xml에 다음 내용을 입력합니다.
+애플리케이션의 AndroidManifest.xml에 clientID 정보를 입력합니다.
 
 ```markup
 <manifest>
@@ -63,8 +63,6 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
     </application>
 </manifest>
 ```
-
-#### Redirect URI
 
 strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가합니다. 예를들어 redirectUri가 **"example://sample"** 라면 아래와 같이 추가합니다.
 
@@ -78,10 +76,6 @@ strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가
 #### 다운로드 받기 <a id="1"></a>
 
 
-
-#### 설정하기
-
-받은 파일을 assets에 추가합니다.
 
 ### 앱 권한 설정하기
 
@@ -183,7 +177,7 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
    val endPointDetector = EndPointDetector(EPD_MODEL_FILE_PATH)
    ```
 
-4. 이제 `NuguAndroidClient`의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
+4.  마지막으로 `NuguAndroidClient`를 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
 
 
    ```kotlin
