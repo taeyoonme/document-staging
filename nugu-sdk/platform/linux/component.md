@@ -13,7 +13,7 @@
   * `gstreamer`: plug-in에서 제공하는 `player_driver`를 이용해서 `gstreamer`를 통한 미디어 재생 기능을 제공합니다.
   * `portaudio`: plug-in에서 제공하는 `recorder_driver`, `pcm_driver`를 이용해서 `portaudio`를 통한 음성 데이터 입/출력 기능을 제공합니다.
   * `opus`: plug-in에서 제공하는 `decoder_deriver`를 이용해서 opus 코덱을 디코딩 합니다.
-* Internal Library
+* Vendor Component
   * `libnugu-kwd`: NUGU의 키워드를 감지하는 기능을 제공합니다.
   * `libnugu-epd`: 발화의 시작과 끝을 감지하는 기능을 제공합니다.
 
