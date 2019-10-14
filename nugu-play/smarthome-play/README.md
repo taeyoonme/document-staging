@@ -8,7 +8,7 @@ NUGU스마트홈을 활용해 SmartHomePlay를 제작하면 NUGU 클라이언가
 
 SmartHomePlay는 스마트홈 관련 기능에 대해 사용자 발화 및 처리로직들이 사전에 정의되어 있는 Prebuilt 유형의 Play입니다. 따라서 SmartHomePlay는 별도로 UtteranceModel 및 Action정의를 하실 필요가 없이 OAUTH 연동 및 SmartHomeBackendProxy 구현만으로 제작할 수 있습니다. SmartHomePlay 역시 NUGU Developers 내 PlayBuilder를 활용해 만들 수 있으며 Play 생성 시 Play 유형을 SmartHome으로 선택해야 합니다. SmartHomePlay를 만들기 위한 순서 및 자세한 내용을 아래를 참조하시기 바랍니다.
 
-NUGU Developers를 통해 [PlayBuilder](https://builder.nugu.co.kr/index.html#/playList)에 접속해주세요.
+NUGU developers를 통해 [PlayBuilder](https://builder.nugu.co.kr/index.html#/playList)에 접속해주세요.
 
 PlayBuilder에서 우측 하단 Play 생성"+ 버튼"을 선택 해 새로운 Play를 제작합니다. Play유형은 SmartHome으로 선택한 후 Play이름을 입력해야 합니다. Play이름은 PlayBuilder 내에서 사용할 이름입니다. 사용자에게 공개하게 될 Play의 이름은 별도로 등록하게 됩니다.
 
@@ -48,7 +48,7 @@ Key Terms
 3. SmartHomeBackendProxy - Discovery, Control 요청을 처리하는 서버.
 4. OAuth2 - OAuth2 인증에 필요한 정보 입력 필요.
 
-NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU Developers Support 내에 문의사항/제휴제안을 통해 등록해주세요.
+NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU Developers Support 내에 [문의사항](https://developers.nugu.co.kr/#/customer/qna?d=1571031742426)/[제휴제안](https://developers.nugu.co.kr/#/customer/proposition?d=1571031708220)을 통해 등록해주세요.
 {% endhint %}
 
 ## Discovery
@@ -101,11 +101,11 @@ Discovery Response 예시
 
 ## Control
 
-NUGU스마트홈에 등록된 SmartHomeDevice에 제어 요청이 올 경우 NUGU스마트홈은 HestiaPlay logic에 따라 제어 대상 및 제어 명령을 확정 짓고 Discovery단계에서 등록된 정보를 활용해 SmartHomeServiceProvider에게 제어 명령을 전달합니다. 이때 제어 명령을 실제로 수신하는 것은 SmartHomePlay를 제작할 당시에 입력한 SmartHomePlayBackendProxy입니다. 제어명령은 SmartHomeDeviceType과 SmartHomeCapability, SmartHomeDirective로 정리되어 요청되며, SmartHomeCapability, SmartHomeDirective에 따라 부가 정보가 포함되기도 합니다.
+NUGU스마트홈에 등록된 SmartHomeDevice에 제어 요청이 올 경우 NUGU스마트홈은 내부 로에 따라 제어 대상 및 제어 명령을 확정 짓고 Discovery단계에서 등록된 정보를 활용해 SmartHomeServiceProvider에게 제어 명령을 전달합니다. 이때 제어 명령을 실제로 수신하는 것은 SmartHomePlay를 제작할 당시에 입력한 SmartHomePlayBackendProxy입니다. 제어명령은 SmartHomeDeviceType과 SmartHomeCapability, SmartHomeDirective로 정리되어 요청되며, SmartHomeCapability, SmartHomeDirective에 따라 부가 정보가 포함되기도 합니다.
 
 Control Request Sample
 
-```text
+```scheme
 Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
 
 
@@ -142,7 +142,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Dir
 
 Control Response Sample
 
-```text
+```scheme
 Control Response 예시
 
 {
