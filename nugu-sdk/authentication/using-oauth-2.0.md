@@ -1,18 +1,24 @@
 # Using OAuth 2.0
 
-NUGU 플랫폼의 인증 규격은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749) 입니다.
+NUGU의 인증 규격은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749) 입니다.
 
 사용자 정보는 [T아이디](https://www.skt-id.co.kr)를 기반으로 합니다.
 
-Token 교환을 위한 Client 인증은 Body Parameter\(application/x-www-form-urlencoded\)로 진행 됩니다.
 
-Device Gateway는 고유한 Device 키를 포함해야 응답을 보장 받을 수 있습니다.
 
-따라서 인증 요청시 아래 형으로 디바이스 고유 식별자\(Device Serial Number\)를 전달 할 수 있습니다.
+인증을 사용하기 위해서는 `NUGU SDK > 관리 > PoC 관리` 에서 `ClientId, ClientSecret, RedirectUri` 정보가 필요합니다.
 
-```text
-data=%7B%22deviceSerialNumber%22%3A%DEVICE_SERIAL_NUMBER%22%7D
-```
+
+
+### Authorize Endpoint
+
+`response_type=code` 만 사용 됩니다.
+
+`data` 파라미터를 사용하여 디바이스 일련번호를 전달 할 수 있습니다.
+
+> {"deviceSerialNumber":"DEVICE\_SERIAL\_NUMBER"}
+>
+> %7B%22deviceSerialNumber%22%3A%22DEVICE\_SERIAL\_NUMBER%22%7D
 
 {% api-method method="get" host="https://api.host.domain" path="/v1/auth/oauth/authorize" %}
 {% api-method-summary %}
@@ -27,27 +33,27 @@ data=%7B%22deviceSerialNumber%22%3A%DEVICE_SERIAL_NUMBER%22%7D
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="client\_id" type="string" required=true %}
-
+발급받은  ClientId를 사용 합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="response\_type" type="string" required=true %}
-
+code 만 사용 됩니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="redirect\_uri" type="string" required=true %}
-
+설정한 RedirectUri를 사용합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="scope" type="string" required=true %}
-
+ \(TODO\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="data" type="string" required=true %}
-
+추가적인 데이터를 포함됩니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="state" type="string" required=true %}
-
+CSRF를 위해 사용 되는 값입니다.
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -61,12 +67,18 @@ data=%7B%22deviceSerialNumber%22%3A%DEVICE_SERIAL_NUMBER%22%7D
 ```
 HTTP/1.1 302 
 Date: Mon, 14 Oct 2019 02:24:58 GMT
-Location: {redirect_uri}?code=AY2V4chO87dfL8XLBy0p&state=
+Location: {redirect_uri}?code={code}&state={state}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+### Token Endpoint
+
+`grant_type=refresh_token`, `grant_type=authorization_code` 만 사용 됩니다.
+
+Client 인증 정보는 Body Parameter\(application/x-www-form-urlencoded\)를 사용 합니다.
 
 {% api-method method="post" host="https://api.host.domain" path="/v1/auth/oauth/token" %}
 {% api-method-summary %}
@@ -81,23 +93,23 @@ Location: {redirect_uri}?code=AY2V4chO87dfL8XLBy0p&state=
 {% api-method-request %}
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="grant\_type" type="string" required=true %}
-authorization\_code
+authorization\_code \(신규\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="code" type="string" required=true %}
-
+응답 받은 code 값을 사용 합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="redirect\_uri" type="string" required=true %}
-
+인증 요청 시 사용된 redirect\_uri를 사용합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="client\_id" type="string" required=true %}
-
+발급 받은 ClientId를 사용합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="client\_secret" type="string" required=true %}
-
+발급 받은 ClientSecret을 사용합니다.
 {% endapi-method-parameter %}
 {% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
@@ -144,6 +156,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% api-method-response-example httpCode=401 %}
 {% api-method-response-example-description %}
+  
 unauthorized  
 unauthorized\_client  
 invalid\_token  
@@ -177,11 +190,11 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 {% api-method-request %}
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="grant\_type" type="string" required=true %}
-refresh\_token
+refresh\_token \(갱신\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="refresh\_token" type="string" required=true %}
-
+신규 발급 시 응답 받은 refresh\_token을 사용합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="client\_id" type="string" required=true %}
