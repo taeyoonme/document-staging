@@ -217,8 +217,6 @@ func setAudioSession() throws {
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
 1. `NuguClientKit`을 불러옵니다.  
-
-
    {% code-tabs %}
    {% code-tabs-item title="ViewController.swift" %}
    ```swift
@@ -226,10 +224,7 @@ func setAudioSession() throws {
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}
-
 2. `NuguClient` 인스턴스를 생성합니다.     
-
-
    {% code-tabs %}
    {% code-tabs-item title="ViewController.swift" %}
    ```swift
@@ -237,10 +232,7 @@ func setAudioSession() throws {
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}
-
 3. 로그인 결과로 받은 Access-token을 `NuguClient` 인스턴스에 설정합니다.    
-
-
    {% code-tabs %}
    {% code-tabs-item title="ViewController.swift" %}
    ```swift
@@ -248,10 +240,7 @@ func setAudioSession() throws {
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}
-
 4. `NetworkManager`를 통해 NUGU서버와 연결합니다.    
-
-
    {% code-tabs %}
    {% code-tabs-item title="ViewController.swift" %}
    ```swift
@@ -259,10 +248,7 @@ func setAudioSession() throws {
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}
-
 5. NUGU 서버와의 연결 이후 음성인식을 요청합니다.    
-
-
    {% code-tabs %}
    {% code-tabs-item title="VIewController.swift" %}
    ```swift
