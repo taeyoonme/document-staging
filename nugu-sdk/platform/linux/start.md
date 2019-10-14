@@ -68,7 +68,21 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요.
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요.
+
+### 음성 인식 파일 설정하기
+
+#### 다운로드 받기
+
+
+
+####  설정하기
+
+다운로드가 완료되면, Linux 디바이스에 임의의 디렉토리를 생성한 후, 아래와 같은 파일명으로 복사해 주시면 됩니다.
+
+* `nugu_model_wakeup_net.raw`  - wake word detection에 사용되는 model 파일 \(1/2\)
+* `nugu_model_wakeup_search.raw`  - wake word detection에 사용되는 model 파일 \(2/2\)
+* `nugu_model_epd.raw` - VAD에 사용되는 model 파일
 
 ### OAuth2 client 구현하기
 
@@ -80,19 +94,6 @@ NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android 달리 인증을 �
 하지만, 인증을 쉽게 테스트할 수 있도록 아래의 NUGU SDK for Linux Github에 Python으로 작성된 별도의 웹기반 OAuth2 client 예제를 제공하고 있습니다.
 
 {% embed url="https://github.com/nugu-developers/nugu-linux/wiki/Sample-OAuth2" caption="NUGU SDK for Linux OAuth2 client python sample" %}
-
-### 음성 인식 처리를 위한 Model 파일 설치하기
-
-NUGU SDK for Linux는 음성 인식 처리를 위해 아래의 음성 Model 파일을 필요로 합니다.
-
-* Wake word\("아리아"\) detection을 위한 model 파일
-* VAD\(voice activity detection\)을 위한 model 파일
-
-위 파일들은 NUGU developers 사이트에서 사용 약관에 동의 후 다운로드 받으실 수 있습니다. 다운로드가 완료되면, Linux 디바이스에 임의의 디렉토리를 생성한 후, 아래와 같은 파일명으로 복사해 주시면 됩니다.
-
-* `nugu_model_wakeup_net.raw`  - wake word detection에 사용되는 model 파일 \(1/2\)
-* `nugu_model_wakeup_search.raw`  - wake word detection에 사용되는 model 파일 \(2/2\)
-* `nugu_model_epd.raw` - VAD에 사용되는 model 파일
 
 ## Step 4: NUGU 사용하기
 

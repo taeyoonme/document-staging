@@ -16,7 +16,7 @@ NUGU SDK for Android 를 통한 개발을 위해서는 `NuguCore`, `NuguInterfac
   * `NuguAndroidHelper` : NUGU서비스를 안드로이드 플랫폼에서 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
   * `NuguUXKit` : NUGU의 디자인 가이드를 준수하는 UX 요소들을 제공합니다.
   * `NuguLoginKit` : NUGU의 로그인을 도와주는 기능을 제공합니다.
-* Internal Library
+* Vendor Component
   * `KeenSense` : 키워드 인식 기능을 제공하는 라이브러리 입니다.
   * `JadeMarble` : 발화의 시작/끝 인식 기능을 제공하는 라이브러리 입니다.
   * `SilverTray` : TTS발화에 대한 NUGU서비스 전용 플레이어입니다.
@@ -28,10 +28,6 @@ NUGU SDK for Android 를 통한 개발을 위해서는 `NuguCore`, `NuguInterfac
 | 이름 | 주소 |
 | :--- | :--- |
 | `nugu-android` | [https://github.com/nugu-developers/nugu-android](%20https://github.com/nugu-developers/nugu-android) |
-
-#### Internal Library
-
-
 
 ## Download
 

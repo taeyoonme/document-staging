@@ -2,7 +2,7 @@
 
 ## Step 1:최소 요구사항
 
-* Android 5.0\(API level 21\) 이
+* Android 5.0\(API level 21\) 이상에서 지원합니다.
 
 {% hint style="info" %}
 Android 4.4\(API level 19\)에서도 동작하지만, TLS v1.2로 설정이 필요합니다.
@@ -40,9 +40,14 @@ dependencies {
 
 ## Step 3: 프로젝트 설정하기
 
-### PoC정보 입력하기
+### PoC 정보 입력하기
 
-발급받은 ClientID, ClientSecret, Redirect URI 정보를 입력합니다.
+{% hint style="warning" %}
+NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
+더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
+{% endhint %}
+
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요. 
 
 #### ClientID
 
@@ -74,10 +79,15 @@ strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가
 <string name="nugu_redirect_host">sample</string>
 ```
 
-### 음성 인식 라이브러리 리소스 설정하기
+### 음성 인식 파일 설정하기
 
-* XXX에서 음성인식용 모델을 다운로드 합니다.
-* 다운로드 받은 파일을 assets 폴더에 추가합니다.
+#### 다운로드 받기
+
+
+
+#### 설정하기
+
+받은 파일을 assets에 추가합니다.
 
 ### 앱 권한 설정하기
 
@@ -97,80 +107,78 @@ Manifest에 추가한 android.permission.RECORD\_AUDIO 권한은 런타임에 �
 ### NUGU 로그인 추가
 
 {% hint style="info" %}
-NUGU 서비스를 이용하기 위해서는 OAuth 인증이 필요합니다.
+NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
+더 자세한 내용은 [Using OAuth 2.0](../ios/start.md)에서 확인이 가능합니다.
 {% endhint %}
 
-1. 로그인 정보 설정   
-   developers에서 발급받은 clientSecret 과 기기별 [고유 식별자](https://developer.android.com/training/articles/user-data-ids?hl=ko)인 deviceUniqueId 로 설정합니다.  
+#### 로그인 정보 설정 
 
+developers에서 발급받은 `clientSecret`과 기기별 고유 [고유 식별자](https://developer.android.com/training/articles/user-data-ids?hl=ko)식별자\(`deviceUniqueId`\)를 설정합니다.
 
-   ```kotlin
-   private val authClient by lazy {
-       // Configure Nugu OAuth Options
-       val options = NuguOAuthOptions.Builder()
-           .clientSecret("{your-client-secret}")
-           .deviceUniqueId("{your-device-uniqueId}")
-           .build()
-       NuguOAuth.getClient(options)
-   }
-   ```
+```kotlin
+private val authClient by lazy {
+    // Configure Nugu OAuth Options
+    val options = NuguOAuthOptions.Builder()
+        .clientSecret("{your-client-secret}")
+        .deviceUniqueId("{your-device-uniqueId}")
+        .build()
+    NuguOAuth.getClient(options)
+}
+```
 
-2. 웹 브라우저를 통해 로그인  
-   로그인은 loginByWebbrowser\(\) method를 호출후에 NuguOAuthInterface.OnLoginListener를 통해 인증 결과를 받습니다.  
+#### 인 앱 브라우저를 통해 로그인
 
+`loginByWebbrowser()`를 호출 후에 `NuguOAuthInterface.OnLoginListener`를 통해 인증 결과를 받습니다.
 
-   ```kotlin
-   authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
-               override fun onSuccess(credentials: Credentials) {
-                   // Save Credentials
-               }
+```kotlin
+authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
+            override fun onSuccess(credentials: Credentials) {
+                // Save Credentials
+            }
 
-               override fun onError(reason: String) {
-                   // Called when the request failed.
-               }
-           })
-   ```
+            override fun onError(reason: String) {
+                // Called when the request failed.
+            }
+        })
+```
 
-3. 로그인 정보 갱신  
-   이미 refresh-Token을 발급 받은 상태라면, loginByWebbrowser\(\) method를 호출하지 말고 loginSilently method를 호출하여 웹 브라우저 실행 없이 인증을 갱신 할수 있습니다.  
+#### 로그인 정보 갱신
 
+발급 받은 refresh-token이 이미 있다면, 이 후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.
 
-   ```kotlin
-   authClient.loginSilently("{refresh-Token}", object : NuguOAuthInterface.OnLoginListener {
-               override fun onSuccess(credentials: Credentials) {
-                   // Save Credentials 
-               }
+```kotlin
+authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginListener {
+            override fun onSuccess(credentials: Credentials) {
+                // Save Credentials 
+            }
 
-               override fun onError(reason: String) {
-                   // Called when the request failed.
-               }
-           })
-   ```
+            override fun onError(reason: String) {
+                // Called when the request failed.
+            }
+        })
+```
 
 ### NUGU 음성인식 사용하기
 
-로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는 NuguAndroidClient 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
+로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는 `NuguAndroidClient` 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
 
-1. 인증 정보 처리를 위임할 AuthDelegate를 정의합니다.   
+1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다.   
 
 
    ```kotlin
    val authDelegate = NuguOAuth.getClient()
    ```
 
-2. 음성인식에 사용할 기본 AudioProvider를 생성합니다.   
-
-   \(잘 동작하는 AudioProvider를 구현하는 것은 성가신 작업이기에 SDK에서 기본제공하는 클래스들을 이용합니다.\)  
+2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.     
 
 
    ```kotlin
    // AudioSourceManager : AudioProvider에 대한 기본 구현 클래스
    // AudioRecordSourceFactory : Android의 AudioRecord를 소스로 사용하는 SDK에서 제공
    val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
-
    ```
 
-3. 이제 NuguAndroidClient의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
+3. 이제 `NuguAndroidClient`의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
 
 
    ```kotlin

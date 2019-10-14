@@ -14,7 +14,7 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguInterface` F
   * `NuguClientKit`: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
 * NUGU Component \(Depends on platform\)
   * `NuguLoginKit`: NUGU 서비스 이용을 위한 OAuth 인증을 도와주는 기능을 제공합니다.
-* Internal Framework
+* Vendor Component
   * `KeenSense`: NUGU의 키워드를 감지하는 기능을 제공합니다.
   * `JadeMarble`: 발화의 시작과 끝을 감지하는 기능을 제공합니다.
   * `NattyLog`: 디버깅을 위한 로그를 출력을 도와주는 기능을 제공합니다. \(iOS Application 또는 Framework에서 직접 참조 및 사용이 가능합니다.\)
@@ -23,7 +23,7 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguInterface` F
 
 ## Github
 
-#### NUGU & Internal
+#### NUGU & Vendor Components
 
 | 이름 | 주소 |
 | :--- | :--- |
