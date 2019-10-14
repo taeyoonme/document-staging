@@ -177,7 +177,7 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
    val endPointDetector = EndPointDetector(EPD_MODEL_FILE_PATH)
    ```
 
-4.  마지막으로 `NuguAndroidClient`를 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
+4.  마지막으로 `NuguAndroidClient`를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
 
 
    ```kotlin
