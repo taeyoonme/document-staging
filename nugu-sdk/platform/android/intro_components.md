@@ -16,7 +16,6 @@ NUGU SDK for Android 를 통한 개발을 위해서는 `NuguCore`, `NuguInterfac
   * `NuguAndroidHelper` : NUGU서비스를 안드로이드 플랫폼에서 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
   * `NuguUXKit` : NUGU의 디자인 가이드를 준수하는 UX 요소들을 제공합니다.
   * `NuguLoginKit` : NUGU의 로그인을 도와주는 기능을 제공합니다.
-  * `NuguInternalLibraryPorting` : NUGU서비스 사용에 필요한 기능 중 SDK에서 직접 제공하지 않는 기능\(키워드 인식, 발화의 시작/끝 인식 등\)은 타 라이브러리를 사용합니다.  이에 대한 NUGU SDK로의 이식 구현을 제공합니다.
 * Internal Library
   * `KeenSense` : 키워드 인식 기능을 제공하는 라이브러리 입니다.
   * `JadeMarble` : 발화의 시작/끝 인식 기능을 제공하는 라이브러리 입니다.
@@ -46,7 +45,6 @@ dependencies {
     implementation "com.skt.nugu:nugu-android-helper:${nugu_latestVersion}"
     implementation "com.skt.nugu:nugu-ux-kit:${nugu_latestVersion}"
     implementation "com.skt.nugu:nugu-login-kit:${nugu_latestVersion}"
-    implementation "com.skt.nugu:nugu-internal-library-porting:${nugu_latestVersion}"
     
     implementation "com.skt.nugu:keensense:${keensense_latestVersion}"
     implementation "com.skt.nugu:jademarble:${jademarble_latestVersion}"
