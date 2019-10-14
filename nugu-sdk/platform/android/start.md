@@ -18,17 +18,17 @@ repositories {
 
 ### 의존성 추가하기
 
-어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니.  
+어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니다.  
 \(전체 라이브러리에 대한 의존성은 [여기](https://github.com/nugu-developers/nugu-android)를 참조\)
 
 ```groovy
 dependencies {
     // Nugu Android Helper
-    implementation "com.skt.nugu:nugu-android-helper:${latestVersion}"
+    implementation "com.skt.nugu.sdk:nugu-android-helper:${latestVersion}"
     // Nugu Android UX Kit
-    implementation "com.skt.nugu:nugu-ux-kit:${latestVersion}"
+    implementation "com.skt.nugu.sdk:nugu-ux-kit:${latestVersion}"
     // Nugu Android Login Kit
-    implementation "com.skt.nugu:nugu-login-kit:${latestVersion}"
+    implementation "com.skt.nugu.sdk:nugu-login-kit:${latestVersion}"
 }
 ```
 
