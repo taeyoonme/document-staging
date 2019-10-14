@@ -70,7 +70,7 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요.
 
-### 음성 인식 파일 설정하기
+### 음성인식 모델 파일 설정하기
 
 #### 다운로드 받기
 
@@ -127,7 +127,8 @@ int main(int argc, char *argv[])
 
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. 헤더 파일\(nugu\_client.hh\)을 include에 포함시키고, `NuguClientKit` namespace를 사용하도록 설정 합니다.
+1. 헤더 파일\(nugu\_client.hh\)을 include에 포함시키고, `NuguClientKit` namespace를 사용하도록 설정 합니다.  
+
 
    ```cpp
    #include <interface/nugu_client.hh>
@@ -135,7 +136,8 @@ int main(int argc, char *argv[])
    using namespace NuguClientKit;
    ```
 
-2. `NuguClient` 객체를 만들고, OAuth2 access-token과 음성인식 파일을 설정합니다.
+2. `NuguClient` 객체를 만들고, OAuth2 access-token과 음성인식 모델 파일을 설정합니다.  
+
 
    ```cpp
    NuguClient* nugu_client = new NuguClient());
@@ -143,7 +145,8 @@ int main(int argc, char *argv[])
    nugu_client->setConfig(NuguConfig::Key::MODEL_PATH, "/home/work/model");
    ```
 
-3. 음성인식 기능을 사용하기 위해 `ASR Capability`를 추가하고 NUGU 서비스 연결을 요청합니다.
+3. 음성인식 기능을 사용하기 위해 `ASR Capability`를 추가하고 NUGU 서비스 연결을 요청합니다.  
+
 
    ```cpp
    nugu_client->getCapabilityBuilder()
