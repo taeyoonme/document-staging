@@ -78,7 +78,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/A
         "id": "D1234567",
         "type": "DEHUMIDIFICATION",
         "modelName": "example dehumidification",
-        "friendlyNameSuggestion": "거실",
+        "friendlyName": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
             "humidityControl": {}
@@ -155,7 +155,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/S
         "id": "D1234567",
         "type": "DEHUMIDIFICATION",
         "modelName": "example dehumidification",
-        "friendlyNameSuggestion": "거실",
+        "friendlyName": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
           "humidityControl": {}
@@ -238,7 +238,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/I
         "id": "D1234567",
         "type": "DEHUMIDIFICATION",
         "modelName": "example dehumidification",
-        "friendlyNameSuggestion": "거실",
+        "friendlyName": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
           "humidityControl": {}
@@ -321,7 +321,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/D
         "id": "D1234567",
         "type": "DEHUMIDIFICATION",
         "modelName": "example dehumidification",
-        "friendlyNameSuggestion": "거실",
+        "friendlyName": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
           "humidityControl": {}
@@ -402,7 +402,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/S
         "id": "D1234567",
         "type": "DEHUMIDIFICATION",
         "modelName": "example dehumidification",
-        "friendlyNameSuggestion": "거실",
+        "friendlyName": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
           "humidityControl": {}
@@ -478,7 +478,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/S
         "id": "D1234567",
         "type": "DEHUMIDIFICATION",
         "modelName": "example dehumidification",
-        "friendlyNameSuggestion": "거실",
+        "friendlyName": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
           "humidityControl": {}

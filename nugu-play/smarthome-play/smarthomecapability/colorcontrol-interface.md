@@ -24,7 +24,7 @@ Discovery Sample Response
       {
          "id":"12345",
          "deviceTypeCode":"LIGHT",
-         "friendlyName":"거실",
+         "friendlyNameSuggestion":"거실",
          "deviceTypeName":"조명",
          "deviceModelName":"example_device_model_name",
          "customData":{

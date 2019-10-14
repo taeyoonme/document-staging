@@ -110,7 +110,7 @@ Airflow를 몇 단계 조절할지에 대한 Attribute value입니다. 해당 At
 
 Attribute 사용 예시
 
-```text
+```scheme
 IncreaseAirflow Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
 
 
@@ -163,7 +163,7 @@ Related to [AirflowControl Interface](smarthomecapability/airflowcontrol-interfa
 
 Attribute 사용 예시
 
-```text
+```scheme
 SetBrightness Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
 
 

@@ -25,7 +25,7 @@ Discovery Sample Response
         "deviceTypeCode": "AIR_CONDITIONER",
         "deviceTypeName": "에어컨",
         "deviceModelName": "example air_conditioner",
-        "friendlyName": "거실",
+        "friendlyNameSuggestion": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
             "temperatureControl": {} <-- "온도 25도로 설정해줘" 등 TemperatureControl 을 지원하기 위해서는 이 property 를 supportedCapabilities 에 포함해야 합니다.

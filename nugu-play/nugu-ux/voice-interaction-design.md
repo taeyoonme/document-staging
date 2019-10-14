@@ -20,23 +20,11 @@
 
 음악 재생 / 음악 틀어줘 / 음악 들려줘 / 음악 듣고 싶어 / 음악 들을래 / 음악 재생해줘 / 노래 들려줘 / 노래 틀어줘 / 노래 듣고 싶어
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">
-        <p><b>Note!</b>
-        </p>
-        <p>&#xB2E4;&#xC591;&#xC131;&#xC744; &#xC704;&#xD574; &#xC740;&#xC720;&#xC801;&#xC774;&#xACE0;
-          &#xAD00;&#xC6A9;&#xC801;&#xC778; &#xD45C;&#xD604;&#xC744; &#xACFC;&#xB3C4;&#xD558;&#xAC8C;
-          &#xBC1C;&#xD654;&#xB85C; &#xC791;&#xC131;&#xD558;&#xBA74; &#xD0C0; &#xC11C;&#xBE44;&#xC2A4;&#xC758;
-          &#xAE30;&#xB2A5;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC904; &#xC218; &#xC788;&#xC73C;&#xBA70;,
-          &#xAC1C;&#xBC1C; &#xD6A8;&#xC728;&#xC131;&#xC774; &#xB5A8;&#xC5B4;&#xC9C8;
-          &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>{% hint style="success" %}
+{% hint style="danger" %}
+다양성을 위해 은유적이고 관용적인 표현을 과도하게 발화로 작성하면 타 서비스의 기능에 영향을 줄 수 있으며, 개발 효율성이 떨어질 수 있습니다.
+{% endhint %}
+
+{% hint style="success" %}
 User Utterance Model 구현에 대한 자세한 내용은 [예상 발화 작성 가이드](../create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances.md)를 참고하세요.
 {% endhint %}
 

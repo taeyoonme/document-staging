@@ -26,7 +26,7 @@ Discovery Sample Response
          "deviceTypeCode":"LIGHT",
          "deviceTypeName":"example_device_type",
          "deviceModelName":"example_model_name",
-         "friendlyName":"안방",
+         "friendlyNameSuggestion":"안방",
          "manufacturer":"example_manufacturer",
          "supportedCapabilities":{
             "powerControl":{

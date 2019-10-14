@@ -46,7 +46,7 @@ NUGU를 탑재한 기기의 상태는 다음과 같습니다.
         &#xD45C;&#xC2DC;&#xAC00; &#xCD5C;&#xC18C;&#xD654;&#xB41C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>&#xD654;&#xBA74; &#xCF1C;&#xC9D0;/&#xAEBC;</b>
+      <td style="text-align:left"><b>&#xD654;&#xBA74; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0; </b>
       </td>
       <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xAE30;&#xC5D0;&#xC11C;
         &#xD654;&#xBA74;&#xC774; &#xCF1C;&#xC838;&#xC788;&#xAC70;&#xB098; &#xAEBC;&#xC838;&#xC788;&#xB294;

@@ -25,7 +25,7 @@ Discovery Sample Response
         "deviceTypeCode": "AIR_CONDITIONER",
         "deviceTypeName": "에어컨",
         "deviceModelName": "example air_conditioner",
-        "friendlyName": "거실",
+        "friendlyNameSuggestion": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
             "airflowControl": {
@@ -94,7 +94,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/Se
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -193,7 +193,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/As
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -233,7 +233,7 @@ Sample Response
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -295,7 +295,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/In
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -341,7 +341,7 @@ Sample Response
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -403,7 +403,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/De
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -490,7 +490,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/Se
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -530,7 +530,7 @@ Sample Response
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -592,7 +592,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/Se
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -632,7 +632,7 @@ Sample Response
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -713,7 +713,7 @@ Request sample
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
+            "friendlyName":"거실",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -734,7 +734,7 @@ Request sample
             "deviceTypeCode":"AIR_CONDITIONER",
             "deviceTypeName":"에어컨",
             "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"안방",
+            "friendlyName":"안방",
             "manufacturer":"example manufacturer",
             "supportedCapabilities":{
                "airflowControl":{
@@ -761,7 +761,7 @@ Request sample
 }
 ```
 
-```text
+```scheme
 Response Sample
 {
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
