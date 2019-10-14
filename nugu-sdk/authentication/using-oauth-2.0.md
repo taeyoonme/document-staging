@@ -137,12 +137,12 @@ Content-Type: application/json;charset=UTF-8
 
 {% api-method-response-example httpCode=400 %}
 {% api-method-response-example-description %}
-invalid\_request  
-invalid\_grant  
-unsupported\_grant\_type  
-invalid\_scope  
-redirect\_uri\_mismatch  
-unsupported\_response\_type
+invalid\_request - 잘못 된 요청입니다.  
+invalid\_grant - 유효하지 않은 grant\_type 입니다.  
+unsupported\_grant\_type - 지원하지 않는 grant\_type 입니다.  
+invalid\_scope - 유효하지 않은 scope 입니다.  
+redirect\_uri\_mismatch - 요청 한 redirect\_uri와 일치하지 않습니다.  
+unsupported\_response\_type - 지원하지 않는 response\_type 입니다.
 {% endapi-method-response-example-description %}
 
 ```
@@ -156,12 +156,11 @@ Content-Type: application/json;charset=UTF-8
 
 {% api-method-response-example httpCode=401 %}
 {% api-method-response-example-description %}
-  
-unauthorized  
-unauthorized\_client  
-invalid\_token  
-invalid\_client  
-access\_denied
+unauthorized - 인가되지 않은 사용자 정보 입니다.  
+unauthorized\_client - 인가되지 않은 클라이언트 입니다.  
+invalid\_token - 유효하지 않은 토큰 입니다.  
+invalid\_client - 유효하지 않은 클라이언 정보 입니다.  
+access\_denied - 접근이 거부 되었습니다.
 {% endapi-method-response-example-description %}
 
 ```
@@ -225,6 +224,35 @@ Content-Type: application/json;charset=UTF-8
   "expires_in" : 2147483646,
   "jti" : "7725ef4f-778c-4452-97eb-8145ef5b293d"
 }
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+HTTP/1.1 400 
+Date: Mon, 14 Oct 2019 04:22:45 GMT
+Content-Type: application/json;charset=UTF-8
+
+{"error":"invalid_grant","error_description":""}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+HTTP/1.1 401 
+Date: Mon, 14 Oct 2019 04:22:45 GMT
+Content-Type: application/json;charset=UTF-8
+WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="Bad client credentials"
+
+{"error":"invalid_client","error_description":"Bad client credentials"}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
