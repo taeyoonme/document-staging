@@ -64,12 +64,6 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 </manifest>
 ```
 
-#### ClientSecret
-
-{% hint style="warning" %}
-외부로 노출되지 않도록 주의
-{% endhint %}
-
 #### Redirect URI
 
 strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가합니다. 예를들어 redirectUri가 **"example://sample"** 라면 아래와 같이 추가합니다.
@@ -79,9 +73,9 @@ strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가
 <string name="nugu_redirect_host">sample</string>
 ```
 
-### 음성 인식 파일 설정하기
+### 음성 인식 모델 파일 설정하기
 
-#### 다운로드 받기
+#### 다운로드 받기 <a id="1"></a>
 
 
 
@@ -113,7 +107,7 @@ NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.
 
 #### 로그인 정보 설정 
 
-developers에서 발급받은 `clientSecret`과 기기별 고유 [고유 식별자](https://developer.android.com/training/articles/user-data-ids?hl=ko)식별자\(`deviceUniqueId`\)를 설정합니다.
+developers에서 발급받은 `clientSecret`과 기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
 
 ```kotlin
 private val authClient by lazy {
@@ -125,6 +119,10 @@ private val authClient by lazy {
     NuguOAuth.getClient(options)
 }
 ```
+
+{% hint style="warning" %}
+`clientSerect`는 외부에 노출되지 않도록 주의하여 관리해야합니다.
+{% endhint %}
 
 #### 인 앱 브라우저를 통해 로그인
 
@@ -178,7 +176,14 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
    val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
    ```
 
-3. 이제 `NuguAndroidClient`의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
+3. 음성인식에 사용할 `EndPointDetector`를 생성합니다. [위에서 받은 모델 파일](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-Lr8g3yFEBnv_ExIqmYR/primary/nugu-sdk/platform/android/start#1)의 경로를 인자로 넣어줍니다.  
+
+
+   ```kotlin
+   val endPointDetector = EndPointDetector(EPD_MODEL_FILE_PATH)
+   ```
+
+4. 이제 `NuguAndroidClient`의 생성하고, 음성인식 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
 
 
    ```kotlin
@@ -186,7 +191,7 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
        context,    // Android Context
        authDelegate,
        audioProvider
-   ).build()
+   ).endPointDetector(endPointDetector).build()
 
    client.asrAgent?.addOnResultListener(...)
    client.asrAgent?.addOnStateChangeListener(...)

@@ -32,11 +32,11 @@ Oauth 정보 : SmartHomePlay의 경우 IoT ServiceProvider의 사용자 계정 �
 
 SmartHome BackendProxy는 Discovery와 Control 2개의 역할을 수행합니다. 자세한 내용은 아래 [Discovery](./#discovery)와 [Control](./#control)을 참조해주세요.
 
-Play의 기본정보 입력을 마친 후 빌드/History 메뉴를 통해 Play빌드를 진행합니다. Play를 빌드한 시점을 기준으로 입력된 정보로 NUGU Developers에서 Play의 등록 및 심사를 진행하실 수 있습니다. 만약 Play의 기본정보가 변경될 경우 새로 빌드하고 이를 NUGU Developers에서 재등록 혹은 업데이트를 진행해야 합니다.
+Play의 기본정보 입력을 마친 후 빌드/History 메뉴를 통해 Play빌드를 진행합니다. Play를 빌드한 시점을 기준으로 입력된 정보로 NUGU developers에서 Play의 등록 및 심사를 진행하실 수 있습니다. 만약 Play의 기본정보가 변경될 경우 새로 빌드하고 이를 NUGU developers에서 재등록 혹은 업데이트를 진행해야 합니다.
 
 ![&#xBE4C;&#xB4DC;](../../.gitbook/assets/screenshot_21.png)
 
-SmartHomePlay의 빌드를 마친 후 NUGU Developers의 관리 &gt; Play등록 메뉴에서 Play등록하기를 통해 Play를 등록 및 심사 요청해야 합니다. Play타입을 Smarthome으로 선택하면 PlayBuilder를 통해 제작한 SmartHomePlay의 리스트를 불러올 수 있습니다. SmartHomePlay의 심사 프로세스는 Custom Play와 동일하지만 Play 심사를 위한 등록 정보는 일부 차이가 있습니다.
+SmartHomePlay의 빌드를 마친 후 NUGU developers의 관리 &gt; Play등록 메뉴에서 Play등록하기를 통해 Play를 등록 및 심사 요청해야 합니다. Play타입을 Smarthome으로 선택하면 PlayBuilder를 통해 제작한 SmartHomePlay의 리스트를 불러올 수 있습니다. SmartHomePlay의 심사 프로세스는 Custom Play와 동일하지만 Play 심사를 위한 등록 정보는 일부 차이가 있습니다.
 
 SmartHomePlay를 등록한 후 심사대기 및 심사 중 상태일 때 NUGU 클라이언트가 탑재된 기기를 통해 테스트를 진행할 수 있습니다. SmartHomePlay를 제작한 NUGU Developers의 T ID와 동일한 T ID로 NUGU 모바일 앱에 접속해 스마트홈 메뉴에서 신규 기기 등록하기를 선택하면 심사 중인 IoT ServiceProvider의 SmartHomePlay가 보이고 사용자 계정 연동을 통해 스마트홈 기기를 NUGU 앱에 등록해 테스트를 진행할 수 있습니다.
 
@@ -48,7 +48,7 @@ Key Terms
 3. SmartHomeBackendProxy - Discovery, Control 요청을 처리하는 서버.
 4. OAuth2 - OAuth2 인증에 필요한 정보 입력 필요.
 
-NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU Developers Support 내에 [문의사항](https://developers.nugu.co.kr/#/customer/qna?d=1571031742426)/[제휴제안](https://developers.nugu.co.kr/#/customer/proposition?d=1571031708220)을 통해 등록해주세요.
+NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU developers Support 내에 [문의사항](https://developers.nugu.co.kr/#/customer/qna?d=1571031742426)/[제휴제안](https://developers.nugu.co.kr/#/customer/proposition?d=1571031708220)을 통해 등록해주세요.
 {% endhint %}
 
 ## Discovery
