@@ -1,6 +1,6 @@
 # 구성요소
 
-![](../../../.gitbook/assets/ios-open-sdk-architecture-3.png)
+![](../../../.gitbook/assets/image-24.png)
 
 ## 구성요소 목록
 

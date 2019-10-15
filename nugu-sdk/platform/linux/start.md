@@ -68,28 +68,28 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요.
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.
 
 ### 음성인식 모델 파일 설정하기
 
 #### 다운로드 받기
 
+[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 음성인식 모델 파일을 다운로드 받습니다.
 
-
-####  설정하기
+#### 설정하기
 
 다운로드가 완료되면, Linux 디바이스에 임의의 디렉토리를 생성한 후, 아래와 같은 파일명으로 복사해 주시면 됩니다.
 
-* `nugu_model_wakeup_net.raw`  - wake word detection에 사용되는 model 파일 \(1/2\)
-* `nugu_model_wakeup_search.raw`  - wake word detection에 사용되는 model 파일 \(2/2\)
-* `nugu_model_epd.raw` - VAD에 사용되는 model 파일
+* `nugu_model_wakeup_net.raw`  - keyword detection에 사용되는 model 파일 \(1/2\)
+* `nugu_model_wakeup_search.raw`  - keyword detection에 사용되는 model 파일 \(2/2\)
+* `nugu_model_epd.raw` - VAD\(Voice Activity Detection\) 에 사용되는 model 파일
 
 ### OAuth2 client 구현하기
 
-NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android 달리 인증을 위한 기능을 제공하고 있지 않습니다. 
+NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증을 위한 기능을 제공하고 있지 않습니다. 
 
-* Linux 기반의 제품은 대부분 디스플레이가 없어 별도의 Companion application을 통해 사용자 인증\(로그인 등\)을 필요로 함.
-* 디스플레이가 탑재되어 있는 제품이라 할지라도, Linux는 다른 플랫폼과 달리 GUI framework이 다양하기 때문에 표준화된 인증 UI를 SDK에서 제공해 주기 어려움.
+* Linux 기반의 제품은 대부분 디스플레이가 없어 별도의 연동 어플리케이션을 통한 사용자 인증을 필요로 합니다.
+* 다른 플랫폼과 달리 GUI framework이 다양하기 때문에 표준화된 인증 UI를 SDK에서 제공해 주기 어렵습니다.
 
 하지만, 인증을 쉽게 테스트할 수 있도록 아래의 NUGU SDK for Linux Github에 Python으로 작성된 별도의 웹기반 OAuth2 client 예제를 제공하고 있습니다.
 
@@ -127,8 +127,7 @@ int main(int argc, char *argv[])
 
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. 헤더 파일\(nugu\_client.hh\)을 include에 포함시키고, `NuguClientKit` namespace를 사용하도록 설정 합니다.  
-
+1. 헤더 파일\(nugu\_client.hh\)을 include에 포함시키고, `NuguClientKit` namespace를 사용하도록 설정 합니다.
 
    ```cpp
    #include <interface/nugu_client.hh>
@@ -136,8 +135,7 @@ int main(int argc, char *argv[])
    using namespace NuguClientKit;
    ```
 
-2. `NuguClient` 객체를 만들고, OAuth2 access-token과 음성인식 모델 파일을 설정합니다.  
-
+2. `NuguClient` 객체를 만들고, OAuth2 access-token과 음성인식 모델 파일을 설정합니다.
 
    ```cpp
    NuguClient* nugu_client = new NuguClient());
@@ -145,8 +143,7 @@ int main(int argc, char *argv[])
    nugu_client->setConfig(NuguConfig::Key::MODEL_PATH, "/home/work/model");
    ```
 
-3. 음성인식 기능을 사용하기 위해 `ASR Capability`를 추가하고 NUGU 서비스 연결을 요청합니다.  
-
+3. 음성인식 기능을 사용하기 위해 `ASR Capability`를 추가하고 NUGU 서비스 연결을 요청합니다.
 
    ```cpp
    nugu_client->getCapabilityBuilder()
@@ -161,7 +158,7 @@ int main(int argc, char *argv[])
 
 ### Build
 
-NUGU SDK for Linux는 빌드 설정을 쉽게 구성할 수 있도록 `pkg-config` 파일을 제공합니다. 따라서, 아래와 같이 `nugu.pc`를 사용해서 빌드 명령을 수행하면 됩니다.
+NUGU SDK for Linux는 빌드 설정을 쉽게 구성할 수 있도록 `pkg-config` 파일을 제공합니다. 따라서, 아래와 같이 `nugu.pc`를 사용해 빌드 명령을 수행할 수 있습니다.
 
 ```bash
 $ g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello

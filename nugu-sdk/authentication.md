@@ -1,12 +1,8 @@
-# Using OAuth 2.0
+# Authentication
 
-NUGU의 인증 규격은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749) 입니다.
+NUGU 플랫폼 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)의 규격을 지원하고, NUGU의 회원 체계를 SK텔레콤 [T아이디](https://www.skt-id.co.kr)를 따릅니다.
 
-사용자 정보는 [T아이디](https://www.skt-id.co.kr)를 기반으로 합니다.
-
-
-
-인증을 사용하기 위해서는 `NUGU SDK > 관리 > PoC 관리` 에서 `ClientId, ClientSecret, RedirectUri` 정보가 필요합니다.
+플랫폼 인증을 위해서는 NUGU에서 별도로 발급하는 `Client Id, Client Secret`과 제휴사에서 등록한 `Redirect Uri` 정보가 필요합니다.
 
 
 

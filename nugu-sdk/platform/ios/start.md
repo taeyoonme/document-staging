@@ -9,8 +9,8 @@
 ## Step 2: NUGU SDK 설치하기
 
 {% tabs %}
-{% tab title="Cocoapods\(권장\)" %}
-Cocoapods를 사용하는 경우 `Podfile`에 다음과 같이 의존성을 추가합니다.
+{% tab title="Cocoapods" %}
+`Podfile`에 다음과 같이 의존성을 추가합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="Podfile" %}
@@ -29,14 +29,6 @@ end
 $ pod install
 ```
 {% endtab %}
-
-{% tab title="Manually" %}
-Github Repository를 통해 다운로드 받아 직접 빌드할 수 있습니다.  
-자세한 내용은 [구성요소](component.md) 탭에서 확인이 가능합니다.
-
-* NuguClientKit: [https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios)
-* NuguLoginKit: [https://github.com/nugu-developers/nugu-login-kit-ios](https://github.com/nugu-developers/nugu-login-kit-ios)
-{% endtab %}
 {% endtabs %}
 
 ## Step 3: 프로젝트 설정하기
@@ -48,11 +40,16 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요.
+제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.
+
+{% hint style="success" %}
+NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,  
+Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다.
+{% endhint %}
 
 #### info.plist 파일에 URL Scheme 추가
 
-`info.plist` 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XCode에서 NUGU를 추가할 Target의 Info 탭을 눌러 URL Types를 추가 후 URL Schemes에 "nugu.user.{client-id}"를 입력합니다.\)
+`info.plist` 파일에 다음과 같이 URL Scheme을 추가합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="info.plist" %}
@@ -80,7 +77,17 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 #### 설정하기
 
-다운로드 받은 파일을 각각의 Assets 디렉토리로 파일을 이동한 후에 아래 Script를 실행합니다. \(설명 수정 예정\)
+다운로드 받은 파일을 각각의 Assets 디렉토리로 파일을 이동합니다.
+
+* Wake-up 모델
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_tinkerbel.raw`
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_tinkerbel.raw`
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_aria.raw`
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_aria.raw`
+* EPD 모델
+  * `./Pods/JadeMarble/JadeMarble/Assets/skt_epd_model.raw`
+
+음성인식 모델 파일을 Resources에 포함하기 위해 아래 Script를 실행합니다.
 
 ```bash
 $ pod update
@@ -105,7 +112,7 @@ NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plis
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Using OAuth 2.0](start.md)에서 확인이 가능합니다.
+더 자세한 내용은 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
 {% endhint %}
 
 #### NuguLoginKit 불러오기
@@ -217,6 +224,7 @@ func setAudioSession() throws {
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
 1. `NuguClientKit`을 불러옵니다.  
+
    {% code-tabs %}
    {% code-tabs-item title="ViewController.swift" %}
    ```swift
@@ -224,7 +232,9 @@ func setAudioSession() throws {
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}
+
 2. `NuguClient` 인스턴스를 생성합니다.     
+
    {% code-tabs %}
    {% code-tabs-item title="ViewController.swift" %}
    ```swift
@@ -232,7 +242,9 @@ func setAudioSession() throws {
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}
+
 3. 로그인 결과로 받은 Access-token을 `NuguClient` 인스턴스에 설정합니다.    
+
    {% code-tabs %}
    {% code-tabs-item title="ViewController.swift" %}
    ```swift
@@ -240,7 +252,9 @@ func setAudioSession() throws {
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}
+
 4. `NetworkManager`를 통해 NUGU서버와 연결합니다.    
+
    {% code-tabs %}
    {% code-tabs-item title="ViewController.swift" %}
    ```swift
@@ -248,7 +262,9 @@ func setAudioSession() throws {
    ```
    {% endcode-tabs-item %}
    {% endcode-tabs %}
+
 5. NUGU 서버와의 연결 이후 음성인식을 요청합니다.    
+
    {% code-tabs %}
    {% code-tabs-item title="VIewController.swift" %}
    ```swift
@@ -258,10 +274,6 @@ func setAudioSession() throws {
    {% endcode-tabs %}
 
 ## 더 알아보기
-
-### 구성요소 알아보기
-
-NUGU SDK의 Github Repository를 통해 NUGU Components의 주요 기능들을 확인하실 수 있습니다. 구성요소 소개 페이지에서 필요한 [구성요소](component.md)를 확인하고, 해당 구성요소의 Repository에서 Readme를 통해 더 자세한 정보를 얻을 수 있습니다.
 
 ### Sample Application
 

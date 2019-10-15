@@ -1,6 +1,6 @@
 # 구성요소
 
-![](../../../.gitbook/assets/open-sdk-architecture-linux.png)
+![](../../../.gitbook/assets/image-26.png)
 
 ## 구성요소 목록
 

@@ -47,7 +47,12 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요. 
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요. 
+
+{% hint style="success" %}
+NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,  
+Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다.
+{% endhint %}
 
 #### 리소스와 매니페스트에 정보 추가하기
 
@@ -75,7 +80,7 @@ strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가
 
 #### 다운로드 받기 <a id="1"></a>
 
-
+[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 음성인식 모델 파일을 다운로드 받습니다.
 
 ### 앱 권한 설정하기
 
@@ -96,7 +101,7 @@ Manifest에 추가한 android.permission.RECORD\_AUDIO 권한은 런타임에 �
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Using OAuth 2.0](../ios/start.md)에서 확인이 가능합니다.
+더 자세한 내용은 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
 {% endhint %}
 
 #### 로그인 정보 설정 
@@ -154,15 +159,13 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
 
 로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는 `NuguAndroidClient` 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
 
-1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다.   
-
+1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다. 
 
    ```kotlin
    val authDelegate = NuguOAuth.getClient()
    ```
 
-2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.     
-
+2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.   
 
    ```kotlin
    // AudioSourceManager : AudioProvider에 대한 기본 구현 클래스
@@ -170,15 +173,13 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
    val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
    ```
 
-3. 음성인식에 사용할 `EndPointDetector`를 생성합니다. [위에서 받은 모델 파일](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-Lr8g3yFEBnv_ExIqmYR/primary/nugu-sdk/platform/android/start#1)의 경로를 인자로 넣어줍니다.  
-
+3. 음성인식에 사용할 `EndPointDetector`를 생성합니다. [위에서 받은 모델 파일](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-Lr8g3yFEBnv_ExIqmYR/primary/nugu-sdk/platform/android/start#1)의 경로를 인자로 넣어줍니다.
 
    ```kotlin
    val endPointDetector = EndPointDetector(EPD_MODEL_FILE_PATH)
    ```
 
-4.  마지막으로 `NuguAndroidClient`를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
-
+4.  마지막으로 `NuguAndroidClient`를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.
 
    ```kotlin
    val client = NuguAndroidClient.Builder(

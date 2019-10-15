@@ -1,6 +1,6 @@
 # 구성요소
 
-![](../../../.gitbook/assets/android-components-diagram.png)
+![](../../../.gitbook/assets/image-25.png)
 
 ## 구성요소 목록
 
