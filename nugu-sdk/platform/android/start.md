@@ -159,15 +159,13 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
 
 로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는 `NuguAndroidClient` 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
 
-1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다.   
-
+1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다. 
 
    ```kotlin
    val authDelegate = NuguOAuth.getClient()
    ```
 
-2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.     
-
+2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.   
 
    ```kotlin
    // AudioSourceManager : AudioProvider에 대한 기본 구현 클래스
@@ -175,15 +173,13 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
    val audioProvider = AudioSourceManager(AudioRecordSourceFactory())
    ```
 
-3. 음성인식에 사용할 `EndPointDetector`를 생성합니다. [위에서 받은 모델 파일](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-Lr8g3yFEBnv_ExIqmYR/primary/nugu-sdk/platform/android/start#1)의 경로를 인자로 넣어줍니다.  
-
+3. 음성인식에 사용할 `EndPointDetector`를 생성합니다. [위에서 받은 모델 파일](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-Lr8g3yFEBnv_ExIqmYR/primary/nugu-sdk/platform/android/start#1)의 경로를 인자로 넣어줍니다.
 
    ```kotlin
    val endPointDetector = EndPointDetector(EPD_MODEL_FILE_PATH)
    ```
 
-4.  마지막으로 `NuguAndroidClient`를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.  
-
+4.  마지막으로 `NuguAndroidClient`를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.
 
    ```kotlin
    val client = NuguAndroidClient.Builder(
