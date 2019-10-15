@@ -9,7 +9,7 @@
 ## Step 2: NUGU SDK 설치하기
 
 {% tabs %}
-{% tab title="Cocoapods\(권장\)" %}
+{% tab title="Cocoapods" %}
 `Podfile`에 다음과 같이 의존성을 추가합니다.
 
 {% code-tabs %}
@@ -28,14 +28,6 @@ end
 ```bash
 $ pod install
 ```
-{% endtab %}
-
-{% tab title="Manually" %}
-Github Repository를 통해 다운로드 받아 직접 빌드할 수 있습니다.  
-자세한 내용은 [구성요소](component.md) 탭에서 확인이 가능합니다.
-
-* NuguClientKit: [https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios)
-* NuguLoginKit: [https://github.com/nugu-developers/nugu-login-kit-ios](https://github.com/nugu-developers/nugu-login-kit-ios)
 {% endtab %}
 {% endtabs %}
 
