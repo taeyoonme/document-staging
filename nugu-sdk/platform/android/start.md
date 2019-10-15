@@ -47,7 +47,12 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요. 
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요. 
+
+{% hint style="success" %}
+NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,  
+Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다.
+{% endhint %}
 
 #### 리소스와 매니페스트에 정보 추가하기
 
@@ -75,7 +80,7 @@ strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가
 
 #### 다운로드 받기 <a id="1"></a>
 
-
+[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 음성인식 모델 파일을 다운로드 받습니다.
 
 ### 앱 권한 설정하기
 

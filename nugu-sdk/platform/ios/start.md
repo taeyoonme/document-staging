@@ -10,7 +10,7 @@
 
 {% tabs %}
 {% tab title="Cocoapods\(권장\)" %}
-Cocoapods를 사용하는 경우 `Podfile`에 다음과 같이 의존성을 추가합니다.
+`Podfile`에 다음과 같이 의존성을 추가합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="Podfile" %}
@@ -48,11 +48,16 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 ClientID, ClientSecret, Redirect URI 정보를 확인하세요.
+제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.
+
+{% hint style="success" %}
+NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,  
+Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다.
+{% endhint %}
 
 #### info.plist 파일에 URL Scheme 추가
 
-`info.plist` 파일에 다음과 같이 URL Scheme을 추가합니다. \(또는 XCode에서 NUGU를 추가할 Target의 Info 탭을 눌러 URL Types를 추가 후 URL Schemes에 "nugu.user.{client-id}"를 입력합니다.\)
+`info.plist` 파일에 다음과 같이 URL Scheme을 추가합니다.
 
 {% code-tabs %}
 {% code-tabs-item title="info.plist" %}
@@ -80,7 +85,17 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 #### 설정하기
 
-다운로드 받은 파일을 각각의 Assets 디렉토리로 파일을 이동한 후에 아래 Script를 실행합니다. \(설명 수정 예정\)
+다운로드 받은 파일을 각각의 Assets 디렉토리로 파일을 이동합니다.
+
+* Wake-up 모델
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_tinkerbel.raw`
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_tinkerbel.raw`
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_aria.raw`
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_aria.raw`
+* EPD 모델
+  * `./Pods/JadeMarble/JadeMarble/Assets/skt_epd_model.raw`
+
+음성인식 모델 파일을 Resources에 포함하기 위해 아래 Script를 실행합니다.
 
 ```bash
 $ pod update
@@ -105,7 +120,7 @@ NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plis
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Using OAuth 2.0](start.md)에서 확인이 가능합니다.
+더 자세한 내용은 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
 {% endhint %}
 
 #### NuguLoginKit 불러오기
