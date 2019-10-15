@@ -13,7 +13,7 @@ description: iOS 환경에서 NUGU 서비스를 쉽게 사용할 수 있도록 N
 Objective-C 언어는 별도로 지원하지 않습니다. Objective-C 환경에서 사용하기 위해서는 별도로 Bridge 코드를 작성하여 사용해야 합니다. 
 {% endhint %}
 
-## 지원하는 디바이스
+## 지원하는 OS 버전
 
 NUGU SDK for iOS는 iOS 10.0 이상을 지원합니다.
 

@@ -101,7 +101,7 @@ Manifest에 추가한 android.permission.RECORD\_AUDIO 권한은 런타임에 �
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Using OAuth 2.0](../ios/start.md)에서 확인이 가능합니다.
+더 자세한 내용은 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
 {% endhint %}
 
 #### 로그인 정보 설정 

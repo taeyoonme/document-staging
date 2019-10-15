@@ -283,10 +283,6 @@ func setAudioSession() throws {
 
 ## 더 알아보기
 
-### 구성요소 알아보기
-
-NUGU SDK의 Github Repository를 통해 NUGU Components의 주요 기능들을 확인하실 수 있습니다. 구성요소 소개 페이지에서 필요한 [구성요소](component.md)를 확인하고, 해당 구성요소의 Repository에서 Readme를 통해 더 자세한 정보를 얻을 수 있습니다.
-
 ### Sample Application
 
 `NuguClientKit` Github Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
