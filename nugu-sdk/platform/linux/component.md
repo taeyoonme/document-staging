@@ -116,7 +116,7 @@ NUGU SDK for Linux는 아래의 외부 라이브러리를 사용하고 있습니
       <td style="text-align:left">Apache v2</td>
     </tr>
   </tbody>
-</table>그리고 아래의 외부 Open source들을 NUGU SDK for Linux에 포함하여 빌드하고 있습니다.
+</table>그리고 아래의 외부 Open source 들을 NUGU SDK for Linux에 포함하여 빌드하고 있습니다.
 
 | 이름 | 주소 | 라이센스 |
 | :--- | :--- | :--- |
