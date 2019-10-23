@@ -25,17 +25,48 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguInterface` F
 
 #### NUGU & Vendor Components
 
-| 이름 | 주소 |
-| :--- | :--- |
-| `NuguClientKit` | [https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios) |
-| `NuguCore` | [https://github.com/nugu-developers/nugu-core-ios](https://github.com/nugu-developers/nugu-core-ios) |
-| `NuguInteface` | [https://github.com/nugu-developers/nugu-interface-ios](https://github.com/nugu-developers/nugu-interface-ios) |
-| `NuguLoginKit` | [https://github.com/nugu-developers/nugu-login-kit-ios](https://github.com/nugu-developers/nugu-login-kit-ios) |
-| `NattyLog` | [https://github.com/nugu-developers/natty-log-ios](https://github.com/nugu-developers/natty-log-ios) |
-| `KeenSense` | [https://github.com/nugu-developers/keen-sense-ios](https://github.com/nugu-developers/keen-sense-ios) |
-| `JadeMarble` | [https://github.com/nugu-developers/jade-marble-ios](https://github.com/nugu-developers/jade-marble-ios) |
-
-#### External
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xC774;&#xB984;</th>
+      <th style="text-align:left">&#xC8FC;&#xC18C;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p><code>NuguCore</code>
+        </p>
+        <p><code>NuguInterface</code>
+        </p>
+        <p><code>NuguClientKit</code>
+        </p>
+        <p><code>NuguLoginKit</code>
+        </p>
+      </td>
+      <td style="text-align:left"><a href="https://github.com/nugu-developers/nugu-ios">https://github.com/nugu-developers/nugu-ios</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>NattyLog</code>
+      </td>
+      <td style="text-align:left"><a href="https://github.com/nugu-developers/natty-log-ios">https://github.com/nugu-developers/natty-log-ios</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>KeenSense</code>
+      </td>
+      <td style="text-align:left"><a href="https://github.com/nugu-developers/keen-sense-ios">https://github.com/nugu-developers/keen-sense-ios</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>JadeMarble</code>
+      </td>
+      <td style="text-align:left"><a href="https://github.com/nugu-developers/jade-marble-ios">https://github.com/nugu-developers/jade-marble-ios</a>
+      </td>
+    </tr>
+  </tbody>
+</table>#### External
 
 | 이름 | 주소 |
 | :--- | :--- |
