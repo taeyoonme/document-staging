@@ -293,7 +293,9 @@ image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
         <br />default&#xAC12;&#xC740; 0.7</td>
     </tr>
   </tbody>
-</table>### Text Object
+</table>### 
+
+### Text Object
 
 <table>
   <thead>
@@ -345,7 +347,7 @@ image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>* TextObject는 Scrollable이 명시된 경우만 스크롤이 가능하고, 명시되어 있지 않으면 default로 스크롤 불가
+</table>TextObject는 Scrollable이 명시된 경우만 스크롤이 가능하고, 명시되어 있지 않으면 default로 스크롤 불가합니다.
 
 
 
@@ -471,7 +473,9 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
       <td style="text-align:left">&#xBCF4;&#xC870; &#xC124;&#xBA85;</td>
     </tr>
   </tbody>
-</table>#### Sample Code
+</table>#### 
+
+#### Sample Code
 
 ```text
 {
@@ -833,8 +837,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 ### 
 
-![](../../../../.gitbook/assets/imagetext1.png)
-
 ### ImageText2
 
 #### 형식
@@ -1192,10 +1194,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-![](../../../../.gitbook/assets/imagetext3.png)
-
 ### 
 
 ### ImageText4
@@ -1364,11 +1362,9 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-#### Sample Image
 
 
 
-### 
 
 ### TextList1
 
@@ -2414,10 +2410,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
     ]
 }
 ```
-
-#### Sample Image
-
-![](../../../../.gitbook/assets/imagelist1.png)
 
 ### 
 
