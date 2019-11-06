@@ -41,7 +41,7 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용할 수
 
 Template이 display되는 동안 display 중인 template의 token 값을 전달됩니다. Event가 발생하는 경우는 template display되는 상황이기 때문에 context는 함께 전달됩니다.
 
-```text
+```yaml
 {
     "Display": {
         "version": "1.0",
@@ -65,7 +65,7 @@ Template 별로 알아보기 전에, 화면 구성 요소에 대해 알아보겠
 
 화면 상단의 타이틀 영역에 들어갈 요소입니다. NU300 화면 상단 왼쪽의 홈 버튼은 기본으로 제공되는 버튼으로 Title Object와는 무관합니다.. 
 
-```text
+```yaml
 {
     "logo": ImageObject,
     "text": TextObject,
@@ -85,7 +85,7 @@ Template 별로 알아보기 전에, 화면 구성 요소에 대해 알아보겠
 
 ### ImageObject
 
-```text
+```yaml
 {
     "contentDescription": "{{STRING}}",
     "sources": [
@@ -156,7 +156,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.FullText1",
     "playServiceId": "{{STRING}}",
@@ -186,7 +186,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.FullText1",
     "playServiceId": "{{playServiceId}}",
@@ -228,7 +228,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.FullText2",
     "playServiceId": "{{STRING}}",
@@ -256,7 +256,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.FullText2",
     "playServiceId": "{{playServiceId}}",
@@ -290,7 +290,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.ImageText1",
     "playServiceId": "{{STRING}}",
@@ -324,7 +324,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.ImageText1",
     "playServiceId": "{{playServiceId}}",
@@ -373,7 +373,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.ImageText2",
     "playServiceId": "{{STRING}}",
@@ -406,8 +406,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
-
+```yaml
 {
     "type": "Display.ImageText2",
     "playServiceId": "{{playServiceId}}",
@@ -458,7 +457,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.ImageText3",
     "playServiceId": "{{STRING}}",
@@ -490,7 +489,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.ImageText3",
     "playServiceId": "{{playServiceId}}",
@@ -529,7 +528,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.ImageText4",
     "playServiceId": "{{STRING}}",
@@ -561,7 +560,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.ImageText4",
     "playServiceId": "{{playServiceId}}",
@@ -598,7 +597,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.TextList1",
     "playServiceId": "{{STRING}}",
@@ -641,7 +640,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.TextList1",
     "playServiceId": "{{playServiceId}}",
@@ -702,7 +701,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.TextList2",
     "playServiceId": "{{STRING}}",
@@ -748,7 +747,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.TextList2",
     "playServiceId": "{{playServiceId}}",
@@ -841,7 +840,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.TextList3",
     "playServiceId": "{{STRING}}",
@@ -889,7 +888,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.TextList3",
     "playServiceId": "{{playServiceId}}",
@@ -998,7 +997,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 {
     "type": "Display.ImageList1",
     "playServiceId": "{{STRING}}",
@@ -1042,7 +1041,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.ImageList1",
     "playServiceId": "{{playServiceId}}",
@@ -1133,7 +1132,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### 형식
 
-```text
+```yaml
 
 {
     "type": "Display.ImageList1",
@@ -1186,7 +1185,7 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 
 #### Sample Code
 
-```text
+```yaml
 {
     "type": "Display.ImageList2",
     "playServiceId": "{{playServiceId}}",
