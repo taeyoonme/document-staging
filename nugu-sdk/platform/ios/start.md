@@ -277,7 +277,7 @@ func setAudioSession() throws {
 
 ### Sample Application
 
-`NuguClientKit` Github Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
+NUGU SDK for iOS의 Github Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
 
-{% embed url="https://github.com/nugu-developers/nugu-client-kit-ios" caption="" %}
+{% embed url="https://github.com/nugu-developers/nugu-ios" %}
 

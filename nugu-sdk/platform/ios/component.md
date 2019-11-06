@@ -25,12 +25,9 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguInterface` F
 
 #### NUGU & Vendor Components
 
-| 이름 | 주소 |
-| :--- | :--- |
-| `NuguClientKit` | [https://github.com/nugu-developers/nugu-client-kit-ios](https://github.com/nugu-developers/nugu-client-kit-ios) |
-| `NuguCore` | [https://github.com/nugu-developers/nugu-core-ios](https://github.com/nugu-developers/nugu-core-ios) |
-| `NuguInteface` | [https://github.com/nugu-developers/nugu-interface-ios](https://github.com/nugu-developers/nugu-interface-ios) |
-| `NuguLoginKit` | [https://github.com/nugu-developers/nugu-login-kit-ios](https://github.com/nugu-developers/nugu-login-kit-ios) |
+| 이름                                                                                                                            | 주소                                                            |
+|-------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| `NuguCore`<br>`NuguInterface`<br>`NuguClientKit`<br>`NuguLoginKit` | [https://github.com/nugu-developers/nugu-ios](https://github.com/nugu-developers/nugu-ios) |
 | `NattyLog` | [https://github.com/nugu-developers/natty-log-ios](https://github.com/nugu-developers/natty-log-ios) |
 | `KeenSense` | [https://github.com/nugu-developers/keen-sense-ios](https://github.com/nugu-developers/keen-sense-ios) |
 | `JadeMarble` | [https://github.com/nugu-developers/jade-marble-ios](https://github.com/nugu-developers/jade-marble-ios) |
