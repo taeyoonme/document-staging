@@ -10,7 +10,7 @@ Display Interface를 사용하기 위해서는 우선 `General` &gt; `기본 정
 Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용할 수 없습니다. 
 {% endhint %}
 
-## 지원 디바이스 및 해상도
+### 지원 디바이스 및 해상도
 
 현재 Display Interface를 지원하는 디바이스와 해상는 다음과 같습니다.
 
@@ -19,7 +19,7 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용할 수
 | NU300 | 1280 x 800 | Landscape |
 | Btv | 1920 x 1080 | Landscape |
 
-## Template 유형 모아보기
+### Template 유형 모아보기
 
 다음과 같은 유형의 Template 들을 사용할 수 있습니다.  
 
@@ -37,13 +37,7 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용할 수
 | ImageList1 | ![](../../../../.gitbook/assets/imagelist1_nu300.png) | ![](../../../../.gitbook/assets/imagelist1_btv.png) |
 | ImageList2 | ![](../../../../.gitbook/assets/imagelist2_nu300.png) | ![](../../../../.gitbook/assets/imagelist2_btv.jpg) |
 
-## 
-
-
-
-
-
-### Context  <a id="id-1.DisplayInterface-3.Context"></a>
+## Context
 
 Template이 display되는 동안 display 중인 template의 token 값을 전달됩니다. Event가 발생하는 경우는 template display되는 상황이기 때문에 context는 함께 전달됩니다.
 
@@ -63,12 +57,6 @@ Template이 display되는 동안 display 중인 template의 token 값을 전달�
 | playServiceId | string | N | template을 전송한 Play의 play service id |
 | token | string | N | 클릭하는 template을 식별하기 위한 unique identifier |
 
-
-
-
-
-
-
 ## 화면 구성 요소
 
 Template 별로 알아보기 전에, 화면 구성 요소에 대해 알아보겠습니다. 
@@ -87,81 +75,13 @@ Template 별로 알아보기 전에, 화면 구성 요소에 대해 알아보겠
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Parameter</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Mandatory</th>
-      <th style="text-align:left">Description</th>
-      <th style="text-align:left">NU300</th>
-      <th style="text-align:left">Btv</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">logo</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD22C;&#xBA85; &#xBC30;&#xACBD;&#xC758; &#xC774;&#xBBF8;&#xC9C0;&#xB85C;
-        &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD568;(PNG &#xD0C0;&#xC785;)</td>
-      <td
-      style="text-align:left">
-        <p>50x50</p>
-        <p>&#xAC00;&#xB85C; Size Flexible</p>
-        </td>
-        <td style="text-align:left">
-          <p>STB2&#xBD80;&#xD130; &#xC801;&#xC6A9; &#xC608;&#xC815;</p>
-          <p>&#xC0AC;&#xC774;&#xC988; &#xBBF8;&#xC815;</p>
-        </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC81C;&#xBAA9;</td>
-      <td style="text-align:left">42sp, #FFFFFF &#xC73C;&#xB85C; &#xBCF4;&#xC5EC;&#xC9D1;&#xB2C8;&#xB2E4;.</td>
-      <td
-      style="text-align:left">36sp, #1a1a1a &#xC73C;&#xB85C; &#xBCF4;&#xC5EC;&#xC9D1;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">subtext</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBD80;&#xC81C;&#xBAA9;</td>
-      <td style="text-align:left">&#xACF5;&#xBC31; &#xD3EC;&#xD568; 20&#xC790;</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">subicon</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">subText &#xC67C;&#xCABD;&#xC5D0; &#xB178;&#xCD9C;&#xB420; &#xC11C;&#xBE0C;&#xC544;&#xC774;&#xCF58;</td>
-      <td
-      style="text-align:left">
-        <p>&#xC704;&#xCE58; : subText &#xC67C;&#xCABD;</p>
-        <p>size : 36 x 36dp</p>
-        </td>
-        <td style="text-align:left">
-          <p>&#xC704;&#xCE58; : subText &#xC67C;&#xCABD;</p>
-          <p>size : 30 x 30dp</p>
-        </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">button</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC6B0;&#xCE21;&#xC5D0; &#xC704;&#xCE58;&#xD558;&#xB294; &#xBC84;&#xD2BC;</p>
-        <p>(&#xBC84;&#xD2BC; &#xC548;&#xC758; Text&#xB9CC; &#xC815;&#xC758;&#xAC00;&#xB2A5;)</p>
-      </td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>
+| Parameter | Type        | Mandatory | Description                                            | NU300                                                      | Btv                                                            |
+|-----------|-------------|-----------|--------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------|
+| logo      | ImageObject | Y         | 투명 배경의 이미지로 제공해야 함(PNG 타입) | 50x50<br>가로 Size Flexible | STB2부터 적용 예정<br>사이즈 미정 |
+| text      | TextObject  | Y         | 제목                                                     | 42sp, #FFFFFF 으로 보여집니다.                                    | 36sp, #1a1a1a 으로 보여집니다.                                        |
+| subtext   | TextObject  | N         | 부제목                                                    | 공백 포함 20자                                                  |                                                                |
+| subicon   | ImageObject | N         | subText 왼쪽에 노출될 서브아이콘                                  | 위치 : subText 왼쪽<br>size : 36 x 36dp |          위치 : subText 왼쪽<br>size : 30 x 30dp |
+| button    | TextObject  | N         | 우측에 위치하는 버튼<br>(버튼 안의 Text만 정의가능)       |                                                            |                                                                |
 
 ### ImageObject
 
@@ -186,65 +106,14 @@ Template 별로 알아보기 전에, 화면 구성 요소에 대해 알아보겠
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Parameter</th>
-      <th style="text-align:center">Type</th>
-      <th style="text-align:center">Mandatory</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">contentDescription</td>
-      <td style="text-align:center">string</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">heightPixels</td>
-      <td style="text-align:center">long</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:left">&#xC815;&#xD655;&#xD55C; &#xAC12;&#xC774; &#xC544;&#xB2C8;&#xB77C;&#xBA74;,
-        &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">size</td>
-      <td style="text-align:center">string</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:left">
-        <p>X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE</p>
-        <p>&#xD654;&#xBA74; &#xD06C;&#xAE30;&#xBCC4; &#xCD5C;&#xC801;&#xD654;&#xB97C;
-          &#xC704;&#xD574; size &#xC815;&#xBCF4;&#xB97C; &#xB123;&#xB294; &#xAC83;&#xC744;
-          &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>Value&#xBCC4; &#xAD8C;&#xC7A5; &#xC0AC;&#xC774;&#xC988;&#xB294; &#xC544;&#xB798;&#xC758;
-          &#xD45C;&#xB97C; &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">sources</td>
-      <td style="text-align:center">list</td>
-      <td style="text-align:center">Y</td>
-      <td style="text-align:left">&#xB9AC;&#xC2A4;&#xD2B8;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xBA70; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C;
-        &#xD654;&#xBA74; &#xD06C;&#xAE30;&#xC5D0; &#xAC00;&#xC7A5; &#xC801;&#xD569;&#xD55C;
-        &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">url</td>
-      <td style="text-align:center">string</td>
-      <td style="text-align:center">Y</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">widthPixels</td>
-      <td style="text-align:center">long</td>
-      <td style="text-align:center">N</td>
-      <td style="text-align:left">&#xC815;&#xD655;&#xD55C; &#xAC12;&#xC774; &#xC544;&#xB2C8;&#xB77C;&#xBA74;,
-        &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-  </tbody>
-</table>
+| Parameter          | Type   | Mandatory | Description                                                                                                                                                            |
+|--------------------|--------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| contentDescription | string | N         |                                                                                                                                                                        |
+| heightPixels       | long   | N         | 정확한 값이 아니라면, 사용하지 않는 것을 권장합니다.                                                                                                                                 |
+| size               | string | N         | X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE<br>화면 크기별 최적화를 위해 size 정보를 넣는 것을 권장합니다.<br>Value별 권장 사이즈는 아래의 표를 참고하세요. |
+| sources            | list   | Y         | 리스트로 제공되며 클라이언트에서 화면 크기에 가장 적합한 이미지를 사용해야 합니다.                                                                                                         |
+| url                | string | Y         |                                                                                                                                                                        |
+| widthPixels        | long   | N         | 정확한 값이 아니라면, 사용하지 않는 것을 권장합니다.                                                                                                                                 |
 
 | Size Value | Recommended Size \(in pixels\) |
 | :---: | :---: |
@@ -254,102 +123,25 @@ Template 별로 알아보기 전에, 화면 구성 요소에 대해 알아보겠
 | LARGE | 1280 x 800 |
 | X\_LARGE | 1920 x 1080 |
 
-### 
-
 ### BackgroundObject
 
 image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">color</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>color &#xD615;&#xC2DD; (RGB)</p>
-        <p>default - #000000</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">opacity</td>
-      <td style="text-align:left">number</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">NU300&#xC5D0;&#xB9CC; &#xC720;&#xD6A8;&#xD558;&#xBA70;,
-        <br />default&#xAC12;&#xC740; 0.7</td>
-    </tr>
-  </tbody>
-</table>### 
+| parameter | type        | mandatory | description                                              |
+|-----------|-------------|-----------|----------------------------------------------------------|
+| image     | ImageObject | N         |                                                          |
+| color     | string      | N         | color 형식 (RGB)<br>>default - #000000 |
+| opacity   | number      | N         | NU300에만 유효하며,<br>default값은 0.7                      |
 
 ### Text Object
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">color</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>color &#xD615;&#xC2DD; (RGB)</p>
-        <p>default &#xAC12;&#xC740; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xB9C8;&#xB2E4;
-          &#xB2E4;&#xB984;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">style</td>
-      <td style="text-align:left">json</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xC0C1;&#xC704; &#xC2A4;&#xD0C0;&#xC77C;(directive
-          &#xB4F1;)&#xC744; &#xB530;&#xB974;&#xBA70;, &#xD604;&#xC7AC; FullText1,2&#xC758;
-          body text&#xC5D0;&#xB9CC; &#xC801;&#xC6A9; &#xAC00;&#xB2A5;.</p>
-        <p>CSS &#xC18D;&#xC131;&#xC740; &#xBAA8;&#xB450; &#xAC00;&#xB2A5;&#xD558;&#xBA70;,
-          &#xB2E4;&#xC74C;&#xC758; &#xAC12;&#xB4E4;&#xC744; &#xAC00;&#xC9C8; &#xC218;
-          &#xC788;&#xB2E4;.</p>
-        <ul>
-          <li>text-align : left, center, right</li>
-          <li>opacity : 0 ~ 1</li>
-          <li>display : block, inline, none</li>
-          <li>margin : 10px</li>
-        </ul>
-        <p>
-          <br />&#xC0AC;&#xC6A9;&#xC608;.
-          <br />{ &quot;text-align&quot;:&quot;center&quot;, &quot;display&quot;: &quot;block&quot;
-          }</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>TextObject는 Scrollable이 명시된 경우만 스크롤이 가능하고, 명시되어 있지 않으면 default로 스크롤 불가합니다.
+| parameter | type   | mandatory | description                                                                                                                                                                                                                                                                                                                                                                                                            |
+|-----------|--------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| color     | string | N         | color 형식 (RGB)<br>default 값은 디바이스마다 다름 |
+| style     | json   | N         | 기본적으로는 상위 스타일(directive 등)을 따르며, 현재 FullText1,2의 body text에만 적용 가능.<br>CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br>text-align : left, center, right<br>opacity : 0 ~ 1<br>display : block, inline, none<br>margin : 10px<br><br>사용예.<br>{ "text-align":"center", "display": "block"}       |
+| text      | string | Y         |                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
-
+TextObject는 Scrollable이 명시된 경우만 스크롤이 가능하고, 명시되어 있지 않으면 default로 스크롤 불가합니다.
 
 ## Template 유형별 Spec.
 
@@ -359,8 +151,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 * ImageText : 이미지와 텍스트를 함께 구성할 때 사용합니다. 
 * TextList : 텍스트를 중심으로 리스트를 표현할 때 사용합니다. 
 * IamgeList : 이미지를 중심으로 리스트를 표현할 때 사용합니다.
-
-### 
 
 ### FullText1
 
@@ -382,98 +172,17 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Parameter</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Required</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.FullText1</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xAC00;&#xB2A5; (&apos;\n&apos;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.body</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xAC00;&#xB2A5; (&apos;\n&apos;)</li>
-          <li>Scrollable</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBCF4;&#xC870; &#xC124;&#xBA85;</td>
-    </tr>
-  </tbody>
-</table>#### 
+| Parameter      | Type             | Required | Description                                                                                                                                                                 |
+|----------------|------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | string           | Y       | Display.FullText1                                                                                                                                                           |
+| playServiceId  | string           | Y       | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token          | string           | Y       |                                                                                                                                                                             |
+| duration       | string           | N        | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min       |
+| title          | TitleObject      | Y       |                                                                                                                                                                             |
+| background     | BackgroundObject | N        |                                                                                                                                                                             |
+| content.header | TextObject       | N        | 본문 제목<br>- 줄바꿈 가능 ('\n') |
+| content.body   | TextObject       | Y       | 본문 내용<br>- 줄바꿈 가능 ('\n')<br>- Scrollable |
+| content.footer | TextObject       | N        | 보조 설명                                                                                                                                                                       |
 
 #### Sample Code
 
@@ -515,10 +224,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-#### 
-
-### 
-
 ### FullText2
 
 #### 형식
@@ -538,88 +243,16 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Parameter</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Required</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.FullText2</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.body</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xAC00;&#xB2A5; (&apos;\n&apos;)</li>
-          <li>&#xCD5C;&#xB300; 4&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBCF4;&#xC870; &#xC124;&#xBA85;</td>
-    </tr>
-  </tbody>
-</table>
+| Parameter      | Type             | Required | Description                                                                                                                                                                 |
+|----------------|------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | string           | Y       | Display.FullText2                                                                                                                                                           |
+| playServiceId  | string           | Y       | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token          | string           | Y       |                                                                                                                                                                             |
+| duration       | string           | N        | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min       |
+| title          | TitleObject      | Y       |                                                                                                                                                                             |
+| background     | BackgroundObject | N        |                                                                                                                                                                             |
+| content.body   | TextObject       | Y       | 본문 내용<br>- 줄바꿈 가능 ('\n')<br>- 최대 4줄까지 표현 (넘는 문자는 ... 처리) |
+| content.footer | TextObject       | N        | 보조 설명                                                                                                                                                                       |
 
 #### Sample Code
 
@@ -675,118 +308,19 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.ImageText1</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.imageAlign</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"><b>LEFT, RIGHT</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xAC00;&#xB2A5; (&apos;\n&apos;)</li>
-          <li>&#xCD5C;&#xB300; 3&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.body</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870; &#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xAC00;&#xB2A5; (&apos;\n&apos;)</li>
-          <li>&#xCD5C;&#xB300; 2&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter          | type             | mandatory | description                                                                                                                                                                 |
+|--------------------|------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type               | string           | Y        | Display.ImageText1                                                                                                                                                          |
+| playServiceId      | string           | Y        | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token              | string           | Y        |                                                                                                                                                                             |
+| duration           | string           | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title              | TitleObject      | Y        |                                                                                                                                                                             |
+| background         | BackgroundObject | N         |                                                                                                                                                                             |
+| content.image      | ImageObject      | Y        |                                                                                                                                                                             |
+| content.imageAlign | string           | Y        | LEFT, RIGHT                                                                                                                                                                |
+| content.header     | TextObject       | Y        | 본문 제목<br>- 줄바꿈 가능 ('\n')<br>- 최대 3줄까지 표현 (넘는 문자는 ... 처리) |
+| content.body       | TextObject       | N         | 본문 내용                                                                                                                                                                       |
+| content.footer     | TextObject       | N         | 보조 설명<br>- 줄바꿈 가능 ('\n')<br>- 최대 2줄까지 표현 (넘는 문자는 ... 처리) |
 
 #### Sample Code
 
@@ -835,8 +369,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-### 
-
 ### ImageText2
 
 #### 형식
@@ -858,122 +390,19 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.ImageText2</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.imageAlign</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"><b>LEFT, RIGHT</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.body</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xAC00;&#xB2A5; (&apos;\n&apos;)</li>
-          <li>&#xCD5C;&#xB300; 6&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870; &#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xAC00;&#xB2A5; (&apos;\n&apos;)</li>
-          <li>&#xCD5C;&#xB300; 2&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter          | type             | mandatory | description                                                                                                                                                                 |
+|--------------------|------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type               | string           | Y        | Display.ImageText2                                                                                                                                                          |
+| playServiceId      | string           | Y        | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token              | string           | Y        |                                                                                                                                                                             |
+| duration           | string           | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title              | TitleObject      | Y        |                                                                                                                                                                             |
+| background         | BackgroundObject | N         |                                                                                                                                                                             |
+| content.image      | ImageObject      | Y        |                                                                                                                                                                             |
+| content.imageAlign | string           | Y        | LEFT, RIGHT |
+| content.header     | TextObject       | N         | 본문 제목<br>최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| content.body       | TextObject       | Y        | 본문 내용<br>- 줄바꿈 가능 ('\n')<br>- 최대 6줄까지 표현 (넘는 문자는 ... 처리) |
+| content.footer     | TextObject       | N         | 보조 설명<br>- 줄바꿈 가능 ('\n')<br>- 최대 2줄까지 표현 (넘는 문자는 ... 처리) |
 
 #### Sample Code
 
@@ -1025,8 +454,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-### 
-
 ### ImageText3
 
 #### 형식
@@ -1048,114 +475,18 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.ImageText3</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.body</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xAC00;&#xB2A5; (&apos;\n&apos;)</li>
-          <li>Scrollable</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870;&#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter      | type             | mandatory | description                                                                                                                                                                 |
+|----------------|------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | string           | Y        | Display.ImageText3                                                                                                                                                          |
+| playServiceId  | string           | Y        | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token          | string           | Y        |                                                                                                                                                                             |
+| duration       | string           | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title          | TitleObject      | Y        |                                                                                                                                                                             |
+| background     | BackgroundObject | N         |                                                                                                                                                                             |
+| content.image  | ImageObject      | Y        |                                                                                                                                                                             |
+| content.header | TextObject       | Y        | 본문 제목<br>최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| content.body   | TextObject       | N         | 본문 내용<br>- 줄바꿈 가능 ('\n')<br>- Scrollable |
+| content.footer | TextObject       | N         | 보조설명<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
 
 #### Sample Code
 
@@ -1194,8 +525,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-### 
-
 ### ImageText4
 
 #### 형식
@@ -1217,115 +546,18 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.ImageText4</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.body</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870;&#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter      | type             | mandatory | description                                                                                                                                                                 |
+|----------------|------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | string           | Y        | Display.ImageText4                                                                                                                                                          |
+| playServiceId  | string           | Y        | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token          | string           | Y        |                                                                                                                                                                             |
+| duration       | string           | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title          | TitleObject      | Y        |                                                                                                                                                                             |
+| background     | BackgroundObject | N         |                                                                                                                                                                             |
+| content.image  | ImageObject      | Y        |                                                                                                                                                                             |
+| content.header | TextObject       | Y        | 본문 제목<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| content.body   | TextObject       | Y        | 본문 내용<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| content.footer | TextObject       | N         | 보조설명<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
 
 #### Sample Code
 
@@ -1362,10 +594,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-
-
 ### TextList1
 
 #### 형식
@@ -1396,136 +624,20 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.TextList1</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">badgeNumber</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC22B;&#xC790;(&#xC21C;&#xC11C;)&#xB97C;
-          &#xBC1C;&#xD654;&#xD558;&#xC5EC; item&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB3C4;&#xB85D;
-          badge&#xB97C; &#xD45C;&#xC2DC;&#xD560;&#xC9C0; &#xC5EC;&#xBD80; (true -
-          &#xD45C;&#xC2DC;&#xD568;, false - &#xD45C;&#xC2DC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;)</p>
-        <p>default - false</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Scrollable (&#xC2A4;&#xD06C;&#xB864;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD55C;
-        &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xC9E4;&#xB9BC;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD074;&#xB9AD;&#xC740; &#xD55C; item &#xC804;&#xCCB4;&#xC5D0;&#xC11C;
-        &#xAC00;&#xB2A5;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.body</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870;&#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter        | type             | mandatory | description                                                                                                                                                                 |
+|------------------|------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y        | Display.TextList1                                                                                                                                                           |
+| playServiceId    | string           | Y        | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token            | string           | Y        |                                                                                                                                                                             |
+| duration         | string           | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title            | TitleObject      | Y        |                                                                                                                                                                             |
+| background       | BackgroundObject | N         |                                                                                                                                                                             |
+| badgeNumber      | bool             | N         | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br>default - false |
+| listItems        | list             | Y        | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                   |
+| listItems.token  | string           | Y        | 클릭은 한 item 전체에서 가능                                                                                                                                                  |
+| listItems.header | TextObject       | Y        | 본문 제목<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.body   | TextObject       | Y        | 본문 내용<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.footer | TextObject       | N         | 보조설명<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
 
 #### Sample Code
 
@@ -1586,8 +698,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-### 
-
 ### TextList2
 
 #### 형식
@@ -1620,145 +730,21 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.TextList2</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">badgeNumber</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC22B;&#xC790;(&#xC21C;&#xC11C;)&#xB97C;
-          &#xBC1C;&#xD654;&#xD558;&#xC5EC; item&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB3C4;&#xB85D;
-          badge&#xB97C; &#xD45C;&#xC2DC;&#xD560;&#xC9C0; &#xC5EC;&#xBD80; (true -
-          &#xD45C;&#xC2DC;&#xD568;, false - &#xD45C;&#xC2DC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;)</p>
-        <p>default - false
-          <br />
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Scrollable (&#xC2A4;&#xD06C;&#xB864;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD55C;
-        &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xC9E4;&#xB9BC;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD074;&#xB9AD;&#xC740; &#xD55C; item &#xC804;&#xCCB4;&#xC5D0;&#xC11C;
-        &#xAC00;&#xB2A5;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.body</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870;&#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter        | type             | mandatory | description                                                                                                                                                                 |
+|------------------|------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y        | Display.TextList2                                                                                                                                                           |
+| playServiceId    | string           | Y        | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token            | string           | Y        |                                                                                                                                                                             |
+| duration         | string           | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title            | TitleObject      | Y        |                                                                                                                                                                             |
+| background       | BackgroundObject | N         |                                                                                                                                                                             |
+| badgeNumber      | bool             | N         | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br>default - false |
+| listItems        | list             | Y        | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                   |
+| listItems.token  | string           | Y        | 클릭은 한 item 전체에서 가능                                                                                                                                                  |
+| listItems.image  | ImageObject      | Y        |                                                                                                                                                                             |
+| listItems.header | TextObject       | Y        | 본문 제목<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.body   | TextObject       | Y        | 본문 내용<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.footer | TextObject       | N         | 보조설명<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
 
 #### Sample Code
 
@@ -1851,10 +837,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-#### 
-
-### 
-
 ### TextList3
 
 #### 형식
@@ -1888,160 +870,22 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.TextList3</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">badgeNumber</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC22B;&#xC790;(&#xC21C;&#xC11C;)&#xB97C;
-          &#xBC1C;&#xD654;&#xD558;&#xC5EC; item&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB3C4;&#xB85D;
-          badge&#xB97C; &#xD45C;&#xC2DC;&#xD560;&#xC9C0; &#xC5EC;&#xBD80; (true -
-          &#xD45C;&#xC2DC;&#xD568;, false - &#xD45C;&#xC2DC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;)</p>
-        <p>default - false
-          <br />
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Scrollable (&#xC2A4;&#xD06C;&#xB864;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD55C;
-        &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xC9E4;&#xB9BC;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD074;&#xB9AD;&#xC740; &#xD55C; item &#xC804;&#xCCB4;&#xC5D0;&#xC11C;
-        &#xAC00;&#xB2A5;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.body</td>
-      <td style="text-align:left">
-        <p>TextObjects</p>
-        <p>(list of TextObject)</p>
-      </td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</p>
-        <ul>
-          <li>&#xC904;&#xBC14;&#xAFC8; &#xD5C8;&#xC6A9; / &#xCD5C;&#xB300; 4&#xC904;</li>
-          <li>footer &#xC815;&#xC758; &#xC2DC; 3&#xC904; &#xC81C;&#xD55C;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870;&#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">caption</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC804;&#xCCB4; &#xB9AC;&#xC2A4;&#xD2B8; &#xC544;&#xC774;&#xD15C;&#xB4E4;&#xC5D0;
-          &#xB300;&#xD55C; &#xBCF4;&#xC870;&#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xD14D;&#xC2A4;&#xD2B8; &#xAE38;&#xC774; : &#xCD5C;&#xB300; 2&#xC904;(&#xB2E8;&#xB9D0;&#xC5D0;
-            &#xB530;&#xB77C; 1&#xC904;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter        | type                                                     | mandatory | description                                                                                                                                                                 |
+|------------------|----------------------------------------------------------|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string                                                   | Y        | Display.TextList3                                                                                                                                                           |
+| playServiceId    | string                                                   | Y        | 현재 template을 전송하는 play service id                                                                                                                                   |
+| token            | string                                                   | Y        |                                                                                                                                                                             |
+| duration         | string                                                   | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title            | TitleObject                                              | Y        |                                                                                                                                                                             |
+| background       | BackgroundObject                                         | N         |                                                                                                                                                                             |
+| badgeNumber      | bool                                                     | N         |  사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br>default - false |
+| listItems        | list                                                     | Y        | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                   |
+| listItems.token  | string                                                   | Y        | 클릭은 한 item 전체에서 가능                                                                                                                                                  |
+| listItems.image  | ImageObject                                              | N         |                                                                                                                                                                             |
+| listItems.header | TextObject                                               | Y        | 본문 제목<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.body   | TextObjects<br>(list of TextObject)       | Y | 본문 내용<br>- 줄바꿈 허용 / 최대 4줄<br>- footer 정의 시 3줄 제한 |
+| listItems.footer | TextObject                                               | N         | 보조설명<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| caption          | TextObject                                               | N         | 전체 리스트 아이템들에 대한 보조설명<br>- 텍스트 길이 : 최대 2줄(단말에 따라 1줄) |
 
 #### Sample Code
 
@@ -2150,8 +994,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-### 
-
 ### ImageList1
 
 #### 형식
@@ -2182,145 +1024,21 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.ImageList1</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">badgeNumber</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC22B;&#xC790;(&#xC21C;&#xC11C;)&#xB97C;
-          &#xBC1C;&#xD654;&#xD558;&#xC5EC; item&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB3C4;&#xB85D;
-          badge&#xB97C; &#xD45C;&#xC2DC;&#xD560;&#xC9C0; &#xC5EC;&#xBD80; (true -
-          &#xD45C;&#xC2DC;&#xD568;, false - &#xD45C;&#xC2DC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;)</p>
-        <p>default - false</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">badgeNumberStyle</td>
-      <td style="text-align:left">json</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; Json&#xC73C;&#xB85C; badge style
-          &#xC815;&#xC758;</p>
-        <p>{
-          <br />&quot;background&quot;: &quot;#f0f&quot;, // Container&#xC758; Color
-          <br
-          />&quot;color&quot;: &quot;red&quot;, // Badge font color
-          <br />&quot;border-radius&quot;: &quot;10px&quot; // radius
-          <br />}</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Scrollable (&#xC2A4;&#xD06C;&#xB864;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD55C;
-        &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xC9E4;&#xB9BC;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD074;&#xB9AD;&#xC740; &#xD55C; item &#xC804;&#xCCB4;&#xC5D0;&#xC11C;
-        &#xAC00;&#xB2A5;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870;&#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter        | type             | mandatory | description                                                                                                                                                                                                                |
+|------------------|------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y        | Display.ImageList1                                                                                                                                                                                                         |
+| playServiceId    | string           | Y        | 현재 template을 전송하는 play service id                                                                                                                                                                                  |
+| token            | string           | Y        |                                                                                                                                                                                                                            |
+| duration         | string           | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title            | TitleObject      | Y        |                                                                                                                                                                                                                            |
+| background       | BackgroundObject | N         |                                                                                                                                                                                                                            |
+| badgeNumber      | bool             | N         | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br>default - false |
+| badgeNumberStyle | json             | N         | 아래와 같은 Json으로 badge style 정의<br>- "background": "#f0f", // Container의 Color<br>- "color": "red", // Badge font color<br>- "border-radius": "10px" // radius |
+| listItems        | list             | Y        | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                  |
+| listItems.token  | string           | Y        | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                 |
+| listItems.image  | ImageObject      | Y        |                                                                                                                                                                                                                            |
+| listItems.header | TextObject       | Y        | 본문 제목<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.footer | TextObject       | N         | 보조설명<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
 
 #### Sample Code
 
@@ -2411,8 +1129,6 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-### 
-
 ### ImageList2
 
 #### 형식
@@ -2451,151 +1167,22 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Display.ImageList2</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC744; &#xC804;&#xC1A1;&#xD558;&#xB294; play
-        service id</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">duration</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SHORT</b>(default), <b>MID</b>, <b>LONG, LONGEST</b>
-        </p>
-        <ul>
-          <li>SHORT - 7sec</li>
-          <li>MID - 15sec</li>
-          <li>LONG - 30sec</li>
-          <li>LONGEST - 10min</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">title</td>
-      <td style="text-align:left">TitleObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">background</td>
-      <td style="text-align:left">BackgroundObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">badgeNumber</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC22B;&#xC790;(&#xC21C;&#xC11C;)&#xB97C;
-          &#xBC1C;&#xD654;&#xD558;&#xC5EC; item&#xC744; &#xC120;&#xD0DD;&#xD558;&#xB3C4;&#xB85D;
-          badge&#xB97C; &#xD45C;&#xC2DC;&#xD560;&#xC9C0; &#xC5EC;&#xBD80; (true -
-          &#xD45C;&#xC2DC;&#xD568;, false - &#xD45C;&#xC2DC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;)</p>
-        <p>default - false</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">badgeNumberStyle</td>
-      <td style="text-align:left">json</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC740; Json&#xC73C;&#xB85C; badge style
-          &#xC815;&#xC758;</p>
-        <p>{
-          <br />&quot;background&quot;: &quot;#f0f&quot;, // Container&#xC758; Color
-          <br
-          />&quot;color&quot;: &quot;red&quot;, // Badge font color
-          <br />&quot;border-radius&quot;: &quot;10px&quot; // radius
-          <br />}</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">Scrollable (&#xC2A4;&#xD06C;&#xB864;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD55C;
-        &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;&#xB294; &#xC9E4;&#xB9BC;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">&#xD074;&#xB9AD;&#xC740; &#xD55C; item &#xC804;&#xCCB4;&#xC5D0;&#xC11C;
-        &#xAC00;&#xB2A5;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.icon</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC0C1;&#xD0DC; &#xC544;&#xC774;&#xCF58;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.header</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">listItems.footer</td>
-      <td style="text-align:left">TextObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBCF4;&#xC870;&#xC124;&#xBA85;</p>
-        <ul>
-          <li>&#xCD5C;&#xB300; 1&#xC904;&#xAE4C;&#xC9C0; &#xD45C;&#xD604; (&#xB118;&#xB294;
-            &#xBB38;&#xC790;&#xB294; ... &#xCC98;&#xB9AC;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter        | type             | mandatory | description                                                                                                                                                                                                                |
+|------------------|------------------|-----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y        | Display.ImageList2                                                                                                                                                                                                         |
+| playServiceId    | string           | Y        | 현재 template을 전송하는 play service id                                                                                                                                                                                  |
+| token            | string           | Y        |                                                                                                                                                                                                                            |
+| duration         | string           | N         | SHORT(default), MID, LONG, LONGEST<br>- SHORT - 7sec<br>- MID - 15sec<br>- LONG - 30sec<br>- LONGEST - 10min |
+| title            | TitleObject      | Y        |                                                                                                                                                                                                                            |
+| background       | BackgroundObject | N         |                                                                                                                                                                                                                            |
+| badgeNumber      | bool             | N         | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br>default - false                                                                                 |
+| badgeNumberStyle | json             | N         | 아래와 같은 Json으로 badge style 정의<br>- "background": "#f0f", // Container의 Color<br>- "color": "red", // Badge font color<br>- "border-radius": "10px" // radius |
+| listItems        | list             | Y        | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                  |
+| listItems.token  | string           | Y        | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                 |
+| listItems.image  | ImageObject      | Y        |                                                                                                                                                                                                                            |
+| listItems.icon   | ImageObject      | N         | 상태 아이콘                                                                                                                                                                                                                     |
+| listItems.header | TextObject       | Y        | 본문 제목<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.footer | TextObject       | N         | 보조설명<br>- 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
 
 #### Sample Code
 
@@ -2709,12 +1296,3 @@ Display Interface에서는 크게 4종류의 Template을 제공합니다.
     ]
 }
 ```
-
-### 
-
-
-
-
-
-
-
