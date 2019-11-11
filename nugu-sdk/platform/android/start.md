@@ -17,7 +17,7 @@ Android 4.4\(API level 19\)에서도 동작하지만, TLS v1.2로 설정이 필�
 ```groovy
 repositories {
     maven {
-        url "http://211.108.174.69:8081/nexus/content/repositories/releases/"
+        url "https://nexus.nugu.co.kr/repository/maven-public/"
     }
 }
 ```
