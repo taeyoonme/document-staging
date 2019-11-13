@@ -4,9 +4,9 @@
 
 1. `Play 등록하기` 버튼을 클릭하세요. Play Builder에서 개발한 Play 리스트 팝업이 표시됩니다.
 
-   ![](../../.gitbook/assets/ch4_41_c01-1.png)
+   ![](../../.gitbook/assets/ch4_41_c01-1%20%281%29.png)
 
-2. 등록할 Play를 선택하고 `다음` 버튼을 클릭하세요. Play의 Snapshot 버전 선택 화면으로 이동 합니다.
+2. 등록할 Play를 선택하고 `다음` 버튼을 클릭하세요. Play의 Snapshot 버전 선택 화면으로 이동 합니다. _@김창근님, Play타입이 Custom과 SmartHome으로 나눠져 있는 것에 대한 설명 작성 필요합니다._ ✍ 
 
    ![](../../.gitbook/assets/ch4_41_c02.png)
 
@@ -14,13 +14,13 @@
 
    ![](../../.gitbook/assets/ch4_41_c03.png)
 
-Play 정보 등록은 총 3단계이며, 1단계 기본 정보 입력 → 2단계 연동 정보 입력 → 3단계 배포/심사 정보 등록의 순서로 진행됩니다.
+Play 정보 등록은 총 4단계이며, 1단계 기본 정보 입력 → 2단계 연동 정보 입력 → 3단계 배포/심사 정보→ 4단계 등록/심사 요청의 순서로 진행됩니다.
 
 ## 기본 정보 <a id="basic-information"></a>
 
 Play 기본 정보는 Play 관련 필수 정보로 아래의 내용들을 등록해야 합니다. 입력을 완료하면 `다음` 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/ch4_411_c01-1.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff91t-ptoy-phfygu_ch4_411_c01-1.png)
 
 **① Play 서비스명**  
 사용자에게 보여지는 Play의 서비스명입니다. NUGU App과 향후 Play Ground\(스토어\)에 노출됩니다. Play의 서비스명은 최대 20자까지 입력할 수 있습니다.
@@ -90,7 +90,7 @@ Play 호출 이름은 위 조건을 기준으로 사용 승인 심사를 진행�
 
 사용자에게 제공할 Play 타입을 선택하고, 제공하려는 Play의 사용자 계정이 NUGU 사용자 계정과 연결이 필요할 경우 계정 연동에 관련된 정보를 입력합니다.
 
-![](../../.gitbook/assets/ch4_412_c01.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lnlllgwxiujzzgfjndn_-ll_m203hfgvtgslfubn_ch4_412_c01.png)
 
 **① Play 타입**
 
@@ -99,6 +99,12 @@ Play 타입은 Public Play와 Private Play로 구분됩니다. Play의 서비스
 **② 계정 연동 여부\(OAuth 연동 여부\)**
 
 제공하려는 Play의 사용자 계정과 NUGU 사용자 계정의 연결이 필요할 경우, 계정 연동에서 \[사용\]을 선택하고, 다음 정보를 등록합니다. 계정 연동에 대한 자세한 내용은 [\[계정 연동 가이드 보기\]](../create-plays-with-play-builder/link-oauth20.md#link-oauth20)를 참고하세요.
+
+**③ 사용자 그룹 등록 정보 활용** _설명 텍스트 추가 필요합니 @김창근_ ✍ 
+
+
+
+③ 사용
 
 ![](../../.gitbook/assets/ch4_412_c02.png)
 
@@ -164,7 +170,7 @@ Play 심사 승인에 필요한 정보와 사용자에게 Play를 설명하기 �
 **⑥ 개인 정보 정책 제공 URL\(선택\)**  
 해당 Play의 개인 정보 정책에 대한 정보를 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
 
-Play와 관련된 면책 조항을 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
+**⑦ 면책 조항 제공 URL\(선택\)**                                                                                                                                   Play와 관련된 면책 조항을 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
 
 ![](../../.gitbook/assets/ch4_413_c02.png)
 

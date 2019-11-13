@@ -8,15 +8,11 @@ Play가 배포되면 Play는 상용 서비스 상태가 되며, Play 등록 현�
 
 1. `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 등록` 페이지의 등록 현황에서 업데이트할 Play의 `업데이트` 버튼을 클릭합니다.
 
-   ![](../../.gitbook/assets/ch5_521_c01.png)
+   ![](../../.gitbook/assets/ch5_521_c01%20%281%29.png)
 
-2. Play 리스트에서 등록할 Play를 선택하고 `다음` 버튼을 클릭합니다.
+2. Snapshot 버전 리스트에서 등록할 버전을 선택하고 `확인` 버튼을 클릭합니다.
 
-   ![](../../.gitbook/assets/ch5_521_c02-1.png)
-
-3. Snapshot 버전 리스트에서 등록할 버전을 선택하고 `확인` 버튼을 클릭합니다.
-
-   ![](../../.gitbook/assets/ch5_521_c03.png)
+![](../../.gitbook/assets/ch5_521_c03%20%281%29.png)
 
 이후의 업데이트 절차는 Play 등록 방법과 동일합니다. 업데이트 등록이 완료되면 업데이트 버전에 대한 심사/배포 프로세스가 진행됩니다.
 

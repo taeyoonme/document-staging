@@ -19,7 +19,7 @@
    * 입력 필드는 최소 1자 이상 최대 60자까지 입력할 수 있습니다.
    * 초대 주체명, 연락처 정보\(이메일, 전화번호\)는 필수 입력 정보입니다.
 
-     ![](../../.gitbook/assets/ch6_631_c02-1.png)
+     ![](../../.gitbook/assets/ch6_631_c02-1%20%281%29.png)
 
 ## 사용자 등록 및 초대 <a id="invite-enrolled-user"></a>
 
@@ -62,7 +62,7 @@ Private Play 사용자는 언제든지 NUGU App에서 Private Play 이용 권한
 
 `NUGU developers` &gt; `NUGU biz` &gt; `사용자 그룹 관리` &gt; `초대 히스토리`에서 초대장을 발송한 사용자 리스트, 이메일 정보, 초대장 발송 날짜, 인증 상태\(초대장 인증/미인증\)를 확인할 수 있습니다. 또한 `초대장 재발송` 및 `초대 취소` 기능을 이용하여 초대장을 관리할 수 있습니다.
 
-![](../../.gitbook/assets/ch6_634_c01.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_lxisjjvz6nti5nlg_ch6_634_c01.png)
 
 {% hint style="info" %}
 `초대장 재발송` 및 `초대 취소`는 사용자\(User\)가 초대장을 인증하기 전일 경우에만 가능합니다.
@@ -76,7 +76,7 @@ Private Play 사용자는 언제든지 NUGU App에서 Private Play 이용 권한
 
 또한 Private Play 사용이 승인된 사용자를 삭제할 수 있으며, 사용자 삭제 시에는 사용자\(user\)에게 제공된 Private Play 사용 권한이 해제됩니다.
 
-![](../../.gitbook/assets/ch6_635_c01-1.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff94jypkdwghp5wy9_ch6_635_c01-1.png)
 
 {% hint style="info" %}
 Private Play 사용 권한이 삭제된 사용자에게 권한을 재부여하고자 할 경우에는 신규 초대장을 발송해야 합니다.
