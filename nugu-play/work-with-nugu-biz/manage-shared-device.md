@@ -140,9 +140,9 @@ Setup Tool을 통해 디바이스 그룹에 등록한 전용 디바이스를 삭
 
    ![](../../.gitbook/assets/ch6_625_c07-1%20%281%29.png)
 
-2. 상세 페이지의 등록된 디바이스 항목에서 삭제할 디바이스를 선택한 후 디바이스 삭제\` 버튼을 클릭합니다.
+2. 상세 페이지의 등록된 디바이스 항목에서 삭제할 디바이스를 선택한 후 디바이스 삭제 버튼을 클릭합니다.
 
-   ![](../../.gitbook/assets/ch6_625_c08.png)
+   ![](../../.gitbook/assets/ch6_625_c11%20%282%29.png)
 
 {% hint style="info" %}
 디바이스를 삭제하면 전용 디바이스 등록이 해제됩니다.
@@ -164,7 +164,7 @@ Setup Tool을 통해 디바이스 그룹에 등록한 전용 디바이스를 삭
 
 3. 등록한 Private Play를 삭제하려면, 삭제할 Private Play를 선택하고 `- Play 삭제` 버튼을 클릭합니다.
 
-   ![](../../.gitbook/assets/ch6_625_c11.png)
+   ![](../../.gitbook/assets/ch6_625_c08%20%281%29.png)
 
 ## 전용 디바이스의 서비스 이용 제한 <a id="limitservicesforshareddevice"></a>
 
