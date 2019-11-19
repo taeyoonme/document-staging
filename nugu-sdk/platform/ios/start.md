@@ -12,16 +12,12 @@
 {% tab title="Cocoapods" %}
 `Podfile`에 다음과 같이 의존성을 추가합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="Podfile" %}
 ```ruby
 target '{Your_Application}' do
   pod 'NuguClientKit'
   pod 'NuguLoginKit'
 end
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
 
 터미널을 열어 Podfile이 있는 프로젝트 경로에서 아래 Script를 실행합니다.
 
@@ -51,8 +47,8 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
 
 `info.plist` 파일에 다음과 같이 URL Scheme을 추가합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="info.plist" %}
+{% tabs %}
+{% tab title="info.plist" %}
 ```markup
 <dict>
   <key>CFBundleURLTypes</key>
@@ -66,8 +62,8 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
   </array>
 </dict>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ### 음성인식 모델 파일 설정하기
 
@@ -80,8 +76,8 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
 다운로드 받은 파일을 각각의 Assets 디렉토리로 파일을 이동합니다.
 
 * Wake-up 모델
-  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_tinkerbel.raw`
-  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_tinkerbel.raw`
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_tinkerbell.raw`
+  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_tinkerbell.raw`
   * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_aria.raw`
   * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_aria.raw`
 * EPD 모델
@@ -97,14 +93,14 @@ $ pod update
 
 NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plist 파일에 추가합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="info.plist" %}
+{% tabs %}
+{% tab title="info.plist" %}
 ```markup
 <key>NSMicrophoneUsageDescription</key>
 <string>For speech recognition</string>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ## Step 4: NUGU 사용하기
 
@@ -127,23 +123,23 @@ import NuguLoginKit
 
 인 앱 브라우저를 통한 인증 결과를 `NuguLoginKit`에서 처리하기 위해 다음과 같이 `AppDelegate` 클래스에 추가해야 합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="AppDelegate.swift" %}
+{% tabs %}
+{% tab title="AppDelegate.swift" %}
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     let handled = OAuthManager<Type1>.shared.handle(open: url, options: options)
     return handled
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 #### 인 앱 브라우저를 통해 로그인
 
 PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설정한 후에 인 앱 브라우저\(`SFSafariViewController`\)를 이용한 T-ID 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
 
-{% code-tabs %}
-{% code-tabs-item title="ViewController.swift" %}
+{% tabs %}
+{% tab title="ViewController.swift" %}
 ```swift
 func login() {
     OAuthManager<Type1>.shared.provider = Type1(
@@ -163,15 +159,15 @@ func login() {
     }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 #### 로그인 정보 갱신
 
 발급 받은 `refresh-token`이 이미 있다면, 이 후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.
 
-{% code-tabs %}
-{% code-tabs-item title="ViewController.swift" %}
+{% tabs %}
+{% tab title="ViewController.swift" %}
 ```swift
 func refresh() {
     OAuthManager<Type1>.shared.loginSilently(by: "{refresh-token}") { (result) in
@@ -184,8 +180,8 @@ func refresh() {
     }
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 ### NUGU 음성인식 사용하기
 
@@ -193,20 +189,20 @@ func refresh() {
 
 음성인식을 요청 하기 전에 마이크 권한을 요청해 획득합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="ViewController.swift" %}
+{% tabs %}
+{% tab title="ViewController.swift" %}
 ```swift
 AVAudioSession.sharedInstance().requestRecordPermission { hasPermission in }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 #### AVAudioSession 설정
 
 NUGU 서비스를 이용하기 위해서는 `AVAudioSession`의 `Category`를 `.playAndRecord`로 설정이 필요합니다.
 
-{% code-tabs %}
-{% code-tabs-item title="ViewController.swift" %}
+{% tabs %}
+{% tab title="ViewController.swift" %}
 ```swift
 func setAudioSession() throws {
     try AVAudioSession.sharedInstance().setCategory(
@@ -216,8 +212,8 @@ func setAudioSession() throws {
     )
 }
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endtab %}
+{% endtabs %}
 
 #### NUGU 음성인식 요청
 
@@ -225,53 +221,33 @@ func setAudioSession() throws {
 
 1. `NuguClientKit`을 불러옵니다.  
 
-   {% code-tabs %}
-   {% code-tabs-item title="ViewController.swift" %}
    ```swift
    import NuguClientKit
    ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
 
 2. `NuguClient` 인스턴스를 생성합니다.     
 
-   {% code-tabs %}
-   {% code-tabs-item title="ViewController.swift" %}
    ```swift
    let client = NuguClient.Builder().build()
    ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
 
 3. 로그인 결과로 받은 Access-token을 `NuguClient` 인스턴스에 설정합니다.    
 
-   {% code-tabs %}
-   {% code-tabs-item title="ViewController.swift" %}
    ```swift
    client.accessToken = "{access-token}"
    ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
 
 4. `NetworkManager`를 통해 NUGU서버와 연결합니다.    
 
-   {% code-tabs %}
-   {% code-tabs-item title="ViewController.swift" %}
    ```swift
    client.networkManager.connect()
    ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
 
 5. NUGU 서버와의 연결 이후 음성인식을 요청합니다.    
 
-   {% code-tabs %}
-   {% code-tabs-item title="VIewController.swift" %}
    ```swift
    client.asrAgent.startRecognition()
    ```
-   {% endcode-tabs-item %}
-   {% endcode-tabs %}
 
 ## 더 알아보기
 
