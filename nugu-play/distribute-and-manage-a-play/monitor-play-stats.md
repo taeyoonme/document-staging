@@ -11,7 +11,7 @@ Play를 사용한 순 이용자 수\(Unique User\)
 **주요 발화 Top 20**  
 Play 사용을 위해 사용자가 발화한 음성명령 Top 20
 
-**실 발화 Top 20**  
+**실패 발화 Top 20**  
 Play 사용을 위해 사용자가 발화한  음성명령 중  실패한  발화  Top  20 
 
 ## 주요 통계 <a id="main-stats"></a>
