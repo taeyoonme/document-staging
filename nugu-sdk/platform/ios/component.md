@@ -47,8 +47,7 @@ NUGU iOS SDK는 의존성 관리를 위해 CocoaPods를 지원합니다.
 
 NUGU SDK for iOS의 각각의 구성요소는 CocoaPods를 통해 의존성 관리를 추가할 수 있습니다. 구성요소를 재구성할 때, 필요에 맞게 의존성 관리를 추가하면 됩니다.
 
-{% tabs %}
-{% tab title="Podfile" %}
+{% code title="Podfile" %}
 ```ruby
 target 'your_application' do
     pod 'NuguCore'
@@ -60,6 +59,5 @@ target 'your_application' do
     pod 'JadeMarble'
 end
 ```
-{% endtab %}
-{% endtabs %}
+{% endcode %}
 

@@ -2,7 +2,7 @@
 
 Play Builder를 이용하여 다음 순서에 따라 Play를 생성하세요.
 
-1. `NUGU developers` &gt; `NUGU play kit` &gt; `개발` 페이지에서 `Play Builder 로가기` 버튼을 클릭하여 Play Builder를 실행합니다.
+1. `NUGU developers` &gt; `NUGU play kit` &gt; `개발` 페이지에서 `Play Builder 로 가기` 버튼을 클릭하여 Play Builder를 실행합니다.
 
    ![](../../../.gitbook/assets/ch3_311_c01_2-1.png)
 

@@ -27,13 +27,13 @@
 
 `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 관리`메뉴에서 현재 서비스 중인 Play에 대해 중지\(Disable\)하거나 중지\(Disable\) 상태의 Play를 재개\(Enable\)할 수 있습니다.
 
-1. 관리 현황 리스트에서 상태를 변경할 Play를 클릭하여 선택합니다.
+1️⃣관리 현황 리스트에서 상태를 변경할 Play를 클릭하여 선택합니다.
 
-   ![](../../.gitbook/assets/ch5_532_c01-1%20%281%29.png)
+![](../../.gitbook/assets/ch5_532_c01-1%20%281%29.png)
 
-2. 상태 정보 항목의 `Enable` 또는 `Disable` 버튼을 클릭한 후, 상태 변경 확인창에서 \[확인\] 버튼을 클릭하여 상태를 변경합니다.
+2️⃣상태 정보 항목의 `Enable` 또는 `Disable` 버튼을 클릭한 후, 상태 변경 확인창에서 \[확인\] 버튼을 클릭하여 상태를 변경합니다.
 
-   ![](../../.gitbook/assets/ch5_532_c02.png)
+![](../../.gitbook/assets/ch5_532_c02.png)
 
 상태를 변경하면 해당 Play의 상태가 Enable 또는 Disable 상태로 바뀌며 서비스가 중지되거나 재개됩니다.
 
@@ -51,15 +51,15 @@ Play의 상태 변경\(Enable → Disable, Disable → Enable\)은 자유롭게 
 
 `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 관리` 메뉴에서 현재 서비스 중인 Play를 삭제할 수 있습니다.
 
-1. 관리 현황 리스트에서 삭제할 Play를 클릭하여 선택합니다.
+1️⃣관리 현황 리스트에서 삭제할 Play를 클릭하여 선택합니다.
 
-   ![](../../.gitbook/assets/ch5_533_c01-1.png)
+![](../../.gitbook/assets/ch5_533_c01-1.png)
 
-2. 화면 상단의 `삭제` 버튼을 클릭합니다. 
+2️⃣화면 상단의 `삭제` 버튼을 클릭합니다. 
 
-   ![](../../.gitbook/assets/ch5_533_c02-1%20%281%29.png)
+![](../../.gitbook/assets/ch5_533_c02-1%20%281%29.png)
 
-   ![](../../.gitbook/assets/ch5_533_c03-1.png)
+![](../../.gitbook/assets/ch5_533_c03-1.png)
 
 {% hint style="info" %}
 * 서비스 중인 Play는 고객 VoC 발생 시 해결하기 위해 「NUGU developers」 이용약관 제15조 제7항을 근거로 60일 동안 중단 처리 기간을 진행합니다.
