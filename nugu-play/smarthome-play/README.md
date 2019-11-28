@@ -76,9 +76,9 @@ Discovery Response 예시
     "devices": [{
         "id": "D1234567",
         "type": "AIR_CONDITIONER",
-        "modelName": "휘센",
+        "modelName": "example model name",
         "friendlyNameSuggestion": "거실",
-        "manufacturer": "LG Electronics",
+        "manufacturer": "example manufacturer",
         "supportedCapabilities": {
             "airflowControl": {
               "supportedAirflowTypes": [ "강", "강풍", "미풍", "수면", "약", "약풍", "자동", "자동풍" ]
