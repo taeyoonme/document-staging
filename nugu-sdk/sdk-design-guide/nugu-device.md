@@ -382,7 +382,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
       </td>
     </tr>
   </tbody>
-</table>{% file src="../../.gitbook/assets/responsefail\_500ms.wav" caption="응답 실패음" %}
+</table>{% file src="../../.gitbook/assets/responsefail\_500ms \(1\).wav" caption="응답 실패음" %}
 
 잡음 / 1음절 발화 / 블랙 리스트 발화 시
 
