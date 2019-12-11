@@ -128,51 +128,465 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
 
 각 태그별 세부 기능은 다음과 같습니다.
 
-| 상위 옵션 | 세부 옵션 | 설명 | 속성 | 입력 |
-| :--- | :--- | :--- | :--- | :--- |
-| 끊어읽기 | 가장 길게 끊어읽기 | 가장 길게 끊어읽습니다.   예\) `오늘은 비가<break type="sentence"/> 옵니다.` | sentence |  |
-|  | 길게 끊어읽기 | 길게 끊어읽습니다.   예\) `오늘은 비가<break type="strong"/> 옵니다.` | strong |  |
-|  | 짧게 끊어읽기 | 짧게 끊어읽습니다.   예\) `오늘은 비가<break type="weak"/> 옵니다.` | weak |  |
-|  | 끊어읽기 없애기 | 이 태그가 추가된 부분을 끊지 않고 읽습니다.   원하지 않게 끊어읽는 부분이 발생하는 경우에 사용합니다.   예\) `브로콜리<break type="none"/> 너마저의 음악을 들려드릴께요.` | none |  |
-|  | 한단어처럼 붙여읽기 | 한 단어와 같이 발음되도록 읽습니다.   예를들어 '첫 번째'를 '첫뻔째'로 읽습니다.   예\) `첫<break type="clitic"/> 번째` | clitic |  |
-|  | 끊어읽기 시간설정 | 끊어 읽는 시간을 설정합니다.   `<pause time="200"/>` → 200 ms 동안 끊어 읽습니다.   '0'보다 큰 정수만 사용 가능합니다.   예\) `오늘은<pause time="200"/> 비가 옵니다.` |  | `[n]` |
-| 텍스트읽기 | 한자 낱숫자 읽기 | 숫자를 '일, 이, 삼, 사'와 같이 읽습니다.   두 자리 이상의 숫자도 '일일구'와 같이 한 자씩 읽습니다. | digit | `[n]` |
-|  | 한자 숫자 읽기 | 숫자를 '일, 이, 삼, 사'와 같이 읽습니다.   자릿수를 포함하여 '백십구'와 같이 읽습니다.   '경'\(10의 16제곱\) 단위까지 읽습니다. | num\_hanja | `[n]` |
-|  | 한글 숫자 읽기 | 숫자를 '한, 두, 세, 네'와 같이 읽습니다. | num\_kor | `[n]` |
-|  | 영어 숫자 읽기 | 숫자를 '원, 투, 쓰리, 포'와 같이 읽습니다.   Trillion\(10의 12제곱\) 단위까지 읽습니다. | num\_eng | `[n]` |
-|  | 날짜 읽기 | '이천십팔년 삼월 구일'과 같이 날짜로 읽습니다.   '삼월 구일'과 같이 특정 날짜로 읽거나,   '삼월 구일에서 사월 십일'과 같이 범위로 읽는 것을 지원합니다. | date | 특정 날   `[yyyy]-[mm]-[dd]`  `[yyyy]:[mm]:[dd]`  `[yyyy]/[mm]/[dd]`  `[yyyy].[mm].[dd]`  `[mm]-[dd]`  `[mm]/[dd]`  `[mm].[dd]`    범위  `[yyyy]-[mm]-[dd]~[yyyy]-[mm]-[dd]`  `[yyyy]:[mm]:[dd]~[yyyy]:[mm]:[dd]`  `[yyyy]/[mm]/[dd]~[yyyy]/[mm]/[dd]`  `[yyyy].[mm].[dd]~[yyyy].[mm].[dd]`  `[mm]-[dd]~[mm]-[dd]`  `[mm]/[dd]~[mm]/[dd]`  `[mm].[dd]~[mm].[dd]` |
-|  | 시간 읽기 | '열한시 삽십분 사십오초'와 같이 시간으로 읽습니다.   'hh시 mm분 ss초, hh시 mm분'과 같이 특정 시간으로 읽거나   'hh시 mm분 ss초에서 hh시 mm분 ss초, hh시 mm분에서   hh시 mm분'처럼 범위로 읽는 것을 지원합니다. | time | 특정 시간   `[hh]:[mm]:[ss]`   `[mm]:[ss]`     기간   `[hh]:[mm]:[ss]~[hh]:[mm]:[ss]`   `[hh]:[mm]:[ss]-[hh]:[mm]:[ss]`   `[mm]:[ss]~[mm]:[ss]`   `[mm]:[ss]-[mm]:[ss]` |
-|  | 단위 읽기 | '칠미터, 칠그램'과 같이 단위로 읽습니다.   139개의 단위를 읽기 지원합니다.   \([발화 옵션에서 UNIT 태그로 지원 단위 목록](use-prompts.md#list-of-unit-tags-supported-by-utterance-options)\) | unit | \[n\]\[unit\] |
-|  | 주소 읽기 | '팔십삼 다시 일'과 같이 지번 주소의 지번을 읽습니다. | address | `[n]-[n]` |
-|  | 전화번호 읽기 | '일이삼사 일이삼사'와 같이 전화번호로 읽습니다. | telephone | `[n]-[n]`   `[n]-[n]-[n]` |
-|  | 영어 스펠링 읽기 | '비티에스'와 같이 영어 스펠링으로 읽습니다.   대소문자는 구분하지 않습니다. | spell | `[text]` |
-|  | 경기 스코어 읽기 | '삼 대 이'와 같이 경기 스코어로 읽습니다. | score | `[n]:[n]`   `[n]-[n]` |
-|  | 분수 읽기 | '삼분의 일'과 같이 분수로 읽습니다. | fraction | `[n]/[n]` |
-| 효과음넣기 | 심장 박동 |  |  |  |
-|  | 심장 박동 \(빠르게\) |  |  |  |
-|  | 재채기 |  |  |  |
-|  | 박수 |  |  |  |
-|  | 텔레파시 1 |  |  |  |
-|  | 텔레파시 2 |  |  |  |
-|  | 발걸음 |  |  |  |
-|  | 물튀기는소리 |  |  |  |
-|  | 얼굴 씻는 소리 |  |  |  |
-|  | 음악 1 |  |  |  |
-|  | 음악 2 |  |  |  |
-|  | 카메라 셔터 |  |  |  |
-|  | 핀버튼 누르는 소리 |  |  |  |
-|  | 불타는 소리 |  |  |  |
-|  | 천둥 |  |  |  |
-|  | 자동차 리모콘 |  |  |  |
-|  | 비행기 |  |  |  |
-|  | 물방울 떨어지는 소리 |  |  |  |
-|  | 휘파람 1 |  |  |  |
-|  | 휘파람 2 |  |  |  |
-|  | 빗자루질 |  |  |  |
-|  | 종소리 1 |  |  |  |
-|  | 종소리 2 |  |  |  |
-
-{% hint style="info" %}
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xC0C1;&#xC704; &#xC635;&#xC158;</th>
+      <th style="text-align:left">&#xC138;&#xBD80; &#xC635;&#xC158;</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+      <th style="text-align:left">&#xC18D;&#xC131;</th>
+      <th style="text-align:left">&#xC785;&#xB825;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">&#xB04A;&#xC5B4;&#xC77D;&#xAE30;</td>
+      <td style="text-align:left">&#xAC00;&#xC7A5; &#xAE38;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xAE30;</td>
+      <td
+      style="text-align:left">
+        <p>&#xAC00;&#xC7A5; &#xAE38;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC608;) &#xC624;&#xB298;&#xC740; &#xBE44;&#xAC00;&lt;break type=&quot;sentence&quot;/&gt;
+          &#xC635;&#xB2C8;&#xB2E4;.</p>
+        </td>
+        <td style="text-align:left">sentence</td>
+        <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xAE38;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&#xAE38;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC608;) &#xC624;&#xB298;&#xC740; &#xBE44;&#xAC00;&lt;break type=&quot;strong&quot;/&gt;
+          &#xC635;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">strong</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC9E7;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&#xC9E7;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC608;) &#xC624;&#xB298;&#xC740; &#xBE44;&#xAC00;&lt;break type=&quot;weak&quot;/&gt;
+          &#xC635;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">weak</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xB04A;&#xC5B4;&#xC77D;&#xAE30; &#xC5C6;&#xC560;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&#xC774; &#xD0DC;&#xADF8;&#xAC00; &#xCD94;&#xAC00;&#xB41C; &#xBD80;&#xBD84;&#xC744;</p>
+        <p>&#xB04A;&#xC9C0; &#xC54A;&#xACE0; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xB294;
+          &#xBD80;&#xBD84;&#xC774;</p>
+        <p>&#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC608;) &#xBE0C;&#xB85C;&#xCF5C;&#xB9AC;&lt;break type=&quot;none&quot;/&gt;</p>
+        <p>&#xB108;&#xB9C8;&#xC800;&#xC758; &#xC74C;&#xC545;&#xC744; &#xB4E4;&#xB824;&#xB4DC;&#xB9B4;&#xAED8;&#xC694;.</p>
+      </td>
+      <td style="text-align:left">none</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xD55C;&#xB2E8;&#xC5B4;&#xCC98;&#xB7FC; &#xBD99;&#xC5EC;&#xC77D;&#xAE30;</td>
+      <td
+      style="text-align:left">
+        <p>&#xD55C; &#xB2E8;&#xC5B4;&#xC640; &#xAC19;&#xC774; &#xBC1C;&#xC74C;&#xB418;&#xB3C4;&#xB85D;
+          &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; &apos;&#xCCAB; &#xBC88;&#xC9F8;&apos;&#xB97C;
+          &apos;&#xCCAB;&#xBED4;&#xC9F8;&apos;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC608;) &#xCCAB;&lt;break type=&quot;clitic&quot;/&gt; &#xBC88;&#xC9F8;</p>
+        </td>
+        <td style="text-align:left">clitic</td>
+        <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xB04A;&#xC5B4;&#xC77D;&#xAE30; &#xC2DC;&#xAC04;&#xC124;&#xC815;</td>
+      <td
+      style="text-align:left">
+        <p>&#xB04A;&#xC5B4; &#xC77D;&#xB294; &#xC2DC;&#xAC04;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+        <p>&lt;pause time=&quot;200&quot;/&gt;</p>
+        <p>&#x2192; 200 ms &#xB3D9;&#xC548; &#xB04A;&#xC5B4; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&apos;0&apos;&#xBCF4;&#xB2E4; &#xD070; &#xC815;&#xC218;&#xB9CC; &#xC0AC;&#xC6A9;
+          &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC608;) &#xC624;&#xB298;&#xC740;&lt;pause time=&quot;200&quot;/&gt;
+          &#xBE44;&#xAC00; &#xC635;&#xB2C8;&#xB2E4;.</p>
+        </td>
+        <td style="text-align:left"></td>
+        <td style="text-align:left"><code>[n]</code>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#xD14D;&#xC2A4;&#xD2B8;&#xC77D;&#xAE30;</td>
+      <td style="text-align:left">&#xD55C;&#xC790; &#xB0B1;&#xC22B;&#xC790; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&#xC22B;&#xC790;&#xB97C; &apos;&#xC77C;, &#xC774;, &#xC0BC;, &#xC0AC;&apos;&#xC640;
+          &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xB450; &#xC790;&#xB9AC; &#xC774;&#xC0C1;&#xC758; &#xC22B;&#xC790;&#xB3C4;
+          &apos;&#xC77C;&#xC77C;&#xAD6C;&apos;&#xC640; &#xAC19;&#xC774;</p>
+        <p>&#xD55C; &#xC790;&#xC529; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">digit</td>
+      <td style="text-align:left"><code>[n]</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xD55C;&#xC790; &#xC22B;&#xC790; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&#xC22B;&#xC790;&#xB97C; &apos;&#xC77C;, &#xC774;, &#xC0BC;, &#xC0AC;&apos;&#xC640;
+          &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xC790;&#xB9BF;&#xC218;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &apos;&#xBC31;&#xC2ED;&#xAD6C;&apos;&#xC640;
+          &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&apos;&#xACBD;&apos;(10&#xC758; 16&#xC81C;&#xACF1;) &#xB2E8;&#xC704;&#xAE4C;&#xC9C0;
+          &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">num_hanja</td>
+      <td style="text-align:left"><code>[n]</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xD55C;&#xAE00; &#xC22B;&#xC790; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">&#xC22B;&#xC790;&#xB97C; &apos;&#xD55C;, &#xB450;, &#xC138;, &#xB124;&apos;&#xC640;
+        &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left">num_kor</td>
+      <td style="text-align:left"><code>[n]</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC601;&#xC5B4; &#xC22B;&#xC790; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&#xC22B;&#xC790;&#xB97C; &apos;&#xC6D0;, &#xD22C;, &#xC4F0;&#xB9AC;, &#xD3EC;&apos;&#xC640;
+          &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>Trillion(10&#xC758; 12&#xC81C;&#xACF1;) &#xB2E8;&#xC704;&#xAE4C;&#xC9C0;
+          &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">num_eng</td>
+      <td style="text-align:left"><code>[n]</code>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xB0A0;&#xC9DC; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&apos;&#xC774;&#xCC9C;&#xC2ED;&#xD314;&#xB144; &#xC0BC;&#xC6D4; &#xAD6C;&#xC77C;&apos;&#xACFC;
+          &#xAC19;&#xC774;</p>
+        <p>&#xB0A0;&#xC9DC;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&apos;&#xC0BC;&#xC6D4; &#xAD6C;&#xC77C;&apos;&#xACFC; &#xAC19;&#xC774;
+          &#xD2B9;&#xC815; &#xB0A0;&#xC9DC;&#xB85C; &#xC77D;&#xAC70;&#xB098;,</p>
+        <p>&apos;&#xC0BC;&#xC6D4; &#xAD6C;&#xC77C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6D4;
+          &#xC2ED;&#xC77C;&apos;&#xACFC; &#xAC19;&#xC774;</p>
+        <p>&#xBC94;&#xC704;&#xB85C; &#xC77D;&#xB294; &#xAC83;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">date</td>
+      <td style="text-align:left">
+        <p>&#xD2B9;&#xC815; &#xB0A0;</p>
+        <p>[yyyy]-[mm]-[dd]</p>
+        <p>[yyyy]:[mm]:[dd]</p>
+        <p>[yyyy]/[mm]/[dd]</p>
+        <p>[yyyy].[mm].[dd]</p>
+        <p>[mm]-[dd]</p>
+        <p>[mm]/[dd]</p>
+        <p>[mm].[dd]</p>
+        <p></p>
+        <p></p>
+        <p>&#xBC94;&#xC704;</p>
+        <p>[yyyy]-[mm]-[dd]~</p>
+        <p>[yyyy]-[mm]-[dd]</p>
+        <p></p>
+        <p>[yyyy]:[mm]:[dd]~</p>
+        <p>[yyyy]:[mm]:[dd]</p>
+        <p></p>
+        <p>[yyyy]/[mm]/[dd]~[yyyy]/[mm]/[dd]</p>
+        <p></p>
+        <p>[yyyy].[mm].[dd]~</p>
+        <p>[yyyy].[mm].[dd]</p>
+        <p></p>
+        <p>[mm]-[dd]~</p>
+        <p>[mm]-[dd]</p>
+        <p></p>
+        <p>[mm]/[dd]~[mm]/[dd]</p>
+        <p></p>
+        <p>[mm].[dd]~</p>
+        <p>[mm].[dd]</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC2DC;&#xAC04; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&apos;&#xC5F4;&#xD55C;&#xC2DC; &#xC0BD;&#xC2ED;&#xBD84; &#xC0AC;&#xC2ED;&#xC624;&#xCD08;&apos;&#xC640;
+          &#xAC19;&#xC774;</p>
+        <p>&#xC2DC;&#xAC04;&#xC73C;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&apos;hh&#xC2DC; mm&#xBD84; ss&#xCD08;, hh&#xC2DC; mm&#xBD84;&apos;&#xACFC;
+          &#xAC19;&#xC774;</p>
+        <p>&#xD2B9;&#xC815; &#xC2DC;&#xAC04;&#xC73C;&#xB85C; &#xC77D;&#xAC70;&#xB098;</p>
+        <p>&apos;hh&#xC2DC; mm&#xBD84; ss&#xCD08;&#xC5D0;&#xC11C;</p>
+        <p>hh&#xC2DC; mm&#xBD84; ss&#xCD08;&apos;,</p>
+        <p>hh&#xC2DC; mm&#xBD84;&#xC5D0;&#xC11C; hh&#xC2DC; mm&#xBD84;&apos;&#xCC98;&#xB7FC;</p>
+        <p>&#xBC94;&#xC704;&#xB85C; &#xC77D;&#xB294; &#xAC83;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">time</td>
+      <td style="text-align:left">
+        <p>&#xD2B9;&#xC815; &#xC2DC;&#xAC04;</p>
+        <p>[hh]:[mm]:[ss]</p>
+        <p>[mm]:[ss]</p>
+        <p></p>
+        <p>&#xAE30;&#xAC04;</p>
+        <p>[hh]:[mm]:[ss]~</p>
+        <p>[hh]:[mm]:[ss]</p>
+        <p></p>
+        <p>[hh]:[mm]:[ss]-</p>
+        <p>[hh]:[mm]:[ss]</p>
+        <p></p>
+        <p>[mm]:[ss]~</p>
+        <p>[mm]:[ss]</p>
+        <p></p>
+        <p>[mm]:[ss]-</p>
+        <p>[mm]:[ss]</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xB2E8;&#xC704; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&apos;&#xCE60;&#xBBF8;&#xD130;, &#xCE60;&#xADF8;&#xB7A8;&apos;&#xACFC;
+          &#xAC19;&#xC774; &#xB2E8;&#xC704;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>139&#xAC1C;&#xC758; &#xB2E8;&#xC704;&#xB97C; &#xC77D;&#xAE30; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+        <p>(<a href="use-prompts.md#list-of-unit-tags-supported-by-utterance-options">&#xBC1C;&#xD654; &#xC635;&#xC158;&#xC5D0;&#xC11C; UNIT </a>
+        </p>
+        <p><a href="use-prompts.md#list-of-unit-tags-supported-by-utterance-options">&#xD0DC;&#xADF8;&#xB85C; &#xC9C0;&#xC6D0; &#xB2E8;&#xC704; &#xBAA9;&#xB85D;</a>)</p>
+      </td>
+      <td style="text-align:left">unit</td>
+      <td style="text-align:left">[n][unit]</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC8FC;&#xC18C; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&apos;&#xD314;&#xC2ED;&#xC0BC; &#xB2E4;&#xC2DC; &#xC77C;&apos;&#xACFC;
+          &#xAC19;&#xC774; &#xC9C0;&#xBC88; &#xC8FC;&#xC18C;&#xC758;</p>
+        <p>&#xC9C0;&#xBC88;&#xC744; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">address</td>
+      <td style="text-align:left">[n]-[n]</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC804;&#xD654;&#xBC88;&#xD638; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&apos;&#xC77C;&#xC774;&#xC0BC;&#xC0AC; &#xC77C;&#xC774;&#xC0BC;&#xC0AC;&apos;&#xC640;
+          &#xAC19;&#xC774;</p>
+        <p>&#xC804;&#xD654;&#xBC88;&#xD638;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">telephone</td>
+      <td style="text-align:left">
+        <p>[n]-[n]</p>
+        <p>[n]-[n]-[n]</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC601;&#xC5B4; &#xC2A4;&#xD3A0;&#xB9C1; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">
+        <p>&apos;&#xBE44;&#xD2F0;&#xC5D0;&#xC2A4;&apos;&#xC640; &#xAC19;&#xC774;
+          &#xC601;&#xC5B4; &#xC2A4;&#xD3A0;&#xB9C1;&#xC73C;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+        <p>&#xB300;&#xC18C;&#xBB38;&#xC790;&#xB294; &#xAD6C;&#xBD84;&#xD558;&#xC9C0;
+          &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+      </td>
+      <td style="text-align:left">spell</td>
+      <td style="text-align:left">[text]</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xACBD;&#xAE30; &#xC2A4;&#xCF54;&#xC5B4; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">&apos;&#xC0BC; &#xB300; &#xC774;&apos;&#xC640; &#xAC19;&#xC774; &#xACBD;&#xAE30;
+        &#xC2A4;&#xCF54;&#xC5B4;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+      <td
+      style="text-align:left">score</td>
+        <td style="text-align:left">
+          <p>[n]:[n]</p>
+          <p>[n]-[n]</p>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xBD84;&#xC218; &#xC77D;&#xAE30;</td>
+      <td style="text-align:left">&apos;&#xC0BC;&#xBD84;&#xC758; &#xC77C;&apos;&#xACFC; &#xAC19;&#xC774;
+        &#xBD84;&#xC218;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
+      <td style="text-align:left">fraction</td>
+      <td style="text-align:left">[n]/[n]</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#xD6A8;&#xACFC;&#xC74C;&#xB123;&#xAE30;</td>
+      <td style="text-align:left">&#xC2EC;&#xC7A5; &#xBC15;&#xB3D9;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC2EC;&#xC7A5; &#xBC15;&#xB3D9; (&#xBE60;&#xB974;&#xAC8C;)</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC7AC;&#xCC44;&#xAE30;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xBC15;&#xC218;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xD154;&#xB808;&#xD30C;&#xC2DC; 1</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xD154;&#xB808;&#xD30C;&#xC2DC; 2</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xBC1C;&#xAC78;&#xC74C;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xBB3C;&#xD280;&#xAE30;&#xB294;&#xC18C;&#xB9AC;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC5BC;&#xAD74; &#xC53B;&#xB294; &#xC18C;&#xB9AC;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC74C;&#xC545; 1</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC74C;&#xC545; 2</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xCE74;&#xBA54;&#xB77C; &#xC154;&#xD130;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xD540;&#xBC84;&#xD2BC; &#xB204;&#xB974;&#xB294; &#xC18C;&#xB9AC;</td>
+      <td
+      style="text-align:left"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xBD88;&#xD0C0;&#xB294; &#xC18C;&#xB9AC;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xCC9C;&#xB465;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC790;&#xB3D9;&#xCC28; &#xB9AC;&#xBAA8;&#xCF58;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xBE44;&#xD589;&#xAE30;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xBB3C;&#xBC29;&#xC6B8; &#xB5A8;&#xC5B4;&#xC9C0;&#xB294; &#xC18C;&#xB9AC;</td>
+      <td
+      style="text-align:left"></td>
+        <td style="text-align:left"></td>
+        <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xD718;&#xD30C;&#xB78C; 1</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xD718;&#xD30C;&#xB78C; 2</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xBE57;&#xC790;&#xB8E8;&#xC9C8;</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC885;&#xC18C;&#xB9AC; 1</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">&#xC885;&#xC18C;&#xB9AC; 2</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>{% hint style="info" %}
 Prompt 내에 사용하는 태그는 텍스트를 직접 입력하여 추가 또는 수정할 수 있습니다.
 {% endhint %}
 
