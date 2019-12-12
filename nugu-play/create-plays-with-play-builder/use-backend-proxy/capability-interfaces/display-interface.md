@@ -1547,7 +1547,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagelist1%20%281%29.png)
+![](../../../../.gitbook/assets/imagelist1.png)
 
 
 
@@ -1713,7 +1713,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagelist2.png)
+![](../../../../.gitbook/assets/imagelist2%20%281%29.png)
 
 
 
@@ -1932,5 +1932,5 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagelist3.png)
+![](../../../../.gitbook/assets/imagelist3%20%281%29.png)
 
