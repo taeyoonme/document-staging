@@ -60,7 +60,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 | content.subtitle1 | string | Y | subtitle1 |
 | content.subtitle2 | string | Y | subtitle2 |
 | content.imageUrl | string | Y | image url |
-| content.durationSec | string | Y | content duration in sec |
+| content.durationSec | string | N | content duration in sec |
 
 #### AudioPlayer.Template2
 
@@ -92,7 +92,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 | content.title | string | Y | content 영역의 title |
 | content.subtitle | string | Y | T map용 Template은 기본으로 title, subtitle만 제공 |
 | content.imageUrl | string | Y | image url |
-| content.durationSec | string | Y | content duration in sec |
+| content.durationSec | string | N | content duration in sec |
 
 #### Template Type을 지정하지 않은 경우 \(Default Template\)
 
