@@ -8,12 +8,44 @@ AudioPlayer Interface는 오디오 파일의 재생 외에 플레이어의 다�
 
 오디오 재생을 위해 NUGU 디바이스에서 지원하는 스트리밍 프로토콜과 오디오 코덱은 다음의 표에서 제공하는 규격을 지원해야 합니다. 다음은 NUGU 디바이스에서 지원하는 스트리밍 포맷입니다.
 
-| No | 스트리밍 | 오디오 코덱 | 샘플링 주파수 | 비트율 | 비고 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | HLS   \(Http Live Streaming\) | mp3 | &gt;= 44.1KHz | &gt;= 128kbps |  |
-| 2 | MP4 over HTTP | AAC | &gt;= 44.1KHz | &gt;= 96kbps | 초기 버퍼링 시간을 줄이기 위해   moov atom을 파일의 앞쪽으로 이동시킨 MP4 파일을 권장합니다. |
-
-샘플링 주파수와 비트율은 최소 권장 사항을 의미합니다. 더 낮은 값을 사용해도 재생을 되지만 음질의 저하를 체감할 수 있기 때문에 최소 권장을 준수할 것을 강력히 권장합니다.
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">No</th>
+      <th style="text-align:left">&#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D;</th>
+      <th style="text-align:left">&#xC624;&#xB514;&#xC624; &#xCF54;&#xB371;</th>
+      <th style="text-align:left">&#xC0D8;&#xD50C;&#xB9C1; &#xC8FC;&#xD30C;&#xC218;</th>
+      <th style="text-align:left">&#xBE44;&#xD2B8;&#xC728;</th>
+      <th style="text-align:left">&#xBE44;&#xACE0;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">1</td>
+      <td style="text-align:left">
+        <p>HLS</p>
+        <p>(Http Live Streaming)</p>
+      </td>
+      <td style="text-align:left">mp3</td>
+      <td style="text-align:left">&gt;= 44.1KHz</td>
+      <td style="text-align:left">&gt;= 128kbps</td>
+      <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">2</td>
+      <td style="text-align:left">MP4 over HTTP</td>
+      <td style="text-align:left">AAC</td>
+      <td style="text-align:left">&gt;= 44.1KHz</td>
+      <td style="text-align:left">&gt;= 96kbps</td>
+      <td style="text-align:left">
+        <p>&#xCD08;&#xAE30; &#xBC84;&#xD37C;&#xB9C1; &#xC2DC;&#xAC04;&#xC744; &#xC904;&#xC774;&#xAE30;
+          &#xC704;&#xD574;</p>
+        <p>moov atom&#xC744; &#xD30C;&#xC77C;&#xC758; &#xC55E;&#xCABD;&#xC73C;&#xB85C;</p>
+        <p>&#xC774;&#xB3D9;&#xC2DC;&#xD0A8; MP4 &#xD30C;&#xC77C;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>샘플링 주파수와 비트율은 최소 권장 사항을 의미합니다. 더 낮은 값을 사용해도 재생을 되지만 음질의 저하를 체감할 수 있기 때문에 최소 권장을 준수할 것을 강력히 권장합니다.
 
 {% hint style="info" %}
 AudioPlayer Interface를 지원하는 Play를 만드는 방법은 [AudioPlayer를 지원하는 Play 만들기](../../create-a-play-with-audioplayer/#create-a-play-with-audioplayer)를 참고하세요.
@@ -34,7 +66,6 @@ Play는 스피커의 오디오 플레이어의 상태와 사용자의 발화에 
 | 3 | STOPPED | Stop Directive를 받아 중지된 상태입니다. |
 | 4 | PAUSED | PAUSED 상태가 되는 경우는 다음 두 경우입니다.      1. Pause Directive를 받아 일시 정지 상태   2. 오디오 재생 중에 사용자 발화가 들어오면 자동으로 PAUSED상태가 되고,   해당 발화의 처리가 끝나고 오디오 재생이 이어지는 경우에는 PLAYING 상태로 돌아감 |
 | 5 | FINISHED | 정상적으로 끝까지 재생을 마치면 FINISHED 상태가 됩니다.   만약, 다음 곡이 버퍼되어 있으면 FINISHED 상태가 되었다가 바로 PLAYING상태로 바뀝니다. |
-| 6 | BUFFER\_UNDERRUN | Playback buffer underflow |
 
 ## Built-in Intents
 

@@ -1,2 +1,2 @@
-# SDK Design Guide
+# SDK UX Guide
 
