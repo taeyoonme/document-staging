@@ -4,7 +4,7 @@
 
 1️⃣`Play 등록하기` 버튼을 클릭하세요. Play Builder에서 개발한 Play 리스트 팝업이 표시됩니다.
 
-![](../../.gitbook/assets/ch4_41_c01-1%20%281%29.png)
+![](../../.gitbook/assets/ch4_41_c01-1-1.png)
 
 2️⃣등록할 Play의 타입을 결정하고 `다음` 버튼을 클릭하여 Play의 Snapshot 버전을 선택하는 화면으로 이동합니다.
 
@@ -12,11 +12,11 @@
 Smarthome 타입의 경우 [Pre-built Play Builder로 스마트홈 Play 만들기](../smarthome-play/)를 참고하세요.
 {% endhint %}
 
-![](../../.gitbook/assets/ch4_41_c02.png)
+![](../../.gitbook/assets/ch4_41_c02%20%281%29.png)
 
 3️⃣등록할 Snapshot 버전을 선택하고 확인 버튼을 클릭하여 Play 정보 등록 화면으로 이동합니다.
 
-![](../../.gitbook/assets/ch4_41_c03.png)
+![](../../.gitbook/assets/ch4_41_c03%20%281%29.png)
 
 Play 정보 등록은 총 4단계이며, 1단계 기본 정보 입력 → 2단계 연동 정보 입력 → 3단계 배포/심사 정보 → 4단계 등록/심사 요청의 순서로 진행됩니다.
 
@@ -109,7 +109,7 @@ Play 타입은 Public Play와 Private Play로 구분됩니다. Play의 서비스
 Private 타입의 Play에서 OAuth 계정 연동 없이 사용자별로 권한을 부여하거나 서비스를 제공해야 할 경우에 선택합니다.  
 이 옵션을 선택하면, Private Play 사용 권한을 제공하기 위해 초대한 사용자 정보\(이름, 이메일, 전화번호, 기타 입력한 추가 정보\)를 이용할 수 있습니다.
 
-![](../../.gitbook/assets/ch4_412_c02.png)
+![](../../.gitbook/assets/ch4_412_c02%20%281%29.png)
 
 **ⓐ 로그인 URL**  
 사용자가 계정을 연동할 수 있도록 이동하는 URL을 등록합니다.
@@ -148,7 +148,7 @@ Play 심사 승인에 필요한 정보와 사용자에게 Play를 설명하기 �
 심사 요청에 대한 자세한 내용은 [심사 요청](play-review.md#review-request) 페이지를 참고해주세요.
 {% endhint %}
 
-![](../../.gitbook/assets/ch4_413_c01.png)
+![](../../.gitbook/assets/ch4_413_c01%20%281%29.png)
 
 **① Play 사용 지역**  
 등록한 Play가 서비스될 지역을 선택하는 기능으로 국내에서만 Play를 제공할 수 있습니다.
@@ -168,7 +168,7 @@ Play 심사 승인에 필요한 정보와 사용자에게 Play를 설명하기 �
 **⑥ 개인 정보 정책 제공 URL\(선택\)**  
 해당 Play의 개인 정보 정책에 대한 정보를 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
 
-**⑦ 면책 조항 제공 URL\(선택\)**                                                                                                                                        Play와 관련된 면책 조항을 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
+**⑦ 면책 조항 제공 URL\(선택\)** Play와 관련된 면책 조항을 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
 
 ![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m20gtnhf7hepxkm-_ch4_413_c02.png)
 
@@ -178,7 +178,7 @@ Play 심사 승인에 필요한 정보와 사용자에게 Play를 설명하기 �
 **⑨ Play 심사용 설명**  
 Play 심사 담당자가 Play를 검증할 때 참고하는 내용으로, 일반 사용자에게는 보여지지 않습니다. 안내 문구에 따라 Play 설명, Play의 대표 인텐트\(Intent\)를 입력하고, Play 사용을 위해 OAuth 계정 연동이 필요할 경우에는 테스트할 수 있는 ID와 패스워드\(PW\) 정보도 같이 등록해야 합니다.
 
-**⑩ NUGU 앱  노출 설명 및 대표 발화**  
+**⑩ NUGU 앱 내 노출 설명 및 대표 발화**  
 NUGU App을 통해 사용자에게 제공될 Play에 대한 주요 안내 사항과, 주요 기능, 대표 발화문\(음성 명령어\)을 입력합니다. 주요 기능과 대표 발화문은 최대 5개까지 등록이 가능하며, 입력한 대표 발화문\(음성 명령어\)은 사용자가 Play를 어떻게 사용해야 하는지 보여주는 예시입니다.
 
 1. **주요 설명 사항**: 사용자에게 제공할 Play에 대한 설명과 연락 가능한 고객 문의 채널을 입력합니다. 프로모션 등을 진행할 경우에도 해당 내용을 입력할 수 있습니다.
