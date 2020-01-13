@@ -1,5 +1,21 @@
 # Release note
 
+## Version 1.9.0
+
+업데이트일 : 2019년 12월 19일
+
+### 1. 새로운 기능
+
+* Fallback 시, 사용자 발화를 Backend proxy에서 분석할 수 있도록 \_UNRESOLVED\_ Entity 제공 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/fallback.md)
+
+### 2. 향상/변경된 기능
+
+* Directive로 응답하는 Action의 응답 유형에 '대기'를 허용
+
+### 
+
+
+
 ## Version 1.8.0
 
 업데이트일 : 2019년 11월 4일
@@ -24,7 +40,7 @@
 
 ### 1. 새로운 기능
 
-* 실패 발화 분석 도구에 용언 분석 기능 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/support-tools/log-mining.md)
+* 실패 발화 분석 도구에 용언 분석 기능 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/support-tools/log-mining.md#log-mining-verb)
 
 ### 2. 향상/변경된 기능
 
@@ -76,7 +92,7 @@
 
 ### 1. 새로운 기능
 
-* 실패 발화 분석 도구 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/log-mining.md)
+* 실패 발화 분석 도구 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/support-tools/log-mining.md)
 
 ### 2. 향상/변경된 기능
 
@@ -95,8 +111,8 @@
 
 ### 1. 새로운 기능
 
-* Utterance Model 학습 문장 분석 도구 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/corpus-inspection.md)
-* 합성음 목소리 '벨' 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/customize-a-play.md#setting)
+* User Utterance Model 학습 문장 분석 도구 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1.md)
+* 합성음 목소리 '벨' 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/customize-a-play.md#setting)
 
 ### 2. 향상/변경된 기능
 
@@ -119,13 +135,13 @@
 
 ### 1. 새로운 기능
 
-* Action 중복 생성을 줄이기 위한 Common Action 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/use-common-actions.md)
-* Play 내에서 공통으로 사용할 수 있는 Global Backend Parameter 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/customize-a-play.md#setting-backend-proxy)
+* Action 중복 생성을 줄이기 위한 Common Action 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions.md)
+* Play 내에서 공통으로 사용할 수 있는 Global Backend Parameter 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/customize-a-play.md#setting-backend-proxy)
 * Response에서 효과음 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/use-prompts.md#skml-tag)
 
 ### 2. 향상/변경된 기능
 
-* Utterance Parameter에 Entity mapping 방식 변경 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/multi-entity-mapping.md)
+* Utterance Parameter에 Entity mapping 방식 변경 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter.md#utterance-parameter)
 * Entity value 및 동의어 입력 시 허용 특수기호 추가
 
   ' \(Apostrophe\), & \(Ampersand\), - \(Hyphen\)
@@ -147,10 +163,10 @@
 
 ### 1. 새로운 기능
 
-* 멀티턴 대화 지원 \(Response + Branch Action\) : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/response-with-branch-actions.md) 
-* AudioPlayer Interface용 Display Interface 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/display-interface.md)
+* 멀티턴 대화 지원 \(Response + Branch Action\) : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions.md) 
+* AudioPlayer Interface용 Display Interface 추가 : [자세히 알아보기](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface.md)
 * 다른 Intent 에서 Entity type 더 가져오기 기능 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/response-with-branch-actions.md#multi-turn-branch)
-* Silent Prompt : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/use-prompts.md#silent-prompt)
+* Silent Prompt : [자세히 알아보기](nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts.md#silent-prompt)
 
 ### 2. 향상/변경된 기능
 
