@@ -168,7 +168,7 @@ Play 심사 승인에 필요한 정보와 사용자에게 Play를 설명하기 �
 **⑥ 개인 정보 정책 제공 URL\(선택\)**  
 해당 Play의 개인 정보 정책에 대한 정보를 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
 
-**⑦ 면책 조항 제공 URL\(선택\)**                                                                                                                                   Play와 관련된 면책 조항을 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
+**⑦ 면책 조항 제공 URL\(선택\)**                                                                                                                                        Play와 관련된 면책 조항을 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
 
 ![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m20gtnhf7hepxkm-_ch4_413_c02.png)
 
