@@ -4,7 +4,7 @@
 
 1️⃣`Play 등록하기` 버튼을 클릭하세요. Play Builder에서 개발한 Play 리스트 팝업이 표시됩니다.
 
-![](../../.gitbook/assets/ch4_41_c01-1-1.png)
+![](../../.gitbook/assets/ch4_41_c01-1%20%281%29.png)
 
 2️⃣등록할 Play의 타입을 결정하고 `다음` 버튼을 클릭하여 Play의 Snapshot 버전을 선택하는 화면으로 이동합니다.
 
@@ -12,11 +12,11 @@
 Smarthome 타입의 경우 [Pre-built Play Builder로 스마트홈 Play 만들기](../smarthome-play/)를 참고하세요.
 {% endhint %}
 
-![](../../.gitbook/assets/ch4_41_c02%20%281%29.png)
+![](../../.gitbook/assets/ch4_41_c02.png)
 
 3️⃣등록할 Snapshot 버전을 선택하고 확인 버튼을 클릭하여 Play 정보 등록 화면으로 이동합니다.
 
-![](../../.gitbook/assets/ch4_41_c03%20%281%29.png)
+![](../../.gitbook/assets/ch4_41_c03.png)
 
 Play 정보 등록은 총 4단계이며, 1단계 기본 정보 입력 → 2단계 연동 정보 입력 → 3단계 배포/심사 정보 → 4단계 등록/심사 요청의 순서로 진행됩니다.
 
@@ -109,7 +109,7 @@ Play 타입은 Public Play와 Private Play로 구분됩니다. Play의 서비스
 Private 타입의 Play에서 OAuth 계정 연동 없이 사용자별로 권한을 부여하거나 서비스를 제공해야 할 경우에 선택합니다.  
 이 옵션을 선택하면, Private Play 사용 권한을 제공하기 위해 초대한 사용자 정보\(이름, 이메일, 전화번호, 기타 입력한 추가 정보\)를 이용할 수 있습니다.
 
-![](../../.gitbook/assets/ch4_412_c02%20%281%29.png)
+![](../../.gitbook/assets/ch4_412_c02.png)
 
 **ⓐ 로그인 URL**  
 사용자가 계정을 연동할 수 있도록 이동하는 URL을 등록합니다.
