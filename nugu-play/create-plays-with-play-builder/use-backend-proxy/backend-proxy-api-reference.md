@@ -98,51 +98,13 @@ context.device.state와 context.privatePlay는 동일 버전 내에서 하위 �
 
 AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Parameter</th>
-      <th style="text-align:left">Type</th>
-      <th style="text-align:left">Mandatory</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">playerActivity</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC2A4;&#xD53C;&#xCEE4;&#xC758; &#xC624;&#xB514;&#xC624; &#xD50C;&#xB808;&#xC774;&#xC5B4;
-        &#xC0C1;&#xD0DC;&#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.
-        <br
-        />IDLE, PLAYING, PAUSED, STOPPED, FINISHED, BUFFER_UNDERRUN</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC758; token
-          &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.
-          <br />AudioPlayer.Play Directive &#xC804;&#xC1A1; &#xC2DC; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D;
-          URL&#xACFC; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xB418;&#xB294; token &#xAC12;</p>
-        <p>&#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC774; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
-          token&#xC774; &#xC874;&#xC7AC;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">offsetInMilliseconds</td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xC704;&#xCE58; (msec)&#xB97C;
-          &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC774; &#xC5C6;&#xC744; &#xACBD;&#xC6B0;
-          &#xAE30;&#xBCF8; &#xAC12;&#xC740; 0</p>
-      </td>
-    </tr>
-  </tbody>
-</table>## Response Sample
+| Parameter | Type | Mandatory | Description |
+| :--- | :--- | :--- | :--- |
+| playerActivity | string | Y | 스피커의 오디오 플레이어 상태값을 나타냅니다.     IDLE, PLAYING, PAUSED, STOPPED, FINISHED, BUFFER\_UNDERRUN |
+| token | string | N | 현재 재생 중인 곡의 token 값입니다.   AudioPlayer.Play Directive 전송 시 스트리밍 URL과 함께 전송되는 token 값\n재생 중인 곡이 있는 경우에만 token이 존재 |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 위치 \(msec\)를 나타냅니다.\n재생 중인 곡이 없을 경우 기본 값은 0 |
+
+## Response Sample
 
 ```javascript
 {
