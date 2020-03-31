@@ -457,10 +457,11 @@ Related to [HumidityControl Interface](smarthomecapability/humiditycontrol-inter
 | 제습모드 | DEHUMIDITY |
 | 송풍모드 | AIR\_BLAST |
 | 쾌적모드 | COMFORT |
-| 스마트쾌적모드 | COMFORT\_SOFT |
-| 둘레바람모드 | SMART\_COMFORT |
-| 아기모드 | INDIRECT\_WIND |
-| 자동모드 | BABY |
+| 쾌적뽀 | COMFORT\_SOFT |
+| 스마트쾌적모드 | SMART\_COMFORT |
+| 둘레바람모드 | INDIRECT\_WIND |
+| 아기모드 | BABY |
+| 자동모드 | AUTO |
 | 공기청정모드 | AUTO\_CLEAN |
 | 아로마모드 | AROMA |
 | 절전모드 | ENERGY\_SAVING |
