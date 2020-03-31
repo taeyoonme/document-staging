@@ -481,6 +481,8 @@ Related to [HumidityControl Interface](smarthomecapability/humiditycontrol-inter
 | 순환청정모드 | CIRCULAR\_AIR\_CLEAN |
 | 베이비케어모드 | BABY\_CARE |
 | 듀얼청정모드 | DUAL\_AIR\_CLEAN |
+| 공부모드 | STUDY |
+| 터보모 | TURBO |
 | 에어워셔모드 | AIR\_WASHER |
 | HEPA에어워셔모드 | HEPA\_AIR\_WASHER |
 | 공기청정모드 | AIR\_CLEAN |
