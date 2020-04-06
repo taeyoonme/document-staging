@@ -98,13 +98,109 @@ context.device.state와 context.privatePlay는 동일 버전 내에서 하위 �
 
 AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
 
-| Parameter | Type | Mandatory | Description |
-| :--- | :--- | :--- | :--- |
-| playerActivity | string | Y | 스피커의 오디오 플레이어 상태값을 나타냅니다. <br>IDLE, PLAYING, PAUSED, STOPPED, FINISHED, BUFFER\_UNDERRUN |
-| token | string | N | 현재 재생 중인 곡의 token 값입니다.<br>AudioPlayer.Play Directive 전송 시 스트리밍 URL과 함께 전송되는 token 값<br>재생 중인 곡이 있는 경우에만 token이 존재 |
-| offsetInMilliseconds | long | Y | 현재 재생 중인 위치 \(msec\)를 나타냅니다.<br>재생 중인 곡이 없을 경우 기본 값은 0 |
-
-## Response Sample
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Parameter</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Mandatory</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">playerActivity</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <ul>
+          <li>&#xC2A4;&#xD53C;&#xCEE4;&#xC758; &#xC624;&#xB514;&#xC624; &#xD50C;&#xB808;&#xC774;&#xC5B4;
+            &#xC0C1;&#xD0DC;&#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+          <li>IDLE, PLAYING, PAUSED, STOPPED, FINISHED, BUFFER_UNDERRUN</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <ul>
+          <li>&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC758; token
+            &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+          <li>AudioPlayer.Play Directive &#xC804;&#xC1A1; &#xC2DC; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D;
+            URL&#xACFC; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xB418;&#xB294; token &#xAC12;</li>
+          <li>&#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC774; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
+            token&#xC774; &#xC874;&#xC7AC;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">offsetInMilliseconds</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <ul>
+          <li>&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xC704;&#xCE58; (msec)&#xB97C;
+            &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+          <li>&#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC774; &#xC5C6;&#xC744; &#xACBD;&#xC6B0;
+            &#xAE30;&#xBCF8; &#xAC12;&#xC740; 0</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table><table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Parameter</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Mandatory</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">playerActivity</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <ul>
+          <li>&#xC2A4;&#xD53C;&#xCEE4;&#xC758; &#xC624;&#xB514;&#xC624; &#xD50C;&#xB808;&#xC774;&#xC5B4;
+            &#xC0C1;&#xD0DC;&#xAC12;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+          <li>IDLE, PLAYING, PAUSED, STOPPED, FINISHED, BUFFER_UNDERRUN</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <ul>
+          <li>&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC758; token
+            &#xAC12;&#xC785;&#xB2C8;&#xB2E4;.</li>
+          <li>AudioPlayer.Play Directive &#xC804;&#xC1A1; &#xC2DC; &#xC2A4;&#xD2B8;&#xB9AC;&#xBC0D;
+            URL&#xACFC; &#xD568;&#xAED8; &#xC804;&#xC1A1;&#xB418;&#xB294; token &#xAC12;&#xC73C;&#xB85C;
+            &#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC774; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
+            token&#xC774; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">offsetInMilliseconds</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <ul>
+          <li>&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xC704;&#xCE58; (msec)&#xB97C;
+            &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</li>
+          <li>&#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC774; &#xC5C6;&#xC744; &#xACBD;&#xC6B0;
+            &#xAE30;&#xBCF8; &#xAC12;&#xC740; 0</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>## Response Sample
 
 ```javascript
 {
@@ -139,15 +235,81 @@ AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
 
 ## Response Body
 
-| Parameter | Type | Mandatory | Description |
-| :--- | :--- | :--- | :--- |
-| version | string | Y | Backend proxy API 버전을 표시합니다. |
-| resultCode | string | Y | "OK" - **성공인 경우 사용하는 값으로 다른 값을 전송하면 성공이 아닌 것으로 처리하기 때문에 주의해야 합니다.**   성공이 아닌 경우는 PlayBuider의 `General` &gt; `기본정보` 페이지의 예외 처리 또는 `Action` &gt; `Custom Actions` &gt; 선택한 Action의 예외 처리에서 설정된 Result Code\(Exception Code\)값 전송합니다. |
-| output | json | Y | Request에서 전송한 action.parameters의 KEY:VALUE를 처리한 결과를 전송합니다.   Request의 모든 KEY:VALUE가 동일하게 나와야 합니다. VALUE는 Request의 값과 같거나 다를 수 있습니다.   변경되지 않은 VALUE들은 Request의 값을 그대로 써주어야 합니다.    KEY - Request의 action.parameters에 정의된 KEY  VALUE - backend proxy에서 처리한 결과 |
-| directives | json | N | 특정 Capability Interface를 지원하는 Play에서 Directive를 전송하는 경우에 이 필드를 통해 전송합니다. |
-|  |  |  | 각 Capability Interface의 Directive 포맷은 해당 Capability Interface 규격을 참조합니다. |
-
-## Health check
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Parameter</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Mandatory</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">version</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">Backend proxy API &#xBC84;&#xC804;&#xC744; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">resultCode</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <ul>
+          <li>&quot;OK&quot; - <b>&#xC131;&#xACF5;&#xC778; &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC12;&#xC73C;&#xB85C; &#xB2E4;&#xB978; &#xAC12;&#xC744; &#xC804;&#xC1A1;&#xD558;&#xBA74; &#xC131;&#xACF5;&#xC774; &#xC544;&#xB2CC; &#xAC83;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</b> 
+          </li>
+          <li>&#xC131;&#xACF5;&#xC774; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;&#xB294; PlayBuider&#xC758; <code>General</code> &gt; <code>&#xAE30;&#xBCF8;&#xC815;&#xBCF4;</code> &#xD398;&#xC774;&#xC9C0;&#xC758;
+            &#xC608;&#xC678; &#xCC98;&#xB9AC; &#xB610;&#xB294; <code>Action</code> &gt; <code>Custom Actions</code> &gt;
+            &#xC120;&#xD0DD;&#xD55C; Action&#xC758; &#xC608;&#xC678; &#xCC98;&#xB9AC;&#xC5D0;&#xC11C;
+            &#xC124;&#xC815;&#xB41C; Result Code(Exception Code)&#xAC12; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">output</td>
+      <td style="text-align:left">json</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <ul>
+          <li>Request&#xC5D0;&#xC11C; &#xC804;&#xC1A1;&#xD55C; action.parameters&#xC758;
+            KEY:VALUE&#xB97C; &#xCC98;&#xB9AC;&#xD55C; &#xACB0;&#xACFC;&#xB97C; &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+          <li>Request&#xC758; &#xBAA8;&#xB4E0; KEY:VALUE&#xAC00; &#xB3D9;&#xC77C;&#xD558;&#xAC8C;
+            &#xB098;&#xC640;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</li>
+          <li>VALUE&#xB294; Request&#xC758; &#xAC12;&#xACFC; &#xAC19;&#xAC70;&#xB098;
+            &#xB2E4;&#xB97C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+          <li>&#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC740; VALUE&#xB4E4;&#xC740;
+            Request&#xC758; &#xAC12;&#xC744; &#xADF8;&#xB300;&#xB85C; &#xC368;&#xC8FC;&#xC5B4;&#xC57C;
+            &#xD569;&#xB2C8;&#xB2E4;.</li>
+          <li>KEY - Request&#xC758; action.parameters&#xC5D0; &#xC815;&#xC758;&#xB41C;
+            KEY</li>
+          <li>VALUE - backend proxy&#xC5D0;&#xC11C; &#xCC98;&#xB9AC;&#xD55C; &#xACB0;&#xACFC;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">directives</td>
+      <td style="text-align:left">json</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <ul>
+          <li>&#xD2B9;&#xC815; Capability Interface&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xB294;
+            Play&#xC5D0;&#xC11C; Directive&#xB97C; &#xC804;&#xC1A1;&#xD558;&#xB294;
+            &#xACBD;&#xC6B0;&#xC5D0; &#xC774; &#xD544;&#xB4DC;&#xB97C; &#xD1B5;&#xD574;
+            &#xC804;&#xC1A1;&#xD569;&#xB2C8;&#xB2E4;.</li>
+          <li>&#xAC01; Capability Interface&#xC758; Directive &#xD3EC;&#xB9F7;&#xC740;
+            &#xD574;&#xB2F9; Capability Interface &#xADDC;&#xACA9;&#xC744; &#xCC38;&#xC870;&#xD569;&#xB2C8;&#xB2E4;.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
+    </tr>
+  </tbody>
+</table>## Health check
 
 서비스 정상 여부를 확인하기 위해 다음의 /health url을 다음과 같이 구현해야 합니다. NUGU developers에서는 이 URL을 주기적으로 요청해서 서버의 정상 여부를 판단합니다. 정상적으로 서비스가 가능하면 HTTP Status code를 "200 OK"로 리턴합니다. \(결과 텍스트는 OK 등 아무 문자나 리턴해도 됩니다.\)
 
