@@ -29,6 +29,7 @@
         * [Parameter로 응답 작성하기](nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/write-responses.md)
         * [필수 Entity 정의하기 \(Slot-Filling Prompt\)](nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt.md)
         * [하나의 Parameter에 여러 Entity mapping 하기](nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping.md)
+        * [Configurable Parameter](nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/configurable-parameter.md)
       * [Response](nugu-play/create-plays-with-play-builder/define-an-action/use-responses/README.md)
         * [Prompt 사용하기](nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts.md)
         * [Directive 사용하기](nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-directives.md)

@@ -1,5 +1,7 @@
 # User Utterance Model 정의하기 \(Intent & Entity\)
 
+{% embed url="https://www.youtube.com/watch?v=eoIn2K9P2Yo" caption="" %}
+
 ## Intent
 
 Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` &gt; `Custom Intents`와 `Built-in Intents` 메뉴에서 할 수 있습니다. Custom Intent는 Play 내에서 정의된 Intent를 의미하고, Built-in Intent는 NUGU play kit에서 제공하는 Intent로서 여러 분야에서 공통적으로 사용될 것으로 예상되어 미리 학습시켜 둔 Intent입니다.

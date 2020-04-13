@@ -196,6 +196,30 @@ NUGU play와 기본 NUGU서비스 간 간섭을 방지하고자 아래와 같은
     <tr>
       <td style="text-align:left">
         <ul>
+          <li>
+            <p>&#xC720;&#xC0AC;&#xD55C; &#xBA85;&#xB839;&#xC5B4;&#xB85C; &#xB3D9;&#xC791;&#xD558;&#xB098;,
+              &#xD638;&#xCD9C; &#xC774;&#xB984;(Invocation Name)&#xC73C;&#xB85C; &#xBA85;&#xD655;&#xD55C;
+              &#xAD6C;&#xBD84;&#xC774; &#xAC00;&#xB2A5;&#xD55C; &#xACBD;&#xC6B0;</p>
+            <p>&#xB77C;&#xB514;&#xC624; &#xC11C;&#xBE44;&#xC2A4;(&#x201C;&#xB77C;&#xB514;&#xC624;
+              &#xD2C0;&#xC5B4;&#xC918;&#x201D;) &#x2013; BTN&#xC6B8;&#xB9BC; play(&#x201C;BTN&#xC6B8;&#xB9BC;&#xC5D0;&#xC11C;
+              &#xB77C;&#xB514;&#xC624; &#xD2C0;&#xC5B4;&#xC918;&#x201D;)</p>
+          </li>
+          <li>
+            <p>&#xAC19;&#xC740; &#xC11C;&#xBE44;&#xC2A4; &#xBC94;&#xC704;&#xB97C; &#xC81C;&#xACF5;&#xD558;&#xB098;
+              &#xC911;&#xBCF5;&#xB418;&#xC9C0; &#xC54A;&#xB294; &#xCF58;&#xD150;&#xCE20;&#xB97C;
+              &#xC81C;&#xACF5;&#xD558;&#xB294; &#xACBD;&#xC6B0;</p>
+            <p>&#xB204;&#xAD6C;&#xBC31;&#xACFC; &#xC11C;&#xBE44;&#xC2A4;(&#xB0A0;&#xC9DC;&#xBCC4;
+              &#xBCC4;&#xC790;&#xB9AC; &#xC815;&#xBCF4;)&#x2013; &#xBCC4;&#xCC9C;&#xC9C0;
+              play(&#xACC4;&#xC808;&#xBCC4; &#xBCC4;&#xC790;&#xB9AC; &#xC81C;&#xACF5;)</p>
+          </li>
+          <li>
+            <p>&#xC720;&#xC0AC;&#xD55C; &#xCF58;&#xC149;&#xD2B8;&#xC774;&#xB098; &#xB2E4;&#xB978;
+              &#xC11C;&#xBE44;&#xC2A4;&#xC640; &#xC0C1;&#xD638; &#xBCF4;&#xC644;&#xC801;&#xC774;&#xAC70;&#xB098;
+              &#xB2E4;&#xC591;&#xC131;&#xC744; &#xB298;&#xB824;&#xC8FC;&#xB294; &#xACBD;&#xC6B0;</p>
+            <p>&#xB0A0;&#xC528; &#xC11C;&#xBE44;&#xC2A4;(&#xAD6D;&#xB0B4; &#xB0A0;&#xC528;
+              &#xC815;&#xBCF4;) &#x2013; &#xC138;&#xACC4;&#xC758;&#xB0A0;&#xC528; play(&#xAD6D;&#xC678;
+              &#xB0A0;&#xC528; &#xC815;&#xBCF4;)</p>
+          </li>
           <li>Private play&#xB85C;, &#xD574;&#xB2F9; &#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC774;
             &#xB2E4;&#xB978; &#xC11C;&#xBE44;&#xC2A4;&#xC640;&#xC758; &#xAC04;&#xC12D;&#xC5D0;
             &#xC601;&#xD5A5;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;</li>

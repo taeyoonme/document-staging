@@ -1,5 +1,9 @@
 # Play Builder로 Play 만들기
 
+
+
+{% embed url="https://www.youtube.com/watch?v=1PB5j7FM0EE" caption="" %}
+
 Play를 만드는 과정은 크게 다음과 같습니다.
 
 1. Play가 제공할 기능을 기획합니다.

@@ -1,6 +1,8 @@
 # Branch Action \(Action Tree\)
 
-[Action 만들고 응답 등록하기](../hello-aria/create-an-action-and-an-answer.md)에서 짧게 설명했던 Action에 대해 상세히 알아보도록 하겠습니다.
+{% embed url="https://www.youtube.com/watch?v=JyjY7mfPMLQ" caption="" %}
+
+
 
 하나의 Intent를 처리하는 최소 단위인 Action은 사용자가 어떠한 의도를 가지고 발화했을 때 그 발화를 해결하는 기능을 담고 있습니다. 하나의 Play 안에서 처리하고자 하는 Intent가 여러 개라면 아래 그림처럼 그 Intent의 수 만큼 Action을 만들어야 사용자의 발화에 대해 적절한 응답 혹은 동작을 수행할 수 있게 됩니다.
 
