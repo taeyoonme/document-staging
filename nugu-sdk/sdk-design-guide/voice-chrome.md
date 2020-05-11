@@ -49,7 +49,8 @@ Idle 상태에 적용되며, **FAB** \(Floating Action Button\) 또는 **Button*
 
 FAB과 Button에 따른 사용 및 동작정의는 다음과 같습니다.
 
-NUGU 버튼과 아래 레이어의 콘텐츠가 중첩되는 경우 **FAB 사용** \(화면 우하단 권장\)                                                                                              NUGU 버튼이 콘텐츠 중첩 없이 독립된 영역을 확보하고 있는 경우 **Button 사용** \(검색창 옆  권장\) 
+* NUGU 버튼과 아래 레이어의 콘텐츠가 중첩되는 경우 **FAB 사용** \(화면 우하단 권장\)    
+* NUGU 버튼이 콘텐츠 중첩 없이 독립된 영역을 확보하고 있는 경우 **Button 사용** \(검색창 옆  권장\) 
 
 {% tabs %}
 {% tab title="FAB" %}
@@ -79,7 +80,8 @@ Voice Chrome 실행시 NUGU Voice chrom Window가 활성화됩니다. Voice chro
 
 Voice chrome window를 닫는 동작은 아래 2가지입니다. App 화면 영역 터치 시 Voice chrome window는 닫히는 것을 권장합니다.
 
-App 화면 영역을 터치하면, **Voice Chrome이 닫히고, 해당 화면의 액션버튼이 실행**됩니다.                                                               Android back key는 모든 단계에서 닫기 동작이 가능합니다.
+* App 화면 영역을 터치하면, **Voice Chrome이 닫히고, 해당 화면의 액션버튼이 실행**됩니다. 
+*  Android back key는 모든 단계에서 닫기 동작이 가능합니다.
 
 ![\(1\) App &#xD654;&#xBA74; &#xB2EB;&#xAE30;&#xB294; Listening-passive/Listening-active &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xB429;&#xB2C8;&#xB2E4;. \(Processing&#xC740; &#xB2EB;&#xAE30; &#xB3D9;&#xC791; &#xD558;&#xC9C0; &#xC54A;&#xC74C;\) ](../../.gitbook/assets/close%20%281%29.png)
 
