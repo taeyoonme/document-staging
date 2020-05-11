@@ -71,7 +71,7 @@ NUGU 버튼과 아래 레이어의 콘텐츠가 중첩되는 경우 **FAB 사용
 
 ## **NUGU Voice chrome Window**
 
-Voice Chrome 실행시 NUGU Voice chrom Window가 활성화됩니다. Voice chrome은 최상단 레이어로, 화면의 하단 영역에 위치합니다. Light / Dark Theme  중 한 가지 타입 선택 적용할 수 있습니다.
+Voice Chrome 실행시 NUGU Voice chrom Window가 활성화됩니다. Voice chrome은 최상단 레이어로, 화면의 하단 영역에 위치합니다. Light / Dark Theme  중 한 가지 타입을 선택해 적용할 수 있습니다.
 
 | Light Theme |  Dark Theme |
 | :--- | :--- |
