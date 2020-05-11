@@ -59,7 +59,7 @@ NUGU 버튼과 아래 레이어의 콘텐츠가 중첩되는 경우 **FAB 사용
 
 \(1-1\) **FAB**은 스크롤 방향에 따라 노출 여부를 달리할 수 있습니다.
 
-![&#xC138;&#xB85C; &#xC2A4;&#xD06C;&#xB864;&#xC774; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9; &#xAC00;&#xB2A5;](../../.gitbook/assets/fab_2%20%282%29.png)
+![\(&#xC88C;\) Scroll down / \(&#xC6B0;\) Scroll up \(&#xC138;&#xB85C; &#xC2A4;&#xD06C;&#xB864;&#xC774; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9; &#xAC00;&#xB2A5;\)](../../.gitbook/assets/fab_2%20%282%29.png)
 {% endtab %}
 
 {% tab title="Button" %}
@@ -71,7 +71,7 @@ NUGU 버튼과 아래 레이어의 콘텐츠가 중첩되는 경우 **FAB 사용
 
 ## **NUGU Voice chrome Window**
 
-Voice Chrome 실행시 NUGU Voice chrom Window가 활성화됩니다. Voice chrome은 최상단 레이어로, 화면의 하단 영역에 위치합니다. Light / Dark Theme  중 한 가지를 선택 적용할 수 있습니다.
+Voice Chrome 실행시 NUGU Voice chrom Window가 활성화됩니다. Voice chrome은 최상단 레이어로, 화면의 하단 영역에 위치합니다. Light / Dark Theme  중 한 가지 타입 선택 적용할 수 있습니다.
 
 | Light Theme |  Dark Theme |
 | :--- | :--- |
