@@ -81,7 +81,7 @@ Voice chrome window를 닫는 동작은 아래 2가지입니다. App 화면 영�
 
 App 화면 영역을 터치하면, **Voice Chrome이 닫히고, 해당 화면의 액션버튼이 실행**됩니다.                                                               Android back key는 모든 단계에서 닫기 동작이 가능합니다.
 
-![\(1\) App &#xD654;&#xBA74; &#xB2EB;&#xAE30;&#xB294; Listening-passive/Listening-active &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xB429;&#xB2C8;&#xB2E4;. \(Processing&#xC740; &#xB2EB;&#xAE30;&#xB3D9;&#xC791; &#xD558;&#xC9C0; &#xC54A;&#xC74C;\) ](../../.gitbook/assets/close%20%281%29.png)
+![\(1\) App &#xD654;&#xBA74; &#xB2EB;&#xAE30;&#xB294; Listening-passive/Listening-active &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xB429;&#xB2C8;&#xB2E4;. \(Processing&#xC740; &#xB2EB;&#xAE30; &#xB3D9;&#xC791; &#xD558;&#xC9C0; &#xC54A;&#xC74C;\) ](../../.gitbook/assets/close%20%281%29.png)
 
 
 
