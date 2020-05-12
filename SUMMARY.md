@@ -48,6 +48,7 @@
     * [Backend proxy 개발 가이드](nugu-play/create-plays-with-play-builder/use-backend-proxy/README.md)
       * [Backend proxy 구축하기](nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy.md)
       * [Capability Interfaces](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/README.md)
+        * [Untitled](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/untitled.md)
         * [AudioPlayer Interface](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-interface.md)
         * [AudioPlayer를 위한 Display Interface](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface.md)
         * [Display Interface](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md)
