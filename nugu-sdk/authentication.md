@@ -255,3 +255,151 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 {% endapi-method-spec %}
 {% endapi-method %}
 
+### Revoke Endpoint
+
+{% api-method method="post" host="" path="/v1/auth/oauth/revoke" %}
+{% api-method-summary %}
+ 연결 해제 \(Revoke Endpoint\) 
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="token" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="client\_id" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="client\_secret" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+HTTP/1.1 200 
+Date: Mon, 14 Oct 2019 03:01:27 GMT
+Content-Type: application/json;charset=UTF-8
+
+{}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+HTTP/1.1 400 
+Date: Mon, 14 Oct 2019 04:22:45 GMT
+Content-Type: application/json;charset=UTF-8
+
+{"error":"invalid_token","error_description":""}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+HTTP/1.1 401 
+Date: Mon, 14 Oct 2019 04:22:45 GMT
+Content-Type: application/json;charset=UTF-8
+
+{"error":"invalid_client","error_description":""}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+### Introspect Endpoint
+
+{% api-method method="post" host="" path="/v1/auth/oauth/introspect" %}
+{% api-method-summary %}
+연결 조회 \(Introspect Endpoint\)
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-query-parameters %}
+{% api-method-parameter name="token" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="client\_id" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="client\_secret" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-query-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+HTTP/1.1 200 
+Date: Mon, 14 Oct 2019 03:01:27 GMT
+Content-Type: application/json;charset=UTF-8
+
+{}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+HTTP/1.1 400 
+Date: Mon, 14 Oct 2019 04:22:45 GMT
+Content-Type: application/json;charset=UTF-8
+
+{"error":"invalid_token","error_description":""}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=401 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+HTTP/1.1 401 
+Date: Mon, 14 Oct 2019 04:22:45 GMT
+Content-Type: application/json;charset=UTF-8
+
+{"error":"invalid_client","error_description":""}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
