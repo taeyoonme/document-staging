@@ -368,7 +368,9 @@ HTTP/1.1 200
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
 
-{}
+{
+"active":true
+}
 ```
 {% endapi-method-response-example %}
 
