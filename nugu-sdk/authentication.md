@@ -268,7 +268,7 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-query-parameters %}
+{% api-method-form-data-parameters %}
 {% api-method-parameter name="token" type="string" required=true %}
 
 {% endapi-method-parameter %}
@@ -280,7 +280,7 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 {% api-method-parameter name="client\_secret" type="string" required=true %}
 
 {% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+{% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -342,7 +342,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-query-parameters %}
+{% api-method-form-data-parameters %}
 {% api-method-parameter name="token" type="string" required=true %}
 
 {% endapi-method-parameter %}
@@ -354,7 +354,7 @@ Content-Type: application/json;charset=UTF-8
 {% api-method-parameter name="client\_secret" type="string" required=true %}
 
 {% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
+{% endapi-method-form-data-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
