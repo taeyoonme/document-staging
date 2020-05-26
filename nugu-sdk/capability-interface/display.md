@@ -1,12 +1,12 @@
 # Display
 
-## Versoin
+## Version
 
 최신 버전은 1.3 입니다.
 
-## SDK interface
+## SDK Interface
 
-### Template
+### UI 구성
 
 Display 로 화면을 구성하기 위해 필요한 데이터는 [Template](display.md#directive-template) directive 에 포함되어 있으며, Application 으로 전달됩니다.
 
@@ -16,7 +16,7 @@ Display 로 화면을 구성하기 위해 필요한 데이터는 [Template](disp
 
 [iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/MainViewController.swift#L550)
 
-### Focus, Scroll
+### UI 제어
 
 Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](display.md#controlfocus), [ControlScroll](display.md#controlscroll) directive 로 제어될 수 있습니다.
 
@@ -24,7 +24,7 @@ Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](d
 
 [iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/MainViewController.swift#L550)
 
-### Template interaction
+### 사용자 인터렉션 처리
 
 Template 하위 항목 선택시 [ElementSelected](display.md#elementselected) event 가 전달됩니다.
 

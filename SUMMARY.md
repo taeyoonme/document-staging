@@ -114,7 +114,7 @@
     * [사용자 그룹 관리](nugu-play/work-with-nugu-biz/manage-enrolled-user.md)
 * [NUGU SDK](nugu-sdk/README.md)
   * [Authentication](nugu-sdk/authentication.md)
-  * [Capability interface](nugu-sdk/capability-interface/README.md)
+  * [Capability Interface](nugu-sdk/capability-interface/README.md)
     * [AudioPlayer](nugu-sdk/capability-interface/audioplayer.md)
     * [Display](nugu-sdk/capability-interface/display.md)
     * [System](nugu-sdk/capability-interface/system.md)
