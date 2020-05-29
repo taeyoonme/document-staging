@@ -35,5 +35,95 @@ Event 요청에 대한 응답값으로 1개 이상의 Directive 가 전달됩니
 
 Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께 서버로 전달됩니다.
 
+### 구조
 
+```text
+{
+  "supportedInterfaces": {
+    "{{STRING}}": {}
+  },
+  "client": {
+    "os": "{{STRING}}",
+    "wakeupWord": "{{STRING}}",
+    "playStack": [
+      "{{STRING}}"
+    ]
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">supportedIntefacaces</td>
+      <td style="text-align:left">map</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">Capability interface &#xC758; Context &#xC815;&#xBCF4;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>supportedIntefacaces.</p>
+        <p>key</p>
+      </td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">Capability interface &#xC758; &#xC774;&#xB984;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>supportedIntefacaces.</p>
+        <p>value</p>
+      </td>
+      <td style="text-align:left">Object</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">Capability interface &#xC758; Context</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">client</td>
+      <td style="text-align:left">map</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC758; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;
+        &#xC815;&#xBCF4;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">client.os</td>
+      <td style="text-align:left">String</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">Android, iOS, Linux</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">client.wakeupWord</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p>&#xC544;&#xB9AC;&#xC544;, &#xD305;&#xCEE4;&#xBCA8;</p>
+        <p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC124;&#xC815;&#xB41C;
+          wakeup word</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">client.playStack</td>
+      <td style="text-align:left">Array&lt;String&gt;</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xC911;&#xC778;
+        playServiceId &#xBAA9;&#xB85D;</td>
+    </tr>
+  </tbody>
+</table>
+
+### supportedInterfaces 전송 규칙
+
+* ASR.Recognize, Text.TextInput, System.SynchronizeState, Display.ElementSelected event
+  * 전체 capability interface 의 context
+* 그 외 event
+  * 해당 capability interface 의 context
+  * 다른 capability interface 의 context 중 version 만 포함
 
