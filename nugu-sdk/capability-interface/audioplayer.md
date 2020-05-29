@@ -2,37 +2,51 @@
 
 ## Version
 
-AudioPlayer 의 최신 버전은 1.2 입니다.
+최신 버전은 1.2 입니다.
+
+##  State Diagram
+
+![](../../.gitbook/assets/image%20%285%29.png)
 
 ## SDK Interface
 
+### 재생 상태 정보
+
+재생 상태를 모니터링 할 수 있습니다.
+
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/audioplayer/AudioPlayerAgentInterface.kt#L42)
+
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/AudioPlayer/AudioPlayerAgentDelegate.swift#L28)
+
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/audio_player_interface.hh#L89)
+
 ### UI 구성
 
-AudioPlayer 로 곡을 재생할 때 화면을 구성하기 위해 필요한 데이터는 [Play](audioplayer.md#play) directive 의 `audioItem.metadata.template` 에 포함되어 있으며, Application 으로 전달됩니다.
+AudioPlayer 로 곡을 재생할 때 화면을 구성하기 위해 필요한 데이터는 [Play](audioplayer.md#play) directive 의 `audioItem.metadata.template` 에 포함되어 전달됩니다.
 
 [Stop](audioplayer.md#stop) directive 또는 SDK 내부 timer 등에 의해 종료될 수 있으며, [UpdateMetadata](audioplayer.md#updatemetadata) directive 에 의해 변경될 수 있습니다.
 
-[Android sample](https://github.com/nugu-developers/nugu-android/blob/ddf7d456cc403e753eabdbe6a595a16220ae337f/app/src/main/java/com/skt/nugu/sampleapp/template/FragmentTemplateRenderer.kt#L42)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L41)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/MainViewController.swift#L594)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/AudioPlayer/Display/AudioPlayerDisplayDelegate.swift#L24)
 
 ### UI 제어
 
 [AudioPlayer.Template1](audioplayer.md#audioitem-metadata-template-audioplayer-template1) 에 포함된 가사의 화면은 `사용자 발화` 에 따라 [ShowLyrics](audioplayer.md#showlyrics), [HideLyrics](audioplayer.md#hidelyrics), [ControlLyricsPage](audioplayer.md#controllyricspage) directive 로 제어될 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/4c9f87c9f2b4f3a69258c16cff3aca5aec98e7d2/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/audioplayer/lyrics/LyricsPresenter.kt)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/audioplayer/lyrics/LyricsPresenter.kt#L18)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/MainViewController.swift#L594)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/AudioPlayer/Display/AudioPlayerDisplayDelegate.swift#L24)
 
-### 사용자 인터렉션
+### 제어 명령
 
 PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이전](audioplayer.md#previouscommandissued)/[즐겨찾기](audioplayer.md#favoritecommandissued)/[반복](audioplayer.md#repeatcommandissued)/[셔플](audioplayer.md#shufflecommandissued) 요청을 event 로 전달할 수 있습니다.
 
-[Android sample](https://github.com/nugu-developers/nugu-android/blob/1a2f4ca4ec95626d50b6658852a82815d8e77178/app/src/main/java/com/skt/nugu/sampleapp/template/TemplateViews.kt#L125)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/audioplayer/AudioPlayerAgentInterface.kt#L112)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/Views/DisplayViews/DisplayAudioPlayerView.swift#L183)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/AudioPlayer/AudioPlayerAgentProtocol.swift#L60)
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/aadff2aafafff608c024625dbf9ef3c7612274d9/src/capability/audio_player_agent.hh#L60)
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/audio_player_interface.hh#L169)
 
 ## Context
 
@@ -249,7 +263,9 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
         &#xD568;</td>
     </tr>
   </tbody>
-</table>#### audioItem.metadata.template - AudioPlayer.Template1
+</table>
+
+#### audioItem.metadata.template - AudioPlayer.Template1
 
 ```text
 {
@@ -585,7 +601,9 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
       <td style="text-align:left">&#xBC1C;&#xD654; &#xB3C4;&#xC6C0;&#xB9D0;</td>
     </tr>
   </tbody>
-</table>#### audioItem.metadata.template - AudioPlayer.Template2
+</table>
+
+#### audioItem.metadata.template - AudioPlayer.Template2
 
 ```text
 {
@@ -742,7 +760,9 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
       <td style="text-align:left">&#xBC1C;&#xD654; &#xB3C4;&#xC6C0;&#xB9D0;</td>
     </tr>
   </tbody>
-</table>### Stop
+</table>
+
+### Stop
 
 현재 곡 중지 요청입니다.
 
@@ -860,7 +880,9 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
       <td style="text-align:left">AudioPlayer.Template1&#xC758; settings.shuffle &#xACFC; &#xC5F0;&#xB3D9;</td>
     </tr>
   </tbody>
-</table>### ShowLyrics
+</table>
+
+### ShowLyrics
 
 가사화면 표시 요청입니다.
 
@@ -1042,7 +1064,9 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
       </td>
     </tr>
   </tbody>
-</table>### ShuffleCommandIssued
+</table>
+
+### ShuffleCommandIssued
 
 사용자가 셔플 재생을 요청하면 전송됩니다.
 

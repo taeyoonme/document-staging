@@ -113,7 +113,9 @@ Device-level error 발생 시에는 error 원인에 맞는 error code를 응답�
     </tr>
   </thead>
   <tbody></tbody>
-</table>| AlreadyAtMaxTemp | - | SmartHomeDevice의 설정 온도를 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 온도로 설정되어 있는 경우입니다. |
+</table>
+
+| AlreadyAtMaxTemp | - | SmartHomeDevice의 설정 온도를 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 온도로 설정되어 있는 경우입니다. |
 | :--- | :--- | :--- |
 
 
@@ -202,7 +204,9 @@ Device-level error 발생 시에는 error 원인에 맞는 error code를 응답�
     </tr>
   </thead>
   <tbody></tbody>
-</table>| AlreadyAtMaxHumidity | - | SmartHomeDevice의 설정 습도를 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 습도로 설정되어 있는 경우입니다. |
+</table>
+
+| AlreadyAtMaxHumidity | - | SmartHomeDevice의 설정 습도를 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 습도로 설정되어 있는 경우입니다. |
 | :--- | :--- | :--- |
 
 

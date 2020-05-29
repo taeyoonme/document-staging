@@ -98,7 +98,9 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
       <td style="text-align:center">&lt;</td>
     </tr>
   </tbody>
-</table>#### Prompt의 유형 <a id="prompt-types"></a>
+</table>
+
+#### Prompt의 유형 <a id="prompt-types"></a>
 
 Play Builder의 Prompt에는 3가지 유형이 있습니다.
 
@@ -130,7 +132,9 @@ Play Builder의 Prompt에는 3가지 유형이 있습니다.
         &#xC138;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.</td>
     </tr>
   </tbody>
-</table>Prompt는 사용 위치에 따라 다음과 같이 구분됩니다.
+</table>
+
+Prompt는 사용 위치에 따라 다음과 같이 구분됩니다.
 
 <table>
   <thead>
@@ -201,7 +205,9 @@ Play Builder의 Prompt에는 3가지 유형이 있습니다.
         </td>
     </tr>
   </tbody>
-</table>#### Silent Prompt Updated <a id="silent-prompt"></a>
+</table>
+
+#### Silent Prompt Updated <a id="silent-prompt"></a>
 
 사용자에게 빈 응답을 전달하고 싶을 경우, Silent Prompt를 사용할 수 있습니다. Silent Prompt는 Prompt 입력 창 우측의 버튼을 눌러 설정 가능합니다. Silent Prompt를 응답으로 설정하면, 아무 발화 없이 대기 모드로 넘어가거나 세션이 종료되므로 꼭 필요한 경우에만 사용하는 것이 좋습니다. Silent Prompt는 모든 유형의 Prompt에서 사용할 수 있습니다.
 
@@ -369,7 +375,9 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
         &#xB123;&#xC744; &#xC218; &#xC788;&#xB294; &#xD0DC;&#xADF8;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
   </tbody>
-</table>각 태그별 세부 기능은 다음과 같습니다.
+</table>
+
+각 태그별 세부 기능은 다음과 같습니다.
 
 <table>
   <thead>
@@ -831,7 +839,9 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>{% hint style="info" %}
+</table>
+
+{% hint style="info" %}
 Prompt 내에 사용하는 태그는 텍스트를 직접 입력하여 추가 또는 수정할 수 있습니다.
 {% endhint %}
 

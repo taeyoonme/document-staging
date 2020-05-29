@@ -8,35 +8,35 @@
 
 ### UI 구성
 
-Display 로 화면을 구성하기 위해 필요한 데이터는 [Template](display.md#directive-template) directive 에 포함되어 있으며, Application 으로 전달됩니다.
+Display 로 화면을 구성하기 위해 필요한 데이터는 [Template](display.md#directive-template) directive 에 포함되어 전달됩니다.
 
-[Close](display.md#close) directive 또는 SDK 내부 timer 등에 의해 종료될 수 있으며, [Update](display.md#update) directive 에 의해 변경될 수 있습니다.
+Template 화면은 [Close](display.md#close) directive 또는 SDK 내부 timer 등에 의해 종료될 수 있으며, [Update](display.md#update) directive 에 의해 변경될 수 있습니다.
 
-[Android sample](https://github.com/nugu-developers/nugu-android/blob/master/app/src/main/java/com/skt/nugu/sampleapp/template/FragmentTemplateRenderer.kt)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L41)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/MainViewController.swift#L550)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/Display/DisplayAgentDelegate.swift#L24)
 
 ### UI 제어
 
 Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](display.md#controlfocus), [ControlScroll](display.md#controlscroll) directive 로 제어될 수 있습니다.
 
-[Android sample](https://github.com/nugu-developers/nugu-android/blob/1a2f4ca4ec95626d50b6658852a82815d8e77178/app/src/main/java/com/skt/nugu/sampleapp/template/TemplateFragment.kt#L56)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L77)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/MainViewController.swift#L550)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/Display/DisplayAgentDelegate.swift#L24)
 
 ### 사용자 인터렉션 처리
 
 Template 하위 항목 선택시 [ElementSelected](display.md#elementselected) event 가 전달됩니다.
 
-[Android sample](https://github.com/nugu-developers/nugu-android/blob/1a2f4ca4ec95626d50b6658852a82815d8e77178/app/src/main/java/com/skt/nugu/sampleapp/template/TemplateViews.kt#L224)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayInterface.kt#L34)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/MainViewController.swift#L356)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/Display/DisplayAgentProtocol.swift#L42)
 
 Template 에 화면에 대한 사용자 interaction 발생시 SDK 로 notify 해주어야 내부 timer\(template 일정시간 노출 후 종료하기 위한\) 가 갱신됩니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/770180239d10fe0f147f86514fe4431b065c4bb5/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L84)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L84)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/UI/MainViewController.swift#L360)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/Display/DisplayAgentProtocol.swift#L45)
 
 ## Context
 
@@ -143,7 +143,9 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>| size value | Recommended Size \(in pixels\) |
+</table>
+
+| size value | Recommended Size \(in pixels\) |
 | :--- | :--- |
 | X\_SMALL | 480 x 320 |
 | SMALL | 720 x 480 |
@@ -203,7 +205,9 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
       </td>
     </tr>
   </tbody>
-</table>### Button Object
+</table>
+
+### Button Object
 
 ```text
 {
@@ -264,7 +268,9 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
       <td style="text-align:left">&#xD074;&#xB9AD; &#xC2DC; &#xC804;&#xB2EC;&#xB420; &#xD1A0;&#xD070; &#xAC12;</td>
     </tr>
   </tbody>
-</table>### TitleObject
+</table>
+
+### TitleObject
 
 ```text
 {
@@ -319,7 +325,9 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
       </td>
     </tr>
   </tbody>
-</table>### Duration
+</table>
+
+### Duration
 
 TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어야 하는 시간입니다.
 
@@ -358,7 +366,9 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
       </td>
     </tr>
   </tbody>
-</table>### ToggleButtonObject
+</table>
+
+### ToggleButtonObject
 
 ```text
 {
@@ -631,7 +641,9 @@ List 의 스크롤 이동 요청입니다.
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>### TextList1/2, ImageList1/2/3
+</table>
+
+### TextList1/2, ImageList1/2/3
 
 ```text
 {
@@ -869,7 +881,9 @@ List 의 스크롤 이동 요청입니다.
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>### TextList3/4
+</table>
+
+### TextList3/4
 
 ```text
 {
@@ -1105,7 +1119,9 @@ List 의 스크롤 이동 요청입니다.
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>### Weather1/2
+</table>
+
+### Weather1/2
 
 ```text
 {
@@ -1336,7 +1352,9 @@ List 의 스크롤 이동 요청입니다.
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>### Weather3/4
+</table>
+
+### Weather3/4
 
 ```text
 {

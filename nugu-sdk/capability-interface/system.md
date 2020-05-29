@@ -10,33 +10,33 @@
 
 `사용자 발화` 에 따라 [TurnOff](system.md#turnoff) directive 로 디바이스 전원을 제어할 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/7512f79c06e043ff28e94b2da75457c13792cc82/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/system/SystemAgentInterface.kt#L39)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/system/SystemAgentInterface.kt#L39)
 
-[Linux sample](https://github.com/nugu-developers/nugu-linux/blob/aadff2aafafff608c024625dbf9ef3c7612274d9/examples/standalone/capability/system_listener.cc#L46)
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/system_interface.hh#L73)
 
 ### 에러처리
 
-NUGU 서버에서 에러가 발생할 경우 [Exception](system.md#exception) directive 가 전달되며 error code 가 Application 으로 전달됩니다.
+NUGU 서버에서 에러가 발생할 경우 [Exception](system.md#exception) directive 로 error code가 전달됩니다.
 
 사용자가 에러 상황을 인지할 수 있도록 Toast, Local TTS 등으로 안내해야합니다.
 
-[Android sample](https://github.com/nugu-developers/nugu-android/blob/1c5e38973b968f255b8dfe4bbc43ee0344ac7de0/app/src/main/java/com/skt/nugu/sampleapp/activity/MainActivity.kt#L430)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/system/SystemAgentInterface.kt#L46)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/Manager/NuguCentralManager.swift#L402)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/System/SystemAgentDelegate.swift#L25)
 
-[Linux sample](https://github.com/nugu-developers/nugu-linux/blob/aadff2aafafff608c024625dbf9ef3c7612274d9/examples/standalone/capability/system_listener.cc#L20)
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/system_interface.hh#L68)
 
 ### 디바이스 등록 해제
 
-누구 서버에서 디바이스가 등록 해제되면 [Revoke](system.md#revoke) directive 가 전달되며 reason 이 Application 으로 전달됩니다.
+누구 서버에서 디바이스가 등록 해제되면 [Revoke](system.md#revoke) directive 로 reason 이 전달됩니다.
 
 Application 의 상황에 따라 NUGU 로그인 화면으로 이동하거나 NUGU Button 을 비활성화 해야합니다.
 
-[Android sample](https://github.com/nugu-developers/nugu-android/blob/1c5e38973b968f255b8dfe4bbc43ee0344ac7de0/app/src/main/java/com/skt/nugu/sampleapp/activity/MainActivity.kt#L424)
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/system/SystemAgentInterface.kt#L51)
 
-[iOS sample](https://github.com/nugu-developers/nugu-ios/blob/8c9dba0881a6fefdd739f90fc566f4b8fca8024f/SampleApp/Sources/Manager/NuguCentralManager.swift#L413)
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/System/SystemAgentDelegate.swift#L26)
 
-[Linux sample](https://github.com/nugu-developers/nugu-linux/blob/aadff2aafafff608c024625dbf9ef3c7612274d9/examples/standalone/capability/system_listener.cc#L51)
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/system_interface.hh#L79)
 
 ## Context
 

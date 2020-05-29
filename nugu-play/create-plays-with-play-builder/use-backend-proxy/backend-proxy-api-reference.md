@@ -149,7 +149,9 @@ AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
       </td>
     </tr>
   </tbody>
-</table>## Response Sample
+</table>
+
+## Response Sample
 
 ```javascript
 {
@@ -258,7 +260,9 @@ AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
       <td style="text-align:left"></td>
     </tr>
   </tbody>
-</table>## Health check
+</table>
+
+## Health check
 
 서비스 정상 여부를 확인하기 위해 다음의 /health url을 다음과 같이 구현해야 합니다. NUGU developers에서는 이 URL을 주기적으로 요청해서 서버의 정상 여부를 판단합니다. 정상적으로 서비스가 가능하면 HTTP Status code를 "200 OK"로 리턴합니다. \(결과 텍스트는 OK 등 아무 문자나 리턴해도 됩니다.\)
 

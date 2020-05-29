@@ -225,7 +225,9 @@ image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
         <br />default : 0.7</td>
     </tr>
   </tbody>
-</table>### 
+</table>
+
+### 
 
 ### TextObject
 
@@ -1328,7 +1330,9 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
       </td>
     </tr>
   </tbody>
-</table>#### Sample Code
+</table>
+
+#### Sample Code
 
 ```yaml
 {
