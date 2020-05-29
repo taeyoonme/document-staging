@@ -40,8 +40,6 @@ Template 에 화면에 대한 사용자 interaction 발생시 SDK 로 notify 해
 
 ## Context
 
-`DisplayPlayerAgent` 의 현재 상태를 의미하는 데이터입니다.
-
 ```text
 {
   "Display": {

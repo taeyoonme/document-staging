@@ -40,8 +40,6 @@ Application 의 상황에 따라 NUGU 로그인 화면으로 이동하거나 NUG
 
 ## Context
 
-`SystemAgent` 의 현재 상태를 의미하는 데이터입니다.
-
 ```text
 {
   "System": {

@@ -1,3 +1,7 @@
+---
+description: 음성인식 결과를 Play 로 전달하기 위한 규격
+---
+
 # ASR
 
 ## Version
@@ -49,8 +53,6 @@
 [Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L163)
 
 ## Context
-
-`ASRAgent` 의 현재 상태를 의미하는 데이터입니다.
 
 ```text
 {

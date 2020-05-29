@@ -1,3 +1,7 @@
+---
+description: 음성 합성 결과를 전달받기 위한 규격
+---
+
 # TTS
 
 ## Version
@@ -17,8 +21,6 @@
 [Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/tts_interface.hh#L68)
 
 ## Context
-
-`TTSAgent` 의 현재 상태를 의미하는 데이터입니다.
 
 ```text
 {

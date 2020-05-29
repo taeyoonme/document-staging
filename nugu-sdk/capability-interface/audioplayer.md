@@ -50,8 +50,6 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 ## Context
 
-`AudioPlayerAgent` 의 현재 상태를 의미하는 데이터입니다.
-
 ```text
 {
   "AudioPlayer": {
