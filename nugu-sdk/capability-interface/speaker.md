@@ -1,5 +1,5 @@
 ---
-description: 디바이스의 볼륨을 제어하기 위한 규격입니다.
+description: 디바이스의 볼륨을 제어하기 위한 규격
 ---
 
 # Speaker
