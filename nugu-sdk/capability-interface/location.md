@@ -10,7 +10,9 @@ description: 디바이스 위치 정보를 Play 로 전달하기 위한 규격
 
 ## SDK Interface
 
-### 디바이스 위치 정보 전달
+### Context 구성
+
+디바이스 위치 정보를 [Context](location.md#context) 에 포함시켜 주어야 합니다.
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/location/LocationProvider.kt#L26)
 

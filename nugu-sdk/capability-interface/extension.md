@@ -18,7 +18,7 @@ Play 개발자와 Application 개발자는 Context, Directive, Event 의 data �
 
 ### Context 구성
 
-Play 에서 알아야 하는 디바이스/Application 의 정보를 Event 에 포함하여 전달할 수 있습니다.
+Play 에서 알아야 하는 디바이스/Application 의 정보를 [Context](extension.md#context) 에 포함시켜 주어야 합니다.
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/extension/ExtensionAgentInterface.kt#L42)
 

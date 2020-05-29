@@ -6,6 +6,14 @@
 
 ## SDK Interface
 
+### Context 구성
+
+Template 화면의 상태 정보를 [Context](display.md#context) 에 포함시켜 주어야 합니다.
+
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L77)
+
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Interface/Display/DisplayAgentDelegate.swift#L24)
+
 ### UI 구성
 
 Display 로 화면을 구성하기 위해 필요한 데이터는 [Template](display.md#directive-template) directive 에 포함되어 전달됩니다.
