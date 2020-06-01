@@ -152,11 +152,15 @@ Content-Type: application/json;charset=UTF-8
 
 {% api-method-response-example httpCode=401 %}
 {% api-method-response-example-description %}
-unauthorized - 인가되지 않은 사용자 정보 입니다.  
-unauthorized\_client - 인가되지 않은 클라이언트 입니다.  
-invalid\_token - 유효하지 않은 토큰 입니다.  
-invalid\_client - 유효하지 않은 클라이언 정보 입니다.  
-access\_denied - 접근이 거부 되었습니다.
+error.unauthorized - 인가되지 않은 사용자 정보 입니다.  
+error.unauthorized\_client - 인가되지 않은 클라이언트 입니다.  
+error.invalid\_token - 유효하지 않은 토큰 입니다.  
+error.invalid\_client - 유효하지 않은 클라이언 정보 입니다.  
+error.access\_denied - 접근이 거부 되었습니다.  
+code.user\_account\_closed - 탈퇴한 사용자 입니다.  
+code.user\_account\_paused - 휴면 상태 사용자 입니다.  
+code.user\_device\_disconnected - 연결 해제된 상태입니다.  
+code.user\_device\_unexpected - 내부 검증 토큰이 불일치 합니다.
 {% endapi-method-response-example-description %}
 
 ```
