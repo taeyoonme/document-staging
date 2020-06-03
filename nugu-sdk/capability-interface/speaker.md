@@ -12,7 +12,7 @@ description: 디바이스의 볼륨을 제어하기 위한 규격
 
 ### Context 구성
 
-디바이스의 볼륨 상태를 [Context](speaker.md#context) 포함시켜 주어야 합니다.
+디바이스의 볼륨 상태를 [Context](speaker.md#context) 에 포함시켜 주어야 합니다.
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/speaker/Speaker.kt#L23)
 

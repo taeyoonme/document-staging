@@ -22,7 +22,7 @@
 
 ### UI 구성
 
-AudioPlayer 로 곡을 재생할 때 화면을 구성하기 위해 필요한 데이터는 [Play](audioplayer.md#play) directive 의 `audioItem.metadata.template` 에 포함되어 전달됩니다.
+AudioPlayer 로 음원을 재생할 때 화면을 구성하기 위해 필요한 데이터는 [Play](audioplayer.md#play) directive 의 `audioItem.metadata.template` 에 포함되어 전달됩니다.
 
 [Stop](audioplayer.md#stop) directive 또는 SDK 내부 timer 등에 의해 종료될 수 있으며, [UpdateMetadata](audioplayer.md#updatemetadata) directive 에 의해 변경될 수 있습니다.
 
@@ -75,7 +75,7 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 ### Play
 
-새로운 곡 또는 현재 곡 재생 요청입니다.\(Play, Resume, Seek 요청이 포함되어 있습니다.\)
+새로운 음원 또는 현재 음원 재생 요청입니다.\(Play, Resume, Seek 요청이 포함되어 있습니다.\)
 
 ```text
 {
@@ -560,8 +560,8 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
       </td>
       <td style="text-align:left">boolean</td>
       <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xACE1;&#xC5D0; &#xB300;&#xD55C; &#xC88B;&#xC544;&#xC694;
-        &#xC5EC;&#xBD80;</td>
+      <td style="text-align:left">&#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xC74C;&#xC6D0;&#xC5D0; &#xB300;&#xD55C;
+        &#xC88B;&#xC544;&#xC694; &#xC5EC;&#xBD80;</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -586,7 +586,7 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
       </td>
       <td style="text-align:left">boolean</td>
       <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC7AC;&#xC0DD; &#xBAA9;&#xB85D;&#xC758; &#xACE1;&#xC744; &#xC784;&#xC758;&#xC758;
+      <td style="text-align:left">&#xC7AC;&#xC0DD; &#xBAA9;&#xB85D;&#xC758; &#xC74C;&#xC6D0;&#xC744; &#xC784;&#xC758;&#xC758;
         &#xC21C;&#xC11C;&#xB85C; &#xC7AC;&#xC0DD;&#xD560;&#xC9C0; &#xC5EC;&#xBD80;</td>
     </tr>
     <tr>
@@ -762,7 +762,7 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 ### Stop
 
-현재 곡 중지 요청입니다.
+음원 재생 중지 요청입니다.
 
 ```text
 {
@@ -781,7 +781,7 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 ### Pause
 
-현재 곡 일시정지 요청입니다.
+음원 일시정지 요청입니다.
 
 ```text
 {
@@ -800,7 +800,7 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 ### UpdateMetadata
 
-현재 곡의 Metadata UI 설정 정보를 갱신 요청입니다.
+음원의 Metadata UI 설정 정보를 갱신 요청입니다.
 
 ```text
 {
@@ -946,7 +946,7 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 ### NextCommandIssued
 
-사용자가 다음 곡 재생을 요청하면 전송됩니다.
+사용자가 다음 음원 재생을 요청하면 전송됩니다.
 
 ```text
 {
@@ -972,7 +972,7 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 ### PreviousCommandIssued
 
-사용자가 이전 곡 재생을 요청하면 전송됩니다.
+사용자가 이전 음원 재생을 요청하면 전송됩니다.
 
 ```text
 {
@@ -998,7 +998,7 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 ### FavoriteCommandIssued
 
-사용자가 현재 곡 즐겨찾기\(좋아요 포함\)를 요청하면 전송됩니다.
+사용자가 현재 음원 즐겨찾기\(좋아요 포함\)를 요청하면 전송됩니다.
 
 ```text
 {
@@ -1018,11 +1018,11 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| favorite | boolean | Y | 재생 중인 곡에 대한 좋아요 여부 |
+| favorite | boolean | Y | 재생 중인 음원에 대한 좋아요 여부 |
 
 ### RepeatCommandIssued
 
-사용자가 현재 곡 반복 재생을 요청하면 전송됩니다.
+사용자가 현재 음원 반복 재생을 요청하면 전송됩니다.
 
 ```text
 {
@@ -1086,5 +1086,5 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| shuffle | boolean | Y | 재생 목록의 곡을 임의의 순서로 재생할지 여부 |
+| shuffle | boolean | Y | 재생 목록의 음원을 임의의 순서로 재생할지 여부 |
 
