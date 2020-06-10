@@ -72,7 +72,9 @@ NUGU를 탑재한 기기의 상태는 다음과 같습니다.
       </td>
     </tr>
   </tbody>
-</table>#### **초기 기기 상태**
+</table>
+
+#### **초기 기기 상태**
 
 NUGU 기기의 초기 상태는 다음과 같습니다. 마이크\(Microphone\) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off 
 
@@ -144,7 +146,9 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
         &#xD398;&#xC5B4;&#xB9C1;&#xC744; &#xD558;&#xAC70;&#xB098; &#xD574;&#xC81C;&#xD569;&#xB2C8;&#xB2E4;.</td>
     </tr>
   </tbody>
-</table>* 자주 사용하는 버튼은 기기의 상단 부에 배치하여 누르기 용이하도록 합니다.
+</table>
+
+* 자주 사용하는 버튼은 기기의 상단 부에 배치하여 누르기 용이하도록 합니다.
 * 서로 대응되는 버튼\(예: 볼륨 증가, 볼륨 감소 버튼\)은 가까운 곳에 배치하여 사용자가 위치를 쉽게 인지할 수 있도록 합니다.
 * 버튼을 눌렀을 때 버튼이 눌렸다는 것을 사용자가 소리 또는 LED를 통해 알 수 있도록 합니다.
 * 버튼을 길게 누르거나, 2개 이상의 버튼 조합으로 기능이 실행되도록 할 수 있습니다. 이렇게 동작하는 방식은 사용자가 인지하고 사용하기 어려우므로 자주 사용하지 않는 기능이나, 쉽게 실행되어서는 안 되는 기능을 제공할 때 사용하도록 합니다.
@@ -255,6 +259,8 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
   </tbody>
 </table>
 
+
+
 ## 소리 
 
 효과음은 음성이 아닌 비프음이나 사운드 등을 의미합니다. 상황 별 정해진 특징적인 효과음을를 제공함으로써 음성으로 설명하지 않고도 상태 및 동작에 대하여 사용자가 인식할 수 있도록 합니다. 효과음은 대 상태를 알리는 데에 사용되는 1\) 기본 효과음과 특정 서비스 동작과 관련된 2\)서비스 효과음로 나뉩니다.
@@ -283,7 +289,9 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
         </td>
     </tr>
   </tbody>
-</table>{% file src="../../.gitbook/assets/bootcomplete\_3800ms.ogg" caption="전원 켜짐 완료음" %}
+</table>
+
+{% file src="../../.gitbook/assets/bootcomplete\_3800ms.ogg" caption="전원 켜짐 완료음" %}
 
 ![](../../.gitbook/assets/undefined%20%282%29.png)
 
@@ -309,7 +317,9 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
       </td>
     </tr>
   </tbody>
-</table>{% file src="../../.gitbook/assets/start\_listening\_500ms-1.wav" caption="호출 효과음" %}
+</table>
+
+{% file src="../../.gitbook/assets/start\_listening\_500ms-1.wav" caption="호출 효과음" %}
 
 호출어 발화 시
 
@@ -341,7 +351,9 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
         </td>
     </tr>
   </tbody>
-</table>{% file src="../../.gitbook/assets/end\_listening\_500ms.wav" caption="인식 완료음" %}
+</table>
+
+{% file src="../../.gitbook/assets/end\_listening\_500ms.wav" caption="인식 완료음" %}
 
 ![](../../.gitbook/assets/undefined%20%283%29.png)
 
@@ -382,7 +394,9 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
       </td>
     </tr>
   </tbody>
-</table>{% file src="../../.gitbook/assets/responsefail\_500ms \(1\).wav" caption="응답 실패음" %}
+</table>
+
+{% file src="../../.gitbook/assets/responsefail\_500ms \(1\).wav" caption="응답 실패음" %}
 
 잡음 / 1음절 발화 / 블랙 리스트 발화 시
 
@@ -415,7 +429,9 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
       </td>
     </tr>
   </tbody>
-</table>![](../../.gitbook/assets/undefined%20%286%29.png)
+</table>
+
+![](../../.gitbook/assets/undefined%20%286%29.png)
 
 ### **2\) 서비스 효과음\(Service Feedback Sound\)**
 
@@ -452,7 +468,9 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
       style="text-align:left">&#xBB34;&#xB4DC;&#xB4F1; &#xC81C;&#xC5B4;&#xC74C; &#xC7AC;&#xC0DD; X</td>
     </tr>
   </tbody>
-</table>**볼륨 제어 \(Volume up/down\)**
+</table>
+
+**볼륨 제어 \(Volume up/down\)**
 
 볼륨을 올리거나 내릴 때 제공되는 효과입니다. 볼륨 제어 이후에 소리를 재생하여, 사용자가 변경된 볼륨 크기를 인지할 수 있도록 합니다. 음원이나 Prompt 재생 중에는 재생되고 있는 음원/Prompt로 볼륨 크기를 인지할 수 있으므로 볼륨 제어 효과음을 제공하지 않습니다. 볼륨을 0으로 변경 시에는 볼륨 제어 소리를 재생하여도 음소거 상태이므로 볼륨 제어 소리가 들리지 않게 되며 이는 정상 동작입니다. 하드웨어 버튼으로 볼륨 조절 시에도 소리를 제공하도록 합니다.
 

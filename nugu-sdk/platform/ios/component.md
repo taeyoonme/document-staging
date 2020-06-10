@@ -5,12 +5,12 @@
 ## 구성요소 목록
 
 {% hint style="info" %}
-NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguInterface` Framework를 필수로 포함해야 합니다.
+NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguAgents` Framework를 필수로 포함해야 합니다.
 {% endhint %}
 
 * NUGU Component \(Common\)
   * **`NuguCore`**: NUGU 서비스 이용에 필요한 구성요소들의 기본 구현을 제공합니다.
-  * **`NuguInterface`**: NUGU SDK를 구성할 때 필요한 Protocol과 Enum을 제공합니다.
+  * **`NuguAgents`**: NUGU SDK를 구성할 때 필요한 capability agent를 제공합니다.
   * `NuguClientKit`: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
 * NUGU Component \(Depends on platform\)
   * `NuguLoginKit`: NUGU 서비스 이용을 위한 OAuth 인증을 도와주는 기능을 제공합니다.
@@ -27,7 +27,7 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguInterface` F
 
 | 이름 | 주소 |
 | :--- | :--- |
-| `NuguCore` `NuguInterface` `NuguClientKit` `NuguLoginKit` | [https://github.com/nugu-developers/nugu-ios](https://github.com/nugu-developers/nugu-ios) |
+| `NuguCore` `NuguAgents` `NuguClientKit` `NuguLoginKit` | [https://github.com/nugu-developers/nugu-ios](https://github.com/nugu-developers/nugu-ios) |
 | `NattyLog` | [https://github.com/nugu-developers/natty-log-ios](https://github.com/nugu-developers/natty-log-ios) |
 | `KeenSense` | [https://github.com/nugu-developers/keen-sense-ios](https://github.com/nugu-developers/keen-sense-ios) |
 | `JadeMarble` | [https://github.com/nugu-developers/jade-marble-ios](https://github.com/nugu-developers/jade-marble-ios) |
@@ -51,7 +51,7 @@ NUGU SDK for iOS의 각각의 구성요소는 CocoaPods를 통해 의존성 관�
 ```ruby
 target 'your_application' do
     pod 'NuguCore'
-    pod 'NuguInterface'
+    pod 'NuguAgents'
     pod 'NuguClientKit'
     pod 'NuguLoginKit'
     pod 'NattyLog'

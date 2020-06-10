@@ -294,3 +294,4 @@ SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규
     </tr>
   </tbody>
 </table>
+

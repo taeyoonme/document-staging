@@ -80,5 +80,7 @@
         <td style="text-align:left">device_GW_error_006</td>
     </tr>
   </tbody>
-</table>{% file src="../../.gitbook/assets/error-message.zip" %}
+</table>
+
+{% file src="../../.gitbook/assets/error-message.zip" %}
 

@@ -54,7 +54,9 @@ Response Filter는 Parameter에 담긴 값 또는 형식을 변환시킬 수 있
       <td style="text-align:left">:</td>
     </tr>
   </tbody>
-</table>## NLG Translator <a id="nlg-translator"></a>
+</table>
+
+## NLG Translator <a id="nlg-translator"></a>
 
 날씨를 안내할 때, "오늘 날씨는 `{{status}}`" 같이, 외부\(기상 정보 제공 서버\)에서 날씨 상태값을 체크한 뒤, 외부 연동 서버\(Backend proxy\)에서 "맑겠습니다.", "눈이 올 예정입니다"와 같이 Prompt의 일부를 처리하는 것도 가능합니다.
 

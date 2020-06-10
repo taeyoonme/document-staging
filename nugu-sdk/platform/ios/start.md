@@ -16,6 +16,7 @@
 target '{Your_Application}' do
   pod 'NuguClientKit'
   pod 'NuguLoginKit'
+  pod 'NuguUIKit'
 end
 ```
 
@@ -73,21 +74,39 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
 
 #### 설정하기
 
-다운로드 받은 파일을 각각의 Assets 디렉토리로 파일을 이동합니다.
+다운로드 받은 파일을 Application 에 복사하고 target 으로 추가합니다.
 
-* Wake-up 모델
-  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_tinkerbell.raw`
-  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_tinkerbell.raw`
-  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_search_aria.raw`
-  * `./Pods/KeenSense/KeenSense/Assets/skt_trigger_am_aria.raw`
-* EPD 모델
-  * `./Pods/JadeMarble/JadeMarble/Assets/skt_epd_model.raw`
+* Example
+  * `{application path}/Supporting Files/skt_trigger_search_tinkerbell.raw`
+  * `{application path}/Supporting Files/skt_trigger_am_tinkerbell.raw`
+  * `{application path}/Supporting Files/skt_trigger_search_aria.raw`
+  * `{application path}/Supporting Files/skt_trigger_am_aria.raw`
+  * `{application path}/Supporting Files/skt_epd_model.raw`
 
-음성인식 모델 파일을 Resources에 포함하기 위해 아래 Script를 실행합니다.
+음성인식 모델 파일을 SDK 로 전달합니다.
 
-```bash
-$ pod update
+{% tabs %}
+{% tab title="EndPointDetector 모델 파일 설정" %}
+```swift
+if let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw") {
+    let options = ASROptions(initiator: .user, endPointing: .client(epdFile: epdFile))
+    client.asrAgent.startRecognition(options: options)
+}
 ```
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="KeywordDetector 모델 파일 설정" %}
+```swift
+if let netFile = Bundle.main.url(forResource: "skt_trigger_am_aria", withExtension: "raw"),
+   let searchFile = Bundle.main.url(forResource: "skt_trigger_search_aria", withExtension: "raw") {
+    let keyword.keywordSource = KeywordSource(keyword: "아리아", netFileUrl: netFile, searchFileUrl: searchFile)
+    client.keywordDetector.keywordSource = keyword.keywordSource
+}
+```
+{% endtab %}
+{% endtabs %}
 
 ### 어플리케이션 권한 설정하기
 
@@ -126,9 +145,12 @@ import NuguLoginKit
 {% tabs %}
 {% tab title="AppDelegate.swift" %}
 ```swift
-func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    let handled = OAuthManager<Type1>.shared.handle(open: url, options: options)
-    return handled
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+    // Only for free pass of Sample app's Oauth validation check
+    guard let schemeReplacedUrl = SampleApp.schemeReplacedUrl(openUrl: url) else { return false }
+    
+    NuguOAuthClient.handle(url: schemeReplacedUrl)
+    return true
 }
 ```
 {% endtab %}
@@ -141,21 +163,28 @@ PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설�
 {% tabs %}
 {% tab title="ViewController.swift" %}
 ```swift
+lazy private(set) var oauthClient: NuguOAuthClient = {
+    do {
+        return try NuguOAuthClient(serviceName: Bundle.main.bundleIdentifier ?? "NuguSample")
+    } catch {
+        return NuguOAuthClient(deviceUniqueId: "{device-unique-id}")
+    }
+}()
+    
 func login() {
-    OAuthManager<Type1>.shared.provider = Type1(
-        clientId: "{client-id}",
-        clientSecret: "{client-secret}",
-        redirectUri: "{redirect-uri}",
-        deviceUniqueId: "{device-unique-id}"
-    )
-
-    OAuthManager<Type1>.shared.loginBySafariViewController(from: self) { (result) in
-        switch result {
-        case .success(let authInfo):
-            // Save authInfo
-        case .failure(let error):
-            // Occured error
-        }
+    oauthClient.authorize(
+        grant: AuthorizationCodeGrant(
+            clientId: "{client-id}",
+            clientSecret: "{client-secret}",
+            redirectUri: "{redirect-uri}"
+        ),
+        parentViewController: self) { (result) in
+            switch result {
+            case .success(let authInfo):
+                // Save authInfo
+            case .failure(let error):
+                // Occured error
+            }
     }
 }
 ```
@@ -170,7 +199,8 @@ func login() {
 {% tab title="ViewController.swift" %}
 ```swift
 func refresh() {
-    OAuthManager<Type1>.shared.loginSilently(by: "{refresh-token}") { (result) in
+
+    oauthClient.authorize(grant: RefreshTokenGrant(clientId: "{client-id}", clientSecret: "{client-secret}", refreshToken: "{refresh-token}")) { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo
@@ -208,7 +238,7 @@ func setAudioSession() throws {
     try AVAudioSession.sharedInstance().setCategory(
         .playAndRecord,
         mode: .default,
-        options: [.defaultToSpeaker]
+        options: [.defaultToSpeaker, .allowBluetoothA2DP]
     )
 }
 ```
@@ -228,25 +258,24 @@ func setAudioSession() throws {
 2. `NuguClient` 인스턴스를 생성합니다.     
 
    ```swift
-   let client = NuguClient.Builder().build()
+   let client = NuguClient(delegate: self)
    ```
 
-3. 로그인 결과로 받은 Access-token을 `NuguClient` 인스턴스에 설정합니다.    
+3. 로그인 결과로 받은 Access-token을 `NuguClientDelegate` 로 전달해야 합니다.
 
    ```swift
-   client.accessToken = "{access-token}"
+   func nuguClientRequestAccessToken() -> String? {
+       return "{access-token}"
+   }
    ```
 
-4. `NetworkManager`를 통해 NUGU서버와 연결합니다.    
+4. NUGU 서버와의 연결 이후 음성인식을 요청합니다.    
 
    ```swift
-   client.networkManager.connect()
-   ```
-
-5. NUGU 서버와의 연결 이후 음성인식을 요청합니다.    
-
-   ```swift
-   client.asrAgent.startRecognition()
+   if let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw") {
+       let options = ASROptions(initiator: .user, endPointing: .client(epdFile: epdFile))
+       client.asrAgent.startRecognition(options: options)
+   }
    ```
 
 ## 더 알아보기

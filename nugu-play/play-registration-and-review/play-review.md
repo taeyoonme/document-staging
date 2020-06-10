@@ -185,7 +185,9 @@ NUGU play와 기본 NUGU서비스 간 간섭을 방지하고자 아래와 같은
       </td>
     </tr>
   </tbody>
-</table><table>
+</table>
+
+<table>
   <thead>
     <tr>
       <th style="text-align:left"><b>&#xD5C8;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC74C;</b>
@@ -227,7 +229,9 @@ NUGU play와 기본 NUGU서비스 간 간섭을 방지하고자 아래와 같은
       </td>
     </tr>
   </tbody>
-</table>## 심사 요청 <a id="review-request"></a>
+</table>
+
+## 심사 요청 <a id="review-request"></a>
 
 개발 완료 및 충분한 테스트를 마친 Play는 Play정보 등록 이후 서비스 적합성에 대해 심사 요청하여 승인을 받아야 합니다.
 
