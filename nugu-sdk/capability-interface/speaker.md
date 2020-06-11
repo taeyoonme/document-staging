@@ -16,17 +16,23 @@ description: 디바이스의 볼륨을 제어하기 위한 규격
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/speaker/Speaker.kt#L23)
 
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/speaker_interface.hh#L52)
+
 ### 볼륨 제어
 
 디바이스의 볼륨 제어가 [SetVolume](speaker.md#setvolume) directive 로 요청될 수 있습니다.
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/speaker/Speaker.kt#L58)
 
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/speaker_interface.hh#L77)
+
 ### 음소거 제어
 
 디바이스의 볼륨 음소거 제어가 [SetMute](speaker.md#setmute) directive 로 요청될 수 있습니다.
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/speaker/Speaker.kt#L66)
+
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/speaker_interface.hh#L87)
 
 
 
