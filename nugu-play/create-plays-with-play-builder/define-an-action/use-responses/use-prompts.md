@@ -207,9 +207,13 @@ Prompt는 사용 위치에 따라 다음과 같이 구분됩니다.
   </tbody>
 </table>
 
-#### Silent Prompt Updated <a id="silent-prompt"></a>
+#### Silent Prompt <a id="silent-prompt"></a>
 
 사용자에게 빈 응답을 전달하고 싶을 경우, Silent Prompt를 사용할 수 있습니다. Silent Prompt는 Prompt 입력 창 우측의 버튼을 눌러 설정 가능합니다. Silent Prompt를 응답으로 설정하면, 아무 발화 없이 대기 모드로 넘어가거나 세션이 종료되므로 꼭 필요한 경우에만 사용하는 것이 좋습니다. Silent Prompt는 모든 유형의 Prompt에서 사용할 수 있습니다.
+
+![](../../../../.gitbook/assets/silentprompt.gif)
+
+
 
 ## 조사 처리하기 <a id="process-postpositions"></a>
 
