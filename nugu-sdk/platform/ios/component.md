@@ -9,14 +9,16 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguAgents` Fram
 {% endhint %}
 
 * NUGU Component \(Common\)
-  * **`NuguCore`**: NUGU 서비스 이용에 필요한 구성요소들의 기본 구현을 제공합니다.
-  * **`NuguAgents`**: NUGU SDK를 구성할 때 필요한 capability agent를 제공합니다.
+  * `NuguCore`: NUGU 서비스 이용에 필요한 구성요소들의 기본 구현을 제공합니다.
+  * `NuguAgents`: NUGU SDK를 구성할 때 필요한 capability agent를 제공합니다.
   * `NuguClientKit`: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
-* NUGU Component \(Depends on platform\)
-  * `NuguLoginKit`: NUGU 서비스 이용을 위한 OAuth 인증을 도와주는 기능을 제공합니다.
-* Vendor Component
   * `KeenSense`: NUGU의 키워드를 감지하는 기능을 제공합니다.
   * `JadeMarble`: 발화의 시작과 끝을 감지하는 기능을 제공합니다.
+* NUGU Component \(Depends on platform\)
+  * `NuguLoginKit`: NUGU 서비스 이용을 위한 OAuth 인증을 도와주는 기능을 제공합니다.
+  * `NuguServiceKit`: NUGU 서비스의 Play 설정을 위한 WebView 를 제공합니다.
+* Vendor Component
+  * `SilverTray`: Encoding 된 `Data` stream 을 재생하기 위한 Player 를 제공합니다.
   * `NattyLog`: 디버깅을 위한 로그를 출력을 도와주는 기능을 제공합니다. \(iOS Application 또는 Framework에서 직접 참조 및 사용이 가능합니다.\)
 * External Framework
   * `RxSwift`: NUGU SDK는 내부적으로 비동기처리 등을 위해 사용하고 있습니다.  \(NUGU SDK for iOS의 모든 인터페이스는 RxSwift와 관계없이 제공됩니다.\)
@@ -25,12 +27,45 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguAgents` Fram
 
 ### NUGU & Vendor Components
 
-| 이름 | 주소 |
-| :--- | :--- |
-| `NuguCore` `NuguAgents` `NuguClientKit` `NuguLoginKit` | [https://github.com/nugu-developers/nugu-ios](https://github.com/nugu-developers/nugu-ios) |
-| `NattyLog` | [https://github.com/nugu-developers/natty-log-ios](https://github.com/nugu-developers/natty-log-ios) |
-| `KeenSense` | [https://github.com/nugu-developers/keen-sense-ios](https://github.com/nugu-developers/keen-sense-ios) |
-| `JadeMarble` | [https://github.com/nugu-developers/jade-marble-ios](https://github.com/nugu-developers/jade-marble-ios) |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">&#xC774;&#xB984;</th>
+      <th style="text-align:left">&#xC8FC;&#xC18C;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">
+        <p><code>NuguCore</code>
+          <br /><code>NuguAgents</code>
+          <br /><code>NuguClientKit</code>
+          <br /><code>NuguLoginKit</code>
+        </p>
+        <p><code>NuguServiceKit</code>
+        </p>
+        <p><code>KeenSense</code>
+        </p>
+        <p><code>JadeMarble</code>
+        </p>
+      </td>
+      <td style="text-align:left"><a href="https://github.com/nugu-developers/nugu-ios">https://github.com/nugu-developers/nugu-ios</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>NattyLog</code>
+      </td>
+      <td style="text-align:left"><a href="https://github.com/nugu-developers/natty-log-ios">https://github.com/nugu-developers/natty-log-ios</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left"><code>SilverTray</code>
+      </td>
+      <td style="text-align:left"><a href="https://github.com/nugu-developers/silvertray-iOS">https://github.com/nugu-developers/keen-sense-ios</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ### External
 
@@ -54,9 +89,11 @@ target 'your_application' do
     pod 'NuguAgents'
     pod 'NuguClientKit'
     pod 'NuguLoginKit'
-    pod 'NattyLog'
+    pod 'NuguServiceKit'
     pod 'KeenSense'
     pod 'JadeMarble'
+    pod 'NattyLog'
+    pod 'SilverTray'
 end
 ```
 {% endcode %}
