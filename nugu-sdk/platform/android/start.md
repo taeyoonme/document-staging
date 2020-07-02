@@ -133,7 +133,7 @@ authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInte
                 // Save Credentials
             }
 
-            override fun onError(reason: String) {
+            override fun onError(error: NuguOAuthError) {
                 // Called when the request failed.
             }
         })
@@ -149,7 +149,7 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
                 // Save Credentials 
             }
 
-            override fun onError(reason: String) {
+            override fun onError(error: NuguOAuthError) {
                 // Called when the request failed.
             }
         })
