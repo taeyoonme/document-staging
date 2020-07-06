@@ -17,6 +17,7 @@ target '{Your_Application}' do
   pod 'NuguClientKit'
   pod 'NuguLoginKit'
   pod 'NuguUIKit'
+  pod 'NuguServiceKit'
 end
 ```
 

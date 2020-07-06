@@ -133,7 +133,7 @@ authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInte
                 // Save Credentials
             }
 
-            override fun onError(reason: String) {
+            override fun onError(error: NuguOAuthError) {
                 // Called when the request failed.
             }
         })
@@ -149,7 +149,7 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
                 // Save Credentials 
             }
 
-            override fun onError(reason: String) {
+            override fun onError(error: NuguOAuthError) {
                 // Called when the request failed.
             }
         })
@@ -162,7 +162,7 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
 1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다. 
 
    ```kotlin
-   val authDelegate = NuguOAuth.getClient()
+   val authDelegate = NuguOAuth.create(context)
    ```
 
 2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.   

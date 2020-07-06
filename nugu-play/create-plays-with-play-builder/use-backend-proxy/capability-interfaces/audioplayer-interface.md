@@ -139,15 +139,78 @@ Play Builder에서 Action을 정의하지 않는 경우 Fallback Action에 등�
 }
 ```
 
-| Parameter | Type | Mandatory | 설명 |
-| :--- | :--- | :--- | :--- |
-| url | string | Y | 오디오 콘텐츠의 URL을 입력합니다. |
-| offsetInMilliseconds | long | Y | 재생을 어느 offset\(위치\)에서 시작할지 설정합니다. 값이 '0'이면 처음부터 재생합니다. |
-| progressReportDelayInMilliseconds | long | N | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed 이벤트가 발생합니다.   \(offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.\) |
-| progressReportIntervalInMilliseconds | long | N | 재생을 시작해서 지정된 주기마다 progressReportIntervalElapsed 이벤트가 발생합니다.   \(offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.\) |
-| token | string | Y | 현재 stream을 나타내는 token입니다. |
-| expectedPreviousToken | string | N | 이전 stream을 나타내는 token입니다. |
-| metadata | object | N | reserved |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Parameter</th>
+      <th style="text-align:left">Type</th>
+      <th style="text-align:left">Mandatory</th>
+      <th style="text-align:left">&#xC124;&#xBA85;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">url</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xC624;&#xB514;&#xC624; &#xCF58;&#xD150;&#xCE20;&#xC758; URL&#xC744;
+        &#xC785;&#xB825;&#xD569;&#xB2C8;&#xB2E4;.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">offsetInMilliseconds</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xC7AC;&#xC0DD;&#xC744; &#xC5B4;&#xB290; offset(&#xC704;&#xCE58;)&#xC5D0;&#xC11C;
+        &#xC2DC;&#xC791;&#xD560;&#xC9C0; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.
+        &#xAC12;&#xC774; &apos;0&apos;&#xC774;&#xBA74; &#xCC98;&#xC74C;&#xBD80;&#xD130;
+        &#xC7AC;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">progressReportDelayInMilliseconds</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">&#xC7AC;&#xC0DD;&#xC744; &#xC2DC;&#xC791;&#xD574;&#xC11C; &#xC9C0;&#xC815;&#xB41C;
+        &#xC2DC;&#xAC04; &#xB4A4;&#xC5D0; &#xD55C; &#xBC88; progressReportDelayElapsed
+        &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;.
+        (offsetInMilliseconds &#xAC12;&#xACFC;&#xB294; &#xC0C1;&#xAD00;&#xC5C6;&#xC774;
+        &#xCF58;&#xD150;&#xCE20; &#xC2DC;&#xC791; &#xC2DC;&#xAC04;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C;
+        &#xD55C; &#xC808;&#xB300;&#xAC12;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">progressReportIntervalInMilliseconds</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">&#xC7AC;&#xC0DD;&#xC744; &#xC2DC;&#xC791;&#xD574;&#xC11C; &#xC9C0;&#xC815;&#xB41C;
+        &#xC8FC;&#xAE30;&#xB9C8;&#xB2E4; progressReportIntervalElapsed &#xC774;&#xBCA4;&#xD2B8;&#xAC00;
+        &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. (offsetInMilliseconds &#xAC12;&#xACFC;&#xB294;
+        &#xC0C1;&#xAD00;&#xC5C6;&#xC774; &#xCF58;&#xD150;&#xCE20; &#xC2DC;&#xC791;
+        &#xC2DC;&#xAC04;&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xD55C; &#xC808;&#xB300;&#xAC12;&#xC744;
+        &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p>&#xD604;&#xC7AC; stream&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; token&#xC785;&#xB2C8;&#xB2E4;.</p>
+        <p>token&#xC740; &#xC7AC;&#xC0DD;&#xD560; &#xC624;&#xB514;&#xC624; &#xCF58;&#xD150;&#xCE20;
+          &#xBCC4;&#xB85C; &#xACE0;&#xC720;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">expectedPreviousToken</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">&#xC774;&#xC804; stream&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; token&#xC785;&#xB2C8;&#xB2E4;.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">metadata</td>
+      <td style="text-align:left">object</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">reserved</td>
+    </tr>
+  </tbody>
+</table>
 
 audioItem.stream.progressReport는 오디오의 시작 시간을 기준으로 절대 위치에 해당하는 시간에 이벤트를 발생시켜야 합니다. 아래의 그림처럼 Play Directive에 의해 시작하는 위치와 무관하게 시작을 기준으로 설정한 시간이 되는 경우 이벤트가 발생됩니다.
 
