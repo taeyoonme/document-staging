@@ -385,7 +385,7 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| status | string | Y | on, off  |
+| status | string | Y | on, off |
 | token | string | Y | 클릭 시 전달될 토큰 값 |
 
 ### ContextLayer
@@ -1372,27 +1372,27 @@ List 의 스크롤 이동 요청입니다.
     "version": "1.1"
   },
   "payload": {
-	  "playServiceId": "{{STRING}}",
-	  "token": "{{STRING}}",
-	  "contextLayer": "{{STRING}}",
-	  "duration": "{{STRING}}",
-	  "title": TextObject,
-	  "background": BackgroundObject,
-	  "content": {
-	    "listItems": [
-	      {
-	        "header": TextObject,
-	        "body": TextObject,
-	        "image": ImageObject,
-	        "temperature": {
-	          "max": TextObject,
-	          "min": TextObject
-	        },
-	        "footer": TextObject,
+      "playServiceId": "{{STRING}}",
+      "token": "{{STRING}}",
+      "contextLayer": "{{STRING}}",
+      "duration": "{{STRING}}",
+      "title": TextObject,
+      "background": BackgroundObject,
+      "content": {
+        "listItems": [
+          {
+            "header": TextObject,
+            "body": TextObject,
+            "image": ImageObject,
+            "temperature": {
+              "max": TextObject,
+              "min": TextObject
+            },
+            "footer": TextObject,
           "focus": {{Boolean}}
-	      }
-	    ]
-	  },
+          }
+        ]
+      },
     "grammarGuide": GrammarGuide
   }
 }
@@ -1438,6 +1438,4 @@ List 의 스크롤 이동 요청입니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | token | string | **Y** |  |
-
-
 

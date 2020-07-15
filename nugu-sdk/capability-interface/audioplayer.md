@@ -4,7 +4,7 @@
 
 최신 버전은 1.2 입니다.
 
-##  State Diagram
+## State Diagram
 
 ![](../../.gitbook/assets/image%20%285%29.png)
 
