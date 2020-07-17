@@ -27,7 +27,10 @@ Discovery Sample Response
         "friendlyNameSuggestion": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
-            "humidityControl": {} <-- "습도 올려줘" 등 HumidityControl Capability 를 사용하기 위해서는 이 프로퍼티를 supportedCapabilities 에 포함해야 함.
+            "humidityControl": {
+                  "minHumidity": "10",
+                  "maxHumidity": "100"
+            }<-- "습도 올려줘" 등 HumidityControl Capability 를 사용하기 위해서는 이 프로퍼티를 supportedCapabilities 에 포함해야 함.
         },
         "customData": {
             "foo": "bar"
@@ -41,6 +44,8 @@ SmartHomeDevice Attribute Parameters
 
 | Attribute | Description |
 | :--- | :--- |
+| minHumidity | 해당 SmartHomeDevice가 지원하는 최저 자체 설정 습입니다. |
+| maxHumidity | 해당 SmartHomeDevice가 지원하는 최고 자체 설정 습입니다. |
 | customData | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다. customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 
 ## Directive

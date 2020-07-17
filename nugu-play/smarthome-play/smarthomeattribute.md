@@ -40,11 +40,11 @@ IoT ServiceProvider 및 제품에 따라 지원하는 Attribute 값이 상이할
 | 쾌면풍 | PLEASANTSLEEP |
 | 자동풍 | AUTOWIND |
 | 정지 | STOP |
-| 1단\(계\) | Speed1 |
-| 2단\(계\) | Speed2 |
-| 3단\(계\) | Speed3 |
-| 4단\(계\) | Speed4 |
-| 5단\(계\) | Speed5 |
+| 1단\(계\) | SPEED1 |
+| 2단\(계\) | SPEED2 |
+| 3단\(계\) | SPEED3 |
+| 4단\(계\) | SPEED4 |
+| 5단\(계\) | SPEED5 |
 
 Attribute 사용 예시
 
@@ -457,15 +457,13 @@ Related to [HumidityControl Interface](smarthomecapability/humiditycontrol-inter
 | 제습모드 | DEHUMIDITY |
 | 송풍모드 | AIR\_BLAST |
 | 쾌적모드 | COMFORT |
-| 쾌적뽀 | COMFORT\_SOFT |
+| 쾌적뽀송모드 | COMFORT\_SOFT |
 | 스마트쾌적모드 | SMART\_COMFORT |
 | 둘레바람모드 | INDIRECT\_WIND |
 | 아기모드 | BABY |
 | 자동모드 | AUTO |
-| 공기청정모드 | AUTO\_CLEAN |
 | 아로마모드 | AROMA |
 | 절전모드 | ENERGY\_SAVING |
-| 난방모드 | HEAT |
 | 실내난방모드 | HEAT\_ROOM |
 | 외출모드 | OUTSIDE |
 | 온수전용모드 | HOTWATER\_ONLY |

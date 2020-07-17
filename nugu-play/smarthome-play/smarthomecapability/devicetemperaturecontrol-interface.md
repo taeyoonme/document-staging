@@ -29,8 +29,8 @@ Discovery Sample Response
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
             "deviceTemperatureControl": {
-              "minDeviceTemperature": "100",
-              "maxDeviceTemperature": "300"
+              "minTemperature": "100",
+              "maxTemperature": "300"
             },
         },
         "customData": {
@@ -45,8 +45,8 @@ SmartHomeDevice Attribute Parameters
 
 | Attribute | Description |
 | :--- | :--- |
-| minDeviceTemperature | 해당 SmartHomeDevice가 지원하는 최저 자체 설정 온도입니다. |
-| maxDeviceTemperature | 해당 SmartHomeDevice가 지원하는 최고 자체 설정 온도입니다. |
+| minTemperature | 해당 SmartHomeDevice가 지원하는 최저 자체 설정 온도입니다. |
+| maxTemperature | 해당 SmartHomeDevice가 지원하는 최고 자체 설정 온도입니다. |
 | customData | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다. customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 
 ## Directive
@@ -110,7 +110,7 @@ Sample Response
             "resultCode": "OK" <-- 에러일 경우 에러코드 응답
             "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
             "properties": {
-                "deviceTemperatureLevel": 120.0 <-- directive 마다 필요한 property 채워서 응답.
+                "temperatureLevel": 120.0 <-- directive 마다 필요한 property 채워서 응답.
             }
         }
     ]
@@ -121,7 +121,7 @@ AskDeviceTemperature Directive Response parameter details
 
 | parameter name | description | type |
 | :--- | :--- | :--- |
-| deviceTemperatureLevel | SmartHomeDevice에 설정된 자체설정온도입니다. 사용자에게 설정온도로 안내됩니다. | double |
+| temperatureLevel | SmartHomeDevice에 설정된 자체설정온도입니다. 사용자에게 설정온도로 안내됩니다. | double |
 
 ### SetDeviceTemperature
 
