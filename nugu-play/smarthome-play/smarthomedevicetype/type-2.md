@@ -31,7 +31,12 @@ Discovery Response 예시
             "powerControl": {
             },
             "airflowControl": {
-              "supportedAirflowTypes": [ "HIGH", "MIDDLE", "LOW", "AUTO" ] // 지원 가능한 Airflow 타입 참고.
+              "supportedAirflowTypes": [
+                  "HIGH",
+                  "MIDDLE",
+                  "LOW",
+                  "AUTO" 
+                  ] // 지원 가능한 Airflow 타입 참고.
             },
             "modeControl": {
                 "supportedModes": [
@@ -39,7 +44,7 @@ Discovery Response 예시
                     "COMFORT",
                     "AIR_BLAST",
                     "ENERGY_SAVING"
-                   ]  // 지원 가능한 Mode 타입 참고.
+                    ]  // 지원 가능한 Mode 타입 참고.
                 },
             "setTimeControl": {
             },
