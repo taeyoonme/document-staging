@@ -33,6 +33,32 @@ Discovery Sample Response
       "supportedCapabilities": {
         "powerControl": {},
         "colorControl": {},
+        "colorControl": {
+            "supportedColorTypes" : [
+                "BLUE",
+                "GREEN",
+                "CYAN",
+                "MINT",
+                "SKYBLUE",
+                "PURPLE",
+                "LAVENDER",
+                "COOL_WHITE",
+                "SALMON",
+                "GOLD",
+                "RED",
+                "MAGENTA",
+                "CRIMSON",
+                "WARM_WHITE",
+                "ORANGE",
+                "SOFTWHITE",
+                "PINK",
+                "WHITE",
+                "DAY_LIGHT",
+                "YELLOW",
+                "TURQUOISE",
+                "LIGHT_PURPLE"
+                ]  // 지원 가능한 ColorType 타입 참고.
+              },
         "brightnessControl": {} <-- BrightnessControl 을 지원하려면 이 속성이 supportedCapabilities 에 포함되어 있어야 합니다.
       },
       "connectionStatus": true

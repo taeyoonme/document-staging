@@ -32,7 +32,32 @@ Discovery Sample Response
          },
          "supportedCapabilities":{
             "powerControl":{},
-            "colorControl":{}, <-- 이 property 를 포함하고 있어야 "조명 노란색으로 설정해줘" 와 같은 발화를 지원할 수 있습니다.
+            "colorControl": {
+                "supportedColorTypes" : [
+                    "BLUE",
+                    "GREEN",
+                    "CYAN",
+                    "MINT",
+                    "SKYBLUE",
+                    "PURPLE",
+                    "LAVENDER",
+                    "COOL_WHITE",
+                    "SALMON",
+                    "GOLD",
+                    "RED",
+                    "MAGENTA",
+                    "CRIMSON",
+                    "WARM_WHITE",
+                    "ORANGE",
+                    "SOFTWHITE",
+                    "PINK",
+                    "WHITE",
+                    "DAY_LIGHT",
+                    "YELLOW",
+                    "TURQUOISE",
+                    "LIGHT_PURPLE"
+                   ]  // 지원 가능한 ColorType 타입 참고.
+                  },<-- 이 property 를 포함하고 있어야 "조명 노란색으로 설정해줘" 와 같은 발화를 지원할 수 있습니다.
             "brightnessControl":{}
          }
       }
@@ -44,6 +69,7 @@ SmartHomeDevice Attribute Parameters
 
 | Attribute | Description |
 | :--- | :--- |
+| supportedColorTypes | 해당 SmartHomeDevice가 지원하는 ColorType의 명칭입니다. Discovery시의 ColorType은 지원한는 Color의 영문명을 사용하고, 지원하는 ColorTypes는 각 Device별로 Array 형태로 복수개 전달할 수 있습니다. |
 | customData | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다. customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 
 ## Directive
