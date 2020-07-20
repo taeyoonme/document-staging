@@ -267,7 +267,7 @@ Related to [BrightnessControl Interface](smarthomecapability/brightnesscontrol-i
 | 녹색 | GREEN | \#00ff00 |
 | 청록색 | CYAN | \#00ffff |
 | 민트색 | MINT | \#4affee |
-| 하늘색 | SKYBLUE | \#94e1ff |
+| 하늘색 | SKY\_BLUE | \#94e1ff |
 | 보라색 | PURPLE | \#ab23ff |
 | 라벤더색 | LAVENDER | \#eaebff |
 | 쿨 화이트 | COOL\_WHITE | \#f5f3ff |
@@ -284,7 +284,7 @@ Related to [BrightnessControl Interface](smarthomecapability/brightnesscontrol-i
 | 주광색 | DAY\_LIGHT | \#ffecde |
 | 노란색 | YELLOW | \#ffff00 |
 | 터키색 | TURQUOISE | \#4affef |
-|  | LIGHT\_PURPLE | \#eaebfe |
+| 연보라 | LIGHT\_PURPLE | \#eaebfe |
 
 Attribute 사용 예시
 

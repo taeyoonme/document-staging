@@ -30,7 +30,7 @@ Discovery Sample Response
             "humidityControl": {
                   "minHumidity": "10",
                   "maxHumidity": "70",
-                  "humidityStep": "10",
+                  "humidityStep": "5",
             }<-- "습도 올려줘" 등 HumidityControl Capability 를 사용하기 위해서는 이 프로퍼티를 supportedCapabilities 에 포함해야 함.
         },
         "customData": {
