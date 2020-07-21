@@ -33,7 +33,7 @@
 
 2️⃣상태 정보 항목의 `Enable` 또는 `Disable` 버튼을 클릭한 후, 상태 변경 확인창에서 \[확인\] 버튼을 클릭하여 상태를 변경합니다.
 
-![](../../.gitbook/assets/ch5_532_c02%20%283%29.png)
+![](../../.gitbook/assets/ch5_532_c02%20%284%29.png)
 
 상태를 변경하면 해당 Play의 상태가 Enable 또는 Disable 상태로 바뀌며 서비스가 중지되거나 재개됩니다.
 
@@ -57,7 +57,7 @@ Play의 상태 변경\(Enable → Disable, Disable → Enable\)은 자유롭게 
 
 2️⃣화면 상단의 `삭제` 버튼을 클릭합니다. 
 
-![](../../.gitbook/assets/ch5_533_c02-1-20-1-.png)
+![](../../.gitbook/assets/ch5_533_c02-1-20-1-%20%281%29.png)
 
 ![](../../.gitbook/assets/ch5_533_c03-1%20%282%29.png)
 
