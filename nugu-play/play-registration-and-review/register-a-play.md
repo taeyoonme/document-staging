@@ -24,7 +24,7 @@ Play 정보 등록은 총 4단계이며, 1단계 기본 정보 입력 → 2단�
 
 Play 기본 정보는 Play 관련 필수 정보로 아래의 내용들을 등록해야 합니다. 입력을 완료하면 `다음` 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff91t-ptoy-phfygu_ch4_411_c01-1%20%281%29.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff91t-ptoy-phfygu_ch4_411_c01-1%20%282%29.png)
 
 **① Play 서비스명**  
 사용자에게 보여지는 Play의 서비스명입니다. NUGU App과 향후 Play Ground\(스토어\)에 노출됩니다. Play의 서비스명은 최대 20자까지 입력할 수 있습니다.
