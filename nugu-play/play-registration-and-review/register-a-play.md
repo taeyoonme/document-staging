@@ -94,7 +94,7 @@ Play 호출 이름은 위 조건을 기준으로 사용 승인 심사를 진행�
 
 사용자에게 제공할 Play 타입을 선택하고, 제공하려는 Play의 사용자 계정이 NUGU 사용자 계정과 연결이 필요할 경우 계정 연동에 관련된 정보를 입력합니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lnlllgwxiujzzgfjndn_-ll_m203hfgvtgslfubn_ch4_412_c01%20%282%29.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lnlllgwxiujzzgfjndn_-ll_m203hfgvtgslfubn_ch4_412_c01%20%283%29.png)
 
 **① Play 타입**
 
