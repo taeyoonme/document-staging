@@ -30,11 +30,24 @@ Discovery Response 예시
          "manufacturer":"example_manufacturer",
          "supportedCapabilities": {
             "airflowControl": {
-              "supportedAirflowTypes": [ "강", "강풍", "미풍", "수면", "약", "약풍", "자동", "자동풍" ]
+               "supportedAirflowTypes": [
+                "HIGH",
+                "MIDDLE",
+                "LOW",
+                "SPEED1",
+                "SPEED2",
+                "SPEED3",
+                "TURBO"
+                ] // 지원 가능한 Airflow 타입 참고.
             },
             "setTimeControl": {},
             "modeControl": {
-              "supportedModes": ["자동제습모드", "수동제습모드", "의류건조모드", "신발건조모드", "정숙모드"]
+                "supportedModes": [
+                    "DEHUMIDITY",
+                    "COMFORT",
+                    "AIR_BLAST",
+                    "ENERGY_SAVING"
+                    ]  // 지원 가능한 Mode 타입 참고.
             },
             "powerControl": {},
             "humidityControl": {

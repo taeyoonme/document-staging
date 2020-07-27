@@ -28,7 +28,13 @@ Discovery Sample Response
         "friendlyNameSuggestion": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
-            "temperatureControl": {} <-- "온도 25도로 설정해줘" 등 TemperatureControl 을 지원하기 위해서는 이 property 를 supportedCapabilities 에 포함해야 합니다.
+            "temperatureControl": {
+                "deviceTemperatureControl": {
+                  "minTemperature": "18",
+                  "maxTemperature": "29",
+                  "temperatureStep": "1"
+                }
+            } <-- "온도 25도로 설정해줘" 등 TemperatureControl 을 지원하기 위해서는 이 property 를 supportedCapabilities 에 포함해야 합니다.
         },
         "customData": {
             "foo": "bar"

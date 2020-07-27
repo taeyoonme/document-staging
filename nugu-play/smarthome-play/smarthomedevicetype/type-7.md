@@ -31,7 +31,12 @@ Discovery Response 예시
         "supportedCapabilities": {
             "setTimeControl": {},
             "modeControl": {
-              "supportedModes": ["실내난방모드", "온수모드", "외출모드", "취침모드"]
+              "supportedModes": [
+                  "HEAT_ROOM",
+                  "HOTWATER", 
+                  "OUTSIDE",
+                  "SLEEP"
+                  ]
             },
             "powerControl": {},
             "temperatureControl": {

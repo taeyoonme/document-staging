@@ -24,7 +24,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 [Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L152)
 
-2. 음성인식 진행 상태를 모니터링 할 수 있습니다.
+1. 음성인식 진행 상태를 모니터링 할 수 있습니다.
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L120)
 
@@ -32,7 +32,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 [Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L84)
 
-3. 음성인식 STT\(SpeechToText\) 결과로 [NotifyResult](asr.md#notifyresult) directive 가 전달됩니다.
+1. 음성인식 STT\(SpeechToText\) 결과로 [NotifyResult](asr.md#notifyresult) directive 가 전달됩니다.
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L131)
 
@@ -40,7 +40,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 [Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L84)
 
-4. 음성인식 결과 Play 에서 [ExpectSpeech](asr.md#expectspeech) directive 로 음성인식을 재요청 할 수 있습니다.
+1. 음성인식 결과 Play 에서 [ExpectSpeech](asr.md#expectspeech) directive 로 음성인식을 재요청 할 수 있습니다.
 
 ### 음성 인식 중단
 

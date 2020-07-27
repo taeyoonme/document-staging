@@ -127,7 +127,5 @@ NUGU 서버에서 디바이스가 등록 해제되면 전달됩니다.
 
 | reason | description |
 | :--- | :--- |
-|  REVOKED\_DEVICE | NUGU 모바일 앱에서 디바이스 연결 해제 |
-
-
+| REVOKED\_DEVICE | NUGU 모바일 앱에서 디바이스 연결 해제 |
 

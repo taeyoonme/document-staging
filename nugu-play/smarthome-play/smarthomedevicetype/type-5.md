@@ -30,7 +30,7 @@ Discovery Response 예시
         "manufacturer":"example_manufacturer",
         "supportedCapabilities": {
             "modeControl": {
-              "supportedModes": ["급속냉동모드", "절전모드"]
+              "supportedModes": ["RAPID_FREEZE", "SLEEP"]
             },
             "deviceTemperatureControl": {},
         },
