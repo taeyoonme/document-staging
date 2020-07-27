@@ -6,7 +6,7 @@
 
 ![](../../.gitbook/assets/ch4_41_c01-1-20-1-.png)
 
-2️⃣등록할 Play의 타입을 결정하고 `다음` 버튼을 클릭하여 Play의 Snapshot 버전을 선택하는 화면으로 이동합니다.
+2️⃣ 등록할 Play의 타입을 결정하고 `다음` 버튼을 클릭하여 Play의 Snapshot 버전을 선택하는 화면으로 이동합니다.
 
 {% hint style="info" %}
 Smarthome 타입의 경우 [Pre-built Play Builder로 스마트홈 Play 만들기](../smarthome-play/)를 참고하세요.
@@ -14,7 +14,7 @@ Smarthome 타입의 경우 [Pre-built Play Builder로 스마트홈 Play 만들�
 
 ![](../../.gitbook/assets/ch4_41_c02%20%283%29.png)
 
-3️⃣등록할 Snapshot 버전을 선택하고 확인 버튼을 클릭하여 Play 정보 등록 화면으로 이동합니다.
+3️⃣ 등록할 Snapshot 버전을 선택하고 확인 버튼을 클릭하여 Play 정보 등록 화면으로 이동합니다.
 
 ![](../../.gitbook/assets/ch4_41_c03%20%283%29.png)
 
@@ -32,17 +32,22 @@ Play 기본 정보는 Play 관련 필수 정보로 아래의 내용들을 등록
 **② Play 서비스ID**  
 개별 Play를 구분하는 고유ID이며, 한 번 저장한 후에는 변경이 불가능합니다. Play 서비스ID는 reverse domain name 표기 형태로 입력해야 하며, 다른 Play에서 이미 사용 중인 서비스ID는 등록할 수 없습니다. \(입력 예 : com.example.myPlay\)
 
-**③ Play 호출 이름**  
+**③ Play 공개 유형**   
+Play 타입은 Public Play와 Private Play로 구분됩니다. Play의 서비스 대상이 NUGU 전체 회원일 경우에는 Public Play를, Play 사용 권한을 부여 받은 특정인 또는 개인을 대상으로 할 경우에는 Private Play를 선택합니다. Play 타입은 심사 승인 이후에는 변경이 불가능하므로 신중하게 결정해야 합니다. Private Play 타입의 Play는 주로 NUGU biz에서 사용합니다.
+
+**④ Play 호출 이름**  
 사용자가 Play를 시작하기 위해 부를 때 사용하는 이름입니다. 반드시 3자 이상의 한글로만 등록해야 하며, 가능하면 8자 이하로 기억하고 부르기 쉬운 단어를 사용하는 것이 좋습니다. Play 호출 이름은 Play 심사 항목이기 때문에 신청하신 이름을 그대로 사용할 수 있다고 보장하지 않습니다. 널리 쓰이는 일반적인 이름이나 타사명, 서비스에 해당하는 용어 또는 이와 유사한 호출 이름은 사용할 수 없기 때문에,심사를 하면서 운영자가 별도로 연락을 드릴 수도 있습니다. 효과적인 호출 이름을 등록할 수 있도록 먼저 \[[작성 가이드 보기](register-a-play.md#define-an-invocation-name)\]를 읽어보신 후에 등록 절차를 진행해주시길 권장합니다.
 
-**④ Play 설명**  
+**⑤ Play 설명**  
 등록하고자 하는 Play에 대한 설명\(서비스 설명\)을 기재합니다. Play 심사 시 Play에 대해서 파악을 할 수 있는 영역이므로, 자신의 Play의 특징이나 서비스 콘셉트 등을 쉽게 파악할 수 있도록 작성해 주세요. 설명은 최대 200자까지 입력할 수 있습니다.
 
-**⑤ 제작사명**  
+**⑥ 제작사명**  
 Play를 개발한 주체\(개인, 회사 또는 단체\)의 이름 또는 별칭을 입력합니다. 등록된 내용은 NUGU App과 추후 Play Ground에 노출됩니다. 법인의 경우에는 Play 승인 과정에서 관련 자료\(예: 법인 등록증, 사업자등록증 등\)를 요청할 수 있습니다. 제작사명은 최대 30자까지 입력할 수 있습니다.
 
-**⑥ 담당자 정보**  
+**⑦ 담당자 정보**  
 연락 가능한 서비스 담당자의 이메일 정보를 입력합니다. 입력한 이메일로 Play에 대한 주요 내용\(심사 승인, 반려, 상태 변경, 주요 공지\)이 전달됩니다. 법인인 경우에는 개인 이메일 보다는 개발, CS 등 폭넓은 영역에서 의견을 받을 수 있는 대표 이메일 계정을 입력해주시는 편이 좋습니다.
+
+\*\*\*\*
 
 ### 호출 이름 정의하기 <a id="define-an-invocation-name"></a>
 
@@ -96,15 +101,11 @@ Play 호출 이름은 위 조건을 기준으로 사용 승인 심사를 진행�
 
 ![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lnlllgwxiujzzgfjndn_-ll_m203hfgvtgslfubn_ch4_412_c01%20%283%29.png)
 
-**① Play 타입**
-
-Play 타입은 Public Play와 Private Play로 구분됩니다. Play의 서비스 대상이 NUGU 전체 회원일 경우에는 Public Play를, Play 사용 권한을 부여 받은 특정인 또는 개인을 대상으로 할 경우에는 Private Play를 선택합니다. Play 타입은 심사 승인 이후에는 변경이 불가능하므로 신중하게 결정해야 합니다. Private Play 타입의 Play는 주로 NUGU biz에서 사용합니다.
-
-**② 계정 연동 여부\(OAuth 연동 여부\)**
+**① 계정 연동 여부\(OAuth 연동 여부\)**
 
 제공하려는 Play의 사용자 계정과 NUGU 사용자 계정의 연결이 필요할 경우, 계정 연동에서 \[사용\]을 선택하고, 다음 정보를 등록합니다. 계정 연동에 대한 자세한 내용은 [\[계정 연동 가이드 보기\]](../create-plays-with-play-builder/link-oauth20.md#link-oauth20)를 참고하세요.
 
-**③ 사용자 그룹 등록 정보 활용**
+**② 사용자 그룹 등록 정보 활용**
 
 Private 타입의 Play에서 OAuth 계정 연동 없이 사용자별로 권한을 부여하거나 서비스를 제공해야 할 경우에 선택합니다.  
 이 옵션을 선택하면, Private Play 사용 권한을 제공하기 위해 초대한 사용자 정보\(이름, 이메일, 전화번호, 기타 입력한 추가 정보\)를 이용할 수 있습니다.
@@ -138,7 +139,7 @@ Access Token을 획득 시 HTTP 요청에 필요한 클라이언트 secret을 �
 **ⓘ 클라이언트 인증 정보 전송 방식\(선택\)**  
 인증 서버의 인터페이스 구현에 맞는 클라이언트 인증 정보 전송 방식을 선택합니다.
 
-## 배포 정보 <a id="deployment-information"></a>
+## 배포/심 정보 <a id="deployment-information"></a>
 
 Play 심사 승인에 필요한 정보와 사용자에게 Play를 설명하기 위한 정보들로 구성되어 있으며, 등록된 내용은 NUGU App을 통해 사용자에게 제공됩니다.
 
