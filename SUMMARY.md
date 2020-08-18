@@ -135,7 +135,7 @@
     * [Android](nugu-sdk/platform/android/README.md)
       * [시작하기](nugu-sdk/platform/android/start.md)
       * [구성요소](nugu-sdk/platform/android/intro_components.md)
-      * [테스트 환경 변경](nugu-sdk/platform/android/testing_sdk_integration.md)
+      * [테스트 환경 설정](nugu-sdk/platform/android/testing_sdk_integration.md)
     * [Linux](nugu-sdk/platform/linux/README.md)
       * [시작하기](nugu-sdk/platform/linux/start.md)
       * [구성요소](nugu-sdk/platform/linux/component.md)

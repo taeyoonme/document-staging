@@ -125,10 +125,10 @@ private val authClient by lazy {
 
 #### 인 앱 브라우저를 통해 로그인
 
-`loginByInAppbrowser()`를 호출 후에 `NuguOAuthInterface.OnLoginListener`를 통해 인증 결과를 받습니다.
+`loginByWebbrowser()`를 호출 후에 `NuguOAuthInterface.OnLoginListener`를 통해 인증 결과를 받습니다.
 
 ```kotlin
-authClient.loginByInAppBrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
+authClient.loginByWebbrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
                 // Save Credentials
             }
