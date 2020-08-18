@@ -12,7 +12,7 @@
    val transport = GrpcTransportFactory(
        NuguServerInfo.Builder()
            .keepConnection(false)
-           .deviceGW("stg-gw-grpc.sktnugu.com")
+           .deviceGW("review-dggprc.sktnugu.com")
            .build()
    )
    ```
