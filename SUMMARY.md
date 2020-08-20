@@ -132,7 +132,7 @@
     * [iOS](nugu-sdk/platform/ios/README.md)
       * [시작하기](nugu-sdk/platform/ios/start.md)
       * [구성요소](nugu-sdk/platform/ios/component.md)
-      * [테스트 환경 설정](nugu-sdk/platform/ios/undefined.md)
+      * [테스트 환경 설정](nugu-sdk/platform/ios/testing_sdk_integration.md)
     * [Android](nugu-sdk/platform/android/README.md)
       * [시작하기](nugu-sdk/platform/android/start.md)
       * [구성요소](nugu-sdk/platform/android/intro_components.md)
