@@ -130,6 +130,7 @@
     * [Sound](nugu-sdk/capability-interface/sound.md)
   * [Platform](nugu-sdk/platform/README.md)
     * [iOS](nugu-sdk/platform/ios/README.md)
+      * [테스트 환경 설정](nugu-sdk/platform/ios/undefined.md)
       * [시작하기](nugu-sdk/platform/ios/start.md)
       * [구성요소](nugu-sdk/platform/ios/component.md)
     * [Android](nugu-sdk/platform/android/README.md)
