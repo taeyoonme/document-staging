@@ -88,6 +88,10 @@ Client 인증 정보는 Body Parameter\(application/x-www-form-urlencoded\)를 �
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-form-data-parameters %}
+{% api-method-parameter name="data" type="string" required=true %}
+추가적인 데이터가 포함 됩니다. ex\) {"deviceSerialNumber":"DEVICE\_SERIAL\_NUMBER"} 
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="grant\_type" type="string" required=true %}
 authorization\_code \(신규\)
 {% endapi-method-parameter %}
@@ -188,6 +192,10 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-form-data-parameters %}
+{% api-method-parameter name="data" type="string" required=true %}
+추가적인 데이터가 포함 됩니다. ex\) {"deviceSerialNumber":"DEVICE\_SEERIAL\_NUMBER"} 
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="grant\_type" type="string" required=true %}
 refresh\_token \(갱신\)
 {% endapi-method-parameter %}
@@ -273,6 +281,10 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-form-data-parameters %}
+{% api-method-parameter name="data" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="token" type="string" required=true %}
 
 {% endapi-method-parameter %}
@@ -347,6 +359,10 @@ Content-Type: application/json;charset=UTF-8
 {% api-method-spec %}
 {% api-method-request %}
 {% api-method-form-data-parameters %}
+{% api-method-parameter name="data" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
 {% api-method-parameter name="token" type="string" required=true %}
 
 {% endapi-method-parameter %}
