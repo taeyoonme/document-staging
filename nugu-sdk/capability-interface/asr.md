@@ -115,10 +115,10 @@ speechRecognizerAggregator.startListening()
 
 {% tab title="iOS" %}
 ```text
-try micInputProvider.start { [weak self] (buffer, _) in
-    self?.client.asrAgent.putAudioBuffer(buffer: buffer)
+try micInputProvider.start { (buffer, _) in
+    asrAgent.putAudioBuffer(buffer: buffer)
 }
-client.asrAgent.startRecognition(initiator: .user)
+asrAgent.startRecognition(initiator: .user)
 ```
 {% endtab %}
 
@@ -148,7 +148,7 @@ speechRecognizerAggregator.addListener(this)
 음성인식 진행 상태를 모니터링 하려면 ASRAgentDelegate 를 추가합니다.
 
 ```text
-nuguClient.asrAgent.add(delegate: self)
+asrAgent.add(delegate: self)
 ```
 {% endtab %}
 
@@ -175,7 +175,7 @@ speechRecognizerAggregator.stopListening
 
 {% tab title="iOS" %}
 ```text
-nuguClient.asrAgent.stopRecognition()
+asrAgent.stopRecognition()
 ```
 {% endtab %}
 

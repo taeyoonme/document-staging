@@ -10,13 +10,64 @@ description: 텍스트 명령을 Play 로 전달하기 위한 규격
 
 ## SDK Interface
 
+### TextAgent 사용
+
+Text interface 규격에 따른 디바이스의 동작 제어는 TextAgent 가 처리합니다.
+
+{% tabs %}
+{% tab title="Android" %}
+NuguAndroidClient instance 를 통해 TextAgent instance 에 접근할 수 있습니다.
+
+```text
+val textAgent = nuguAndroidClient.textAgent
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+NuguClient instance 를 통해 TextAgent instance 에 접근할 수 있습니다.
+
+```text
+let textAgent = nuguClient.textAgent
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TextAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITextHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+
+```text
+text_handler = std::shared_ptr<ITextHandler>(
+        CapabilityFactory::makeCapability<TextAgent, ITextHandler>());
+
+nugu_client->getCapabilityBuilder()
+    ->add(text_handler.get())
+    ->construct();
+```
+{% endtab %}
+{% endtabs %}
+
+### 텍스트 명령
+
 임의의 텍스트 명령을 [TextInput](text.md#textinput) event 로 요청할 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/text/TextAgentInterface.kt#L61)
+{% tabs %}
+{% tab title="Android" %}
+```text
+textAgent.requestTextInput(text)
+```
+{% endtab %}
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Text/TextAgentProtocol.swift#L35)
+{% tab title="iOS" %}
+```text
+textAgent.requestTextInput(text: textInput, requestType: .normal)
+```
+{% endtab %}
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/text_interface.hh#L111)
+{% tab title="Linux" %}
+```
+text_handler.requestTextInput(text)
+```
+{% endtab %}
+{% endtabs %}
 
 ## Context
 
