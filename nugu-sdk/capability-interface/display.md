@@ -1,7 +1,3 @@
----
-description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
----
-
 # Display
 
 ## Version
@@ -10,49 +6,13 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 
 ## SDK Interface
 
-### DisplayAgent 사용
-
-Display interface 규격에 따른 디바이스의 동작 제어는 DisplayAgent 가 처리합니다.
-
-{% tabs %}
-{% tab title="Android" %}
-NuguAndroidClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.
-
-```text
-val displayAgent = nuguAndroidClient.displayAgent
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-NuguClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.
-
-```text
-let audioPlayerAgent = nuguClient.audioPlayerAgent
-```
-{% endtab %}
-{% endtabs %}
-
 ### Context 구성
 
-[UI 제어](display.md#ui-1) 기능을 사용하기 위해서는 template 화면의 상태 정보를 [Context](display.md#context) 에 포함시켜 주어야 합니다.
+Template 화면의 상태 정보를 [Context](display.md#context) 에 포함시켜 주어야 합니다.
 
-{% tabs %}
-{% tab title="Android" %}
-Context 를 전달하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L77)
 
-```text
-nuguAndroidClient.getDisplay()?.displayCardRendered(templateId, controller)
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-Context 를 전달하려면 DisplayAgentDelegate 를 추가합니다.
-
-```text
-nuguClient.displayAgent.delegate = self
-```
-{% endtab %}
-{% endtabs %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Display/DisplayAgentDelegate.swift#L24)
 
 ### UI 구성
 
@@ -60,79 +20,31 @@ Display 로 화면을 구성하기 위해 필요한 데이터는 [Template](disp
 
 Template 화면은 [Close](display.md#close) directive 또는 SDK 내부 timer 등에 의해 종료될 수 있으며, [Update](display.md#update) directive 에 의해 변경될 수 있습니다.
 
-{% tabs %}
-{% tab title="Android" %}
-UI 를 구성하려면 DisplayAggregatorInterface.Renderer 를 추가합니다.
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L41)
 
-```text
-nuguAndroidClient.setDisplayRenderer(this)
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-UI 를 구성하려면 DisplayAgentDelegate 를 추가합니다.
-
-```text
-nuguClient.displayAgent.delegate = self
-```
-{% endtab %}
-{% endtabs %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Display/DisplayAgentDelegate.swift#L24)
 
 ### UI 제어
 
 Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](display.md#controlfocus), [ControlScroll](display.md#controlscroll) directive 로 제어될 수 있습니다.
 
-{% tabs %}
-{% tab title="Android" %}
-UI 를 제어하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L77)
 
-```text
-nuguAndroidClient.getDisplay()?.displayCardRendered(templateId, controller)
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-UI 를 제어하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
-
-```text
-nuguClient.displayAgent.delegate = self
-```
-{% endtab %}
-{% endtabs %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Display/DisplayAgentDelegate.swift#L24)
 
 ### 사용자 인터렉션 처리
 
 Template 하위 항목 선택시 [ElementSelected](display.md#elementselected) event 가 전달됩니다.
 
-{% tabs %}
-{% tab title="Android" %}
-```text
-nuguAndroidClient.getDisplay()?.setElementSelected(templateId, token, postback)
-```
-{% endtab %}
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayInterface.kt#L34)
 
-{% tab title="iOS" %}
-```text
-nuguClient.displayAgent.elementDidSelect(templateId: displayTemplate.templateId, token: token, postback: postback)
-```
-{% endtab %}
-{% endtabs %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Display/DisplayAgentProtocol.swift#L42)
 
 Template 에 화면에 대한 사용자 interaction 발생시 SDK 로 notify 해주어야 내부 timer\(template 일정시간 노출 후 종료하기 위한\) 가 갱신됩니다.
 
-{% tabs %}
-{% tab title="Android" %}
-```text
-nuguAndroidClient.getDisplay()?.notifyUserInteraction(templateId)
-```
-{% endtab %}
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L84)
 
-{% tab title="iOS" %}
-```text
-nuguClient.displayAgent.notifyUserInteraction()
-```
-{% endtab %}
-{% endtabs %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Display/DisplayAgentProtocol.swift#L45)
 
 ## Context
 
