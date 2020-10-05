@@ -93,6 +93,12 @@ nugu_client->getCapabilityBuilder()
     ->add(asr_handler.get())
     ->construct();
 ```
+
+음성인식에 필요한 학습 모델을 설정합니다.
+
+```text
+ asr_handler->setAttribute(ASRAttribute { "/var/lib/nugu/model", "CLIENT", "PARTIAL" });
+```
 {% endtab %}
 {% endtabs %}
 
@@ -115,35 +121,70 @@ try micInputProvider.start { [weak self] (buffer, _) in
 client.asrAgent.startRecognition(initiator: .user)
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+```
+asr_hanlder.startRecognition()
+```
+{% endtab %}
 {% endtabs %}
 
-### 음성인식 진행 상태를 모니터링
+### 음성인식 진행 상태 모니터링
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L120)
+음성인식에 대한 진행 상태를 모니터링 할 수 있습니다.
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AutomaticSpeechRecognition/ASRAgentDelegate.swift#L28)
+음성인식에 대한 STT\(SpeechToText\) 결과가 [NotifyResult](asr.md#notifyresult) directive 로 전달됩니다.
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L84)
+{% tabs %}
+{% tab title="Android" %}
+음성인식 진행 상태를 모니터링 하려면 SpeechRecognizerAggregatorInterface.OnStateChangeListener 를 추가합니다.
 
-### 음성인식 결과
+```text
+speechRecognizerAggregator.addListener(this)
+```
+{% endtab %}
 
- STT\(SpeechToText\) 로 [NotifyResult](asr.md#notifyresult) directive 가 전달됩니다.
+{% tab title="iOS" %}
+음성인식 진행 상태를 모니터링 하려면 ASRAgentDelegate 를 추가합니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L131)
+```text
+nuguClient.asrAgent.add(delegate: self)
+```
+{% endtab %}
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AutomaticSpeechRecognition/ASRAgentDelegate.swift#L32)
+{% tab title="Linux" %}
+음성인식 진행 상태를 모니터링 하려면 [IASRListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRListener.html) 를 추가합니다.
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L84)
+```text
+asr_listener = std::make_shared<ASRListener>();
+CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(asr_listener.get());
+```
+{% endtab %}
+{% endtabs %}
 
 ### 음성 인식 중단
 
 사용자가 음성 인식 중단 요청을 [StopRecognize](asr.md#stoprecognize) event 로 전달할 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L200)
+{% tabs %}
+{% tab title="Android" %}
+```text
+speechRecognizerAggregator.stopListening
+```
+{% endtab %}
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AutomaticSpeechRecognition/ASRAgentProtocol.swift#L53)
+{% tab title="iOS" %}
+```text
+nuguClient.asrAgent.stopRecognition()
+```
+{% endtab %}
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L163)
+{% tab title="Linux" %}
+```text
+asr_hanlder.stopRecognition()
+```
+{% endtab %}
+{% endtabs %}
 
 ## Context
 
