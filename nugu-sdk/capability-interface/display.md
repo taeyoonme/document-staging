@@ -12,6 +12,8 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 
 ### DisplayAgent 사용
 
+Display interface 규격에 따른 디바이스의 동작 제어는 DisplayAgent 가 처리합니다.
+
 {% tabs %}
 {% tab title="Android" %}
 NuguAndroidClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.

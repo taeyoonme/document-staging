@@ -40,7 +40,7 @@ let audioPlayerAgent = nuguClient.audioPlayerAgent
 
 ```text
 audio_player_handler = std::shared_ptr<IAudioPlayerHandler>(
-        CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(aplayer_listener.get()));
+        CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>());
 
 nugu_client->getCapabilityBuilder()
     ->add(audio_player_handler.get())
@@ -75,8 +75,7 @@ nuguClient.audioPlayerAgent.add(delegate: self)
 
 ```text
 aplayer_listener = std::make_shared<AudioPlayerListener>();
-audio_player_handler = std::shared_ptr<IAudioPlayerHandler>(
-        CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(aplayer_listener.get()));
+CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(aplayer_listener.get());
 ```
 {% endtab %}
 {% endtabs %}

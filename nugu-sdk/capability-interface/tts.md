@@ -10,6 +10,32 @@ description: 음성 합성 결과를 전달받기 위한 규격
 
 ## SDK Interface
 
+### TTSAgent 사용
+
+TTS interface 규격에 따른 디바이스의 동작 제어는 TTSAgent 가 처리합니다.
+
+{% tabs %}
+{% tab title="Android" %}
+NuguAndroidClient instance 를 통해 TTSAgent instance 에 접근할 수 있습니다.
+
+```text
+val ttsAgent = nuguAndroidClient.ttsAgent
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+NuguClient instance 를 통해 TTSAgent instance 에 접근할 수 있습니다.
+
+```text
+let ttsAgent = nuguClient.ttsAgent
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### 재생 상태 정보
 
 재생 상태를 모니터링 할 수 있습니다.
