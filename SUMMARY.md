@@ -140,6 +140,8 @@
     * [Linux](nugu-sdk/platform/linux/README.md)
       * [시작하기](nugu-sdk/platform/linux/start.md)
       * [구성요소](nugu-sdk/platform/linux/component.md)
+  * [Source code](nugu-sdk/source-code.md)
+  * [API References](nugu-sdk/api-references.md)
   * [SDK UX Guide](nugu-sdk/sdk-design-guide/README.md)
     * [NUGU 기기](nugu-sdk/sdk-design-guide/nugu-device.md)
     * [부팅화면](nugu-sdk/sdk-design-guide/booting.md)
