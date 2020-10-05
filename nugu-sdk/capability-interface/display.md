@@ -60,11 +60,13 @@ displayAgent.delegate = self
 {% endtab %}
 {% endtabs %}
 
-### UI 구성
+### UI 구성 및 제어
 
 Display 로 화면을 구성하기 위해 필요한 데이터는 [Template](display.md#directive-template) directive 에 포함되어 전달됩니다.
 
 Template 화면은 [Close](display.md#close) directive 또는 SDK 내부 timer 등에 의해 종료될 수 있으며, [Update](display.md#update) directive 에 의해 변경될 수 있습니다.
+
+Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](display.md#controlfocus), [ControlScroll](display.md#controlscroll) directive 로 제어될 수 있습니다.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -73,23 +75,7 @@ UI 를 구성하려면 DisplayAggregatorInterface.Renderer 를 추가합니다.
 ```text
 displayAggregator.setRenderer(this)
 ```
-{% endtab %}
 
-{% tab title="iOS" %}
-UI 를 구성하려면 DisplayAgentDelegate 를 추가합니다.
-
-```text
-displayAgent.delegate = self
-```
-{% endtab %}
-{% endtabs %}
-
-### UI 제어
-
-Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](display.md#controlfocus), [ControlScroll](display.md#controlscroll) directive 로 제어될 수 있습니다.
-
-{% tabs %}
-{% tab title="Android" %}
 UI 를 제어하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
 
 ```text
@@ -98,7 +84,7 @@ displayAggregator.displayCardRendered(templateId, controller)
 {% endtab %}
 
 {% tab title="iOS" %}
-UI 를 제어하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
+UI 를 구성하거나 제어하려면 DisplayAgentDelegate 를 추가합니다.
 
 ```text
 displayAgent.delegate = self
