@@ -162,28 +162,19 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>task</p>
-      </td>
+      <td style="text-align:left">asrContext.task</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneId</p>
-      </td>
+      <td style="text-align:left">asrContext.sceneId</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneText</p>
-      </td>
+      <td style="text-align:left">asrContext.sceneText</td>
       <td style="text-align:left">Array&lt;String&gt;</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
@@ -425,31 +416,21 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>word</p>
-      </td>
+      <td style="text-align:left">wakeup.word</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0; &#xD3EC;&#xD568;&#xB41C;
         wakeup word( ex &quot;&#xC544;&#xB9AC;&#xC544;&quot;)</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary</td>
       <td style="text-align:left">object</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0;&#xC11C; wakeup word&#xC5D0;
         &#xB300;&#xD55C; boundary &#xC815;&#xBCF4;</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>start</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary.start</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -460,11 +441,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>end</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary.end</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -475,11 +452,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>detection</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary.detection</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -490,11 +463,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>metric</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary.metric</td>
       <td style="text-align:left">STRING</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
@@ -505,32 +474,21 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power</p>
-      </td>
+      <td style="text-align:left">wakeup.power</td>
       <td style="text-align:left">object</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0; &#xD3EC;&#xD568;&#xB41C;
         wakeup pcm&#xC758; power&#xAC12;</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power.</p>
-        <p>noise</p>
-      </td>
+      <td style="text-align:left">wakeup.power.noise</td>
       <td style="text-align:left">Float</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">wakeup pcm&#xC758; power&#xC911; noise&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xB294;
         &#xAC12; (&#xC8FC;&#xB85C; min&#xAC12;)</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power.</p>
-        <p>speech</p>
-      </td>
+      <td style="text-align:left">wakeup.power.speech</td>
       <td style="text-align:left">Float</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">wakeup pcm&#xC758; power&#xC911; speech&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xB294;
@@ -544,28 +502,19 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
         ExpectSpeech&#xC5D0;&#xC11C; &#xBC1B;&#xC740; asrContext&#xB97C; &#xC801;&#xC6A9;</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>task</p>
-      </td>
+      <td style="text-align:left">asrContext.task</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneId</p>
-      </td>
+      <td style="text-align:left">asrContext.sceneId</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneText</p>
-      </td>
+      <td style="text-align:left">asrContext.sceneText</td>
       <td style="text-align:left">Array&lt;String&gt;</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
@@ -577,10 +526,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       <td style="text-align:left">Server EPD &#xC0AC;&#xC6A9;&#xC2DC; &#xD544;&#xC218; &#xAC12;.</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>listen</p>
-      </td>
+      <td style="text-align:left">timeout.listen</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -589,10 +535,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>maxSpeech</p>
-      </td>
+      <td style="text-align:left">timeout.maxSpeech</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -601,10 +544,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>response</p>
-      </td>
+      <td style="text-align:left">timeout.response</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">

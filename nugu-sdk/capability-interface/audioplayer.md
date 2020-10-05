@@ -1,5 +1,5 @@
 ---
-description: Play 에서 전달하는 음원을 재생하기 위한 규격입니다.
+description: Play 에서 전달하는 음원을 재생하기 위한 규격
 ---
 
 # AudioPlayer
@@ -58,7 +58,7 @@ nugu_client->getCapabilityBuilder()
 재생 상태를 모니터링 하려면 AudioPlayerAgentInterface.Listener 를 추가합니다.
 
 ```text
-audioPlayerAgent.addListener(this)
+nuguAndroidClient.audioPlayerAgent?.addListener(this)
 ```
 {% endtab %}
 
@@ -118,7 +118,7 @@ nuguClient.audioPlayerAgent.displayDelegate = self
 UI 제어 요청을 처리하려면 LyricsPresenter 를 추가합니다.
 
 ```text
-nuguAndroidClient.audioPlayerAgent.setLyricsPresenter(this)
+nuguAndroidClient.audioPlayerAgent?.setLyricsPresenter(this)
 ```
 {% endtab %}
 
@@ -139,15 +139,15 @@ PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이�
 {% tab title="Android" %}
 ```text
 // 다음
-nuguAndroidClient.audioPlayerAgent.next()
+nuguAndroidClient.audioPlayerAgent?.next()
 // 이전
-nuguAndroidClient.audioPlayerAgent.prev()
+nuguAndroidClient.audioPlayerAgent?.prev()
 // 즐겨찾기
-nuguAndroidClient.audioPlayerAgent.requestFavoriteCommand(false)
+nuguAndroidClient.audioPlayerAgent?.requestFavoriteCommand(false)
 // 반복
-nuguAndroidClient.audioPlayerAgent.requestRepeatCommand(RepeatMode.NONE)
+nuguAndroidClient.audioPlayerAgent?.requestRepeatCommand(RepeatMode.NONE)
 // 셔플
-nuguAndroidClient.audioPlayerAgent.requestShuffleCommand(false)
+nuguAndroidClient.audioPlayerAgent?.requestShuffleCommand(false)
 ```
 {% endtab %}
 
