@@ -10,6 +10,20 @@ description: 보이스 크롬에 노출되는 발화 가이드를 제공하기 �
 
 ## SDK Interface
 
+### ChipsAgent 사용
+
+Chips interface 규격에 따른 디바이스의 동작 제어는 ChipsAgent 가 처리합니다.
+
+{% tabs %}
+{% tab title="Android" %}
+DialogUXStateAggregatorInterface.Listener 추가로 발화 가이드를 전달 받을 수 있지만 ChipsAgent 에 대한 접근은 지원하지 않습니다.
+{% endtab %}
+
+{% tab title="iOS" %}
+
+{% endtab %}
+{% endtabs %}
+
 ### UI 구성
 
 보이스 크롬에 노출하기 위한 데이터는 Render directive 에 포함되어 전달됩니다.
