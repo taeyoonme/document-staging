@@ -10,6 +10,41 @@ description: 디바이스의 볼륨을 제어하기 위한 규격
 
 ## SDK Interface
 
+### SpeakerAgent 사용
+
+Speaker interface 규격에 따른 디바이스의 동작 제어는 SpeakerAgent 가 처리합니다.
+
+{% hint style="warning" %}
+iOS 는 SpeakerAgent 를 지원하지 않습니다.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+NuguAndroidClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.
+
+```text
+val speakerAgent = nuguAndroidClient.speakerAgent
+```
+
+NuguAndroidClient 에 AudioManager.STREAM\_MUSIC, AudioManager.STREAM\_ALARM 볼륨 제어를 위한 Speaker 구현이 포함되어 있습니다.
+
+NuguAndroidClient 에서 제공하는 Speaker 를 사용하지 않으려면  
+{% endtab %}
+
+{% tab title="Linux" %}
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [SpeakerAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISpeakerHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+
+```text
+speaker_handler = std::shared_ptr<ISpeakerHandler>(
+        CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>());
+
+nugu_client->getCapabilityBuilder()
+    ->add(speaker_handler.get())
+    ->construct();
+```
+{% endtab %}
+{% endtabs %}
+
 ### Context 구성
 
 디바이스의 볼륨 상태를 [Context](speaker.md#context) 에 포함시켜 주어야 합니다.

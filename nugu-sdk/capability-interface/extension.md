@@ -16,83 +16,29 @@ Play 개발자와 Application 개발자는 Context, Directive, Event 의 data �
 
 ## SDK Interface
 
-### ExtensionAgent 사용
-
-Extension interface 규격에 따른 디바이스의 동작 제어는 ExtensionAgent 가 처리합니다.
-
-{% tabs %}
-{% tab title="Android" %}
-ExtensionAgent 를 사용하려면 NuguAndroidClient 생성시 ExtensionAgentInterface.Client 를 추가합니다.
-
-```text
-NuguAndroidClient.Builder(...)
-    .extensionClient(object : ExtensionAgentInterface.Client {
-           override fun action(data: String, playServiceId: String): Boolean {
-               // do action & return true if success, otherwise false
-               return true
-           }
-
-           override fun getData(): String? {
-               // Fill in the required information for the context.
-               // Return a data string in structured JSON. If not exist, return null
-               return null
-           }
-       })
-```
-
-NuguAndroidClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습니다.
-
-```text
-val extensionAgent = nuguAndroidClient.extensionAgent
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-NuguClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습니다.
-
-```text
-let extensionAgent = nuguClient.extensionAgent
-```
-{% endtab %}
-{% endtabs %}
-
-### Context 구성 및 기능 실행
+### Context 구성
 
 Play 에서 알아야 하는 디바이스/Application 의 정보를 [Context](extension.md#context) 에 포함시켜 주어야 합니다.
 
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/extension/ExtensionAgentInterface.kt#L42)
+
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Extension/ExtensionAgentDelegate.swift#L35)
+
+### Directive 수신
+
 특정 기능의 실행이 [Action](extension.md#action) directive 로 요청될 수 있습니다.
 
-{% tabs %}
-{% tab title="Android" %}
-[ExtensionAgent 사용](extension.md#extensionagent)에서 추가한 ExtensionAgentInterface.Client 을 통해 Context 를 전달하거나 [Action](extension.md#action) 을 실행합니다.
-{% endtab %}
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/extension/ExtensionAgentInterface.kt#L36)
 
-{% tab title="iOS" %}
-Context 를 전달하거나 [Action](extension.md#action) 실행을 받으려면 ExtensionAgentDelegate 를 추가합니다.
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Extension/ExtensionAgentDelegate.swift#L44)
 
-```text
-extensionAgent.delegate = self
-```
-{% endtab %}
-{% endtabs %}
-
-### 기능 요청
+### Event 전송
 
 특정 기능 실행을 [CommandIssued](extension.md#commandissued) event 로 요청할 수 있습니다.
 
-{% tabs %}
-{% tab title="Android" %}
-```text
-extensionAgent.issueCommand(playServiceId, data, callback)
-```
-{% endtab %}
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/extension/ExtensionAgentInterface.kt#L69)
 
-{% tab title="iOS" %}
-```text
-extentionAgent.requestCommand(data: data, playServiceId: playServiceId)
-```
-{% endtab %}
-{% endtabs %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Extension/ExtensionAgentProtocol.swift#L39)
 
 ## Context
 
