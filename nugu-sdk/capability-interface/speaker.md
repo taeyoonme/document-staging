@@ -20,11 +20,7 @@ iOS 는 SpeakerAgent 를 지원하지 않습니다.
 
 {% tabs %}
 {% tab title="Android" %}
-NuguAndroidClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.
-
-```text
-val speakerAgent = nuguAndroidClient.speakerAgent
-```
+Speaker 구현으로 볼륨 을 제어할 수 있지만 SpeakerAgent 에 대한 접근은 지원하지 않습니다.
 {% endtab %}
 
 {% tab title="Linux" %}
@@ -47,8 +43,6 @@ Play 에서 디바이스의 볼륨을 제어하기 위해서는 디바이스의 
 
 {% tabs %}
 {% tab title="Android" %}
-Context 전달하려면 각 Speaker.Type 의 Speaker 를 구현합니다.
-
 NuguAndroidClient 에 볼륨 제어를 위한 기본 Speaker 구현이 포함되어 있습니다.
 
 Speaker 을 직접 구현하려면 NuguAndroidClient 생성시 SpeakerFactory 를 추가합니다.

@@ -10,19 +10,46 @@ description: 디바이스의 디스플레이를 제어하기 위한 규격
 
 ## SDK Interface
 
-#### ScreenAgent 사용
+### ScreenAgent 사용
+
+Screen interface 규격에 따른 디바이스의 동작 제어는 ScreenAgent 가 처리합니다.
+
+{% hint style="info" %}
+iOS 는 ScreenAgent 를 지원하지 않습니다.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+Screen 구현으로 디스플레이를 제어할 수 있지만 ScreenAgent 에 대한 접근은 지원하지 않습니다.
+{% endtab %}
+{% endtabs %}
 
 ### Context 구성
 
 디바이스의 디스플레이 상태를 [Context](screen.md#context) 에 포함시켜 주어야 합니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/screen/Screen.kt#L61)
+{% tabs %}
+{% tab title="Android" %}
+Context 전달하려면 NuguAndroidClient 생성시 Screen 을 추가합니다.
+
+```text
+NuguAndroidClient.Builder(...)
+    .screen(object : Screen {
+           ...
+       })
+```
+{% endtab %}
+{% endtabs %}
 
 ### 디스플레이 제어
 
 디바이스의 디스플레이 제어가 [TurnOn](screen.md#turnon)/[TurnOff](screen.md#turnoff)/[SetBrightness](screen.md#setbrightness) directive 로 요청될 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/screen/Screen.kt#L41)
+{% tabs %}
+{% tab title="Android" %}
+Screen.turnOn, Screen.turnOff, Screen.setBrightness 에서 디스플레이 제어를 구현합니다.
+{% endtab %}
+{% endtabs %}
 
 ## Context
 

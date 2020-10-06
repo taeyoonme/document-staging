@@ -10,68 +10,21 @@ description: 디바이스의 마이크를 제어하기 위한 규격
 
 ## SDK Interface
 
-### MicAgent 사용
-
-Mic interface 규격에 따른 디바이스의 동작 제어는 MicAgent 가 처리합니다.
-
-{% hint style="warning" %}
-iOS 는 MicAgent 를 지원하지 않습니다.
-{% endhint %}
-
-{% tabs %}
-{% tab title="Android" %}
-Microphone 구현으로 microphone 을 제어할 수 있지만 MicrophoneAgent 에 대한 접근은 지원하지 않습니다.
-{% endtab %}
-
-{% tab title="Linux" %}
-[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [MicAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMicHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
-
-```text
-mic_handler = std::shared_ptr<IMicHandler>(
-        CapabilityFactory::makeCapability<MicAgent, IMicHandler>());
-
-nugu_client->getCapabilityBuilder()
-    ->add(mic_handler.get())
-    ->construct();
-```
-{% endtab %}
-{% endtabs %}
-
 ### Context 구성
 
 디바이스의 microphone 상태를 [Context](mic.md#context) 에 포함시켜 주어야 합니다.
 
-{% tabs %}
-{% tab title="Android" %}
-Context 전달하려면 NuguAndroidClient 생성시 Microphone 을 추가합니다.
-
-```text
-NuguAndroidClient.Builder(...)
-    .defaultMicrophone(object : Microphone {
-           ...
-       })
-```
-{% endtab %}
-{% endtabs %}
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/microphone/Microphone.kt#L27)
 
 ### Microphone 제어
 
 디바이스의 microphone 제어가 [SetMic](mic.md#setmic) directive 로 요청될 수 있습니다.
 
-{% tabs %}
-{% tab title="Android" %}
-Microphone.on, Microphone.off 에서 microphone 제어를 구현합니다.
-{% endtab %}
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/microphone/Microphone.kt#L33)
 
-{% tab title="Linux" %}
-Microphone 을 제어하려면 [IMicListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMicListener.html) 를 추가합니다.
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/mic_interface.hh#L57)
 
-```text
-mic_listener = std::make_shared<MicListener>();
-CapabilityFactory::makeCapability<MicAgent, IMicHandler>(mic_listener.get());
-```
-{% endtab %}
-{% endtabs %}
+
 
 ## Context
 
