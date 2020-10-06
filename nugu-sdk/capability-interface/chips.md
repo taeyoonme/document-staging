@@ -20,7 +20,19 @@ DialogUXStateAggregatorInterface.Listener 추가로 발화 가이드를 전달 �
 {% endtab %}
 
 {% tab title="iOS" %}
+NuguClient instance 를 통해 ChipsAgent instance 에 접근할 수 있습니다.
 
+```text
+let chipsAgent = nuguClient.chipsAgent
+```
+
+보이스 크롬 UI 구성을 위해 TTS interface, ASR interface, Chips interface, Session interface 를 병합해주는 DisplayAggregatorInterface 를 제공합니다.
+
+NuguClient instance 를 통해 DialogStateAggregator instance 에 접근할 수 있습니다.
+
+```text
+let dialogStateAggregator = nuguClient.dialogStateAggregator
+```
 {% endtab %}
 {% endtabs %}
 
@@ -28,9 +40,23 @@ DialogUXStateAggregatorInterface.Listener 추가로 발화 가이드를 전달 �
 
 보이스 크롬에 노출하기 위한 데이터는 Render directive 에 포함되어 전달됩니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/dialog/DialogUXStateAggregatorInterface.kt#L64)
+{% tabs %}
+{% tab title="Android" %}
+발화 가이드를 전달 받으려면 DialogUXStateAggregatorInterface.Listener 를 추가합니다.
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguClientKit/Sources/Business/DialogStateDelegate.swift#L30)
+```text
+nuguAndroidClient.addDialogUXStateListener(this)
+```
+{% endtab %}
+
+{% tab title="Second Tab" %}
+발화 가이드를 전달 받으려면 DialogStateDelegate 를 추가합니다.
+
+```text
+dialogStateAggregator.add(delegate: self)
+```
+{% endtab %}
+{% endtabs %}
 
 ## Context
 
