@@ -52,6 +52,40 @@ let mediaPlayerAgent = nuguClient.mediaPlayerAgent
 {% endtab %}
 {% endtabs %}
 
+### 제어 명령
+
+`사용자 발화`에 의해 음악 [검색](mediaplayer.md#search)/[재생](mediaplayer.md#play)/[중지](mediaplayer.md#stop)/[다음](mediaplayer.md#next)/[이전](mediaplayer.md#previous)/[탐색](mediaplayer.md#move)/[일시정지](mediaplayer.md#pause)/[계속재생](mediaplayer.md#resume)/[다시재생](mediaplayer.md#rewind)/[반복](mediaplayer.md#toggle)/[즐겨찾기](mediaplayer.md#toggle)/[셔플](mediaplayer.md#toggle) 이 directive 로 요청될 수 있습니다.
+
+{% tabs %}
+{% tab title="Android" %}
+MediaPlayer 의 search, play, stop, next, previous, move, pause, resume, rewind, toggle 함수에서 각 각의 기능을 구현합니다.
+{% endtab %}
+
+{% tab title="iOS" %}
+음악을 제어려면 MediaPlayerAgentDelegate를 추가합니다.
+
+```text
+mediaPlayerAgent.delegate = self
+```
+
+MediaPlayerAgentDelegate 의 mediaPlayerAgentReceiveSearch/Play/stop/next/previous/move/pause/resume/rewind/toggle 함수에서 각 각의 기능을 구현합니다.
+{% endtab %}
+{% endtabs %}
+
+### 재생중인 곡 정보 요청
+
+재생중인 곡 정보가 [GetInfo](mediaplayer.md#getinfo) directive 로 요청될 수 있습니다.
+
+{% tabs %}
+{% tab title="Android" %}
+MediaPlayer.getInfo\(\) 에서 곡 정보를 전달합니다.
+{% endtab %}
+
+{% tab title="iOS" %}
+MediaPlayerAgentDelegate.mediaPlayerAgentReceiveGetInfo 에서 곡 정보를 전달합니다.
+{% endtab %}
+{% endtabs %}
+
 ## Context
 
 ```text
@@ -410,6 +444,8 @@ let mediaPlayerAgent = nuguClient.mediaPlayerAgent
 </table>
 
 ## Directives
+
+### Play
 
 ```text
 {
