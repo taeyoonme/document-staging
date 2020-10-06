@@ -10,11 +10,34 @@ description: 디바이스 배터리 정보를 Play 로 전달하기 위한 규�
 
 ## SDK Interface
 
+### BatteryAgent 사용
+
+Battery interface 규격에 따른 디바이스의 정보 전달은 BatteryAgent 가 처리합니다.
+
+{% tabs %}
+{% tab title="Android" %}
+BatteryStatusProvider 구현으로 배터리 정보를 전달할 수 있지만 BatteryAgent 에 대한 접근은 지원하지 않습니다.
+{% endtab %}
+{% endtabs %}
+
 ### Context 구성
 
 디바이스 배터리 정보를 [Context](battery.md#context) 에 포함시켜 주어야 합니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/battery/BatteryStatusProvider.kt#L21)
+{% tabs %}
+{% tab title="Android" %}
+NuguAndroidClient 에 배터리 정보을 전달를 위한 기본 BatteryStatusProvider 구현이 포함되어 있습니다.
+
+BatteryStatusProvider 을 직접 구현하려면 NuguAndroidClient 생성시 추가합니다.
+
+```text
+NuguAndroidClient.Builder(...)
+    .batteryStatusProvider(object : BatteryStatusProvider {
+        ...
+    })
+```
+{% endtab %}
+{% endtabs %}
 
 ## Context
 
