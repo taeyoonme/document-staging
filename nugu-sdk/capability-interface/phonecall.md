@@ -41,6 +41,12 @@ NuguAndroidClient().Builder()
                 }
             })
 ```
+
+NuguAndroidClient instance 를 통해 PhoneCallAgent instance 에 접근할 수 있습니다.
+
+```text
+val phoneCallAgent = nuguAndroidClient.getAgent(PhoneCallAgent.NAMESPACE)
+```
 {% endtab %}
 
 {% tab title="iOS" %}
