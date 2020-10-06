@@ -62,6 +62,22 @@ MessageClient.sendMessage\(\) 에서 문자 전송 기능을 구현합니다.
 {% tabs %}
 {% tab title="Android" %}
 MessageClient.getMessageList\(\) 에서 문자 가져오기 기능을 구현합니다.
+
+문자 재생은 SDK 에서 실행됩니다.
+{% endtab %}
+{% endtabs %}
+
+### 재생 상태 모니터링
+
+[ReadMessage](message.md#readmessage) directive 로 전달된 문자에 대한 재생 상태를 모니터링 할 수 있습니다.
+
+{% tabs %}
+{% tab title="Android" %}
+재생 상태를 모니터링 하려면 MessageAgentInterface.OnPlaybackListener 를 추가합니다.
+
+```text
+messageAgent.addOnPlaybackListener(this)
+```
 {% endtab %}
 {% endtabs %}
 
