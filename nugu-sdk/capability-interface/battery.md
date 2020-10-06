@@ -16,7 +16,11 @@ Battery interface 규격에 따른 디바이스의 정보 전달은 BatteryAgent
 
 {% tabs %}
 {% tab title="Android" %}
-BatteryStatusProvider 구현으로 배터리 정보를 전달할 수 있지만 BatteryAgent 에 대한 접근은 지원하지 않습니다.
+NuguAndroidClient instance 를 통해 BatteryAgent instance 에 접근할 수 있습니다.
+
+```text
+val batteryAgent = nuguAndroidClient.getAgent(DefaultBatteryAgent.NAMESPACE)
+```
 {% endtab %}
 {% endtabs %}
 

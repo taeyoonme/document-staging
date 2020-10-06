@@ -16,17 +16,23 @@ Session interface 규격에 따른 디바이스의 동작 제어는 SessionAgent
 
 {% tabs %}
 {% tab title="Android" %}
-DialogUXStateAggregatorInterface.Listener 추가로 세션 상태를 전달 받을 수 있지만 SessionAgent 에 대한 접근은 지원하지 않습니다.
+NuguAndroidClient instance 를 통해 SessionAgent instance 에 접근할 수 있습니다.
+
+```text
+val sessionAgent = nuguAndroidClient.getAgent(DefaultSoundAgent.NAMESPACE)
+```
+
+보이스 크롬 UI 구성을 위해 TTS interface, ASR interface, Chips interface, Session interface 를 병합해주는 DialogUXStateAggregator 를 제공합니다.
 {% endtab %}
 
-{% tab title="Second Tab" %}
+{% tab title="iOS" %}
 NuguClient instance 를 통해 SessionAgent instance 에 접근할 수 있습니다.
 
 ```text
 let sessionAgent = nuguClient.sessionAgent
 ```
 
-보이스 크롬 UI 구성을 위해 TTS interface, ASR interface, Chips interface, Session interface 를 병합해주는 DisplayAggregatorInterface 를 제공합니다.
+보이스 크롬 UI 구성을 위해 TTS interface, ASR interface, Chips interface, Session interface 를 병합해주는 DisplayStateAggregator 를 제공합니다.
 
 NuguClient instance 를 통해 DialogStateAggregator instance 에 접근할 수 있습니다.
 

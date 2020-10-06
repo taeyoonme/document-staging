@@ -20,7 +20,11 @@ iOS 는 ScreenAgent 를 지원하지 않습니다.
 
 {% tabs %}
 {% tab title="Android" %}
-Screen 구현으로 디스플레이를 제어할 수 있지만 ScreenAgent 에 대한 접근은 지원하지 않습니다.
+NuguAndroidClient instance 를 통해 ScreenAgent instance 에 접근할 수 있습니다.
+
+```text
+val screenAgent = nuguAndroidClient.getAgent(DefaultScreenAgent.NAMESPACE)
+```
 {% endtab %}
 {% endtabs %}
 

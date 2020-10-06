@@ -20,7 +20,11 @@ iOS 는 MicAgent 를 지원하지 않습니다.
 
 {% tabs %}
 {% tab title="Android" %}
-Microphone 구현으로 microphone 을 제어할 수 있지만 MicrophoneAgent 에 대한 접근은 지원하지 않습니다.
+NuguAndroidClient instance 를 통해 MicrophoneAgent instance 에 접근할 수 있습니다.
+
+```text
+val microphoneAgent = nuguAndroidClient.getAgent(DefaultMicrophoneAgent.NAMESPACE)
+```
 {% endtab %}
 
 {% tab title="Linux" %}

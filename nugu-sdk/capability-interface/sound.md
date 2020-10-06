@@ -16,7 +16,11 @@ Sound interface 규격에 따른 디바이스의 동작 제어는 SoundAgent 가
 
 {% tabs %}
 {% tab title="Android" %}
-SoundProvider 구현으로 음원 파일을 재생할 수 있지만 SoundAgent 에 대한 접근은 지원하지 않습니다.
+NuguAndroidClient instance 를 통해 SoundAgent instance 에 접근할 수 있습니다.
+
+```text
+val soundAgent = nuguAndroidClient.getAgent(DefaultSoundAgent.NAMESPACE)
+```
 {% endtab %}
 
 {% tab title="iOS" %}
