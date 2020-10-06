@@ -45,13 +45,9 @@ nugu_client->getCapabilityBuilder()
 
 Play 에서 디바이스의 볼륨을 제어하기 위해서는 디바이스의 볼륨 정보를 [Context](location.md#context) 에 포함시켜 주어야 합니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/speaker/Speaker.kt#L23)
-
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/speaker_interface.hh#L52)
-
 {% tabs %}
 {% tab title="Android" %}
-Context 전달하려면 각 Speaker.Type 의 Speaker 를 구현해야 합니다.
+Context 전달하려면 각 Speaker.Type 의 Speaker 를 구현합니다.
 
 NuguAndroidClient 에 볼륨 제어를 위한 기본 Speaker 구현이 포함되어 있습니다.
 
@@ -79,7 +75,7 @@ NuguAndroidClient.Builder(...)
 {% endtab %}
 
 {% tab title="Linux" %}
-Context 전달하려면 각 [SpeakerType](https://nugu-developers.github.io/nugu-linux/group__SpeakerInterface.html#ga8601f6be80368c9d1a7c7b346c99a698) 의 [SpeakerInfo](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1SpeakerInfo.html) 를 설정해주어야 합니다.
+Context 전달하려면 각 [SpeakerType](https://nugu-developers.github.io/nugu-linux/group__SpeakerInterface.html#ga8601f6be80368c9d1a7c7b346c99a698) 의 [SpeakerInfo](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1SpeakerInfo.html) 를 설정합니다.
 
 ```text
 speaker_handler.setSpeakerInfo(speakers)

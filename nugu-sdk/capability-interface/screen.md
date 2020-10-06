@@ -10,6 +10,8 @@ description: 디바이스의 디스플레이를 제어하기 위한 규격
 
 ## SDK Interface
 
+#### ScreenAgent 사용
+
 ### Context 구성
 
 디바이스의 디스플레이 상태를 [Context](screen.md#context) 에 포함시켜 주어야 합니다.

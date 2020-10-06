@@ -10,7 +10,23 @@ description: 디바이스의 블루투스를 제어하기 위한 규격
 
 ## SDK Interface
 
-### 
+### BluetoothAgent 사용
+
+Bluetooth interface 규격에 따른 디바이스의 동작 제어는 BluetoothAgent 가 처리합니다.
+
+{% hint style="warning" %}
+iOS 는 BluetoothAgent 를 지원하지 않습니다.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+NuguAndroidClient instance 를 통해 BluetoothAgent instance 에 접근할 수 있습니다.
+
+```text
+val bluetoothAgent = nuguAndroidClient.bluetoothAgent
+```
+{% endtab %}
+{% endtabs %}
 
 ### Context 구성
 
@@ -18,13 +34,34 @@ description: 디바이스의 블루투스를 제어하기 위한 규격
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/bluetooth/BluetoothProvider.kt#L21)
 
+{% tabs %}
+{% tab title="Android" %}
+Context 를 전달하려면 NuguAndroidClient 생성시 BluetoothProvider 을 추가합니다.
+
+```text
+NuguAndroidClient.Builder(...)
+    .bluetoothProvider(object : BluetoothProvider {
+           ...
+       })
+```
+{% endtab %}
+{% endtabs %}
+
 ### 블루투스 기기 제어
 
 디바이스의 블루투스 기기 제어가 [StartDiscoverableMode](bluetooth.md#startdiscoverablemode)/[FinishDiscoverableMode](bluetooth.md#finishdiscoverablemode) directive 로 요청될 수 있습니다.
 
 디바이스와 연결된 블루투스 기기의 음원 재생이 Play/Stop/Pause/Next/Previous directive 로 요청될 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/ㅡmaster/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/bluetooth/BluetoothAgentInterface.kt#L82)
+{% tabs %}
+{% tab title="Android" %}
+제어 기능을 실행하려면 BluetoothAgentInterface.Listener 를 추가합니다.
+
+```text
+bluetoothAgent.setListener(listener)
+```
+{% endtab %}
+{% endtabs %}
 
 ## Context
 

@@ -14,177 +14,43 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## SDK Interface
 
-### ASRAgent 사용
-
-ASR interface 규격에 따른 디바이스의 동작 제어는 ASRAgent 가 처리합니다.
-
-{% tabs %}
-{% tab title="Android" %}
-NuguAndroidClient instance 를 통해 ASRAgent instance 에 접근할 수 있습니다.
-
-```text
-val asrAgent = nuguAndroidClient.asrAgent
-```
-
-Microphone 으로 부터 음성 데이터를 가져오기 위한 AudioSourceManager 를 생성합니다.
-
-```text
-val audioSourceManager = AudioSourceManager(AudioRecordSourceFactory())
-```
-
-음성인식에 필요한 학습 모델을 설정합니다.
-
-```text
-NuguAndroidClient.Builder(
-    context,
-    NuguOAuth.create(context),
-    audioSourceManager
-).endPointDetector(
-    EndPointDetector(
-        context.getDir(
-            "skt_nugu_assets",
-            Context.MODE_PRIVATE
-        ).absolutePath + File.separator + "skt_epd_model.raw"
-    )
-)
-```
-
-AudioSourceManager, ASRAgent 를 연결해주기 위한 SpeechRecognizerAggregator 를 생성합니다.
-
-```text
-speechRecognizerAggregator = SpeechRecognizerAggregator(
-    null,
-    SpeechProcessorDelegate(asrAgent),
-    audioSourceManager,
-    Handler(Looper.getMainLooper())
-)
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-NuguClient instance 를 통해 ASRAgent instance 에 접근할 수 있습니다.
-
-```text
-let asrAgent = nuguClient.asrAgent
-```
-
-Microphone 으로 부터 음성 데이터를 가져오기 위한 MicInputProvider 를 생성합니다.
-
-```text
-let micInputProvider = MicInputProvider()
-```
-
-음성인식에 필요한 학습 모델을 설정합니다.
-
-```text
-let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw")!
-nuguClient.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
-```
-{% endtab %}
-
-{% tab title="Linux" %}
-[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [ASRAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
-
-```text
-asr_handler = std::shared_ptr<IASRHandler>(
-        CapabilityFactory::makeCapability<ASRAgent, IASRHandler>());
-
-nugu_client->getCapabilityBuilder()
-    ->add(asr_handler.get())
-    ->construct();
-```
-
-음성인식에 필요한 학습 모델을 설정합니다.
-
-```text
- asr_handler->setAttribute(ASRAttribute { "/var/lib/nugu/model", "CLIENT", "PARTIAL" });
-```
-{% endtab %}
-{% endtabs %}
-
 ### 음성 인식 요청
 
-`아리아` 발화 또는 NUGU Button 선택 시 [Recognize](asr.md#recognize) event 를 전달하여 음성인식을 시작할 수 있습니다.
+1. `아리아` 발화 또는 NUGU Button 선택 시 [Recognize](asr.md#recognize) event 를 전달하여 음성인식을 시작할 수 있습니다.
 
-{% tabs %}
-{% tab title="Android" %}
-```text
-speechRecognizerAggregator.startListening()
-```
-{% endtab %}
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L189)
 
-{% tab title="iOS" %}
-```text
-try micInputProvider.start { (buffer, _) in
-    asrAgent.putAudioBuffer(buffer: buffer)
-}
-asrAgent.startRecognition(initiator: .user)
-```
-{% endtab %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AutomaticSpeechRecognition/ASRAgentProtocol.swift#L45)
 
-{% tab title="Linux" %}
-```
-asr_hanlder.startRecognition()
-```
-{% endtab %}
-{% endtabs %}
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L152)
 
-### 음성인식 진행 상태 모니터링
+1. 음성인식 진행 상태를 모니터링 할 수 있습니다.
 
-음성인식에 대한 진행 상태를 모니터링 할 수 있습니다.
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L120)
 
-음성인식에 대한 STT\(SpeechToText\) 결과가 [NotifyResult](asr.md#notifyresult) directive 로 전달됩니다.
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AutomaticSpeechRecognition/ASRAgentDelegate.swift#L28)
 
-{% tabs %}
-{% tab title="Android" %}
-음성인식 진행 상태를 모니터링 하려면 SpeechRecognizerAggregatorInterface.OnStateChangeListener 를 추가합니다.
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L84)
 
-```text
-speechRecognizerAggregator.addListener(this)
-```
-{% endtab %}
+1. 음성인식 STT\(SpeechToText\) 결과로 [NotifyResult](asr.md#notifyresult) directive 가 전달됩니다.
 
-{% tab title="iOS" %}
-음성인식 진행 상태를 모니터링 하려면 ASRAgentDelegate 를 추가합니다.
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L131)
 
-```text
-asrAgent.add(delegate: self)
-```
-{% endtab %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AutomaticSpeechRecognition/ASRAgentDelegate.swift#L32)
 
-{% tab title="Linux" %}
-음성인식 진행 상태를 모니터링 하려면 [IASRListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRListener.html) 를 추가합니다.
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L84)
 
-```text
-asr_listener = std::make_shared<ASRListener>();
-CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(asr_listener.get());
-```
-{% endtab %}
-{% endtabs %}
+1. 음성인식 결과 Play 에서 [ExpectSpeech](asr.md#expectspeech) directive 로 음성인식을 재요청 할 수 있습니다.
 
 ### 음성 인식 중단
 
 사용자가 음성 인식 중단 요청을 [StopRecognize](asr.md#stoprecognize) event 로 전달할 수 있습니다.
 
-{% tabs %}
-{% tab title="Android" %}
-```text
-speechRecognizerAggregator.stopListening
-```
-{% endtab %}
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/asr/ASRAgentInterface.kt#L200)
 
-{% tab title="iOS" %}
-```text
-asrAgent.stopRecognition()
-```
-{% endtab %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AutomaticSpeechRecognition/ASRAgentProtocol.swift#L53)
 
-{% tab title="Linux" %}
-```text
-asr_hanlder.stopRecognition()
-```
-{% endtab %}
-{% endtabs %}
+[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/asr_interface.hh#L163)
 
 ## Context
 
@@ -296,28 +162,19 @@ asr_hanlder.stopRecognition()
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>task</p>
-      </td>
+      <td style="text-align:left">asrContext.task</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneId</p>
-      </td>
+      <td style="text-align:left">asrContext.sceneId</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneText</p>
-      </td>
+      <td style="text-align:left">asrContext.sceneText</td>
       <td style="text-align:left">Array&lt;String&gt;</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
@@ -559,31 +416,21 @@ asr_hanlder.stopRecognition()
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>word</p>
-      </td>
+      <td style="text-align:left">wakeup.word</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0; &#xD3EC;&#xD568;&#xB41C;
         wakeup word( ex &quot;&#xC544;&#xB9AC;&#xC544;&quot;)</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary</td>
       <td style="text-align:left">object</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0;&#xC11C; wakeup word&#xC5D0;
         &#xB300;&#xD55C; boundary &#xC815;&#xBCF4;</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>start</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary.start</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -594,11 +441,7 @@ asr_hanlder.stopRecognition()
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>end</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary.end</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -609,11 +452,7 @@ asr_hanlder.stopRecognition()
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>detection</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary.detection</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -624,11 +463,7 @@ asr_hanlder.stopRecognition()
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>metric</p>
-      </td>
+      <td style="text-align:left">wakeup.boundary.metric</td>
       <td style="text-align:left">STRING</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
@@ -639,32 +474,21 @@ asr_hanlder.stopRecognition()
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power</p>
-      </td>
+      <td style="text-align:left">wakeup.power</td>
       <td style="text-align:left">object</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0; &#xD3EC;&#xD568;&#xB41C;
         wakeup pcm&#xC758; power&#xAC12;</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power.</p>
-        <p>noise</p>
-      </td>
+      <td style="text-align:left">wakeup.power.noise</td>
       <td style="text-align:left">Float</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">wakeup pcm&#xC758; power&#xC911; noise&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xB294;
         &#xAC12; (&#xC8FC;&#xB85C; min&#xAC12;)</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power.</p>
-        <p>speech</p>
-      </td>
+      <td style="text-align:left">wakeup.power.speech</td>
       <td style="text-align:left">Float</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">wakeup pcm&#xC758; power&#xC911; speech&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xB294;
@@ -678,28 +502,19 @@ asr_hanlder.stopRecognition()
         ExpectSpeech&#xC5D0;&#xC11C; &#xBC1B;&#xC740; asrContext&#xB97C; &#xC801;&#xC6A9;</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>task</p>
-      </td>
+      <td style="text-align:left">asrContext.task</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneId</p>
-      </td>
+      <td style="text-align:left">asrContext.sceneId</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneText</p>
-      </td>
+      <td style="text-align:left">asrContext.sceneText</td>
       <td style="text-align:left">Array&lt;String&gt;</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
@@ -711,10 +526,7 @@ asr_hanlder.stopRecognition()
       <td style="text-align:left">Server EPD &#xC0AC;&#xC6A9;&#xC2DC; &#xD544;&#xC218; &#xAC12;.</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>listen</p>
-      </td>
+      <td style="text-align:left">timeout.listen</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -723,10 +535,7 @@ asr_hanlder.stopRecognition()
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>maxSpeech</p>
-      </td>
+      <td style="text-align:left">timeout.maxSpeech</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
@@ -735,10 +544,7 @@ asr_hanlder.stopRecognition()
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>response</p>
-      </td>
+      <td style="text-align:left">timeout.response</td>
       <td style="text-align:left">LONG</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">

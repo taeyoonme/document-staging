@@ -10,49 +10,13 @@ description: 디바이스 위치 정보를 Play 로 전달하기 위한 규격
 
 ## SDK Interface
 
-### LocationAgent 사용
-
-Location interface 규격에 따른 디바이스의 동작 제어는 LocationAgent 가 처리합니다.
-
-{% tabs %}
-{% tab title="Android" %}
-NuguAndroidClient instance 를 통해 LocationAgent instance 에 접근할 수 있습니다.
-
-```text
-val locationAgent = nuguAndroidClient.locationAgent
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-NuguClient instance 를 통해 LocationAgent instance 에 접근할 수 있습니다.
-
-```text
-let locationAgent = nuguClient.locationAgent
-```
-{% endtab %}
-{% endtabs %}
-
 ### Context 구성
 
-Play 에서 위치 정보 기반의 정보를 제공 받기 위해서는 디바이스의 위치 정보를 [Context](location.md#context) 에 포함시켜 주어야 합니다.
+디바이스 위치 정보를 [Context](location.md#context) 에 포함시켜 주어야 합니다.
 
-{% tabs %}
-{% tab title="Android" %}
-Context 를 전달하려면 LocationProvider 를 추가합니다.
+[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/location/LocationProvider.kt#L26)
 
-```text
-locationAgent.setLocationProvider(this)
-```
-{% endtab %}
-
-{% tab title="iOS" %}
-Context 를 전달하려면 LocationAgentDelegate 를 추가합니다.
-
-```text
-locationAgent.delegate = self
-```
-{% endtab %}
-{% endtabs %}
+[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/Location/LocationAgentDelegate.swift#L31)
 
 ## Context
 
