@@ -49,7 +49,7 @@ nugu_client->getCapabilityBuilder()
 {% endtab %}
 {% endtabs %}
 
-### 재생 상태 정보 모니터링
+### 재생 상태 모니터링
 
 [Play](audioplayer.md#play) directive 로 전달된 음원에 대한 재생 상태를 모니터링 할 수 있습니다.
 

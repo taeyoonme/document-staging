@@ -132,7 +132,7 @@
     * [Session](nugu-sdk/capability-interface/session.md)
     * [PhoneCall](nugu-sdk/capability-interface/phonecall.md)
     * [Message](nugu-sdk/capability-interface/message.md)
-    * [MediaPlaer](nugu-sdk/capability-interface/mediaplaer.md)
+    * [MediaPlayer](nugu-sdk/capability-interface/mediaplayer.md)
   * [Platform](nugu-sdk/platform/README.md)
     * [iOS](nugu-sdk/platform/ios/README.md)
       * [시작하기](nugu-sdk/platform/ios/start.md)
