@@ -100,7 +100,21 @@ PhoneCallAgentDelegate.phoneCallAgentDidReceiveMakeCall\(\) 에서 전화 발신
 
 ### 수신
 
-수신 전화에 대한 수락이 [AcceptCall](phonecall.md#acceptcall) directive 로 요청될 수 있습니다.
+수신 전화에 대한 수락이 [AcceptCall](phonecall.md#acceptcall) directive 로 거절이 [EndCall](phonecall.md#endcall) directive 로 요청될 수 있습니다.
+
+{% hint style="info" %}
+iOS 는 수신 수락/거절 기능을 제공하지 않습니다.
+{% endhint %}
+
+{% tabs %}
+{% tab title="Android" %}
+PhoneCallClient.acceptCall\(\) 에서 수신 수락 기능을 구현합니다.
+
+PhoneCallClient.endCall\(\) 에서 수신 거절 기능을 구현합니다.
+{% endtab %}
+{% endtabs %}
+
+
 
 ## Context
 
