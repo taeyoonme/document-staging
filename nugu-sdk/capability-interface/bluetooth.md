@@ -10,6 +10,8 @@ description: 디바이스의 블루투스를 제어하기 위한 규격
 
 ## SDK Interface
 
+### 
+
 ### Context 구성
 
 디바이스의 블루투스 상태를 [Context](speaker.md#context) 에 포함시켜 주어야 합니다.
@@ -81,20 +83,29 @@ description: 디바이스의 블루투스를 제어하기 위한 규격
         &#xC815;&#xBCF4;</td>
     </tr>
     <tr>
-      <td style="text-align:left">activeDevice.id</td>
+      <td style="text-align:left">
+        <p>activeDevice.</p>
+        <p>id</p>
+      </td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">ID(pairedDevices &#xBAA9;&#xB85D; &#xC911; &#xD558;&#xB098;&#xC774;&#xC5B4;&#xC57C;
         &#xD568;)</td>
     </tr>
     <tr>
-      <td style="text-align:left">activeDevice.name</td>
+      <td style="text-align:left">
+        <p>activeDevice.</p>
+        <p>name</p>
+      </td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">activeDevice.streaming</td>
+      <td style="text-align:left">
+        <p>activeDevice.</p>
+        <p>streaming</p>
+      </td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">

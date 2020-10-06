@@ -4,7 +4,7 @@ description: 디바이스의 볼륨을 제어하기 위한 규격
 
 # Speaker
 
-## Version
+## ㅁVersion
 
 최신 버전은 1.0 입니다.
 
@@ -25,10 +25,6 @@ NuguAndroidClient instance 를 통해 DisplayAgent instance 에 접근할 수 �
 ```text
 val speakerAgent = nuguAndroidClient.speakerAgent
 ```
-
-NuguAndroidClient 에 AudioManager.STREAM\_MUSIC, AudioManager.STREAM\_ALARM 볼륨 제어를 위한 Speaker 구현이 포함되어 있습니다.
-
-NuguAndroidClient 에서 제공하는 Speaker 를 사용하지 않으려면  
 {% endtab %}
 
 {% tab title="Linux" %}
@@ -47,29 +43,72 @@ nugu_client->getCapabilityBuilder()
 
 ### Context 구성
 
-디바이스의 볼륨 상태를 [Context](speaker.md#context) 에 포함시켜 주어야 합니다.
+Play 에서 디바이스의 볼륨을 제어하기 위해서는 디바이스의 볼륨 정보를 [Context](location.md#context) 에 포함시켜 주어야 합니다.
 
 [Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/speaker/Speaker.kt#L23)
 
 [Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/speaker_interface.hh#L52)
 
+{% tabs %}
+{% tab title="Android" %}
+Context 전달하려면 각 Speaker.Type 의 Speaker 를 구현해야 합니다.
+
+NuguAndroidClient 에 볼륨 제어를 위한 기본 Speaker 구현이 포함되어 있습니다.
+
+Speaker 을 직접 구현하려면 NuguAndroidClient 생성시 SpeakerFactory 를 추가합니다.
+
+```text
+NuguAndroidClient.Builder(...)
+    .speakerFactory(object : SpeakerFactory {
+        override fun createNuguSpeaker(): Speaker? = ...
+
+        override fun createAlarmSpeaker(): Speaker? = ...
+
+        override fun createCallSpeaker(): Speaker? = ...
+        override fun createExternalSpeaker(): Speaker? = ...
+
+        override fun createSpeaker(type: Speaker.Type): Speaker? {
+            return when (type) {
+                Speaker.Type.NUGU -> ...
+                Speaker.Type.ALARM -> ...
+                else -> ...
+            }
+        }
+    })
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+Context 전달하려면 각 [SpeakerType](https://nugu-developers.github.io/nugu-linux/group__SpeakerInterface.html#ga8601f6be80368c9d1a7c7b346c99a698) 의 [SpeakerInfo](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1SpeakerInfo.html) 를 설정해주어야 합니다.
+
+```text
+speaker_handler.setSpeakerInfo(speakers)
+```
+{% endtab %}
+{% endtabs %}
+
 ### 볼륨 제어
 
 디바이스의 볼륨 제어가 [SetVolume](speaker.md#setvolume) directive 로 요청될 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/speaker/Speaker.kt#L58)
-
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/speaker_interface.hh#L77)
-
-### 음소거 제어
-
 디바이스의 볼륨 음소거 제어가 [SetMute](speaker.md#setmute) directive 로 요청될 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/speaker/Speaker.kt#L66)
+{% tabs %}
+{% tab title="Android" %}
+Speaker.setVolume 에서 볼륨 제어를 구현합니다.
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/speaker_interface.hh#L87)
+Speaker.setMute 에서 볼륨 음소거 제어를 구현합니다.
+{% endtab %}
 
+{% tab title="Linux" %}
+볼륨을 제어하려면 [ISpeakerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISpeakerListener.html) 를 추가합니다.
 
+```text
+speaker_listener = std::make_shared<SpeakerListener>();
+CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listener.get());
+```
+{% endtab %}
+{% endtabs %}
 
 ## Context
 
