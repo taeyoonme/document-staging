@@ -25,6 +25,16 @@ NuguAndroidClient instance 를 통해 MicrophoneAgent instance 에 접근할 수
 ```text
 val microphoneAgent = nuguAndroidClient.getAgent(DefaultMicrophoneAgent.NAMESPACE)
 ```
+
+NuguAndroidClient 생성시 Microphone 을 추가합니다.
+
+```text
+class MyMicrophone: Microphone {
+    ...
+}
+NuguAndroidClient.Builder(...)
+    .defaultMicrophone(MyMicrophone())
+```
 {% endtab %}
 
 {% tab title="Linux" %}
@@ -47,15 +57,15 @@ nugu_client->getCapabilityBuilder()
 
 {% tabs %}
 {% tab title="Android" %}
-Context 전달하려면 NuguAndroidClient 생성시 Microphone 을 추가합니다.
+Microphone 을 구현합니다.
 
 ```text
-NuguAndroidClient.Builder(...)
-    .defaultMicrophone(object : Microphone {
-        override fun getSettings(): Settings {
-            ...
-        }
-   })
+class MyMicrophone: Microphone {
+    override fun getSettings(): Settings {
+        ...
+    }
+    ...
+}
 ```
 {% endtab %}
 {% endtabs %}
@@ -66,14 +76,37 @@ NuguAndroidClient.Builder(...)
 
 {% tabs %}
 {% tab title="Android" %}
-Microphone.on, Microphone.off 에서 microphone 제어를 구현합니다.
+Microphone 을 구현합니다.
+
+```text
+class MyMicrophone: Microphone {
+    override fun on(): Boolean {
+        ...
+    }
+
+    override fun off(): Boolean {
+        ...
+    }
+    
+    ...
+}
+```
 {% endtab %}
 
 {% tab title="Linux" %}
-Microphone 을 제어하려면 [IMicListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMicListener.html) 를 추가합니다.
+[IMicListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMicListener.html) 를 추가합니다.
 
 ```text
-mic_listener = std::make_shared<MicListener>();
+class MyMicListener : public IMicListener {
+public:
+    ...
+
+    void micStatusChanged (MicStatus &status) override
+    {
+        ...
+    }
+};
+mic_listener = std::make_shared<MyMicListener>();
 CapabilityFactory::makeCapability<MicAgent, IMicHandler>(mic_listener.get());
 ```
 {% endtab %}

@@ -22,28 +22,20 @@ Extension interface 규격에 따른 디바이스의 동작 제어는 ExtensionA
 
 {% tabs %}
 {% tab title="Android" %}
-ExtensionAgent 를 사용하려면 NuguAndroidClient 생성시 ExtensionAgentInterface.Client 를 추가합니다.
-
-```text
-NuguAndroidClient.Builder(...)
-    .extensionClient(object : ExtensionAgentInterface.Client {
-           override fun action(data: String, playServiceId: String): Boolean {
-               // do action & return true if success, otherwise false
-               return true
-           }
-
-           override fun getData(): String? {
-               // Fill in the required information for the context.
-               // Return a data string in structured JSON. If not exist, return null
-               return null
-           }
-       })
-```
-
 NuguAndroidClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습니다.
 
 ```text
 val extensionAgent = nuguAndroidClient.extensionAgent
+```
+
+NuguAndroidClient 생성시 ExtensionAgentInterface.Client 를 추가합니다.
+
+```text
+class MyExtensionAgentClient: ExtensionAgentInterface.Client {
+    ...
+}
+NuguAndroidClient.Builder(...)
+    .extensionClient(MyExtensionAgentClient())
 ```
 {% endtab %}
 
@@ -64,10 +56,10 @@ Play 에서 알아야 하는 디바이스/Application 의 정보를 [Context](ex
 
 {% tabs %}
 {% tab title="Android" %}
-[ExtensionAgent 사용](extension.md#extensionagent)에서 추가한 ExtensionAgentInterface.Client 을 통해 Context 를 전달하거나 [Action](extension.md#action) 을 실행합니다.
+ExtensionAgentInterface.Client 를 구현합니다.
 
 ```text
-object : ExtensionAgentInterface.Client {
+class MyExtensionAgentClient : ExtensionAgentInterface.Client {
     override fun getData(): String? {
         // json string
         ...

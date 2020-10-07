@@ -25,6 +25,16 @@ NuguAndroidClient instance 를 통해 BluetoothAgent instance 에 접근할 수 
 ```text
 val bluetoothAgent = nuguAndroidClient.bluetoothAgent
 ```
+
+NuguAndroidClient 생성시 BluetoothProvider 을 추가합니다.
+
+```text
+class MyBluetoothProvider: BluetoothProvider {
+    ...
+}
+NuguAndroidClient.Builder(...)
+    .bluetoothProvider(MyBluetoothProvider)
+```
 {% endtab %}
 {% endtabs %}
 
@@ -36,21 +46,20 @@ val bluetoothAgent = nuguAndroidClient.bluetoothAgent
 
 {% tabs %}
 {% tab title="Android" %}
-Context 를 전달하려면 NuguAndroidClient 생성시 BluetoothProvider 을 추가합니다.
+BluetoothProvider 를 구현합니다.
 
 ```text
-NuguAndroidClient.Builder(...)
-    .bluetoothProvider(object : BluetoothProvider {
-        override fun device() : BluetoothHost? {
-            ...
-        }
-        
-        override fun activeDevice() : BluetoothDevice? {
-            ...
-        }
-        
+class MyBluetoothProvider: BluetoothProvider {
+    override fun device() : BluetoothHost? {
         ...
-    })
+    }
+        
+    override fun activeDevice() : BluetoothDevice? {
+        ...
+    }
+    
+    ...
+}
 ```
 {% endtab %}
 {% endtabs %}

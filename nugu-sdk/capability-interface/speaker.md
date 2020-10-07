@@ -31,21 +31,24 @@ NuguAndroidClient 에 볼륨 제어를 위한 기본 Speaker 구현이 포함되
 Speaker 을 직접 구현하려면 NuguAndroidClient 생성시 SpeakerFactory 를 추가합니다.
 
 ```text
-
+class MySpeaker: Speaker {
+    ...
+}
 NuguAndroidClient.Builder(...)
     .speakerFactory(object : SpeakerFactory {
-        override fun createNuguSpeaker(): Speaker? = ...
+        override fun createNuguSpeaker(): Speaker? = MySpeaker()
 
-        override fun createAlarmSpeaker(): Speaker? = ...
+        override fun createAlarmSpeaker(): Speaker? = MySpeaker()
 
-        override fun createCallSpeaker(): Speaker? = ...
-        override fun createExternalSpeaker(): Speaker? = ...
+        override fun createCallSpeaker(): Speaker? = MySpeaker()
+        
+        override fun createExternalSpeaker(): Speaker? = MySpeaker()
 
         override fun createSpeaker(type: Speaker.Type): Speaker? {
             return when (type) {
-                Speaker.Type.NUGU -> ...
-                Speaker.Type.ALARM -> ...
-                else -> ...
+                Speaker.Type.NUGU -> MySpeaker()
+                Speaker.Type.ALARM -> MySpeaker()
+                else -> MySpeaker()
             }
         }
     })

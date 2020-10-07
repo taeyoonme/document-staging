@@ -44,37 +44,18 @@ let audioPlayerAgent = nuguClient.audioPlayerAgent
 
 {% tabs %}
 {% tab title="Android" %}
-DisplayAggregatorInterface.Controller 를 추가합니다.
+Context 를 전달하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
 
 ```text
-val controller = object: DisplayAggregatorInterface.Controller {
-    override fun getFocusedItemToken(): String? {
-        ...
-    }
-    
-    override fun getVisibleTokenList(): List<String>? {
-        ...
-    }
-    
-    ...
-}
-
 displayAggregator.displayCardRendered(templateId, controller)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-DisplayAgentDelegate 를 추가합니다.
+Context 를 전달하려면 DisplayAgentDelegate 를 추가합니다.
 
 ```text
-class MyDisplayAgentDelegate: DisplayAgentDelegate {
-    func displayAgentRequestContext(templateId: String, completion: @escaping (DisplayContext?) -> Void) {
-        ...
-    }
-    
-    ...
-}
-displayAgent.delegate = MyDisplayAgentDelegate()
+displayAgent.delegate = self
 ```
 {% endtab %}
 {% endtabs %}
@@ -89,57 +70,24 @@ Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](d
 
 {% tabs %}
 {% tab title="Android" %}
-DisplayAggregatorInterface.Renderer 를 추가합니다.
+UI 를 구성하려면 DisplayAggregatorInterface.Renderer 를 추가합니다.
 
 ```text
-val renderer = object: DisplayAggregatorInterface.Renderer {
-    override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
-        ...
-    }
-    
-    ...
-}
-displayAggregator.setRenderer(renderer)
+displayAggregator.setRenderer(this)
 ```
 
 UI 를 제어하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
 
 ```text
-val controller = object: DisplayAggregatorInterface.Controller {
-    override fun controlFocus(direction: Direction): Boolean {
-        ...
-    }
-    
-    override fun controlScroll(direction: Direction): Boolean {
-        ...
-    }
-    
-    ...
-}
 displayAggregator.displayCardRendered(templateId, controller)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-DisplayAgentDelegate 를 추가합니다.
+UI 를 구성하거나 제어하려면 DisplayAgentDelegate 를 추가합니다.
 
 ```text
-class MyDisplayAgentDelegate: DisplayAgentDelegate {
-    func displayAgentShouldRender(template: DisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
-        ...
-    }
-    
-    func displayAgentShouldMoveFocus(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -> Void) {
-        ...
-    }
-    
-    func displayAgentShouldScroll(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -> Void) {
-        ...
-    }
-    
-    ...
-}
-displayAgent.delegate = MyDisplayAgentDelegate()
+displayAgent.delegate = self
 ```
 {% endtab %}
 {% endtabs %}

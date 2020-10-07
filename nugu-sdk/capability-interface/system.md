@@ -55,34 +55,18 @@ iOS 는 지원하지 않습니다
 
 {% tabs %}
 {% tab title="Android" %}
-SystemAgentInterface.Listener 를 추가합니다.
+디바이스 전원을 제어하려면 SystemAgentInterface.Listener 를 추가합니다.
 
 ```text
-val listener = object: SystemAgentInterface.Listener {
-    override fun onTurnOff() {
-        ...
-    }
-}
-systemAgent.addListener(listener)
+systemAgent.addListener(this)
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
-[ISystemListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISystemListener.html) 를 추가합니다.
+디바이스 전원을 제어하려면 ISystemListener 를 추가합니다.
 
 ```text
-class MySystemListener : public ISystemListener {
-public:
-    ...
-
-    void onTurnOff() override
-    {
-        ...
-    }
-    
-    ...
-};
-system_listener = std::make_shared<MySystemListener>();
+system_listener = std::make_shared<SystemListener>();
 CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.get());
 ```
 {% endtab %}
@@ -96,49 +80,26 @@ NUGU 서버에서 에러가 발생할 경우 [Exception](system.md#exception) di
 
 {% tabs %}
 {% tab title="Android" %}
-SystemAgentInterface.Listener 를 추가합니다.
+에러 처리를 하려면 SystemAgentInterface.Listener 를 추가합니다.
 
 ```text
-val listener = object: SystemAgentInterface.Listener {
-    override fun onException(code: ExceptionCode, description: String?) {
-        ...
-    }
-}
-systemAgent.addListener(listener)
+systemAgent.addListener(this)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-SystemAgentDelegate 를 추가합니다.
+에러 처리를 하려면 SystemAgentDelegate 를 추가합니다.
 
 ```text
-class MySystemAgentDelegate: SystemAgentDelegate {
-    func systemAgentDidReceiveExceptionFail(code: SystemAgentExceptionCode.Fail, dialogRequestId: String) {
-        ...
-    }
-    
-    ...
-}
-systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
+systemAgent.add(systemAgentDelegate: self)
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
-[ISystemListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISystemListener.html) 를 추가합니다.
+에러 처리를 하려면 ISystemListener 를 추가합니다.
 
 ```text
-class MySystemListener : public ISystemListener {
-public:
-    ...
-
-    void onException (SystemException exception, const std::string &dialog_id) override
-    {
-        ...
-    }
-    
-    ...
-};
-system_listener = std::make_shared<MySystemListener>();
+system_listener = std::make_shared<SystemListener>();
 CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.get());
 ```
 {% endtab %}
@@ -152,49 +113,26 @@ Application 의 상황에 따라 NUGU 로그인 화면으로 이동하거나 NUG
 
 {% tabs %}
 {% tab title="Android" %}
-SystemAgentInterface.Listener 를 추가합니다.
+디바이스 등록 해제를 감지하려면 SystemAgentInterface.Listener 를 추가합니다.
 
 ```text
-val listener = object: SystemAgentInterface.Listener {
-    override fun onRevoke(reason: RevokeReason) {
-        ...
-    }
-}
-systemAgent.addListener(listener)
+systemAgent.addListener(this)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-SystemAgentDelegate 를 추가합니다.
+디바이스 등록 해제를 감지하려면 SystemAgentDelegate 를 추가합니다.
 
 ```text
-class MySystemAgentDelegate: SystemAgentDelegate {
-    func systemAgentDidReceiveRevokeDevice(reason: SystemAgentRevokeReason, dialogRequestId: String) {
-        ...
-    }
-    
-    ...
-}
-systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
+systemAgent.add(systemAgentDelegate: self)
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
-[ISystemListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISystemListener.html) 를 추가합니다.
+디바이스 등록 해제를 감지하려면 ISystemListener 를 추가합니다.
 
 ```text
-class MySystemListener : public ISystemListener {
-public:
-    ...
-
-    onRevoke (RevokeReason reason) override
-    {
-        ...
-    }
-    
-    ...
-};
-system_listener = std::make_shared<MySystemListener>();
+system_listener = std::make_shared<SystemListener>();
 CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.get());
 ```
 {% endtab %}

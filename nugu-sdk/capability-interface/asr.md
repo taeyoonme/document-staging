@@ -137,52 +137,18 @@ asr_hanlder.startRecognition()
 
 {% tabs %}
 {% tab title="Android" %}
-SpeechRecognizerAggregatorInterface.OnStateChangeListener 를 추가합니다.
+음성인식 진행 상태를 모니터링 하려면 SpeechRecognizerAggregatorInterface.OnStateChangeListener 를 추가합니다.
 
 ```text
-val listener = object: SpeechRecognizerAggregatorInterface.OnStateChangeListener {
-    override fun onStateChanged(state: State) {
-        ...
-    }
-}
-speechRecognizerAggregator.addListener(listener)
-```
-
-ASRAgentInterface.OnResultListener 를 추가합니다.
-
-```text
-val resultListener = object: ASRAgentInterface.OnResultListener {
-    fun onPartialResult(result: String, dialogRequestId: String) {
-        // STT 중간 결과
-        ...
-    }
-    
-    fun onCompleteResult(result: String, dialogRequestId: String) {
-        // STT 최종 결과
-        ...
-    }
-    
-    ...
-}
-asrAgent.addOnResultListener(resultListener)
+speechRecognizerAggregator.addListener(this)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-ASRAgentDelegate 를 추가합니다.
+음성인식 진행 상태를 모니터링 하려면 ASRAgentDelegate 를 추가합니다.
 
 ```text
-class MyASRAgentDelegate: ASRAgentDelegate {
-    func asrAgentDidChange(state: ASRState) {
-        ...
-    }
-    
-    func asrAgentDidReceive(result: ASRResult, dialogRequestId: String) {
-        // NotifyResult 결과 확인
-        ...
-    }
-}
-asrAgent.add(delegate: MyASRAgentDelegate())
+asrAgent.add(delegate: self)
 ```
 {% endtab %}
 
@@ -190,30 +156,7 @@ asrAgent.add(delegate: MyASRAgentDelegate())
 음성인식 진행 상태를 모니터링 하려면 [IASRListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRListener.html) 를 추가합니다.
 
 ```text
-class MyASRListener : public IASRListener {
-public:
-    ...
-
-    void onState (ASRState state, const std::string &dialog_id) override
-    {
-        ...
-    }
-    
-    void onPartial (const std::string &text, const std::string &dialog_id) override
-    {
-        // STT 중간 결과
-        ...
-    }
-    
-    void onComplete (const std::string &text, const std::string &dialog_id) override
-    {
-        // STT 최종 결과
-        ...
-    }
-    
-    ...
-};
-asr_listener = std::make_shared<MyASRListener>();
+asr_listener = std::make_shared<ASRListener>();
 CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(asr_listener.get());
 ```
 {% endtab %}

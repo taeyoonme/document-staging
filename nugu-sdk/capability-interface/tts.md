@@ -51,51 +51,26 @@ nugu_client->getCapabilityBuilder()
 
 {% tabs %}
 {% tab title="Android" %}
-TTSAgentInterface.Listener 를 추가합니다.
+재생 상태를 모니터링 하려면 TTSAgentInterface.Listener 를 추가합니다.
 
 ```text
-val listener = object: TTSAgentInterface.Listener {
-    override fun onStateChanged(state: State, dialogRequestId: String) {
-        ...
-    }
-    
-    ...
-}
-ttsAgent.addListener(listener)
+ttsAgent.addListener(this)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-TTSAgentDelegate 를 추가합니다.
+재생 상태를 모니터링 하려면 TTSAgentDelegate 를 추가합니다.
 
 ```text
-class MyTTSAgentDelegate: TTSAgentDelegate {
-    func ttsAgentDidChange(state: TTSState, dialogRequestId: String) {
-        ...
-    }
-    
-    ...
-}
-ttsAgent.add(delegate: MyTTSAgentDelegate())
+ttsAgent.add(delegate: self)
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
-[ITTSListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSListener.html) 를 추가합니다.
+재생 상태를 모니터링 하려면 [ITTSListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSListener.html) 를 추가합니다.
 
 ```text
-class MyTTSListener : public ITTSListener {
-public:
-    ...
-
-    void onTTSState (TTSState state, const std::string &dialog_id) override
-    {
-        ...
-    }
-    
-    ...
-};
-tts_listener = std::make_shared<MyTTSListener>();
+tts_listener = std::make_shared<TTSListener>();
 CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 ```
 {% endtab %}
