@@ -55,27 +55,49 @@ nugu_client->getCapabilityBuilder()
 
 {% tabs %}
 {% tab title="Android" %}
-재생 상태를 모니터링 하려면 AudioPlayerAgentInterface.Listener 를 추가합니다.
+AudioPlayerAgentInterface.Listener 를 추가합니다.
 
 ```text
-audioPlayerAgent.addListener(this)
+val listener = object: AudioPlayerAgentInterface.Listener {
+    override fun onStateChanged(activity: State, context: Context) {
+        ...
+    }
+}
+audioPlayerAgent.addListener(listener)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-재생 상태를 모니터링 하려면 AudioPlayerAgentDelegate 를 추가합니다.
+AudioPlayerAgentDelegate 를 추가합니다.
 
 ```text
-audioPlayerAgent.add(delegate: self)
+class MyAudioPlayerAgentDelegate: AudioPlayerAgentDelegate {
+    func audioPlayerAgentDidChange(state: AudioPlayerState, dialogRequestId: String) {
+        ...
+    }
+}
+
+audioPlayerAgent.add(delegate: MyAudioPlayerAgentDelegate())
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
-재생 상태를 모니터링 하려면 [IAudioPlayerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
+[IAudioPlayerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
 
 ```text
-aplayer_listener = std::make_shared<AudioPlayerListener>();
-CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(aplayer_listener.get());
+class MyAudioPlayerListener : public IAudioPlayerListener {
+public:
+    ...
+
+    void mediaStateChanged (AudioPlayerState state, const std::string &dialog_id) override
+    {
+        ...
+    }
+    
+    ...
+};
+audio_player_listener = std::make_shared<MyAudioPlayerListener>();
+CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(audio_player_listener.get());
 ```
 {% endtab %}
 {% endtabs %}
@@ -90,24 +112,88 @@ AudioPlayer 로 음원을 재생할 때 화면을 구성하기 위해 필요한 
 
 {% tabs %}
 {% tab title="Android" %}
-재생중인 음원에 대한 UI 를 구성하려면 DisplayAggregatorInterface.Renderer 를 추가합니다.
+DisplayAggregatorInterface.Renderer 를 추가합니다.
 
 ```text
-nuguAndroidClient.setDisplayRenderer(this)
+val renderer = object: DisplayAggregatorInterface.Renderer {
+    override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
+        ...
+    }
+    
+    ...
+}
+nuguAndroidClient.setDisplayRenderer(renderer)
 ```
 
 UI 제어 요청을 처리하려면 LyricsPresenter 를 추가합니다.
 
 ```text
-audioPlayerAgent.setLyricsPresenter(this)
+val presenter = object: LyricsPresenter {
+    override fun show(): Boolean {
+        ...
+    }
+    
+    override fun hide(): Boolean {
+        ...
+    }
+    
+    ...
+}
+audioPlayerAgent.setLyricsPresenter(presenter)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-재생중인 음원에 대한 UI 를 구성하거나 제어하려면 AudioPlayerDisplayDelegate 를 추가합니다.
+AudioPlayerDisplayDelegate 를 추가합니다.
 
 ```text
-audioPlayerAgent.displayDelegate = self
+class MyAudioPlayerDisplayDelegate: AudioPlayerDisplayDelegate {
+    func audioPlayerDisplayShouldRender(template: AudioPlayerDisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
+        ...
+    }
+    
+    func audioPlayerDisplayShouldShowLyrics(completion: @escaping (Bool) -> Void) {
+        ...
+    }
+    
+    func audioPlayerDisplayShouldHideLyrics(completion: @escaping (Bool) -> Void) {
+        ...
+    }
+    
+    ...
+}
+
+audioPlayerAgent.displayDelegate = MyAudioPlayerDisplayDelegate()
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[IAudioPlayerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
+
+```text
+class MyAudioPlayerListener : public IAudioPlayerListener {
+public:
+    ...
+
+    void renderDisplay(const std::string& id, const std::string& type, const std::string& json_payload, const std::string& dialog_id) override
+    {
+        ...
+    }
+    
+    bool showLyrics(const std::string& id) override
+    {
+        ...
+    }
+    
+    bool hideLyrics(const std::string& id) override
+    {
+        ...
+    }
+    
+    ...
+};
+audio_player_listener = std::make_shared<MyAudioPlayerListener>();
+CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(audio_player_listener.get());
 ```
 {% endtab %}
 {% endtabs %}
