@@ -105,31 +105,43 @@ phoneCallAgent.delegate = self
 
 {% tabs %}
 {% tab title="Android" %}
-PhoneCallClient.sendCandidates\(\) 에서 연락처 검색 기능을 구현합니다.
-
-PhoneCallClient.makeCall\(\) 에서 전화 발신 기능을 구현합니다.
+PhoneCallClient 를 구현합니다.
 
 ```text
 class MyPhoneCallClient: PhoneCallClient {
-    override fun getContext(): Context {
+    override fun sendCandidates(payload: SendCandidatesPayload, callback: Callback) {
+        // 연락처 검색 기능을 구현
         ...
     }
     
+    override fun makeCall(payload: MakeCallPayload, callback: Callback) {
+        // 전화 발신 기능을 구현
+        ...
+    }
     ...
 }
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-발신 기능을 실행하려면 PhoneCallAgentDelegate 를 추가합니다.
+PhoneCallAgentDelegate 를 추가합니다
 
 ```text
+class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
+    func phoneCallAgentDidReceiveSendCandidates(item: PhoneCallCandidatesItem, dialogRequestId: String) {
+        // 연락처 검색 기능을 구현
+        ...
+    }
+    
+    func phoneCallAgentDidReceiveMakeCall(callType: PhoneCallType, recipient: PhoneCallPerson, dialogRequestId: String) -> PhoneCallErrorCode? {
+        // 전화 발신 기능을 구현
+        ...
+    }
+    
+    ...
+}
 phoneCallAgent.delegate = self
 ```
-
-PhoneCallAgentDelegate.phoneCallAgentDidReceiveSendCandidates\(\) 에서 연락처 검색 기능을 구현합니다.
-
-PhoneCallAgentDelegate.phoneCallAgentDidReceiveMakeCall\(\) 에서 전화 발신 기능을 구현합니다.
 {% endtab %}
 {% endtabs %}
 
@@ -143,9 +155,22 @@ iOS 는 수신 수락/거절 기능을 제공하지 않습니다.
 
 {% tabs %}
 {% tab title="Android" %}
-PhoneCallClient.acceptCall\(\) 에서 수신 수락 기능을 구현합니다.
+PhoneCallClient 를 구현합니다.
 
-PhoneCallClient.endCall\(\) 에서 수신 거절 기능을 구현합니다.
+```text
+class MyPhoneCallClient: PhoneCallClient {
+    override fun acceptCall(payload: AcceptCallPayload) {
+        // 수신 수락 기능을 구현
+        ...
+    }
+    
+    override fun makeCall(payload: MakeCallPayload, callback: Callback) {
+        // 수신 거절 기능을 구현
+        ...
+    }
+    ...
+}
+```
 {% endtab %}
 {% endtabs %}
 

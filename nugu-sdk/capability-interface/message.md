@@ -25,10 +25,11 @@ val messageAgent = nuguAndroidClient.getAgent(MessageAgent.NAMESPACE)
 NuguAndroidClient 생성시 MessageClient 를 추가합니다.
 
 ```text
+class MyMessageClient: MessageClient {
+    ...
+}
 NuguAndroidClient().Builder()
-    .messageClient(object : MessageClient {
-        ...
-    })
+    .messageClient(MyMessageClient())
 ```
 {% endtab %}
 {% endtabs %}
@@ -39,7 +40,17 @@ NuguAndroidClient().Builder()
 
 {% tabs %}
 {% tab title="Android" %}
-MessageClient.getContext\(\) 를 구현하여 재생중인 문자의 재생 상태 정보와 마지막에 검색된 연락처 정보를 전달합니다.
+MessageClient 를 구현합니다.
+
+```text
+class MyMessageClient: MessageClient {
+    override fun getContext(): Context {
+        ...
+    }
+    
+    ...
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -49,9 +60,23 @@ MessageClient.getContext\(\) 를 구현하여 재생중인 문자의 재생 상�
 
 {% tabs %}
 {% tab title="Android" %}
-MessageClient.sendCandidates\(\) 에서 연락처 검색 기능을 구현합니다.
+MessageClient 를 구현합니다.
 
-MessageClient.sendMessage\(\) 에서 문자 전송 기능을 구현합니다.
+```text
+class MyMessageClient: MessageClient {
+    override fun sendCandidates(payload: SendCandidatesPayload, callback: Callback) {
+        // 연락처 검색 기능을 구현
+        ...
+    }
+    
+    override fun sendMessage(payload: SendMessagePayload, callback: EventCallback) {
+        // 문자 전송 기능을 구현
+        ...
+    }
+    
+    ...
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -61,7 +86,17 @@ MessageClient.sendMessage\(\) 에서 문자 전송 기능을 구현합니다.
 
 {% tabs %}
 {% tab title="Android" %}
-MessageClient.getMessageList\(\) 에서 문자 가져오기 기능을 구현합니다.
+MessageClient 를 구현합니다.
+
+```text
+class MyMessageClient: MessageClient {
+    override fun getMessageList(payload: GetMessagePayload, callback: Callback) {
+        ...
+    }
+    
+    ...
+}
+```
 
 문자 재생은 SDK 에서 실행됩니다.
 {% endtab %}
@@ -73,10 +108,13 @@ MessageClient.getMessageList\(\) 에서 문자 가져오기 기능을 구현합�
 
 {% tabs %}
 {% tab title="Android" %}
-재생 상태를 모니터링 하려면 MessageAgentInterface.OnPlaybackListener 를 추가합니다.
+MessageAgentInterface.OnPlaybackListener 를 추가합니다.
 
 ```text
-messageAgent.addOnPlaybackListener(this)
+val listener = object: MessageAgentInterface.OnPlaybackListener {
+    ...
+}
+messageAgent.addOnPlaybackListener(listener)
 ```
 {% endtab %}
 {% endtabs %}

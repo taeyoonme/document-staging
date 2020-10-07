@@ -19,14 +19,14 @@ MediaPlayer interface 규격에 따른 디바이스의 동작 제어는 MediaAge
 NuguAndroidClient 생성시 MediaPlayerAgent 를 추가합니다.
 
 ```text
-val mediaPlayer = object : MediaPlayer {
+class MyMediaPlayer: MediaPlayer {
     ...
 }
 NuguAndroidClient().Builder()
             .addAgentFactory(MediaPlayerAgent.NAMESPACE, object : AgentFactory<MediaPlayerAgent> {
                 override fun create(container: SdkContainer): MediaPlayerAgent = with(container) {
                     MediaPlayerAgent(
-                        mediaPlayer,
+                        MyMediaPlayer(),
                         getMessageSender(),
                         getContextManager(),
                         getContextManager(),
@@ -52,23 +52,145 @@ let mediaPlayerAgent = nuguClient.mediaPlayerAgent
 {% endtab %}
 {% endtabs %}
 
+### Context 구성
+
+앱에서 재생중인 음원에 대한 정보를 [Context](mediaplayer.md#context-1) 에 포함시켜 주어야 합니다.
+
+{% tabs %}
+{% tab title="Android" %}
+MediaPlayer 를 구현합니다.
+
+```text
+class MyMediaPlayer: MediaPlayer {
+    override fun getContext(): Context {
+        ...
+    }
+    
+    ...
+}
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+MediaPlayerAgentDelegate를 추가합니다.
+
+```text
+class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
+    func func mediaPlayerAgentRequestContext() -> MediaPlayerAgentContext? {
+        ...
+    }
+    
+    ...
+}
+mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
+```
+{% endtab %}
+{% endtabs %}
+
 ### 제어 명령
 
 `사용자 발화`에 의해 음악 [검색](mediaplayer.md#search)/[재생](mediaplayer.md#play)/[중지](mediaplayer.md#stop)/[다음](mediaplayer.md#next)/[이전](mediaplayer.md#previous)/[탐색](mediaplayer.md#move)/[일시정지](mediaplayer.md#pause)/[계속재생](mediaplayer.md#resume)/[다시재생](mediaplayer.md#rewind)/[반복](mediaplayer.md#toggle)/[즐겨찾기](mediaplayer.md#toggle)/[셔플](mediaplayer.md#toggle) 이 directive 로 요청될 수 있습니다.
 
 {% tabs %}
 {% tab title="Android" %}
-MediaPlayer 의 search, play, stop, next, previous, move, pause, resume, rewind, toggle 함수에서 각 각의 기능을 구현합니다.
+MediaPlayer 를 구현합니다.
+
+```text
+class MyMediaPlayer: MediaPlayer {
+    override fun search(payload: SearchPayload, callback: EventCallback) {
+        ...
+    }
+    
+    override fun play(payload: PlayPayload, callback: PlayCallback) {
+        ...
+    }
+    
+    override fun fun stop(payload: Payload, callback: EventCallback) {
+        ...
+    }
+    
+    fun next(payload: NextPayload, callback: NextCallback) {
+        ...
+    }
+    
+    fun previous(payload: PreviousPayload, callback: PreviousCallback) {
+        ...
+    }
+    
+    fun move(payload: MovePayload, callback: EventCallback) {
+        ...
+    }
+    
+    fun pause(payload: Payload, callback: EventCallback) {
+        ...
+    }
+    
+    fun resume(payload: Payload, callback: EventCallback) {
+        ...
+    }
+    
+    fun rewind(payload: Payload, callback: EventCallback) {
+        ...
+    }
+    
+    fun toggle(payload: TogglePayload, callback: EventCallback) {
+        ...
+    }
+    
+    ...
+}
+```
 {% endtab %}
 
 {% tab title="iOS" %}
-음악을 제어려면 MediaPlayerAgentDelegate를 추가합니다.
+MediaPlayerAgentDelegate를 추가합니다.
 
 ```text
-mediaPlayerAgent.delegate = self
+class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
+    func mediaPlayerAgentReceiveSearch(payload: MediaPlayerAgentDirectivePayload.Search, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Search) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceivePlay(payload: MediaPlayerAgentDirectivePayload.Play, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Play) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceiveStop(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Stop) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceiveNext(payload: MediaPlayerAgentDirectivePayload.Next, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Next) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceivePrevious(payload: MediaPlayerAgentDirectivePayload.Previous, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Previous) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceiveMove(payload: MediaPlayerAgentDirectivePayload.Move, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Move) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceivePause(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Pause) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceiveResume(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Resume) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceiveRewind(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Rewind) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceiveToggle(payload: MediaPlayerAgentDirectivePayload.Toggle, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Toggle) -> Void)) {
+        ...
+    }
+    
+    ...
+}
+mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ```
-
-MediaPlayerAgentDelegate 의 mediaPlayerAgentReceiveSearch/Play/stop/next/previous/move/pause/resume/rewind/toggle 함수에서 각 각의 기능을 구현합니다.
 {% endtab %}
 {% endtabs %}
 
@@ -78,11 +200,32 @@ MediaPlayerAgentDelegate 의 mediaPlayerAgentReceiveSearch/Play/stop/next/previo
 
 {% tabs %}
 {% tab title="Android" %}
-MediaPlayer.getInfo\(\) 에서 곡 정보를 전달합니다.
+MediaPlayer 를 구현합니다.
+
+```text
+class MyMediaPlayer: MediaPlayer {
+    override fun getInfo(payload: Payload, callback: GetInfoCallback) {
+        ...
+    }
+    
+    ...
+}
+```
 {% endtab %}
 
 {% tab title="iOS" %}
-MediaPlayerAgentDelegate.mediaPlayerAgentReceiveGetInfo 에서 곡 정보를 전달합니다.
+MediaPlayerAgentDelegate를 추가합니다.
+
+```text
+class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
+    func func mediaPlayerAgentReceiveGetInfo(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.GetInfo) -> Void)) {
+        ...
+    }
+    
+    ...
+}
+mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
+```
 {% endtab %}
 {% endtabs %}
 
