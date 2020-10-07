@@ -52,8 +52,10 @@ Context 전달하려면 NuguAndroidClient 생성시 Microphone 을 추가합니�
 ```text
 NuguAndroidClient.Builder(...)
     .defaultMicrophone(object : Microphone {
-           ...
-       })
+        override fun getSettings(): Settings {
+            ...
+        }
+   })
 ```
 {% endtab %}
 {% endtabs %}

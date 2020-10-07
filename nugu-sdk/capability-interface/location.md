@@ -38,18 +38,28 @@ Play 에서 위치 정보 기반의 정보를 제공 받기 위해서는 디바�
 
 {% tabs %}
 {% tab title="Android" %}
-Context 를 전달하려면 LocationProvider 를 추가합니다.
+LocationProvider 를 추가합니다.
 
 ```text
-locationAgent.setLocationProvider(this)
+val provider = object: LocationProvider {
+    override fun getLocation(): Location? {
+        ...
+    }
+}
+locationAgent.setLocationProvider(provider)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-Context 를 전달하려면 LocationAgentDelegate 를 추가합니다.
+LocationAgentDelegate 를 추가합니다.
 
 ```text
-locationAgent.delegate = self
+class MyLocationAgentDelegate: LocationAgentDelegate {
+    func locationAgentRequestLocationInfo() -> LocationInfo? {
+        ...
+    }
+}
+locationAgent.delegate = MyLocationAgentDelegate()
 ```
 {% endtab %}
 {% endtabs %}

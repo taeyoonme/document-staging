@@ -65,13 +65,35 @@ Play 에서 알아야 하는 디바이스/Application 의 정보를 [Context](ex
 {% tabs %}
 {% tab title="Android" %}
 [ExtensionAgent 사용](extension.md#extensionagent)에서 추가한 ExtensionAgentInterface.Client 을 통해 Context 를 전달하거나 [Action](extension.md#action) 을 실행합니다.
+
+```text
+object : ExtensionAgentInterface.Client {
+    override fun getData(): String? {
+        // json string
+        ...
+    }
+    
+    override fun action(data: String, playServiceId: String): Boolean {
+        ...
+    }
+}
+```
 {% endtab %}
 
 {% tab title="iOS" %}
-Context 를 전달하거나 [Action](extension.md#action) 을 실행하려면 ExtensionAgentDelegate 를 추가합니다.
+ExtensionAgentDelegate 를 추가합니다.
 
 ```text
-extensionAgent.delegate = self
+class MyExtensionAgentDelegate: ExtensionAgentDelegate {
+    func extensionAgentRequestContext() -> [String: AnyHashable]? {
+        ...
+    }
+    
+    func extensionAgentDidReceiveAction(data: [String: AnyHashable], playServiceId: String, dialogRequestId: String, completion: @escaping (Bool) -> Void) {
+        ...
+    }
+}
+extensionAgent.delegate = MyExtensionAgentDelegate()
 ```
 {% endtab %}
 {% endtabs %}
