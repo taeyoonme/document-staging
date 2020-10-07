@@ -21,18 +21,6 @@ NuguAndroidClient instance 를 통해 BatteryAgent instance 에 접근할 수 �
 ```text
 val batteryAgent = nuguAndroidClient.getAgent(DefaultBatteryAgent.NAMESPACE)
 ```
-
-NuguAndroidClient 에 배터리 정보을 전달를 위한 기본 BatteryStatusProvider 구현이 포함되어 있습니다.
-
-BatteryStatusProvider 을 직접 구현하려면 NuguAndroidClient 생성시 추가합니다.
-
-```text
-class MyBatteryStatusProvider: BatteryStatusProvider {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .batteryStatusProvider(MyBatteryStatusProvider())
-```
 {% endtab %}
 {% endtabs %}
 
@@ -42,18 +30,15 @@ NuguAndroidClient.Builder(...)
 
 {% tabs %}
 {% tab title="Android" %}
-BatteryStatusProvider 를 구현합니다.
+NuguAndroidClient 에 배터리 정보을 전달를 위한 기본 BatteryStatusProvider 구현이 포함되어 있습니다.
+
+BatteryStatusProvider 을 직접 구현하려면 NuguAndroidClient 생성시 추가합니다.
 
 ```text
-class MyBatteryStatusProvider: BatteryStatusProvider {
-    override fun getBatteryLevel(): Int {
+NuguAndroidClient.Builder(...)
+    .batteryStatusProvider(object : BatteryStatusProvider {
         ...
-    }
-    
-    override fun isCharging(): Boolean? {
-        ...
-    }
-}
+    })
 ```
 {% endtab %}
 {% endtabs %}

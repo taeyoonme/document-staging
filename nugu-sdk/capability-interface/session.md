@@ -48,18 +48,28 @@ let dialogStateAggregator = nuguClient.dialogStateAggregator
 
 {% tabs %}
 {% tab title="Android" %}
-세션 정보를 전달 받으려면 DialogUXStateAggregatorInterface.Listener 를 추가합니다.
+DialogUXStateAggregatorInterface.Listener 를 추가합니다.
 
 ```text
-nuguAndroidClient.addDialogUXStateListener(this)
+val listener = object: DialogUXStateAggregatorInterface.Listener {
+    override fun onDialogUXStateChanged(newState: DialogUXState, dialogMode: Boolean, chips: RenderDirective.Payload?, sessionActivated: Boolean) {
+        ...
+    }
+}
+nuguAndroidClient.addDialogUXStateListener(listener)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-세션 정보를 전달 받으려면 DialogStateDelegate 를 추가합니다.
+DialogStateDelegate 를 추가합니다.
 
 ```text
-dialogStateAggregator.add(delegate: self)
+class MyDialogStateDelegate: DialogStateDelegate {
+    func dialogStateDidChange(_ state: DialogState, isMultiturn: Bool, chips: [ChipsAgentItem.Chip]?, sessionActivated: Bool) {
+        ...
+    }
+}
+dialogStateAggregator.add(delegate: MyDialogStateDelegate())
 ```
 {% endtab %}
 {% endtabs %}

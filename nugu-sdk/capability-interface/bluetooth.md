@@ -25,16 +25,6 @@ NuguAndroidClient instance 를 통해 BluetoothAgent instance 에 접근할 수 
 ```text
 val bluetoothAgent = nuguAndroidClient.bluetoothAgent
 ```
-
-NuguAndroidClient 생성시 BluetoothProvider 을 추가합니다.
-
-```text
-class MyBluetoothProvider: BluetoothProvider {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .bluetoothProvider(MyBluetoothProvider)
-```
 {% endtab %}
 {% endtabs %}
 
@@ -46,20 +36,13 @@ NuguAndroidClient.Builder(...)
 
 {% tabs %}
 {% tab title="Android" %}
-BluetoothProvider 를 구현합니다.
+Context 를 전달하려면 NuguAndroidClient 생성시 BluetoothProvider 을 추가합니다.
 
 ```text
-class MyBluetoothProvider: BluetoothProvider {
-    override fun device() : BluetoothHost? {
-        ...
-    }
-        
-    override fun activeDevice() : BluetoothDevice? {
-        ...
-    }
-    
-    ...
-}
+NuguAndroidClient.Builder(...)
+    .bluetoothProvider(object : BluetoothProvider {
+           ...
+       })
 ```
 {% endtab %}
 {% endtabs %}
@@ -68,26 +51,13 @@ class MyBluetoothProvider: BluetoothProvider {
 
 디바이스의 블루투스 기기 제어가 [StartDiscoverableMode](bluetooth.md#startdiscoverablemode)/[FinishDiscoverableMode](bluetooth.md#finishdiscoverablemode) directive 로 요청될 수 있습니다.
 
-디바이스와 연결된 블루투스 기기의 음원 재생이 [Play](bluetooth.md#play)/[Stop](bluetooth.md#stop)/[Pause](bluetooth.md#pause)/[Next](bluetooth.md#next)/[Previous](bluetooth.md#previous) directive 로 요청될 수 있습니다.
+디바이스와 연결된 블루투스 기기의 음원 재생이 Play/Stop/Pause/Next/Previous directive 로 요청될 수 있습니다.
 
 {% tabs %}
 {% tab title="Android" %}
 제어 기능을 실행하려면 BluetoothAgentInterface.Listener 를 추가합니다.
 
 ```text
-val listener = object: BluetoothAgentInterface.Listener {
-    fun onDiscoverableStart(durationInSeconds: Long = 0) : DiscoverableStartResult {
-        ...
-    }
-    
-    fun onDiscoverableFinish() : Boolean {
-        ...
-    }
-    
-    fun onAVRCPCommand(command: AVRCPCommand) {
-        ...
-    }
-}
 bluetoothAgent.setListener(listener)
 ```
 {% endtab %}

@@ -23,14 +23,14 @@ PhoneCall interface 규격에 따른 디바이스의 동작 제어는 PhoneCallA
 NuguAndroidClient 생성시 PhoneCallAgent 를 추가합니다.
 
 ```text
-val phoneCallClient = object : PhoneCallClient {
+class MyPhoneCallClient: PhoneCallClient {
     ...
 }
 NuguAndroidClient().Builder()
             .addAgentFactory(PhoneCallAgent.NAMESPACE, object : AgentFactory<PhoneCallAgent> {
                 override fun create(container: SdkContainer): PhoneCallAgent = with(container) {
                     PhoneCallAgent(
-                        phoneCallClient,
+                        MyPhoneCallClient(),
                         getContextManager(),
                         getMessageSender(),
                         getAudioSeamlessFocusManager(),
@@ -64,19 +64,38 @@ let phoneCallAgent = nuguClient.phoneCallAgent
 
 {% tabs %}
 {% tab title="Android" %}
-PhoneCallClient.getContext\(\) 를 구현하여 통화 상태 정보와 마지막에 검색된 연락처 정보를 전달합니다.
+PhoneCallClient 를 구현합니다.
+
+```text
+class MyPhoneCallClient: PhoneCallClient {
+    override fun getContext(): Context {
+        ...
+    }
+    
+    ...
+}
+```
 {% endtab %}
 
 {% tab title="iOS" %}
-Context 를 전달하려면 PhoneCallAgentDelegate 를 추가합니다.
+PhoneCallAgentDelegate 를 추가합니다.
 
 ```text
+class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
+    func phoneCallAgentRequestState() -> PhoneCallState {
+        // 현재 통화 상태 정보
+        ...
+    }
+    
+    func phoneCallAgentRequestTemplate() -> PhoneCallTemplate? {
+        // 마지막에 검색된 연락처 정보
+        ...
+    }
+    
+    ...
+}
 phoneCallAgent.delegate = self
 ```
-
-PhoneCallAgentDelegate.phoneCallAgentRequestState 을 구현하여 현재 통화 상태 정보를 전달합니다.
-
-PhoneCallAgentDelegate.phoneCallAgentRequestTemplate 을 구현하여 마지막에 검색된 연락처 정보를 전달합니다.
 {% endtab %}
 {% endtabs %}
 
@@ -89,6 +108,16 @@ PhoneCallAgentDelegate.phoneCallAgentRequestTemplate 을 구현하여 마지막�
 PhoneCallClient.sendCandidates\(\) 에서 연락처 검색 기능을 구현합니다.
 
 PhoneCallClient.makeCall\(\) 에서 전화 발신 기능을 구현합니다.
+
+```text
+class MyPhoneCallClient: PhoneCallClient {
+    override fun getContext(): Context {
+        ...
+    }
+    
+    ...
+}
+```
 {% endtab %}
 
 {% tab title="iOS" %}

@@ -25,34 +25,6 @@ NuguAndroidClient instance 를 통해 SpeakerAgent instance 에 접근할 수 �
 ```text
 val speakerAgent = nuguAndroidClient.getAgent(DefaultSpeakerAgent.NAMESPACE)
 ```
-
-NuguAndroidClient 에 볼륨 제어를 위한 기본 Speaker 구현이 포함되어 있습니다.
-
-Speaker 을 직접 구현하려면 NuguAndroidClient 생성시 SpeakerFactory 를 추가합니다.
-
-```text
-class MySpeaker: Speaker {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .speakerFactory(object : SpeakerFactory {
-        override fun createNuguSpeaker(): Speaker? = MySpeaker()
-
-        override fun createAlarmSpeaker(): Speaker? = MySpeaker()
-
-        override fun createCallSpeaker(): Speaker? = MySpeaker()
-        
-        override fun createExternalSpeaker(): Speaker? = MySpeaker()
-
-        override fun createSpeaker(type: Speaker.Type): Speaker? {
-            return when (type) {
-                Speaker.Type.NUGU -> MySpeaker()
-                Speaker.Type.ALARM -> MySpeaker()
-                else -> MySpeaker()
-            }
-        }
-    })
-```
 {% endtab %}
 
 {% tab title="Linux" %}
@@ -75,19 +47,33 @@ Play 에서 디바이스의 볼륨을 제어하기 위해서는 디바이스의 
 
 {% tabs %}
 {% tab title="Android" %}
-각 Speaker.Type 의 Speaker 를 구현합니다.
+NuguAndroidClient 에 볼륨 제어를 위한 기본 Speaker 구현이 포함되어 있습니다.
+
+Speaker 을 직접 구현하려면 NuguAndroidClient 생성시 SpeakerFactory 를 추가합니다.
 
 ```text
-class MySpeaker: Speaker {
-    override fun getSpeakerSettings(): Speaker.SpeakerSettings? {
-        ...
-    }
-}
+NuguAndroidClient.Builder(...)
+    .speakerFactory(object : SpeakerFactory {
+        override fun createNuguSpeaker(): Speaker? = ...
+
+        override fun createAlarmSpeaker(): Speaker? = ...
+
+        override fun createCallSpeaker(): Speaker? = ...
+        override fun createExternalSpeaker(): Speaker? = ...
+
+        override fun createSpeaker(type: Speaker.Type): Speaker? {
+            return when (type) {
+                Speaker.Type.NUGU -> ...
+                Speaker.Type.ALARM -> ...
+                else -> ...
+            }
+        }
+    })
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
-[SpeakerType](https://nugu-developers.github.io/nugu-linux/group__SpeakerInterface.html#ga8601f6be80368c9d1a7c7b346c99a698) 의 [SpeakerInfo](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1SpeakerInfo.html) 를 설정합니다.
+Context 전달하려면 각 [SpeakerType](https://nugu-developers.github.io/nugu-linux/group__SpeakerInterface.html#ga8601f6be80368c9d1a7c7b346c99a698) 의 [SpeakerInfo](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1SpeakerInfo.html) 를 설정합니다.
 
 ```text
 speaker_handler.setSpeakerInfo(speakers)
@@ -103,42 +89,16 @@ speaker_handler.setSpeakerInfo(speakers)
 
 {% tabs %}
 {% tab title="Android" %}
-Speaker 를 구현합니다.
+Speaker.setVolume 에서 볼륨 제어를 구현합니다.
 
-```text
-class MySpeaker: Speaker {
-    override fun setVolume(volume: Int, rate: Rate = Rate.FAST): Boolean {
-        ...
-    }
-    
-    override fun setMute(mute: Boolean): Boolean {
-        ...
-    }
-    
-    ...
-}
-```
+Speaker.setMute 에서 볼륨 음소거 제어를 구현합니다.
 {% endtab %}
 
 {% tab title="Linux" %}
-[ISpeakerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISpeakerListener.html) 를 추가합니다.
+볼륨을 제어하려면 [ISpeakerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISpeakerListener.html) 를 추가합니다.
 
 ```text
-class MySpeakerListener : public ISpeakerListener {
-public:
-    ...
-
-    void requestSetMute (const std::string &ps_id, SpeakerType type, bool mute) override
-    {
-        ...
-    }
-    
-    void requestSetVolume (const std::string &ps_id, SpeakerType type, int volume, bool linear) override
-    {
-        ...
-    }
-};
-speaker_listener = std::make_shared<MySpeakerListener>();
+speaker_listener = std::make_shared<SpeakerListener>();
 CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listener.get());
 ```
 {% endtab %}

@@ -21,16 +21,6 @@ NuguAndroidClient instance 를 통해 SoundAgent instance 에 접근할 수 있�
 ```text
 val soundAgent = nuguAndroidClient.getAgent(DefaultSoundAgent.NAMESPACE)
 ```
-
-NuguAndroidClient 생성시 SoundProvider 를 추가합니다.
-
-```text
-class MySoundProvider: SoundProvider {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .soundProvider(MySoundProvider())
-```
 {% endtab %}
 
 {% tab title="iOS" %}
@@ -61,47 +51,34 @@ nugu_client->getCapabilityBuilder()
 
 {% tabs %}
 {% tab title="Android" %}
-SoundProvider 를 구현합니다.
+디바이스 음원을 재생하려면 NuguAndroidClient 생성시 SoundProvider 를 추가합니다.
 
 ```text
-class MySoundProvider: SoundProvider {
-    override fun getContentUri(name: SoundProvider.BeepName): URI {
-        return URI.create(
-            Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.packageName + "/" + R.raw.responsefa
-                .toString()
-        );
-    }
-}
+NuguAndroidClient.Builder(...)
+    .soundProvider(object : SoundProvider {
+        override fun getContentUri(name: SoundProvider.BeepName): URI {
+            return URI.create(
+                Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.packageName + "/" + R.raw.responsefa
+                    .toString()
+            );
+        }
+    })
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-SoundAgentDelegate 를 추가합니다.
+디바이스 음원을 재생하려면 SoundAgentDelegate 를 추가합니다.
 
 ```text
-class MySoundAgentDelegate: SoundAgentDelegate {
-    func soundAgentDidChange(state: SoundState, dialogRequestId: String) {
-        ...
-    }
-}
-soundAgent.delegate = MySoundAgentDelegate()
+soundAgent.delegate = self
 ```
 {% endtab %}
 
 {% tab title="Linux" %}
-[ISoundListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISoundListener.html) 를 추가합니다.
+디바이스 음원을 재생하려면 ISoundListener 를 추가합니다.
 
 ```text
-class MySoundListener : public ISoundListener {
-public:
-    ...
-
-    void handleBeep (BeepType beep_type) override
-    {
-        ...
-    }
-};
-sound_listener = std::make_shared<MySoundListener>();
+sound_listener = std::make_shared<SoundListener>();
 CapabilityFactory::makeCapability<SoundAgent, ISoundHandler>(sound_listener.get());
 ```
 {% endtab %}

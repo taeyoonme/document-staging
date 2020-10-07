@@ -48,7 +48,7 @@ let dialogStateAggregator = nuguClient.dialogStateAggregator
 
 {% tabs %}
 {% tab title="Android" %}
-발화 가이드를 전달 받으려면 DialogUXStateAggregatorInterface.Listener 를 추가합니다.
+DialogUXStateAggregatorInterface.Listener 를 추가합니다.
 
 ```text
 val listener = object: DialogUXStateAggregatorInterface.Listener {
@@ -61,7 +61,7 @@ nuguAndroidClient.addDialogUXStateListener(listener)
 {% endtab %}
 
 {% tab title="iOS" %}
-발화 가이드를 전달 받으려면 DialogStateDelegate 를 추가합니다.
+DialogStateDelegate 를 추가합니다.
 
 ```text
 class MyDialogStateDelegate: DialogStateDelegate {
