@@ -35,8 +35,8 @@ let textAgent = nuguClient.textAgent
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TextAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITextHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 ```text
-text_handler = std::shared_ptr<ITextHandler>(
-        CapabilityFactory::makeCapability<TextAgent, ITextHandler>());
+auto text_handler(std::shared_ptr<ITextHandler>(
+        CapabilityFactory::makeCapability<TextAgent, ITextHandler>()));
 
 nugu_client->getCapabilityBuilder()
     ->add(text_handler.get())

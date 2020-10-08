@@ -40,19 +40,6 @@ NuguClient instance 를 통해 DialogStateAggregator instance 에 접근할 수 
 let dialogStateAggregator = nuguClient.dialogStateAggregator
 ```
 {% endtab %}
-
-{% tab title="Linux" %}
-[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [SessionAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
-
-```text
-auto session_handler(std::shared_ptr<ISessionHandler>(
-        CapabilityFactory::makeCapability<SessionAgent, ISessionHandler>()));
-
-nugu_client->getCapabilityBuilder()
-    ->add(session_handler.get())
-    ->construct();
-```
-{% endtab %}
 {% endtabs %}
 
 ### 세션 상태 정보
@@ -83,26 +70,6 @@ class MyDialogStateDelegate: DialogStateDelegate {
     }
 }
 dialogStateAggregator.add(delegate: MyDialogStateDelegate())
-```
-{% endtab %}
-
-{% tab title="Linux" %}
-[ISessionListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
-
-```text
-class MySessionListener : public ISessionListener {
-public:
-    ...
-
-    void onState(SessionState state, const std::string& dialog_id) override
-    {
-        ...
-    }
-    
-    ...
-};
-session_listener = std::make_shared<MySessionListener>();
-CapabilityFactory::makeCapability<SessionAgent, ISessionHandler>(session_listener.get());
 ```
 {% endtab %}
 {% endtabs %}
