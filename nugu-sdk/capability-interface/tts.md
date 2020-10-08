@@ -10,15 +10,96 @@ description: 음성 합성 결과를 전달받기 위한 규격
 
 ## SDK Interface
 
+### TTSAgent 사용
+
+TTS interface 규격에 따른 디바이스의 동작 제어는 TTSAgent 가 처리합니다.
+
+{% tabs %}
+{% tab title="Android" %}
+NuguAndroidClient instance 를 통해 TTSAgent instance 에 접근할 수 있습니다.
+
+```text
+val ttsAgent = nuguAndroidClient.ttsAgent
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+NuguClient instance 를 통해 TTSAgent instance 에 접근할 수 있습니다.
+
+```text
+let ttsAgent = nuguClient.ttsAgent
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+ [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TTSAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+
+```text
+auto tts_handler(std::shared_ptr<ITTSHandler>(
+        CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>()));
+
+nugu_client->getCapabilityBuilder()
+    ->add(tts_handler.get())
+    ->construct();
+```
+{% endtab %}
+{% endtabs %}
+
 ### 재생 상태 정보
 
-재생 상태를 모니터링 할 수 있습니다.
+[Speak](tts.md#speak) directive 로 전달된 음원에 대한 재생 상태를 모니터링 할 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/tts/TTSAgentInterface.kt#L48)
+{% tabs %}
+{% tab title="Android" %}
+TTSAgentInterface.Listener 를 추가합니다.
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/TextToSpeech/TTSAgentDelegate.swift#L29)
+```text
+val listener = object: TTSAgentInterface.Listener {
+    override fun onStateChanged(state: State, dialogRequestId: String) {
+        ...
+    }
+    
+    ...
+}
+ttsAgent.addListener(listener)
+```
+{% endtab %}
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/tts_interface.hh#L68)
+{% tab title="iOS" %}
+TTSAgentDelegate 를 추가합니다.
+
+```text
+class MyTTSAgentDelegate: TTSAgentDelegate {
+    func ttsAgentDidChange(state: TTSState, dialogRequestId: String) {
+        ...
+    }
+    
+    ...
+}
+ttsAgent.add(delegate: MyTTSAgentDelegate())
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[ITTSListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSListener.html) 를 추가합니다.
+
+```text
+class MyTTSListener : public ITTSListener {
+public:
+    ...
+
+    void onTTSState(TTSState state, const std::string &dialog_id) override
+    {
+        ...
+    }
+    
+    ...
+};
+auto tts_listener(std::make_shared<MyTTSListener>());
+CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
+```
+{% endtab %}
+{% endtabs %}
 
 ## Context
 

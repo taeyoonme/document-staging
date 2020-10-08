@@ -1,3 +1,7 @@
+---
+description: Play 에서 전달하는 음원을 재생하기 위한 규격
+---
+
 # AudioPlayer
 
 ## Version
@@ -10,43 +14,240 @@
 
 ## SDK Interface
 
-### 재생 상태 정보
+### AudioPlayerAgent 사용
 
-재생 상태를 모니터링 할 수 있습니다.
+AudioPlayer interface 규격에 따른 디바이스의 동작 제어는 AudioPlayerAgent 가 처리합니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/audioplayer/AudioPlayerAgentInterface.kt#L42)
+{% tabs %}
+{% tab title="Android" %}
+NuguAndroidClient instance 를 통해 AudioPlayerAgent instance 에 접근할 수 있습니다.
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AudioPlayer/AudioPlayerAgentDelegate.swift#L28)
+```text
+val audioPlayerAgent = nuguAndroidClient.audioPlayerAgent
+```
+{% endtab %}
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/audio_player_interface.hh#L89)
+{% tab title="iOS" %}
+NuguClient instance 를 통해 AudioPlayerAgent instance 에 접근할 수 있습니다.
 
-### UI 구성
+```text
+let audioPlayerAgent = nuguClient.audioPlayerAgent
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [AudioPlayerAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+
+```text
+auto audio_player_handler(std::shared_ptr<IAudioPlayerHandler>(
+        CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>()));
+
+nugu_client->getCapabilityBuilder()
+    ->add(audio_player_handler.get())
+    ->construct();
+```
+{% endtab %}
+{% endtabs %}
+
+### 재생 상태 모니터링
+
+[Play](audioplayer.md#play) directive 로 전달된 음원에 대한 재생 상태를 모니터링 할 수 있습니다.
+
+{% tabs %}
+{% tab title="Android" %}
+AudioPlayerAgentInterface.Listener 를 추가합니다.
+
+```text
+val listener = object: AudioPlayerAgentInterface.Listener {
+    override fun onStateChanged(activity: State, context: Context) {
+        ...
+    }
+}
+audioPlayerAgent.addListener(listener)
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+AudioPlayerAgentDelegate 를 추가합니다.
+
+```text
+class MyAudioPlayerAgentDelegate: AudioPlayerAgentDelegate {
+    func audioPlayerAgentDidChange(state: AudioPlayerState, dialogRequestId: String) {
+        ...
+    }
+}
+
+audioPlayerAgent.add(delegate: MyAudioPlayerAgentDelegate())
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[IAudioPlayerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
+
+```text
+class MyAudioPlayerListener : public IAudioPlayerListener {
+public:
+    ...
+
+    void mediaStateChanged (AudioPlayerState state, const std::string &dialog_id) override
+    {
+        ...
+    }
+    
+    ...
+};
+auto audio_player_listener(std::make_shared<MyAudioPlayerListener>());
+CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(audio_player_listener.get());
+```
+{% endtab %}
+{% endtabs %}
+
+### UI 구성 및 제어
 
 AudioPlayer 로 음원을 재생할 때 화면을 구성하기 위해 필요한 데이터는 [Play](audioplayer.md#play) directive 의 `audioItem.metadata.template` 에 포함되어 전달됩니다.
 
 [Stop](audioplayer.md#stop) directive 또는 SDK 내부 timer 등에 의해 종료될 수 있으며, [UpdateMetadata](audioplayer.md#updatemetadata) directive 에 의해 변경될 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/display/DisplayAggregatorInterface.kt#L41)
-
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AudioPlayer/Display/AudioPlayerDisplayDelegate.swift#L24)
-
-### UI 제어
-
 [AudioPlayer.Template1](audioplayer.md#audioitem-metadata-template-audioplayer-template1) 에 포함된 가사의 화면은 `사용자 발화` 에 따라 [ShowLyrics](audioplayer.md#showlyrics), [HideLyrics](audioplayer.md#hidelyrics), [ControlLyricsPage](audioplayer.md#controllyricspage) directive 로 제어될 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/audioplayer/lyrics/LyricsPresenter.kt#L18)
+{% tabs %}
+{% tab title="Android" %}
+DisplayAggregatorInterface.Renderer 를 추가합니다.
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AudioPlayer/Display/AudioPlayerDisplayDelegate.swift#L24)
+```text
+val renderer = object: DisplayAggregatorInterface.Renderer {
+    override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
+        ...
+    }
+    
+    ...
+}
+nuguAndroidClient.setDisplayRenderer(renderer)
+```
+
+UI 제어 요청을 처리하려면 LyricsPresenter 를 추가합니다.
+
+```text
+val presenter = object: LyricsPresenter {
+    override fun show(): Boolean {
+        ...
+    }
+    
+    override fun hide(): Boolean {
+        ...
+    }
+    
+    ...
+}
+audioPlayerAgent.setLyricsPresenter(presenter)
+```
+{% endtab %}
+
+{% tab title="iOS" %}
+AudioPlayerDisplayDelegate 를 추가합니다.
+
+```text
+class MyAudioPlayerDisplayDelegate: AudioPlayerDisplayDelegate {
+    func audioPlayerDisplayShouldRender(template: AudioPlayerDisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
+        ...
+    }
+    
+    func audioPlayerDisplayShouldShowLyrics(completion: @escaping (Bool) -> Void) {
+        ...
+    }
+    
+    func audioPlayerDisplayShouldHideLyrics(completion: @escaping (Bool) -> Void) {
+        ...
+    }
+    
+    ...
+}
+
+audioPlayerAgent.displayDelegate = MyAudioPlayerDisplayDelegate()
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[IAudioPlayerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
+
+```text
+class MyAudioPlayerListener : public IAudioPlayerListener {
+public:
+    ...
+
+    void renderDisplay(const std::string& id, const std::string& type, const std::string& json_payload, const std::string& dialog_id) override
+    {
+        ...
+    }
+    
+    bool showLyrics(const std::string& id) override
+    {
+        ...
+    }
+    
+    bool hideLyrics(const std::string& id) override
+    {
+        ...
+    }
+    
+    ...
+};
+auto audio_player_listener(std::make_shared<MyAudioPlayerListener>());
+CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(audio_player_listener.get());
+```
+{% endtab %}
+{% endtabs %}
 
 ### 제어 명령
 
 PUI, GUI 등으로 사용자가 [다음](audioplayer.md#nextcommandissued)/[이전](audioplayer.md#previouscommandissued)/[즐겨찾기](audioplayer.md#favoritecommandissued)/[반복](audioplayer.md#repeatcommandissued)/[셔플](audioplayer.md#shufflecommandissued) 요청을 event 로 전달할 수 있습니다.
 
-[Android reference](https://github.com/nugu-developers/nugu-android/blob/master/nugu-agent/src/main/java/com/skt/nugu/sdk/agent/audioplayer/AudioPlayerAgentInterface.kt#L112)
+{% tabs %}
+{% tab title="Android" %}
+```text
+// 다음
+audioPlayerAgent.next()
+// 이전
+audioPlayerAgent.prev()
+// 즐겨찾기
+audioPlayerAgent.requestFavoriteCommand(false)
+// 반복
+audioPlayerAgent.requestRepeatCommand(RepeatMode.NONE)
+// 셔플
+audioPlayerAgent.requestShuffleCommand(false)
+```
+{% endtab %}
 
-[iOS reference](https://github.com/nugu-developers/nugu-ios/blob/master/NuguAgents/Sources/CapabilityAgents/AudioPlayer/AudioPlayerAgentProtocol.swift#L60)
+{% tab title="iOS" %}
+```text
+// 다음 
+audioPlayerAgent.next()
+// 이전
+audioPlayerAgent.prev()
+// 즐겨찾기
+audioPlayerAgent.requestFavoriteCommand(false)
+// 반복
+audioPlayerAgent.requestRepeatCommand(.none)
+// 셔플
+audioPlayerAgent.requestShuffleCommand(false)
+```
+{% endtab %}
 
-[Linux reference](https://github.com/nugu-developers/nugu-linux/blob/master/include/capability/audio_player_interface.hh#L169)
+{% tab title="Linux" %}
+```
+// 다음
+audio_player_handler->next()
+// 이전
+audio_player_handler->prev()
+// 즐겨찾기
+audio_player_handler->requestFavoriteCommand(false)
+// 반복
+audio_player_handler->requestRepeatCommand(RepeatType.NONE)
+// 셔플
+audio_player_handler->requestShuffleCommand(false)
+```
+{% endtab %}
+{% endtabs %}
 
 ## Context
 
