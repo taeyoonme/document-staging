@@ -124,7 +124,7 @@ asrAgent.startRecognition(initiator: .user)
 
 {% tab title="Linux" %}
 ```
-asr_hanlder.startRecognition()
+asr_handler->startRecognition()
 ```
 {% endtab %}
 {% endtabs %}
@@ -194,18 +194,18 @@ class MyASRListener : public IASRListener {
 public:
     ...
 
-    void onState (ASRState state, const std::string &dialog_id) override
+    void onState(ASRState state, const std::string &dialog_id) override
     {
         ...
     }
     
-    void onPartial (const std::string &text, const std::string &dialog_id) override
+    void onPartial(const std::string &text, const std::string &dialog_id) override
     {
         // STT 중간 결과
         ...
     }
     
-    void onComplete (const std::string &text, const std::string &dialog_id) override
+    void onComplete(const std::string &text, const std::string &dialog_id) override
     {
         // STT 최종 결과
         ...
@@ -213,7 +213,7 @@ public:
     
     ...
 };
-asr_listener = std::make_shared<MyASRListener>();
+auto asr_listener(std::make_shared<MyASRListener>());
 CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(asr_listener.get());
 ```
 {% endtab %}
@@ -238,7 +238,7 @@ asrAgent.stopRecognition()
 
 {% tab title="Linux" %}
 ```text
-asr_hanlder.stopRecognition()
+asr_handler->stopRecognition()
 ```
 {% endtab %}
 {% endtabs %}

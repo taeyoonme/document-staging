@@ -90,7 +90,7 @@ class MySpeaker: Speaker {
 [SpeakerType](https://nugu-developers.github.io/nugu-linux/group__SpeakerInterface.html#ga8601f6be80368c9d1a7c7b346c99a698) 의 [SpeakerInfo](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1SpeakerInfo.html) 를 설정합니다.
 
 ```text
-speaker_handler.setSpeakerInfo(speakers)
+speaker_handler->setSpeakerInfo(speakers)
 ```
 {% endtab %}
 {% endtabs %}
@@ -128,17 +128,17 @@ class MySpeakerListener : public ISpeakerListener {
 public:
     ...
 
-    void requestSetMute (const std::string &ps_id, SpeakerType type, bool mute) override
+    void requestSetMute(const std::string &ps_id, SpeakerType type, bool mute) override
     {
         ...
     }
     
-    void requestSetVolume (const std::string &ps_id, SpeakerType type, int volume, bool linear) override
+    void requestSetVolume(const std::string &ps_id, SpeakerType type, int volume, bool linear) override
     {
         ...
     }
 };
-speaker_listener = std::make_shared<MySpeakerListener>();
+auto speaker_listener(std::make_shared<MySpeakerListener>());
 CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listener.get());
 ```
 {% endtab %}

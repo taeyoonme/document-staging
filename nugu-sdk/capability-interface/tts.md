@@ -88,14 +88,14 @@ class MyTTSListener : public ITTSListener {
 public:
     ...
 
-    void onTTSState (TTSState state, const std::string &dialog_id) override
+    void onTTSState(TTSState state, const std::string &dialog_id) override
     {
         ...
     }
     
     ...
 };
-tts_listener = std::make_shared<MyTTSListener>();
+auto tts_listener(std::make_shared<MyTTSListener>());
 CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 ```
 {% endtab %}

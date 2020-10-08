@@ -82,7 +82,7 @@ public:
     
     ...
 };
-system_listener = std::make_shared<MySystemListener>();
+auto system_listener(std::make_shared<MySystemListener>());
 CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.get());
 ```
 {% endtab %}
@@ -131,14 +131,14 @@ class MySystemListener : public ISystemListener {
 public:
     ...
 
-    void onException (SystemException exception, const std::string &dialog_id) override
+    void onException(SystemException exception, const std::string &dialog_id) override
     {
         ...
     }
     
     ...
 };
-system_listener = std::make_shared<MySystemListener>();
+auto system_listener(std::make_shared<MySystemListener>());
 CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.get());
 ```
 {% endtab %}
@@ -187,14 +187,14 @@ class MySystemListener : public ISystemListener {
 public:
     ...
 
-    onRevoke (RevokeReason reason) override
+    onRevoke(RevokeReason reason) override
     {
         ...
     }
     
     ...
 };
-system_listener = std::make_shared<MySystemListener>();
+auto system_listener(std::make_shared<MySystemListener>());
 CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.get());
 ```
 {% endtab %}

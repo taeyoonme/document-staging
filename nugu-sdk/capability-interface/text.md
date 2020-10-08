@@ -64,7 +64,7 @@ textAgent.requestTextInput(text: textInput, requestType: .normal)
 
 {% tab title="Linux" %}
 ```
-text_handler.requestTextInput(text)
+text_handler->requestTextInput(text)
 ```
 {% endtab %}
 {% endtabs %}

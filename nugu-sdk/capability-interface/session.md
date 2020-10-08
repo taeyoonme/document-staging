@@ -101,7 +101,7 @@ public:
     
     ...
 };
-session_listener = std::make_shared<MySessionListener>();
+auto session_listener(std::make_shared<MySessionListener>());
 CapabilityFactory::makeCapability<SessionAgent, ISessionHandler>(session_listener.get());
 ```
 {% endtab %}

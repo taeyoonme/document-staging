@@ -101,12 +101,12 @@ class MyMicListener : public IMicListener {
 public:
     ...
 
-    void micStatusChanged (MicStatus &status) override
+    void micStatusChanged(MicStatus &status) override
     {
         ...
     }
 };
-mic_listener = std::make_shared<MyMicListener>();
+auto mic_listener(std::make_shared<MyMicListener>());
 CapabilityFactory::makeCapability<MicAgent, IMicHandler>(mic_listener.get());
 ```
 {% endtab %}

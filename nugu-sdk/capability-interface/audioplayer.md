@@ -36,7 +36,7 @@ let audioPlayerAgent = nuguClient.audioPlayerAgent
 {% endtab %}
 
 {% tab title="Linux" %}
-[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [AudioPlayeAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [AudioPlayerAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 ```text
 auto audio_player_handler(std::shared_ptr<IAudioPlayerHandler>(
@@ -96,7 +96,7 @@ public:
     
     ...
 };
-audio_player_listener = std::make_shared<MyAudioPlayerListener>();
+auto audio_player_listener(std::make_shared<MyAudioPlayerListener>());
 CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(audio_player_listener.get());
 ```
 {% endtab %}
@@ -192,7 +192,7 @@ public:
     
     ...
 };
-audio_player_listener = std::make_shared<MyAudioPlayerListener>();
+auto audio_player_listener(std::make_shared<MyAudioPlayerListener>());
 CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>(audio_player_listener.get());
 ```
 {% endtab %}
@@ -236,15 +236,15 @@ audioPlayerAgent.requestShuffleCommand(false)
 {% tab title="Linux" %}
 ```
 // 다음
-audio_player_handler.next()
+audio_player_handler->next()
 // 이전
-audio_player_handler.prev()
+audio_player_handler->prev()
 // 즐겨찾기
-audio_player_handler.requestFavoriteCommand(false)
+audio_player_handler->requestFavoriteCommand(false)
 // 반복
-audio_player_handler.requestRepeatCommand(RepeatType.NONE)
+audio_player_handler->requestRepeatCommand(RepeatType.NONE)
 // 셔플
-audio_player_handler.requestShuffleCommand(false)
+audio_player_handler->requestShuffleCommand(false)
 ```
 {% endtab %}
 {% endtabs %}

@@ -96,12 +96,12 @@ class MySoundListener : public ISoundListener {
 public:
     ...
 
-    void handleBeep (BeepType beep_type) override
+    void handleBeep(BeepType beep_type) override
     {
         ...
     }
 };
-sound_listener = std::make_shared<MySoundListener>();
+auto sound_listener(std::make_shared<MySoundListener>());
 CapabilityFactory::makeCapability<SoundAgent, ISoundHandler>(sound_listener.get());
 ```
 {% endtab %}
