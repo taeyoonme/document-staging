@@ -86,8 +86,8 @@ nuguClient.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [ASRAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 ```text
-asr_handler = std::shared_ptr<IASRHandler>(
-        CapabilityFactory::makeCapability<ASRAgent, IASRHandler>());
+auto asr_handler(std::shared_ptr<IASRHandler>(
+        CapabilityFactory::makeCapability<ASRAgent, IASRHandler>()));
 
 nugu_client->getCapabilityBuilder()
     ->add(asr_handler.get())
@@ -137,18 +137,52 @@ asr_hanlder.startRecognition()
 
 {% tabs %}
 {% tab title="Android" %}
-음성인식 진행 상태를 모니터링 하려면 SpeechRecognizerAggregatorInterface.OnStateChangeListener 를 추가합니다.
+SpeechRecognizerAggregatorInterface.OnStateChangeListener 를 추가합니다.
 
 ```text
-speechRecognizerAggregator.addListener(this)
+val listener = object: SpeechRecognizerAggregatorInterface.OnStateChangeListener {
+    override fun onStateChanged(state: State) {
+        ...
+    }
+}
+speechRecognizerAggregator.addListener(listener)
+```
+
+ASRAgentInterface.OnResultListener 를 추가합니다.
+
+```text
+val resultListener = object: ASRAgentInterface.OnResultListener {
+    fun onPartialResult(result: String, dialogRequestId: String) {
+        // STT 중간 결과
+        ...
+    }
+    
+    fun onCompleteResult(result: String, dialogRequestId: String) {
+        // STT 최종 결과
+        ...
+    }
+    
+    ...
+}
+asrAgent.addOnResultListener(resultListener)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-음성인식 진행 상태를 모니터링 하려면 ASRAgentDelegate 를 추가합니다.
+ASRAgentDelegate 를 추가합니다.
 
 ```text
-asrAgent.add(delegate: self)
+class MyASRAgentDelegate: ASRAgentDelegate {
+    func asrAgentDidChange(state: ASRState) {
+        ...
+    }
+    
+    func asrAgentDidReceive(result: ASRResult, dialogRequestId: String) {
+        // NotifyResult 결과 확인
+        ...
+    }
+}
+asrAgent.add(delegate: MyASRAgentDelegate())
 ```
 {% endtab %}
 
@@ -156,7 +190,30 @@ asrAgent.add(delegate: self)
 음성인식 진행 상태를 모니터링 하려면 [IASRListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRListener.html) 를 추가합니다.
 
 ```text
-asr_listener = std::make_shared<ASRListener>();
+class MyASRListener : public IASRListener {
+public:
+    ...
+
+    void onState (ASRState state, const std::string &dialog_id) override
+    {
+        ...
+    }
+    
+    void onPartial (const std::string &text, const std::string &dialog_id) override
+    {
+        // STT 중간 결과
+        ...
+    }
+    
+    void onComplete (const std::string &text, const std::string &dialog_id) override
+    {
+        // STT 최종 결과
+        ...
+    }
+    
+    ...
+};
+asr_listener = std::make_shared<MyASRListener>();
 CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(asr_listener.get());
 ```
 {% endtab %}
