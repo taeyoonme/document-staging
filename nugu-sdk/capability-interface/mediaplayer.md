@@ -6,7 +6,37 @@ description: 음악 앱을 제어하기 위한 규격
 
 ## Version
 
-최신 버전은 1.0 입니다.
+최신 버전은 1.1 입니다.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Version</th>
+      <th style="text-align:left">Date</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">1.0</td>
+      <td style="text-align:left">2020.07.15</td>
+      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.1</td>
+      <td style="text-align:left">2020.10.29</td>
+      <td style="text-align:left">
+        <ul>
+          <li>Song.category: SIMILAR &#xCD94;&#xAC00;</li>
+          <li>PlayFailed event(errorCode) : noSimilarSong &#xCD94;&#xAC00;</li>
+          <li>HandlePlaylist, HandleLyrics directive &#xCD94;&#xAC00;</li>
+          <li>HandlePlaylistSucceeded, HandlePlaylistFailed, HandleLyricsSucceeded,
+            HandleLyricsFailed event &#xCD94;&#xAC00;</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## SDK Interface
 
@@ -274,6 +304,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left"><b>Y</b>
       </td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <ul>
           <li><b>NOT_RUNNING</b>
           </li>
@@ -503,6 +535,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <ol>
           <li><b>NONE</b>
           </li>
@@ -529,6 +563,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
           <li><b>PLAYLIST</b>
           </li>
           <li><b>NOWPLAYING</b>
+          </li>
+          <li><b>SIMILAR</b>
           </li>
         </ol>
       </td>
@@ -1259,6 +1295,107 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
+### HandlePlaylist
+
+```text
+{
+  "header": {
+    "namespace": "MediaPlayer",
+    "name": "HandlePlaylist",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "action": "{{STRING}}",
+    "target": "{{STRING}}"
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">action</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
+        <p>Playlist &#xC81C;&#xC5B4; &#xB3D9;&#xC791;</p>
+        <ul>
+          <li><b>SHOW</b>
+          </li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">target</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
+        <p>&#xD2B9;&#xC815; Playlist &#xC9C0;&#xC815;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### HandleLyrics
+
+```text
+{
+  "header": {
+    "namespace": "MediaPlayer",
+    "name": "HandleLyrics",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "action": "{{STRING}}"
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">action</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
+        <p>&#xAC00;&#xC0AC; &#xC81C;&#xC5B4; &#xB3D9;&#xC791;</p>
+        <ul>
+          <li><b>SHOW</b>
+          </li>
+          <li><b>HIDE</b>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ## Events
 
 ### PlaySucceeded
@@ -1369,6 +1506,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <ul>
           <li>&#xC7AC;&#xC0DD;&#xC744; &#xC218;&#xD589;&#xD558;&#xC9C0;&#xB9CC;, &#xC544;&#xB798;&#xC640;
             &#xAC19;&#xC740; &#xD2B9;&#xC218; &#xB3D9;&#xC791; &#xBC0F; prompt&#xB97C;
@@ -1418,7 +1557,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
     "name": "PlayFailed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.1"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1449,6 +1588,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -1475,6 +1616,9 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
         <p>appInternalServerError : CP&#xC758; &#xB0B4;&#xBD80; &#xC11C;&#xBC84;
           &#xC5F0;&#xB3D9;&#xAC04;&#xC758; &#xC774;&#xC288;&#xB85C; &#xC751;&#xB2F5;&#xC2E4;&#xD328;
           &#xBC1C;&#xC0DD; &#xC2DC;</p>
+        <p>noSimilarSong : &#xC720;&#xC0AC;&#xACE1;(SIMILAR) &#xC694;&#xCCAD; &#xC2DC;,
+          &#xC720;&#xC0AC;&#xACE1;&#xC774; &#xC5C6;&#xB294;, &#xC9C0;&#xC6D0;&#xD558;&#xC9C0;
+          &#xC54A;&#xB294; &#xACE1;&#xC77C; &#xACBD;&#xC6B0;</p>
       </td>
     </tr>
   </tbody>
@@ -1542,6 +1686,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -1617,6 +1763,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -1782,6 +1930,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -1956,6 +2106,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2040,6 +2192,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2115,6 +2269,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2192,6 +2348,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2269,6 +2427,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2377,6 +2537,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2468,6 +2630,134 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
+        <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
+          &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
+          &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
+        <p>appInternalServerError : CP&#xC758; &#xB0B4;&#xBD80; &#xC11C;&#xBC84;
+          &#xC5F0;&#xB3D9;&#xAC04;&#xC758; &#xC774;&#xC288;&#xB85C; &#xC751;&#xB2F5;&#xC2E4;&#xD328;
+          &#xBC1C;&#xC0DD; &#xC2DC;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### HandlePlaylistSucceeded
+
+```text
+{
+  "header": {
+    "namespace": "MediaPlayer",
+    "name": "HandlePlaylistSucceeded",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### HandlePlaylistFailed
+
+```text
+{
+  "header": {
+    "namespace": "MediaPlayer",
+    "name": "HandlePlaylistFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "errorCode": "{{STRING}}"
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">errorCode</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
+        <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
+          &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
+          &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
+        <p>appInternalServerError : CP&#xC758; &#xB0B4;&#xBD80; &#xC11C;&#xBC84;
+          &#xC5F0;&#xB3D9;&#xAC04;&#xC758; &#xC774;&#xC288;&#xB85C; &#xC751;&#xB2F5;&#xC2E4;&#xD328;
+          &#xBC1C;&#xC0DD; &#xC2DC;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### HandleLyricsSucceeded
+
+```text
+{
+  "header": {
+    "namespace": "MediaPlayer",
+    "name": "HandleLyricsSucceeded",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### HandleLyricsFailed
+
+```text
+{
+  "header": {
+    "namespace": "MediaPlayer",
+    "name": "HandleLyricsFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "errorCode": "{{STRING}}"
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">errorCode</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
+        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
