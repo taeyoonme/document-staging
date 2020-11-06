@@ -7,7 +7,7 @@
 | 정상 응답 실패 | NLU 분석은 이루어졌으나, 정상 응답이 되지 않은 것으로 추정되는 발화 |
 | NLU 분석 실패 | NLU 분석이 되지 않아, Fallback 처리된 발화 |
 
-이 도구는 스피커를 통해 사용자에게 전달되는 최종 응답이 에러 메세지에 해당하는 경우 '서비스 실패'라고 판단하며, 이 때 NLU 분석이 되었다면 `정상 응답 실패`, NLU 분석 결과가 없다면 `NLU 분석 실패`로 분류합니다. [Fallback prompt](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/built-in-actions.md#fallback), [Exception prompt](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/manage-exceptions.md) 외에도, 일반 액션에서 "제가 할 수 없는 일이에요.", "검색에 실패했습니다" 등과 같은 응답이 전달된 경우, 서비스 실패로 분류되어 `실패 발화 분석` 도구의 분석 대상이 될 수 있습니다.
+이 도구는 스피커를 통해 사용자에게 전달되는 최종 응답이 에러 메세지에 해당하는 경우 '서비스 실패'라고 판단하며, 이 때 NLU 분석이 되었다면 `정상 응답 실패`, NLU 분석 결과가 없다면 `NLU 분석 실패`로 분류합니다. [Fallback prompt](../define-an-action/built-in-actions.md#fallback), [Exception prompt](../define-an-action/manage-exceptions.md) 외에도, 일반 액션에서 "제가 할 수 없는 일이에요.", "검색에 실패했습니다" 등과 같은 응답이 전달된 경우, 서비스 실패로 분류되어 `실패 발화 분석` 도구의 분석 대상이 될 수 있습니다.
 
 ## 정상 응답 실패 <a id="failed"></a>
 
