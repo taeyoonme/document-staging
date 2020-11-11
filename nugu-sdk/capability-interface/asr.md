@@ -6,47 +6,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## Version
 
-최신 버전은 1.3 입니다.
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2019.11.24</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.04.29</td>
-      <td style="text-align:left">
-        <p>Recognize directive &#xC5D0; wakeup, timeout &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>Recognize directive, ExpechSpeech event &#xC5D0; asrContext &#xD544; &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.06.05</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>Recognize directive, ExpectSpeech event &#xC758; asrContext &#xC5D0; playServiceId
-          &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.3</td>
-      <td style="text-align:left">2020.06.09</td>
-      <td style="text-align:left">Recognize directive, ExpectSpeech event &#xC758; sessionId &#xD544;&#xB4DC;
-        &#xC0AD;&#xC81C;</td>
-    </tr>
-  </tbody>
-</table>
+최신 버전은 1.2 입니다.
 
 ## State Diagram
 
@@ -341,8 +301,7 @@ asr_handler->stopRecognition()
       "sceneId": "{{STRING}}",
       "sceneText": [
         "{{STRING}}"
-      ],
-      "playServiceId" : "playServiceId"
+      ]
     }
   }
 }
@@ -420,21 +379,10 @@ asr_handler->stopRecognition()
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
   </tbody>
 </table>
 
 ### NotifyResult
-
-* 음성 인식 결과 전달
 
 ```text
 {
@@ -574,8 +522,7 @@ asr_handler->stopRecognition()
       "sceneId": "{{STRING}}",
       "sceneText": [
         "{{STRING}}"
-      ],
-      "playServiceId" : "playServiceId"
+      ]
     },
     "timeout": {
       "listen": {{LONG}},
@@ -815,15 +762,6 @@ asr_handler->stopRecognition()
       <td style="text-align:left"></td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
       <td style="text-align:left">timeout</td>
       <td style="text-align:left">object</td>
       <td style="text-align:left">N</td>
@@ -869,55 +807,7 @@ asr_handler->stopRecognition()
   </tbody>
 </table>
 
-### ResponseTimeout
-
-* Recognize Event가 전달되고 사용자 발화도 모두 전달이 완료된 이후 응답을 받지 못한 경우
-
-```text
-{
-  "header": {
-    "namespace": "ASR",
-    "name": "ResponseTimeout",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-```
-
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| playServiceId | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용 |
-
-### ListenTimeout
-
-* Recognize event가 전달되고 사용자 발화가 발화하지 않은 경우
-
-```text
-{
-  "header": {
-    "namespace": "ASR",
-    "name": "ListenTimeout",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-```
-
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| playServiceId | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용 |
-
 ### StopRecognize
-
-* Recognize event 취소
 
 ```text
 {
@@ -933,31 +823,4 @@ asr_handler->stopRecognition()
   }
 }
 ```
-
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| playServiceId | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용 |
-
-### ListenFailed
-
-* Recognize event 이후 클라이언트에서 에러\(마이크를 열지 못하는 등\)가 발생한 경우
-
-```text
-{
-  "header": {
-    "namespace": "ASR",
-    "name": "ListenFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-```
-
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| playServiceId | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용 |
 

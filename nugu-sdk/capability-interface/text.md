@@ -117,7 +117,7 @@ text_handler->requestTextInput(text)
 
 ## Directive
 
-#### TextSource
+### TextSource
 
 ```text
 {
@@ -205,7 +205,8 @@ text_handler->requestTextInput(text)
       "sceneId": "{{STRING}}",
       "sceneText": [
         "{{STRING}}"
-      ]
+      ],
+      "playServiceId" : "playServiceId"
     }
   }
 }

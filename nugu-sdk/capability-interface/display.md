@@ -6,76 +6,7 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 
 ## Version
 
-최신 버전은 1.6 입니다.
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2019.11.17</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">20191209</td>
-      <td style="text-align:left">
-        <p>Close directive</p>
-        <p>CloseSucceeded, CloseFailed event &#xCD94;&#xAC00;</p>
-        <p>Weather1/2/3/4/5, FullImage directive &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">20200303</td>
-      <td style="text-align:left">
-        <p>Duration &#xCD94;&#xAC00;</p>
-        <p>Score1/2 directive &#xCD94;&#xAC00;</p>
-        <p>ControlFocus, ControlScroll directive &#xCD94;&#xAC00;</p>
-        <p>ControlFocusSucceeded, ControlFocusFailed, ControlScrollSucceeded, ControlScrollFailed
-          event &#xCD94;&#xAC00;</p>
-        <p>SearchList1/2 directive &#xCD94;&#xAC00;</p>
-        <p>Call1/2/3 directive &#xCD94;</p>
-        <p>FullText3 directive &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.3</td>
-      <td style="text-align:left">20200429</td>
-      <td style="text-align:left">
-        <p>Timer directive &#xCD94;&#xAC00;</p>
-        <p>Template &#xC5D0; supportFocusedItemToken, supportVisibleTokenList &#xD544;&#xB4DC;
-          &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.4</td>
-      <td style="text-align:left">20200622</td>
-      <td style="text-align:left">
-        <p>ButtonObject &#xC5D0; postback, autoTrigger, closeTemplateAfter, disable
-          &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>ElementSelected event &#xC5D0; postback &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>Dummy directive &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.5</td>
-      <td style="text-align:left">20200902</td>
-      <td style="text-align:left">Template &#xC5D0; eventType, textInput &#xD544;&#xB4DC; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.6</td>
-      <td style="text-align:left">20201016</td>
-      <td style="text-align:left">BadgeObject, UnifiedSearch1 &#xCD94;</td>
-    </tr>
-  </tbody>
-</table>
+최신 버전은 1.3 입니다.
 
 ## SDK Interface
 
@@ -113,37 +44,18 @@ let audioPlayerAgent = nuguClient.audioPlayerAgent
 
 {% tabs %}
 {% tab title="Android" %}
-DisplayAggregatorInterface.Controller 를 추가합니다.
+Context 를 전달하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
 
 ```text
-val controller = object: DisplayAggregatorInterface.Controller {
-    override fun getFocusedItemToken(): String? {
-        ...
-    }
-    
-    override fun getVisibleTokenList(): List<String>? {
-        ...
-    }
-    
-    ...
-}
-
 displayAggregator.displayCardRendered(templateId, controller)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-DisplayAgentDelegate 를 추가합니다.
+Context 를 전달하려면 DisplayAgentDelegate 를 추가합니다.
 
 ```text
-class MyDisplayAgentDelegate: DisplayAgentDelegate {
-    func displayAgentRequestContext(templateId: String, completion: @escaping (DisplayContext?) -> Void) {
-        ...
-    }
-    
-    ...
-}
-displayAgent.delegate = MyDisplayAgentDelegate()
+displayAgent.delegate = self
 ```
 {% endtab %}
 {% endtabs %}
@@ -158,57 +70,24 @@ Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](d
 
 {% tabs %}
 {% tab title="Android" %}
-DisplayAggregatorInterface.Renderer 를 추가합니다.
+UI 를 구성하려면 DisplayAggregatorInterface.Renderer 를 추가합니다.
 
 ```text
-val renderer = object: DisplayAggregatorInterface.Renderer {
-    override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
-        ...
-    }
-    
-    ...
-}
-displayAggregator.setRenderer(renderer)
+displayAggregator.setRenderer(this)
 ```
 
 UI 를 제어하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
 
 ```text
-val controller = object: DisplayAggregatorInterface.Controller {
-    override fun controlFocus(direction: Direction): Boolean {
-        ...
-    }
-    
-    override fun controlScroll(direction: Direction): Boolean {
-        ...
-    }
-    
-    ...
-}
 displayAggregator.displayCardRendered(templateId, controller)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-DisplayAgentDelegate 를 추가합니다.
+UI 를 구성하거나 제어하려면 DisplayAgentDelegate 를 추가합니다.
 
 ```text
-class MyDisplayAgentDelegate: DisplayAgentDelegate {
-    func displayAgentShouldRender(template: DisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
-        ...
-    }
-    
-    func displayAgentShouldMoveFocus(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -> Void) {
-        ...
-    }
-    
-    func displayAgentShouldScroll(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -> Void) {
-        ...
-    }
-    
-    ...
-}
-displayAgent.delegate = MyDisplayAgentDelegate()
+displayAgent.delegate = self
 ```
 {% endtab %}
 {% endtabs %}
@@ -365,8 +244,7 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 ```text
 {
   "text": "{{STRING}}",
-  "color": "{{STRING}}",
-  "style": {}
+  "color": "{{STRING}}"
 }
 ```
 
@@ -412,50 +290,17 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
           &#xB2E4;&#xB984;</p>
       </td>
     </tr>
-    <tr>
-      <td style="text-align:left">style</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xC0C1;&#xC704; &#xC2A4;&#xD0C0;&#xC77C;(directive
-          &#xB4F1;)&#xC744; &#xB530;&#xB984;.</p>
-        <p>CSS &#xC18D;&#xC131;&#xC740; &#xBAA8;&#xB450; &#xAC00;&#xB2A5;&#xD558;&#xBA70;,
-          &#xB2E4;&#xC74C;&#xC758; &#xAC12;&#xB4E4;&#xC744; &#xAC00;&#xC9C8; &#xC218;
-          &#xC788;&#xB2E4;.</p>
-        <ul>
-          <li>text-align : left, center, right</li>
-          <li>opacity : 0 ~ 1</li>
-          <li>display : block, inline, none</li>
-          <li>margin : 10px
-            <br />&#xC0AC;&#xC6A9;&#xC608;.
-            <br />{ &quot;text-align&quot;:&quot;center&quot;, &quot;display&quot;: &quot;block&quot;
-            }</li>
-        </ul>
-      </td>
-    </tr>
   </tbody>
 </table>
 
-### ButtonObject
+### Button Object
 
 ```text
 {
   "type": "{{STRING}}",
   "text": "{{STRING}}",
   "image": ImageObject,
-  "token": "{{STRING}}",
-  "textInput": {
-    "text": "{{STRING}}",
-    "playServiceId": "{{STRING}}"
-  },
-  "postback": {},
-  "autoTrigger": {
-    "delayInMilliseconds": {{LONG}},
-    "showTimer": {{BOOL}}
-  },
-  "closeTemplateAfter": {{BOOL}},
-  "style": {},
-  "disable": {{BOOL}}
+  "token": "{{STRING}}"
 }
 ```
 
@@ -507,123 +352,6 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">&#xD074;&#xB9AD; &#xC2DC; &#xC804;&#xB2EC;&#xB420; &#xD1A0;&#xD070; &#xAC12;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">eventType</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xD074;&#xB9AD; &#xC2DC; &#xD50C;&#xB7AB;&#xD3FC;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xB294;
-          Event Type (Capability &#xBA85;&#xACFC; Event&#xB97C; &#xBAA8;&#xB450;
-          &#xBA85;&#xC2DC;&#xD574;&#xC57C; &#xD568;)</p>
-        <ul>
-          <li><b>Display.ElementSelected</b> - default (eventType &#xAC12;&#xC774; &#xC5C6;&#xB294;
-            &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;&#xAC12;)</li>
-          <li><b>Text.TextInput</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">textInput</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">eventType == TextTextInput&#xC778; &#xACBD;&#xC6B0; &#xD544;&#xC218;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">textInput.
-        <br />text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC804;&#xB2EC;&#xD560; &#xD14D;&#xC2A4;&#xD2B8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>textInput.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD2B9;&#xC815; Play&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xB77C;&#xC6B0;&#xD305;&#xD558;&#xB294;
-        &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">postback</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xD074;&#xB9AD; &#xC2DC; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xC784;&#xC758;&#xC758;
-          Object</p>
-        <ul>
-          <li>&#xBC84;&#xD2BC; &#xD074;&#xB9AD; &#xC2DC; &#xB3D9;&#xC791;&#xC744; &#xC704;&#xD574;
-            &#xD544;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xC784;&#xC758;&#xC758;
-            JSON &#xD3EC;&#xB9F7;&#xC73C;&#xB85C; &#xCD94;&#xAC00; &#xAC00;&#xB2A5;</li>
-          <li>&#xAE30;&#xC874;&#xC5D0; token&#xC744; &#xC774; &#xC6A9;&#xB3C4;&#xB85C;
-            &#xD65C;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xC558;&#xB294;&#xB370;,
-            token&#xC740; identifier &#xC5ED;&#xD560;&#xC744; &#xD558;&#xB3C4;&#xB85D;
-            &#xD558;&#xAE30; &#xC704;&#xD574; &#xCD94;&#xAC00;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">autoTrigger</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD2B9;&#xC815; &#xC2DC;&#xAC04;&#xC774; &#xC9C0;&#xB09C; &#xB4A4; ElementSelected
-          Event&#xB97C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A4;&#xB294;
-          &#xACBD;&#xC6B0; &#xD3EC;&#xD568;</p>
-        <p>&#xD558;&#xC704; parameter&#xB4E4;&#xC740; autoTrigger&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xBA74;
-          &#xBAA8;&#xB450; mandatory parameter</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>autoTrigger.</p>
-        <p>delayInMilliseconds</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">TTS &#xC885;&#xB8CC; &#xD6C4; trigger &#xC2DC;&#xD0AC;&#xB54C;&#xAE4C;&#xC9C0;&#xC758;
-        &#xC2DC;&#xAC04; (msec)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>autoTrigger.</p>
-        <p>showTimer</p>
-      </td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC84;&#xD2BC;&#xC5D0; timer &#xC22B;&#xC790;&#xB97C; &#xBCF4;&#xC5EC;&#xC904;&#xC9C0;
-        &#xC124;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">closeTemplateAfter</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">trigger &#xB610;&#xB294; &#xD074;&#xB9AD; &#xB3D9;&#xC791; &#xD6C4; template&#xC744;
-        &#xBC14;&#xB85C; &#xB2EB;&#xC744;&#xC9C0;, &#xC544;&#xB2C8;&#xBA74; template&#xC758;
-        life cycle &#xB300;&#xB85C; &#xD654;&#xBA74;&#xC5D0; &#xBCF4;&#xC5EC;&#xC904;&#xC9C0;
-        &#xC124;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">style</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBC84;&#xD2BC;&#xC758; &#xCD94;&#xAC00;&#xC801;&#xC778; style&#xC744;
-          &#xC815;&#xC758;&#xD568;.</p>
-        <p>textObject&#xC758; style&#xACE0; &#xC0AC;&#xC6A9;&#xBC95;&#xC774; &#xB3D9;&#xC77C;&#xD568;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">disable</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC774; &#xC18D;&#xC131;&#xC774; true&#xC774;&#xBA74; &#xBC84;&#xD2BC;&#xC744;
-        disable &#xCC98;&#xB9AC;&#xD568;.</td>
     </tr>
   </tbody>
 </table>
@@ -730,7 +458,6 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
 
 ```text
 {
-  "style": "{{STRING}}",
   "status": "{{STRING}}",
   "token": "{{STRING}}"
 }
@@ -738,7 +465,6 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| style | string | Y | image, text |
 | status | string | Y | on, off |
 | token | string | Y | 클릭 시 전달될 토큰 값 |
 
@@ -875,9 +601,7 @@ List 의 스크롤 이동 요청입니다.
       "body": TextObject,
       "footer": TextObject
     },
-    "grammarGuide": GrammarGuide,
-    "supportFocusedItemToken": {{Boolean}},
-    "supportVisibleTokenList": {{Boolean}}
+    "grammarGuide": GrammarGuide
   }
 }
 ```
@@ -1002,20 +726,6 @@ List 의 스크롤 이동 요청입니다.
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
-    <tr>
-      <td style="text-align:left">supportFocusedItemToken</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Context&#xC5D0; &#xC788;&#xB294; focusedItemToken&#xC774; &#xC9C0;&#xC6D0;&#xB418;&#xC5B4;&#xC57C;
-        &#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">supportVisibleTokenList</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Context&#xC5D0; &#xC788;&#xB294; visibleTokenList&#xAC00; &#xC9C0;&#xC6D0;&#xB418;&#xC5B4;&#xC57C;
-        &#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;</td>
-    </tr>
   </tbody>
 </table>
 
@@ -1050,17 +760,10 @@ List 의 스크롤 이동 요청입니다.
         "body": TextObject,
         "footer": TextObject,
         "type": "{{STRING}}",
-        "toggle": ToggleButtonObject,
-        "eventType": "{{STRING}}",
-        "textInput": {
-          "text": "{{STRING}}",
-          "playServiceId": "{{STRING}}"
-        }
+        "toggle": ToggleButtonObject
       }
     ]
-    "grammarGuide": GrammarGuide,
-    "supportFocusedItemToken": {{Boolean}},
-    "supportVisibleTokenList": {{Boolean}}
+    "grammarGuide": GrammarGuide
   }
 }
 ```
@@ -1257,75 +960,11 @@ List 의 스크롤 이동 요청입니다.
         &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xD1A0;&#xAE00; &#xBC84;&#xD2BC;</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>listItems.</p>
-        <p>eventType</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xD074;&#xB9AD; &#xC2DC; &#xD50C;&#xB7AB;&#xD3FC;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xB294;
-          Event Type (Capability &#xBA85;&#xACFC; Event&#xB97C; &#xBAA8;&#xB450;
-          &#xBA85;&#xC2DC;&#xD574;&#xC57C; &#xD568;)</p>
-        <ul>
-          <li><b>Display.ElementSelected</b> - default (eventType &#xAC12;&#xC774; &#xC5C6;&#xB294;
-            &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;&#xAC12;)</li>
-          <li><b>Text.TextInput </b>- default (eventType &#xAC12;&#xC774; &#xC5C6;&#xB294;
-            &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;&#xAC12;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>listItems.</p>
-        <p>textInput</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">eventType == TextTextInput&#xC778; &#xACBD;&#xC6B0; &#xD544;&#xC218;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>listItems.</p>
-        <p>textInput.</p>
-        <p>text</p>
-      </td>
-      <td style="text-align:left">sring</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC804;&#xB2EC;&#xD560; &#xD14D;&#xC2A4;&#xD2B8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>listItems.</p>
-        <p>textInput.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD2B9;&#xC815; Play&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xB77C;&#xC6B0;&#xD305;&#xD558;&#xB294;
-        &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;</td>
-    </tr>
-    <tr>
       <td style="text-align:left">grammarGuide</td>
       <td style="text-align:left"><a href="display.md#grammarguide">GrammarGuide</a>
       </td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">supportFocusedItemToken</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Context&#xC5D0; &#xC788;&#xB294; focusedItemToken&#xC774; &#xC9C0;&#xC6D0;&#xB418;&#xC5B4;&#xC57C;
-        &#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">supportVisibleTokenList</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Context&#xC5D0; &#xC788;&#xB294; visibleTokenList&#xAC00; &#xC9C0;&#xC6D0;&#xB418;&#xC5B4;&#xC57C;
-        &#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;</td>
     </tr>
   </tbody>
 </table>
@@ -1358,20 +997,13 @@ List 의 스크롤 이동 요청입니다.
         "image": ImageObject,
         "icon": ImageObject,
         "header": TextObject,
-        "body": [TextObject],
+        "body": TextObject,
         "footer": TextObject,
-        "button": ToggleButtonObject,
-        "eventType": "{{STRING}}",
-        "textInput": {
-          "text": "{{STRING}}",
-          "playServiceId": "{{STRING}}"
-        }
+        "button": ToggleButtonObject
       }
     ]
     "caption": TextObject,
-    "grammarGuide": GrammarGuide,
-    "supportFocusedItemToken": {{Boolean}},
-    "supportVisibleTokenList": {{Boolean}}
+    "grammarGuide": GrammarGuide
   }
 }
 ```
@@ -1516,7 +1148,7 @@ List 의 스크롤 이동 요청입니다.
         <p>listItems.</p>
         <p>body</p>
       </td>
-      <td style="text-align:left">array of <a href="display.md#textobject">TextObject</a>
+      <td style="text-align:left"><a href="display.md#textobject">TextObject</a>
       </td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
@@ -1554,56 +1186,6 @@ List 의 스크롤 이동 요청입니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p>listItems.</p>
-        <p>eventType</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xD074;&#xB9AD; &#xC2DC; &#xD50C;&#xB7AB;&#xD3FC;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xB294;
-          Event Type (Capability &#xBA85;&#xACFC; Event&#xB97C; &#xBAA8;&#xB450;
-          &#xBA85;&#xC2DC;&#xD574;&#xC57C; &#xD568;)</p>
-        <ul>
-          <li><b>Display.ElementSelected</b> - default (eventType &#xAC12;&#xC774; &#xC5C6;&#xB294;
-            &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;&#xAC12;)</li>
-          <li><b>Text.TextInput </b>- default (eventType &#xAC12;&#xC774; &#xC5C6;&#xB294;
-            &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;&#xAC12;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>listItems.</p>
-        <p>textInput</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">eventType == TextTextInput&#xC778; &#xACBD;&#xC6B0; &#xD544;&#xC218;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>listItems.</p>
-        <p>textInput.</p>
-        <p>text</p>
-      </td>
-      <td style="text-align:left">sring</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC804;&#xB2EC;&#xD560; &#xD14D;&#xC2A4;&#xD2B8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>listItems.</p>
-        <p>textInput.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD2B9;&#xC815; Play&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xB77C;&#xC6B0;&#xD305;&#xD558;&#xB294;
-        &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;</td>
-    </tr>
-    <tr>
       <td style="text-align:left">caption</td>
       <td style="text-align:left"><a href="display.md#textobject">TextObject</a>
       </td>
@@ -1621,20 +1203,6 @@ List 의 스크롤 이동 요청입니다.
       </td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">supportFocusedItemToken</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Context&#xC5D0; &#xC788;&#xB294; focusedItemToken&#xC774; &#xC9C0;&#xC6D0;&#xB418;&#xC5B4;&#xC57C;
-        &#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">supportVisibleTokenList</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Context&#xC5D0; &#xC788;&#xB294; visibleTokenList&#xAC00; &#xC9C0;&#xC6D0;&#xB418;&#xC5B4;&#xC57C;
-        &#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;</td>
     </tr>
   </tbody>
 </table>
@@ -1676,9 +1244,7 @@ List 의 스크롤 이동 요청입니다.
         }
       ]
     },
-    "grammarGuide": GrammarGuide,
-    "supportFocusedItemToken": {{Boolean}},
-    "supportVisibleTokenList": {{Boolean}}
+    "grammarGuide": GrammarGuide
   }
 }
 ```
@@ -1871,20 +1437,6 @@ List 의 스크롤 이동 요청입니다.
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
     </tr>
-    <tr>
-      <td style="text-align:left">supportFocusedItemToken</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Context&#xC5D0; &#xC788;&#xB294; focusedItemToken&#xC774; &#xC9C0;&#xC6D0;&#xB418;&#xC5B4;&#xC57C;
-        &#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">supportVisibleTokenList</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Context&#xC5D0; &#xC788;&#xB294; visibleTokenList&#xAC00; &#xC9C0;&#xC6D0;&#xB418;&#xC5B4;&#xC57C;
-        &#xD558;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;</td>
-    </tr>
   </tbody>
 </table>
 
@@ -1917,13 +1469,11 @@ List 의 스크롤 이동 요청입니다.
               "min": TextObject
             },
             "footer": TextObject,
-            "focus": {{Boolean}}
+          "focus": {{Boolean}}
           }
         ]
       },
-    "grammarGuide": GrammarGuide,
-    "supportFocusedItemToken": {{Boolean}},
-    "supportVisibleTokenList": {{Boolean}}
+    "grammarGuide": GrammarGuide
   }
 }
 ```
@@ -1944,61 +1494,6 @@ List 의 스크롤 이동 요청입니다.
 | listItems.footer | [TextObject](display.md#textobject) | N | 기타정보를 위한 텍스트 |
 | listItems.focus | boolean | N | focus 여부\(bold 처리\) |
 | grammarGuide | [GrammarGuide](display.md#grammarguide) | N | 4.8 Grammar Guide 참조 |
-| supportFocusedItemToken | bool | N | Context에 있는 focusedItemToken이 지원되어야 하는지 여부 |
-| supportVisibleTokenList | bool | N | Context에 있는 visibleTokenList가 지원되어야 하는지 여부 |
-
-### Weather5
-
-```text
-{
-  "header": {
-    "namespace": "Display",
-    "name": "Weather5",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "contextLayer": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title": TitleObject,
-    "background": BackgroundObject,
-    "content": {
-      "header": TextObject,
-      "body": TextObject,
-      "footer": TextObject,
-      "progress": {{LONG}},
-      "min": TextObject,
-      "max": TextObject,
-      "icon": ImageObject
-    },
-    "grammarGuide": [],
-    "supportFocusedItemToken": {{Boolean}},
-    "supportVisibleTokenList": {{Boolean}}
-  }
-}
-```
-
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| token | string | **Y** | template을 식별하기 위한 unique identifier |
-| contextLayer | [ContextLayer](display.md#contextlayer) | N |  |
-| duration | [Duration](display.md#duration)  | N | \#7\)DurationOption 참고 |
-| title | [TitleObject](display.md#titleobject) | **Y** |  |
-| background | [BackgroundObject](display.md#backgroundobject) | N |  |
-| content.header | [TextObject](display.md#textobject) | N | 헤더 문자열 |
-| content.body | [TextObject](display.md#textobject) | N | 게이지 중앙의 문자열 |
-| content.footer | [TextObject](display.md#textobject) | N | 게이지 중앙 하단의 부연 문자열 |
-| content.progress | long | N | 게이지 진행도\(0에서 1사이의 값\) |
-| content.progressColor | String | N | 게이지의 색\(default는 red\) |
-| content.min | [TextObject](display.md#textobject) | N | 게이지 최저값 |
-| content.max | [TextObject](display.md#textobject) | N | 게이지 최고값 |
-| content.icon | [ImageObject](display.md#imageobject) | N | 게이지 아이콘 이미지 |
-| grammarGuide | [GrammarGuide](display.md#grammarguide) | N | 4.8 Grammar Guide 참조 |
-| supportFocusedItemToken | boolean | N | Context에 있는 focusedItemToken이 지원되어야 하는지 여부 |
-| supportVisibleTokenList | boolean | N | Context에 있는 visibleTokenList가 지원되어야 하는지 여부 |
 
 ## Event
 

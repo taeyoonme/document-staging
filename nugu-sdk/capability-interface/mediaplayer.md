@@ -119,7 +119,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 
 ### 제어 명령
 
-`사용자 발화`에 의해 음악 [검색](mediaplayer.md#search)/[재생](mediaplayer.md#play)/[중지](mediaplayer.md#stop)/[다음](mediaplayer.md#next)/[이전](mediaplayer.md#previous)/[탐색](mediaplayer.md#move)/[일시정지](mediaplayer.md#pause)/[계속재생](mediaplayer.md#resume)/[다시재생](mediaplayer.md#rewind)/[반복](mediaplayer.md#toggle)/[즐겨찾기](mediaplayer.md#toggle)/[셔플](mediaplayer.md#toggle) 이 directive 로 요청될 수 있습니다.
+`사용자 발화`에 의해 음악 [검색](mediaplayer.md#search)/[재생](mediaplayer.md#play)/[중지](mediaplayer.md#stop)/[다음](mediaplayer.md#next)/[이전](mediaplayer.md#previous)/[탐색](mediaplayer.md#move)/[일시정지](mediaplayer.md#pause)/[계속재생](mediaplayer.md#resume)/[다시재생](mediaplayer.md#rewind)/[반복](mediaplayer.md#toggle)/[즐겨찾기](mediaplayer.md#toggle)/[셔플](mediaplayer.md#toggle)/[재생목록 보기](mediaplayer.md#handleplaylist)/[가사 보기](mediaplayer.md#handlelyrics) 가 directive 로 요청될 수 있습니다.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -131,39 +131,47 @@ class MyMediaPlayer: MediaPlayer {
         ...
     }
     
-    override fun play(payload: PlayPayload, callback: PlayCallback) {
+    override fun play(header: Header, payload: PlayPayload, callback: PlayCallback) {
         ...
     }
     
-    override fun fun stop(payload: Payload, callback: EventCallback) {
+    override fun fun stop(header: Header, payload: Payload, callback: EventCallback) {
         ...
     }
     
-    fun next(payload: NextPayload, callback: NextCallback) {
+    override fun next(header: Header, payload: NextPayload, callback: NextCallback) {
         ...
     }
     
-    fun previous(payload: PreviousPayload, callback: PreviousCallback) {
+    override fun previous(header: Header, payload: PreviousPayload, callback: PreviousCallback) {
         ...
     }
     
-    fun move(payload: MovePayload, callback: EventCallback) {
+    override fun move(header: Header, payload: MovePayload, callback: EventCallback) {
         ...
     }
     
-    fun pause(payload: Payload, callback: EventCallback) {
+    override fun pause(header: Header, payload: Payload, callback: EventCallback) {
         ...
     }
     
-    fun resume(payload: Payload, callback: EventCallback) {
+    override fun resume(header: Header, payload: Payload, callback: EventCallback) {
         ...
     }
     
-    fun rewind(payload: Payload, callback: EventCallback) {
+    override fun rewind(header: Header, payload: Payload, callback: EventCallback) {
         ...
     }
     
-    fun toggle(payload: TogglePayload, callback: EventCallback) {
+    override fun toggle(header: Header, payload: TogglePayload, callback: EventCallback) {
+        ...
+    }
+
+    override fun handlePlaylist(header: Header, payload: HandlePlaylistPayload, callback: EventCallback) {
+        ...
+    }
+        
+    override fun handleLyrics(header: Header, payload: HandleLyricsPayload, callback: EventCallback) {
         ...
     }
     
@@ -177,43 +185,51 @@ MediaPlayerAgentDelegate를 추가합니다.
 
 ```text
 class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
-    func mediaPlayerAgentReceiveSearch(payload: MediaPlayerAgentDirectivePayload.Search, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Search) -> Void)) {
+    func mediaPlayerAgentReceiveSearch(payload: MediaPlayerAgentDirectivePayload.Search, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Search) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceivePlay(payload: MediaPlayerAgentDirectivePayload.Play, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Play) -> Void)) {
+    func mediaPlayerAgentReceivePlay(payload: MediaPlayerAgentDirectivePayload.Play, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Play) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveStop(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Stop) -> Void)) {
+    func mediaPlayerAgentReceiveStop(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Stop) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveNext(payload: MediaPlayerAgentDirectivePayload.Next, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Next) -> Void)) {
+    func mediaPlayerAgentReceiveNext(payload: MediaPlayerAgentDirectivePayload.Next, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Next) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceivePrevious(payload: MediaPlayerAgentDirectivePayload.Previous, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Previous) -> Void)) {
+    func mediaPlayerAgentReceivePrevious(payload: MediaPlayerAgentDirectivePayload.Previous, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Previous) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveMove(payload: MediaPlayerAgentDirectivePayload.Move, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Move) -> Void)) {
+    func mediaPlayerAgentReceiveMove(payload: MediaPlayerAgentDirectivePayload.Move, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Move) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceivePause(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Pause) -> Void)) {
+    func mediaPlayerAgentReceivePause(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Pause) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveResume(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Resume) -> Void)) {
+    func mediaPlayerAgentReceiveResume(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Resume) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveRewind(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Rewind) -> Void)) {
+    func mediaPlayerAgentReceiveRewind(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Rewind) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveToggle(payload: MediaPlayerAgentDirectivePayload.Toggle, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Toggle) -> Void)) {
+    func mediaPlayerAgentReceiveToggle(payload: MediaPlayerAgentDirectivePayload.Toggle, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Toggle) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceivePlaylist(playServiceId: String, action: String, target: String?, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.HandlePlaylist) -> Void)) {
+        ...
+    }
+    
+    func mediaPlayerAgentReceiveLyrics(playServiceId: String, action: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.HandleLyrics) -> Void)) {
         ...
     }
     
