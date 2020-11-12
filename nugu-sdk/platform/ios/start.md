@@ -27,20 +27,6 @@ end
 $ pod install
 ```
 {% endtab %}
-
-{% tab title="Carthage" %}
-`Cartfile`에 다음과 같이 의존성을 추가합니다.
-
-```swift
-github "nugu-developers/nugu-ios"
-```
-
-터미널을 열어 Podfile이 있는 프로젝트 경로에서 아래 Script를 실행합니다.
-
-```swift
-carthage update --platform iOS
-```
-{% endtab %}
 {% endtabs %}
 
 ## Step 3: 프로젝트 설정하기
@@ -104,7 +90,8 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
 {% tab title="EndPointDetector 모델 파일 설정" %}
 ```swift
 if let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw") {
-    client.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
+    let options = ASROptions(initiator: .user, endPointing: .client(epdFile: epdFile))
+    client.asrAgent.startRecognition(options: options)
 }
 ```
 {% endtab %}
@@ -286,7 +273,10 @@ func setAudioSession() throws {
 4. NUGU 서버와의 연결 이후 음성인식을 요청합니다.    
 
    ```swift
-   client.asrAgent.startRecognition(initiator: .user)
+   if let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw") {
+       let options = ASROptions(initiator: .user, endPointing: .client(epdFile: epdFile))
+       client.asrAgent.startRecognition(options: options)
+   }
    ```
 
 ## 더 알아보기

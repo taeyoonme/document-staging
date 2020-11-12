@@ -8,10 +8,6 @@ description: 디바이스의 디스플레이를 제어하기 위한 규격
 
 최신 버전은 1.0 입니다.
 
-| Version | Date | Description |
-| :--- | :--- | :--- |
-| 1.0 | 2020.03.02 | 규격 추가 |
-
 ## SDK Interface
 
 ### ScreenAgent 사용
@@ -29,16 +25,6 @@ NuguAndroidClient instance 를 통해 ScreenAgent instance 에 접근할 수 있
 ```text
 val screenAgent = nuguAndroidClient.getAgent(DefaultScreenAgent.NAMESPACE)
 ```
-
-NuguAndroidClient 생성시 Screen 을 추가합니다.
-
-```text
-class MyScreen: Screen {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .screen(MyScreen())
-```
 {% endtab %}
 {% endtabs %}
 
@@ -48,15 +34,13 @@ NuguAndroidClient.Builder(...)
 
 {% tabs %}
 {% tab title="Android" %}
-Screen 을 구현합니다.
+Context 전달하려면 NuguAndroidClient 생성시 Screen 을 추가합니다.
 
 ```text
-class MyScreen: Screen {
-    override fun getSettings(): Settings {
-        ...
-    }
-    ...
-}
+NuguAndroidClient.Builder(...)
+    .screen(object : Screen {
+           ...
+       })
 ```
 {% endtab %}
 {% endtabs %}
@@ -67,25 +51,7 @@ class MyScreen: Screen {
 
 {% tabs %}
 {% tab title="Android" %}
-Screen 을 구현합니다.
-
-```text
-class MyScreen: Screen {
-    override fun turnOn(brightness: Long): Boolean {
-        ...
-    }
-    
-    override fun turnOff(): Boolean {
-        ...
-    }
-
-    override fun setBrightness(brightness: Long): Boolean {
-        ...
-    }
-    
-    ...
-}
-```
+Screen.turnOn, Screen.turnOff, Screen.setBrightness 에서 디스플레이 제어를 구현합니다.
 {% endtab %}
 {% endtabs %}
 

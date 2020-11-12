@@ -6,40 +6,7 @@ description: 전화 수/발신 기능 제어를 위한 규격
 
 ## Version
 
-최신 버전은 1.2 입니다.
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2020.07.06</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.08.28</td>
-      <td style="text-align:left">SendCandidates directive &#xC5D0; clientSearchTargetList &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.11.02</td>
-      <td style="text-align:left">
-        <p>Context &#xC5D0; searchScene &#xCD94;&#xAC00;
-          <br />SendCandidates directive &#xC5D0; searchScene &#xCD94;&#xAC00;
-          <br />SendCandidates directive &#xC758; clientSearchTargetList &#xC0AD;&#xC81C;</p>
-        <p>Context &#xC5D0; recipient &#xCD94;&#xAC00;</p>
-        <p>MakeCallSucceeded event &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+최신 버전은 1.1 입니다.
 
 ## State Diagram
 
@@ -115,7 +82,13 @@ PhoneCallAgentDelegate 를 추가합니다.
 
 ```text
 class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
-    func phoneCallAgentRequestContext() -> PhoneCallContext {
+    func phoneCallAgentRequestState() -> PhoneCallState {
+        // 현재 통화 상태 정보
+        ...
+    }
+    
+    func phoneCallAgentRequestTemplate() -> PhoneCallTemplate? {
+        // 마지막에 검색된 연락처 정보
         ...
     }
     
@@ -217,15 +190,8 @@ class MyPhoneCallClient: PhoneCallClient {
         "name": "{{STRING}}",
         "label": "{{STRING}}"
       },
-      "searchScene": "{{STRING}}",
       "candidates": [Person]
-    },
-    "recipient": {
-			"name": "{{STRING}}",
-			"token": "{{STRING}}",
-			"isMobile": "{{STRING}}",
-			"isRecentMissed": "{{STRING}}"
-		}
+    }
   }
 }
 ```
@@ -317,6 +283,7 @@ class MyPhoneCallClient: PhoneCallClient {
     <tr>
       <td style="text-align:left">
         <p>template.</p>
+        <p>recipientIntended.</p>
         <p>label</p>
       </td>
       <td style="text-align:left">string</td>
@@ -332,16 +299,6 @@ class MyPhoneCallClient: PhoneCallClient {
     <tr>
       <td style="text-align:left">
         <p>template.</p>
-        <p>searchScene</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"><a href="phonecall.md#sendcandidates">SendCandidates</a> directive &#xB0B4;&#xC6A9;
-        &#xCC38;&#xC870;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
         <p>candidates</p>
       </td>
       <td style="text-align:left">array of <a href="phonecall.md#person">Person</a>
@@ -351,77 +308,6 @@ class MyPhoneCallClient: PhoneCallClient {
         &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xD558;&#xB294; &#xC911;&#xC5D0;&#xB9CC;
         context&#xC5D0; &#xCD94;&#xAC00;</td>
     </tr>
-    <tr>
-      <td style="text-align:left">recipient</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;</p>
-        <p>&#xC218;&#xC2E0;&#xC911;(INCOMING) &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294;
-          &#xBC1C;&#xC2E0;&#xC790; &#xC815;&#xBCF4;&#xB97C; &#xC138;&#xD305; (CallArrived
-          Event&#xC758; caller &#xC815;&#xBCF4;)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipient.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xC758; &#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipient.</p>
-        <p>token</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xC744; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; unique &#xAC12;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipient.</p>
-        <p>isMobile</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29; &#xC804;&#xD654;&#xBC88;&#xD638;&#xAC00;
-          &#xBAA8;&#xBC14;&#xC77C; &#xD3F0;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;</p>
-        <ul>
-          <li><b>TRUE</b>
-          </li>
-          <li><b>FALSE</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipient.</p>
-        <p>isRecentMissed</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xACFC;&#xC758; &#xAC00;&#xC7A5;
-          &#xCD5C;&#xADFC; &#xD1B5;&#xD654;&#xAC00; &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654;&#xC778;&#xC9C0;
-          &#xC5EC;&#xBD80;</p>
-        <ul>
-          <li><b>TRUE </b>- &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
-            &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774;
-            &#xC788;&#xC9C0;&#xB9CC; &#xBABB;&#xBC1B;&#xC740; &#xACBD;&#xC6B0;</li>
-          <li><b>FALSE </b>- &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
-            &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774; &#xC5C6;&#xAC70;&#xB098;, &#xC788;&#xB294;&#xB370;
-            &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654;&#xAC00; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;</li>
-        </ul>
-      </td>
-    </tr>
   </tbody>
 </table>
 
@@ -429,7 +315,7 @@ class MyPhoneCallClient: PhoneCallClient {
 
 ### Person
 
-* 하나의 연락처를 나타내는 포맷
+하나의 연락처를 나타내는 포맷
 
 ```text
 {
@@ -663,7 +549,7 @@ class MyPhoneCallClient: PhoneCallClient {
 
 ### Contact
 
-* 하나의 연락처를 나타내는 포맷
+하나의 연락처를 나타내는 포맷
 
 ```text
 {
@@ -729,7 +615,7 @@ class MyPhoneCallClient: PhoneCallClient {
       "label": "{{STRING}}"
     },
     "callType": "{{STRING}}",
-    "searchScene": "{{STRING}}",
+    "searchTargetList": [array of String],
     "candidates": [array of Person]
   }
 }
@@ -801,27 +687,18 @@ class MyPhoneCallClient: PhoneCallClient {
       </td>
     </tr>
     <tr>
-      <td style="text-align:left">searchScene</td>
-      <td style="text-align:left">string</td>
+      <td style="text-align:left">searchTargetList</td>
+      <td style="text-align:left">array of string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p></p>
-        <p>&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
-          &#xC704;&#xD574; &#xCD94;&#xAC00;</p>
-        <p>enum&#xC740; &#xC544;&#xB2C8;&#xBA70; &#xC784;&#xC758;&#xC758; string&#xC774;
-          &#xC62C; &#xC218; &#xC788;&#xC74C; &#x2192; &#xD655;&#xC7A5; &#xAC00;&#xB2A5;&#xC131;&#xC774;
-          &#xB192;&#xC544;&#xC11C; string&#xC73C;&#xB85C; &#xC815;&#xC758;
-          <br />(&#xC544;&#xB798;&#xC5D0; &#xCD94;&#xAC00;&#xB418;&#xB294; &#xAC12;&#xB4E4;&#xC740;
-          &#xC5EC;&#xB7EC; poc&#xC5D0;&#xC11C; &#xACF5;&#xC720;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;
-          &#xAC12;&#xC73C;&#xB85C; &#xCD94;&#xAC00; &#xC2DC; &#xC544;&#xB798;&#xC758;
-          &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xACC4;&#xC18D; &#xD655;&#xC7A5; &#xAC00;&#xB2A5;)</p>
+        <p>client&#xC5D0; &#xAC80;&#xC0C9; &#xBC29;&#xC2DD;&#xC744; &#xD2B9;&#xC815;</p>
+        <p>&#xC815;&#xC758;&#xB418;&#xC9C0; &#xC54A;&#xC740; &#xAC12;&#xC774; &#xD3EC;&#xD568;&#xB41C;
+          &#xACBD;&#xC6B0;, SDK&#xC5D0;&#xC11C; &#xD574;&#xB2F9; &#xAC12;&#xB9CC;
+          &#xC81C;&#xC678; &#xCC98;&#xB9AC;&#xD568;</p>
         <ul>
-          <li>DEFAULT - &#xAE30;&#xBCF8; &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;</li>
-          <li>T114ONLY - T114 &#xAC80;&#xC0C9;&#xACB0;&#xACFC;&#xB9CC; &#xB178;&#xCD9C;&#xB418;&#xB294;
-            &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;</li>
-          <li>T114INCLUDE - T114 &#xAC80;&#xC0C9;&#xACB0;&#xACFC;&#xB97C; &#xD56D;&#xC0C1;
-            &#xD3EC;&#xD568;&#xD558;&#xB294; &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;</li>
-          <li>T114DIRECT - &#xAE34;&#xAE09;&#xC804;&#xD654;</li>
+          <li><b>CONTACT</b> - &#xC5F0;&#xB77D;&#xCC98; &#xAC80;&#xC0C9;</li>
+          <li><b>EXCHANGE</b> - exchange &#xAC80;&#xC0C9;</li>
+          <li><b>T114</b> - T114 &#xAC80;&#xC0C9;</li>
         </ul>
       </td>
     </tr>
@@ -929,7 +806,7 @@ class MyPhoneCallClient: PhoneCallClient {
 
 ### BlockIncomingCall
 
-* 현재 수신 중인 전화 수신 차단 설정
+현재 수신 중인 전화 수신 차단 설정
 
 ```text
 {
@@ -950,8 +827,9 @@ class MyPhoneCallClient: PhoneCallClient {
 
 ### CandidatesListed
 
-* 검색 결과 리스트가 화면에 보여지는 경우 보내는 Event
-* Parameter 들은 [Context](phonecall.md#context) 를 통해 전송되며, 검색 결과가 없는 경우에도 empty 로 전송해야 함.
+검색 결과 리스트가 화면에 보여지는 경우 보내는 Event
+
+Parameter 들은 [Context](phonecall.md#context) 를 통해 전송되며, 검색 결과가 없는 경우에도 empty 로 전송해야 함.
 
 ```text
 {
@@ -1074,8 +952,9 @@ class MyPhoneCallClient: PhoneCallClient {
 
 ### CallEnded
 
-* EndCall로 명시적으로 전화를 끊은 경우
-* ONGOING인 경우는 상대방이 거절하거나 통화중, 전화를 안받는 경우 등 연결이 안되는 모든 상태
+EndCall로 명시적으로 전화를 끊은 경우
+
+ONGOING인 경우는 상대방이 거절하거나 통화중, 전화를 안받는 경우 등 연결이 안되는 모든 상태
 
 ```text
 {
@@ -1094,8 +973,9 @@ class MyPhoneCallClient: PhoneCallClient {
 
 ### CallEstablished
 
-* 상대방이 전화를 받은 경우
-* AcceptCall이 성공해서 연결된 경우
+상대방이 전화를 받은 경우
+
+AcceptCall이 성공해서 연결된 경우
 
 ```text
 {
@@ -1114,7 +994,7 @@ class MyPhoneCallClient: PhoneCallClient {
 
 ### MakeCallFailed
 
-* MakeCall이 실패하는 경우 → 기능 상의 이슈로 전화 연결 시도 자체가 실패하는 경우
+MakeCall이 실패하는 경우 → 기능 상의 이슈로 전화 연결 시도 자체가 실패하는 경우
 
 ```text
 {
@@ -1170,28 +1050,4 @@ class MyPhoneCallClient: PhoneCallClient {
     </tr>
   </tbody>
 </table>
-
-### MakeCallSucceeded
-
-* MakeCall이 성공하는 경우 
-
-```text
-{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "MakeCallSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "recipient": Person
-  }
-}
-```
-
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| recipient | Person Object | Y |  |
 

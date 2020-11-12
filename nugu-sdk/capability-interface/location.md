@@ -8,10 +8,6 @@ description: 디바이스 위치 정보를 Play 로 전달하기 위한 규격
 
 최신 버전은 1.0 입니다.
 
-| Version | Date | Description |
-| :--- | :--- | :--- |
-| 1.0 | 2019.12.04 | 규격 추가 |
-
 ## SDK Interface
 
 ### LocationAgent 사용
@@ -42,28 +38,18 @@ Play 에서 위치 정보 기반의 정보를 제공 받기 위해서는 디바�
 
 {% tabs %}
 {% tab title="Android" %}
-LocationProvider 를 추가합니다.
+Context 를 전달하려면 LocationProvider 를 추가합니다.
 
 ```text
-val provider = object: LocationProvider {
-    override fun getLocation(): Location? {
-        ...
-    }
-}
-locationAgent.setLocationProvider(provider)
+locationAgent.setLocationProvider(this)
 ```
 {% endtab %}
 
 {% tab title="iOS" %}
-LocationAgentDelegate 를 추가합니다.
+Context 를 전달하려면 LocationAgentDelegate 를 추가합니다.
 
 ```text
-class MyLocationAgentDelegate: LocationAgentDelegate {
-    func locationAgentRequestLocationInfo() -> LocationInfo? {
-        ...
-    }
-}
-locationAgent.delegate = MyLocationAgentDelegate()
+locationAgent.delegate = self
 ```
 {% endtab %}
 {% endtabs %}

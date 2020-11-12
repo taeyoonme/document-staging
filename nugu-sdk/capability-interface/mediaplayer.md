@@ -6,37 +6,7 @@ description: 음악 앱을 제어하기 위한 규격
 
 ## Version
 
-최신 버전은 1.1 입니다.
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2020.07.15</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.10.29</td>
-      <td style="text-align:left">
-        <ul>
-          <li>Song.category: SIMILAR &#xCD94;&#xAC00;</li>
-          <li>PlayFailed event(errorCode) : noSimilarSong &#xCD94;&#xAC00;</li>
-          <li>HandlePlaylist, HandleLyrics directive &#xCD94;&#xAC00;</li>
-          <li>HandlePlaylistSucceeded, HandlePlaylistFailed, HandleLyricsSucceeded,
-            HandleLyricsFailed event &#xCD94;&#xAC00;</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+최신 버전은 1.0 입니다.
 
 ## SDK Interface
 
@@ -119,7 +89,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 
 ### 제어 명령
 
-`사용자 발화`에 의해 음악 [검색](mediaplayer.md#search)/[재생](mediaplayer.md#play)/[중지](mediaplayer.md#stop)/[다음](mediaplayer.md#next)/[이전](mediaplayer.md#previous)/[탐색](mediaplayer.md#move)/[일시정지](mediaplayer.md#pause)/[계속재생](mediaplayer.md#resume)/[다시재생](mediaplayer.md#rewind)/[반복](mediaplayer.md#toggle)/[즐겨찾기](mediaplayer.md#toggle)/[셔플](mediaplayer.md#toggle)/[재생목록 보기](mediaplayer.md#handleplaylist)/[가사 보기](mediaplayer.md#handlelyrics) 가 directive 로 요청될 수 있습니다.
+`사용자 발화`에 의해 음악 [검색](mediaplayer.md#search)/[재생](mediaplayer.md#play)/[중지](mediaplayer.md#stop)/[다음](mediaplayer.md#next)/[이전](mediaplayer.md#previous)/[탐색](mediaplayer.md#move)/[일시정지](mediaplayer.md#pause)/[계속재생](mediaplayer.md#resume)/[다시재생](mediaplayer.md#rewind)/[반복](mediaplayer.md#toggle)/[즐겨찾기](mediaplayer.md#toggle)/[셔플](mediaplayer.md#toggle) 이 directive 로 요청될 수 있습니다.
 
 {% tabs %}
 {% tab title="Android" %}
@@ -131,47 +101,39 @@ class MyMediaPlayer: MediaPlayer {
         ...
     }
     
-    override fun play(header: Header, payload: PlayPayload, callback: PlayCallback) {
+    override fun play(payload: PlayPayload, callback: PlayCallback) {
         ...
     }
     
-    override fun fun stop(header: Header, payload: Payload, callback: EventCallback) {
+    override fun fun stop(payload: Payload, callback: EventCallback) {
         ...
     }
     
-    override fun next(header: Header, payload: NextPayload, callback: NextCallback) {
+    fun next(payload: NextPayload, callback: NextCallback) {
         ...
     }
     
-    override fun previous(header: Header, payload: PreviousPayload, callback: PreviousCallback) {
+    fun previous(payload: PreviousPayload, callback: PreviousCallback) {
         ...
     }
     
-    override fun move(header: Header, payload: MovePayload, callback: EventCallback) {
+    fun move(payload: MovePayload, callback: EventCallback) {
         ...
     }
     
-    override fun pause(header: Header, payload: Payload, callback: EventCallback) {
+    fun pause(payload: Payload, callback: EventCallback) {
         ...
     }
     
-    override fun resume(header: Header, payload: Payload, callback: EventCallback) {
+    fun resume(payload: Payload, callback: EventCallback) {
         ...
     }
     
-    override fun rewind(header: Header, payload: Payload, callback: EventCallback) {
+    fun rewind(payload: Payload, callback: EventCallback) {
         ...
     }
     
-    override fun toggle(header: Header, payload: TogglePayload, callback: EventCallback) {
-        ...
-    }
-
-    override fun handlePlaylist(header: Header, payload: HandlePlaylistPayload, callback: EventCallback) {
-        ...
-    }
-        
-    override fun handleLyrics(header: Header, payload: HandleLyricsPayload, callback: EventCallback) {
+    fun toggle(payload: TogglePayload, callback: EventCallback) {
         ...
     }
     
@@ -185,51 +147,43 @@ MediaPlayerAgentDelegate를 추가합니다.
 
 ```text
 class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
-    func mediaPlayerAgentReceiveSearch(payload: MediaPlayerAgentDirectivePayload.Search, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Search) -> Void)) {
+    func mediaPlayerAgentReceiveSearch(payload: MediaPlayerAgentDirectivePayload.Search, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Search) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceivePlay(payload: MediaPlayerAgentDirectivePayload.Play, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Play) -> Void)) {
+    func mediaPlayerAgentReceivePlay(payload: MediaPlayerAgentDirectivePayload.Play, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Play) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveStop(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Stop) -> Void)) {
+    func mediaPlayerAgentReceiveStop(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Stop) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveNext(payload: MediaPlayerAgentDirectivePayload.Next, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Next) -> Void)) {
+    func mediaPlayerAgentReceiveNext(payload: MediaPlayerAgentDirectivePayload.Next, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Next) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceivePrevious(payload: MediaPlayerAgentDirectivePayload.Previous, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Previous) -> Void)) {
+    func mediaPlayerAgentReceivePrevious(payload: MediaPlayerAgentDirectivePayload.Previous, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Previous) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveMove(payload: MediaPlayerAgentDirectivePayload.Move, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Move) -> Void)) {
+    func mediaPlayerAgentReceiveMove(payload: MediaPlayerAgentDirectivePayload.Move, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Move) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceivePause(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Pause) -> Void)) {
+    func mediaPlayerAgentReceivePause(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Pause) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveResume(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Resume) -> Void)) {
+    func mediaPlayerAgentReceiveResume(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Resume) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveRewind(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Rewind) -> Void)) {
+    func mediaPlayerAgentReceiveRewind(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Rewind) -> Void)) {
         ...
     }
     
-    func mediaPlayerAgentReceiveToggle(payload: MediaPlayerAgentDirectivePayload.Toggle, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Toggle) -> Void)) {
-        ...
-    }
-    
-    func mediaPlayerAgentReceivePlaylist(playServiceId: String, action: String, target: String?, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.HandlePlaylist) -> Void)) {
-        ...
-    }
-    
-    func mediaPlayerAgentReceiveLyrics(playServiceId: String, action: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.HandleLyrics) -> Void)) {
+    func mediaPlayerAgentReceiveToggle(payload: MediaPlayerAgentDirectivePayload.Toggle, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.Toggle) -> Void)) {
         ...
     }
     
@@ -320,8 +274,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left"><b>Y</b>
       </td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <ul>
           <li><b>NOT_RUNNING</b>
           </li>
@@ -551,8 +503,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <ol>
           <li><b>NONE</b>
           </li>
@@ -579,8 +529,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
           <li><b>PLAYLIST</b>
           </li>
           <li><b>NOWPLAYING</b>
-          </li>
-          <li><b>SIMILAR</b>
           </li>
         </ol>
       </td>
@@ -1311,107 +1259,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-### HandlePlaylist
-
-```text
-{
-  "header": {
-    "namespace": "MediaPlayer",
-    "name": "HandlePlaylist",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "action": "{{STRING}}",
-    "target": "{{STRING}}"
-  }
-}
-```
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">action</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
-        <p>Playlist &#xC81C;&#xC5B4; &#xB3D9;&#xC791;</p>
-        <ul>
-          <li><b>SHOW</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">target</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
-        <p>&#xD2B9;&#xC815; Playlist &#xC9C0;&#xC815;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-### HandleLyrics
-
-```text
-{
-  "header": {
-    "namespace": "MediaPlayer",
-    "name": "HandleLyrics",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "action": "{{STRING}}"
-  }
-}
-```
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">action</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
-        <p>&#xAC00;&#xC0AC; &#xC81C;&#xC5B4; &#xB3D9;&#xC791;</p>
-        <ul>
-          <li><b>SHOW</b>
-          </li>
-          <li><b>HIDE</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
 ## Events
 
 ### PlaySucceeded
@@ -1522,8 +1369,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <ul>
           <li>&#xC7AC;&#xC0DD;&#xC744; &#xC218;&#xD589;&#xD558;&#xC9C0;&#xB9CC;, &#xC544;&#xB798;&#xC640;
             &#xAC19;&#xC740; &#xD2B9;&#xC218; &#xB3D9;&#xC791; &#xBC0F; prompt&#xB97C;
@@ -1573,7 +1418,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
     "name": "PlayFailed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.0"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -1604,8 +1449,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -1632,9 +1475,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
         <p>appInternalServerError : CP&#xC758; &#xB0B4;&#xBD80; &#xC11C;&#xBC84;
           &#xC5F0;&#xB3D9;&#xAC04;&#xC758; &#xC774;&#xC288;&#xB85C; &#xC751;&#xB2F5;&#xC2E4;&#xD328;
           &#xBC1C;&#xC0DD; &#xC2DC;</p>
-        <p>noSimilarSong : &#xC720;&#xC0AC;&#xACE1;(SIMILAR) &#xC694;&#xCCAD; &#xC2DC;,
-          &#xC720;&#xC0AC;&#xACE1;&#xC774; &#xC5C6;&#xB294;, &#xC9C0;&#xC6D0;&#xD558;&#xC9C0;
-          &#xC54A;&#xB294; &#xACE1;&#xC77C; &#xACBD;&#xC6B0;</p>
       </td>
     </tr>
   </tbody>
@@ -1702,8 +1542,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -1779,8 +1617,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -1946,8 +1782,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2122,8 +1956,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2208,8 +2040,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2285,8 +2115,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2364,8 +2192,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2443,8 +2269,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2553,8 +2377,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
@@ -2646,134 +2468,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
-        <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
-          &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
-          &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
-        <p>appInternalServerError : CP&#xC758; &#xB0B4;&#xBD80; &#xC11C;&#xBC84;
-          &#xC5F0;&#xB3D9;&#xAC04;&#xC758; &#xC774;&#xC288;&#xB85C; &#xC751;&#xB2F5;&#xC2E4;&#xD328;
-          &#xBC1C;&#xC0DD; &#xC2DC;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-### HandlePlaylistSucceeded
-
-```text
-{
-  "header": {
-    "namespace": "MediaPlayer",
-    "name": "HandlePlaylistSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-```
-
-### HandlePlaylistFailed
-
-```text
-{
-  "header": {
-    "namespace": "MediaPlayer",
-    "name": "HandlePlaylistFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "errorCode": "{{STRING}}"
-  }
-}
-```
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">errorCode</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
-        <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
-          &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
-          &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
-        <p>appInternalServerError : CP&#xC758; &#xB0B4;&#xBD80; &#xC11C;&#xBC84;
-          &#xC5F0;&#xB3D9;&#xAC04;&#xC758; &#xC774;&#xC288;&#xB85C; &#xC751;&#xB2F5;&#xC2E4;&#xD328;
-          &#xBC1C;&#xC0DD; &#xC2DC;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-### HandleLyricsSucceeded
-
-```text
-{
-  "header": {
-    "namespace": "MediaPlayer",
-    "name": "HandleLyricsSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-```
-
-### HandleLyricsFailed
-
-```text
-{
-  "header": {
-    "namespace": "MediaPlayer",
-    "name": "HandleLyricsFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "errorCode": "{{STRING}}"
-  }
-}
-```
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">errorCode</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>(&#xC784;&#xC758;&#xC758; String&#xC73C;&#xB85C; SDK&#xC5D0;&#xC11C; enum &#xCC98;&#xB9AC;&#xD558;&#xBA74; &#xC548;&#xB428;)</b>
-        </p>
         <p>&#xC2E4;&#xD328; &#xC6D0;&#xC778;&#xC744; &#xC758;&#xBBF8;&#xD558;&#xBA70;,
           &#xC5EC;&#xAE30;&#xC5D0; &#xC804;&#xB2EC;&#xD558;&#xB294; string &#xAC12;&#xC744;
           &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC751;&#xB2F5; TTS &#xC0DD;&#xC131;</p>
