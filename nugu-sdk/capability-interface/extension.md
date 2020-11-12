@@ -8,11 +8,6 @@ description: 정의되지 않은 기능을 수행하기 위한 규격
 
 최신 버전은 1.1 입니다.
 
-| Version | Date | Description |
-| :--- | :--- | :--- |
-| 1.0 | 2019.11.24 | 규격 추가 |
-| 1.1 | 2020.01.08 | CommandIssued event 추 |
-
 ## Precondition
 
 Extension interface 를 사용한 Play 를 제작하기 위해서는 제휴담당자에게 요청하여 권한을 획득해야 합니다.
@@ -27,20 +22,28 @@ Extension interface 규격에 따른 디바이스의 동작 제어는 ExtensionA
 
 {% tabs %}
 {% tab title="Android" %}
+ExtensionAgent 를 사용하려면 NuguAndroidClient 생성시 ExtensionAgentInterface.Client 를 추가합니다.
+
+```text
+NuguAndroidClient.Builder(...)
+    .extensionClient(object : ExtensionAgentInterface.Client {
+           override fun action(data: String, playServiceId: String): Boolean {
+               // do action & return true if success, otherwise false
+               return true
+           }
+
+           override fun getData(): String? {
+               // Fill in the required information for the context.
+               // Return a data string in structured JSON. If not exist, return null
+               return null
+           }
+       })
+```
+
 NuguAndroidClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습니다.
 
 ```text
 val extensionAgent = nuguAndroidClient.extensionAgent
-```
-
-NuguAndroidClient 생성시 ExtensionAgentInterface.Client 를 추가합니다.
-
-```text
-class MyExtensionAgentClient: ExtensionAgentInterface.Client {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .extensionClient(MyExtensionAgentClient())
 ```
 {% endtab %}
 
@@ -61,36 +64,14 @@ Play 에서 알아야 하는 디바이스/Application 의 정보를 [Context](ex
 
 {% tabs %}
 {% tab title="Android" %}
-ExtensionAgentInterface.Client 를 구현합니다.
-
-```text
-class MyExtensionAgentClient : ExtensionAgentInterface.Client {
-    override fun getData(): String? {
-        // json string
-        ...
-    }
-    
-    override fun action(data: String, playServiceId: String): Boolean {
-        ...
-    }
-}
-```
+[ExtensionAgent 사용](extension.md#extensionagent)에서 추가한 ExtensionAgentInterface.Client 을 통해 Context 를 전달하거나 [Action](extension.md#action) 을 실행합니다.
 {% endtab %}
 
 {% tab title="iOS" %}
-ExtensionAgentDelegate 를 추가합니다.
+Context 를 전달하거나 [Action](extension.md#action) 을 실행하려면 ExtensionAgentDelegate 를 추가합니다.
 
 ```text
-class MyExtensionAgentDelegate: ExtensionAgentDelegate {
-    func extensionAgentRequestContext() -> [String: AnyHashable]? {
-        ...
-    }
-    
-    func extensionAgentDidReceiveAction(data: [String: AnyHashable], playServiceId: String, dialogRequestId: String, completion: @escaping (Bool) -> Void) {
-        ...
-    }
-}
-extensionAgent.delegate = MyExtensionAgentDelegate()
+extensionAgent.delegate = self
 ```
 {% endtab %}
 {% endtabs %}
@@ -153,40 +134,6 @@ extentionAgent.requestCommand(data: data, playServiceId: playServiceId)
 | data | object | Y | 임의의 JSON object |
 
 ## Event
-
-### ActionSucceeded
-
-```text
-{
-  "header": {
-    "namespace": "Extension",
-    "name": "ActionSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-```
-
-### ActionFailed
-
-```text
-{
-  "header": {
-    "namespace": "Extension",
-    "name": "ActionFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-```
 
 ### CommandIssued
 
