@@ -6,7 +6,37 @@ description: 디바이스의 볼륨을 제어하기 위한 규격
 
 ## Version
 
-최신 버전은 1.0 입니다.
+최신 버전은 1.2 입니다.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Version</th>
+      <th style="text-align:left">Date</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">1.0</td>
+      <td style="text-align:left">2020.03.13</td>
+      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.1</td>
+      <td style="text-align:left">2020.06.22</td>
+      <td style="text-align:left">Context &#xC758; volumes.name &#xBAA9;&#xB85D; &#xBCC0;&#xACBD;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.2</td>
+      <td style="text-align:left">2020.06.26</td>
+      <td style="text-align:left">
+        <p>Context &#xC5D0; defaultVolumeLevel &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
+        <p>Context &#xC758; volumnes &#xC5D0; group &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## SDK Interface
 
@@ -41,7 +71,7 @@ NuguAndroidClient.Builder(...)
         override fun createAlarmSpeaker(): Speaker? = MySpeaker()
 
         override fun createCallSpeaker(): Speaker? = MySpeaker()
-        
+
         override fun createExternalSpeaker(): Speaker? = MySpeaker()
 
         override fun createSpeaker(type: Speaker.Type): Speaker? {
@@ -110,11 +140,11 @@ class MySpeaker: Speaker {
     override fun setVolume(volume: Int, rate: Rate = Rate.FAST): Boolean {
         ...
     }
-    
+
     override fun setMute(mute: Boolean): Boolean {
         ...
     }
-    
+
     ...
 }
 ```
@@ -132,7 +162,7 @@ public:
     {
         ...
     }
-    
+
     void requestSetVolume(const std::string &ps_id, SpeakerType type, int volume, bool linear) override
     {
         ...
@@ -153,10 +183,12 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
     "volumes": [
       {
         "name": "{{STRING}}",
+        "group": "{{STRING}}",
         "volume": {{LONG}},
         "minVolume": {{LONG}},
         "maxVolume": {{LONG}},
         "defaultVolumeStep": {{LONG}},
+        "defaultVolumeLevel": {{LONG}},
         "muted": {{BOOLEAN}}
       }
     ]
@@ -187,18 +219,28 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
-        <p>-. <b>NUGU, CALL, ALARM</b>
+        <p>NUGU(MUSIC+VOICE_COMMAND), MUSIC, RINGTONE, CALL, NOTIFICATION, ALARM,
+          VOICE_COMMAND, NAVIGATION, SYSTEM_SOUND</p>
+        <p>Reference: <a href="https://source.android.com/devices/audio/attributes#contexts">https://source.android.com/devices/audio/attributes#contexts</a>
         </p>
-        <ul>
-          <li>3&#xAC1C;&#xC758; &#xACE0;&#xC815;&#xAC12;&#xB9CC;&#xC744; &#xC0AC;&#xC6A9;</li>
-          <li>&#xB514;&#xBC14;&#xC774;&#xC2A4; &#xAC1C;&#xBC1C; &#xC2DC; NUGU&#xB294;
-            &#xD544;&#xC218; &#xC9C0;&#xC6D0; &#xAC12;</li>
-          <li>&#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294; name&#xC740; NUGU&#xC640;
-            &#xD1B5;&#xD569;&#xD558;&#xBA74; &#xB428;</li>
-          <li>ex) CALL &#xC124;&#xC815;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;
-            NUGU, ALARM&#xB9CC; &#xC874;&#xC7AC;</li>
-        </ul>
-        <p>-. NUGU = Media, TTS</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>volumes.</p>
+        <p>group</p>
+      </td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">-. volume&#xC758; group &#xAC12;&#xC73C;&#xB85C; &#xC601;&#xBB38;&#xC790;&#xC640;
+        &#xC22B;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xAD6C;&#xC131;&#xD560;
+        &#xC218; &#xC788;&#xC74C;.
+        <br />(Play&#xC5D0;&#xC11C;&#xB294; group &#xAC12;&#xC744; mapping&#xD558;&#xC5EC;
+        TTS&#xB97C; &#xB9CC;&#xB4E4; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
+        &#xC788;&#xC74C;)
+        <br />-. grouping &#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;&#xB294;
+        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;
+        <br />Reference: <a href="https://source.android.com/devices/automotive/audio#volume-and-groups">https://source.android.com/devices/automotive/audio#volume-and-groups</a>
       </td>
     </tr>
     <tr>
@@ -237,6 +279,18 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
       <td style="text-align:left">N</td>
       <td style="text-align:left">-. &#xAE30;&#xBCF8; &#xBCFC;&#xB968; &#xB2E8;&#xACC4;
         <br />-. &#xBCFC;&#xB968; &#xC870;&#xC808; &#xBD88;&#xAC00;&#xD55C; &#xACBD;&#xC6B0;&#xB294;
+        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>volumnes.</p>
+        <p>defaultVolumeLevel</p>
+      </td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">-. &#xAE30;&#xBCF8; &#xBCFC;&#xB968; &#xAC12; -. &#xBCFC;&#xB968; &#xC870;&#xC808;
+        &#xBD88;&#xAC00;&#xD55C; &#xACBD;&#xC6B0;&#xB294; &#xC804;&#xB2EC;&#xD558;&#xC9C0;
+        &#xC54A;&#xC74C; -. version 1.2 &#xC774;&#xC804;&#xC5D0;&#xC11C;&#xB294;
         &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
     </tr>
     <tr>
@@ -345,4 +399,74 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 | :--- | :--- | :--- | :--- |
 | name | string | Y | Context 참조 |
 | mute | boolean | Y | true / false |
+
+## Event
+
+### SetVolumeSucceeded
+
+```text
+{
+  "header": {
+    "namespace": "Speaker",
+    "name": "SetVolumeSucceeded",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.0"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### SetVolumeFailed
+
+```text
+{
+  "header": {
+    "namespace": "Speaker",
+    "name": "SetVolumeFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.0"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### SetMuteSucceeded
+
+```text
+{
+  "header": {
+    "namespace": "Speaker",
+    "name": "SetMuteSucceeded",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.0"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### SetMuteFailed
+
+```text
+{
+  "header": {
+    "namespace": "Speaker",
+    "name": "SetMuteFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.0"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
 

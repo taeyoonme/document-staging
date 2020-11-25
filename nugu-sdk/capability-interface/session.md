@@ -8,6 +8,10 @@ description: Play 와 Client 간의 세션을 유지하기 위한 규격
 
 최신 버전은 1.0 입니다.
 
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2020.06.05 | 규격 추가 |
+
 ## SDK Interface
 
 #### SessionAgent 사용
@@ -98,7 +102,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto session_listener(std::make_shared<MySessionListener>());

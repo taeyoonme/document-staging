@@ -6,7 +6,69 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 ## Version
 
-최신 버전은 1.2 입니다.
+최신 버전은 1.4 입니다.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Version</th>
+      <th style="text-align:left">Date</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">1.0</td>
+      <td style="text-align:left">2019.11.13</td>
+      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.1</td>
+      <td style="text-align:left">2020.03.03</td>
+      <td style="text-align:left">
+        <ul>
+          <li>lyric, favorite, repeat, shuffle, template.settings &#xAD00;&#xB828; directive/event
+            &#xCD94;&#xAC00;</li>
+          <li>AudioPlayer.Template1 &#xC5D0; lyrics, settings, badge &#xAD00;&#xB828;
+            &#xD544;&#xB4DC; &#xCD94;&#xAC00;</li>
+          <li>AudioPlayer.Play &#xC5D0; cacheKey &#xD544;&#xB4DC; &#xCD94;&#xAC00;</li>
+          <li>AudioPlayer.UpdateMetadata directive &#xCD94;&#xAC00;</li>
+          <li>AudioPlayer.Template1&#xC758; content.imageUrl&#xC744; Mandatory&#xB85C;
+            &#xC218;&#xC815;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.2</td>
+      <td style="text-align:left">2020.03.12</td>
+      <td style="text-align:left">
+        <ul>
+          <li>Request{Play/Resume/Next/Previous/Pause/Stop}Command Directive</li>
+          <li>Request{Play/Resume/Next/Previous/Pause/Stop}CommandIssued Event &#xCD94;&#xAC00;.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.3</td>
+      <td style="text-align:left">2020.06.05</td>
+      <td style="text-align:left">
+        <ul>
+          <li>PlaybackStopped event &#xC5D0; reason &#xD544;&#xB4DC; &#xCD94;&#xAC00;.</li>
+          <li>RequestCommandFailed event &#xCD94;&#xAC00;.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.4</td>
+      <td style="text-align:left">2020.08.12</td>
+      <td style="text-align:left">
+        <ul>
+          <li>Context &#xC5D0; playServiceId &#xCD94;&#xAC00;</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## State Diagram
 
@@ -93,7 +155,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto audio_player_listener(std::make_shared<MyAudioPlayerListener>());
@@ -119,7 +181,7 @@ val renderer = object: DisplayAggregatorInterface.Renderer {
     override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
         ...
     }
-    
+
     ...
 }
 nuguAndroidClient.setDisplayRenderer(renderer)
@@ -132,11 +194,11 @@ val presenter = object: LyricsPresenter {
     override fun show(): Boolean {
         ...
     }
-    
+
     override fun hide(): Boolean {
         ...
     }
-    
+
     ...
 }
 audioPlayerAgent.setLyricsPresenter(presenter)
@@ -151,15 +213,15 @@ class MyAudioPlayerDisplayDelegate: AudioPlayerDisplayDelegate {
     func audioPlayerDisplayShouldRender(template: AudioPlayerDisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
         ...
     }
-    
+
     func audioPlayerDisplayShouldShowLyrics(completion: @escaping (Bool) -> Void) {
         ...
     }
-    
+
     func audioPlayerDisplayShouldHideLyrics(completion: @escaping (Bool) -> Void) {
         ...
     }
-    
+
     ...
 }
 
@@ -179,17 +241,17 @@ public:
     {
         ...
     }
-    
+
     bool showLyrics(const std::string& id) override
     {
         ...
     }
-    
+
     bool hideLyrics(const std::string& id) override
     {
         ...
     }
-    
+
     ...
 };
 auto audio_player_listener(std::make_shared<MyAudioPlayerListener>());
@@ -234,7 +296,7 @@ audioPlayerAgent.requestShuffleCommand(false)
 {% endtab %}
 
 {% tab title="Linux" %}
-```
+```text
 // 다음
 audio_player_handler->next()
 // 이전
@@ -254,7 +316,8 @@ audio_player_handler->requestShuffleCommand(false)
 ```text
 {
   "AudioPlayer": {
-    "version": "1.2",
+    "version": "1.4",
+    "playServiceId":{{STRING}}",
     "playerActivity":{{STRING}}",
     "token": "{{STRING}}",
     "offsetInMilliseconds": {{LONG}},
@@ -266,6 +329,7 @@ audio_player_handler->requestShuffleCommand(false)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
+| playServiceId | string | N | 현재 사용 중인 음원의 playServiceId |
 | playerActivity | string | Y | 현재 state |
 | token | string | N | 현재 사용 중인 음원의 토큰 |
 | offsetInMilliseconds | long | Y | 현재 사용 중인 음원의 offset |
@@ -425,7 +489,14 @@ audio_player_handler->requestShuffleCommand(false)
       </td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD604;&#xC7AC; stream&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; token</td>
+      <td style="text-align:left">
+        <p>&#xD604;&#xC7AC; stream&#xC744; &#xB098;&#xD0C0;&#xB0B4;&#xB294; token</p>
+        <p>Resume &#xC744; &#xD310;&#xB2E8;&#xD558;&#xAE30; &#xC704;&#xD55C; key
+          &#xAC12;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;,</p>
+        <p>Play &#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xBBF8;&#xB514;&#xC5B4;
+          &#xB0B4;&#xC5D0;&#xC11C; unique &#xD568;&#xC774; &#xBCF4;&#xC7A5;&#xB418;&#xC5B4;&#xC57C;
+          &#xD568;.</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -615,7 +686,11 @@ audio_player_handler->requestShuffleCommand(false)
       </td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
-      <td style="text-align:left">content duration in sec</td>
+      <td style="text-align:left">
+        <p>content duration in sec</p>
+        <p><b>&#xC5C6;&#xAC70;&#xB098; 0, &#xC74C;&#xC218;, null&#xC774;&#xBA74; progress&#xB97C; disabled &#xCC98;&#xB9AC;</b>
+        </p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -720,9 +795,12 @@ audio_player_handler->requestShuffleCommand(false)
         <p>time</p>
       </td>
       <td style="text-align:left">integer</td>
-      <td style="text-align:left">Y(lyricsType == SYNC)</td>
-      <td style="text-align:left">lyricsInfo&#xAC00; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC2DC;&#xC810;&#xC758;
-        millisecond &#xB2E8;&#xC704;&#xC758; &#xC2DC;&#xAC04; &#xC815;&#xBCF4;</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p>lyricsTyps &#xC774; SYNC &#xC774;&#xBA74; mandatory</p>
+        <p>lyricsInfo&#xAC00; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC2DC;&#xC810;&#xC758;
+          millisecond &#xB2E8;&#xC704;&#xC758; &#xC2DC;&#xAC04; &#xC815;&#xBCF4;</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -912,9 +990,8 @@ audio_player_handler->requestShuffleCommand(false)
         <p>imageUrl</p>
       </td>
       <td style="text-align:left">string</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
-      <td style="text-align:left">image url</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">background image url</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -924,17 +1001,11 @@ audio_player_handler->requestShuffleCommand(false)
       </td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
-      <td style="text-align:left">content duration in sec</td>
-    </tr>
-    <tr>
       <td style="text-align:left">
-        <p>template.</p>
-        <p>content.</p>
-        <p>backgroundImageUrl</p>
+        <p>content duration in sec</p>
+        <p><b>&#xC5C6;&#xAC70;&#xB098; 0, &#xC74C;&#xC218;, null&#xC774;&#xBA74; progress&#xB97C; &#xD654;&#xBA74;&#xC5D0;&#xC11C; disabled &#xCC98;&#xB9AC;</b>
+        </p>
       </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">background image url</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -1143,7 +1214,431 @@ audio_player_handler->requestShuffleCommand(false)
 | :--- | :--- | :--- | :--- |
 | direction | string | Y | 이전과 다음 PREVIOUS, NEXT |
 
+### RequestPlayCommand
+
+* Nugu mobile application 에서 새로운 곡 재생을 요청하기 위한 Directive.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestPlayCommand",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.2"
+  },
+  "payload": {}
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| payload | object | Y | Play 에서 곡 재생을 위해 필요한 정보 |
+
+### RequestResumeCommand
+
+* Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestResumeCommand",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.2"
+  },
+  "payload": {}
+}
+```
+
+### RequestNextCommand
+
+* Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestNextCommand",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.2"
+  },
+  "payload": {}
+}
+```
+
+### RequestPreviousCommand
+
+* Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestPreviousCommand",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.2"
+  },
+  "payload": {}
+}
+```
+
+### RequestPauseCommand
+
+* Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestPauseCommand",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.2"
+  },
+  "payload": {}
+}
+```
+
+### RequestStopCommand
+
+* Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestStopCommand",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.2"
+  },
+  "payload": {}
+}
+```
+
 ## Events
+
+### PlaybackStarted
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "PlaybackStarted",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### PlaybackPaused
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "PlaybackPaused",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### PlaybackResumed
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "PlaybackResumed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### PlaybackFinished
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "PlaybackFinished",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### PlaybackStopped
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "PlaybackStopped",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}",
+    "reason": "{{STRING}}"
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; stream&#xC758; token</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">offsetInMilliseconds</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; stream&#xC758; offset
+        &#xAC12;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">reason</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p>&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4;
+          &#xC774;&#xC720;&#xB97C; &#xBA85;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD55C;
+          &#xAC1D;&#xCCB4;</p>
+        <p>PLAY_ANOTHER: &#xB2E4;&#xB978; &#xACE1; &#xC7AC;&#xC0DD;&#xC744; &#xC704;&#xD574;
+          &#xC774;&#xC804;&#xC5D0; &#xC7AC;&#xC0DD;&#xD558;&#xB358; &#xACE1;&#xC744;
+          &#xC815;&#xC9C0;&#xD588;&#xC744; &#xB54C; &#xC62C;&#xB824;&#xC8FC;&#xB294;
+          &#xAC12;.</p>
+        <p>STOP: &#xADF8; &#xC678; &#xC815;&#xC9C0;&#xC758; &#xACBD;&#xC6B0;.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### PlaybackFailed
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "PlaybackFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "error": {
+      "type": "{{STRING}}",
+      "message": "{{STRING}}"
+    },
+    "currentPlaybackState": {
+      "token": "{{STRING}}",
+      "offsetInMilliseconds": {{LONG}},
+      "playerActivity": "{{STRING}}"
+    },
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xC7AC;&#xC0DD;&#xC5D0; &#xC2E4;&#xD328;&#xD55C; stream&#xC758; token</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">offsetInMilliseconds</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">PlaybackFailed&#xB97C; &#xBCF4;&#xB0BC; &#xB54C; &#xC7AC;&#xC0DD; &#xC911;&#xC778;
+        stream&#xC758; offset &#xAC12;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">error.
+        <br />type</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p><b>MEDIA_ERROR_UNKNOWN</b>
+        </p>
+        <p><b>MEDIA_ERROR_INVALID_REQUEST</b>
+        </p>
+        <p><b>MEDIA_ERROR_SERVICE_UNAVAILABLE</b>
+        </p>
+        <p><b>MEDIA_ERROR_INTERNAL_SERVER_ERROR</b>
+        </p>
+        <p><b>MEDIA_ERROR_INTERNAL_DEVICE_ERROR</b>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">error.
+        <br />message</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xC5D0;&#xB7EC;&#xC5D0; &#xB300;&#xD574; &#xC790;&#xC138;&#xD788; &#xAE30;&#xC220;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">currentPlaybackState.
+        <br />token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xD604;&#xC7AC; &#xC7AC;&#xC0DD; &#xC911;&#xC778; stream&#xC758; token&#xC73C;&#xB85C;
+        &#xC704;&#xC5D0; &#xC788;&#xB294; token&#xACFC; &#xB2E4;&#xB97C; &#xC218;
+        &#xC788;&#xC74C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">currentPlaybackState.
+        <br />offsetInMilliseconds</td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD588;&#xC744; &#xB54C; &#xD604;&#xC7AC;
+        &#xC7AC;&#xC0DD; &#xC911;&#xC778; stream&#xC758; offset &#xAC12;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">currentPlaybackState.
+        <br />playActivity</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p>player&#xC758; &#xC0C1;&#xD0DC;</p>
+        <p><b>PLAYING, PAUSED, FINISHED, IDLE</b>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### ProgressReportDelayElapsed
+
+* Play directive로 전달된 stream이 재생을 시작한 뒤 progressReportDelayInMilliseconds
+* **offsetInMilliseconds는 stream의 시작을 기준으로 offset을 의미 \(컨텐츠 재생 시간 0부터 절대값을 의미\)**
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "ProgressReportDelayElapsed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### ProgressReportIntervalElapsed
+
+* Play directive로 전달된 stream이 재생을 시작한 뒤 progressIntervalDelayInMilliseconds 주기마다 Event 전달
+* **offsetInMilliseconds는 stream의 시작을 기준으로 offset을 의미 \(컨텐츠 재생 시간 0부터 절대값을 의미\)**
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "ProgressReportIntervalElapsed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
 
 ### NextCommandIssued
 
@@ -1169,7 +1664,7 @@ audio_player_handler->requestShuffleCommand(false)
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | token | string | Y | 현재 재생 중인 stream의 token |
-| offsetInMilliseconds | long | Y | 현재 재생 중은 stream의 offset 값 |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
 
 ### PreviousCommandIssued
 
@@ -1195,7 +1690,7 @@ audio_player_handler->requestShuffleCommand(false)
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | token | string | Y | 현재 재생 중인 stream의 token |
-| offsetInMilliseconds | long | Y | 현재 재생 중은 stream의 offset 값 |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
 
 ### FavoriteCommandIssued
 
@@ -1288,4 +1783,338 @@ audio_player_handler->requestShuffleCommand(false)
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | shuffle | boolean | Y | 재생 목록의 음원을 임의의 순서로 재생할지 여부 |
+
+### ShowLyricsSucceeded
+
+* ShowLyrics Directive가 발생하여 가사화면을 성공적으로 띄운다음 발생되는 Event
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "ShowLyricsSucceeded",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### ShowLyricsFailed
+
+* ShowLyrics Directive가 발생하였는데 가사화면을 띄우지 못한 경우 발생되는 Event
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "ShowLyricsFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### HideLyricsSucceeded
+
+* HideLyrics Directive가 발생하여 가사화면을 성공적으로 닫은 다음 발생되는 Event
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "HideLyricsSucceeded",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### HideLyricsFailed
+
+* HideLyrics Directive가 발생하였는데 가사화면을 닫지 못한 경우 발생되는 Event
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "HideLyricsFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### ControlLyricsPageSucceeded
+
+* ControlLyricsPage Directive가 발생하여 가사화면을 성공적으로 이동한 다음 발생되는 Event
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "ControlLyricsPageSucceeded",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "direction": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| direction | string | Y | 이전과 다음을 수행한 결과 PREVIOUS, NEXT |
+
+### ControlLyricsPageFailed
+
+* ControlLyricsPage Directive가 발생하였는데 가사화면을 이동하지 못한 경우 발생되는 Event
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "ControlLyricsPageFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "direction": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| direction | string | Y | 이전과 다음을 수행한 결과 PREVIOUS, NEXT |
+
+### RequestPlayCommandIssued
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestPlayCommandIssued",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {}
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| payload | string | **Y** | RequestPlayCommand Directive 에 포함되어 있는 payload 를  그대로 포함. |
+
+### RequestResumeCommandIssued
+
+* RequestResumeCommand Directive 를 받은 디바이스가 발생시키는 Event.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestResumeCommandIssued",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### RequestNextCommandIssued
+
+* RequestNextCommand Directive 를 받은 디바이스가 발생시키는 Event.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestNextCommandIssued",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### RequestPreviousCommandIssued
+
+* RequestPreviousCommand Directive 를 받은 디바이스가 발생시키는 Event.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestPreviousCommandIssued",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### RequestPauseCommandIssued
+
+* RequestPauseCommand Directive 를 받은 디바이스가 발생시키는 Event.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestPauseCommandIssued",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### RequestStop CommandIssued
+
+* RequestStopCommand Directive 를 받은 디바이스가 발생시키는 Event.
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestStopCommandIssued",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "token": "{{STRING}}",
+    "offsetInMilliseconds": {{LONG}},
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 현재 재생 중인 stream의 token |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
+
+### RequestCommandFailed
+
+```text
+{
+  "header": {
+    "namespace": "AudioPlayer",
+    "name": "RequestCommandFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.4"
+  },
+  "payload": {
+    "error": {
+      "type": "{{STRING}}",
+      "message": "{{STRING}}"
+    }
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">error.
+        <br />type</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left"><b>Y</b>
+      </td>
+      <td style="text-align:left">
+        <p><b>&#xC5D0;&#xB7EC; &#xD0C0;&#xC785; &#xCF54;&#xB4DC;</b>
+        </p>
+        <p><b>IDLE/STOP</b> &#xC0C1;&#xD0DC;&#xC77C;&#xB54C;</p>
+        <p>Request Pause/Resume/Next/Previous/Stop Command Directive &#xC218;&#xC2E0;&#xD55C;
+          &#xACBD;&#xC6B0; <b>(STOP/IDLE &#xC77C;&#xB54C; RequestPlayCommand &#xB294; &#xC815;&#xC0C1;&#xC694;&#xCCAD;&#xC774;&#xBBC0;&#xB85C; &#xC81C;&#xC678;&#xC5D0; &#xC720;&#xC758;)</b>
+        </p>
+        <p>INVALID_COMMAND</p>
+        <p>&#xADF8; &#xC774;&#xC678;&#xC5D0; &#xCC98;&#xB9AC;&#xC911; &#xC5D0;&#xB7EC;&#xB09C;
+          &#xACBD;&#xC6B0;</p>
+        <p>UNKNOWN_ERROR</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">error.
+        <br />message</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left"><b>Y</b>
+      </td>
+      <td style="text-align:left">STOP/IDLE &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294; Request XXX Command
+        &#xB97C; &#xCC98;&#xB9AC;&#xD560; &#xC218; &#xC5C6;&#xC74C;.</td>
+    </tr>
+  </tbody>
+</table>
 

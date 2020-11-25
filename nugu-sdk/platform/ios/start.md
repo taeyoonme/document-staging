@@ -27,6 +27,20 @@ end
 $ pod install
 ```
 {% endtab %}
+
+{% tab title="Carthage" %}
+`Cartfile`에 다음과 같이 의존성을 추가합니다.
+
+```swift
+github "nugu-developers/nugu-ios"
+```
+
+터미널을 열어 Podfile이 있는 프로젝트 경로에서 아래 Script를 실행합니다.
+
+```swift
+carthage update --platform iOS
+```
+{% endtab %}
 {% endtabs %}
 
 ## Step 3: 프로젝트 설정하기
@@ -90,8 +104,7 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
 {% tab title="EndPointDetector 모델 파일 설정" %}
 ```swift
 if let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw") {
-    let options = ASROptions(initiator: .user, endPointing: .client(epdFile: epdFile))
-    client.asrAgent.startRecognition(options: options)
+    client.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
 }
 ```
 {% endtab %}
@@ -149,7 +162,7 @@ import NuguLoginKit
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
     // Only for free pass of Sample app's Oauth validation check
     guard let schemeReplacedUrl = SampleApp.schemeReplacedUrl(openUrl: url) else { return false }
-    
+
     NuguOAuthClient.handle(url: schemeReplacedUrl)
     return true
 }
@@ -171,7 +184,7 @@ lazy private(set) var oauthClient: NuguOAuthClient = {
         return NuguOAuthClient(deviceUniqueId: "{device-unique-id}")
     }
 }()
-    
+
 func login() {
     oauthClient.authorize(
         grant: AuthorizationCodeGrant(
@@ -250,13 +263,13 @@ func setAudioSession() throws {
 
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. `NuguClientKit`을 불러옵니다.  
+1. `NuguClientKit`을 불러옵니다.
 
    ```swift
    import NuguClientKit
    ```
 
-2. `NuguClient` 인스턴스를 생성합니다.     
+2. `NuguClient` 인스턴스를 생성합니다.
 
    ```swift
    let client = NuguClient(delegate: self)
@@ -270,13 +283,10 @@ func setAudioSession() throws {
    }
    ```
 
-4. NUGU 서버와의 연결 이후 음성인식을 요청합니다.    
+4. NUGU 서버와의 연결 이후 음성인식을 요청합니다.
 
    ```swift
-   if let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw") {
-       let options = ASROptions(initiator: .user, endPointing: .client(epdFile: epdFile))
-       client.asrAgent.startRecognition(options: options)
-   }
+   client.asrAgent.startRecognition(initiator: .user)
    ```
 
 ## 더 알아보기
@@ -285,5 +295,5 @@ func setAudioSession() throws {
 
 NUGU SDK for iOS의 Github Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
 
-{% embed url="https://github.com/nugu-developers/nugu-ios" %}
+{% embed url="https://github.com/nugu-developers/nugu-ios" caption="" %}
 
