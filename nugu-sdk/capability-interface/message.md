@@ -6,7 +6,42 @@ description: 문자 확인 및 전송 기능 제어를 위한 규격
 
 ## Version
 
-최신 버전은 1.2 입니다.
+최신 버전은 1.3 입니다.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Version</th>
+      <th style="text-align:left">Date</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">1.0</td>
+      <td style="text-align:left">2020.07.02</td>
+      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.1</td>
+      <td style="text-align:left">2020.07.13</td>
+      <td style="text-align:left">Context &#xC758; template &#xC5D0; info &#xD544;&#xB4DC; &#xCD94;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.2</td>
+      <td style="text-align:left">2020.08.13</td>
+      <td style="text-align:left">contact type &#xC5D0; EMERGENCY &#xCD94;&#xAC00;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.3</td>
+      <td style="text-align:left">2020.11.02</td>
+      <td style="text-align:left">
+        <p>SendCandidates directive &#xC5D0; searchScene &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
+        <p>Context &#xC5D0; searchScene &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## SDK Interface
 
@@ -133,6 +168,7 @@ messageAgent.addOnPlaybackListener(listener)
         "name": "{{STRING}}",
         "label": "{{STRING}}"
       },
+      "searchScene": "{{STRING}}",
       "candidates": [array of Contact]
     }
   }
@@ -145,7 +181,6 @@ messageAgent.addOnPlaybackListener(listener)
       <th style="text-align:left">parameter</th>
       <th style="text-align:left">type</th>
       <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">Play Builder Precondition</th>
       <th style="text-align:left">description</th>
     </tr>
   </thead>
@@ -154,8 +189,6 @@ messageAgent.addOnPlaybackListener(listener)
       <td style="text-align:left">readActivity</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
       <td style="text-align:left">
         <p>&#xC774;&#xC804; &#xBC1C;&#xD654;&#xAC00; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;&#xB97C;
           &#xC804;&#xB2EC;</p>
@@ -172,14 +205,12 @@ messageAgent.addOnPlaybackListener(listener)
       <td style="text-align:left">token</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
-      <td style="text-align:left">N</td>
       <td style="text-align:left">readActivity&#xC5D0;&#xC11C; &#xC7AC;&#xC0DD; &#xC911;&#xC778; prompt&#xC758;
         token</td>
     </tr>
     <tr>
       <td style="text-align:left">template</td>
       <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
         <p>context &#xC720;&#xC9C0; &#xC815;&#xCC45;&#xACFC; &#xB3D9;&#xC77C;&#xD558;&#xAC8C;
@@ -216,8 +247,6 @@ messageAgent.addOnPlaybackListener(listener)
       </td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
-      <td style="text-align:left"><b>Y</b>
-      </td>
       <td style="text-align:left">
         <p>&#xD604;&#xC7AC; template&#xC5D0; &#xD3EC;&#xD568;&#xB41C; &#xB370;&#xC774;&#xD130;&#xAC00;
           &#xC5B4;&#xB5A4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294;&#xC9C0;
@@ -235,7 +264,6 @@ messageAgent.addOnPlaybackListener(listener)
         <br />recipientIntended</td>
       <td style="text-align:left">object</td>
       <td style="text-align:left">N</td>
-      <td style="text-align:left">N</td>
       <td style="text-align:left">&#xBC1C;&#xD654;&#xC5D0;&#xC11C; &#xBD84;&#xC11D;&#xB41C; recipient &#xC815;&#xBCF4;</td>
     </tr>
     <tr>
@@ -243,7 +271,6 @@ messageAgent.addOnPlaybackListener(listener)
         <br />recipientIntended.
         <br />name</td>
       <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">&#xAC80;&#xC0C9;&#xC5D0; &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB41C;
         &#xC0C1;&#xB300;&#xBC29; &#xC774;&#xB984; (NLU &#xBD84;&#xC11D;&#xC73C;&#xB85C;
@@ -255,16 +282,31 @@ messageAgent.addOnPlaybackListener(listener)
         <br />label</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
-      <td style="text-align:left">N</td>
       <td style="text-align:left">&#xC9D1;, &#xD68C;&#xC0AC; &#xB4F1;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xAE30;
         &#xC704;&#xD55C; &#xB77C;&#xBCA8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>template.</p>
+        <p>searchScene</p>
+      </td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
+          &#xC704;&#xD574; &#xCD94;&#xAC00;</p>
+        <ul>
+          <li>DEFAULT - &#xAE30;&#xBCF8; &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;</li>
+          <li>T114DIRECT - &#xAE34;&#xAE09;&#xC804;&#xD654;</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">template.
         <br />candidates</td>
       <td style="text-align:left">array of <a href="message.md#contact">Contact</a> 
       </td>
-      <td style="text-align:left">N</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">&#xD654;&#xBA74;&#xC5D0; &#xAC80;&#xC0C9; &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C;
         &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xD558;&#xB294; &#xC911;&#xC5D0;&#xB9CC;
@@ -450,6 +492,7 @@ messageAgent.addOnPlaybackListener(listener)
       "name": "{{STRING}}",
       "label": "{{STRING}}"
     },
+    "searchScene": "{{STRING}}",
     "candidates": [array of Contact]
   }
 }
@@ -498,6 +541,20 @@ messageAgent.addOnPlaybackListener(listener)
       <td style="text-align:left">N</td>
       <td style="text-align:left">&#xC9D1;, &#xD68C;&#xC0AC; &#xB4F1;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xAE30;
         &#xC704;&#xD55C; &#xB77C;&#xBCA8;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">searchScene</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p></p>
+        <p>&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
+          &#xC704;&#xD574; &#xCD94;&#xAC00;</p>
+        <ul>
+          <li>DEFAULT - &#xAE30;&#xBCF8; &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;</li>
+          <li>T114DIRECT - &#xAE34;&#xAE09;&#xC804;&#xD654;</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">candidates</td>
@@ -675,9 +732,8 @@ messageAgent.addOnPlaybackListener(listener)
 
 ### CandidatesListed
 
-검색 결과 리스트가 화면에 보여지는 경우 보내는 Event
-
-list는 context로 전송됨
+* 검색 결과 리스트가 화면에 보여지는 경우 보내는 Event
+* list는 context로 전송됨
 
 ```text
 {

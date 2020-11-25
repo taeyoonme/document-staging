@@ -6,7 +6,11 @@ description: 디바이스의 음원 파일 재생을 위한 규격
 
 ## Version
 
-최신 버전은 1.2 입니다.
+최신 버전은 1.0 입니다.
+
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2020.04.01 | 규격 추가 |
 
 ## SDK Interface
 
@@ -142,4 +146,40 @@ Beep 유형의 음원 재생 요청입니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | beepName | string | Y | RESPONSE\_FAIL: Play 응답 실패 |
+
+## Event
+
+### BeepSucceeded
+
+```text
+{
+  "header": {
+    "namespace": "Sound",
+    "name": "BeepSucceeded",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.0"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
+
+### BeepFailed
+
+```text
+{
+  "header": {
+    "namespace": "Sound",
+    "name": "BeepFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.0"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}"
+  }
+}
+```
 
