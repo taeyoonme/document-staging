@@ -62,7 +62,6 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
       <td style="text-align:left">1.4</td>
       <td style="text-align:left">2020.08.12</td>
       <td style="text-align:left">
-        <p></p>
         <ul>
           <li>Context &#xC5D0; playServiceId &#xCD94;&#xAC00;</li>
         </ul>
@@ -156,7 +155,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto audio_player_listener(std::make_shared<MyAudioPlayerListener>());
@@ -182,7 +181,7 @@ val renderer = object: DisplayAggregatorInterface.Renderer {
     override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
         ...
     }
-    
+
     ...
 }
 nuguAndroidClient.setDisplayRenderer(renderer)
@@ -195,11 +194,11 @@ val presenter = object: LyricsPresenter {
     override fun show(): Boolean {
         ...
     }
-    
+
     override fun hide(): Boolean {
         ...
     }
-    
+
     ...
 }
 audioPlayerAgent.setLyricsPresenter(presenter)
@@ -214,15 +213,15 @@ class MyAudioPlayerDisplayDelegate: AudioPlayerDisplayDelegate {
     func audioPlayerDisplayShouldRender(template: AudioPlayerDisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
         ...
     }
-    
+
     func audioPlayerDisplayShouldShowLyrics(completion: @escaping (Bool) -> Void) {
         ...
     }
-    
+
     func audioPlayerDisplayShouldHideLyrics(completion: @escaping (Bool) -> Void) {
         ...
     }
-    
+
     ...
 }
 
@@ -242,17 +241,17 @@ public:
     {
         ...
     }
-    
+
     bool showLyrics(const std::string& id) override
     {
         ...
     }
-    
+
     bool hideLyrics(const std::string& id) override
     {
         ...
     }
-    
+
     ...
 };
 auto audio_player_listener(std::make_shared<MyAudioPlayerListener>());
@@ -297,7 +296,7 @@ audioPlayerAgent.requestShuffleCommand(false)
 {% endtab %}
 
 {% tab title="Linux" %}
-```
+```text
 // 다음
 audio_player_handler->next()
 // 이전
@@ -1414,8 +1413,6 @@ audio_player_handler->requestShuffleCommand(false)
 }
 ```
 
-
-
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | token | string | Y | 현재 재생 중인 stream의 token |
@@ -1590,8 +1587,6 @@ audio_player_handler->requestShuffleCommand(false)
 </table>
 
 ### ProgressReportDelayElapsed
-
-
 
 * Play directive로 전달된 stream이 재생을 시작한 뒤 progressReportDelayInMilliseconds
 * **offsetInMilliseconds는 stream의 시작을 기준으로 offset을 의미 \(컨텐츠 재생 시간 0부터 절대값을 의미\)**
@@ -1932,7 +1927,7 @@ audio_player_handler->requestShuffleCommand(false)
 | :--- | :--- | :--- | :--- |
 | payload | string | **Y** | RequestPlayCommand Directive 에 포함되어 있는 payload 를  그대로 포함. |
 
-###  RequestResumeCommandIssued
+### RequestResumeCommandIssued
 
 * RequestResumeCommand Directive 를 받은 디바이스가 발생시키는 Event.
 

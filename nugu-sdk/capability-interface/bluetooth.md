@@ -58,11 +58,11 @@ class MyBluetoothProvider: BluetoothProvider {
     override fun device() : BluetoothHost? {
         ...
     }
-        
+
     override fun activeDevice() : BluetoothDevice? {
         ...
     }
-    
+
     ...
 }
 ```
@@ -84,11 +84,11 @@ val listener = object: BluetoothAgentInterface.Listener {
     fun onDiscoverableStart(durationInSeconds: Long = 0) : DiscoverableStartResult {
         ...
     }
-    
+
     fun onDiscoverableFinish() : Boolean {
         ...
     }
-    
+
     fun onAVRCPCommand(command: AVRCPCommand) {
         ...
     }
@@ -210,7 +210,6 @@ bluetoothAgent.setListener(listener)
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p></p>
         <p>Pairing&#xB41C; bluetooth device&#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0;
           &#xD574;&#xB2F9; device&#xC758; &#xC9C0;&#xC6D0; profile&#xC758; &#xC0AC;&#xC6A9;
           &#xC5EC;&#xBD80;&#xB97C; &#xB098;&#xD0C0;&#xB0C4;</p>

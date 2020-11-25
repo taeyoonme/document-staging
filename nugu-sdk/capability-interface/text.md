@@ -99,7 +99,7 @@ textAgent.requestTextInput(text: textInput, requestType: .normal)
 {% endtab %}
 
 {% tab title="Linux" %}
-```
+```text
 text_handler->requestTextInput(text)
 ```
 {% endtab %}
@@ -239,7 +239,6 @@ text_handler->requestTextInput(text)
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p></p>
         <ul>
           <li>TextSource&#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;&#xC778;
             &#xACBD;&#xC6B0; TextSource&#xC758; token&#xC744; &#xADF8;&#xB300;&#xB85C;

@@ -104,7 +104,7 @@ class MyPhoneCallClient: PhoneCallClient {
     override fun getContext(): Context {
         ...
     }
-    
+
     ...
 }
 ```
@@ -118,7 +118,7 @@ class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
     func phoneCallAgentRequestContext() -> PhoneCallContext {
         ...
     }
-    
+
     ...
 }
 phoneCallAgent.delegate = self
@@ -140,7 +140,7 @@ class MyPhoneCallClient: PhoneCallClient {
         // 연락처 검색 기능을 구현
         ...
     }
-    
+
     override fun makeCall(payload: MakeCallPayload, callback: Callback) {
         // 전화 발신 기능을 구현
         ...
@@ -159,12 +159,12 @@ class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
         // 연락처 검색 기능을 구현
         ...
     }
-    
+
     func phoneCallAgentDidReceiveMakeCall(callType: PhoneCallType, recipient: PhoneCallPerson, dialogRequestId: String) -> PhoneCallErrorCode? {
         // 전화 발신 기능을 구현
         ...
     }
-    
+
     ...
 }
 phoneCallAgent.delegate = self
@@ -190,7 +190,7 @@ class MyPhoneCallClient: PhoneCallClient {
         // 수신 수락 기능을 구현
         ...
     }
-    
+
     override fun makeCall(payload: MakeCallPayload, callback: Callback) {
         // 수신 거절 기능을 구현
         ...
@@ -200,8 +200,6 @@ class MyPhoneCallClient: PhoneCallClient {
 ```
 {% endtab %}
 {% endtabs %}
-
-
 
 ## Context
 
@@ -221,11 +219,11 @@ class MyPhoneCallClient: PhoneCallClient {
       "candidates": [Person]
     },
     "recipient": {
-			"name": "{{STRING}}",
-			"token": "{{STRING}}",
-			"isMobile": "{{STRING}}",
-			"isRecentMissed": "{{STRING}}"
-		}
+            "name": "{{STRING}}",
+            "token": "{{STRING}}",
+            "isMobile": "{{STRING}}",
+            "isRecentMissed": "{{STRING}}"
+        }
   }
 }
 ```
@@ -389,7 +387,6 @@ class MyPhoneCallClient: PhoneCallClient {
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p></p>
         <p>&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29; &#xC804;&#xD654;&#xBC88;&#xD638;&#xAC00;
           &#xBAA8;&#xBC14;&#xC77C; &#xD3F0;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;</p>
         <ul>
@@ -408,15 +405,14 @@ class MyPhoneCallClient: PhoneCallClient {
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p></p>
         <p>&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xACFC;&#xC758; &#xAC00;&#xC7A5;
           &#xCD5C;&#xADFC; &#xD1B5;&#xD654;&#xAC00; &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654;&#xC778;&#xC9C0;
           &#xC5EC;&#xBD80;</p>
         <ul>
-          <li><b>TRUE </b>- &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
+          <li><b>TRUE</b> - &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
             &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774;
             &#xC788;&#xC9C0;&#xB9CC; &#xBABB;&#xBC1B;&#xC740; &#xACBD;&#xC6B0;</li>
-          <li><b>FALSE </b>- &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
+          <li><b>FALSE</b> - &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
             &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774; &#xC5C6;&#xAC70;&#xB098;, &#xC788;&#xB294;&#xB370;
             &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654;&#xAC00; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;</li>
         </ul>
@@ -805,7 +801,6 @@ class MyPhoneCallClient: PhoneCallClient {
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p></p>
         <p>&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
           &#xC704;&#xD574; &#xCD94;&#xAC00;</p>
         <p>enum&#xC740; &#xC544;&#xB2C8;&#xBA70; &#xC784;&#xC758;&#xC758; string&#xC774;
@@ -1060,10 +1055,10 @@ class MyPhoneCallClient: PhoneCallClient {
         <p>&#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xD1B5;&#xD654;&#xAC00; &#xBD80;&#xC7AC;&#xC911;
           &#xD1B5;&#xD654;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;</p>
         <ul>
-          <li><b>TRUE </b>- &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
+          <li><b>TRUE</b> - &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
             &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774;
             &#xC788;&#xC9C0;&#xB9CC; &#xBABB;&#xBC1B;&#xC740; &#xACBD;&#xC6B0;</li>
-          <li><b>FALSE </b>- &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
+          <li><b>FALSE</b> - &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
             &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774; &#xC5C6;&#xAC70;&#xB098;, &#xC788;&#xB294;&#xB370;
             &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654;&#xAC00; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;</li>
         </ul>
@@ -1149,7 +1144,7 @@ class MyPhoneCallClient: PhoneCallClient {
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
         <ul>
-          <li><b>NO_SYSTEM_PERMISSION </b>- &#xAD8C;&#xD55C;&#xC5C6;&#xC74C;</li>
+          <li><b>NO_SYSTEM_PERMISSION</b> - &#xAD8C;&#xD55C;&#xC5C6;&#xC74C;</li>
           <li><b>CALL_TYPE_NOT_SUPPORTED</b> - &#xD574;&#xB2F9; callType &#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0;
             &#xC54A;&#xC74C;</li>
         </ul>

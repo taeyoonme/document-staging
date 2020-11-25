@@ -74,7 +74,7 @@ class MyScreen: Screen {
     override fun turnOn(brightness: Long): Boolean {
         ...
     }
-    
+
     override fun turnOff(): Boolean {
         ...
     }
@@ -82,7 +82,7 @@ class MyScreen: Screen {
     override fun setBrightness(brightness: Long): Boolean {
         ...
     }
-    
+
     ...
 }
 ```

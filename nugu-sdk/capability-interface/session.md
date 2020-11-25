@@ -102,7 +102,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto session_listener(std::make_shared<MySessionListener>());

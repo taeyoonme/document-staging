@@ -71,7 +71,7 @@ NuguAndroidClient.Builder(...)
         override fun createAlarmSpeaker(): Speaker? = MySpeaker()
 
         override fun createCallSpeaker(): Speaker? = MySpeaker()
-        
+
         override fun createExternalSpeaker(): Speaker? = MySpeaker()
 
         override fun createSpeaker(type: Speaker.Type): Speaker? {
@@ -140,11 +140,11 @@ class MySpeaker: Speaker {
     override fun setVolume(volume: Int, rate: Rate = Rate.FAST): Boolean {
         ...
     }
-    
+
     override fun setMute(mute: Boolean): Boolean {
         ...
     }
-    
+
     ...
 }
 ```
@@ -162,7 +162,7 @@ public:
     {
         ...
     }
-    
+
     void requestSetVolume(const std::string &ps_id, SpeakerType type, int volume, bool linear) override
     {
         ...

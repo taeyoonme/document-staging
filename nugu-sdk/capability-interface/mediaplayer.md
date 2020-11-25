@@ -95,7 +95,7 @@ class MyMediaPlayer: MediaPlayer {
     override fun getContext(): Context {
         ...
     }
-    
+
     ...
 }
 ```
@@ -109,7 +109,7 @@ class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
     func func mediaPlayerAgentRequestContext() -> MediaPlayerAgentContext? {
         ...
     }
-    
+
     ...
 }
 mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
@@ -130,39 +130,39 @@ class MyMediaPlayer: MediaPlayer {
     override fun search(payload: SearchPayload, callback: EventCallback) {
         ...
     }
-    
+
     override fun play(header: Header, payload: PlayPayload, callback: PlayCallback) {
         ...
     }
-    
+
     override fun fun stop(header: Header, payload: Payload, callback: EventCallback) {
         ...
     }
-    
+
     override fun next(header: Header, payload: NextPayload, callback: NextCallback) {
         ...
     }
-    
+
     override fun previous(header: Header, payload: PreviousPayload, callback: PreviousCallback) {
         ...
     }
-    
+
     override fun move(header: Header, payload: MovePayload, callback: EventCallback) {
         ...
     }
-    
+
     override fun pause(header: Header, payload: Payload, callback: EventCallback) {
         ...
     }
-    
+
     override fun resume(header: Header, payload: Payload, callback: EventCallback) {
         ...
     }
-    
+
     override fun rewind(header: Header, payload: Payload, callback: EventCallback) {
         ...
     }
-    
+
     override fun toggle(header: Header, payload: TogglePayload, callback: EventCallback) {
         ...
     }
@@ -170,11 +170,11 @@ class MyMediaPlayer: MediaPlayer {
     override fun handlePlaylist(header: Header, payload: HandlePlaylistPayload, callback: EventCallback) {
         ...
     }
-        
+
     override fun handleLyrics(header: Header, payload: HandleLyricsPayload, callback: EventCallback) {
         ...
     }
-    
+
     ...
 }
 ```
@@ -188,51 +188,51 @@ class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
     func mediaPlayerAgentReceiveSearch(payload: MediaPlayerAgentDirectivePayload.Search, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Search) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceivePlay(payload: MediaPlayerAgentDirectivePayload.Play, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Play) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceiveStop(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Stop) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceiveNext(payload: MediaPlayerAgentDirectivePayload.Next, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Next) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceivePrevious(payload: MediaPlayerAgentDirectivePayload.Previous, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Previous) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceiveMove(payload: MediaPlayerAgentDirectivePayload.Move, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Move) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceivePause(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Pause) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceiveResume(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Resume) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceiveRewind(playServiceId: String, token: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Rewind) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceiveToggle(payload: MediaPlayerAgentDirectivePayload.Toggle, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Toggle) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceivePlaylist(playServiceId: String, action: String, target: String?, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.HandlePlaylist) -> Void)) {
         ...
     }
-    
+
     func mediaPlayerAgentReceiveLyrics(playServiceId: String, action: String, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.HandleLyrics) -> Void)) {
         ...
     }
-    
+
     ...
 }
 mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
@@ -253,7 +253,7 @@ class MyMediaPlayer: MediaPlayer {
     override fun getInfo(payload: Payload, callback: GetInfoCallback) {
         ...
     }
-    
+
     ...
 }
 ```
@@ -267,7 +267,7 @@ class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
     func func mediaPlayerAgentReceiveGetInfo(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.GetInfo) -> Void)) {
         ...
     }
-    
+
     ...
 }
 mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
@@ -533,8 +533,6 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "etc": { # arbitrary object }
 }
 ```
-
-
 
 <table>
   <thead>

@@ -11,7 +11,7 @@ description: 보이스 크롬에 노출되는 발화 가이드를 제공하기 �
 | Version | Date | Description |
 | :--- | :--- | :--- |
 | 1.0 | 2020.07.02 | 규격 추가 |
-| 1.1 | 2020.10.26 | Render directive 의 chips 에 token 필드 추가  |
+| 1.1 | 2020.10.26 | Render directive 의 chips 에 token 필드 추가 |
 
 ## SDK Interface
 

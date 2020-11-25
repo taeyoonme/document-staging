@@ -162,7 +162,7 @@ import NuguLoginKit
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
     // Only for free pass of Sample app's Oauth validation check
     guard let schemeReplacedUrl = SampleApp.schemeReplacedUrl(openUrl: url) else { return false }
-    
+
     NuguOAuthClient.handle(url: schemeReplacedUrl)
     return true
 }
@@ -184,7 +184,7 @@ lazy private(set) var oauthClient: NuguOAuthClient = {
         return NuguOAuthClient(deviceUniqueId: "{device-unique-id}")
     }
 }()
-    
+
 func login() {
     oauthClient.authorize(
         grant: AuthorizationCodeGrant(
@@ -263,13 +263,13 @@ func setAudioSession() throws {
 
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. `NuguClientKit`을 불러옵니다.  
+1. `NuguClientKit`을 불러옵니다.
 
    ```swift
    import NuguClientKit
    ```
 
-2. `NuguClient` 인스턴스를 생성합니다.     
+2. `NuguClient` 인스턴스를 생성합니다.
 
    ```swift
    let client = NuguClient(delegate: self)
@@ -283,7 +283,7 @@ func setAudioSession() throws {
    }
    ```
 
-4. NUGU 서버와의 연결 이후 음성인식을 요청합니다.    
+4. NUGU 서버와의 연결 이후 음성인식을 요청합니다.
 
    ```swift
    client.asrAgent.startRecognition(initiator: .user)
@@ -295,5 +295,5 @@ func setAudioSession() throws {
 
 NUGU SDK for iOS의 Github Repository에 있는 샘플 앱을 통해서도 NUGU SDK의 주요 사용 방법을 확인하실 수 있습니다.
 
-{% embed url="https://github.com/nugu-developers/nugu-ios" %}
+{% embed url="https://github.com/nugu-developers/nugu-ios" caption="" %}
 

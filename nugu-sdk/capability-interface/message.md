@@ -82,7 +82,7 @@ class MyMessageClient: MessageClient {
     override fun getContext(): Context {
         ...
     }
-    
+
     ...
 }
 ```
@@ -103,12 +103,12 @@ class MyMessageClient: MessageClient {
         // 연락처 검색 기능을 구현
         ...
     }
-    
+
     override fun sendMessage(payload: SendMessagePayload, callback: EventCallback) {
         // 문자 전송 기능을 구현
         ...
     }
-    
+
     ...
 }
 ```
@@ -128,7 +128,7 @@ class MyMessageClient: MessageClient {
     override fun getMessageList(payload: GetMessagePayload, callback: Callback) {
         ...
     }
-    
+
     ...
 }
 ```
@@ -293,7 +293,6 @@ messageAgent.addOnPlaybackListener(listener)
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p></p>
         <p>&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
           &#xC704;&#xD574; &#xCD94;&#xAC00;</p>
         <ul>
@@ -305,7 +304,7 @@ messageAgent.addOnPlaybackListener(listener)
     <tr>
       <td style="text-align:left">template.
         <br />candidates</td>
-      <td style="text-align:left">array of <a href="message.md#contact">Contact</a> 
+      <td style="text-align:left">array of <a href="message.md#contact">Contact</a>
       </td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">&#xD654;&#xBA74;&#xC5D0; &#xAC80;&#xC0C9; &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C;
@@ -385,13 +384,13 @@ messageAgent.addOnPlaybackListener(listener)
       <td style="text-align:left">N</td>
       <td style="text-align:left">
         <ul>
-          <li><b>MOBILE</b> 
+          <li><b>MOBILE</b>
           </li>
-          <li><b>COMPANY</b> 
+          <li><b>COMPANY</b>
           </li>
-          <li><b>HOME</b> 
+          <li><b>HOME</b>
           </li>
-          <li><b>USER_DEFINED</b> 
+          <li><b>USER_DEFINED</b>
           </li>
         </ul>
       </td>
@@ -428,9 +427,9 @@ messageAgent.addOnPlaybackListener(listener)
       <td style="text-align:left">
         <p>&#xBA54;&#xC138;&#xC9C0;&#xC758; &#xD0C0;&#xC785;</p>
         <ul>
-          <li><b>SMS</b> 
+          <li><b>SMS</b>
           </li>
-          <li><b>MMS</b> 
+          <li><b>MMS</b>
           </li>
         </ul>
       </td>
@@ -547,7 +546,6 @@ messageAgent.addOnPlaybackListener(listener)
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">
-        <p></p>
         <p>&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
           &#xC704;&#xD574; &#xCD94;&#xAC00;</p>
         <ul>
@@ -662,7 +660,7 @@ messageAgent.addOnPlaybackListener(listener)
     </tr>
     <tr>
       <td style="text-align:left">candidates</td>
-      <td style="text-align:left">array of <a href="message.md#contact">Contact</a> 
+      <td style="text-align:left">array of <a href="message.md#contact">Contact</a>
       </td>
       <td style="text-align:left">N</td>
       <td style="text-align:left">candidates&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC774; &#xD56D;&#xBAA9;&#xC774;
@@ -770,7 +768,7 @@ messageAgent.addOnPlaybackListener(listener)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| recipient | [Contact](message.md#contact)  | Y |  |
+| recipient | [Contact](message.md#contact) | Y |  |
 
 ### SendMessageFailed
 

@@ -6,7 +6,14 @@ description: 음성 합성 결과를 전달받기 위한 규격
 
 ## Version
 
-최신 버전은 1.1 입니다.
+최신 버전은 1.3 입니다.
+
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2019.11.24 | 규격 추가 |
+| 1.1 | 2020.03.23 | Stop directive 에서 token 필드 삭제 |
+| 1.2 | 2020.06.05 | Context 에 token 필드 추가 |
+| 1.3 | 2020.11.09 | SpeechStarted, SpeechStopped, SpeechFinished event 전송 규칙 수정 |
 
 ## SDK Interface
 
@@ -106,9 +113,10 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 ```text
 {
   "TTS": {
-    "version": "1.1",
+    "version": "1.2",
     "ttsActivity": "{{STRING}}",
-    "engine": "{{STRING}}"
+    "engine": "{{STRING}}",
+    "token": "{{STRING}}"
   }
 }
 ```
@@ -150,6 +158,12 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
         <p>(&#xAC12;&#xC744; &#xCC44;&#xC6B0;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; default
           &quot;skt&quot;)</p>
       </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">&#xD604;&#xC7AC; &#xC7AC;&#xC0DD;&#xC911;&#xC778; TTS &#xC758; token</td>
     </tr>
   </tbody>
 </table>
@@ -204,4 +218,72 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
   }
 }
 ```
+
+## Event
+
+### SpeechStarted
+
+```text
+{
+  "header": {
+    "namespace": "TTS",
+    "name": "SpeechStarted",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "token": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | TTS.Speak 디렉티브에서 설정한 token 값 |
+
+### SpeechFinished
+
+```text
+{
+  "header": {
+    "namespace": "TTS",
+    "name": "SpeechFinished",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "token": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | TTS.Speak 디렉티브에서 설정한 token 값 |
+
+### SpeechStopped
+
+```text
+{
+  "header": {
+    "namespace": "TTS",
+    "name": "SpeechStopped",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.1"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "token": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | TTS.Speak 디렉티브에서 설정한 token 값 |
 

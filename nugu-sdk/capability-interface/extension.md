@@ -69,7 +69,7 @@ class MyExtensionAgentClient : ExtensionAgentInterface.Client {
         // json string
         ...
     }
-    
+
     override fun action(data: String, playServiceId: String): Boolean {
         ...
     }
@@ -85,7 +85,7 @@ class MyExtensionAgentDelegate: ExtensionAgentDelegate {
     func extensionAgentRequestContext() -> [String: AnyHashable]? {
         ...
     }
-    
+
     func extensionAgentDidReceiveAction(data: [String: AnyHashable], playServiceId: String, dialogRequestId: String, completion: @escaping (Bool) -> Void) {
         ...
     }

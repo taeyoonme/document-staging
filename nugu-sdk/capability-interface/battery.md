@@ -54,7 +54,7 @@ class MyBatteryStatusProvider: BatteryStatusProvider {
     override fun getBatteryLevel(): Int {
         ...
     }
-    
+
     override fun isCharging(): Boolean? {
         ...
     }

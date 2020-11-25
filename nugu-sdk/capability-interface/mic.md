@@ -91,7 +91,7 @@ class MyMicrophone: Microphone {
     override fun off(): Boolean {
         ...
     }
-    
+
     ...
 }
 ```
