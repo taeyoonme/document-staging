@@ -95,13 +95,17 @@ AndroidManifest.xml에 아래 필수 권한을 추가합니다.
 Manifest에 추가한 android.permission.RECORD\_AUDIO 권한은 런타임에 추가로 요청하여 획득해야 합니다.
 {% endhint %}
 
-## Step 4: NUGU 사용하기
-
-### NUGU 로그인 추가
+## Step 4: NUGU 로그인 추가
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
+OAuth 2.0 API 는 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
+{% endhint %}
+
+### Type1 으로 로그인
+
+{% hint style="info" %}
+Type1 로그인을 위해서는 T아이디 연동이 필요합니다.
 {% endhint %}
 
 #### 로그인 정보 설정 
@@ -155,7 +159,44 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
         })
 ```
 
-### NUGU 음성인식 사용하기
+### Type2 로 로그인
+
+#### 로그인 정보 설정 
+
+developers에서 발급받은 `clientSecret`과 기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
+
+```kotlin
+private val authClient by lazy {
+    // Configure Nugu OAuth Options
+    val options = NuguOAuthOptions.Builder()
+        .clientSecret("{your-client-secret}")
+        .deviceUniqueId("{your-device-uniqueId}")
+        .build()
+    NuguOAuth.getClient(options)
+}
+```
+
+{% hint style="warning" %}
+`clientSerect`는 외부에 노출되지 않도록 주의하여 관리해야합니다.
+{% endhint %}
+
+#### 로그인
+
+`login()`를 호출 후에 `NuguOAuthInterface.OnLoginListener`를 통해 인증 결과를 받습니다.
+
+```kotlin
+authClient.login(object : NuguOAuthInterface.OnLoginListener {
+            override fun onSuccess(credentials: Credentials) {
+                // Save credentials
+            }
+
+            override fun onError(error: NuguOAuthError) {
+                // Called when the request failed.
+            }
+        })
+```
+
+## Step5. NUGU 음성인식 사용하기
 
 로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는 `NuguAndroidClient` 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
 
