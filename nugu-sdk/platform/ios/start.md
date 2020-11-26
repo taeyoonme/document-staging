@@ -135,13 +135,19 @@ NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plis
 {% endtab %}
 {% endtabs %}
 
-## Step 4: NUGU 사용하기
+## Step 4: NUGU 로그인 추가
 
-### NUGU 로그인 추가
+NUGU 로그인은 Type1, Type2 두 가지 방식으로 제공됩니다.
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
-더 자세한 내용은 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
+OAuth 2.0 API 는 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
+{% endhint %}
+
+### Type1 으로 로그인
+
+{% hint style="info" %}
+Type1 로그인을 위해서는 T아이디 연동이 필요합니다.
 {% endhint %}
 
 #### NuguLoginKit 불러오기
@@ -160,10 +166,7 @@ import NuguLoginKit
 {% tab title="AppDelegate.swift" %}
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-    // Only for free pass of Sample app's Oauth validation check
-    guard let schemeReplacedUrl = SampleApp.schemeReplacedUrl(openUrl: url) else { return false }
-
-    NuguOAuthClient.handle(url: schemeReplacedUrl)
+    NuguOAuthClient.handle(url: url)
     return true
 }
 ```
@@ -192,13 +195,14 @@ func login() {
             clientSecret: "{client-secret}",
             redirectUri: "{redirect-uri}"
         ),
-        parentViewController: self) { (result) in
-            switch result {
-            case .success(let authInfo):
-                // Save authInfo
-            case .failure(let error):
-                // Occured error
-            }
+        parentViewController: self
+    ) { (result) in
+        switch result {
+        case .success(let authInfo):
+            // Save authInfo
+        case .failure(let error):
+            // Occured error
+        }
     }
 }
 ```
@@ -213,8 +217,13 @@ func login() {
 {% tab title="ViewController.swift" %}
 ```swift
 func refresh() {
-
-    oauthClient.authorize(grant: RefreshTokenGrant(clientId: "{client-id}", clientSecret: "{client-secret}", refreshToken: "{refresh-token}")) { (result) in
+    oauthClient.authorize(
+        grant: RefreshTokenGrant(
+            clientId: "{client-id}",
+            clientSecret: "{client-secret}",
+            refreshToken: "{refresh-token}"
+        )
+    ) { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo
@@ -227,7 +236,51 @@ func refresh() {
 {% endtab %}
 {% endtabs %}
 
-### NUGU 음성인식 사용하기
+### Type2 로 로그인
+
+#### NuguLoginKit 불러오기
+
+NUGU의 인증서버와 OAuth 인증을 쉽게 하기 위해서 `NuguLoginKit`을 불러옵니다.
+
+```swift
+import NuguLoginKit
+```
+
+#### 로그인
+
+PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설정한 후 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
+
+{% tabs %}
+{% tab title="ViewController.swift" %}
+```swift
+lazy private(set) var oauthClient: NuguOAuthClient = {
+    do {
+        return try NuguOAuthClient(serviceName: Bundle.main.bundleIdentifier ?? "NuguSample")
+    } catch {
+        return NuguOAuthClient(deviceUniqueId: "{device-unique-id}")
+    }
+}()
+
+func login() {
+    oauthClient.authorize(
+        grant: ClientCredentialsGrant(
+            clientId: "{client-id}",
+            clientSecret: "{client-secret}"
+        )
+    ) { (result) in
+        switch result {
+        case .success(let authInfo):
+            // Save authInfo
+        case .failure(let error):
+            // Occured error
+        }
+    }
+}
+```
+{% endtab %}
+{% endtabs %}
+
+## Step5. NUGU 음성인식 사용하기
 
 #### 마이크 권한 획득
 
@@ -284,8 +337,7 @@ func setAudioSession() throws {
    ```
 
 4. NUGU 서버와의 연결 이후 음성인식을 요청합니다.
-
-   ```swift
+5. ```swift
    client.asrAgent.startRecognition(initiator: .user)
    ```
 
