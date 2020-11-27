@@ -16,4 +16,5 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 * [System Requirements](platform/#system-requirements) 추가
 * [Platform 에 따른 Capability interface 지원 현황](capability-interface/#platform) 추가
 * [iOS NUGU 서비스 관리 web server 연동](platform/ios/web-server.md) 페이지 추가
+* [Android NUGU 서비스 관리 web server 연동](platform/android/nugu-web-server.md) 페이지 추가
 

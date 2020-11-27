@@ -88,13 +88,17 @@ extension NuguServiceWebViewController: NuguServiceWebJavascriptDelegate {
 
 {% code title="NuguServiceWebViewController.swift" %}
 ```swift
-nuguServiceWebView.loadUrlString(NuguServiceWebView.serviceSettingUrl)
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    nuguServiceWebView.loadUrlString(NuguServiceWebView.serviceSettingUrl)
+}
 ```
 {% endcode %}
 
 ## Play 로그인 결과 전달
 
-NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 `oauthRedirectUri` 가 `application(_:open:options)` 로 호출되며, `WebView` 를 갱신하면 로그인 결과가 웹 페이지에 반영됩니다.
+NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 `oauthRedirectUri` 가 호출되며, `WebView` 를 갱신하면 로그인 결과가 웹 페이지에 반영됩니다.
 
 * 로그인 결과를 전달하기 위한 `Notification` 을 정의합니다.
 
