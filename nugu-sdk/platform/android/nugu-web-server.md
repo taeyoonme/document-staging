@@ -77,7 +77,6 @@ NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 `redirectUr
 ```swift
 <activity
     android:name="com.skt.nugu.sampleapp.activity.SettingsServiceActivity"
-    android:exported="true"
     android:launchMode="singleTop" >
     <intent-filter>
         <action android:name="android.intent.action.VIEW" />
