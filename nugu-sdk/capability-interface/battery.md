@@ -19,6 +19,10 @@ description: 디바이스 배터리 정보를 Play 로 전달하기 위한 규�
 
 Battery interface 규격에 따른 디바이스의 정보 전달은 BatteryAgent 가 처리합니다.
 
+{% hint style="warning" %}
+Linux 는 BatteryAgent 를 지원하지 않습니다.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 NuguAndroidClient instance 를 통해 BatteryAgent instance 에 접근할 수 있습니다.

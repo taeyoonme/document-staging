@@ -49,6 +49,10 @@ description: 문자 확인 및 전송 기능 제어를 위한 규격
 
 MessageCall interface 규격에 따른 디바이스의 동작 제어는 MessageAgent 가 처리합니다.
 
+{% hint style="warning" %}
+Linux 는 MessageAgent 를 지원하지 않습니다.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 NuguAndroidClient instance 를 통해 MessageAgent instance 에 접근할 수 있습니다.
