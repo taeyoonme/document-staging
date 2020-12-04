@@ -247,7 +247,7 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
       <td style="text-align:left">&#xBC30;&#xD130;&#xB9AC; &#xC815;&#xBCF4; &#xC218;&#xC9D1;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
       <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
-      <td style="text-align:left">&#xBBF8;&#xC9C0;</td>
+      <td style="text-align:left">&#xBBF8;&#xC9C0;&#xC6D0;</td>
     </tr>
     <tr>
       <td style="text-align:left">Sound</td>
