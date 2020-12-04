@@ -17,6 +17,14 @@
   * `libnugu-kwd`: NUGU의 키워드를 감지하는 기능을 제공합니다.
   * `libnugu-epd`: 발화의 시작과 끝을 감지하는 기능을 제공합니다.
 
+## Github
+
+#### NUGU
+
+| 이름 | 주소 |
+| :--- | :--- |
+| `nugu-linux` | [https://github.com/nugu-developers/nugu-linux](https://github.com/nugu-developers/nugu-linux) |
+
 ## 의존성 목록
 
 NUGU SDK for Linux는 아래의 외부 라이브러리를 사용하고 있고, SDK 설치시 의존성으로 인해 자동으로 시스템에 설치됩니다.
