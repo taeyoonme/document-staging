@@ -207,7 +207,7 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
       <td style="text-align:left">&#xD655;&#xC7A5; &#xAE30;&#xB2A5; &#xC218;&#xD589;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
+      <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
     </tr>
     <tr>
       <td style="text-align:left">Speaker</td>
@@ -276,14 +276,14 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
       <td style="text-align:left">&#xD1B5;&#xD654; &#xAE30;&#xB2A5; &#xC81C;&#xC5B4;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xBBF8;&#xC9C0;&#xC6D0;</td>
+      <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
     </tr>
     <tr>
       <td style="text-align:left">Message</td>
       <td style="text-align:left">&#xBB38;&#xC790; &#xAE30;&#xB2A5; &#xC81C;&#xC5B4;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
       <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
-      <td style="text-align:left">&#xBBF8;&#xC9C0;&#xC6D0;</td>
+      <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
     </tr>
     <tr>
       <td style="text-align:left">MediaPlayer</td>
