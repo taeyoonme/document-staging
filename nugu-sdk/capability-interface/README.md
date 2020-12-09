@@ -152,7 +152,7 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
     <tr>
       <td style="text-align:left">Display</td>
       <td style="text-align:left">UI template data &#xC81C;&#xACF5;</td>
-      <td style="text-align:left">&#xC9C0;</td>
+      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
       <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
     </tr>
