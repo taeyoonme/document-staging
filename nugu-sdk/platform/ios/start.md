@@ -137,17 +137,17 @@ NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plis
 
 ## Step 4: NUGU 로그인 추가
 
-NUGU 로그인은 Type1, Type2 두 가지 방식으로 제공됩니다.
+NUGU 로그인은 **NUGU 회원 연동 방식**과 **NUGU 회원 미사용 방식** 두 가지로 제공됩니다.
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
 OAuth 2.0 API 는 [Authentication](../../authentication.md) 에서 확인이 가능합니다.
 {% endhint %}
 
-### Type1 으로 로그인
+### **NUGU 회원 연동 방식**으로 로그인
 
 {% hint style="info" %}
-Type1 로그인을 위해서는 T아이디 연동이 필요합니다.
+NUGU 회원 연동 방식을 사용하기 위해서 로그인을 위해서는 T아이디 연동이 필요합니다.
 {% endhint %}
 
 #### NuguLoginKit 불러오기
@@ -175,7 +175,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 
 #### 인 앱 브라우저를 통해 로그인
 
-PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설정한 후에 인 앱 브라우저\(`SFSafariViewController`\)를 이용한 T-ID 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
+PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설정한 후에 인 앱 브라우저\(`SFSafariViewController`\)를 이용한 T아이 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
 
 {% tabs %}
 {% tab title="ViewController.swift" %}
@@ -236,7 +236,7 @@ func refresh() {
 {% endtab %}
 {% endtabs %}
 
-### Type2 로 로그인
+### **NUGU 회원 미사용 방식으**로 로그인
 
 #### NuguLoginKit 불러오기
 

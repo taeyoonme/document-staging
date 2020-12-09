@@ -9,8 +9,8 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 ### 2020-11-26
 
 * [Release note](release-note.md) 페이지 추가
-* [iOS Type2 연동 가이드](platform/ios/start.md#type2) 추가
-* [Android Type2 연동 가이드](platform/android/start.md#type2) 추가
+* [iOS NUGU 회원 미사용 방식 연동 가이드](platform/ios/start.md#type2) 추가
+* [Android NUGU 회원 미사용 방식 연동 가이드](platform/android/start.md#type2) 추가
 * [iOS App background 동작 가이드](platform/ios/background.md) 페이지 추가
 * [Android App background 동작 가이드](platform/android/background.md) 페이지 추가
 * [System Requirements](platform/#system-requirements) 추가
