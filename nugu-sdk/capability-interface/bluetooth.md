@@ -20,7 +20,7 @@ description: 디바이스의 블루투스를 제어하기 위한 규격
 Bluetooth interface 규격에 따른 디바이스의 동작 제어는 BluetoothAgent 가 처리합니다.
 
 {% hint style="warning" %}
-iOS 는 BluetoothAgent 를 지원하지 않습니다.
+iOS/Linux 는 BluetoothAgent 를 지원하지 않습니다.
 {% endhint %}
 
 {% tabs %}

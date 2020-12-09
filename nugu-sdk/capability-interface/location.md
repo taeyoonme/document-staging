@@ -18,6 +18,10 @@ description: 디바이스 위치 정보를 Play 로 전달하기 위한 규격
 
 Location interface 규격에 따른 디바이스의 동작 제어는 LocationAgent 가 처리합니다.
 
+{% hint style="warning" %}
+Linux 는 LocationAgent 를 지원하지 않습니다.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 NuguAndroidClient instance 를 통해 LocationAgent instance 에 접근할 수 있습니다.

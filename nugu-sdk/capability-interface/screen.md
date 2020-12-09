@@ -18,8 +18,8 @@ description: 디바이스의 디스플레이를 제어하기 위한 규격
 
 Screen interface 규격에 따른 디바이스의 동작 제어는 ScreenAgent 가 처리합니다.
 
-{% hint style="info" %}
-iOS 는 ScreenAgent 를 지원하지 않습니다.
+{% hint style="warning" %}
+iOS/Linux 는 ScreenAgent 를 지원하지 않습니다.
 {% endhint %}
 
 {% tabs %}

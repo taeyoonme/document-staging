@@ -51,6 +51,10 @@ description: 전화 수/발신 기능 제어를 위한 규격
 
 PhoneCall interface 규격에 따른 디바이스의 동작 제어는 PhoneCallAgent 가 처리합니다.
 
+{% hint style="warning" %}
+Linux 는 PhoneCallAgent 를 지원하지 않습니다.
+{% endhint %}
+
 {% tabs %}
 {% tab title="Android" %}
 NuguAndroidClient 생성시 PhoneCallAgent 를 추가합니다.
