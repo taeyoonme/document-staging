@@ -147,7 +147,7 @@ OAuth 2.0 API 는 [Authentication](../../authentication.md) 에서 확인이 가
 ### **NUGU 회원 연동 방식**으로 로그인
 
 {% hint style="info" %}
-NUGU 회원 연동 방식을 사용하기 위해서 로그인을 위해서는 T아이디 연동이 필요합니다.
+NUGU 회원 연동 방식을 사용하기 위해서는 T아이디 연동이 필요합니다.
 {% endhint %}
 
 #### NuguLoginKit 불러오기
