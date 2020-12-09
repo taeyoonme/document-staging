@@ -111,6 +111,7 @@
     * [주요 개념](nugu-play/work-with-nugu-biz/nugu-biz-concept.md)
     * [전용 디바이스 관리](nugu-play/work-with-nugu-biz/manage-shared-device.md)
     * [사용자 그룹 관리](nugu-play/work-with-nugu-biz/manage-enrolled-user.md)
+  * [Release note](nugu-play/releases.md)
 * [NUGU SDK](nugu-sdk/README.md)
   * [Authentication](nugu-sdk/authentication.md)
   * [Capability Interface](nugu-sdk/capability-interface/README.md)
@@ -164,5 +165,4 @@
   * [Icon 등록](reference/register-icon.md)
   * [발화 옵션에서 UNIT 태그로 지원하는 단위](reference/list-of-unit-tags-supported-by-utterance-options.md)
 * [용어 정의](terms.md)
-* [Release note](releases.md)
 
