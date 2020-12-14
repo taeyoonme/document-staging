@@ -6,6 +6,14 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2020-12-14
+
+* [AudioPlayer interface](capability-interface/audioplayer.md) 1.4 -&gt; 1.5 업데이트
+* [Display interface](capability-interface/display.md) 누락된 directive json 추가
+* [ASR interface](capability-interface/asr.md) 1.3 -&gt; 1.4 업데이트
+* [Text interface](capability-interface/text.md) 1.3 -&gt; 1.5 업데이트
+* [MediaPlayer interface](capability-interface/mediaplayer.md) 1.1 추가 업데이트
+
 ### 2020-11-26
 
 * [Release note](release-note.md) 페이지 추가

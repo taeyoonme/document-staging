@@ -32,6 +32,7 @@ description: 음악 앱을 제어하기 위한 규격
           <li>HandlePlaylist, HandleLyrics directive &#xCD94;&#xAC00;</li>
           <li>HandlePlaylistSucceeded, HandlePlaylistFailed, HandleLyricsSucceeded,
             HandleLyricsFailed event &#xCD94;&#xAC00;</li>
+          <li>PlaySuspended event &#xC758; issueCode &#xC5D0; <code>excludeSong</code> &#xCD94;&#xAC00;</li>
         </ul>
       </td>
     </tr>
@@ -1325,6 +1326,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
     "version": "1.1"
   },
   "payload": {
+    "playServiceId": "{{STRING}}",
     "action": "{{STRING}}",
     "target": "{{STRING}}"
   }
@@ -1380,6 +1382,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
     "version": "1.1"
   },
   "payload": {
+    "playServiceId": "{{STRING}}",
     "action": "{{STRING}}"
   }
 }
@@ -1550,6 +1553,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
                 &#xB9CE;&#xC774;&#xB4E4;&#xC740; &#xC774;&#xB825;&#xC774; &#xC5C6;&#xC5B4;&#xC11C;
                 &#xC2E4;&#xC2DC;&#xAC04; &#xCC28;&#xD2B8;&#xB85C; &#xB300;&#xC548; &#xC7AC;&#xC0DD;&#xD558;&#xB294;
                 &#xACBD;&#xC6B0;</li>
+              <li>excludeSong: &#xCCAB; &#xACE1;&#xC774; &#xC548;&#xB4E3;&#xAE30; &#xC124;&#xC815;&#xD55C;
+                &#xACE1;&#xC774;&#xC5B4;&#xC11C; skip &#xD558;&#xC5EC; &#xC7AC;&#xC0DD;</li>
             </ul>
           </li>
         </ul>
