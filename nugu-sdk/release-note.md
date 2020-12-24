@@ -10,6 +10,8 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 
 * [iOS Configuration 파일 설정하기](platform/ios/start.md#configuration) 가이드 추가
 * Configuration 파일 기반으로 [iOS 로그인 추가](platform/ios/start.md#step-4-nugu) 가이드 수정
+* [Android Configuration 파일 설정하기](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-MPHi5zPFwLzSOCjFwCB/nugu-sdk/platform/android/start#configuration) 가이드 추가
+* Configuration 파일 기반으로 [Android 로그인 추가](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-MPHi5zPFwLzSOCjFwCB/nugu-sdk/platform/android/start#step-4-nugu) 가이드 수정
 
 ### 2020-12-14
 
