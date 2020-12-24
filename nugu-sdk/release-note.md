@@ -6,6 +6,11 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2020-12-23
+
+* [iOS Configuration 파일 설정하기](platform/ios/start.md#configuration) 가이드 추가
+* Configuration 파일 기반으로 [iOS 로그인 추가](platform/ios/start.md#step-4-nugu) 가이드 수정
+
 ### 2020-12-14
 
 * [AudioPlayer interface](capability-interface/audioplayer.md) 1.4 -&gt; 1.5 업데이트

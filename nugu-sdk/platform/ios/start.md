@@ -15,9 +15,6 @@
 ```ruby
 target '{Your_Application}' do
   pod 'NuguClientKit'
-  pod 'NuguLoginKit'
-  pod 'NuguUIKit'
-  pod 'NuguServiceKit'
 end
 ```
 
@@ -122,6 +119,35 @@ if let netFile = Bundle.main.url(forResource: "skt_trigger_am_aria", withExtensi
 {% endtab %}
 {% endtabs %}
 
+### Configuration 파일 설정하기
+
+#### 다운로드 받기
+
+[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 nugu-config.plist 파일을 다운로드 받습니다.
+
+#### 설정하기
+
+다운로드 받은 파일을 Application 에 복사하고 target 으로 추가합니다.
+
+* Example
+  * `{application path}/Supporting Files/nugu-config.plist`
+
+`ConfigurationStore`을 초기화 합니다.
+
+{% tabs %}
+{% tab title="AppDelegate.swift" %}
+```swift
+import NuguClientKit
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey:
+Any]?) -> Bool {
+    ConfigurationStore.shared.configure()
+    return true
+}
+```
+{% endtab %}
+{% endtabs %}
+
 ### 어플리케이션 권한 설정하기
 
 NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plist 파일에 추가합니다.
@@ -150,14 +176,6 @@ OAuth 2.0 API 는 [Authentication](../../authentication.md) 에서 확인이 가
 NUGU 회원 연동 방식을 사용하기 위해서는 T아이디 연동이 필요합니다.
 {% endhint %}
 
-#### NuguLoginKit 불러오기
-
-NUGU의 인증서버와 OAuth 인증을 쉽게 하기 위해서 `NuguLoginKit`을 불러옵니다.
-
-```swift
-import NuguLoginKit
-```
-
 #### 앱 델리게이트 연결
 
 인 앱 브라우저를 통한 인증 결과를 `NuguLoginKit`에서 처리하기 위해 다음과 같이 `AppDelegate` 클래스에 추가해야 합니다.
@@ -165,9 +183,15 @@ import NuguLoginKit
 {% tabs %}
 {% tab title="AppDelegate.swift" %}
 ```swift
+import NuguLoginKit
+import NuguClientKit
+
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-    NuguOAuthClient.handle(url: url)
-    return true
+    if ConfigurationStore.shared.isAuthorizationRedirectUrl(url: url) {
+        NuguOAuthClient.handle(url: url)
+        return true
+    }
+    return false
 }
 ```
 {% endtab %}
@@ -180,6 +204,9 @@ PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설�
 {% tabs %}
 {% tab title="ViewController.swift" %}
 ```swift
+import NuguLoginKit
+import NuguClientKit
+
 lazy private(set) var oauthClient: NuguOAuthClient = {
     do {
         return try NuguOAuthClient(serviceName: Bundle.main.bundleIdentifier ?? "NuguSample")
@@ -189,14 +216,7 @@ lazy private(set) var oauthClient: NuguOAuthClient = {
 }()
 
 func login() {
-    oauthClient.authorize(
-        grant: AuthorizationCodeGrant(
-            clientId: "{client-id}",
-            clientSecret: "{client-secret}",
-            redirectUri: "{redirect-uri}"
-        ),
-        parentViewController: self
-    ) { (result) in
+    oauthClient.authorizeWithTid(parentViewController: viewController) { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo
@@ -217,13 +237,7 @@ func login() {
 {% tab title="ViewController.swift" %}
 ```swift
 func refresh() {
-    oauthClient.authorize(
-        grant: RefreshTokenGrant(
-            clientId: "{client-id}",
-            clientSecret: "{client-secret}",
-            refreshToken: "{refresh-token}"
-        )
-    ) { (result) in
+    oauthClient.refreshToken(refreshToken: refreshToken) { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo
@@ -238,14 +252,6 @@ func refresh() {
 
 ### **NUGU 회원 미사용 방식으**로 로그인
 
-#### NuguLoginKit 불러오기
-
-NUGU의 인증서버와 OAuth 인증을 쉽게 하기 위해서 `NuguLoginKit`을 불러옵니다.
-
-```swift
-import NuguLoginKit
-```
-
 #### 로그인
 
 PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설정한 후 로그인을 시도합니다. 인증 절차가 모두 완료되면 결과를 Closure를 통해 받을 수 있습니다.
@@ -253,6 +259,9 @@ PoC 정보를 이용하여 다음과 같이 `OAuthManager`를 통해 값을 설�
 {% tabs %}
 {% tab title="ViewController.swift" %}
 ```swift
+import NuguLoginKit
+import NuguClientKit
+
 lazy private(set) var oauthClient: NuguOAuthClient = {
     do {
         return try NuguOAuthClient(serviceName: Bundle.main.bundleIdentifier ?? "NuguSample")
@@ -262,12 +271,7 @@ lazy private(set) var oauthClient: NuguOAuthClient = {
 }()
 
 func login() {
-    oauthClient.authorize(
-        grant: ClientCredentialsGrant(
-            clientId: "{client-id}",
-            clientSecret: "{client-secret}"
-        )
-    ) { (result) in
+    oauthClient.authorize { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo

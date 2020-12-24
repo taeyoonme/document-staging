@@ -54,20 +54,7 @@ NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,
 Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다.
 {% endhint %}
 
-#### 리소스와 매니페스트에 정보 추가하기
-
-애플리케이션의 AndroidManifest.xml에 clientID 정보를 입력합니다.
-
-```markup
-<manifest>
-    <application>
-    	<!-- ClientId 선언 -->
-        <meta-data
-                android:name="com.skt.nugu.CLIENT_ID"
-                android:value="YOUR_CLIENT_ID_HERE" />
-    </application>
-</manifest>
-```
+#### 리소스에 정보 추가하기
 
 strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가합니다. 예를들어 redirectUri가 **"example://sample"** 라면 아래와 같이 추가합니다.
 
@@ -81,6 +68,21 @@ strings.xml 파일에 _nugu\_redirect\_scheme_, _nugu\_redirect\_host_를 추가
 #### 다운로드 받기 <a id="1"></a>
 
 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 음성인식 모델 파일을 다운로드 받습니다.
+
+### Configuration 파일 설정하기
+
+#### 다운로드 받기
+
+[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 nugu-config.json 파일을 다운로드 받습니다.
+
+#### 설정하기
+
+다운로드 받은 파일을 Asset 폴더에 파일을 복사하고, ConfigurationStore을 초기화합니다.
+
+```kotlin
+ConfigurationStore.configure(context = context,
+                             filename = "nugu-config.json")
+```
 
 ### 앱 권한 설정하기
 
@@ -112,22 +114,17 @@ NUGU 회원 연동 방식을 사용하기 위해서는 T아이디 연동이 필�
 
 #### 로그인 정보 설정 
 
-developers에서 발급받은 `clientSecret`과 기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
+기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
 
 ```kotlin
 private val authClient by lazy {
     // Configure Nugu OAuth Options
     val options = NuguOAuthOptions.Builder()
-        .clientSecret("{your-client-secret}")
         .deviceUniqueId("{your-device-uniqueId}")
         .build()
     NuguOAuth.getClient(options)
 }
 ```
-
-{% hint style="warning" %}
-`clientSerect`는 외부에 노출되지 않도록 주의하여 관리해야합니다.
-{% endhint %}
 
 #### 인 앱 브라우저를 통해 로그인
 
@@ -165,22 +162,17 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
 
 #### 로그인 정보 설정 
 
-developers에서 발급받은 `clientSecret`과 기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
+기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
 
 ```kotlin
 private val authClient by lazy {
     // Configure Nugu OAuth Options
     val options = NuguOAuthOptions.Builder()
-        .clientSecret("{your-client-secret}")
         .deviceUniqueId("{your-device-uniqueId}")
         .build()
     NuguOAuth.getClient(options)
 }
 ```
-
-{% hint style="warning" %}
-`clientSerect`는 외부에 노출되지 않도록 주의하여 관리해야합니다.
-{% endhint %}
 
 #### 로그인
 
