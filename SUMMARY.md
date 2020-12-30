@@ -148,6 +148,7 @@
       * [Background 동작 처리](nugu-sdk/platform/android/background.md)
       * [NUGU 서비스 관리 web server 연동](nugu-sdk/platform/android/nugu-web-server.md)
       * [테스트 환경 설정](nugu-sdk/platform/android/testing_sdk_integration.md)
+      * [NUGU Display의 노출과 제어](nugu-sdk/platform/android/nugu-display.md)
     * [Linux](nugu-sdk/platform/linux/README.md)
       * [시작하기](nugu-sdk/platform/linux/start.md)
       * [구성요소](nugu-sdk/platform/linux/component.md)
