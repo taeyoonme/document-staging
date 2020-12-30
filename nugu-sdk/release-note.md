@@ -6,6 +6,11 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2020-12-29
+
+* iOS [구성요소](platform/ios/component.md) 다이어그램, 컴포넌트 설명 업데이트 
+* [NUGU Display 를 노출하기 위한 Template server 연동](platform/ios/nugu-display-template-server.md) \(iOS\) 가이드 추가
+
 ### 2020-12-23
 
 * [iOS Configuration 파일 설정하기](platform/ios/start.md#configuration) 가이드 추가
