@@ -1,6 +1,6 @@
 # NUGU Display의 노출과 제어
 
-[Display 가이드](https://developers-doc.nugu.co.kr/nugu-sdk/capability-interface/display)에 소개된 DisplayAgentInterface.Renderer, DisplayAgentInterface.Controller 를 구현하고 DisplayAgent를 이용하여 필요한 화면을 노출하고 이를 제어할 수 있습니다.  
+[Display 가이드](https://developers-doc.nugu.co.kr/nugu-sdk/capability-interface/display)에 소개된 DisplayAggregatorInterface.Renderer, DisplayAggregatorInterface.Controller 를 구현하고 DisplayAgent를 이용하여 필요한 화면을 노출하고 이를 제어할 수 있습니다.  
   
 NUGU SDK는 이 모든 과정을 구현한 **TemplateRenderer**를 제공합니다.  
 TemplateRenderer 사용법을 설명합니다.
