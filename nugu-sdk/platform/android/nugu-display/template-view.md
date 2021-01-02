@@ -10,7 +10,7 @@ TemplateView 에서 버튼클릭이나 상태 변경이 일어나면 이를 응�
   
 TemplateRenderer에서 사용중인 `TemplateFragment` 소스를 보면, TemplateView를 생성하면서 `BasicTemplateHandler` 객체를 TemplateView에 설정하고 있습니다. BasicTemplateHandler는 TemplateHandler 구현체로, 위에서 설명한 상호작용을 처리합니다. 필요하다면, 이 BasicTemplateHandler를 상속 및 구현하여 상호작용에 관여할 수 있습니다.
 
-## TemplateHandler interface
+## TemplateHandler
 
 TemplateView \(이하 View로 표기\) 는 버튼이 클릭되거나, 보여지는 item list에 변화가 생길때 이를 응용레벨로 알려 처리되도록 합니다. 또한 Toast나 Activity의 노출을 요청할 수도 있습니다.    
 각 상황에 호출되는 메서드들은 아래와 같습니다.
@@ -104,7 +104,9 @@ TemplateView \(이하 View로 표기\) 는 버튼이 클릭되거나, 보여지�
   </tbody>
 </table>
 
-### TemplateHandler.ClientListener interface
+
+
+## TemplateHandler.ClientListener
 
 TemplateHandler가 View에서 응용레벨로의 메시지 전달 혹은 요청이라면,  ClientListener는 응용레벨에서 View로의 메시지 전달과 요청이라고 할 수 있다. 
 
