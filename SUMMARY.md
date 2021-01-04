@@ -160,6 +160,7 @@
     * [NUGU 기기](nugu-sdk/sdk-design-guide/nugu-device.md)
     * [부팅화면](nugu-sdk/sdk-design-guide/booting.md)
     * [Voice Chrome](nugu-sdk/sdk-design-guide/voice-chrome.md)
+    * [Display Template](nugu-sdk/sdk-design-guide/display-template.md)
     * [NUGU Inside](nugu-sdk/sdk-design-guide/nugu-inside.md)
     * [Error handling](nugu-sdk/sdk-design-guide/error-handling.md)
   * [Release note](nugu-sdk/release-note.md)
