@@ -207,7 +207,7 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
       <td style="text-align:left">&#xD655;&#xC7A5; &#xAE30;&#xB2A5; &#xC218;&#xD589;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
+      <td style="text-align:left">&#xC9C0;</td>
     </tr>
     <tr>
       <td style="text-align:left">Speaker</td>
@@ -261,7 +261,7 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
       <td style="text-align:left">&#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC; &#xC81C;&#xACF5;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
       <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
+      <td style="text-align:left">&#xC9C0;</td>
     </tr>
     <tr>
       <td style="text-align:left">Session</td>

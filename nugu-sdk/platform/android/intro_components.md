@@ -15,7 +15,7 @@ NUGU SDK for Android 를 통한 개발을 위해서는 `NuguCore`, `NuguInterfac
   * `NuguClientKit` : NUGU서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
 * NUGU Component\(Depends on platform\)
   * `NuguAndroidHelper` : NUGU서비스를 안드로이드 플랫폼에서 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
-  * `NuguUXKit` : NUGU의 디자인 가이드를 준수하는 UX 요소들을 제공합니다.
+  * `NuguUXKit` :  NUGU의 디자인 가이드를 준수하는 UX 요소를 제공하고, Template 화면 노출 및 제어를 위한 도구를 제공합니다.
   * `NuguLoginKit` : NUGU의 로그인을 도와주는 기능을 제공합니다.
   * `NuguServiceKit` : NUGU 서비스의 Play 설정을 위한 WebView 를 제공합니다.
 * Vendor Component

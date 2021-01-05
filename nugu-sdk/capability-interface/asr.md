@@ -45,6 +45,11 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
       <td style="text-align:left">Recognize directive, ExpectSpeech event &#xC758; sessionId &#xD544;&#xB4DC;
         &#xC0AD;&#xC81C;</td>
     </tr>
+    <tr>
+      <td style="text-align:left">1.4</td>
+      <td style="text-align:left">2020.11.18</td>
+      <td style="text-align:left">ExpectSpeech directive &#xC5D0; epd &#xD544;&#xB4DC; &#xCD94;&#xAC00;</td>
+    </tr>
   </tbody>
 </table>
 
@@ -343,6 +348,11 @@ asr_handler->stopRecognition()
         "{{STRING}}"
       ],
       "playServiceId" : "playServiceId"
+    },
+    "epd": {
+      "timeoutMilliseconds": {{LONG}},
+      "silenceIntervalInMilliseconds": {{LONG}},
+      "maxSpeechDurationMilliseconds": {{LONG}}
     }
   }
 }
@@ -428,6 +438,51 @@ asr_handler->stopRecognition()
       <td style="text-align:left">string</td>
       <td style="text-align:left">N</td>
       <td style="text-align:left"></td>
+    </tr>
+    <tr>
+      <td style="text-align:left">epd</td>
+      <td style="text-align:left">object</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">End Point Detection &#xAD00;&#xB828; &#xC815;&#xBCF4;, &#xC5C6;&#xC73C;&#xBA74;
+        device&#xC758; default &#xAC12;&#xC744; &#xC0AC;&#xC6A9; &#xD558;&#xC704;&#xC758;
+        3&#xAC1C; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB3C4; optional&#xC774;&#xAE30;
+        &#xB54C;&#xBB38;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB9CC;
+        &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xACE0;, &#xC5C6;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294;
+        device&#xC758; default &#xAC12;&#xC744; &#xC0AC;&#xC6A9;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>epd.</p>
+        <p>timeoutMilliseconds</p>
+      </td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p>Wake up &#xD6C4; &#xC885;&#xB8CC;&#xAE4C;&#xC9C0; &#xB300;&#xAE30; &#xC2DC;&#xAC04;
+          (&#xB2E8;&#xC704;: msec)</p>
+        <p><b>&#xC774; &#xAC12;&#xC740; &#xC704;&#xC758; timeoutInMilliseconds&#xC640;&#xB294; &#xB2E4;&#xB978; epd &#xC804;&#xC6A9;&#xAC12;</b>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>epd.</p>
+        <p>silenceIntervalInMilliseconds</p>
+      </td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">end point detection &#xC804;&#xC5D0; &#xAE30;&#xB2E4;&#xB9AC;&#xB294;
+        &#xBB35;&#xC74C; &#xAD6C;&#xAC04; (&#xB2E8;&#xC704;: msec)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">
+        <p>epd.</p>
+        <p>maxSpeechDurationMilliseconds</p>
+      </td>
+      <td style="text-align:left">long</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654; &#xCD5C;&#xB300; &#xB179;&#xC74C;
+        &#xC2DC;&#xAC04; (&#xB2E8;&#xC704;: msec)</td>
     </tr>
   </tbody>
 </table>

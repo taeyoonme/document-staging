@@ -6,7 +6,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 ## Version
 
-최신 버전은 1.4 입니다.
+최신 버전은 1.5 입니다.
 
 <table>
   <thead>
@@ -64,6 +64,16 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
       <td style="text-align:left">
         <ul>
           <li>Context &#xC5D0; playServiceId &#xCD94;&#xAC00;</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.5</td>
+      <td style="text-align:left">2020.12.09</td>
+      <td style="text-align:left">
+        <ul>
+          <li>PlaybackStopped event &#xC758; reason &#xD544;&#xB4DC; &#xAC12;&#xC5D0;
+            &#xB300;&#xD55C; &#xC870;&#xAC74; &#xC218;&#xC815;</li>
         </ul>
       </td>
     </tr>
@@ -1469,11 +1479,14 @@ audio_player_handler->requestShuffleCommand(false)
         <p>&#xC774; &#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4;
           &#xC774;&#xC720;&#xB97C; &#xBA85;&#xC2DC;&#xD558;&#xAE30; &#xC704;&#xD55C;
           &#xAC1D;&#xCCB4;</p>
-        <p>PLAY_ANOTHER: &#xB2E4;&#xB978; &#xACE1; &#xC7AC;&#xC0DD;&#xC744; &#xC704;&#xD574;
-          &#xC774;&#xC804;&#xC5D0; &#xC7AC;&#xC0DD;&#xD558;&#xB358; &#xACE1;&#xC744;
-          &#xC815;&#xC9C0;&#xD588;&#xC744; &#xB54C; &#xC62C;&#xB824;&#xC8FC;&#xB294;
-          &#xAC12;.</p>
-        <p>STOP: &#xADF8; &#xC678; &#xC815;&#xC9C0;&#xC758; &#xACBD;&#xC6B0;.</p>
+        <p><b>STOP</b>, <b>PLAY_ANOTHER</b> &#xC911; &#xD558;&#xB098;.</p>
+        <ul>
+          <li><b>PLAY_ANOTHER:</b>  <b>&#xB3D9;&#xC77C; play &#xB0B4;&#xC5D0;&#xC11C;</b> &#xB2E4;&#xB978;
+            &#xACE1; &#xC7AC;&#xC0DD;&#xC744; &#xC704;&#xD574; &#xC774;&#xC804;&#xC5D0;
+            &#xC7AC;&#xC0DD;&#xD558;&#xB358; &#xACE1;&#xC744; &#xC815;&#xC9C0;&#xD588;&#xC744;
+            &#xB54C; &#xC62C;&#xB824;&#xC8FC;&#xB294; &#xAC12;.</li>
+          <li><b>STOP:</b> &#xADF8; &#xC678; &#xC815;&#xC9C0;&#xC758; &#xACBD;&#xC6B0;.</li>
+        </ul>
       </td>
     </tr>
   </tbody>

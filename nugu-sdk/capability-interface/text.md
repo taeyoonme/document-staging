@@ -41,6 +41,16 @@ description: 텍스트 명령을 Play 로 전달하기 위한 규격
       <td style="text-align:left">2020.09.02</td>
       <td style="text-align:left">TextSource &#xC5D0; playServiceId &#xCD94;&#xAC00;</td>
     </tr>
+    <tr>
+      <td style="text-align:left">1.4</td>
+      <td style="text-align:left">2020.11.13</td>
+      <td style="text-align:left">TextRedirect directive &#xCD94;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.5</td>
+      <td style="text-align:left">2020.11.30</td>
+      <td style="text-align:left">TextSourceFailed, TextRedirectFailed event &#xCD94;</td>
+    </tr>
   </tbody>
 </table>
 
@@ -119,6 +129,8 @@ text_handler->requestTextInput(text)
 
 ### TextSource
 
+* 외부 시스템에서 Device Gateway를 사용하여 직접 연동하는 경우에만 사용
+
 ```text
 {
   "header": {
@@ -171,6 +183,83 @@ text_handler->requestTextInput(text)
         <p>ASR.ExpectSpeech &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xD558;&#xC5EC; &#xB3D9;&#xC791;
           &#xD568;.</p>
         <p>(TextSource &#xC5D0; playServiceId &#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0;
+          ASR.ExpecSpeech &#xC5D0;&#xC11C; &#xBC1B;&#xC740; playServiceId, domainTypes,
+          asrContext &#xB97C; TextInput &#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xC9C0;
+          &#xC54A;&#xC74C;)</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### TextRedirect
+
+Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 실행하고자 하는 경우에 사용
+
+```text
+{
+  "header": {
+    "namespace": "Text",
+    "name": "TextRedirect",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.3"
+  },
+  "payload": {
+    "text": "{{STRING}}",
+    "token": "{{STRING}}",
+    "playServiceId": "{{STRING}}",
+    "targetPlayServiceId": "{{STRING}}"
+  }
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">text</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xB85C; &#xC804;&#xB2EC;&#xD55C; &#xB4A4;
+        context&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xB2E4;&#xC2DC; Device
+        Gateway&#xB85C; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD558;&#xB294; text</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; text&#xB97C; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
+        &#xC704;&#xD55C; unique string</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">playServiceId</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xB514;&#xB809;&#xD2F0;&#xBE0C;&#xB97C; &#xC9C0;&#xC2DC;&#xD55C; PlayServiceId
+        (Play&#xC5D0;&#xC11C; NPK &#xD1B5;&#xD55C; &#xC751;&#xB2F5;&#xC77C;&#xB54C;&#xB294;
+        &#xB77C;&#xC6B0;&#xD130;&#xAC00; &#xC54C;&#xC544;&#xC11C; &#xCC44;&#xC6CC;&#xC90C;)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">targetPlayServiceId</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p>&#xAC12;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xBA74; TextInput&#xC758; playServiceId
+          &#xAC12;&#xC744; &#xC124;&#xC815;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;</p>
+        <p>&#xBA85;&#xD655;&#xD788; &#xB77C;&#xC6B0;&#xD305;&#xB418;&#xC5B4;&#xC57C;
+          &#xD558;&#xB294; Play&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;
+          &#xC0AC;&#xC6A9;&#xB418;&#xACE0;, &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;
+          &#xB77C;&#xC6B0;&#xD305; &#xB85C;&#xC9C1;&#xC5D0; &#xC758;&#xD574; &#xB77C;&#xC6B0;&#xD305;</p>
+        <p>ASR.ExpectSpeech &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xD558;&#xC5EC; &#xB3D9;&#xC791;
+          &#xD568;.</p>
+        <p>(TextRedirect&#xC5D0; targetPlayServiceId&#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0;
           ASR.ExpecSpeech &#xC5D0;&#xC11C; &#xBC1B;&#xC740; playServiceId, domainTypes,
           asrContext &#xB97C; TextInput &#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xC9C0;
           &#xC54A;&#xC74C;)</p>
@@ -314,4 +403,52 @@ text_handler->requestTextInput(text)
     </tr>
   </tbody>
 </table>
+
+### TextSourceFailed
+
+```text
+{
+  "header": {
+    "namespace": "Text",
+    "name": "TextSourceFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.5"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "token": "{{STRING}}",
+    "errorCode": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y |  TextSource에서 정의한 token |
+| errorCode | string | Y | NOT\_SUPPORTED\_STATE |
+
+### TextRedirectFailed
+
+```text
+{
+  "header": {
+    "namespace": "Text",
+    "name": "TextRedirectFailed",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.5"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "token": "{{STRING}}",
+    "errorCode": "{{STRING}}"
+  }
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y |  TextSource에서 정의한 token |
+| errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 

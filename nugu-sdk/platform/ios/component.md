@@ -1,6 +1,6 @@
 # 구성요소
 
-![](../../../.gitbook/assets/image%20%287%29.png)
+![](../../../.gitbook/assets/diagram.001.jpeg)
 
 ## 구성요소 목록
 
@@ -17,6 +17,7 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguAgents` Fram
 * NUGU Component \(Depends on platform\)
   * `NuguLoginKit`: NUGU 서비스 이용을 위한 OAuth 인증을 도와주는 기능을 제공합니다.
   * `NuguServiceKit`: NUGU 서비스의 Play 설정을 위한 WebView 를 제공합니다.
+  * `NuguUIKit`: NUGU 서비스 사용에 필요한 UI Components \(VoiceChrome, Button, DisplayWebView 등\) 를 제공합니다.
 * Vendor Component
   * `SilverTray`: Encoding 된 `Data` stream 을 재생하기 위한 Player 를 제공합니다.
   * `NattyLog`: 디버깅을 위한 로그를 출력을 도와주는 기능을 제공합니다. \(iOS Application 또는 Framework에서 직접 참조 및 사용이 가능합니다.\)
@@ -43,6 +44,8 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguAgents` Fram
           <br /><code>NuguLoginKit</code>
         </p>
         <p><code>NuguServiceKit</code>
+        </p>
+        <p><code>NuguUIKit</code>
         </p>
         <p><code>KeenSense</code>
         </p>
@@ -89,6 +92,7 @@ target 'your_application' do
     pod 'NuguAgents'
     pod 'NuguClientKit'
     pod 'NuguLoginKit'
+    pod 'NuguUIKit'
     pod 'NuguServiceKit'
     pod 'KeenSense'
     pod 'JadeMarble'
