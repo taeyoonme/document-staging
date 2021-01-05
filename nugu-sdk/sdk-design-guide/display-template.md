@@ -1,10 +1,10 @@
 # Display Template
 
-화면을 갖고 있는 디바이스 및 앱에서 NUGU SDK를 적용하는 경우, Display를 통해 정보를 표시할 수 있습니다. NUGU Display는 NUGU 플랫폼에서 제공하는 Display Template을 사용합니다. Display Template 사용을 위해서는 SK텔레콤 담당자와 협의가 필요합니다.
+화면을 갖고 있는 디바이스 및 앱에서 NUGU SDK를 적용하는 경우, Display를 통해 정보를 표시할 수 있습니다. NUGU Display를 사용하기 위해서는 Display Template을 사용합니다. Display Template 사용을 위해서는 NUGU SDK 사용을 위한 제휴 협의 시 SK텔레콤 담당자와 협의가 필요합니다.
 
-SK텔레콤 담당자와 협의를 통해 Display Template 서버에서 추가 작업이 진행된 후 연동 개발을 할 수 있습니다.
+SK텔레콤 내부의 Display Template 서버에서 추가 작업이 진행된 후 연동 개발을 할 수 있습니다.
 
-### 지원 디바이스 및 해상도
+### 지원 디바이스 및 해상
 
 Display Template은 아래 디바이스 및 해상도를 지원합니다.
 
