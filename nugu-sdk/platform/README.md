@@ -38,7 +38,6 @@ description: >-
         <p>Ubuntu Linux</p>
         <p>Raspberry Pi</p>
         <p>Generic Linux</p>
-        <p>ODROID-XU4</p>
       </td>
     </tr>
     <tr>

@@ -51,6 +51,19 @@ NuguClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습�
 let extensionAgent = nuguClient.extensionAgent
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+CapabilityFactory::makeCapability 함수로 ExtensionAgent 를 생성하고 NuguClient 에 추가해 주어야합니다.
+
+```text
+auto extension_handler(std::shared_ptr<IExtensionHandler>(
+        CapabilityFactory::makeCapability<ExtensionAgent, IExtensionHandler>()));
+
+nugu_client->getCapabilityBuilder()
+    ->add(extension_handler.get())
+    ->construct();
+```
+{% endtab %}
 {% endtabs %}
 
 ### Context 구성 및 기능 실행
@@ -93,6 +106,24 @@ class MyExtensionAgentDelegate: ExtensionAgentDelegate {
 extensionAgent.delegate = MyExtensionAgentDelegate()
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+IExtensionListener를 추가합니다.
+
+```text
+class ExtensionListener : public IExtensionListener {
+public:
+    ...
+
+    void receiveAction(const std::string& data, const std::string& ps_id, const std::string& dialog_id) override
+    {
+        ...
+    }
+};
+auto extension_listener(std::make_shared<ExtensionListener>());
+CapabilityFactory::makeCapability<ExtensionAgent, IExtensionHandler>(extension_listener.get());
+```
+{% endtab %}
 {% endtabs %}
 
 ### 기능 요청
@@ -109,6 +140,12 @@ extensionAgent.issueCommand(playServiceId, data, callback)
 {% tab title="iOS" %}
 ```text
 extentionAgent.requestCommand(data: data, playServiceId: playServiceId)
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+```
+extension_handler->commandIssued(play_service_id, data)
 ```
 {% endtab %}
 {% endtabs %}

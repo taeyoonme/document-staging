@@ -127,29 +127,41 @@ int main(int argc, char *argv[])
 
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. 헤더 파일\(nugu\_client.hh\)을 include에 포함시키고, `NuguClientKit` namespace를 사용하도록 설정 합니다.
+1. 헤더 파일\(nugu\_client.hh, capability\_factory.hh\)을 include에 포함시키고, `NuguClientKit, NuguCapability` namespace를 사용하도록 설정합니다.
 
    ```cpp
-   #include <interface/nugu_client.hh>
+   #include <clientkit/nugu_client.hh>
+   #include <capability/capability_factory.hh>
 
    using namespace NuguClientKit;
+   using namespace NuguCapability;
    ```
 
-2. `NuguClient` 객체를 만들고, OAuth2 access-token과 음성인식 모델 파일을 설정합니다.
+2. `IASRHandler` 객체를 생성하고, 음성인식 모델 파일을 설정합니다.
+
+   ```cpp
+   auto my_asr_listener(std::make_shared<MyASR>());
+   auto asr_handler(std::shared_ptr<IASRHandler>(
+       CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(my_asr_listener.get())));
+   asr_handler->setAttribute(ASRAttribute { "/var/lib/nugu/model", "CLIENT", "PARTIAL" });
+   ```
+
+3. `NuguClient` 객체를 생성하고, `ASR Capability` 추가 후, SDK를 초기화 합니다.
 
    ```cpp
    NuguClient* nugu_client = new NuguClient());
-   nugu_client->setAccessToken("...");
-   nugu_client->setConfig(NuguConfig::Key::MODEL_PATH, "/home/work/model");
-   ```
-
-3. 음성인식 기능을 사용하기 위해 `ASR Capability`를 추가하고 NUGU 서비스 연결을 요청합니다.
-
-   ```cpp
    nugu_client->getCapabilityBuilder()
            ->add(CapabilityType::ASR, my_asr_listener.get())
            ->construct();
-   nugu_client->getNetworkManager()->connect();
+   nugu_client->initialize();
+   ```
+
+4. 음성인식 기능을 사용하기 위해 OAuth2 access-token 설정 후, NUGU 서비스 연결을 요청합니다.
+
+   ```cpp
+   auto network_manager(nugu_client->getNetworkManager());
+   network_manager->setToken("...");
+   network_manager->connect();
    ```
 
 전체 코드는 Github의 아래 wiki에서 확인할 수 있습니다.
