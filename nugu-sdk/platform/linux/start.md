@@ -127,7 +127,7 @@ int main(int argc, char *argv[])
 
 음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.
 
-1. 헤더 파일\(nugu\_client.hh, capability\_factory.hh\)을 include에 포함시키고, `NuguClientKit, NuguCapability` namespace를 사용하도록 설정 합니다.
+1. 헤더 파일\(nugu\_client.hh, capability\_factory.hh\)을 include에 포함시키고, `NuguClientKit, NuguCapability` namespace를 사용하도록 설정합니다.
 
    ```cpp
    #include <clientkit/nugu_client.hh>
