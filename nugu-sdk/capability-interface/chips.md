@@ -45,6 +45,19 @@ NuguClient instance 를 통해 DialogStateAggregator instance 에 접근할 수 
 let dialogStateAggregator = nuguClient.dialogStateAggregator
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+CapabilityFactory::makeCapability 함수로 ChipsAgent 를 생성하고 NuguClient 에 추가해 주어야합니다.
+
+```text
+auto chips_handler(std::shared_ptr<IChipsHandler>(
+        CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>()));
+
+nugu_client->getCapabilityBuilder()
+    ->add(chips_handler.get())
+    ->construct();
+```
+{% endtab %}
 {% endtabs %}
 
 ### UI 구성
@@ -75,6 +88,24 @@ class MyDialogStateDelegate: DialogStateDelegate {
     }
 }
 dialogStateAggregator.add(delegate: MyDialogStateDelegate())
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+IChipsListener를 추가합니다.
+
+```text
+class ChipsListener : public IChipsListener {
+public:
+    ...
+
+    void onReceiveRender(ChipsInfo&& chips_info) override
+    {
+        ...
+    }
+};
+auto chips_listener(std::make_shared<IChipsListener>());
+CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get());
 ```
 {% endtab %}
 {% endtabs %}

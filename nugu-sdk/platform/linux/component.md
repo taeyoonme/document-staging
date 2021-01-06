@@ -1,12 +1,12 @@
 # 구성요소
 
-![](../../../.gitbook/assets/image-26.png)
+![](../../../.gitbook/assets/linux_component.png)
 
 ## 구성요소 목록
 
 * NUGU Component \(Common\)
   * `NuguClientKit`: NUGU 서비스를 쉽게 개발할 수 있도록 도와주는 기능을 제공합니다.
-  * `NuguInterface`: Capability를 쉽게 제어할 수 있는 API를 제공합니다.
+  * `NuguCapability`: Capability를 쉽게 제어할 수 있는 API를 제공합니다.
   * `NuguCore`: NUGU 서비스 개발에 필요한 구성요소들을 제공합니다.
 * NUGU Component \(Depends on platform\)
   * Plug-in: 디바이스 특성에 맞게 미디어 드라이버를 구현할 수 있는 API를 제공합니다.
@@ -48,4 +48,5 @@ NUGU SDK for Linux는 아래의 외부 라이브러리를 사용하고 있고, S
 | libcurl | [https://github.com/curl/curl.git](https://github.com/curl/curl.git) | [MIT style license](https://curl.haxx.se/docs/copyright.html) |
 | nghttp2 | [https://github.com/nghttp2/nghttp2.git](https://github.com/nghttp2/nghttp2.git) | [MIT](https://github.com/nghttp2/nghttp2/blob/master/COPYING) |
 | jsoncpp | [https://github.com/open-source-parsers/jsoncpp.git](https://github.com/open-source-parsers/jsoncpp.git) | [MIT](https://github.com/open-source-parsers/jsoncpp/blob/master/LICENSE) |
+| Opus | [https://opus-codec.org/development](https://opus-codec.org/development) | [BSD](https://git.xiph.org/?p=opus.git;a=blob;f=LICENSE_PLEASE_READ.txt;h=bc88efa6cb05789a6a6e697577ae6d8e5532e5df;hb=HEAD) |
 

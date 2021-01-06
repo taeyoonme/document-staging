@@ -6,6 +6,14 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2021-01-06
+
+* [Linux System Requirements](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform) 지원 platform 업데이트
+* [Linux 구성요소](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/android/intro_components#undefined) 다이어그램, 컴포넌트 설명, 의존성 목록 업데이트
+* [Linux 시작하기](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/linux/start) NUGU 음성인식 사용 example 업데이
+*  [Capability Interface - Extension](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/capability-interface/extension) Linux example 추가
+* [Capability Interface - Chips](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/capability-interface/chips) Linux example 추
+
 ### 2021-01-04
 
 * [Android 구성요소](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/android/intro_components#undefined) 중 NuguUXKit 설명 업데이트 
