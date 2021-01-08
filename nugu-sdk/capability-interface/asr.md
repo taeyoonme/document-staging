@@ -119,6 +119,12 @@ Microphone 으로 부터 음성 데이터를 가져오기 위한 MicInputProvide
 let micInputProvider = MicInputProvider()
 ```
 
+Microphone 으로 부터 가져온 음성 데이터가 NuguClient 로 전달될 수 있도록 합니다.
+
+```text
+micInputProvider.delegate = nuguClient
+```
+
 음성인식에 필요한 학습 모델을 설정합니다.
 
 ```text
@@ -160,9 +166,7 @@ speechRecognizerAggregator.startListening()
 
 {% tab title="iOS" %}
 ```text
-try micInputProvider.start { (buffer, _) in
-    asrAgent.putAudioBuffer(buffer: buffer)
-}
+try micInputProvider.start()
 asrAgent.startRecognition(initiator: .user)
 ```
 {% endtab %}
@@ -271,7 +275,7 @@ CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(asr_listener.get());
 {% tabs %}
 {% tab title="Android" %}
 ```text
-speechRecognizerAggregator.stopListening
+speechRecognizerAggregator.stopListening()
 ```
 {% endtab %}
 
