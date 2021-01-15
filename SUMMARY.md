@@ -141,6 +141,7 @@
       * [Background 동작 처리](nugu-sdk/platform/ios/background.md)
       * [NUGU 서비스 관리 web server 연동](nugu-sdk/platform/ios/web-server.md)
       * [NUGU Display의 노출과 제어](nugu-sdk/platform/ios/nugu-display-template-server.md)
+      * [NUGU 사용자 인터페이스](nugu-sdk/platform/ios/nugu.md)
       * [테스트 환경 설정](nugu-sdk/platform/ios/testing_sdk_integration.md)
     * [Android](nugu-sdk/platform/android/README.md)
       * [시작하기](nugu-sdk/platform/android/start.md)
