@@ -28,47 +28,11 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguAgents` Fram
 
 ### NUGU & Vendor Components
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC774;&#xB984;</th>
-      <th style="text-align:left">&#xC8FC;&#xC18C;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">
-        <p><code>NuguCore</code>
-          <br /><code>NuguAgents</code>
-          <br /><code>NuguClientKit</code>
-          <br /><code>NuguLoginKit</code>
-        </p>
-        <p><code>NuguServiceKit</code>
-        </p>
-        <p><code>NuguUIKit</code>
-        </p>
-        <p><code>KeenSense</code>
-        </p>
-        <p><code>JadeMarble</code>
-        </p>
-      </td>
-      <td style="text-align:left"><a href="https://github.com/nugu-developers/nugu-ios">https://github.com/nugu-developers/nugu-ios</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>NattyLog</code>
-      </td>
-      <td style="text-align:left"><a href="https://github.com/nugu-developers/natty-log-ios">https://github.com/nugu-developers/natty-log-ios</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><code>SilverTray</code>
-      </td>
-      <td style="text-align:left"><a href="https://github.com/nugu-developers/silvertray-iOS">https://github.com/nugu-developers/keen-sense-ios</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| 이름 | 주소 |
+| :--- | :--- |
+| `NuguCore` `NuguAgents` `NuguClientKit` `NuguLoginKit` `NuguServiceKit` `NuguUIKit` `KeenSense` `JadeMarble` | [https://github.com/nugu-developers/nugu-ios](https://github.com/nugu-developers/nugu-ios) |
+| `NattyLog` | [https://github.com/nugu-developers/natty-log-ios](https://github.com/nugu-developers/natty-log-ios) |
+| `SilverTray` | [https://github.com/nugu-developers/keen-sense-ios](https://github.com/nugu-developers/keen-sense-ios) |
 
 ### External
 

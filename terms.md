@@ -1,167 +1,24 @@
 # 용어 정의
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC6A9;&#xC5B4;</th>
-      <th style="text-align:left">&#xC815;&#xC758;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Play</td>
-      <td style="text-align:left">NUGU Platform&#xC758; &#xCD5C;&#xC18C; &#xC11C;&#xBE44;&#xC2A4; &#xB2E8;&#xC704;&#xB85C;,
-        &#xC0AC;&#xC6A9;&#xC790;&#xC640; &#xC0C1;&#xD638; &#xC791;&#xC6A9;&#xD558;&#xC5EC;
-        &#xC758;&#xB3C4;&#xB97C; &#xD30C;&#xC545;&#xD558;&#xACE0; &#xC801;&#xC808;&#xD55C;
-        &#xB2F5;&#xBCC0;&#xC744; &#xC8FC;&#xAC70;&#xB098; &#xBA85;&#xB839;&#xC744;
-        &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NUGU play kit</td>
-      <td style="text-align:left">Play&#xB97C; &#xAD00;&#xB9AC;/&#xC2EC;&#xC0AC;&#xC694;&#xCCAD;/&#xBC30;&#xD3EC;&#xB97C;
-        &#xD558;&#xB294; &#xB3C4;&#xAD6C;&#xB85C;, Play&#xB97C; &#xB9CC;&#xB4DC;&#xB294;
-        &#xB3C4;&#xAD6C;&#xC778; Play Builder&#xC640; &#xD568;&#xAED8; &#xAD6C;&#xC131;&#xB418;&#xC5B4;
-        &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Play Builder</td>
-      <td style="text-align:left">
-        <p>Play&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xB3C4;&#xAD6C;&#xB85C;, &#xAC1C;&#xBC1C;&#xC790;&#xAC00;
-          &#xC544;&#xB2C8;&#xC5B4;&#xB3C4; &#xC790;&#xC2E0;&#xB9CC;&#xC758; Play&#xB97C;
-          &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xB3C4;&#xC640;&#xC90D;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xBC1C;&#xD654;&#xB97C; &#xC774;&#xD574;&#xD558;&#xB294;
-          User Utterance Model, &#xC774;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C;
-          &#xAE30;&#xB2A5;&#xC744; &#xC218;&#xD589;&#xD558;&#xB294; Action&#xC744;
-          &#xC870;&#xD569;&#xD558;&#xC5EC; &#xD558;&#xB098;&#xC758; &#xC644;&#xACB0;&#xB41C;
-          Play&#xB97C; &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Intent</td>
-      <td style="text-align:left">Intent&#xB294; Play&#xC758; &#xAE30;&#xB2A5;&#xC744; &#xB3D9;&#xC791;&#xC2DC;&#xD0A4;&#xAE30;
-        &#xC704;&#xD574; &#xD45C;&#xD604;&#xD558;&#xB294; &#xC0AC;&#xC6A9;&#xC790;
-        &#xC758;&#xB3C4;&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xBA70;, Play&#xC758;
-        &#xD544;&#xC218; &#xAD6C;&#xC131; &#xC694;&#xC18C;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Custom Intent</td>
-      <td style="text-align:left">Play&#xB97C; &#xB9CC;&#xB4DC;&#xB294; &#xC0AC;&#xB78C;&#xC774; &#xC0DD;&#xC131;&#xD55C;
-        Intent&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Built-in Intent</td>
-      <td style="text-align:left">NUGU Platform&#xC5D0;&#xC11C; &#xBBF8;&#xB9AC; &#xB9CC;&#xB4E4;&#xC5B4;
-        &#xD6C8;&#xB828;&#xC2DC;&#xCF1C;&#xB454; Intent &#xC785;&#xB2C8;&#xB2E4;.
-        Custom Intent&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xBC29;&#xBC95;&#xC73C;&#xB85C;
-        Action&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Entity</td>
-      <td style="text-align:left">Entity&#xB294; Intent&#xB9CC;&#xC73C;&#xB85C; &#xD2B9;&#xC815; &#xAE30;&#xB2A5;&#xC758;
-        &#xBC1C;&#xD654; &#xC758;&#xB3C4;&#xB97C; &#xD45C;&#xD604;&#xD558;&#xAE30;
-        &#xC5B4;&#xB824;&#xC6B8; &#xB54C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xBD80;&#xAC00;
-        &#xC0C1;&#xC138; &#xC815;&#xBCF4;&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xB294;
-        &#xAC1C;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Play &#xD638;&#xCD9C; &#xC774;&#xB984;</td>
-      <td style="text-align:left">Play &#xD638;&#xCD9C; &#xC774;&#xB984;&#xC740; &#xC0AC;&#xC6A9;&#xC790;&#xAC00;
-        Play&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xAE30; &#xC704;&#xD574; &#xBC1C;&#xD654;&#xD558;&#xB294;
-        &#xACE0;&#xC720;&#xD55C; &#xC774;&#xB984;&#xC744; &#xB9D0;&#xD569;&#xB2C8;&#xB2E4;.
-        <br
-        />&#xC0AC;&#xC6A9;&#xC790;&#xAC00; Play &#xD638;&#xCD9C; &#xC774;&#xB984;&#xC744;
-        &#xBC1C;&#xD654;&#xD558;&#xBA74; &#xD574;&#xB2F9; Play&#xC758; &#xC138;&#xC158;&#xC73C;&#xB85C;
-        &#xC9C4;&#xC785;&#xD558;&#xC5EC; &#xD574;&#xB2F9; Play&#xC758; &#xAE30;&#xB2A5;&#xC744;
-        &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.
-        <br
-        />&#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740; <a href="nugu-play/play-registration-and-review/register-a-play.md#define-an-invocation-name">&#xD638;&#xCD9C; &#xC774;&#xB984; &#xC815;&#xC758;&#xD558;&#xAE30;</a>&#xB97C;
-        &#xCC38;&#xACE0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Public Play</td>
-      <td style="text-align:left">&#xC2EC;&#xC0AC;&#xB97C; &#xD1B5;&#xD574; &#xBC30;&#xD3EC;&#xB418;&#xBA74;,
-        &#xBAA8;&#xB450;&#xAC00; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294;
-        Play&#xC785;&#xB2C8;&#xB2E4;. &#xCD94;&#xD6C4; &#xACF5;&#xAC1C; &#xC608;&#xC815;&#xC778;
-        &#xC2A4;&#xD1A0;&#xC5B4;&#xC5D0; Play&#xAC00; &#xB4F1;&#xB85D;&#xB418;&#xBA74;
-        NUGU &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC120;&#xD0DD;&#xD560; &#xC218;
-        &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC2A4;&#xD1A0;&#xC5B4;&#xAC00; &#xACF5;&#xAC1C;&#xB418;&#xAE30;
-        &#xC804;&#xAE4C;&#xC9C0;&#xB294; &#xC120;&#xD0DD; &#xACFC;&#xC815; &#xC5C6;&#xC774;
-        &#xBC14;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Private Play</td>
-      <td style="text-align:left">&#xB4F1;&#xB85D;&#xB41C; &#xB514;&#xBC14;&#xC774;&#xC2A4; &#xD639;&#xC740;
-        &#xCD08;&#xB300;&#xB41C; &#xC0AC;&#xC6A9;&#xC790;&#xB9CC; &#xC0AC;&#xC6A9;&#xD560;
-        &#xC218; &#xC788;&#xB294; Play&#xC785;&#xB2C8;&#xB2E4;. &#xC608;&#xB97C;
-        &#xB4E4;&#xC5B4;, &#xD68C;&#xC0AC; &#xB0B4;&#xC5D0;&#xC11C;&#xB9CC; &#xD639;&#xC740;
-        &#xAC00;&#xC871;/&#xCE5C;&#xAD6C;&#xB07C;&#xB9AC;&#xB9CC; &#xC0AC;&#xC6A9;&#xD558;&#xB294;
-        Play&#xB85C;&#xB3C4; &#xD65C;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.
-        &#xD2B9;&#xC815; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xB97C; &#xB4F1;&#xB85D;&#xD558;&#xAC70;&#xB098;
-        &#xC81C;&#xD55C;&#xB41C; &#xC0AC;&#xC6A9;&#xC790;&#xB9CC; &#xCD08;&#xB300;&#xD558;&#xB294;
-        &#xAC83;&#xC740; NUGU biz&#xC5D0;&#xC11C; &#xC124;&#xC815;&#xD560; &#xC218;
-        &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Backend proxy</td>
-      <td style="text-align:left">&#xC678;&#xBD80; &#xC11C;&#xBC84;&#xB85C;&#xBD80;&#xD130; &#xD544;&#xC694;&#xD55C;
-        &#xC815;&#xBCF4;&#xB97C; &#xAC00;&#xC838;&#xC640;&#xC11C; &#xC751;&#xB2F5;&#xC744;
-        &#xC0DD;&#xC131;&#xD574;&#xC57C; &#xD558;&#xB294; &#xACBD;&#xC6B0;, &#xC678;&#xBD80;
-        &#xC11C;&#xBC84;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; &#xB300;&#xD654;
-        &#xAD00;&#xB9AC;&#xC790;&#xC5D0;&#xAC8C; &#xC815;&#xBCF4;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294;
-        &#xC11C;&#xBC84;&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Capability interface</td>
-      <td style="text-align:left">&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC758; &#xC5EC;&#xB7EC; &#xAE30;&#xB2A5;&#xC744;
-        &#xC81C;&#xC5B4;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xADDC;&#xACA9;&#xC73C;&#xB85C;,
-        &#xC751;&#xB2F5;&#xC744; &#xC7AC;&#xC0DD;&#xD558;&#xB294; &#xAE30;&#xB2A5;
-        &#xC678;&#xC5D0; &#xC624;&#xB514;&#xC624; &#xC7AC;&#xC0DD;, &#xBB34;&#xB4DC;&#xB4F1;
-        &#xC81C;&#xC5B4;, &#xC74C;&#xB7C9; &#xC870;&#xC808; &#xB4F1; &#xB2E4;&#xC591;&#xD55C;
-        &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NUGU Biz</td>
-      <td style="text-align:left">Play&#xB97C; &#xB9CC;&#xB4E0; &#xAE30;&#xD68D;/&#xAC1C;&#xBC1C;&#xC790;&#xAC00;
-        &#xD2B9;&#xC815; &#xB514;&#xBC14;&#xC774;&#xC2A4;(Shared device) &#xB610;&#xB294;
-        &#xD2B9;&#xC815; &#xC0AC;&#xC6A9;&#xC790; &#xADF8;&#xB8F9;(Enrolled User)
-        &#xB300;&#xC0C1;&#xC5D0; &#xD55C;&#xD558;&#xC5EC; &#xD574;&#xB2F9; Play&#xB97C;
-        &#xC774;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xAD00;&#xB9AC;&#xD558;&#xB294;
-        &#xAE30;&#xB2A5;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xD234;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">ASR</td>
-      <td style="text-align:left">Auto Speech Recognition&#xC758; &#xC904;&#xC784;&#xB9D0;&#xB85C; &#xC74C;&#xC131;&#xC778;&#xC2DD;
-        &#xC5D4;&#xC9C4;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NLU</td>
-      <td style="text-align:left">Natural Language Understanding&#xC73C;&#xB85C; &#xC790;&#xC5F0;&#xC5B4;&#xC774;&#xD574;
-        &#xC5D4;&#xC9C4;&#xC744; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">TTS</td>
-      <td style="text-align:left">Text To Speech&#xB85C; &#xC74C;&#xC131;&#xD569;&#xC131; &#xC5D4;&#xC9C4;&#xC744;
-        &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">DM</td>
-      <td style="text-align:left">Dialog Management&#xB85C; &#xB300;&#xD654;&#xCC98;&#xB9AC; &#xC5D4;&#xC9C4;&#xC744;
-        &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NUGU SDK</td>
-      <td style="text-align:left">&#xC81C;&#xD734;&#xC0AC;&#xC758; &#xB2E4;&#xC591;&#xD55C; &#xB514;&#xBC14;&#xC774;&#xC2A4;
-        &#xB610;&#xB294; &#xC5B4;&#xD50C;&#xB9AC;&#xCF00;&#xC774;&#xC158; &#xB4F1;&#xC5D0;&#xC11C;
-        NUGU &#xD50C;&#xB7AB;&#xD3FC;&#xC5D0; &#xC5F0;&#xB3D9;&#xD558;&#xC5EC;
-        &#xC74C;&#xC131;&#xBA85;&#xB839; &#xAE30;&#xBC18;&#xC758; NUGU &#xAE30;&#xB2A5;&#xC744;
-        &#xC81C;&#xACF5;&#xD560; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC9C0;&#xC6D0;&#xD558;&#xB294;
-        Software Developement Kit&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Prompt</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC804;&#xB2EC;&#xB418;&#xB294;
-        &#xC751;&#xB2F5; &#xBA54;&#xC2DC;&#xC9C0;&#xB97C; &#xC758;&#xBBF8;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-  </tbody>
-</table>
+| 용어 | 정의 |
+| :--- | :--- |
+| Play | NUGU Platform의 최소 서비스 단위로, 사용자와 상호 작용하여 의도를 파악하고 적절한 답변을 주거나 명령을 수행합니다. |
+| NUGU play kit | Play를 관리/심사요청/배포를 하는 도구로, Play를 만드는 도구인 Play Builder와 함께 구성되어 있습니다. |
+| Play Builder | Play를 만드는 도구로, 개발자가 아니어도 자신만의 Play를 만들 수 있도록 도와줍니다. 사용자의 발화를 이해하는 User Utterance Model, 이를 기반으로 기능을 수행하는 Action을 조합하여 하나의 완결된 Play를 만듭니다. |
+| Intent | Intent는 Play의 기능을 동작시키기 위해 표현하는 사용자 의도를 의미하며, Play의 필수 구성 요소입니다. |
+| Custom Intent | Play를 만드는 사람이 생성한 Intent를 의미합니다. |
+| Built-in Intent | NUGU Platform에서 미리 만들어 훈련시켜둔 Intent 입니다. Custom Intent와 동일한 방법으로 Action에서 사용할 수 있습니다. |
+| Entity | Entity는 Intent만으로 특정 기능의 발화 의도를 표현하기 어려울 때 사용하는 부가 상세 정보를 의미하는 개체입니다. |
+| Play 호출 이름 | Play 호출 이름은 사용자가 Play를 호출하기 위해 발화하는 고유한 이름을 말합니다. 사용자가 Play 호출 이름을 발화하면 해당 Play의 세션으로 진입하여 해당 Play의 기능을 사용할 수 있게 됩니다. 자세한 내용은 [호출 이름 정의하기](nugu-play/play-registration-and-review/register-a-play.md#define-an-invocation-name)를 참고해야 합니다. |
+| Public Play | 심사를 통해 배포되면, 모두가 사용할 수 있는 Play입니다. 추후 공개 예정인 스토어에 Play가 등록되면 NUGU 사용자가 선택할 수 있습니다. 스토어가 공개되기 전까지는 선택 과정 없이 바로 사용할 수 있습니다. |
+| Private Play | 등록된 디바이스 혹은 초대된 사용자만 사용할 수 있는 Play입니다. 예를 들어, 회사 내에서만 혹은 가족/친구끼리만 사용하는 Play로도 활용할 수 있습니다. 특정 디바이스를 등록하거나 제한된 사용자만 초대하는 것은 NUGU biz에서 설정할 수 있습니다. |
+| Backend proxy | 외부 서버로부터 필요한 정보를 가져와서 응답을 생성해야 하는 경우, 외부 서버를 호출하여 대화 관리자에게 정보를 전달하는 서버를 의미합니다. |
+| Capability interface | 디바이스의 여러 기능을 제어하기 위한 규격으로, 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다. |
+| NUGU Biz | Play를 만든 기획/개발자가 특정 디바이스\(Shared device\) 또는 특정 사용자 그룹\(Enrolled User\) 대상에 한하여 해당 Play를 이용할 수 있도록 관리하는 기능을 제공하는 툴입니다. |
+| ASR | Auto Speech Recognition의 줄임말로 음성인식 엔진을 의미합니다. |
+| NLU | Natural Language Understanding으로 자연어이해 엔진을 의미합니다. |
+| TTS | Text To Speech로 음성합성 엔진을 의미합니다. |
+| DM | Dialog Management로 대화처리 엔진을 의미합니다. |
+| NUGU SDK | 제휴사의 다양한 디바이스 또는 어플리케이션 등에서 NUGU 플랫폼에 연동하여 음성명령 기반의 NUGU 기능을 제공할 수 있도록 지원하는 Software Developement Kit입니다. |
+| Prompt | 사용자에게 전달되는 응답 메시지를 의미합니다. |
 

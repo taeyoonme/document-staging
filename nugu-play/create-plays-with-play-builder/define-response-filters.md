@@ -1,60 +1,14 @@
 # Response Filter 사용하기
 
-
-
 {% embed url="https://www.youtube.com/watch?v=607eboMVxG4" caption="" %}
 
 Response Filter는 Parameter에 담긴 값 또는 형식을 변환시킬 수 있으며, Prompt에서 사용할 수 있습니다. Response Filter는 크게 세 가지가 있습니다. 이들은 각각 다음과 같은 특성을 가지고 있습니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Response Filter &#xC885;&#xB958;</th>
-      <th style="text-align:left">&#xD2B9;&#xC131;</th>
-      <th style="text-align:left">&#xAE30;&#xD638;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">NLG Translator</td>
-      <td style="text-align:left">
-        <ul>
-          <li>&#xC815;&#xD574;&#xC9C4; &#xADDC;&#xCE59;&#xC5D0; &#xC758;&#xD574; &#xAC12;&#xC744;
-            &#xBCC0;&#xD658;&#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</li>
-          <li>1&#xC774; &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &apos;a&apos;&#xB85C;, 2&#xAC00;
-            &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &apos;b&apos;&#xB85C; &#xBCC0;&#xD658;&#xC2DC;&#xD0AC;
-            &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-        </ul>
-      </td>
-      <td style="text-align:left">&gt;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NLG Normalizer</td>
-      <td style="text-align:left">
-        <ul>
-          <li>&#xC815;&#xD574;&#xC9C4; &#xADDC;&#xCE59;&#xC5D0; &#xC758;&#xD574; &#xAC12;&#xC744;
-            &#xBCC0;&#xD658;&#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</li>
-          <li>&#xD55C;&#xBC88;&#xC5D0; &#xC5EC;&#xB7EC; &#xAC00;&#xC9C0; &#xAC12;&#xC744;
-            &#xC77C;&#xAD04; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-          <li>1,2,3&#xC774; &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &apos;a&apos;&#xB85C;,
-            3,4,5,6,7&#xC774; &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &apos;b&apos;&#xB85C;
-            &#xBCC0;&#xD658;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-        </ul>
-      </td>
-      <td style="text-align:left">=</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NLG Function</td>
-      <td style="text-align:left">
-        <ul>
-          <li>&#xC815;&#xD574;&#xC9C4; &#xADDC;&#xCE59;&#xC5D0; &#xB9DE;&#xAC8C; &#xD615;&#xC2DD;&#xAC12;&#xC744;
-            &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</li>
-        </ul>
-      </td>
-      <td style="text-align:left">:</td>
-    </tr>
-  </tbody>
-</table>
+| Response Filter 종류 | 특성 | 기호 |
+| :--- | :--- | :--- |
+| NLG Translator | - 정해진 규칙에 의해 값을 변환해 줍니다. - 1이 들어오면 'a'로, 2가 들어오면 'b'로 변환시킬 수 있습니다. | &gt; |
+| NLG Normalizer | - 정해진 규칙에 의해 값을 변환해 줍니다. - 한번에 여러 가지 값을 일괄 변경할 수 있습니다. - 1,2,3이 들어오면 'a'로, 3,4,5,6,7이 들어오면 'b'로 변환할 수 있습니다. | = |
+| NLG Function | 정해진 규칙에 맞게 형식값을 변환합니다. | : |
 
 ## NLG Translator <a id="nlg-translator"></a>
 
@@ -72,7 +26,7 @@ NLG Translator를 입력하는 방법은 다음과 같습니다.
 
 2. Translator의 Filter명을 입력하고, 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-   ![](../../.gitbook/assets/ch3_324_c02.png)
+   ![](../../.gitbook/assets/ch3_324_c02%20%281%29.png)
 
 이렇게 Translator가 적용된 `{{status}}` Parameter에 "01"이라는 값이 들어오면 Translator가 "맑겠습니다."라는 텍스트로 변환시키게 됩니다.
 
@@ -89,15 +43,15 @@ Parameter 의 끝의 기호 `}}` 뒤에 특수기호 &gt;를 입력하면 앞서
 
 NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점은 여러 개의 Source를 하나의 Target으로 변경해 준다는 점입니다.
 
-1.  Play Builder 홈 화면에서 NLG Normalizer를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Normalizer` &gt; `+NLG Normalizer 추가`를 클릭합니다.
+1. Play Builder 홈 화면에서 NLG Normalizer를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Normalizer` &gt; `+NLG Normalizer 추가`를 클릭합니다.
 
 ![](../../.gitbook/assets/ch3_324_c04-1.png)
 
-2.  Normalizer의 Filter명을 입력하고, 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
+1. Normalizer의 Filter명을 입력하고, 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
 ![](../../.gitbook/assets/ch3_324_c05-1.png)
 
-3.  NLG Normalizer의 자동 완성 기능으로 적용하기 위한 기호는 = 이며, 사용 방법은 NLG Translator와 같습니다.
+1. NLG Normalizer의 자동 완성 기능으로 적용하기 위한 기호는 = 이며, 사용 방법은 NLG Translator와 같습니다.
 
 ![](../../.gitbook/assets/ch3_323412_c02.gif)
 
@@ -105,11 +59,10 @@ NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점�
 
 마지막으로, NLG Function을 추가하는 방법은 다음과 같습니다.
 
-1.  Play Builder 홈 화면에서 NLG Function를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Function`을 누릅니다.
+1. Play Builder 홈 화면에서 NLG Function를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Function`을 누릅니다.
+2. NLG Function 타입을 선택 및 이름을 입력하고, 후 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-2.  NLG Function 타입을 선택 및 이름을 입력하고, 후 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
-
-![](../../.gitbook/assets/ch3_324_c08_2.png)
+![](../../.gitbook/assets/ch3_324_c08_2%20%282%29.png)
 
 * NLG Function은 날짜 형식에 사용하는 DATE 타입을 제공합니다.
 * 날짜 형식에 맞는 문자열이 있다면, 보다 더 적합한 날짜 형태로 변경합니다.  
@@ -118,11 +71,11 @@ NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점�
 날짜 형식에 대한 내용은 [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)를 참고하세요.
 {% endhint %}
 
-3.  NLF Function의 자동완성을 위한 기호는 : 이며, 사용 방법은 NLG Translator와 같습니다.
+1. NLF Function의 자동완성을 위한 기호는 : 이며, 사용 방법은 NLG Translator와 같습니다.
 
-![](../../.gitbook/assets/ch3_323412_c03-1.gif)
+![](../../.gitbook/assets/ch3_323412_c03%20%281%29.gif)
 
-참고로, Response Filter는 종류에 상관없이 중첩해서 사용할 수 있습니다. 
+참고로, Response Filter는 종류에 상관없이 중첩해서 사용할 수 있습니다.
 
 ![](../../.gitbook/assets/ch3_324_c10.png)
 

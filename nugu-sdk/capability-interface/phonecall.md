@@ -43,7 +43,7 @@ description: 전화 수/발신 기능 제어를 위한 규격
 
 ## State Diagram
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image__10.png)
 
 ## SDK Interface
 

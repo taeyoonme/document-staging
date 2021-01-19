@@ -39,7 +39,7 @@ let ttsAgent = nuguClient.ttsAgent
 {% endtab %}
 
 {% tab title="Linux" %}
- [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TTSAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TTSAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 ```text
 auto tts_handler(std::shared_ptr<ITTSHandler>(
@@ -65,7 +65,7 @@ val listener = object: TTSAgentInterface.Listener {
     override fun onStateChanged(state: State, dialogRequestId: String) {
         ...
     }
-    
+
     ...
 }
 ttsAgent.addListener(listener)
@@ -80,7 +80,7 @@ class MyTTSAgentDelegate: TTSAgentDelegate {
     func ttsAgentDidChange(state: TTSState, dialogRequestId: String) {
         ...
     }
-    
+
     ...
 }
 ttsAgent.add(delegate: MyTTSAgentDelegate())
@@ -99,7 +99,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto tts_listener(std::make_shared<MyTTSListener>());

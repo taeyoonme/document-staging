@@ -43,7 +43,7 @@ let systemAgent = nuguClient.systemAgent
 
 ```text
 auto system_handler(std::shared_ptr<ISystemHandler>(
-	        CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>()));
+            CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>()));
 
 nugu_client->getCapabilityBuilder()
     ->add(system_handler.get())
@@ -86,7 +86,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto system_listener(std::make_shared<MySystemListener>());
@@ -123,7 +123,7 @@ class MySystemAgentDelegate: SystemAgentDelegate {
     func systemAgentDidReceiveExceptionFail(code: SystemAgentExceptionCode.Fail, dialogRequestId: String) {
         ...
     }
-    
+
     ...
 }
 systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
@@ -142,7 +142,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto system_listener(std::make_shared<MySystemListener>());
@@ -179,7 +179,7 @@ class MySystemAgentDelegate: SystemAgentDelegate {
     func systemAgentDidReceiveRevokeDevice(reason: SystemAgentRevokeReason, dialogRequestId: String) {
         ...
     }
-    
+
     ...
 }
 systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
@@ -198,7 +198,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto system_listener(std::make_shared<MySystemListener>());
@@ -222,7 +222,7 @@ CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.g
 ### ResetUserInactivity
 
 {% hint style="info" %}
-Connection-oriented  디바이스에서만 사용
+Connection-oriented 디바이스에서만 사용
 {% endhint %}
 
 * UserInactivityReport 이벤트의 inactivity timer를 리셋시키기 위해 전송
@@ -244,7 +244,7 @@ Connection-oriented  디바이스에서만 사용
 ### HandoffConnection
 
 {% hint style="info" %}
-Connection-oriented  디바이스에서만 사용
+Connection-oriented 디바이스에서만 사용
 {% endhint %}
 
 * NUGU Platform과 TCP  connection을 맺고 유지하는 디바이스에게 연결을 끊고 다시 접속하라는 명령
@@ -518,7 +518,7 @@ NUGU 서버에서 디바이스가 등록 해제되면 전달됩니다.
 ### ResetConnection
 
 {% hint style="info" %}
-Connection-oriented  디바이스에서만 사용
+Connection-oriented 디바이스에서만 사용
 {% endhint %}
 
 * 이 요청을 받으면 클라이언트는 registry에 다시 접속해서 주소를 받아서 접속한다. 
@@ -533,14 +533,14 @@ Connection-oriented  디바이스에서만 사용
     "version": "1.1"
   },
   "payload": {
-  	"description": "{{STRING}}"
+      "description": "{{STRING}}"
   }
 }
 ```
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| description | String | N | 서버에서 정보를 남기기 위한 단순 로깅 용도  |
+| description | String | N | 서버에서 정보를 남기기 위한 단순 로깅 용도 |
 
 ## Events
 
@@ -564,7 +564,7 @@ Connection-oriented  디바이스에서만 사용
 ### UserInactivityReport
 
 {% hint style="info" %}
-Connection-oriented  디바이스에서만 사용
+Connection-oriented 디바이스에서만 사용
 {% endhint %}
 
 * 1시간동안 사용자 인터렉션이 없는 경우 보내야 함
@@ -591,7 +591,7 @@ Connection-oriented  디바이스에서만 사용
 ### Disconnect
 
 {% hint style="info" %}
-Connection-oriented  디바이스에서만 사용
+Connection-oriented 디바이스에서만 사용
 {% endhint %}
 
 * handoff 가 완료되어 더 이상 받을 directive나 TTS stream이 없는 경우
@@ -613,7 +613,7 @@ Connection-oriented  디바이스에서만 사용
 ### Echo
 
 {% hint style="info" %}
-Connection-oriented  디바이스에서만 사용
+Connection-oriented 디바이스에서만 사용
 {% endhint %}
 
 * device-gateway와 연결 상테를 테스트하기 위한 event

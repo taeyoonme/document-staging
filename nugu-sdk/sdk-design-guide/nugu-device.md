@@ -2,7 +2,7 @@
 
 NUGU를 탑재한 기기의 상태에 따른 동작, 제공하는 물리적 버튼, 조명, 소리에 대한 가이드는 다음과 같습니다.
 
-## 기기 상태 
+## 기기 상태
 
 NUGU를 탑재한 기기의 상태는 다음과 같습니다.
 
@@ -15,7 +15,7 @@ NUGU를 탑재한 기기의 상태는 다음과 같습니다.
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left"><b>&#xC74C;&#xC18C;&#xAC70;  </b>  <b>             </b>
+      <td style="text-align:left"><b>&#xC74C;&#xC18C;&#xAC70;</b>
       </td>
       <td style="text-align:left">
         <p>&#xAE30;&#xAE30;&#xC758; &#xC18C;&#xB9AC;&#xAC00; &#xCD9C;&#xB825;&#xB418;&#xC9C0;
@@ -31,7 +31,7 @@ NUGU를 탑재한 기기의 상태는 다음과 같습니다.
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>&#xB9C8;&#xC774;&#xD06C; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0;                            </b>
+      <td style="text-align:left"><b>&#xB9C8;&#xC774;&#xD06C; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0;</b>
       </td>
       <td style="text-align:left">NUGU &#xAE30;&#xC758; &#xC74C;&#xC131;&#xC778;&#xC2DD; &#xB9C8;&#xC774;&#xD06C;&#xAC00;
         &#xAEBC;&#xC838; &#xC788;&#xB294; &#xC0C1;&#xD0DC;&#xB85C;, &#xC774; &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294;
@@ -39,21 +39,21 @@ NUGU를 탑재한 기기의 상태는 다음과 같습니다.
         wake up&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>&#xC57C;&#xAC04; &#xBAA8;&#xB4DC;                                        </b>
+      <td style="text-align:left"><b>&#xC57C;&#xAC04; &#xBAA8;&#xB4DC;</b>
       </td>
       <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xAE30;&#xC5D0;&#xC11C;
         &#xC804;&#xC6D0; &#xC808;&#xC57D;&#xC744; &#xC704;&#xD558; &#xD654;&#xBA74;
         &#xD45C;&#xC2DC;&#xAC00; &#xCD5C;&#xC18C;&#xD654;&#xB41C; &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>&#xD654;&#xBA74; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0; </b>
+      <td style="text-align:left"><b>&#xD654;&#xBA74; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0;</b>
       </td>
       <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xAC00; &#xC788;&#xB294; &#xAE30;&#xC5D0;&#xC11C;
         &#xD654;&#xBA74;&#xC774; &#xCF1C;&#xC838;&#xC788;&#xAC70;&#xB098; &#xAEBC;&#xC838;&#xC788;&#xB294;
         &#xC0C1;&#xD0DC;&#xC785;&#xB2C8;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>&#xBB34;&#xB4DC;&#xB4F1; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0; </b>
+      <td style="text-align:left"><b>&#xBB34;&#xB4DC;&#xB4F1; &#xCF1C;&#xC9D0;/&#xAEBC;&#xC9D0;</b>
       </td>
       <td style="text-align:left">&#xC870;&#xBA85; &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xB294; &#xAE30;&#xC5D0;&#xC11C;
         &#xC870;&#xBA85;&#xC774; &#xCF1C;&#xC838;&#xC788;&#xAC70;&#xB098; &#xAEBC;&#xC838;&#xC788;&#xB294;
@@ -76,7 +76,7 @@ NUGU를 탑재한 기기의 상태는 다음과 같습니다.
 
 #### **초기 기기 상태**
 
-NUGU 기기의 초기 상태는 다음과 같습니다. 마이크\(Microphone\) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off 
+NUGU 기기의 초기 상태는 다음과 같습니다. 마이크\(Microphone\) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off
 
 ## 버튼
 
@@ -118,7 +118,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
       </td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>&#xBCFC;&#xB968; &#xC870;&#xC808; &#xBC84;&#xD2BC;                                 </b>
+      <td style="text-align:left"><b>&#xBCFC;&#xB968; &#xC870;&#xC808; &#xBC84;&#xD2BC;</b>
       </td>
       <td style="text-align:left">
         <p>&#x2022; &#xBCFC;&#xB968; &#xC870;&#xC808; &#xBC84;&#xD2BC;&#xC740; &#xC99D;&#xAC00;
@@ -259,9 +259,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
   </tbody>
 </table>
 
-
-
-## 소리 
+## 소리
 
 효과음은 음성이 아닌 비프음이나 사운드 등을 의미합니다. 상황 별 정해진 특징적인 효과음을를 제공함으로써 음성으로 설명하지 않고도 상태 및 동작에 대하여 사용자가 인식할 수 있도록 합니다. 효과음은 대 상태를 알리는 데에 사용되는 1\) 기본 효과음과 특정 서비스 동작과 관련된 2\)서비스 효과음로 나뉩니다.
 
@@ -291,9 +289,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
   </tbody>
 </table>
 
-{% file src="../../.gitbook/assets/bootcomplete\_3800ms.ogg" caption="전원 켜짐 완료음" %}
-
-![](../../.gitbook/assets/undefined%20%282%29.png)
+![](../../.gitbook/assets/undefined__2.png)
 
 **호출 효과 \(Wake up success\)**
 
@@ -319,15 +315,13 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
   </tbody>
 </table>
 
-{% file src="../../.gitbook/assets/start\_listening\_500ms-1.wav" caption="호출 효과음" %}
-
 호출어 발화 시
 
-![](../../.gitbook/assets/2%20%283%29.png)
+![](../../.gitbook/assets/2__3.png)
 
 Slot-filling 시
 
-![](../../.gitbook/assets/undefined%20%2810%29.png)
+![](../../.gitbook/assets/undefined__10.png)
 
 **인식 완료음 \(End listen\)**
 
@@ -353,9 +347,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
   </tbody>
 </table>
 
-{% file src="../../.gitbook/assets/end\_listening\_500ms.wav" caption="인식 완료음" %}
-
-![](../../.gitbook/assets/undefined%20%283%29.png)
+![](../../.gitbook/assets/undefined__3.png)
 
 #### **응답 실패 \(Response fail\)**
 
@@ -396,15 +388,13 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
   </tbody>
 </table>
 
-{% file src="../../.gitbook/assets/responsefail\_500ms \(1\).wav" caption="응답 실패음" %}
-
 잡음 / 1음절 발화 / 블랙 리스트 발화 시
 
-![](../../.gitbook/assets/2%20%284%29.png)
+![](../../.gitbook/assets/2__4.png)
 
 Slot-filling을 위한 listening 상태에서 타임아웃 시
 
-![](../../.gitbook/assets/undefined%20%288%29.png)
+![](../../.gitbook/assets/undefined__8.png)
 
 **전원 꺼짐 \(Power off\)**
 
@@ -431,7 +421,7 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
   </tbody>
 </table>
 
-![](../../.gitbook/assets/undefined%20%286%29.png)
+![](../../.gitbook/assets/undefined__6.png)
 
 ### **2\) 서비스 효과음\(Service Feedback Sound\)**
 
@@ -474,7 +464,7 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
 
 볼륨을 올리거나 내릴 때 제공되는 효과입니다. 볼륨 제어 이후에 소리를 재생하여, 사용자가 변경된 볼륨 크기를 인지할 수 있도록 합니다. 음원이나 Prompt 재생 중에는 재생되고 있는 음원/Prompt로 볼륨 크기를 인지할 수 있으므로 볼륨 제어 효과음을 제공하지 않습니다. 볼륨을 0으로 변경 시에는 볼륨 제어 소리를 재생하여도 음소거 상태이므로 볼륨 제어 소리가 들리지 않게 되며 이는 정상 동작입니다. 하드웨어 버튼으로 볼륨 조절 시에도 소리를 제공하도록 합니다.
 
-| 사용자 발화 | 사용자 발화에 의한 동작 | 하드웨어 버튼 조작에 의한 동작 **** |
+| 사용자 발화 | 사용자 발화에 의한 동작 | 하드웨어 버튼 조작에 의한 동작 _\*\*_ |
 | :--- | :--- | :--- |
 | 볼륨을 높일 | 볼륨 제어음 재생 O | 볼륨 제어음 재생 O |
 | 볼륨을 낮출 때 | 볼륨 제어음 재생 O | 볼륨 제어음 재생 O |

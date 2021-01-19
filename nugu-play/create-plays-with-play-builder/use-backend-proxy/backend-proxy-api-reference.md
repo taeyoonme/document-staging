@@ -208,7 +208,7 @@ AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
         <ul>
-          <li>&quot;OK&quot; - <b>&#xC131;&#xACF5;&#xC778; &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC12;&#xC73C;&#xB85C; &#xB2E4;&#xB978; &#xAC12;&#xC744; &#xC804;&#xC1A1;&#xD558;&#xBA74; &#xC131;&#xACF5;&#xC774; &#xC544;&#xB2CC; &#xAC83;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</b> 
+          <li>&quot;OK&quot; - <b>&#xC131;&#xACF5;&#xC778; &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC12;&#xC73C;&#xB85C; &#xB2E4;&#xB978; &#xAC12;&#xC744; &#xC804;&#xC1A1;&#xD558;&#xBA74; &#xC131;&#xACF5;&#xC774; &#xC544;&#xB2CC; &#xAC83;&#xC73C;&#xB85C; &#xCC98;&#xB9AC;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC8FC;&#xC758;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</b>
           </li>
           <li>&#xC131;&#xACF5;&#xC774; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;&#xB294; PlayBuider&#xC758; <code>General</code> &gt; <code>&#xAE30;&#xBCF8;&#xC815;&#xBCF4;</code> &#xD398;&#xC774;&#xC9C0;&#xC758;
             &#xC608;&#xC678; &#xCC98;&#xB9AC; &#xB610;&#xB294; <code>Action</code> &gt; <code>Custom Actions</code> &gt;

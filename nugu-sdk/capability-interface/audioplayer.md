@@ -82,7 +82,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 ## State Diagram
 
-![](../../.gitbook/assets/image%20%285%29.png)
+![](../../.gitbook/assets/image__5.png)
 
 ## SDK Interface
 

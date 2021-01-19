@@ -425,7 +425,7 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | Y |  TextSource에서 정의한 token |
+| token | string | Y | TextSource에서 정의한 token |
 | errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 
 ### TextRedirectFailed
@@ -449,6 +449,6 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | Y |  TextSource에서 정의한 token |
+| token | string | Y | TextSource에서 정의한 token |
 | errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 

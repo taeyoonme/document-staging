@@ -19,7 +19,7 @@ NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경�
 현재는 AudioPlayer Interface만 지원합니다. 자세한 내용은 [AudioPlayer Interface 지원하는 Play 만들기](create-a-play-with-audioplayer/)를 참고하세요.
 {% endhint %}
 
-![](../../.gitbook/assets/customize-a-play2-1.jpg)
+![](../../.gitbook/assets/customize-a-play2.jpg)
 
 **④ 합성음 목소리**
 
@@ -81,5 +81,5 @@ Intent\(혹은 precondition\)와 Action과의 관계 및 Action Tree를 보여�
 
 빌드 이력\(History\)을 확인할 수 있습니다. 또한, 이 페이지에서도 `Play 빌드` 버튼을 이용하여 Play를 빌드할 수 있습니다.
 
-![](../../.gitbook/assets/ch3_321_c05-1.png)
+![](../../.gitbook/assets/ch3_321_c05.png)
 

@@ -30,22 +30,22 @@ OAuth를 이용해 사용자 정보에 접근할 수 있고, 이를 통해 Play�
 
 1. Github App의 우측 상단 내 Profile 사진을 클릭하고 `Settings` &gt; `Developers settings` &gt; `OAuth Apps` &gt; `Settings` 메뉴를 클릭합니다.
 
-   ![](../../.gitbook/assets/ch3_331_c01-1.png)
+   ![](../../.gitbook/assets/ch3_331_c01.png)
 
 2. `New OAuth App` 버튼을 클릭하여 새로운 OAuth App을 만듭니다.
    * 최초 등록하는 경우, 버튼에는 `Register a new application`이라고 표시됩니다.
 
-     ![](../../.gitbook/assets/ch3_331_c02-1.png)
+     ![](../../.gitbook/assets/ch3_331_c02.png)
 3. OAuth App 생성 화면에서 Application name, Homepage URL, Application description, Authorization callback URL을 입력한 후 `Register application`을 눌러 OAuth App을 생성을 완료합니다.
    * Authorization callback URL에는 `https://developers.nugu.co.kr/app/callback.html`을 입력합니다.
 
-     ![](../../.gitbook/assets/ch3_331_c03-1.png)
+     ![](../../.gitbook/assets/ch3_331_c03.png)
 
 ### 2단계: OAuth App 정보 확인하기
 
 1단계에서 등록한 OAuth App에서 Client ID와 Client Secret 정보를 확인합니다.
 
-![](../../.gitbook/assets/ch3_331_c04-1.png)
+![](../../.gitbook/assets/ch3_331_c04.png)
 
 ### 3단계: OAuth URL 정보 확인하기
 
@@ -68,7 +68,7 @@ OAuth Scope는 Access Token으로 사용할 수 있는 리소스의 허용 범�
 
 2단계부터 4단계에 걸쳐 확인한 정보를 `NUGU developers` &gt; `NUGU play kit` &gt; `관리` 메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
 
-![](../../.gitbook/assets/ch3_331_c05_2-1.png)
+![](../../.gitbook/assets/ch3_331_c05_2.png)
 
 **① 로그인 URL**  
 3단계에서 확인한 URL을 입력합니다. \([https://github.com/login/oauth/authorize](https://github.com/login/oauth/authorize)\)

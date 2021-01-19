@@ -71,7 +71,7 @@ Prompt란 NUGU 에이전트의 음성 답을 의미하며, 음성으로 전달�
 
 NUGU의 페르소나는 20대 후반에서 30대 초반의 여성으로, 차분하고 편안함을 지향하는 다정다감한 성격의 친구같은 비서입니다. 세부 대화 스타일은 다음과 같으며, 작성한 Prompt가 NUGU 페르소나와 일치하는지 검토하는 것을 권장합니다.
 
-![NUGU &#xD398;&#xB974;&#xC18C;&#xB098;](../../.gitbook/assets/undefined%20%287%29.png)
+![NUGU &#xD398;&#xB974;&#xC18C;&#xB098;](../../.gitbook/assets/undefined__7.png)
 
 ![](../../.gitbook/assets/image-22_1.png)
 
@@ -95,6 +95,4 @@ NUGU의 페르소나는 20대 후반에서 30대 초반의 여성으로, 차분�
 {% hint style="info" %}
 로그인 전에는 미리 듣기만 가능합니다. 전곡 듣기를 원하시면 누구 앱을 통해 로그인해 주세요.
 {% endhint %}
-
-
 

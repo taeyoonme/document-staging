@@ -86,7 +86,7 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 ### OAuth2 client 구현하기
 
-NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증을 위한 기능을 제공하고 있지 않습니다. 
+NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증을 위한 기능을 제공하고 있지 않습니다.
 
 * Linux 기반의 제품은 대부분 디스플레이가 없어 별도의 연동 어플리케이션을 통한 사용자 인증을 필요로 합니다.
 * 다른 플랫폼과 달리 GUI framework이 다양하기 때문에 표준화된 인증 UI를 SDK에서 제공해 주기 어렵습니다.
@@ -99,7 +99,7 @@ NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증�
 
 ### GMainLoop 사용하기
 
-NUGU SDK for Linux는 event-driven 방식으로 어플리케이션을 개발할 수 있도록 [glib](https://wiki.gnome.org/Projects/GLib)에서 제공하는 [event loop](https://developer.gnome.org/glib/stable/glib-The-Main-Event-Loop.html)을 사용하고 있습니다.  따라서 `main()` 코드는 아래 구조로 작성되어야 합니다.
+NUGU SDK for Linux는 event-driven 방식으로 어플리케이션을 개발할 수 있도록 [glib](https://wiki.gnome.org/Projects/GLib)에서 제공하는 [event loop](https://developer.gnome.org/glib/stable/glib-The-Main-Event-Loop.html)을 사용하고 있습니다. 따라서 `main()` 코드는 아래 구조로 작성되어야 합니다.
 
 ```c
 #include <glib.h>

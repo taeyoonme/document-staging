@@ -27,7 +27,7 @@
 * **resumeWhileStopped** - 나머지 모든 경우\(Default\)
 * Branch Action의 종류는 위에서 스피커의 상태에 따라 동작을 정의한 표와 동일합니다.
 
-![](../../../.gitbook/assets/ch3_327_c04-1.gif)
+![](../../../.gitbook/assets/ch3_327_c04.gif)
 
 ## 각 Branch Action에서 Trigger 조건 정의
 

@@ -10,7 +10,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
       <th style="text-align:left">&#xAD6C;&#xC131; &#xC694;&#xC18C;</th>
       <th style="text-align:left">&#xD558;&#xC704; &#xC694;&#xC18C;</th>
       <th style="text-align:left">&#xD2B9;&#xC9D5;</th>
-      <th style="text-align:center">
+      <th style="text-align:left">
         <p>&#xC790;&#xB3D9;&#xC644;&#xC131;</p>
         <p>&#xB2E8;&#xCD95;&#xD0A4;</p>
       </th>
@@ -23,7 +23,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
       <td style="text-align:left">&apos;&#xAC00;&#xB098;&#xB2E4;&apos;&#xC640; &#xAC19;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778;
         &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xADF8;&#xB300;&#xB85C; &#xC77D;&#xC5B4;
         &#xBC1C;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</td>
-      <td style="text-align:center"></td>
+      <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left">Parameter</td>
@@ -37,7 +37,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
         <p><a href="../use-parameters/">Parameter &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</a>&#xB97C;
           &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
       </td>
-      <td style="text-align:center">{{</td>
+      <td style="text-align:left">{{</td>
     </tr>
     <tr>
       <td style="text-align:left">Response Filter</td>
@@ -46,7 +46,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
         <p>Parameter&#xC640; &#xD56D;&#xC0C1; &#xACB0;&#xD569;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;,</p>
         <p>&#xB2E8;&#xB3C5;&#xC73C;&#xB85C; &#xC4F0;&#xC77C; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
       </td>
-      <td style="text-align:center">&gt;</td>
+      <td style="text-align:left">&gt;</td>
     </tr>
     <tr>
       <td style="text-align:left"></td>
@@ -56,7 +56,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
           Source&#xC640;</p>
         <p>100% &#xC77C;&#xCE58;&#xD560; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
       </td>
-      <td style="text-align:center">=</td>
+      <td style="text-align:left">=</td>
     </tr>
     <tr>
       <td style="text-align:left"></td>
@@ -66,7 +66,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
         <p><a href="../../define-response-filters.md">Response Filter</a>&#xB97C;
           &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
       </td>
-      <td style="text-align:center">:</td>
+      <td style="text-align:left">:</td>
     </tr>
     <tr>
       <td style="text-align:left">&#xC870;&#xC0AC;</td>
@@ -81,7 +81,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
           &#xB0B4;&#xC6A9;&#xC740; <a href="use-prompts.md#process-postpositions">&#xC870;&#xC0AC; &#xCC98;&#xB9AC;&#xD558;&#xAE30;</a>&#xB97C;
           &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
       </td>
-      <td style="text-align:center">/</td>
+      <td style="text-align:left">/</td>
     </tr>
     <tr>
       <td style="text-align:left">SKML &#xD0DC;&#xADF8;</td>
@@ -95,7 +95,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
         <p><a href="use-prompts.md#use-utterance-options">&#xBC1C;&#xD654; &#xC635;&#xC158; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</a>&#xB97C;
           &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
       </td>
-      <td style="text-align:center">&lt;</td>
+      <td style="text-align:left">&lt;</td>
     </tr>
   </tbody>
 </table>
@@ -213,8 +213,6 @@ Prompt는 사용 위치에 따라 다음과 같이 구분됩니다.
 
 ![](../../../../.gitbook/assets/silentprompt.gif)
 
-
-
 ## 조사 처리하기 <a id="process-postpositions"></a>
 
 국어의 조사 '이/가, 을/를, 은/는, 과/와, 로/으로'는 같은 형태소지만 앞음절의 받침 유무에 따라 다르게 사용됩니다.
@@ -257,7 +255,7 @@ Play Builder는 입력한 Prompt를 음성으로 변환시킬 때 개별적으�
 
 #### 전체 발화 옵션 변경하기
 
-1\) Play 내 모든 prompt의 발화 옵션을 변경하고 싶다면  `General` &gt; `기본정보`  로 이동 합니다.
+1\) Play 내 모든 prompt의 발화 옵션을 변경하고 싶다면 `General` &gt; `기본정보` 로 이동 합니다.
 
 ![](../../../../.gitbook/assets/ch3_323413_c01.png)
 
@@ -549,26 +547,18 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
         <p>[mm]-[dd]</p>
         <p>[mm]/[dd]</p>
         <p>[mm].[dd]</p>
-        <p></p>
-        <p></p>
         <p>&#xBC94;&#xC704;</p>
         <p>[yyyy]-[mm]-[dd]~</p>
         <p>[yyyy]-[mm]-[dd]</p>
-        <p></p>
         <p>[yyyy]:[mm]:[dd]~</p>
         <p>[yyyy]:[mm]:[dd]</p>
-        <p></p>
         <p>[yyyy]/[mm]/[dd]~[yyyy]/[mm]/[dd]</p>
-        <p></p>
         <p>[yyyy].[mm].[dd]~</p>
         <p>[yyyy].[mm].[dd]</p>
-        <p></p>
         <p>[mm]-[dd]~</p>
         <p>[mm]-[dd]</p>
-        <p></p>
         <p>[mm]/[dd]~</p>
         <p>[mm]/[dd]</p>
-        <p></p>
         <p>[mm].[dd]~</p>
         <p>[mm].[dd]</p>
       </td>
@@ -593,17 +583,13 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
         <p>&#xD2B9;&#xC815; &#xC2DC;&#xAC04;</p>
         <p>[hh]:[mm]:[ss]</p>
         <p>[mm]:[ss]</p>
-        <p></p>
         <p>&#xAE30;&#xAC04;</p>
         <p>[hh]:[mm]:[ss]~</p>
         <p>[hh]:[mm]:[ss]</p>
-        <p></p>
         <p>[hh]:[mm]:[ss]-</p>
         <p>[hh]:[mm]:[ss]</p>
-        <p></p>
         <p>[mm]:[ss]~</p>
         <p>[mm]:[ss]</p>
-        <p></p>
         <p>[mm]:[ss]-</p>
         <p>[mm]:[ss]</p>
       </td>
@@ -615,7 +601,7 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
         <p>&apos;&#xCE60;&#xBBF8;&#xD130;, &#xCE60;&#xADF8;&#xB7A8;&apos;&#xACFC;
           &#xAC19;&#xC774; &#xB2E8;&#xC704;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
         <p>139&#xAC1C;&#xC758; &#xB2E8;&#xC704;&#xB97C; &#xC77D;&#xAE30; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>(<a href="use-prompts.md#list-of-unit-tags-supported-by-utterance-options">&#xBC1C;&#xD654; &#xC635;&#xC158;&#xC5D0;&#xC11C; UNIT </a>
+        <p>(<a href="use-prompts.md#list-of-unit-tags-supported-by-utterance-options">&#xBC1C;&#xD654; &#xC635;&#xC158;&#xC5D0;&#xC11C; UNIT</a>
         </p>
         <p><a href="use-prompts.md#list-of-unit-tags-supported-by-utterance-options">&#xD0DC;&#xADF8;&#xB85C; &#xC9C0;&#xC6D0; &#xB2E8;&#xC704; &#xBAA9;&#xB85D;</a>)</p>
       </td>

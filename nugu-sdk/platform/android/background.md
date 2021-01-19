@@ -6,7 +6,7 @@ Connection-oriented 방식을 사용하는 PoC 의 경우 application 이 backgr
 Type1 PoC 에서 OAuth token 발급 결과 scope 에 "device:S.I.D" 가 포함된 경우에만 connection-oriented 방식을 사용합니다.
 {% endhint %}
 
-### Background 연결 종료
+## Background 연결 종료
 
 ```text
 class MyApplication : Application() {

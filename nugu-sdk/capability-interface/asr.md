@@ -33,11 +33,8 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
     <tr>
       <td style="text-align:left">1.2</td>
       <td style="text-align:left">2020.06.05</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>Recognize directive, ExpectSpeech event &#xC758; asrContext &#xC5D0; playServiceId
-          &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-      </td>
+      <td style="text-align:left">Recognize directive, ExpectSpeech event &#xC758; asrContext &#xC5D0; playServiceId
+        &#xD544;&#xB4DC; &#xCD94;&#xAC00;</td>
     </tr>
     <tr>
       <td style="text-align:left">1.3</td>
@@ -55,7 +52,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## State Diagram
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image__4.png)
 
 ## SDK Interface
 
@@ -172,7 +169,7 @@ asrAgent.startRecognition(initiator: .user)
 {% endtab %}
 
 {% tab title="Linux" %}
-```
+```text
 asr_handler->startRecognition()
 ```
 {% endtab %}
@@ -205,12 +202,12 @@ val resultListener = object: ASRAgentInterface.OnResultListener {
         // STT 중간 결과
         ...
     }
-    
+
     fun onCompleteResult(result: String, dialogRequestId: String) {
         // STT 최종 결과
         ...
     }
-    
+
     ...
 }
 asrAgent.addOnResultListener(resultListener)
@@ -225,7 +222,7 @@ class MyASRAgentDelegate: ASRAgentDelegate {
     func asrAgentDidChange(state: ASRState) {
         ...
     }
-    
+
     func asrAgentDidReceive(result: ASRResult, dialogRequestId: String) {
         // NotifyResult 결과 확인
         ...
@@ -247,19 +244,19 @@ public:
     {
         ...
     }
-    
+
     void onPartial(const std::string &text, const std::string &dialog_id) override
     {
         // STT 중간 결과
         ...
     }
-    
+
     void onComplete(const std::string &text, const std::string &dialog_id) override
     {
         // STT 최종 결과
         ...
     }
-    
+
     ...
 };
 auto asr_listener(std::make_shared<MyASRListener>());

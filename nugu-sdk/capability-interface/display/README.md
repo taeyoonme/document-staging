@@ -8,74 +8,15 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 
 최신 버전은 1.6 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2019.11.17</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">20191209</td>
-      <td style="text-align:left">
-        <p>Close directive</p>
-        <p>CloseSucceeded, CloseFailed event &#xCD94;&#xAC00;</p>
-        <p>Weather1/2/3/4/5, FullImage directive &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">20200303</td>
-      <td style="text-align:left">
-        <p>Duration &#xCD94;&#xAC00;</p>
-        <p>Score1/2 directive &#xCD94;&#xAC00;</p>
-        <p>ControlFocus, ControlScroll directive &#xCD94;&#xAC00;</p>
-        <p>ControlFocusSucceeded, ControlFocusFailed, ControlScrollSucceeded, ControlScrollFailed
-          event &#xCD94;&#xAC00;</p>
-        <p>SearchList1/2 directive &#xCD94;&#xAC00;</p>
-        <p>Call1/2/3 directive &#xCD94;</p>
-        <p>FullText3 directive &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.3</td>
-      <td style="text-align:left">20200429</td>
-      <td style="text-align:left">
-        <p>Timer directive &#xCD94;&#xAC00;</p>
-        <p>Template &#xC5D0; supportFocusedItemToken, supportVisibleTokenList &#xD544;&#xB4DC;
-          &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.4</td>
-      <td style="text-align:left">20200622</td>
-      <td style="text-align:left">
-        <p>ButtonObject &#xC5D0; postback, autoTrigger, closeTemplateAfter, disable
-          &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>ElementSelected event &#xC5D0; postback &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>Dummy directive &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.5</td>
-      <td style="text-align:left">20200902</td>
-      <td style="text-align:left">Template &#xC5D0; eventType, textInput &#xD544;&#xB4DC; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.6</td>
-      <td style="text-align:left">20201016</td>
-      <td style="text-align:left">BadgeObject, UnifiedSearch1 &#xCD94;</td>
-    </tr>
-  </tbody>
-</table>
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2019.11.17 | 규격 추가 |
+| 1.1 | 2019.12.09 | Close directive CloseSucceeded, CloseFailed event 추가 Weather1/2/3/4/5, FullImage directive 추가 |
+| 1.2 | 2020.03.03 | Duration 추가 Score1/2 directive 추가 ControlFocus, ControlScroll directive 추가 ControlFocusSucceeded, ControlFocusFailed, ControlScrollSucceeded, ControlScrollFailed event 추가 SearchList1/2 directive 추가 Call1/2/3 directive 추가 FullText3 directive 추가 |
+| 1.3 | 2020.04.29 | Timer directive 추가 Template 에 supportFocusedItemToken, supportVisibleTokenList 필드 추가 |
+| 1.4 | 2020.06.22 | ButtonObject 에 postback, autoTrigger, closeTemplateAfter, disable 필드 추가 ElementSelected event 에 postback 필드 추가 Dummy directive 추가 |
+| 1.5 | 2020.09.02 | Template 에 eventType, textInput 필드 추가 |
+| 1.6 | 2020.10.16 | BadgeObject, UnifiedSearch1 추가 |
 
 ## SDK Interface
 
@@ -120,11 +61,11 @@ val controller = object: DisplayAggregatorInterface.Controller {
     override fun getFocusedItemToken(): String? {
         ...
     }
-    
+
     override fun getVisibleTokenList(): List<String>? {
         ...
     }
-    
+
     ...
 }
 
@@ -140,7 +81,7 @@ class MyDisplayAgentDelegate: DisplayAgentDelegate {
     func displayAgentRequestContext(templateId: String, completion: @escaping (DisplayContext?) -> Void) {
         ...
     }
-    
+
     ...
 }
 displayAgent.delegate = MyDisplayAgentDelegate()
@@ -165,7 +106,7 @@ val renderer = object: DisplayAggregatorInterface.Renderer {
     override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
         ...
     }
-    
+
     ...
 }
 displayAggregator.setRenderer(renderer)
@@ -178,11 +119,11 @@ val controller = object: DisplayAggregatorInterface.Controller {
     override fun controlFocus(direction: Direction): Boolean {
         ...
     }
-    
+
     override fun controlScroll(direction: Direction): Boolean {
         ...
     }
-    
+
     ...
 }
 displayAggregator.displayCardRendered(templateId, controller)
@@ -197,15 +138,15 @@ class MyDisplayAgentDelegate: DisplayAgentDelegate {
     func displayAgentShouldRender(template: DisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
         ...
     }
-    
+
     func displayAgentShouldMoveFocus(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -> Void) {
         ...
     }
-    
+
     func displayAgentShouldScroll(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -> Void) {
         ...
     }
-    
+
     ...
 }
 displayAgent.delegate = MyDisplayAgentDelegate()
@@ -289,68 +230,14 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">contentDescription</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">sources</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xB9AC;&#xC2A4;&#xD2B8;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xBA70; &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C;
-        &#xD654;&#xBA74; &#xD06C;&#xAE30;&#xC5D0; &#xAC00;&#xC7A5; &#xC801;&#xD569;&#xD55C;
-        &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>sources.</p>
-        <p>url</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>sources.</p>
-        <p>size</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>sources.</p>
-        <p>widthPixels</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>sources.</p>
-        <p>heightPixels</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| contentDescription | string | N | - |
+| sources | list | Y | 리스트로 제공되며 클라이언트에서 화면 크기에 가장 적합한 이미지를 사용해야 함 |
+| sources.url | string | Y | - |
+| sources.size | string | N | X\_SMALL, SMALL, MEDIUM, LARGE, X\_LARGE |
+| sources.widthPixels | long | N | - |
+| sources.heightPixels | long | N | - |
 
 | size value | Recommended Size \(in pixels\) |
 | :--- | :--- |
@@ -370,71 +257,11 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>Text &#xC911;&#xAC04;&#xC5D0; &#xAC15;&#xC870; &#xD45C;&#xD604;&#xC744;
-          &#xC704;&#xD55C; &#xB9C8;&#xD06C;&#xC5C5; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;
-          &#xC2A4;&#xD399;</p>
-        <ul>
-          <li>&#xBCFC;&#xB4DC; :&lt;b&gt;&#xBCFC;&#xB4DC;&lt;/b&gt;</li>
-          <li>&#xAE30;&#xC6B8;&#xB9BC; :&lt;i&gt;<em>&#xAE30;&#xC6B8;&#xB9BC;</em>&lt;/i&gt;</li>
-          <li>&#xBC11;&#xC904; : &lt;u&gt;&#xBC11;&#xC904;&lt;/u&gt;</li>
-          <li>&#xC717;&#xCCA8;&#xC790; : &lt;sup&gt;&#xC717;&#xCCA8;&#xC790;&lt;/sup&gt;</li>
-          <li>&#xC544;&#xB798;&#xCCA8;&#xC790; : &lt;sub&gt;&#xC544;&#xB798;&#xCCA8;&#xC790;&lt;/sub&gt;</li>
-          <li>&#xCDE8;&#xC18C;&#xC120; :&lt;s&gt;&#xCDE8;&#xC18C;&#xC120;&lt;/s&gt;</li>
-          <li>&#xC0C9;&#xC0C1; : &lt;font color=&quot;red&quot;&gt;&#xBE68;&#xAC15;&lt;/font&gt;</li>
-        </ul>
-        <p>&#xC704;&#xC5D0; &#xC694;&#xC18C;&#xC678; &#xB2E4;&#xB978; &#xB9C8;&#xD06C;&#xC5C5;
-          &#xC0AC;&#xC6A9; &#xC2DC; &#xB9C8;&#xD06C;&#xC5C5; &#xC694;&#xC18C; &#xC0AC;&#xC6A9;
-          &#xBD88;&#xAC00;, &#xC6D0;&#xBCF8; &#xD45C;&#xC2DC;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">color</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>color &#xD615;&#xC2DD; (RGB)</p>
-        <p>default &#xAC12;&#xC740; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xB9C8;&#xB2E4;
-          &#xB2E4;&#xB984;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">style</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xC0C1;&#xC704; &#xC2A4;&#xD0C0;&#xC77C;(directive
-          &#xB4F1;)&#xC744; &#xB530;&#xB984;.</p>
-        <p>CSS &#xC18D;&#xC131;&#xC740; &#xBAA8;&#xB450; &#xAC00;&#xB2A5;&#xD558;&#xBA70;,
-          &#xB2E4;&#xC74C;&#xC758; &#xAC12;&#xB4E4;&#xC744; &#xAC00;&#xC9C8; &#xC218;
-          &#xC788;&#xB2E4;.</p>
-        <ul>
-          <li>text-align : left, center, right</li>
-          <li>opacity : 0 ~ 1</li>
-          <li>display : block, inline, none</li>
-          <li>margin : 10px
-            <br />&#xC0AC;&#xC6A9;&#xC608;.
-            <br />{ &quot;text-align&quot;:&quot;center&quot;, &quot;display&quot;: &quot;block&quot;
-            }</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| text | string | Y | Text 중간에 강조 표현을 위한 마크업 사용 가능 스펙 - 볼드 : &lt;b&gt;볼드&lt;/b&gt; - 기울림 : &lt;i&gt;기울림&lt;/i&gt; - 밑줄 : &lt;u&gt;밑줄&lt;/u&gt; - 윗첨자 : &lt;sup&gt;윗첨자&lt;/sup&gt; - 아래첨자 : &lt;sub&gt;아래첨자&lt;/sub&gt; - 취소선 : &lt;s&gt;취소선&lt;/s&gt; - 색상 : &lt;font color="red"&gt;빨강&lt;/font&gt;  위에 요소외 다른 마크업 사용 시 마크업 요소 사용 불가, 원본 표시 |
+| color | string | N | color 형식 \(RGB\)  default 값은 디바이스마다 다름 |
+| style | object | N | 기본적으로는 상위 스타일\(directive 등\)을 따름.  CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다. - text-align : left, center, right - opacity : 0 ~ 1 - display : block, inline, none - margin : 10px - 사용예.  { "text-align":"center", "display": "block" } |
 
 ### ButtonObject
 
@@ -459,174 +286,23 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">text(default), image &#xC911; &#xD558;&#xB098;&#xC758; &#xAC12;&#xC744;
-        &#xAC00;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBC84;&#xD2BC; &#xC774;&#xBBF8;&#xC9C0;</p>
-        <ul>
-          <li>type&#xC774; image&#xC778; &#xACBD;&#xC6B0;&#xC5D0; &#xD55C;&#xD574; &#xD544;&#xC218;&#xC774;&#xBA70;,
-            &#xD574;&#xB2F9; &#xC774;&#xBBF8;&#xC9C0;&#xB97C; &#xC774;&#xC6A9;&#xD574;
-            &#xBC84;&#xD2BC;&#xC744; &#xD45C;&#xD604;&#xD55C;&#xB2E4;.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBC84;&#xD2BC; &#xD14D;&#xC2A4;&#xD2B8;</p>
-        <ul>
-          <li>type&#xC774; text&#xC778; &#xACBD;&#xC6B0;&#xC5D0; &#xD55C;&#xD574; &#xD544;&#xC218;&#xC774;&#xBA70;,
-            &#xD574;&#xB2F9; &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC774;&#xC6A9;&#xD574;
-            &#xBC84;&#xD2BC;&#xC744; &#xD45C;&#xD604;&#xD55C;&#xB2E4;.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD074;&#xB9AD; &#xC2DC; &#xC804;&#xB2EC;&#xB420; &#xD1A0;&#xD070; &#xAC12;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">eventType</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xD074;&#xB9AD; &#xC2DC; &#xD50C;&#xB7AB;&#xD3FC;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xB294;
-          Event Type (Capability &#xBA85;&#xACFC; Event&#xB97C; &#xBAA8;&#xB450;
-          &#xBA85;&#xC2DC;&#xD574;&#xC57C; &#xD568;)</p>
-        <ul>
-          <li><b>Display.ElementSelected</b> - default (eventType &#xAC12;&#xC774; &#xC5C6;&#xB294;
-            &#xACBD;&#xC6B0; &#xAE30;&#xBCF8;&#xAC12;)</li>
-          <li><b>Text.TextInput</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">textInput</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">eventType == TextTextInput&#xC778; &#xACBD;&#xC6B0; &#xD544;&#xC218;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">textInput.
-        <br />text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC804;&#xB2EC;&#xD560; &#xD14D;&#xC2A4;&#xD2B8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>textInput.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD2B9;&#xC815; Play&#xB85C; &#xC9C0;&#xC815;&#xD558;&#xC5EC; &#xB77C;&#xC6B0;&#xD305;&#xD558;&#xB294;
-        &#xACBD;&#xC6B0; &#xC0AC;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">postback</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xD074;&#xB9AD; &#xC2DC; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xC784;&#xC758;&#xC758;
-          Object</p>
-        <ul>
-          <li>&#xBC84;&#xD2BC; &#xD074;&#xB9AD; &#xC2DC; &#xB3D9;&#xC791;&#xC744; &#xC704;&#xD574;
-            &#xD544;&#xC694;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xC784;&#xC758;&#xC758;
-            JSON &#xD3EC;&#xB9F7;&#xC73C;&#xB85C; &#xCD94;&#xAC00; &#xAC00;&#xB2A5;</li>
-          <li>&#xAE30;&#xC874;&#xC5D0; token&#xC744; &#xC774; &#xC6A9;&#xB3C4;&#xB85C;
-            &#xD65C;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xAC00; &#xB9CE;&#xC558;&#xB294;&#xB370;,
-            token&#xC740; identifier &#xC5ED;&#xD560;&#xC744; &#xD558;&#xB3C4;&#xB85D;
-            &#xD558;&#xAE30; &#xC704;&#xD574; &#xCD94;&#xAC00;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">autoTrigger</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD2B9;&#xC815; &#xC2DC;&#xAC04;&#xC774; &#xC9C0;&#xB09C; &#xB4A4; ElementSelected
-          Event&#xB97C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A4;&#xB294;
-          &#xACBD;&#xC6B0; &#xD3EC;&#xD568;</p>
-        <p>&#xD558;&#xC704; parameter&#xB4E4;&#xC740; autoTrigger&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xBA74;
-          &#xBAA8;&#xB450; mandatory parameter</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>autoTrigger.</p>
-        <p>delayInMilliseconds</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">TTS &#xC885;&#xB8CC; &#xD6C4; trigger &#xC2DC;&#xD0AC;&#xB54C;&#xAE4C;&#xC9C0;&#xC758;
-        &#xC2DC;&#xAC04; (msec)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>autoTrigger.</p>
-        <p>showTimer</p>
-      </td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC84;&#xD2BC;&#xC5D0; timer &#xC22B;&#xC790;&#xB97C; &#xBCF4;&#xC5EC;&#xC904;&#xC9C0;
-        &#xC124;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">closeTemplateAfter</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">trigger &#xB610;&#xB294; &#xD074;&#xB9AD; &#xB3D9;&#xC791; &#xD6C4; template&#xC744;
-        &#xBC14;&#xB85C; &#xB2EB;&#xC744;&#xC9C0;, &#xC544;&#xB2C8;&#xBA74; template&#xC758;
-        life cycle &#xB300;&#xB85C; &#xD654;&#xBA74;&#xC5D0; &#xBCF4;&#xC5EC;&#xC904;&#xC9C0;
-        &#xC124;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">style</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBC84;&#xD2BC;&#xC758; &#xCD94;&#xAC00;&#xC801;&#xC778; style&#xC744;
-          &#xC815;&#xC758;&#xD568;.</p>
-        <p>textObject&#xC758; style&#xACE0; &#xC0AC;&#xC6A9;&#xBC95;&#xC774; &#xB3D9;&#xC77C;&#xD568;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">disable</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC774; &#xC18D;&#xC131;&#xC774; true&#xC774;&#xBA74; &#xBC84;&#xD2BC;&#xC744;
-        disable &#xCC98;&#xB9AC;&#xD568;.</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| type | string | N | text\(default\), image 중 하나의 값을 가질 수 있습니다. |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | 버튼 이미지 - type이 image인 경우에 한해 필수이며, 해당 이미지를 이용해 버튼을 표현한다. |
+| text | string | N | 버튼 텍스트  - type이 text인 경우에 한해 필수이며, 해당 텍스트를 이용해 버튼을 표현한다. |
+| token | string | Y | 클릭 시 전달될 토큰 값 |
+| eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\) - **Display.ElementSelected** :  default \(eventType 값이 없는 경우 기본값\) - **Text.TextInput** |
+| textInput | object | N | eventType == TextTextInput인 경우 필수 |
+| textInput.text | string | Y | 전달할 텍스트 |
+| textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
+| postback | object | N | 클릭 시 전달되는 임의의 Object - 버튼 클릭 시 동작을 위해 필요한 정보를 임의의 JSON 포맷으로 추가 가능  - 기존에 token을 이 용도로 활용하는 경우가 많았는데, token은 identifier 역할을 하도록 하기 위해 추가 |
+| autoTrigger | object | N | 특정 시간이 지난 뒤 ElementSelected Event를 자동으로 발생시키는 경우 포함 하위 parameter들은 autoTrigger가 포함되면 모두 mandatory parameter |
+| autoTrigger.delayInMilliseconds | long | Y | TTS 종료 후 trigger 시킬때까지의 시간 \(msec\) |
+| autoTrigger.showTimer | bool | Y | 버튼에 timer 숫자를 보여줄지 설정 |
+| closeTemplateAfter | bool | N | trigger 또는 클릭 동작 후 template을 바로 닫을지, 아니면 template의 life cycle 대로 화면에 보여줄지 설정 |
+| style | object | N | 버튼의 추가적인 style을 정의함. textObject의 style고 사용법이 동일함. |
+| disable | bool | N | 이 속성이 true이면 버튼을 disable 처리함. |
 
 ### TitleObject
 
@@ -642,10 +318,10 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| logo | ImageObject | N | png 타입으로 투명 이미지로 제공해야 함 |
-| text | TextObject | Y | 제목 |
-| subtext | TextObject | N | ASR Text 등 부제목 |
-| subicon | ImageObject | N | 서브 아이콘 \( 위치 : subText 왼쪽 \) |
+| logo | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | png 타입으로 투명 이미지로 제공해야 함 |
+| text | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | Y | 제목 |
+| subtext | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | N | ASR Text 등 부제목 |
+| subicon | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | 서브 아이콘 \( 위치 : subText 왼쪽 \) |
 | button | ButtonObject | N | 우측에 위치하는 버튼 |
 
 ### BackgroundObject
@@ -657,33 +333,10 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">image</td>
-      <td style="text-align:left">ImageObject</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">color</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>color &#xD615;&#xC2DD; (RGB)</p>
-        <p>default - #000000</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | - |
+| color | string | N | color형식\(RGB\) default : \#000000 |
 
 ### Duration
 
@@ -700,31 +353,9 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
 
 발화가이드 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">grammarGuide</td>
-      <td style="text-align:left">array of string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD654;&#xBA74;&#xC5D0; &#xD45C;&#xC2DC;&#xD560; &#xBB38;&#xC790;&#xC5F4;&#xB4E4;&#xC744;
-          &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>
-          <br />&#xC0AC;&#xC6A9;&#xC608;.
-          <br />[&quot;&#xD648; &#xD654;&#xBA74;&#xC73C;&#xB85C; &#xC774;&#xB3D9;&#xD574;&#xC918;&quot;,
-          &quot;&#xC120;&#xD638;&#xCC44;&#xB110; &#xCC3E;&#xC544;&#xC918;&quot;]</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| grammarGuide | array of string | N | 화면에 표시할 문자열들을 정의합니다. 사용예 : \["홈 화면으로 이동해줘", "선호채널 찾아줘"\] |
 
 ### ToggleButtonObject
 
@@ -763,43 +394,9 @@ Template 의 종류를 구분하기 위한 속성입니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li>TEXT</li>
-          <li>IMAGE</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left"><a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject">TextObject</a>
-      </td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">image</td>
-      <td style="text-align:left"><a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject">ImageObject</a>
-      </td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>
-
-### 
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| type | string | Y | - TEXT - IMAGE |
+| text | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | N | - |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | - |
 
