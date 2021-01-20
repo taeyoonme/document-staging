@@ -14,84 +14,15 @@ description: >-
 
 ## System Requirements
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Requirement</th>
-      <th style="text-align:left">Android</th>
-      <th style="text-align:left">iOS</th>
-      <th style="text-align:left">Linux</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">OS Version</td>
-      <td style="text-align:left">&gt;= Android 5.0(API level 21)</td>
-      <td style="text-align:left">&gt;= iOS 10.0+</td>
-      <td style="text-align:left">&gt;= Ubuntu Linux 16.04</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Platform</td>
-      <td style="text-align:left">Android</td>
-      <td style="text-align:left">iOS</td>
-      <td style="text-align:left">
-        <p>Ubuntu Linux</p>
-        <p>Raspberry Pi</p>
-        <p>Generic Linux</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Language</td>
-      <td style="text-align:left">Kotlin</td>
-      <td style="text-align:left">Swift</td>
-      <td style="text-align:left">C, C++</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Architecture</td>
-      <td style="text-align:left">arm7, arm64</td>
-      <td style="text-align:left">arm7, arm64</td>
-      <td style="text-align:left">x86_64, arm64, armhf</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Repository</td>
-      <td style="text-align:left">Github</td>
-      <td style="text-align:left">Github</td>
-      <td style="text-align:left">Github</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Release</td>
-      <td style="text-align:left">Maven</td>
-      <td style="text-align:left">
-        <p>Cocoapods</p>
-        <p>Carthage</p>
-      </td>
-      <td style="text-align:left">APT repository</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Storage
-        <br />
-        <br />
-      </td>
-      <td style="text-align:left">
-        <p>Touch&#xB85C;&#xB9CC; wake up: 13MB</p>
-        <p>Wake up word 1&#xAC1C;: 14MB</p>
-        <p>Wake up word 2&#xAC1C;: 15MB</p>
-      </td>
-      <td style="text-align:left">
-        <p>Touch&#xB85C;&#xB9CC; wake up: 14MB</p>
-        <p>Wake up word 1&#xAC1C;: 15MB</p>
-        <p>Wake up word 2&#xAC1C;: 16MB</p>
-      </td>
-      <td style="text-align:left">
-        <p>Touch&#xB85C;&#xB9CC; wake up: 6MB</p>
-        <p>Wake up word 1&#xAC1C;: 7MB</p>
-        <p>Wake up word 2&#xAC1C;: 8MB</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
+| Requirement | Android | iOS | Linux |
+| :--- | :--- | :--- | :--- |
+| OS Version | &gt;= Android 5.0(API level 21) | &gt;= iOS 10.0+ | &gt;= Ubuntu Linux 16.04 |
+| Platform | Android | iOS | Ubuntu Linux<br>Raspberry Pi<br>Generic Linux |
+| Language | Kotlin | Swift | C, C++ | 
+| Architecture | arm7, arm64 | arm7, arm64 | x86_64, arm64, armhf |
+| Repository | Github | Github | Github |
+| Release | Maven | Cocoapods<br>Carthage | APT repository |
+| Storage | Touch로만 wake up: 13MB<br>Wake up word 1개: 14MB<br>Wake up word 2개: 15MB | Touch로만 wake up: 14MB<br>Wake up word 1개: 15MB<br>Wake up word 2개: 16MB | Touch로만 wake up: 6MB<br>Wake up word 1개: 7MB<br>Wake up word 2개: 8MB |
 
 {% page-ref page="ios/" %}
 

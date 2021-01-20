@@ -31,9 +31,9 @@ Play 사용을 위해 사용자가 발화한  음성명령 중  실패한  발�
 
 `NUGU developers` &gt; `NUGU play kit` &gt; `통계` 페이지의 주요 발화 Top 100 통계 항목에서 조회할 Play를 선택하고, 조회 기간을 설정한 후 `확인` 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff97gxuzp1i8n3hnd_ch5_542_c01-1%20%281%29.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff97gxuzp1i8n3hnd_ch5_542_c01-1__1.png)
 
 조회가 완료되면 주요 발화 Top 100 리스트에서 발화 내용을 확인할 수 있습니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff97k5yxsuch7ghaf_ch5_542_c02-1%20%281%29.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff97k5yxsuch7ghaf_ch5_542_c02-1__1.png)
 

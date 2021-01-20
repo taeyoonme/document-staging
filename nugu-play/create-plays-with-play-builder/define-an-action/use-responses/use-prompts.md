@@ -4,216 +4,42 @@
 
 Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. Prompt를 작성할때 다음과 같은 구성 요소들을 사용할 수 있습니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xAD6C;&#xC131; &#xC694;&#xC18C;</th>
-      <th style="text-align:left">&#xD558;&#xC704; &#xC694;&#xC18C;</th>
-      <th style="text-align:left">&#xD2B9;&#xC9D5;</th>
-      <th style="text-align:center">
-        <p>&#xC790;&#xB3D9;&#xC644;&#xC131;</p>
-        <p>&#xB2E8;&#xCD95;&#xD0A4;</p>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">&#xC77C;&#xBC18; &#xD14D;&#xC2A4;&#xD2B8;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&apos;&#xAC00;&#xB098;&#xB2E4;&apos;&#xC640; &#xAC19;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778;
-        &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xADF8;&#xB300;&#xB85C; &#xC77D;&#xC5B4;
-        &#xBC1C;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</td>
-      <td style="text-align:center"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Parameter</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&#xC640; &#xAC19;&#xC740; &#xD615;&#xD0DC;&#xB85C; &#xC0AC;&#xC6A9;&#xD558;&#xBA70;,
-          Parameter&#xC5D0; &#xB2F4;&#xAE34; &#xAC12;&#xC744;</p>
-        <p>&#xD14D;&#xC2A4;&#xD2B8;&#xB85C; &#xBCC0;&#xD615;&#xD558;&#xC5EC; &#xBC1C;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>Parameter &#xC0AC;&#xC6A9;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C;
-          &#xB0B4;&#xC6A9;&#xC740;</p>
-        <p><a href="../use-parameters/">Parameter &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</a>&#xB97C;
-          &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
-      </td>
-      <td style="text-align:center">{{</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Response Filter</td>
-      <td style="text-align:left">NLG Translator</td>
-      <td style="text-align:left">
-        <p>Parameter&#xC640; &#xD56D;&#xC0C1; &#xACB0;&#xD569;&#xD558;&#xC5EC; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;,</p>
-        <p>&#xB2E8;&#xB3C5;&#xC73C;&#xB85C; &#xC4F0;&#xC77C; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:center">&gt;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">NLG Normalizer</td>
-      <td style="text-align:left">
-        <p>Parameter&#xC5D0; &#xB2F4;&#xACA8; &#xC788;&#xB294; &#xAC12;&#xC774; Filter&#xC758;
-          Source&#xC640;</p>
-        <p>100% &#xC77C;&#xCE58;&#xD560; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:center">=</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">NLG Function</td>
-      <td style="text-align:left">
-        <p>Response Filter&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C; &#xB0B4;&#xC6A9;&#xC740;</p>
-        <p><a href="../../define-response-filters.md">Response Filter</a>&#xB97C;
-          &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
-      </td>
-      <td style="text-align:center">:</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#xC870;&#xC0AC;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&apos;&#xC744;/&#xB97C;&apos;&#xACFC; &#xAC19;&#xC774; &#xC55E; &#xC74C;&#xC808;&#xC5D0;
-          &#xB530;&#xB77C; &#xC870;&#xC0AC;&#xAC00; &#xBC14;&#xB00C;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;</p>
-        <p>&#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xBCC0;&#xD658;&#xD558;&#xC5EC; &#xBC1C;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC870;&#xC0AC; &#xC790;&#xB3D9; &#xBCC0;&#xD658;&#xC740; Parameter&#xC640;
-          &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xB420; &#xB54C;&#xB9CC; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC870;&#xC0AC; &#xCC98;&#xB9AC;&#xC5D0; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C;
-          &#xB0B4;&#xC6A9;&#xC740; <a href="use-prompts.md#process-postpositions">&#xC870;&#xC0AC; &#xCC98;&#xB9AC;&#xD558;&#xAE30;</a>&#xB97C;
-          &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
-      </td>
-      <td style="text-align:center">/</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">SKML &#xD0DC;&#xADF8;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>TTS &#xC5D4;&#xC9C4;&#xC774; &#xD14D;&#xC2A4;&#xD2B8; &#xD639;&#xC740;
-          Parameter&#xC758; &#xAC12;&#xC744;</p>
-        <p>SKML &#xD0DC;&#xADF8;&#xC5D0; &#xB530;&#xB77C; &#xBC1C;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>SKML &#xD0DC;&#xADF8; &#xC0AC;&#xC6A9; &#xB300;&#xD55C; &#xC790;&#xC138;&#xD55C;
-          &#xB0B4;&#xC6A9;&#xC740;</p>
-        <p><a href="use-prompts.md#use-utterance-options">&#xBC1C;&#xD654; &#xC635;&#xC158; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</a>&#xB97C;
-          &#xCC38;&#xACE0;&#xD558;&#xC138;&#xC694;.</p>
-      </td>
-      <td style="text-align:center">&lt;</td>
-    </tr>
-  </tbody>
-</table>
+| 구성요소 | 하위요소 | 특징 | 자동완성 단축키 |
+| :--- | :--- | :--- | :--- |
+| 일반 텍스트 | - | '가나다'와 같은 일반적인 텍스트를 그대로 읽어 발화합니다. |  |
+| Parameter | - | `{{}}`와 같은 형태로 사용하며, Parameter에 담긴 값을 텍스트로 변형하여 발화합니다.<br>Parameter 사용법에 대한 자세한 내용은 [Parameter 사용하기](../use-parameters/README.md)를 참고하세요. | `{{` |
+| Response Filter | NLG Translator | Parameter와 항상 결합하여 사용되며, 단독으로 쓰일 수 없습니다. | `>` |
+| - | NLG Normalizer | Parameter에 담겨 있는 값이 Filter의 Source와 100% 일치할 경우에만 동작합니다. | `=` |
+| - | NLG Function | Response Filter에 대한 자세한 내용은 [Response Filter](../../define-response-filters.md)를 참고하세요. | `:` |
+| 조사 | - | '을/를'과 같이 앞 음절에 따라 조사가 바뀌는 경우에 자동으로 변환하여 발화합니다. 조사 자동 변환은 Parameter와 함께 사용될 때만 동작합니다. 조사 처리에 대한 자세한 내용은 [조사 처리하기](#process-postpositions)를 참고하세요. | `/` |
+| SKML 태그 | - | TTS 엔진이 텍스트 혹은 Parameter의 값을 SKML 태그에 따라 발화합니다. SKML 태그 사용 대한 자세한 내용은 [발화 옵션 사용하기](#use-utterance-options)를 참고하세요. | `<` |
 
 #### Prompt의 유형 <a id="prompt-types"></a>
 
 Play Builder의 Prompt에는 3가지 유형이 있습니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC720;&#xD615;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">&#xB300;&#xAE30; Prompt</td>
-      <td style="text-align:left">Prompt&#xAC00; &#xBC1C;&#xD654;&#xB41C; &#xC774;&#xD6C4; Play&#xC758;
-        &#xC138;&#xC158;&#xC774; &#xC720;&#xC9C0;&#xB429;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#xC5F0;&#xC18D; Prompt</td>
-      <td style="text-align:left">
-        <p>&#xB4A4;&#xC774;&#xC5B4; &#xC62C; Prompt&#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
-          &#xBC1C;&#xD654;&#xB418;&#xBA70;,</p>
-        <p>&#xB4A4;&#xC774;&#xC5B4; &#xC624;&#xB294; Prompt&#xC640; &#xB354;&#xD574;&#xC838;&#xC11C;
-          &#xD558;&#xB098;&#xC758; &#xBB38;&#xC7A5;&#xCC98;&#xB7FC; &#xBC1C;&#xD654;&#xB429;&#xB2C8;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#xC885;&#xB8CC; Prompt</td>
-      <td style="text-align:left">Prompt&#xAC00; &#xBC1C;&#xD654;&#xB41C; &#xC774;&#xD6C4; Play&#xC758;
-        &#xC138;&#xC158;&#xC774; &#xC885;&#xB8CC;&#xB429;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-  </tbody>
-</table>
+| 유형 | 설명 |
+| :--- | :--- |
+| 대기 Prompt | Prompt가 발화된 이후 Play의 세션이 유지됩니다. |
+| 연속 Prompt | 뒤이어 올 Prompt가 있는 경우에만 발화되며, 뒤이어 오는 Prompt와 더해져서 하나의 문장처럼 발화됩니다. |
+| 종료 Prompt | Prompt가 발화된 이후 Play의 세션이 종료됩니다. |
 
 Prompt는 사용 위치에 따라 다음과 같이 구분됩니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC704;&#xCE58;</th>
-      <th style="text-align:left"></th>
-      <th style="text-align:left">&#xD2B9;&#xC9D5;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">&#xC77C;&#xBC18; Response&#xC758; Prompt</td>
-      <td style="text-align:left">Welcome Action&#xC744; &#xC81C;&#xC678;&#xD55C; &#xBAA8;&#xB4E0; Action</td>
-      <td
-      style="text-align:left">
-        <p>&#xB300;&#xAE30; Prompt&#xC640; &#xC885;&#xB8CC; Prompt&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC5EC;&#xB7EC; Prompt&#xAC00; &#xC785;&#xB825;&#xB41C; &#xACBD;&#xC6B0;,
-          &#xBB34;&#xC791;&#xC704;&#xB85C; &#xC120;&#xD0DD;&#xB418;&#xC5B4; &#xBC1C;&#xD654;&#xB429;&#xB2C8;&#xB2E4;.</p>
-        </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">Built-in Action &gt; welcome</td>
-      <td style="text-align:left">
-        <p>&#xB300;&#xAE30; Prompt&#xC640; &#xC5F0;&#xC18D; Prompt&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC5EC;&#xB7EC; Prompt&#xAC00; &#xC785;&#xB825;&#xB41C; &#xACBD;&#xC6B0;,
-          &#xBB34;&#xC791;&#xC704;&#xB85C; &#xC120;&#xD0DD;&#xB418;&#xC5B4; &#xBC1C;&#xD654;&#xB429;&#xB2C8;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">Built-in Action &gt; exit</td>
-      <td style="text-align:left">
-        <p>&#xC885;&#xB8CC; Prompt&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC5EC;&#xB7EC; Prompt&#xAC00; &#xC785;&#xB825;&#xB41C; &#xACBD;&#xC6B0;,
-          &#xBB34;&#xC791;&#xC704;&#xB85C; &#xC120;&#xD0DD;&#xB418;&#xC5B4; &#xBC1C;&#xD654;&#xB429;&#xB2C8;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">Built-in Action &gt; fallback</td>
-      <td style="text-align:left">
-        <p>&#xB300;&#xAE30; Prompt&#xC640; &#xC885;&#xB8CC; Prompt&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC5EC;&#xB7EC; Prompt&#xAC00; &#xC785;&#xB825;&#xB41C; &#xACBD;&#xC6B0;,
-          &#xC704;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C;
-          &#xBC1C;&#xD654;&#xB429;&#xB2C8;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Slot-filling Prompt</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&#xB300;&#xAE30; Prompt&#xC640; &#xC885;&#xB8CC; Prompt&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC5EC;&#xB7EC; Prompt&#xAC00; &#xC785;&#xB825;&#xB41C; &#xACBD;&#xC6B0;,
-          &#xC704;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C;
-          &#xBC1C;&#xD654;&#xB429;&#xB2C8;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#xC608;&#xC678; &#xC0C1;&#xD669; &#xCC98;&#xB9AC;&#xC758; Exception Prompt</td>
-      <td
-      style="text-align:left"></td>
-        <td style="text-align:left">
-          <p>&#xB300;&#xAE30; Prompt&#xC640; &#xC885;&#xB8CC; Prompt&#xAC00; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
-          <p>&#xC5EC;&#xB7EC; Prompt&#xAC00; &#xC785;&#xB825;&#xB41C; &#xACBD;&#xC6B0;,
-            &#xC704;&#xC5D0;&#xC11C;&#xBD80;&#xD130; &#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C;
-            &#xBC1C;&#xD654;&#xB429;&#xB2C8;&#xB2E4;.</p>
-        </td>
-    </tr>
-  </tbody>
-</table>
+| 위치 | Action 위치 | 특징 |
+| :--- | :--- | :--- | 
+| 일반 Response의 Prompt | Welcome Action을 제외한 모든 Action | 대기 Prompt와 종료 Prompt가 사용됩니다.<br>여러 Prompt가 입력된 경우, 무작위로 선택되어 발화됩니다. |
+| - | Built-in Action &gt; welcome | 대기 Prompt와 연속 Prompt가 사용됩니다.<br>여러 Prompt가 입력된 경우, 무작위로 선택되어 발화됩니다. |
+| - | Built-in Action &gt; exit | 종료 Prompt가 사용됩니다.<br>여러 Prompt가 입력된 경우, 무작위로 선택되어 발화됩니다. |
+| - | Built-in Action &gt; fallback | 대기 Prompt와 종료 Prompt가 사용됩니다.<br>여러 Prompt가 입력된 경우, 위에서부터 순차적으로 발화됩니다. |
+| Slot-filling Prompt | - | 대기 Prompt와 종료 Prompt가 사용됩니다.<br>여러 Prompt가 입력된 경우, 위에서부터 순차적으로 발화됩니다. |
+| 예외 상황 처리의 Exception Prompt | - | 대기 Prompt와 종료 Prompt가 사용됩니다.<br>여러 Prompt가 입력된 경우, 위에서부터 순차적으로 발화됩니다. |
 
 #### Silent Prompt <a id="silent-prompt"></a>
 
 사용자에게 빈 응답을 전달하고 싶을 경우, Silent Prompt를 사용할 수 있습니다. Silent Prompt는 Prompt 입력 창 우측의 버튼을 눌러 설정 가능합니다. Silent Prompt를 응답으로 설정하면, 아무 발화 없이 대기 모드로 넘어가거나 세션이 종료되므로 꼭 필요한 경우에만 사용하는 것이 좋습니다. Silent Prompt는 모든 유형의 Prompt에서 사용할 수 있습니다.
 
 ![](../../../../.gitbook/assets/silentprompt.gif)
-
-
 
 ## 조사 처리하기 <a id="process-postpositions"></a>
 
@@ -233,7 +59,7 @@ Parameter의 `}}` 기호 뒤에 / 입력하면 조사의 자동완성 창이 표
 
 받침 유무에 따른 조사는 다음과 같이 변환됩니다.
 
-|  | 은/는 | 이/가 | 을/를 | 과/와 | 로/으로 |
+| - | 은/는 | 이/가 | 을/를 | 과/와 | 로/으로 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | 받침이 없는 경우 | 는 | 가 | 를 | 와 | 로 |
 | 받침이 있는 경우 | 은 | 이 | 을 | 과 | 으로 |
@@ -295,555 +121,58 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
 
 ![](../../../../.gitbook/assets/ch3_323413_01-1.png)
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xBC1C;&#xD654; &#xC635;&#xC158;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">
-        <p>&#xD14D;&#xC2A4;&#xD2B8;&#xC77D;&#xAE30;</p>
-        <p>(say)</p>
-      </td>
-      <td style="text-align:left">
-        <p>&#xD55C;&#xAE00;&#xC774; &#xC544;&#xB2CC; &#xBB38;&#xC790;&#xB4E4;&#xC744;
-          &#xC5B4;&#xB5BB;&#xAC8C; &#xC77D;&#xC744;&#xC9C0; &#xACB0;&#xC815;&#xD558;&#xB294;
-          &#xD0DC;&#xADF8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-        <p>&apos;4-2&apos;&#xB294; &apos;&#xC0AC; &#xB2E4;&#xC2DC; &#xC774;&apos;&#xC640;
-          &#xAC19;&#xC774; &#xC8FC;&#xC18C;&#xCC98;&#xB7FC; &#xC77D;&#xAC70;&#xB098;,</p>
-        <p>&apos;&#xC0AC; &#xB300; &#xC774;&apos;&#xCC98;&#xB7FC; &#xACBD;&#xAE30;
-          &#xC2A4;&#xCF54;&#xC5B4;&#xB85C; &#xC77D;&#xC744; &#xC218; &#xC788;&#xC744;
-          &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;,</p>
-        <p>&#xC774;&#xAC83;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xC77D;&#xC744; &#xAC83;&#xC778;&#xC9C0;
-          &#xD0DC;&#xADF8;&#xB85C; &#xC815;&#xD574;&#xC8FC;&#xB294; &#xAE30;&#xB2A5;&#xC785;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xD0DC;&#xADF8;&#xB97C; &#xC801;&#xC6A9;&#xD560; &#xD14D;&#xC2A4;&#xD2B8;&#xC758;
-          &#xB05D;&#xC5D0; <code>&lt;/say&gt;</code>&#xAC00; &#xD544;&#xC218;&#xB85C;
-          &#xB4E4;&#xC5B4;&#xAC00;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#xBCC0;&#xD658;&#xD558;&#xC5EC; &#xC77D;&#xAE30; (sub)</td>
-      <td style="text-align:left">
-        <p>&#xC77C;&#xBC18;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xC740; &#xBC1C;&#xC74C;&#xBCC0;&#xD658;
-          &#xADDC;&#xCE59;&#xC744; &#xD1B5;&#xD574; &#xBC1C;&#xC74C;&#xC774; &#xB418;&#xB294;
-          &#xD14D;&#xC2A4;&#xD2B8;&#xC778; &#xACBD;&#xC6B0;,</p>
-        <p>&#xC18D;&#xC131;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD574;&#xC900; &#xD14D;&#xC2A4;&#xD2B8;&#xB85C;
-          &#xBCC0;&#xD658;&#xD558;&#xC5EC; &#xBC1C;&#xD654;&#xD558;&#xB3C4;&#xB85D;
-          &#xD558;&#xB294; &#xD0DC;&#xADF8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) <code>&lt;sub alias=&quot;&#xD638;&#xB0A0;&#xB450;&quot;&gt;Ronaldo&lt;/sub&gt;</code> &#x2192;
-          &apos;Ronaldo&apos;&#xB97C;</p>
-        <p>&#xD0DC;&#xADF8; &#xB0B4; &#xC18D;&#xC131;&#xC758; &apos;&#xD638;&#xB0A0;&#xB450;&apos;&#xB85C;
-          &#xBCC0;&#xD658;&#xD558;&#xC5EC; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) <code>&lt;sub alias=&quot;&#xC368;&#xD504;&#xB77C;&#xC774;&#xC988;&quot;&gt;&#xC11C;&#xD504;&#xB77C;&#xC774;&#xC988;&lt;/sub&gt;</code> &#x2192;
-          &apos;&#xC11C;&#xD504;&#xB77C;&#xC774;&#xC988;&apos;&#xB97C;</p>
-        <p>&#xD0DC;&#xADF8; &#xB0B4; &#xC18D;&#xC131;&#xC758; &apos;&#xC368;&#xD504;&#xB77C;&#xC774;&#xC988;&apos;&#xB85C;
-          &#xBCC0;&#xD658;&#xD558;&#xC5EC; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xD0DC;&#xADF8;&#xB97C; &#xC801;&#xC6A9;&#xD560; &#xD14D;&#xC2A4;&#xD2B8;&#xC758;
-          &#xB05D;&#xC5D0; <code>&lt;/sub&gt;</code>&#xAC00; &#xD544;&#xC218;&#xB85C;
-          &#xB4E4;&#xC5B4;&#xAC00;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>&#xB04A;&#xC5B4;&#xC77D;&#xAE30;</p>
-        <p>(break, pause)</p>
-      </td>
-      <td style="text-align:left">
-        <p>&#xBB38;&#xC7A5;&#xC744; &#xC77D;&#xC744; &#xB54C; &#xB0B4;&#xC6A9;&#xC0C1;,
-          &#xAE38;&#xC774;&#xC0C1; &#xC801;&#xC808;&#xD558;&#xAC8C; &#xC26C;&#xC5B4;&#xC11C;
-          &#xC77D;&#xC5B4;&#xC8FC;&#xB294; &#xACF3;&#xC744; &#xACB0;&#xC815;&#xD558;&#xB294;
-          &#xD0DC;&#xADF8;&#xC785;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC785;&#xB825;&#xB41C; Prompt&#xB294; TTS &#xC5D4;&#xC9C4;&#xC774; &#xB04A;&#xC5B4;&#xC77D;&#xAE30;
-          &#xAC04;&#xACA9;&#xC744; &#xC2A4;&#xC2A4;&#xB85C; &#xACC4;&#xC0B0;&#xD558;&#xC5EC;
-          &#xBC1C;&#xD654;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>TTS &#xC5D4;&#xC9C4; &#xD569;&#xC131;&#xC74C;&#xC758; &#xB04A;&#xC5B4;&#xC77D;&#xAE30;&#xAC00;
-          &#xC790;&#xC5F0;&#xC2A4;&#xB7FD;&#xC9C0; &#xC54A;&#xB2E4;&#xACE0; &#xD310;&#xB2E8;&#xB420;
-          &#xACBD;&#xC6B0;&#xC5D0;</p>
-        <p>&#xB04A;&#xC5B4;&#xC77D;&#xAE30;&#xC758; &#xC704;&#xCE58; &#xBC0F; &#xC885;&#xB958;&#xB97C;
-          &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC774; &#xD0DC;&#xADF8;&#xB294; &#xC801;&#xC6A9;&#xD560; &#xC5B4;&#xC808;&#xC758;
-          &#xB4A4;&#xC5D0; &#xACF5;&#xBC31; &#xC5C6;&#xC774; &#xB123;&#xC5B4;&#xC57C;&#xD558;&#xACE0;,
-          &#xD0DC;&#xADF8;&#xC758; &#xB4A4;&#xC5D0;&#xB294; &#xACF5;&#xBC31;&#xC774;
-          &#xC788;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) <code>&#xC548;&#xB155;&#xD558;&#xC138;&#xC694;. &lt;break type=&quot;weak&quot;/&gt;&#xC544;&#xB9AC;&#xC544;&#xC5D0;&#xC694;.</code>(X)</p>
-        <p>&#xC608;) <code>&#xC548;&#xB155;&#xD558;&#xC138;&#xC694;.&lt;break type=&quot;weak&quot;/&gt; &#xC544;&#xB9AC;&#xC544;&#xC5D0;&#xC694;.</code>(O)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#xD6A8;&#xACFC;&#xC74C;&#xB123;&#xAE30; (audio)</td>
-      <td style="text-align:left">&#xBB38;&#xC7A5; &#xC911;&#xAC04;&#xC5D0; &#xBC15;&#xC218; &#xC18C;&#xB9AC;,
-        &#xCC9C;&#xB465; &#xC18C;&#xB9AC; &#xB4F1;&#xC758; &#xD6A8;&#xACFC;&#xC74C;&#xC744;
-        &#xB123;&#xC744; &#xC218; &#xC788;&#xB294; &#xD0DC;&#xADF8;&#xC785;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-  </tbody>
-</table>
+| 발화옵션 | 설명 |
+| :--- | :--- |
+| 텍스트읽기 (say) | 한글이 아닌 문자들을 어떻게 읽을지 결정하는 태그입니다.<br>'4-2'는 '사 다시 이'와 같이 주소처럼 읽거나, '사 대 이'처럼 경기 스코어로 읽을 수 있을 수 있기 때문에, 이것을 어떻게 읽을 것인지 태그로 정해주는 기능입니다.<br>태그를 적용할 텍스트의 끝에 `</say>`가 필수로 들어가야 합니다. |
+| 변환하여 읽기 (sub) | 일반적이지 않은 발음변환 규칙을 통해 발음이 되는 텍스트인 경우, 속성으로 지정해준 텍스트로 변환하여 발화하도록 하는 태그입니다.<br>예\) `<sub alias="호날두">Ronaldo</sub>` → 'Ronaldo'를 태그 내 속성의 '호날두'로 변환하여 읽습니다.<br>예\) `<sub alias="써프라이즈">서프라이즈</sub>` → '서프라이즈'를 태그 내 속성의 '써프라이즈'로 변환하여 읽습니다.<br>태그를 적용할 텍스트의 끝에 `</sub>`가 필수로 들어가야 합니다. |
+| 끊어읽기 (break, pause) | 문장을 읽을 때 내용상, 길이상 적절하게 쉬어서 읽어주는 곳을 결정하는 태그입니다.<br>입력된 Prompt는 TTS 엔진이 끊어읽기 간격을 스스로 계산하여 발화합니다.<br>TTS 엔진 합성음의 끊어읽기가 자연스럽지 않다고 판단될 경우에 끊어읽기의 위치 및 종류를 수동으로 설정할 수 있습니다.<br>이 태그는 적용할 어절의 뒤에 공백 없이 넣어야하고, 태그의 뒤에는 공백이 있어야 합니다.<br>예) 안녕하세요. `<break type="weak"/>`아리아에요. \(X\)<br>예) 안녕하세요.`<break type="weak"/>` 아리아에요. \(O\) |
+| 효과음넣기 (audio) | 문장 중간에 박수 소리, 천둥 소리 등의 효과음을 넣을 수 있는 태그입니다. |
 
 각 태그별 세부 기능은 다음과 같습니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">
-        <p>&#xC0C1;&#xC704;</p>
-        <p>&#xC635;&#xC158;</p>
-      </th>
-      <th style="text-align:left">&#xC138;&#xBD80; &#xC635;&#xC158;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-      <th style="text-align:left">&#xC18D;&#xC131;</th>
-      <th style="text-align:left">&#xC785;&#xB825;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">
-        <p>&#xB04A;&#xC5B4;</p>
-        <p>&#xC77D;&#xAE30;</p>
-      </td>
-      <td style="text-align:left">&#xAC00;&#xC7A5; &#xAE38;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xAE30;</td>
-      <td
-      style="text-align:left">
-        <p>&#xAC00;&#xC7A5; &#xAE38;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) &#xC624;&#xB298;&#xC740; &#xBE44;&#xAC00;&lt;break type=&quot;sentence&quot;/&gt;
-          &#xC635;&#xB2C8;&#xB2E4;.</p>
-        </td>
-        <td style="text-align:left">sentence</td>
-        <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xAE38;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&#xAE38;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) &#xC624;&#xB298;&#xC740; &#xBE44;&#xAC00;&lt;break type=&quot;strong&quot;/&gt;
-          &#xC635;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">strong</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC9E7;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&#xC9E7;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) &#xC624;&#xB298;&#xC740; &#xBE44;&#xAC00;&lt;break type=&quot;weak&quot;/&gt;
-          &#xC635;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">weak</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xB04A;&#xC5B4;&#xC77D;&#xAE30; &#xC5C6;&#xC560;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&#xC774; &#xD0DC;&#xADF8;&#xAC00; &#xCD94;&#xAC00;&#xB41C; &#xBD80;&#xBD84;&#xC744;</p>
-        <p>&#xB04A;&#xC9C0; &#xC54A;&#xACE0; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xAC8C; &#xB04A;&#xC5B4;&#xC77D;&#xB294;
-          &#xBD80;&#xBD84;&#xC774;</p>
-        <p>&#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) &#xBE0C;&#xB85C;&#xCF5C;&#xB9AC;&lt;break type=&quot;none&quot;/&gt;</p>
-        <p>&#xB108;&#xB9C8;&#xC800;&#xC758; &#xC74C;&#xC545;&#xC744; &#xB4E4;&#xB824;&#xB4DC;&#xB9B4;&#xAED8;&#xC694;.</p>
-      </td>
-      <td style="text-align:left">none</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD55C;&#xB2E8;&#xC5B4;&#xCC98;&#xB7FC; &#xBD99;&#xC5EC;&#xC77D;&#xAE30;</td>
-      <td
-      style="text-align:left">
-        <p>&#xD55C; &#xB2E8;&#xC5B4;&#xC640; &#xAC19;&#xC774; &#xBC1C;&#xC74C;&#xB418;&#xB3C4;&#xB85D;
-          &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;&#xB97C;&#xB4E4;&#xC5B4; &apos;&#xCCAB; &#xBC88;&#xC9F8;&apos;&#xB97C;
-          &apos;&#xCCAB;&#xBED4;&#xC9F8;&apos;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) &#xCCAB;&lt;break type=&quot;clitic&quot;/&gt; &#xBC88;&#xC9F8;</p>
-        </td>
-        <td style="text-align:left">clitic</td>
-        <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xB04A;&#xC5B4;&#xC77D;&#xAE30; &#xC2DC;&#xAC04;&#xC124;&#xC815;</td>
-      <td
-      style="text-align:left">
-        <p>&#xB04A;&#xC5B4; &#xC77D;&#xB294; &#xC2DC;&#xAC04;&#xC744; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&lt;pause time=&quot;200&quot;/&gt;</p>
-        <p>&#x2192; 200 ms &#xB3D9;&#xC548; &#xB04A;&#xC5B4; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&apos;0&apos;&#xBCF4;&#xB2E4; &#xD070; &#xC815;&#xC218;&#xB9CC; &#xC0AC;&#xC6A9;
-          &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC608;) &#xC624;&#xB298;&#xC740;&lt;pause time=&quot;200&quot;/&gt;
-          &#xBE44;&#xAC00; &#xC635;&#xB2C8;&#xB2E4;.</p>
-        </td>
-        <td style="text-align:left"></td>
-        <td style="text-align:left">[n]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#xD14D;&#xC2A4;&#xD2B8;&#xC77D;&#xAE30;</td>
-      <td style="text-align:left">&#xD55C;&#xC790; &#xB0B1;&#xC22B;&#xC790; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&#xC22B;&#xC790;&#xB97C; &apos;&#xC77C;, &#xC774;, &#xC0BC;, &#xC0AC;&apos;&#xC640;
-          &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xB450; &#xC790;&#xB9AC; &#xC774;&#xC0C1;&#xC758; &#xC22B;&#xC790;&#xB3C4;
-          &apos;&#xC77C;&#xC77C;&#xAD6C;&apos;&#xC640; &#xAC19;&#xC774;</p>
-        <p>&#xD55C; &#xC790;&#xC529; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">digit</td>
-      <td style="text-align:left">[n]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD55C;&#xC790; &#xC22B;&#xC790; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&#xC22B;&#xC790;&#xB97C; &apos;&#xC77C;, &#xC774;, &#xC0BC;, &#xC0AC;&apos;&#xC640;
-          &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xC790;&#xB9BF;&#xC218;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xC5EC; &apos;&#xBC31;&#xC2ED;&#xAD6C;&apos;&#xC640;
-          &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&apos;&#xACBD;&apos;(10&#xC758; 16&#xC81C;&#xACF1;) &#xB2E8;&#xC704;&#xAE4C;&#xC9C0;
-          &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">num_hanja</td>
-      <td style="text-align:left">[n]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD55C;&#xAE00; &#xC22B;&#xC790; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">&#xC22B;&#xC790;&#xB97C; &apos;&#xD55C;, &#xB450;, &#xC138;, &#xB124;&apos;&#xC640;
-        &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-      <td style="text-align:left">num_kor</td>
-      <td style="text-align:left">[n]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC601;&#xC5B4; &#xC22B;&#xC790; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&#xC22B;&#xC790;&#xB97C; &apos;&#xC6D0;, &#xD22C;, &#xC4F0;&#xB9AC;, &#xD3EC;&apos;&#xC640;
-          &#xAC19;&#xC774; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>Trillion(10&#xC758; 12&#xC81C;&#xACF1;) &#xB2E8;&#xC704;&#xAE4C;&#xC9C0;
-          &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">num_eng</td>
-      <td style="text-align:left">[n]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xB0A0;&#xC9DC; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&apos;&#xC774;&#xCC9C;&#xC2ED;&#xD314;&#xB144; &#xC0BC;&#xC6D4; &#xAD6C;&#xC77C;&apos;&#xACFC;
-          &#xAC19;&#xC774;</p>
-        <p>&#xB0A0;&#xC9DC;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&apos;&#xC0BC;&#xC6D4; &#xAD6C;&#xC77C;&apos;&#xACFC; &#xAC19;&#xC774;
-          &#xD2B9;&#xC815; &#xB0A0;&#xC9DC;&#xB85C; &#xC77D;&#xAC70;&#xB098;,</p>
-        <p>&apos;&#xC0BC;&#xC6D4; &#xAD6C;&#xC77C;&#xC5D0;&#xC11C; &#xC0AC;&#xC6D4;
-          &#xC2ED;&#xC77C;&apos;&#xACFC; &#xAC19;&#xC774;</p>
-        <p>&#xBC94;&#xC704;&#xB85C; &#xC77D;&#xB294; &#xAC83;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">date</td>
-      <td style="text-align:left">
-        <p>&#xD2B9;&#xC815; &#xB0A0;</p>
-        <p>[yyyy]-[mm]-[dd]</p>
-        <p>[yyyy]:[mm]:[dd]</p>
-        <p>[yyyy]/[mm]/[dd]</p>
-        <p>[yyyy].[mm].[dd]</p>
-        <p>[mm]-[dd]</p>
-        <p>[mm]/[dd]</p>
-        <p>[mm].[dd]</p>
-        <p></p>
-        <p></p>
-        <p>&#xBC94;&#xC704;</p>
-        <p>[yyyy]-[mm]-[dd]~</p>
-        <p>[yyyy]-[mm]-[dd]</p>
-        <p></p>
-        <p>[yyyy]:[mm]:[dd]~</p>
-        <p>[yyyy]:[mm]:[dd]</p>
-        <p></p>
-        <p>[yyyy]/[mm]/[dd]~[yyyy]/[mm]/[dd]</p>
-        <p></p>
-        <p>[yyyy].[mm].[dd]~</p>
-        <p>[yyyy].[mm].[dd]</p>
-        <p></p>
-        <p>[mm]-[dd]~</p>
-        <p>[mm]-[dd]</p>
-        <p></p>
-        <p>[mm]/[dd]~</p>
-        <p>[mm]/[dd]</p>
-        <p></p>
-        <p>[mm].[dd]~</p>
-        <p>[mm].[dd]</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2DC;&#xAC04; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&apos;&#xC5F4;&#xD55C;&#xC2DC; &#xC0BD;&#xC2ED;&#xBD84; &#xC0AC;&#xC2ED;&#xC624;&#xCD08;&apos;&#xC640;
-          &#xAC19;&#xC774;</p>
-        <p>&#xC2DC;&#xAC04;&#xC73C;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&apos;hh&#xC2DC; mm&#xBD84; ss&#xCD08;, hh&#xC2DC; mm&#xBD84;&apos;&#xACFC;
-          &#xAC19;&#xC774;</p>
-        <p>&#xD2B9;&#xC815; &#xC2DC;&#xAC04;&#xC73C;&#xB85C; &#xC77D;&#xAC70;&#xB098;</p>
-        <p>&apos;hh&#xC2DC; mm&#xBD84; ss&#xCD08;&#xC5D0;&#xC11C;</p>
-        <p>hh&#xC2DC; mm&#xBD84; ss&#xCD08;&apos;,</p>
-        <p>&apos;hh&#xC2DC; mm&#xBD84;&#xC5D0;&#xC11C; hh&#xC2DC; mm&#xBD84;&apos;&#xCC98;&#xB7FC;</p>
-        <p>&#xBC94;&#xC704;&#xB85C; &#xC77D;&#xB294; &#xAC83;&#xC744; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">time</td>
-      <td style="text-align:left">
-        <p>&#xD2B9;&#xC815; &#xC2DC;&#xAC04;</p>
-        <p>[hh]:[mm]:[ss]</p>
-        <p>[mm]:[ss]</p>
-        <p></p>
-        <p>&#xAE30;&#xAC04;</p>
-        <p>[hh]:[mm]:[ss]~</p>
-        <p>[hh]:[mm]:[ss]</p>
-        <p></p>
-        <p>[hh]:[mm]:[ss]-</p>
-        <p>[hh]:[mm]:[ss]</p>
-        <p></p>
-        <p>[mm]:[ss]~</p>
-        <p>[mm]:[ss]</p>
-        <p></p>
-        <p>[mm]:[ss]-</p>
-        <p>[mm]:[ss]</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xB2E8;&#xC704; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&apos;&#xCE60;&#xBBF8;&#xD130;, &#xCE60;&#xADF8;&#xB7A8;&apos;&#xACFC;
-          &#xAC19;&#xC774; &#xB2E8;&#xC704;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>139&#xAC1C;&#xC758; &#xB2E8;&#xC704;&#xB97C; &#xC77D;&#xAE30; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-        <p>(<a href="use-prompts.md#list-of-unit-tags-supported-by-utterance-options">&#xBC1C;&#xD654; &#xC635;&#xC158;&#xC5D0;&#xC11C; UNIT </a>
-        </p>
-        <p><a href="use-prompts.md#list-of-unit-tags-supported-by-utterance-options">&#xD0DC;&#xADF8;&#xB85C; &#xC9C0;&#xC6D0; &#xB2E8;&#xC704; &#xBAA9;&#xB85D;</a>)</p>
-      </td>
-      <td style="text-align:left">unit</td>
-      <td style="text-align:left">[n][unit]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC8FC;&#xC18C; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&apos;&#xD314;&#xC2ED;&#xC0BC; &#xB2E4;&#xC2DC; &#xC77C;&apos;&#xACFC;
-          &#xAC19;&#xC774; &#xC9C0;&#xBC88; &#xC8FC;&#xC18C;&#xC758;</p>
-        <p>&#xC9C0;&#xBC88;&#xC744; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">address</td>
-      <td style="text-align:left">[n]-[n]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC804;&#xD654;&#xBC88;&#xD638; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&apos;&#xC77C;&#xC774;&#xC0BC;&#xC0AC; &#xC77C;&#xC774;&#xC0BC;&#xC0AC;&apos;&#xC640;
-          &#xAC19;&#xC774;</p>
-        <p>&#xC804;&#xD654;&#xBC88;&#xD638;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">telephone</td>
-      <td style="text-align:left">
-        <p>[n]-[n]</p>
-        <p>[n]-[n]-[n]</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC601;&#xC5B4; &#xC2A4;&#xD3A0;&#xB9C1; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">
-        <p>&apos;&#xBE44;&#xD2F0;&#xC5D0;&#xC2A4;&apos;&#xC640; &#xAC19;&#xC774;
-          &#xC601;&#xC5B4; &#xC2A4;&#xD3A0;&#xB9C1;&#xC73C;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-        <p>&#xB300;&#xC18C;&#xBB38;&#xC790;&#xB294; &#xAD6C;&#xBD84;&#xD558;&#xC9C0;
-          &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-      </td>
-      <td style="text-align:left">spell</td>
-      <td style="text-align:left">[text]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xACBD;&#xAE30; &#xC2A4;&#xCF54;&#xC5B4; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">&apos;&#xC0BC; &#xB300; &#xC774;&apos;&#xC640; &#xAC19;&#xC774; &#xACBD;&#xAE30;
-        &#xC2A4;&#xCF54;&#xC5B4;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-      <td
-      style="text-align:left">score</td>
-        <td style="text-align:left">
-          <p>[n]:[n]</p>
-          <p>[n]-[n]</p>
-        </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBD84;&#xC218; &#xC77D;&#xAE30;</td>
-      <td style="text-align:left">&apos;&#xC0BC;&#xBD84;&#xC758; &#xC77C;&apos;&#xACFC; &#xAC19;&#xC774;
-        &#xBD84;&#xC218;&#xB85C; &#xC77D;&#xC2B5;&#xB2C8;&#xB2E4;.</td>
-      <td style="text-align:left">fraction</td>
-      <td style="text-align:left">[n]/[n]</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">&#xD6A8;&#xACFC;&#xC74C;&#xB123;&#xAE30;</td>
-      <td style="text-align:left">&#xC2EC;&#xC7A5; &#xBC15;&#xB3D9;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC2EC;&#xC7A5; &#xBC15;&#xB3D9; (&#xBE60;&#xB974;&#xAC8C;)</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC7AC;&#xCC44;&#xAE30;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBC15;&#xC218;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD154;&#xB808;&#xD30C;&#xC2DC; 1</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD154;&#xB808;&#xD30C;&#xC2DC; 2</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBC1C;&#xAC78;&#xC74C;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBB3C;&#xD280;&#xAE30;&#xB294;&#xC18C;&#xB9AC;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC5BC;&#xAD74; &#xC53B;&#xB294; &#xC18C;&#xB9AC;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC74C;&#xC545; 1</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC74C;&#xC545; 2</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xCE74;&#xBA54;&#xB77C; &#xC154;&#xD130;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD540;&#xBC84;&#xD2BC; &#xB204;&#xB974;&#xB294; &#xC18C;&#xB9AC;</td>
-      <td
-      style="text-align:left"></td>
-        <td style="text-align:left"></td>
-        <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBD88;&#xD0C0;&#xB294; &#xC18C;&#xB9AC;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xCC9C;&#xB465;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC790;&#xB3D9;&#xCC28; &#xB9AC;&#xBAA8;&#xCF58;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBE44;&#xD589;&#xAE30;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBB3C;&#xBC29;&#xC6B8; &#xB5A8;&#xC5B4;&#xC9C0;&#xB294; &#xC18C;&#xB9AC;</td>
-      <td
-      style="text-align:left"></td>
-        <td style="text-align:left"></td>
-        <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD718;&#xD30C;&#xB78C; 1</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xD718;&#xD30C;&#xB78C; 2</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBE57;&#xC790;&#xB8E8;&#xC9C8;</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC885;&#xC18C;&#xB9AC; 1</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC885;&#xC18C;&#xB9AC; 2</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>
+| 상위옵션 | 세부옵션 | 설명 | 속성 | 입력 |
+| :--- | :--- | :--- | :--- | :--- |
+| 끊어읽기 | 가장 길게 끊어읽기 | 가장 길게 끊어읽습니다.<br>예\) 오늘은 비가`<break type="sentence"/>` 옵니다. | sentence | - |
+| - | 길게 끊어읽기 | 길게 끊어읽습니다.<br>예\) 오늘은 비가`<break type="strong"/>` 옵니다. | strong | - |
+| - | 짧게 끊어읽기 | 짧게 끊어읽습니다.<br>예\) 오늘은 비가`<break type="weak"/>` 옵니다. | weak | - |
+| - | 끊어읽기 없애기 | 이 태그가 추가된 부분을 끊지 않고 읽습니다.<br>원하지 않게 끊어읽는 부분이 발생하는 경우에 사용합니다.<br>예\) 브로콜리`<break type="none"/>` 너마저의 음악을 들려드릴께요. | none | - |
+| - | 한단어처럼 붙여읽기 | 한 단어와 같이 발음되도록 읽습니다.<br>예를들어 '첫 번째'를 '첫뻔째'로 읽습니다.<br>예\) 첫`<break type="clitic"/>` 번째 | clitic | - |
+| - | 끊어읽기 시간설정 | 끊어 읽는 시간을 설정합니다.<br>예\) `<pause time="200"/>` → 200 ms 동안 끊어 읽습니다.<br>'0'보다 큰 정수만 사용 가능합니다.<br>예\) 오늘은`<pause time="200"/>` 비가 옵니다. | - | `[n]` |
+| 텍스트읽기 | 한자 낱숫자 읽기 | 숫자를 '일, 이, 삼, 사'와 같이 읽습니다.<br>두 자리 이상의 숫자도 '일일구'와 같이 한 자씩 읽습니다. | digit | `[n]` |
+| - | 한자 숫자 읽기 | 숫자를 '일, 이, 삼, 사'와 같이 읽습니다.<br>자릿수를 포함하여 '백십구'와 같이 읽습니다.<br>'경'(10의 16제곱) 단위까지 읽습니다. | num_hanja | `[n]` |
+| - | 한글 숫자 읽기 | 숫자를 '한, 두, 세, 네'와 같이 읽습니다. | num_kor | `[n]` |
+| - | 영어 숫자 읽기 | 숫자를 '원, 투, 쓰리, 포'와 같이 읽습니다.<br>Trillion(10의 12제곱) 단위까지 읽습니다. | num_eng | `[n]` |
+| - | 날짜 읽기 | '이천십팔년 삼월 구일'과 같이 날짜로 읽습니다.<br>'삼월 구일'과 같이 특정 날짜로 읽거나, '삼월 구일에서 사월 십일'과 같이 범위로 읽는 것을 지원합니다. | date | 특정 날<br>`[yyyy]-[mm]-[dd]`<br>`[yyyy]:[mm]:[dd]`<br>`[yyyy]/[mm]/[dd]`<br>`[yyyy].[mm].[dd]`<br>`[mm]-[dd]`<br>`[mm]/[dd]`<br>`[mm].[dd]`<br>범위<br>`[yyyy]-[mm]-[dd]~`<br>`[yyyy]-[mm]-[dd]`<br>`[yyyy]:[mm]:[dd]~`<br>`[yyyy]:[mm]:[dd]`<br>`[yyyy]/[mm]/[dd]~[yyyy]/[mm]/[dd]`<br>`[yyyy].[mm].[dd]~`<br>`[yyyy].[mm].[dd]`<br>`[mm]-[dd]~`<br>`[mm]-[dd]`<br>`[mm]/[dd]~`<br>`[mm]/[dd]`<br>`[mm].[dd]~`<br>`[mm].[dd]` |
+| - | 시간 읽기 | '열한시 삽십분 사십오초'와 같이 시간으로 읽습니다.<br>'hh시 mm분 ss초, hh시 mm분'과 같이 특정 시간으로 읽거나 'hh시 mm분 ss초에서 hh시 mm분 ss초', 'hh시 mm분에서 hh시 mm분'처럼 범위로 읽는 것을 지원합니다. | time | 특정 시간<br>`[hh]:[mm]:[ss]`<br>`[mm]:[ss]`<br>기간<br>`[hh]:[mm]:[ss]~`<br>`[hh]:[mm]:[ss]`<br>`[hh]:[mm]:[ss]-`<br>`[hh]:[mm]:[ss]`<br>`[mm]:[ss]~`<br>`[mm]:[ss]`<br>`[mm]:[ss]-`<br>`[mm]:[ss]` |
+| - | 단위 읽기 | '칠미터, 칠그램'과 같이 단위로 읽습니다.<br>139개의 단위를 읽기 지원합니다.<br>([발화 옵션에서 UNIT 태그로 지원 단위 목록](#list-of-unit-tags-supported-by-utterance-options)) | unit | `[n][unit]` |
+| - | 주소 읽기 | '팔십삼 다시 일'과 같이 지번 주소의 지번을 읽습니다. | address | `[n]-[n]` |
+| - | 전화번호 읽기 | '일이삼사 일이삼사'와 같이 전화번호로 읽습니다. | telephone | `[n]-[n]`<br>`[n]-[n]-[n]` |
+| - | 영어 스펠링 읽기 | '비티에스'와 같이 영어 스펠링으로 읽습니다.<br>대소문자는 구분하지 않습니다. | spell | `[text]` |
+| - | 경기 스코어 읽기 | '삼 대 이'와 같이 경기 스코어로 읽습니다. | score | `[n]:[n]`<br>`[n]-[n]` |
+| - | 분수 읽기 | '삼분의 일'과 같이 분수로 읽습니다. | fraction | `[n]/[n]` |
+| 효과음넣기 | 심장 박동 | - | - | - |
+| - | 심장 박동 (빠르게) | - | - | - |
+| - | 재채기 | - | - | - |
+| - | 박수 | - | - | - |
+| - | 텔레파시 1 | - | - | - |
+| - | 텔레파시 2 | - | - | - |
+| - | 발걸음 | - | - | - |
+| - | 물튀기는소리 | - | - | - |
+| - | 얼굴 씻는 소리 | - | - | - |
+| - | 음악 1 | - | - | - |
+| - | 음악 2 | - | - | - |
+| - | 카메라 셔터 | - | - | - |
+| - | 핀버튼 누르는 소리 | - | - | - |
+| - | 불타는 소리 | - | - | - | 
+| - | 천둥 | - | - | - |
+| - | 자동차 리모콘 | - | - | - |
+| - | 비행기 | - | - | - |
+| - | 물방울 떨어지는 소리 | - | - | - |
+| - | 휘파람 1 | - | - | - |
+| - | 휘파람 2 | - | - | - |
+| - | 빗자루질 | - | - | - |
+| - | 종소리 1 | - | - | - |
+| - | 종소리 2 | - | - | - |
 
 {% hint style="info" %}
 Prompt 내에 사용하는 태그는 텍스트를 직접 입력하여 추가 또는 수정할 수 있습니다.

@@ -35,7 +35,7 @@ Parameter의 사용 방법을 알아보기 위해, 다음과 같이 사용자에
 
 5.  추가한 Parameter 우측 Mapping 항목의 `Entity mapping을 위해 이곳을 클릭하세요.` 버튼을 클릭한 후 Entity mapping 창에서 'day' Parameter에는 '오늘'이 담겨 있는 'BID\_DT\_DAY'를, 'location' Parameter에는 'LOC\_DONG' Entity Type를 각각 매핑합니다.
 
-![](../../../../.gitbook/assets/ch3_3233_c03%20%281%29.gif)
+![](../../../../.gitbook/assets/ch3_3233_c03__1.gif)
 
 * 각 Parameter 우측 Mapping 항목에 매핑된 Entity Type:Entity Role이 표시됩니다.
 * Utterance Parameter 2개가 정의되었으며, 응답에 이 Parameter를 사용할 수 있습니다.
@@ -67,5 +67,5 @@ Play의 Parameter 설정이 완료되면, 이제 Backend proxy에서 이 Paramet
 
 4.  이렇게 입력을 하고, Backend proxy가 기상 정보를 Backend Parameter에 담아주면 다음과 같은 상태가 됩니다.
 
-![](../../../../.gitbook/assets/ch3_3233_04%20%281%29.png)
+![](../../../../.gitbook/assets/ch3_3233_04__1.png)
 

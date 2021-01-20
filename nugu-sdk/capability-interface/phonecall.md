@@ -8,42 +8,15 @@ description: 전화 수/발신 기능 제어를 위한 규격
 
 최신 버전은 1.2 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2020.07.06</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.08.28</td>
-      <td style="text-align:left">SendCandidates directive &#xC5D0; clientSearchTargetList &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.11.02</td>
-      <td style="text-align:left">
-        <p>Context &#xC5D0; searchScene &#xCD94;&#xAC00;
-          <br />SendCandidates directive &#xC5D0; searchScene &#xCD94;&#xAC00;
-          <br />SendCandidates directive &#xC758; clientSearchTargetList &#xC0AD;&#xC81C;</p>
-        <p>Context &#xC5D0; recipient &#xCD94;&#xAC00;</p>
-        <p>MakeCallSucceeded event &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2020.07.06 | 규격 추가 |
+| 1.1 | 2020.08.28 | SendCandidates directive 에 clientSearchTargetList 추가 |
+| 1.2 | 2020.11.02 | Context 에 searchScene 추가<br>SendCandidates directive 에 searchScene 추가<br>SendCandidates directive 의 clientSearchTargetList 삭제<br>Context 에 recipient 추가<br>MakeCallSucceeded event 추가 |
 
 ## State Diagram
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](../../.gitbook/assets/image__10.png)
 
 ## SDK Interface
 
@@ -232,198 +205,22 @@ class MyPhoneCallClient: PhoneCallClient {
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">state</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left"><b>IDLE, OUTGOING, INCOMING, ESTABLISHED</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Play &#xC5D0;&#xC11C; &#xC9C4;&#xD589;&#xC911;&#xC778; intent &#xB97C;
-        &#xC54C; &#xC218; &#xC788;&#xB3C4;&#xB85D; SendCandidates event &#xC5D0;&#xC11C;
-        &#xC804;&#xB2EC;&#xBC1B;&#xC740; data &#xB97C; &#xC720;&#xC9C0;&#xD574;&#xC57C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>intent</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>candidates&#xC758; &#xC6A9;&#xB3C4;</p>
-        <ul>
-          <li><b>CALL</b> - &#xC804;&#xD654;&#xAC78;&#xC5B4;&#xC918;</li>
-          <li><b>SEARCH</b> - &#xCC3E;&#xC544;&#xC918;</li>
-          <li><b>HISTORY</b> - &#xCD5C;&#xADFC; &#xD1B5;&#xD654; &#xBAA9;&#xB85D;</li>
-          <li><b>REDIAL</b> - &#xC7AC;&#xBC1C;&#xC2E0;</li>
-          <li><b>MISSED</b> - &#xBD80;&#xC7AC;&#xC911;&#xD1B5;&#xD654;</li>
-          <li><b>NONE</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>callType</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>NORMAL</b> - &#xC77C;&#xBC18; &#xC804;&#xD654;</li>
-          <li><b>SPEAKER</b> - &#xC2A4;&#xD53C;&#xCEE4;&#xD3F0;</li>
-          <li><b>VIDEO</b> - &#xBE44;&#xB514;&#xC624;&#xCF5C;</li>
-          <li><b>CALLAR</b> - &#xCF5C;&#xB77C;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>recipientIntended</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBC1C;&#xD654;&#xC5D0;&#xC11C; &#xBD84;&#xC11D;&#xB41C; recipient &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>recipientIntended.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xAC80;&#xC0C9;&#xC5D0; &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB41C;
-          &#xC0C1;&#xB300;&#xBC29; &#xC774;&#xB984;</p>
-        <p>(NLU &#xBD84;&#xC11D;&#xC73C;&#xB85C; &#xB098;&#xC628; &#xC774;&#xB984;)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>label</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>NLU &#xBD84;&#xC11D; &#xACB0;&#xACFC; label (&#xC9D1;, &#xD68C;&#xC0AC;,
-          ...)</p>
-        <p>&#xC815;&#xADDC;&#xD654;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xACE0;,
-          &#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xC5D0;&#xC11C; &#xBD84;&#xC11D;&#xB41C;
-          &#xAC12;&#xC744; &#xADF8;&#xB300;&#xB85C; &#xBCF4;&#xB0C4;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>searchScene</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"><a href="phonecall.md#sendcandidates">SendCandidates</a> directive &#xB0B4;&#xC6A9;
-        &#xCC38;&#xC870;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>candidates</p>
-      </td>
-      <td style="text-align:left">array of <a href="phonecall.md#person">Person</a>
-      </td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD654;&#xBA74;&#xC5D0; &#xAC80;&#xC0C9; &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C;
-        &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xD558;&#xB294; &#xC911;&#xC5D0;&#xB9CC;
-        context&#xC5D0; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">recipient</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;</p>
-        <p>&#xC218;&#xC2E0;&#xC911;(INCOMING) &#xC0C1;&#xD0DC;&#xC5D0;&#xC11C;&#xB294;
-          &#xBC1C;&#xC2E0;&#xC790; &#xC815;&#xBCF4;&#xB97C; &#xC138;&#xD305; (CallArrived
-          Event&#xC758; caller &#xC815;&#xBCF4;)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipient.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xC758; &#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipient.</p>
-        <p>token</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xC744; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; unique &#xAC12;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipient.</p>
-        <p>isMobile</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29; &#xC804;&#xD654;&#xBC88;&#xD638;&#xAC00;
-          &#xBAA8;&#xBC14;&#xC77C; &#xD3F0;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;</p>
-        <ul>
-          <li><b>TRUE</b>
-          </li>
-          <li><b>FALSE</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipient.</p>
-        <p>isRecentMissed</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD1B5;&#xD654; &#xC0C1;&#xB300;&#xBC29;&#xACFC;&#xC758; &#xAC00;&#xC7A5;
-          &#xCD5C;&#xADFC; &#xD1B5;&#xD654;&#xAC00; &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654;&#xC778;&#xC9C0;
-          &#xC5EC;&#xBD80;</p>
-        <ul>
-          <li><b>TRUE</b> - &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
-            &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774;
-            &#xC788;&#xC9C0;&#xB9CC; &#xBABB;&#xBC1B;&#xC740; &#xACBD;&#xC6B0;</li>
-          <li><b>FALSE</b> - &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
-            &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774; &#xC5C6;&#xAC70;&#xB098;, &#xC788;&#xB294;&#xB370;
-            &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654;&#xAC00; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| state | string | Y | **IDLE**, **OUTGOING**, **INCOMING**, **ESTABLISHED** |
+| template | object | N | Play 에서 진행중인 intent 를 알 수 있도록 SendCandidates event 에서 전달받은 data 를 유지해야 함 |
+| template.intent | string | N | candidates의 용도<br> - **CALL** : 전화걸어줘<br> - **SEARCH** : 찾아줘<br> - **HISTORY** : 최근 통화 목록<br> - **REDIAL** : 재발신<br> - **MISSED** : 부재중통화<br> - **NONE** |
+| template.callType | string | N | **NORMAL** : 일반 전화<br>**SPEAKER** : 스피커폰<br>**VIDEO** : 비디오콜<br>**CALLAR** : 콜라 |
+| template.recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
+| template.recipientIntended.name | string | N | 검색에 요청할때 사용된 상대방 이름<br> (NLU 분석으로 나온 이름) |
+| template.label | string | N | NLU 분석 결과 label (집, 회사, ...)<br>정규화되어 있지 않고, 사용자 발화에서 분석된 값을 그대로 보냄 |
+| template.searchScene | string | N | [SendCandidates](./#sendcandidate) 참조 |
+| template.candidates | array of [Person](./#person) | N | 화면에 검색 결과 리스트를 디스플레이하는 중에만 context에 추가 |
+| recipient | object | N | 통화 상대방에 대한 정보<br>수신중(INCOMING) 상태에서는 발신자 정보를 세팅 (CallArrived Event의 caller 정보) |
+| recipient.name | string | N | 통화 상대방의 이름 |
+| recipient.token | string | N | 통화 상대방을 식별하기 위한 unique 값 |
+| recipient.isMobile | string | N | 통화 상대방 전화번호가 모바일 폰인지 여부 (TRUE/FALSE) |
+| recipient.isRecentMissed | string | N | 통화 상대방과의 가장 최근 통화가 부재중 통화인지 여부<br> - **TRUE** : 수신 중인 전화번호의 가장 최근 수신 이력이 있지만 못받은 경우<br> - **FALSE** : 수신 중인 전화번호의 수신 이력이 없거나, 있는데 부재중 통화가 아닌 경우 |
 
 ## Common Objects
 
@@ -458,208 +255,27 @@ class MyPhoneCallClient: PhoneCallClient {
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">candidates&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBA74; &#xAC01; candidate&#xB294;
-        &#xCD5C;&#xC18C;&#xD55C; &#xC774;&#xB984;&#xC740; &#xD3EC;&#xD568;&#xD574;&#xC57C;
-        &#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>recipient candidates&#xC758; &#xD0C0;&#xC785;</p>
-        <ul>
-          <li><b>CONTACT</b> - &#xC5F0;&#xB77D;&#xCC98; &#xAC80;&#xC0C9;</li>
-          <li><b>EXCHANGE</b> - exchange &#xAC80;&#xC0C9;</li>
-          <li><b>T114</b> - T114 &#xAC80;&#xC0C9;</li>
-          <li><b>NONE</b> - &#xD2B9;&#xC815; &#xCE74;&#xD14C;&#xACE0;&#xB9AC;&#xC5D0;
-            &#xC18D;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">profileImgUrl</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">profile image URL</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">category</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC5C5;&#xC885;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">address</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC8FC;&#xC18C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>address.</p>
-        <p>road</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xB3C4;&#xB85C;&#xBA85; &#xC8FC;&#xC18C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>address.</p>
-        <p>jibun</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC9C0;&#xBC88; &#xC8FC;&#xC18C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">businessHours</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC601;&#xC5C5;&#xC2DC;&#xAC04;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>businessHours.</p>
-        <p>open</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xB0A0;&#xC9DC;, &#xC2DC;&#xAC04; &#xC815;&#xBCF4;&#xB85C; ISO 8601 &#xD3EC;&#xB9F7;
-          (2007-12-03T10:15:30)</p>
-        <p>HH:mm</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>businessHours.</p>
-        <p>close</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xB0A0;&#xC9DC;, &#xC2DC;&#xAC04; &#xC815;&#xBCF4;&#xB85C; ISO 8601 &#xD3EC;&#xB9F7;
-          (2007-12-03T10:15:30)</p>
-        <p>HH:mm</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>businessHours.</p>
-        <p>info</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBD80;&#xAC00;&#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">history</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD1B5;&#xD654; &#xAE30;&#xB85D;&#xC744; &#xC704;&#xD55C; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>history.</p>
-        <p>time</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xB0A0;&#xC9DC;, &#xC2DC;&#xAC04; &#xC815;&#xBCF4;&#xB85C; ISO 8601 &#xD3EC;&#xB9F7;
-        (2007-12-03T10:15:30)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>history.</p>
-        <p>type</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>OUT</b> - &#xBC1C;&#xC2E0; &#xD1B5;&#xD654; (Outgoing call)</li>
-          <li><b>OUT_CANCELED</b> - &#xBC1C;&#xC2E0; &#xC5F0;&#xACB0; &#xC548; &#xB428;
-            (Outgoing call canceled)</li>
-          <li><b>IN</b> - &#xC218;&#xC2E0; &#xD1B5;&#xD654; (Incoming call)</li>
-          <li><b>REJECTED</b> - &#xC218;&#xC2E0; &#xAC70;&#xC808; (Rejected call)</li>
-          <li><b>MISSED</b> - &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654; (Missed call)</li>
-          <li><b>VOICE_MESSAGE</b> - &#xC74C;&#xC131; &#xBA54;&#xC2DC;&#xC9C0; (Voice
-            message)</li>
-          <li><b>BLOCKED</b> - &#xC218;&#xC2E0; &#xCC28;&#xB2E8; (Blocked)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>history.</p>
-        <p>callType</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>NORMAL</b> - &#xC77C;&#xBC18;&#xD1B5;&#xD654;</li>
-          <li><b>VIDEO</b> - &#xC601;&#xC0C1;&#xD1B5;&#xD654;</li>
-          <li><b>CALLAR</b> - &#xCF5C;&#xB77C; &#xC601;&#xC0C1;&#xD1B5;&#xD654;</li>
-          <li><b>GROUP</b> - &#xADF8;&#xB8F9;&#xD1B5;&#xD654;</li>
-          <li><b>VOICE_MESSAGE - &#xC74C;&#xC131; &#xBA54;&#xC2DC;&#xC9C0; (Voice message)</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">numInCallHistory</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBC1C;&#xC2E0;&#xAE30;&#xB85D; &#xD788;&#xC2A4;&#xD1A0;&#xB9AC;&#xC5D0;
-          &#xC874;&#xC7AC;&#xD558;&#xB294; &#xAC74;&#xC218;</p>
-        <p>0, 1, 2, ... &#xAC12;&#xC744; string &#xD615;&#xD0DC;&#xB85C; &#xBC1B;&#xC74C;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC0AC;&#xC6A9;&#xC790; &#xCD94;&#xAC00; &#xC815;&#xBCF4;&#xB97C; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
-          &#xC704;&#xD574; &#xC784;&#xC758;&#xB85C; &#xC815;&#xC758;&#xD55C; key&#xAC12;&#xC744;
-          &#xD3EC;&#xD568;</p>
-        <p>unique &#xC5EC;&#xBD80;&#xB294; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC6A9;&#xB3C4;&#xC5D0;
-          &#xC758;&#xD574; &#xACB0;&#xC815;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">score</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC80;&#xC0C9; &#xACB0;&#xACFC;&#xC758; &#xC2E0;&#xB8B0;&#xB3C4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">contacts</td>
-      <td style="text-align:left">array of <a href="phonecall.md#contact">Contact</a>
-      </td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| name | string | Y | candidates가 존재하면 각 candidate는 최소한 이름은 포함해야 함 |
+| type | string | Y | recipient candidates의 타입<br> - **CONTACT** : 연락처 검색<br> - **EXCHANGE** : exchange 검색<br> - **T114** : T114 검색<br> - **NONE** : 특정 카테고리에 속하지 않음 |
+| profileImgUrl | string | N | profile image URL |
+| category | string | N | 업종 |
+| address | object | N | 주소 |
+| address.road | string | N | 도로명 주소 |
+| address.jibun | string | N | 지번 주소 |
+| businessHours | object | N | 영업시간 |
+| businessHours.open | string | N | 날짜, 시간 정보로 ISO 8601 포맷 (2007-12-03T10:15:30) HH:mm |
+| businessHours.close | string | N | 날짜, 시간 정보로 ISO 8601 포맷 (2007-12-03T10:15:30) HH:mm |
+| businessHours.info | string | N | 부가정보 |
+| history | object | N | 통화 기록을 위한 정보 |
+| history.time | string | N | 날짜, 시간 정보로 ISO 8601 포맷 (2007-12-03T10:15:30) |
+| history.type | string | N | - **OUT** : 발신 통화 (Outgoing call)<br>- **OUT_CANCELED** : 발신 연결 안 됨 (Outgoing call canceled)<br>- **IN** : 수신 통화 (Incoming call)<br>- **REJECTED** : 수신 거절 (Rejected call)<br>- **MISSED** : 부재중 통화 (Missed call)<br>- **VOICE_MESSAGE** : 음성 메시지 (Voice message)<br>- **BLOCKED** : 수신 차단 (Blocked) |
+| history.callType | string | N | - **NORMAL** : 일반통화<br>- **VIDEO** : 영상통화<br>- **CALLAR** : 콜라 영상통화<br>- **GROUP** : 그룹통화<br>- **VOICE_MESSAGE** : 음성 메시지 (Voice message)<br> |
+| numInCallHistory | string | N | 발신기록 히스토리에 존재하는 건수<br>0, 1, 2, ... 값을 string 형태로 받음 |
+| token | string | N | 사용자 추가 정보를 식별하기 위해 임의로 정의한 key값을 포함<br>unique 여부는 사용되는 용도에 의해 결정 |
+| score | string | N | 검색 결과의 신뢰도 |
+| contacts | array of [Contact](./#contact) | N | - | 
 
 ### Contact
 
@@ -672,41 +288,10 @@ class MyPhoneCallClient: PhoneCallClient {
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">label</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>MOBILE</b>
-          </li>
-          <li><b>COMPANY</b>
-          </li>
-          <li><b>HOME</b>
-          </li>
-          <li><b>USER_DEFINED</b> - &#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC9C0;&#xC815;&#xD55C;
-            &#xAC12;&#xB3C4; &#xD544;&#xC694;&#xD560;&#xC9C0; &#xAC80;&#xD1A0; &#xD544;&#xC694;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">number</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC804;&#xD654;&#xBC88;&#xD638;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| label | string | N | **MOBILE**<br>**COMPANY**<br>**HOME**<br>**USER_DEFINED** : 사용자가 지정한 값도 필요할지 검토 필요 |
+| number | string | N | 전화번호 |
 
 ## Directives
 
@@ -735,105 +320,15 @@ class MyPhoneCallClient: PhoneCallClient {
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">intent</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>CALL</b> - &#xC804;&#xD654;&#xAC78;&#xC5B4;&#xC918;</li>
-          <li><b>SEARCH</b> - &#xCC3E;&#xC544;&#xC918;</li>
-          <li><b>HISTORY</b> - &#xCD5C;&#xADFC; &#xD1B5;&#xD654; &#xBAA9;&#xB85D;</li>
-          <li><b>REDIAL</b> - &#xC7AC;&#xBC1C;&#xC2E0;</li>
-          <li><b>MISSED</b> - &#xBD80;&#xC7AC;&#xC911;&#xD1B5;&#xD654;</li>
-          <li><b>NONE</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">recipientIntended</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBC1C;&#xD654;&#xC5D0;&#xC11C; &#xBD84;&#xC11D;&#xB41C; recipient &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC80;&#xC0C9;&#xC5D0; &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB41C;
-        &#xC0C1;&#xB300;&#xBC29; &#xC774;&#xB984; (NLU &#xBD84;&#xC11D;&#xC73C;&#xB85C;
-        &#xB098;&#xC628; &#xC774;&#xB984;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">label</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>NLU &#xBD84;&#xC11D; &#xACB0;&#xACFC; label (&#xC9D1;, &#xD68C;&#xC0AC;,
-          ...)</p>
-        <p>&#xC815;&#xADDC;&#xD654;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xACE0;,
-          &#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xC5D0;&#xC11C; &#xBD84;&#xC11D;&#xB41C;
-          &#xAC12;&#xC744; &#xADF8;&#xB300;&#xB85C; &#xBCF4;&#xB0C4;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">callType</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>NORMAL</b> - &#xC77C;&#xBC18; &#xC804;&#xD654;</li>
-          <li><b>SPEAKER</b> - &#xC2A4;&#xD53C;&#xCEE4;&#xD3F0;</li>
-          <li><b>VIDEO</b> - &#xBE44;&#xB514;&#xC624;&#xCF5C;</li>
-          <li><b>CALLAR</b> - &#xCF5C;&#xB77C;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">searchScene</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
-          &#xC704;&#xD574; &#xCD94;&#xAC00;</p>
-        <p>enum&#xC740; &#xC544;&#xB2C8;&#xBA70; &#xC784;&#xC758;&#xC758; string&#xC774;
-          &#xC62C; &#xC218; &#xC788;&#xC74C; &#x2192; &#xD655;&#xC7A5; &#xAC00;&#xB2A5;&#xC131;&#xC774;
-          &#xB192;&#xC544;&#xC11C; string&#xC73C;&#xB85C; &#xC815;&#xC758;
-          <br />(&#xC544;&#xB798;&#xC5D0; &#xCD94;&#xAC00;&#xB418;&#xB294; &#xAC12;&#xB4E4;&#xC740;
-          &#xC5EC;&#xB7EC; poc&#xC5D0;&#xC11C; &#xACF5;&#xC720;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;
-          &#xAC12;&#xC73C;&#xB85C; &#xCD94;&#xAC00; &#xC2DC; &#xC544;&#xB798;&#xC758;
-          &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xACC4;&#xC18D; &#xD655;&#xC7A5; &#xAC00;&#xB2A5;)</p>
-        <ul>
-          <li>DEFAULT - &#xAE30;&#xBCF8; &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;</li>
-          <li>T114ONLY - T114 &#xAC80;&#xC0C9;&#xACB0;&#xACFC;&#xB9CC; &#xB178;&#xCD9C;&#xB418;&#xB294;
-            &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;</li>
-          <li>T114INCLUDE - T114 &#xAC80;&#xC0C9;&#xACB0;&#xACFC;&#xB97C; &#xD56D;&#xC0C1;
-            &#xD3EC;&#xD568;&#xD558;&#xB294; &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;</li>
-          <li>T114DIRECT - &#xAE34;&#xAE09;&#xC804;&#xD654;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">candidates</td>
-      <td style="text-align:left">array of <a href="phonecall.md#person">Person</a>
-      </td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">candidates&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC774; &#xD56D;&#xBAA9;&#xC774;
-        &#xC5C6;&#xC5B4;&#xC57C; &#xD568;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| intent | string | Y | **CALL** : 전화걸어줘<br>**SEARCH** : 찾아줘<br>**HISTORY** : 최근 통화 목록<br>**REDIAL** : 재발신<br>**MISSED** : 부재중통화<br>**NONE** |
+| recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
+| name | string | N | 검색에 요청할때 사용된 상대방 이름 (NLU 분석으로 나온 이름) |
+| label | string | N | NLU 분석 결과 label (집, 회사, ...)<br>정규화되어 있지 않고, 사용자 발화에서 분석된 값을 그대로 보냄 |
+| callType | string | N | **NORMAL** : 일반 전화<br>**SPEAKER** : 스피커폰<br>**VIDEO** : 비디오콜<br>**CALLAR** : 콜라 |
+| searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br>enum은 아니며 임의의 string이 올 수 있음 → 확장 가능성이 높아서 string으로 정의<br>(아래에 추가되는 값들은 여러 poc에서 공유해서 사용하는 값으로 추가 시 아래의 리스트를 계속 확장 가능)<br> - **DEFAULT** : 기본 검색 로직<br> - **T114ONLY** : T114 검색결과만 노출되는 검색 로직<br> - **T114INCLUDE** : T114 검색결과를 항상 포함하는 검색 로직<br> - **T114DIRECT** : 긴급전화 |
+| candidates | array of [Person](./#person) | N | candidates가 없으면 이 항목이 없어야 함 |
 
 ### MakeCall
 
@@ -854,38 +349,10 @@ class MyPhoneCallClient: PhoneCallClient {
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">recipient</td>
-      <td style="text-align:left"><a href="phonecall.md#person">Person</a>
-      </td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">callType</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>NORMAL</b> - &#xC77C;&#xBC18; &#xC804;&#xD654;</li>
-          <li><b>SPEAKER</b> - &#xC2A4;&#xD53C;&#xCEE4;&#xD3F0;</li>
-          <li><b>VIDEO</b> - &#xBE44;&#xB514;&#xC624;&#xCF5C;</li>
-          <li><b>CALLAR</b> - &#xCF5C;&#xB77C;</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| recipient | [Person](./#person) | Y | - |
+| callType | string | Y | **NORMAL** : 일반 전화<br>**SPEAKER** : 스피커폰<br>**VIDEO** : 비디오콜<br>**CALLAR** : 콜라 |
 
 ### EndCall
 
@@ -990,86 +457,13 @@ class MyPhoneCallClient: PhoneCallClient {
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">caller</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC1C;&#xC2E0;&#xC790; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>caller.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>caller.</p>
-        <p>token</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xC804;&#xD654;&#xB97C; &#xAC74; &#xC0C1;&#xB300;&#xBC29;&#xC778; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
-          &#xC704;&#xD55C; unique &#xAC12;</p>
-        <p>CallArrived Event &#xD6C4;&#xC5D0; &#xC751;&#xB2F5;&#xC744; &#xBCF4;&#xB0BC;&#xB54C;
-          &#xD574;&#xB2F9; Event&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0A8; caller&#xB97C;
-          unique&#xD558;&#xAC8C; &#xAD6C;&#xBD84;&#xD558;&#xAE30; &#xC704;&#xD574;
-          SDK&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xD558;&#xB294; token &#xAC12;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>caller.</p>
-        <p>isMobile</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xBAA8;&#xBC14;&#xC77C; &#xD3F0;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;</p>
-        <ul>
-          <li><b>TRUE</b>
-          </li>
-          <li><b>FALSE</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>caller.</p>
-        <p>isRecentMissed</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xD1B5;&#xD654;&#xAC00; &#xBD80;&#xC7AC;&#xC911;
-          &#xD1B5;&#xD654;&#xC778;&#xC9C0; &#xC5EC;&#xBD80;</p>
-        <ul>
-          <li><b>TRUE</b> - &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
-            &#xAC00;&#xC7A5; &#xCD5C;&#xADFC; &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774;
-            &#xC788;&#xC9C0;&#xB9CC; &#xBABB;&#xBC1B;&#xC740; &#xACBD;&#xC6B0;</li>
-          <li><b>FALSE</b> - &#xC218;&#xC2E0; &#xC911;&#xC778; &#xC804;&#xD654;&#xBC88;&#xD638;&#xC758;
-            &#xC218;&#xC2E0; &#xC774;&#xB825;&#xC774; &#xC5C6;&#xAC70;&#xB098;, &#xC788;&#xB294;&#xB370;
-            &#xBD80;&#xC7AC;&#xC911; &#xD1B5;&#xD654;&#xAC00; &#xC544;&#xB2CC; &#xACBD;&#xC6B0;</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| caller | object | Y | 발신자 정보 |
+| caller.name | string | N | 이름 |
+| caller.token | string | Y | 전화를 건 상대방인 식별하기 위한 unique 값<br>CallArrived Event 후에 응답을 보낼때 해당 Event를 발생시킨 caller를 unique하게 구분하기 위해 SDK에서 생성하는 token 값 |
+| caller.isMobile | string | Y | 모바일 폰인지 여부(TRUE/FALSE) |
+| caller.isRecentMissed | string | Y | 가장 최근 통화가 부재중 통화인지 여부<br> - TRUE : 수신 중인 전화번호의 가장 최근 수신 이력이 있지만 못받은 경우<br> - FALSE : 수신 중인 전화번호의 수신 이력이 없거나, 있는데 부재중 통화가 아닌 경우 |
 
 ### CallEnded
 
@@ -1132,43 +526,10 @@ class MyPhoneCallClient: PhoneCallClient {
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">errorCode</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>NO_SYSTEM_PERMISSION</b> - &#xAD8C;&#xD55C;&#xC5C6;&#xC74C;</li>
-          <li><b>CALL_TYPE_NOT_SUPPORTED</b> - &#xD574;&#xB2F9; callType &#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0;
-            &#xC54A;&#xC74C;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">callType</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>NORMAL</b> - &#xC77C;&#xBC18; &#xC804;&#xD654;</li>
-          <li><b>SPEAKER</b> - &#xC2A4;&#xD53C;&#xCEE4;&#xD3F0;</li>
-          <li><b>VIDEO</b> - &#xBE44;&#xB514;&#xC624;&#xCF5C;</li>
-          <li><b>CALLAR</b> - &#xCF5C;&#xB77C;</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| errorCode | string | Y | **NO_SYSTEM_PERMISSION** : 권한없음<br>**CALL_TYPE_NOT_SUPPORTED** : 해당 callType 을 지원하지 않음 |
+| callType | string | Y | **NORMAL** : 일반 전화<br>**SPEAKER** : 스피커폰<br>**VIDEO** : 비디오콜<br>**CALLAR** : 콜라 |
 
 ### MakeCallSucceeded
 
@@ -1192,5 +553,5 @@ class MyPhoneCallClient: PhoneCallClient {
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| recipient | Person Object | Y |  |
+| recipient | [Person](./#person) | Y |  |
 

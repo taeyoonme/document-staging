@@ -6,55 +6,11 @@
 
 Response Filter는 Parameter에 담긴 값 또는 형식을 변환시킬 수 있으며, Prompt에서 사용할 수 있습니다. Response Filter는 크게 세 가지가 있습니다. 이들은 각각 다음과 같은 특성을 가지고 있습니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Response Filter &#xC885;&#xB958;</th>
-      <th style="text-align:left">&#xD2B9;&#xC131;</th>
-      <th style="text-align:left">&#xAE30;&#xD638;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">NLG Translator</td>
-      <td style="text-align:left">
-        <ul>
-          <li>&#xC815;&#xD574;&#xC9C4; &#xADDC;&#xCE59;&#xC5D0; &#xC758;&#xD574; &#xAC12;&#xC744;
-            &#xBCC0;&#xD658;&#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</li>
-          <li>1&#xC774; &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &apos;a&apos;&#xB85C;, 2&#xAC00;
-            &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &apos;b&apos;&#xB85C; &#xBCC0;&#xD658;&#xC2DC;&#xD0AC;
-            &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-        </ul>
-      </td>
-      <td style="text-align:left">&gt;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NLG Normalizer</td>
-      <td style="text-align:left">
-        <ul>
-          <li>&#xC815;&#xD574;&#xC9C4; &#xADDC;&#xCE59;&#xC5D0; &#xC758;&#xD574; &#xAC12;&#xC744;
-            &#xBCC0;&#xD658;&#xD574; &#xC90D;&#xB2C8;&#xB2E4;.</li>
-          <li>&#xD55C;&#xBC88;&#xC5D0; &#xC5EC;&#xB7EC; &#xAC00;&#xC9C0; &#xAC12;&#xC744;
-            &#xC77C;&#xAD04; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-          <li>1,2,3&#xC774; &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &apos;a&apos;&#xB85C;,
-            3,4,5,6,7&#xC774; &#xB4E4;&#xC5B4;&#xC624;&#xBA74; &apos;b&apos;&#xB85C;
-            &#xBCC0;&#xD658;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
-        </ul>
-      </td>
-      <td style="text-align:left">=</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">NLG Function</td>
-      <td style="text-align:left">
-        <ul>
-          <li>&#xC815;&#xD574;&#xC9C4; &#xADDC;&#xCE59;&#xC5D0; &#xB9DE;&#xAC8C; &#xD615;&#xC2DD;&#xAC12;&#xC744;
-            &#xBCC0;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.</li>
-        </ul>
-      </td>
-      <td style="text-align:left">:</td>
-    </tr>
-  </tbody>
-</table>
+| Response Filter 종류 | 특성 | 기호 |
+| :--- | :--- | :--- |
+| NLG Translator | - 정해진 규칙에 의해 값을 변환해 줍니다.<br>- 1이 들어오면 'a'로, 2가 들어오면 'b'로 변환시킬 수 있습니다. | &gt; |
+| NLG Normalizer | - 정해진 규칙에 의해 값을 변환해 줍니다.<br>- 한번에 여러 가지 값을 일괄 변경할 수 있습니다.<br>- 1,2,3이 들어오면 'a'로, 3,4,5,6,7이 들어오면 'b'로 변환할 수 있습니다. | = |
+| NLG Function | 정해진 규칙에 맞게 형식값을 변환합니다. | : |
 
 ## NLG Translator <a id="nlg-translator"></a>
 

@@ -147,76 +147,10 @@ CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get(
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">target</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p><b>DM</b>
-        </p>
-        <ul>
-          <li><b>ASR.ExpectSpeech, Session.Set &#xC640; &#xAC19;&#xC774; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xBC1C;&#xD654;&#xAC00;&#xC774;&#xB4DC;</b>
-          </li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">chips</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC; &#xBAA9;&#xB85D;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>chips.</p>
-        <p>type</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>ACTION, GENERAL</p>
-        <p>ACTION: &#xBCF4;&#xC774;&#xC2A4;&#xD06C;&#xB86C; &#xAC00;&#xC774;&#xB4DC;&#xC758;
-          &apos;&#xC561;&#xC158;&#xBC84;&#xD2BC;&apos;&#xC73C;&#xB85C; &#xAE30;&#xB2A5;
-          &#xB2E8;&#xC704;&#xC758; &#xB3D9;&#xC791; &#xCC98;&#xB9AC;&#xB97C; &#xC704;&#xD55C;
-          &#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC;.</p>
-        <p>GENERAL: &#xAE30;&#xBCF8; &#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>chips.</p>
-        <p>text</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xBC84;&#xD2BC; &#xD14D;&#xC2A4;&#xD2B8;</p>
-        <ul>
-          <li>Text.TextInput event &#xB97C; &#xBCF4;&#xB0B4;&#xAE30; &#xC704;&#xD55C;
-            &#xD14D;&#xC2A4;&#xD2B8; &#xBA85;&#xB839; &#xBB38;&#xC790;&#xC5F4;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>chips.</p>
-        <p>token</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Text.TextInput event &#xC758; &#xCD9C;&#xCC98;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; &#xAC12;</td>
-    </tr>
-  </tbody>
-</table>
-
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| target | string | Y | **DM**<br> - ASR.ExpectSpeech, Session.Set 와 같이 전달되는 발화가이드 |
+| chips | list | Y | 발화 가이드 목록 |
+| chips.type | string | Y | **ACTION** : 보이스크롬 가이드의 '액션버튼'으로 기능 단위의 동작 처리를 위한 발화 가이드.<br>**GENERAL** : 기본 발화 가이드. |
+| chips.text | string | Y | 버튼 텍스트<br> - Text.TextInput event 를 보내기 위한 텍스트 명령 문자열 |
+| chips.token | string | N | Text.TextInput event 의 출처를 구분하기 위한 값 |

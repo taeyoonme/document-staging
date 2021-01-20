@@ -86,40 +86,8 @@ locationAgent.delegate = MyLocationAgentDelegate()
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">current</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD604;&#xC7AC; &#xC704;&#xCE58;&#xC758; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>current.</p>
-        <p>latitude</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC704;&#xB3C4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>current.</p>
-        <p>longitude</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xACBD;&#xB3C4;</td>
-    </tr>
-  </tbody>
-</table>
-
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| current | object | N | 현재 위치의 정보 |
+| current.latitude | string | Y | 위도 |
+| current.longitude | string | Y | 경도 |

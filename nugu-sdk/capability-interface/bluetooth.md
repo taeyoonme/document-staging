@@ -38,7 +38,7 @@ class MyBluetoothProvider: BluetoothProvider {
     ...
 }
 NuguAndroidClient.Builder(...)
-    .bluetoothProvider(MyBluetoothProvider)
+    .bluetoothProvider(MyBluetoothProvider())
 ```
 {% endtab %}
 {% endtabs %}
@@ -123,143 +123,18 @@ bluetoothAgent.setListener(listener)
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">device</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC758; &#xBE14;&#xB8E8;&#xD22C;&#xC2A4;
-        &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">device.
-        <br />name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">TTS&#xB85C; &#xC77D;&#xC5B4;&#xC904; &#xB54C; &#xC0AC;&#xC6A9;&#xAC00;&#xB2A5;&#xD55C;
-        &#xD544;&#xB4DC; &#xC608;: NUGU_123456</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">device.
-        <br />status</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">ON / OFF</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>device.</p>
-        <p>profile</p>
-      </td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>Pairing&#xB41C; bluetooth device&#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0;
-          &#xC9C0;&#xC6D0;&#xD558;&#xB294; profile&#xC758; &#xBAA9;&#xB85D;</p>
-        <p>&#xD574;&#xB2F9; &#xBAA9;&#xB85D;&#xC740; &#xC9C0;&#xC6D0;&#xD558;&#xB294;
-          profile&#xC774; &#xC788;&#xC744; &#xACBD;&#xC6B0; &#xBA85;&#xC2DC;&#xB428;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>device.</p>
-        <p>profile.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>Pairing&#xB41C; bluetooth device&#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0;
-          &#xD574;&#xB2F9; device&#xC758; &#xC9C0;&#xC6D0; profile&#xC758; &#xC774;&#xB984;&#xC744;
-          &#xB098;&#xD0C0;&#xB0C4;</p>
-        <p>&#xC544;&#xB798;&#xB294; &#xD604;&#xC7AC; &#xD655;&#xC778;&#xB41C; profile
-          list&#xC774;&#xBA70;, &#xD574;&#xB2F9; device&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;
-          profile&#xC740; &#xCD94;&#xAC00;&#xB420; &#xC218; &#xC788;&#xC74C;</p>
-        <ul>
-          <li><b>HSP</b>: Headset Profile(&#xC804;&#xD654; &#xC218;&#xBC1C;&#xC2E0;&#xC744;
-            &#xC704;&#xD55C; profile)</li>
-          <li><b>A2DP</b>: Advanced Audio Distribution Profile(&#xC624;&#xB514;&#xC624;
-            &#xC7AC;&#xC0DD; profile)</li>
-          <li><b>PBAP</b>: Phone Book Access Profile(Pairing&#xB41C; device&#xC758;
-            &#xC5F0;&#xB77D;&#xCC98;&#xB97C; &#xC218;&#xC9D1;&#xD560; &#xC218; &#xC788;&#xB294;
-            profile)</li>
-          <li><b>MAP</b>: Message Access Profile(&#xBB38;&#xC790; &#xC218;&#xBC1C;&#xC2E0;&#xC744;
-            &#xC704;&#xD55C; profile)</li>
-          <li><b>PAN</b>: Personal Area Networking(&#xBE14;&#xB8E8;&#xD22C;&#xC2A4;
-            &#xD14C;&#xB354;&#xB9C1; profile)</li>
-        </ul>
-        <p>Profile &#xC774;&#xB984;&#xC740; <a href="https://www.bluetooth.com/ko-kr/specifications/profiles-overview/">bluetooth.com</a>&#xC5D0;
-          &#xBA85;&#xC2DC;&#xB41C; profile&#xC758; &#xC57D;&#xC790;&#xC784;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>device.</p>
-        <p>profile.</p>
-        <p>enabled</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>Pairing&#xB41C; bluetooth device&#xAC00; &#xC788;&#xC744; &#xACBD;&#xC6B0;
-          &#xD574;&#xB2F9; device&#xC758; &#xC9C0;&#xC6D0; profile&#xC758; &#xC0AC;&#xC6A9;
-          &#xC5EC;&#xBD80;&#xB97C; &#xB098;&#xD0C0;&#xB0C4;</p>
-        <ul>
-          <li>TRUE</li>
-          <li>FALSE</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">activeDevice</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC5F0;&#xACB0;&#xB41C; &#xBE14;&#xB8E8;&#xD22C;&#xC2A4; &#xAE30;&#xAE30;
-        &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>activeDevice.</p>
-        <p>id</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ID(pairedDevices &#xBAA9;&#xB85D; &#xC911; &#xD558;&#xB098;&#xC774;&#xC5B4;&#xC57C;
-        &#xD568;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>activeDevice.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>activeDevice.</p>
-        <p>streaming</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li>streaming &#xC0C1;&#xD0DC;(INACTIVE / ACTIVE / PAUSED / UNUSABLE)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| device | object | Y | 디바이스의 블루투스 정보 |
+| device.name | string | Y | TTS로 읽어줄 때 사용가능한 필드 예: NUGU_123456 |
+| device.status | string | Y | ON / OFF |
+| device.profile | list | N | Pairing된 bluetooth device가 있을 경우 지원하는 profile의 목록<br>해당 목록은 지원하는 profile이 있을 경우 명시됨 |
+| device.profile.name | string | N | Pairing된 bluetooth device가 있을 경우 해당 device의 지원 profile의 이름을 나타냄<br>아래는 현재 확인된 profile list이며, 해당 device에서 사용하는 profile은 추가될 수 있음<br> - **HSP** : Headset Profile(전화 수발신을 위한 profile)<br> - **A2DP** : Advanced Audio Distribution Profile(오디오 재생 profile)<br> - **PBAP** : Phone Book Access Profile(Pairing된 device의 연락처를 수집할 수 있는 profile)<br> - **MAP** : Message Access Profile(문자 수발신을 위한 profile)<br> - **PAN** : Personal Area Networking(블루투스 테더링 profile)<br> Profile 이름은 bluetooth.com에 명시된 profile의 약자임 |
+| device.profile.enabled | string | N | Pairing된 bluetooth device가 있을 경우 해당 device의 지원 profile의 사용 여부를 나타냄 (TRUE/FALSE) |
+| activeDevice | object | N | 연결된 블루투스 기기 정보 |
+| activeDevice.id | string | N | ID(pairedDevices 목록 중 하나이어야 함) |
+| activeDevice.name | string | N | - |
+| activeDevice.streaming | string | Y | streaming 상태 (INACTIVE/ACTIVE/PAUSED/UNUSABLE) |
 
 ## Directive
 

@@ -8,54 +8,17 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 최신 버전은 1.3 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2019.11.24</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.04.29</td>
-      <td style="text-align:left">
-        <p>Recognize directive &#xC5D0; wakeup, timeout &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>Recognize directive, ExpechSpeech event &#xC5D0; asrContext &#xD544; &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.06.05</td>
-      <td style="text-align:left">
-        <p></p>
-        <p>Recognize directive, ExpectSpeech event &#xC758; asrContext &#xC5D0; playServiceId
-          &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.3</td>
-      <td style="text-align:left">2020.06.09</td>
-      <td style="text-align:left">Recognize directive, ExpectSpeech event &#xC758; sessionId &#xD544;&#xB4DC;
-        &#xC0AD;&#xC81C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.4</td>
-      <td style="text-align:left">2020.11.18</td>
-      <td style="text-align:left">ExpectSpeech directive &#xC5D0; epd &#xD544;&#xB4DC; &#xCD94;&#xAC00;</td>
-    </tr>
-  </tbody>
-</table>
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2019.11.24 | 규격 추가 |
+| 1.1 | 2020.04.29 | Recognize directive 에 wakeup, timeout 필드 추가<br>Recognize directive, ExpechSpeech event 에 asrContext 필 추가 |
+| 1.2 | 2020.06.05 | Recognize directive, ExpectSpeech event 의 asrContext 에 playServiceId 필드 추가 |
+| 1.3 | 2020.06.09 | Recognize directive, ExpectSpeech event 의 sessionId 필드 삭제 |
+| 1.4 | 2020.11.18 | ExpectSpeech directive 에 epd 필드 추가 |
 
 ## State Diagram
 
-![](../../.gitbook/assets/image%20%284%29.png)
+![](../../.gitbook/assets/image__4.png)
 
 ## SDK Interface
 
@@ -119,6 +82,12 @@ Microphone 으로 부터 음성 데이터를 가져오기 위한 MicInputProvide
 let micInputProvider = MicInputProvider()
 ```
 
+Microphone 으로 부터 가져온 음성 데이터가 NuguClient 로 전달될 수 있도록 합니다.
+
+```text
+micInputProvider.delegate = nuguClient
+```
+
 음성인식에 필요한 학습 모델을 설정합니다.
 
 ```text
@@ -160,9 +129,7 @@ speechRecognizerAggregator.startListening()
 
 {% tab title="iOS" %}
 ```text
-try micInputProvider.start { (buffer, _) in
-    asrAgent.putAudioBuffer(buffer: buffer)
-}
+try micInputProvider.start()
 asrAgent.startRecognition(initiator: .user)
 ```
 {% endtab %}
@@ -271,7 +238,7 @@ CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(asr_listener.get());
 {% tabs %}
 {% tab title="Android" %}
 ```text
-speechRecognizerAggregator.stopListening
+speechRecognizerAggregator.stopListening()
 ```
 {% endtab %}
 
@@ -299,31 +266,9 @@ asr_handler->stopRecognition()
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">engine</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>Device &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC74C;&#xC131;&#xC778;&#xC2DD;
-          engine &#xC744; &#xBA85;&#xC2DC;</p>
-        <p>NUGU &#xC74C;&#xC131;&#xC778;&#xC2DD; engine &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294;
-          &#xACBD;&#xC6B0; &quot;skt&quot;</p>
-        <p>(&#xAC12;&#xC744; &#xCC44;&#xC6B0;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; default
-          &quot;skt&quot;)</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| engine | string | N | Device 에서 사용하는 음성인식 engine 을 명시<br>NUGU 음성인식 engine 을 사용하는 경우 "skt"<br>(값을 채우지 않으면 default "skt") |
 
 ## Directives
 
@@ -358,134 +303,20 @@ asr_handler->stopRecognition()
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Y: &#xD68C;&#xC2E0;&#xBC1B;&#xC544;&#xC57C; &#xD558;&#xB294; &#xACBD;&#xC6B0;,
-        N: &#xB9C8;&#xC774;&#xD06C;&#xB9CC; &#xC5F4;&#xACE0; &#xC2F6;&#xC740;&#xACBD;&#xC6B0;
-        <br
-        />default: N</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">property</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>NORMAL</b> - &#xC77C;&#xBC18; &#xBC1C;&#xD654;&#xB97C; &#xC785;&#xB825;&#xC73C;&#xB85C;
-          &#xBC1B;&#xC74C;</p>
-        <p><b>DICTATION</b> - dictation &#xC11C;&#xBC84;&#xB85C; &#xB77C;&#xC6B0;&#xD305;&#xD558;&#xC5EC;
-          &#xCC98;&#xB9AC;</p>
-        <p>&#xD544;&#xB4DC;&#xAC00; &#xC5C6;&#xB294; &#xACBD;&#xC6B0; default &#xAC12;&#xC740;
-          NORMAL</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">domainTypes</td>
-      <td style="text-align:left">Array&lt;String&gt;</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ExpectSpeech &#xC758;&#xD55C; &#xBC1C;&#xD654;&#xC2DC;&#xC5D0; NLU&#xC5D0;&#xC11C;
-        &#xC0AC;&#xC6A9;&#xD560; domainType &#xC14B;&#xD305; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">asrContext</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>task</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneText</p>
-      </td>
-      <td style="text-align:left">Array&lt;String&gt;</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">epd</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">End Point Detection &#xAD00;&#xB828; &#xC815;&#xBCF4;, &#xC5C6;&#xC73C;&#xBA74;
-        device&#xC758; default &#xAC12;&#xC744; &#xC0AC;&#xC6A9; &#xD558;&#xC704;&#xC758;
-        3&#xAC1C; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB3C4; optional&#xC774;&#xAE30;
-        &#xB54C;&#xBB38;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB9CC;
-        &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xD558;&#xACE0;, &#xC5C6;&#xB294; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294;
-        device&#xC758; default &#xAC12;&#xC744; &#xC0AC;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>epd.</p>
-        <p>timeoutMilliseconds</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>Wake up &#xD6C4; &#xC885;&#xB8CC;&#xAE4C;&#xC9C0; &#xB300;&#xAE30; &#xC2DC;&#xAC04;
-          (&#xB2E8;&#xC704;: msec)</p>
-        <p><b>&#xC774; &#xAC12;&#xC740; &#xC704;&#xC758; timeoutInMilliseconds&#xC640;&#xB294; &#xB2E4;&#xB978; epd &#xC804;&#xC6A9;&#xAC12;</b>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>epd.</p>
-        <p>silenceIntervalInMilliseconds</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">end point detection &#xC804;&#xC5D0; &#xAE30;&#xB2E4;&#xB9AC;&#xB294;
-        &#xBB35;&#xC74C; &#xAD6C;&#xAC04; (&#xB2E8;&#xC704;: msec)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>epd.</p>
-        <p>maxSpeechDurationMilliseconds</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654; &#xCD5C;&#xB300; &#xB179;&#xC74C;
-        &#xC2DC;&#xAC04; (&#xB2E8;&#xC704;: msec)</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| playServiceId | string | N | **Y** : 회신받아야 하는 경우<br>**N** : 마이크만 열고 싶은경우<br>default : N |
+| property | string | N | **NORMAL** : 일반 발화를 입력으로 받음<br>**DICTATION** : dictation 서버로 라우팅하여 처리<br>필드가 없는 경우 default 값은 NORMAL |
+| domainTypes | array of string | N | ExpectSpeech 의한 발화시에 NLU에서 사용할 domainType 셋팅 정보 |
+| asrContext | object | N | - |
+| asrContext.task | string | N | - |
+| asrContext.sceneId | string | N | - |
+| asrContext.sceneText | array of string | N | - |
+| asrContext.playServiceId | string | N | - |
+| epd | object | N | End Point Detection 관련 정보<br>없으면 device의 default 값을 사용 하위의 3개 파라미터도 optional이기 때문에 존재하는 파라미터만 업데이트하고, 없는 파라미터는 device의 default 값을 사용 |
+| epd.timeoutMilliseconds | long | N | Wake up 후 종료까지 대기 시간 (단위: msec)<br>**이 값은 위의 timeoutInMilliseconds와는 다른 epd 전용값** |
+| epd.silenceIntervalInMilliseconds | long | N | end point detection 전에 기다리는 묵음 구간 (단위: msec) |
+| epd.maxSpeechDurationMilliseconds | long | N | 사용자 발화 최대 녹음 시간 (단위: msec) |
 
 ### NotifyResult
 
@@ -508,48 +339,11 @@ asr_handler->stopRecognition()
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Recognize Event&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD55C; token &#xAC12;
-        (&#xC5B4;&#xB5A4; &#xBC1C;&#xD654;&#xC5D0; &#xB300;&#xD55C; &#xBD84;&#xC11D;
-        &#xACB0;&#xACFC;&#xC778;&#xC9C0; &#xC2DD;&#xBCC4;&#xD558;&#xAE30; &#xC704;&#xD55C;
-        &#xC6A9;&#xB3C4;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">result</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC778;&#xC2DD; &#xACB0;&#xACFC;&#xB97C; &#xC804;&#xC1A1;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">state</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p><b>PARTIAL</b> : &#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xC758; &#xC77C;&#xBD80;&#xBD84;</p>
-        <p><b>COMPLETE</b> : &#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xC758; &#xC804;&#xCCB4;
-          &#xBB38;&#xC7A5;</p>
-        <p><b>NONE</b> : &#xC74C;&#xC131; &#xC778;&#xC2DD; &#xACB0;&#xACFC; &#xC5C6;&#xC74C;</p>
-        <p><b>ERROR</b> : Error &#xBC1C;&#xC0DD;</p>
-        <p><b>SOS</b> : SOS(Start of Speech)</p>
-        <p><b>EOS</b> : EOS(End of Speech)</p>
-        <p><b>FA</b> : Wakeup False Acceptance</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | N | Recognize Event에서 사용한 token 값 (어떤 발화에 대한 분석 결과인지 식별하기 위한 용도) |
+| result | string | N | 인식 결과를 전송 |
+| state | string | Y | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장<br>**NONE** : 음성 인식 결과 없음<br>**ERROR** : Error 발생<br>**SOS** : SOS(Start of Speech)<br>**EOS** : EOS(End of Speech)<br>**FA** : Wakeup False Acceptance |
 
 ### CancelRecognize
 
@@ -568,29 +362,9 @@ asr_handler->stopRecognition()
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">cause</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li>WAKEUP_POWER: &#xB2E4;&#xB978; wakeup&#xBCF4;&#xB2E4; power&#xAC00; &#xC801;&#xC5B4;&#xC11C;
-            &#xCDE8;&#xC18C;&#xB428;</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| cause | string | Y | **WAKEUP_POWER** : 다른 wakeup보다 power가 적어서 취소됨 |
 
 ## Events
 
@@ -641,288 +415,34 @@ asr_handler->stopRecognition()
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">codec</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left"><b>SPEEX</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ExpectSpeech&#xC5D0; &#xC758;&#xD55C; &#xBC1C;&#xD654;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
-        ExpectSpeech&#xC5D0;&#xC11C; &#xBC1B;&#xC740; playServiceId&#xB97C; &#xC801;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">property</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ExpectSpeech&#xC5D0; &#xC758;&#xD55C; &#xBC1C;&#xD654;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
-        ExpectSpeech&#xC5D0;&#xC11C; &#xBC1B;&#xC740; property&#xB97C; &#xC801;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">domainTypes</td>
-      <td style="text-align:left">Array&lt;String&gt;</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ExpectSpeech&#xC5D0; &#xC758;&#xD55C; &#xBC1C;&#xD654;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
-        ExpectSpeech&#xC5D0;&#xC11C; &#xBC1B;&#xC740; domainTypes&#xB97C; &#xC801;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">language</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>KOR, ENG, JPN, CHN, ...</b>
-        </p>
-        <p>default &#xAC12;&#xC740; KOR</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">endpointing</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p><b>CLIENT</b> - &#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8; EPD(EndPointDetector)
-          &#xC0AC;&#xC6A9;</p>
-        <p><b>SERVER</b> - &#xC11C;&#xBC84; EPD &#xC0AC;&#xC6A9;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">encoding</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>PARTIAL</b> - &#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xC758; &#xC77C;&#xBD80;&#xBD84;</p>
-        <p><b>COMPLETE</b> - &#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xC758; &#xC804;&#xCCB4;
-          &#xBB38;&#xC7A5; (default)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">wakeup</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC11C;&#xBC84; EPD &#xC0AC;&#xC6A9;&#xC2DC; &#xD544;&#xC218; &#xAC12;.</p>
-        <p>wakeup&#xC744; &#xD3EC;&#xD568;&#xD574;&#xC11C; &#xC11C;&#xBC84;&#xC5D0;
-          &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACBD;&#xC6B0; &#xD3EC;&#xD568;</p>
-        <p>wakeup &#xC815;&#xBCF4;&#xB97C; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xACBD;&#xC6B0;
-          &#xD3EC;&#xD568; (&#xC804;&#xB2EC;&#xD558;&#xB294; pcm&#xC5D0; wakeup&#xC774;
-          &#xD3EC;&#xD568;&#xB418;&#xC9C0; &#xC54A;&#xB354;&#xB77C;&#xB3C4; &#xD544;&#xC694;&#xD55C;
-          &#xACBD;&#xC6B0; &#xC804;&#xB2EC;)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>word</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0; &#xD3EC;&#xD568;&#xB41C;
-        wakeup word( ex &quot;&#xC544;&#xB9AC;&#xC544;&quot;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0;&#xC11C; wakeup word&#xC5D0;
-        &#xB300;&#xD55C; boundary &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>start</p>
-      </td>
-      <td style="text-align:left">LONG</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>wakeup module &#xC5D0;&#xC11C; &#xC5BB;&#xC740; milliseconds &#xB97C;
-          sample count &#xB85C; &#xBCC0;&#xD658;&#xD574;&#xC11C; &#xC804;&#xC1A1;&#xD574;&#xC57C;
-          &#xD568;.</p>
-        <p>sample count for start time</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>end</p>
-      </td>
-      <td style="text-align:left">LONG</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>wakeup module &#xC5D0;&#xC11C; &#xC5BB;&#xC740; milliseconds &#xB97C;
-          sample count &#xB85C; &#xBCC0;&#xD658;&#xD574;&#xC11C; &#xC804;&#xC1A1;&#xD574;&#xC57C;
-          &#xD568;.</p>
-        <p>sample count for end time</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>detection</p>
-      </td>
-      <td style="text-align:left">LONG</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>wakeup module &#xC5D0;&#xC11C; &#xC5BB;&#xC740; milliseconds &#xB97C;
-          sample count &#xB85C; &#xBCC0;&#xD658;&#xD574;&#xC11C; &#xC804;&#xC1A1;&#xD574;&#xC57C;
-          &#xD568;.</p>
-        <p>sample count for detection time</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>boundary.</p>
-        <p>metric</p>
-      </td>
-      <td style="text-align:left">STRING</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>sample(default) / byte / frame / time</b>
-        </p>
-        <p>&#xD604;&#xC7AC; sample &#xB9CC; &#xC9C0;&#xC6D0;&#xB418;&#xBA70;, &#xCD94;&#xD6C4;
-          byte / frame / time &#xC18D;&#xC131; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; stream&#xC5D0; &#xD3EC;&#xD568;&#xB41C;
-        wakeup pcm&#xC758; power&#xAC12;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power.</p>
-        <p>noise</p>
-      </td>
-      <td style="text-align:left">Float</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">wakeup pcm&#xC758; power&#xC911; noise&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xB294;
-        &#xAC12; (&#xC8FC;&#xB85C; min&#xAC12;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>wakeup.</p>
-        <p>power.</p>
-        <p>speech</p>
-      </td>
-      <td style="text-align:left">Float</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">wakeup pcm&#xC758; power&#xC911; speech&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xB294;
-        &#xAC12; (&#xC8FC;&#xB85C; max&#xAC12;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">asrContext</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ExpectSpeech&#xC5D0; &#xC758;&#xD55C; &#xBC1C;&#xD654;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
-        ExpectSpeech&#xC5D0;&#xC11C; &#xBC1B;&#xC740; asrContext&#xB97C; &#xC801;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>task</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneText</p>
-      </td>
-      <td style="text-align:left">Array&lt;String&gt;</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">timeout</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Server EPD &#xC0AC;&#xC6A9;&#xC2DC; &#xD544;&#xC218; &#xAC12;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>listen</p>
-      </td>
-      <td style="text-align:left">LONG</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>SOS &#xB97C; &#xAE30;&#xB2E4;&#xB9AC;&#xB294; &#xC2DC;&#xAC04;</p>
-        <p>milliseconds</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>maxSpeech</p>
-      </td>
-      <td style="text-align:left">LONG</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>SOS&#xC774;&#xD6C4; EOS&#xB97C; &#xAE30;&#xB2E4;&#xB9AC;&#xB294; &#xC2DC;&#xAC04;</p>
-        <p>milliseconds</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>timeout.</p>
-        <p>response</p>
-      </td>
-      <td style="text-align:left">LONG</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>EOS &#xC774;&#xD6C4; &#xC751;&#xB2F5;&#xC744; &#xAE30;&#xB2E4;&#xB9AC;&#xB294;
-          &#xC2DC;&#xAC04;</p>
-        <p>milliseconds</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| codec | string | Y | SPEEX |
+| playServiceId | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용 |
+| property | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 property를 적용 |
+| domainTypes | array of string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 domainTypes를 적용 |
+| language | string | N | **KOR**, **ENG**, **JPN**, **CHN**, ...<br>default 값은 KOR |
+| endpointing | string | Y | **CLIENT** : 클라이언트 EPD(EndPointDetector) 사용<br>**SERVER** : 서버 EPD 사용 |
+| encoding | string | N | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장 (default) |
+| wakeup | object | N | 서버 EPD 사용시 필수 값.<br>wakeup을 포함해서 서버에 전달하는 경우 포함<br>wakeup 정보를 전달하는 경우 포함 (전달하는 pcm에 wakeup이 포함되지 않더라도 필요한 경우 전달) |
+| wakeup.word | string | Y | 전송하는 stream에 포함된 wakeup word( ex "아리아") |
+| wakeup.boundary | object | N | 전송하는 stream에서 wakeup word에 대한 boundary 정보 |
+| wakeup.boundary.<br>start | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for start time |
+| wakeup.boundary.<br>end | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for end time |
+| wakeup.boundary.<br>detection | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for detection time |
+| wakeup.boundary.<br>metric | string | N | **sample(default)** / **byte** / **frame** / **time**<br>현재 sample 만 지원되며, 추후 byte / frame / time 속성 지원 예정 |
+| wakeup.power | object | N | 전송하는 stream에 포함된 wakeup pcm의 power값 |
+| wakeup.power.noise | float | Y | wakeup pcm의 power중 noise를 의미하는 값 (주로 min값) |
+| wakeup.power.speech | float | Y | wakeup pcm의 power중 speech를 의미하는 값 (주로 max값) |
+| asrContext | object | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 asrContext를 적용 |
+| asrContext.task | string | N | - |
+| asrContext.sceneId | string | N | - |
+| asrContext.sceneText | array of string | N | - |
+| asrContext.playServiceId | string | N | - |
+| timeout | object | N | Server EPD 사용시 필수 값. |
+| timeout.listen | long | Y | SOS 를 기다리는 시간 (milliseconds) |
+| timeout.maxSpeech | long | Y | SOS이후 EOS를 기다리는 시간 (milliseconds) |
+| timeout.response | long | Y | EOS 이후 응답을 기다리는 시간 (milliseconds) |
 
 ### ResponseTimeout
 

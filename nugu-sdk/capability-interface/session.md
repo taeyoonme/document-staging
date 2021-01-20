@@ -127,43 +127,11 @@ CapabilityFactory::makeCapability<SessionAgent, ISessionHandler>(session_listene
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left">Array</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD604;&#xC7AC; &#xD65C;&#xC131;&#xD654; &#xB418;&#xC5B4; &#xC788;&#xB294;
-        &#xC138;&#xC158; &#xB9AC;&#xC2A4;&#xD2B8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>list.</p>
-        <p>sessionId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>list.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| list | array | N | 현재 활성화 되어 있는 세션 리스트 |
+| list.sessionId | string | Y | - |
+| list.playServiceId | string | Y | - |
 
 ## Directives
 

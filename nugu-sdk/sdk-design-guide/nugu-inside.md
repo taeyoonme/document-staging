@@ -18,7 +18,7 @@ NUGU inside 마크는 NUGU의 기술이 탑재되었음을 직접적으로 알�
 | :--- | :--- | :--- | :--- |
 | ![](../../.gitbook/assets/color_nugublue.png) NUGU Blue | 0,158, 255 \(\#009DFF\) | 85, 21, 0, 0 | 2925C |
 | ![](../../.gitbook/assets/color_black-1.png) Black | 34, 34, 34 \(\#222222\) | 75, 68, 67, 90 |  |
-| ![](../../.gitbook/assets/color_white%20%281%29.png) White | 255, 255, 255 \(\#FFFFFF\) | 0, 0, 0, 0 |  |
+| ![](../../.gitbook/assets/color_white__1.png) White | 255, 255, 255 \(\#FFFFFF\) | 0, 0, 0, 0 |  |
 
 ## **NUGU inside 배경색상**
 

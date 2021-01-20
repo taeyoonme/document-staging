@@ -12,11 +12,11 @@
 
 3.  Prompt List의 Prompt 입력창에 중괄호를 연속으로 2번 입력하면 Parameter 자동완성창이 열리며, 위에서 입력했던 "day", "location", "status" 3개의 Parameter가 표시됩니다.
 
-![](../../../../.gitbook/assets/ch3_3233_c07%20%281%29.gif)
+![](../../../../.gitbook/assets/ch3_3233_c07__1.gif)
 
 4.  키보드 혹은 마우스를 이용하여 'location'을 선택한 후 '의'를 입력한 후, 다시 중괄호 두 개를 눌러 자동완성을 통해 'day'를 선택합니다. 그 후에 "날씨는" 을 입력하고 다시 동일한 방법으로 'status'를 입력합니다. 입력을 완료하면 Prompt 입력창에는 다음과 같이 표시됩니다.
 
-![](../../../../.gitbook/assets/ch3_3233_06%20%281%29.png)
+![](../../../../.gitbook/assets/ch3_3233_06__1.png)
 
 5.  Play Builder 우측 상단에 있는 `Play 저장` 버튼을 클릭하여 Action 생성을 완료합니다.
 
