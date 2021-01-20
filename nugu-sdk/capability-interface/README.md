@@ -52,72 +52,15 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">supportedIntefacaces</td>
-      <td style="text-align:left">map</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">Capability interface &#xC758; Context &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>supportedIntefacaces.</p>
-        <p>key</p>
-      </td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Capability interface &#xC758; &#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>supportedIntefacaces.</p>
-        <p>value</p>
-      </td>
-      <td style="text-align:left">Object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Capability interface &#xC758; Context</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">client</td>
-      <td style="text-align:left">map</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC758; &#xCEE8;&#xD14D;&#xC2A4;&#xD2B8;
-        &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">client.os</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Android, iOS, Linux</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">client.wakeupWord</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xC544;&#xB9AC;&#xC544;, &#xD305;&#xCEE4;&#xBCA8;</p>
-        <p>&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0; &#xC124;&#xC815;&#xB41C;
-          wakeup word</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">client.playStack</td>
-      <td style="text-align:left">Array&lt;String&gt;</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD074;&#xB77C;&#xC774;&#xC5B8;&#xD2B8;&#xC5D0;&#xC11C; &#xC2E4;&#xD589;&#xC911;&#xC778;
-        playServiceId &#xBAA9;&#xB85D;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| supportedIntefacaces |map |Y |Capability interface 의 Context 정보 |
+| supportedIntefacaces.key | string | N | Capability interface 의 이름 |
+| supportedIntefacaces.value | Object | N | Capability interface 의 Context |
+| client | map | Y | 클라이언트의 컨텍스트 정보 |
+| client.os | string | N | Android, iOS, Linux |
+| client.wakeupWord | string | N | 아리아, 팅커벨<br>클라이언트에 설정된 wakeup word |
+| client.playStack | array of string | N | 클라이언트에서 실행중인 playServiceId 목록 |
 
 ### supportedInterfaces 전송 규칙
 
@@ -131,167 +74,24 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
 
 2020-11-26 기준
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Capability interface</th>
-      <th style="text-align:left">Description</th>
-      <th style="text-align:left">Android</th>
-      <th style="text-align:left">iOS</th>
-      <th style="text-align:left">Linux</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">AudioPlayer</td>
-      <td style="text-align:left">&#xC74C;&#xC545; &#xC7AC;&#xC0DD;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Display</td>
-      <td style="text-align:left">UI template data &#xC81C;&#xACF5;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">System</td>
-      <td style="text-align:left">
-        <p>&#xB514;&#xBC14;&#xC774;&#xC2A4; &#xC804;&#xC6D0; &#xC81C;&#xC5B4;</p>
-        <p>&#xB124;&#xD2B8;&#xC6CC;&#xD06C; &#xC5F0;&#xACB0; &#xC81C;&#xC5B4;</p>
-      </td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">
-        <p>&#xC77C;&#xBD80;&#xC9C0;&#xC6D0;</p>
-        <ul>
-          <li>
-            <p>&#xB514;&#xBC14;&#xC774;&#xC2A4; &#xC804;&#xC6D0; &#xC81C;&#xC5B4;&#xB294;</p>
-            <p>&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</p>
-          </li>
-        </ul>
-      </td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">TTS</td>
-      <td style="text-align:left">TTS &#xC7AC;&#xC0DD;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">ASR</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xC74C;&#xC131; &#xC778;&#xC2DD;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Text</td>
-      <td style="text-align:left">&#xD14D;&#xC2A4;&#xD2B8; &#xBA85;&#xB839; &#xC218;&#xD589;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Location</td>
-      <td style="text-align:left">&#xC704;&#xCE58; &#xC815;&#xBCF4; &#xC218;&#xC9D1;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Extension</td>
-      <td style="text-align:left">&#xD655;&#xC7A5; &#xAE30;&#xB2A5; &#xC218;&#xD589;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Speaker</td>
-      <td style="text-align:left">&#xBCFC;&#xB968; &#xC81C;&#xC5B4;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-      <td
-      style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Bluetooth</td>
-      <td style="text-align:left">&#xBE14;&#xB8E8;&#xD22C;&#xC2A4; &#xC81C;&#xC5B4;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-      <td
-      style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Mic</td>
-      <td style="text-align:left">&#xB9C8;&#xC774;&#xD06C; &#xC7A5;&#xCE58; &#xC81C;&#xC5B4;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-      <td
-      style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Screen</td>
-      <td style="text-align:left">&#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774; &#xC7A5;&#xCE58; &#xC81C;&#xC5B4;</td>
-      <td
-      style="text-align:left">&#xC9C0;&#xC6D0;</td>
-        <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-        <td
-        style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Battery</td>
-      <td style="text-align:left">&#xBC30;&#xD130;&#xB9AC; &#xC815;&#xBCF4; &#xC218;&#xC9D1;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
-      <td style="text-align:left">&#xBBF8;&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Sound</td>
-      <td style="text-align:left">Beep &#xC74C; &#xC7AC;&#xC0DD;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Chips</td>
-      <td style="text-align:left">&#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC; &#xC81C;&#xACF5;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Session</td>
-      <td style="text-align:left">&#xC74C;&#xC131; &#xC778;&#xC2DD; &#xC138;&#xC158; &#xC81C;&#xC5B4;</td>
-      <td
-      style="text-align:left">&#xC9C0;&#xC6D0;</td>
-        <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-        <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">PhoneCall</td>
-      <td style="text-align:left">&#xD1B5;&#xD654; &#xAE30;&#xB2A5; &#xC81C;&#xC5B4;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">Message</td>
-      <td style="text-align:left">&#xBB38;&#xC790; &#xAE30;&#xB2A5; &#xC81C;&#xC5B4;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xCD94;&#xD6C4; &#xC9C0;&#xC6D0; &#xC608;&#xC815;</td>
-      <td style="text-align:left">&#xD50C;&#xB7AB;&#xD3FC; &#xD2B9;&#xC131;&#xC0C1; &#xBBF8;&#xC9C0;&#xC6D0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">MediaPlayer</td>
-      <td style="text-align:left">&#xC74C;&#xC545; &#xC571; &#xC81C;&#xC5B4;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xC9C0;&#xC6D0;</td>
-      <td style="text-align:left">&#xBBF8;&#xC9C0;&#xC6D0;</td>
-    </tr>
-  </tbody>
-</table>
-
+| Capability interface | Description | Android | iOS | Linux |
+| :--- | :--- | :--- | :--- | :--- |
+| AudioPlayer | 음악 재생 | 지원 | 지원 | 지원 |
+| Display | UI template data 제공 | 지원 | 지원 | 추후 지원 예정 |
+| System | 디바이스 전원 제어<br>네트워크 연결 제어 | 지원 | 일부지원(디바이스 전원 제어는 플랫폼 특성상 미지원) | 지원 |
+| TTS | TTS 재생 | 지원 | 지원 | 지원 | 
+| ASR | 사용자 음성 인식 | 지원 | 지원 | 지원 |
+| Text | 텍스트 명령 수행 | 지원 | 지원 | 지원 |
+| Location | 위치 정보 수집 | 지원 | 지원 | 플랫폼 특성상 미지원 |
+| Extension | 확장 기능 수행 | 지원 | 지원 | 지원 |
+| Speaker | 볼륨 제어 | 지원 | 플랫폼 특성상 미지원 | 지원 |
+| Bluetooth | 블루투스 제어 | 지원 | 플랫폼 특성상 미지원 | 플랫폼 특성상 미지원 |
+| Mic | 마이크 장치 제어 | 지원 | 플랫폼 특성상 미지원 | 지원 |
+| Screen | 디스플레이 장치 제어 | 지원 | 플랫폼 특성상 미지원 | 플랫폼 특성상 미지원 |
+| Battery | 배터리 정보 수집 | 지원 | 추후 지원 예정 | 미지원 |
+| Sound | Beep 음 재생 | 지원 | 지원 | 지원 |
+| Chips | 발화 가이드 제공 | 지원 | 지원 | 지원 |
+| Session | 음성 인식 세션 제어 | 지원 | 지원 | 지원 |
+| PhoneCall | 통화 기능 제어 | 지원 | 지원 | 플랫폼 특성상 미지원 |
+| Message | 문자 기능 제어 | 지원 | 추후 지원 예정 | 플랫폼 특성상 미지원 |
+| MediaPlayer | 음악 앱 제어 | 지원 | 지원 | 미지원 |

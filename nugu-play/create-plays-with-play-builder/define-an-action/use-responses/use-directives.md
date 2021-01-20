@@ -20,7 +20,7 @@ Directive의 개념과 이를 적용하는 방법에 대한 자세한 내용은 
 
 Directive를 사용하기 위해서는 Backend proxy에 Capability Interface 규격에 맞는 Directive을 구현해야 합니다. 사용자 발화가 어떤 디바이스\(스피커\)의 기능을 요청하면 Play는 Backend proxy에 요청을 보내게 되고, Backend proxy는 요청에 맞는 Directive를 Play에게 전달하게 됩니다. 따라서, Backend proxy에서는 Play에서 어떤 Action가 어떠한 Directive를 사용하는지를 확인하고 이를 구현해야 합니다.
 
-다음은 AudioPlayer Interface를 지원하는 스피커에 Directive가 전달되는 과정을 설명한 그림입니다.
+다음은 AudioPlayer Interface를 지원하는 스피커에 Directive가 전달되는 과정을 설명한 그림입니다. 
 
 ![](../../../../.gitbook/assets/ch3_32342_01.png)
 
@@ -28,7 +28,7 @@ Directive를 사용하기 위해서는 Backend proxy에 Capability Interface 규
 
 * Play Builder 홈 화면에서 Capability Interface를 설정할 Play를 클릭하여 선택한 후 `General` &gt; `기본 정보` 페이지의 Capability Interface에서 AudioPlayer Interface 제어 항목을 `ON`으로 설정합니다.
 
-![](../../../../.gitbook/assets/ch3_32342_c01.png)
+![](../../../../.gitbook/assets/ch3_32342_c01-1.png)
 
 * Built-in Intent 15개가 추가됩니다. Built-in Intent 추가 여부는 `User Utterance Model` &gt; `Built-in Intents` 페이지에서 확인할 수 있습니다.
 

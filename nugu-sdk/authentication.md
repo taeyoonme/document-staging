@@ -4,7 +4,9 @@ NUGU 플랫폼 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)의 규
 
 플랫폼 인증을 위해서는 NUGU에서 별도로 발급하는 `Client Id, Client Secret`과 제휴사에서 등록한 `Redirect Uri` 정보가 필요합니다.
 
-## Authorize Endpoint
+
+
+### Authorize Endpoint
 
 `response_type=code` 만 사용 됩니다.
 
@@ -27,7 +29,7 @@ NUGU 플랫폼 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)의 규
 {% api-method-request %}
 {% api-method-query-parameters %}
 {% api-method-parameter name="client\_id" type="string" required=true %}
-발급받은 ClientId를 사용 합니다.
+발급받은  ClientId를 사용 합니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="response\_type" type="string" required=true %}
@@ -39,7 +41,7 @@ code 만 사용 됩니다.
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="scope" type="string" required=true %}
-\(TODO\)
+ \(TODO\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="data" type="string" required=true %}
@@ -55,10 +57,10 @@ CSRF를 위해 사용 되는 값입니다.
 {% api-method-response %}
 {% api-method-response-example httpCode=302 %}
 {% api-method-response-example-description %}
-
+ 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 302 
 Date: Mon, 14 Oct 2019 02:24:58 GMT
 Location: {redirect_uri}?code={code}&state={state}
@@ -68,7 +70,7 @@ Location: {redirect_uri}?code={code}&state={state}
 {% endapi-method-spec %}
 {% endapi-method %}
 
-## Token Endpoint
+### Token Endpoint
 
 `grant_type=refresh_token`, `grant_type=authorization_code` 만 사용 됩니다.
 
@@ -87,7 +89,7 @@ Client 인증 정보는 Body Parameter\(application/x-www-form-urlencoded\)를 �
 {% api-method-request %}
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="data" type="string" required=true %}
-추가적인 데이터가 포함 됩니다. ex\) {"deviceSerialNumber":"DEVICE\_SERIAL\_NUMBER"}
+추가적인 데이터가 포함 됩니다. ex\) {"deviceSerialNumber":"DEVICE\_SERIAL\_NUMBER"} 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="grant\_type" type="string" required=true %}
@@ -118,7 +120,7 @@ authorization\_code \(신규\)
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 02:24:59 GMT
 Content-Type: application/json;charset=UTF-8
@@ -143,7 +145,7 @@ redirect\_uri\_mismatch - 요청 한 redirect\_uri와 일치하지 않습니다.
 unsupported\_response\_type - 지원하지 않는 response\_type 입니다.
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -165,7 +167,7 @@ code.user\_device\_disconnected - 연결 해제된 상태입니다.
 code.user\_device\_unexpected - 내부 검증 토큰이 불일치 합니다.
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -180,7 +182,7 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {% api-method method="post" host="https://api.host.domain" path="/v1/auth/oauth/token" %}
 {% api-method-summary %}
-토큰 갱신 요청 \(Token Endpoint\)
+토큰 갱신 요청 \(Token Endpoint\) 
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -191,7 +193,7 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 {% api-method-request %}
 {% api-method-form-data-parameters %}
 {% api-method-parameter name="data" type="string" required=true %}
-추가적인 데이터가 포함 됩니다. ex\) {"deviceSerialNumber":"DEVICE\_SEERIAL\_NUMBER"}
+추가적인 데이터가 포함 됩니다. ex\) {"deviceSerialNumber":"DEVICE\_SEERIAL\_NUMBER"} 
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="grant\_type" type="string" required=true %}
@@ -218,7 +220,7 @@ refresh\_token \(갱신\)
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
@@ -238,7 +240,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -252,7 +254,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -265,11 +267,11 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 {% endapi-method-spec %}
 {% endapi-method %}
 
-## Revoke Endpoint
+### Revoke Endpoint
 
 {% api-method method="post" host="" path="/v1/auth/oauth/revoke" %}
 {% api-method-summary %}
-연결 해제 \(Revoke Endpoint\)
+ 연결 해제 \(Revoke Endpoint\) 
 {% endapi-method-summary %}
 
 {% api-method-description %}
@@ -303,7 +305,7 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
@@ -317,7 +319,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -331,7 +333,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -343,7 +345,7 @@ Content-Type: application/json;charset=UTF-8
 {% endapi-method-spec %}
 {% endapi-method %}
 
-## Introspect Endpoint
+### Introspect Endpoint
 
 {% api-method method="post" host="" path="/v1/auth/oauth/introspect" %}
 {% api-method-summary %}
@@ -381,7 +383,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
@@ -397,7 +399,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -411,7 +413,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% endapi-method-response-example-description %}
 
-```text
+```
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8

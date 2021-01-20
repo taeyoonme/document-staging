@@ -8,35 +8,11 @@ description: 디바이스의 볼륨을 제어하기 위한 규격
 
 최신 버전은 1.2 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2020.03.13</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.06.22</td>
-      <td style="text-align:left">Context &#xC758; volumes.name &#xBAA9;&#xB85D; &#xBCC0;&#xACBD;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.06.26</td>
-      <td style="text-align:left">
-        <p>Context &#xC5D0; defaultVolumeLevel &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>Context &#xC758; volumnes &#xC5D0; group &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2020.03.13 | 규격 추가 |
+| 1.1 | 2020.06.22 | Context 의 volumes.name 목록 변경 |
+| 1.2 | 2020.06.26 | Context 에 defaultVolumeLevel 필드 추가<br>Context 의 volumnes 에 group 필드 추가 |
 
 ## SDK Interface
 
@@ -196,114 +172,17 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">volumes</td>
-      <td style="text-align:left">object array</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-. &#xBCFC;&#xB968; &#xC870;&#xC808; &#xBD88;&#xAC00;&#xD55C; &#xACBD;&#xC6B0;&#xB294;
-        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">volumes.
-        <br />name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>NUGU(MUSIC+VOICE_COMMAND), MUSIC, RINGTONE, CALL, NOTIFICATION, ALARM,
-          VOICE_COMMAND, NAVIGATION, SYSTEM_SOUND</p>
-        <p>Reference: <a href="https://source.android.com/devices/audio/attributes#contexts">https://source.android.com/devices/audio/attributes#contexts</a>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>volumes.</p>
-        <p>group</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-. volume&#xC758; group &#xAC12;&#xC73C;&#xB85C; &#xC601;&#xBB38;&#xC790;&#xC640;
-        &#xC22B;&#xC790;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC; &#xAD6C;&#xC131;&#xD560;
-        &#xC218; &#xC788;&#xC74C;.
-        <br />(Play&#xC5D0;&#xC11C;&#xB294; group &#xAC12;&#xC744; mapping&#xD558;&#xC5EC;
-        TTS&#xB97C; &#xB9CC;&#xB4E4; &#xB54C; &#xC0AC;&#xC6A9;&#xD560; &#xC218;
-        &#xC788;&#xC74C;)
-        <br />-. grouping &#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;&#xB294;
-        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;
-        <br />Reference: <a href="https://source.android.com/devices/automotive/audio#volume-and-groups">https://source.android.com/devices/automotive/audio#volume-and-groups</a>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">volumes.
-        <br />volume</td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-. &#xD604;&#xC7AC; &#xC124;&#xC815;&#xB41C; &#xBCFC;&#xB968;
-        <br />-. &#xBCFC;&#xB968; &#xC870;&#xC808; &#xBD88;&#xAC00;&#xD55C; &#xACBD;&#xC6B0;&#xB294;
-        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">volumes.
-        <br />minVolume</td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-. &#xC124;&#xC815; &#xAC00;&#xB2A5;&#xD55C; &#xCD5C;&#xB300; &#xBCFC;&#xB968;
-        <br
-        />-. &#xBCFC;&#xB968; &#xC870;&#xC808; &#xBD88;&#xAC00;&#xD55C; &#xACBD;&#xC6B0;&#xB294;
-        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">volumes.
-        <br />maxVolume</td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-. &#xC124;&#xC815; &#xAC00;&#xB2A5;&#xD55C; &#xCD5C;&#xC18C; &#xBCFC;&#xB968;
-        <br
-        />-. &#xBCFC;&#xB968; &#xC870;&#xC808; &#xBD88;&#xAC00;&#xD55C; &#xACBD;&#xC6B0;&#xB294;
-        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">volumes.
-        <br />defaultVolumeStep</td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-. &#xAE30;&#xBCF8; &#xBCFC;&#xB968; &#xB2E8;&#xACC4;
-        <br />-. &#xBCFC;&#xB968; &#xC870;&#xC808; &#xBD88;&#xAC00;&#xD55C; &#xACBD;&#xC6B0;&#xB294;
-        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>volumnes.</p>
-        <p>defaultVolumeLevel</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-. &#xAE30;&#xBCF8; &#xBCFC;&#xB968; &#xAC12; -. &#xBCFC;&#xB968; &#xC870;&#xC808;
-        &#xBD88;&#xAC00;&#xD55C; &#xACBD;&#xC6B0;&#xB294; &#xC804;&#xB2EC;&#xD558;&#xC9C0;
-        &#xC54A;&#xC74C; -. version 1.2 &#xC774;&#xC804;&#xC5D0;&#xC11C;&#xB294;
-        &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">volumes.
-        <br />muted</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-. &#xC74C;&#xC18C;&#xAC70; &#xC0C1;&#xD0DC;
-        <br />-. &#xC74C;&#xC18C;&#xAC70; &#xC124;&#xC815;&#xC774; &#xBD88;&#xAC00;&#xD55C;
-        &#xACBD;&#xC6B0;&#xB294; &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xC74C;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| volumes | array of object | N | 볼륨 조절 불가한 경우는 전달하지 않음 |
+| volumes.name | string | Y | NUGU(MUSIC+VOICE_COMMAND), MUSIC, RINGTONE, CALL, NOTIFICATION, ALARM, VOICE_COMMAND, NAVIGATION, SYSTEM_SOUND<br>Reference: https://source.android.com/devices/audio/attributes#contexts |
+| volumes.group | string | N | volume의 group 값으로 영문자와 숫자를 이용하여 구성할 수 있음.(Play에서는 group 값을 mapping하여 TTS를 만들 때 사용할 수 있음)<br>grouping 되어 있지 않은 경우는 전달하지 않음<br>Reference: https://source.android.com/devices/automotive/audio#volume-and-groups |
+| volumes.volume | long | N | 현재 설정된 볼륨<br>볼륨 조절 불가한 경우는 전달하지 않음 |
+| volumes.minVolume | long | N | 설정 가능한 최대 볼륨<br>볼륨 조절 불가한 경우는 전달하지 않음 |
+| volumes.maxVolume | long | N | 설정 가능한 최소 볼륨<br>볼륨 조절 불가한 경우는 전달하지 않음 |
+| volumes.defaultVolumeStep | long | N | 기본 볼륨 단계<br>볼륨 조절 불가한 경우는 전달하지 않음 |
+| volumnes.defaultVolumeLevel | long | N | 기본 볼륨 값<br>볼륨 조절 불가한 경우는 전달하지 않음<br>version 1.2 이전에서는 전달하지 않음 |
+| volumes.muted | boolean | N | 음소거 상태<br>음소거 설정이 불가한 경우는 전달하지 않음 |
 
 ## Directive
 
@@ -331,45 +210,11 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">Context &#xCC38;&#xC870;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">rate</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>SLOW, FAST</b>
-        </p>
-        <ul>
-          <li>SLOW - &#xC810;&#xC9C4;&#xC801;&#xC73C;&#xB85C; &#xBCC0;&#xACBD; (max
-            &#xAC12;&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD558;&#xB294; &#xC2DC;&#xB098;&#xB9AC;&#xC624;&#xC5D0;&#xC11C;
-            &#xC0AC;&#xC6A9;)</li>
-          <li>FAST - &#xBC14;&#xB85C; &#xBCC0;&#xACBD;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">volume</td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC124;&#xC815;&#xD560; volume</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| name | string | Y | Context 참조 |
+| rate | string | N | SLOW, FAST<br> - SLOW: 점진적으로 변경 (max 값으로 설정하는 시나리오에서 사용)<br> - FAST : 바로 변경 |
+| volume | long | Y | 설정할 volume |
 
 ### SetMute
 

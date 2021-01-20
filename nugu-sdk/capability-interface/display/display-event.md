@@ -1,6 +1,6 @@
 # Display-Event
 
-## ElementSelected
+### ElementSelected
 
 ```text
 {
@@ -22,7 +22,7 @@
 | :--- | :--- | :--- | :--- |
 | token | string | **Y** |  |
 
-## CloseSucceeded
+### CloseSucceeded
 
 ```text
 {
@@ -39,7 +39,7 @@
 }
 ```
 
-## CloseFailed
+### CloseFailed
 
 ```text
 {
@@ -56,7 +56,7 @@
 }
 ```
 
-## ControlFocusSucceeded
+### ControlFocusSucceeded
 
 ```text
 {
@@ -78,7 +78,7 @@
 | :--- | :--- | :--- | :--- |
 | direction | string | N | PREVIOUS, NEXT |
 
-## ControlFocusFailed
+### ControlFocusFailed
 
 ```text
 {
@@ -100,7 +100,7 @@
 | :--- | :--- | :--- | :--- |
 | direction | string | N | PREVIOUS, NEXT |
 
-## ControlScrollSucceeded
+### ControlScrollSucceeded
 
 ```text
 {
@@ -122,7 +122,7 @@
 | :--- | :--- | :--- | :--- |
 | direction | string | N | PREVIOUS, NEXT |
 
-## ControlScrollFailed
+### ControlScrollFailed
 
 ```text
 {

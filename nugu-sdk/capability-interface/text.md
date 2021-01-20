@@ -8,51 +8,14 @@ description: 텍스트 명령을 Play 로 전달하기 위한 규격
 
 최신 버전은 1.3 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2019.11.24</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.03.23</td>
-      <td style="text-align:left">TextInput event &#xC5D0; asrContext &#xD544;&#xB4DC; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.06.05</td>
-      <td style="text-align:left">
-        <p>TextInput event &#xC758; sessionId &#xD544;&#xB4DC; &#xC0AD;&#xC81C;</p>
-        <p>TextInput event &#xC758; asrContext &#xC5D0; playServiceId &#xD544;&#xB4DC;
-          &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.3</td>
-      <td style="text-align:left">2020.09.02</td>
-      <td style="text-align:left">TextSource &#xC5D0; playServiceId &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.4</td>
-      <td style="text-align:left">2020.11.13</td>
-      <td style="text-align:left">TextRedirect directive &#xCD94;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.5</td>
-      <td style="text-align:left">2020.11.30</td>
-      <td style="text-align:left">TextSourceFailed, TextRedirectFailed event &#xCD94;</td>
-    </tr>
-  </tbody>
-</table>
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2019.11.24 | 규격 추가 |
+| 1.1 | 2020.03.23 | TextInput event 에 asrContext 필드 추가 |
+| 1.2 | 2020.06.05 | TextInput event 의 sessionId 필드 삭제<br>TextInput event 의 asrContext 에 playServiceId 필드 추가 |
+| 1.3 | 2020.09.02 | TextSource 에 playServiceId 추가 |
+| 1.4 | 2020.11.13 | TextRedirect directive 추가 |
+| 1.5 | 2020.11.30 | TextSourceFailed, TextRedirectFailed event 추가 |
 
 ## SDK Interface
 
@@ -148,48 +111,11 @@ text_handler->requestTextInput(text)
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xB85C; &#xC804;&#xB2EC;&#xD55C; &#xB4A4;
-        context&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xB2E4;&#xC2DC; Device
-        Gateway&#xB85C; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD558;&#xB294; text</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; text&#xB97C; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; unique string</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xAC12;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xBA74; TextInput&#xC758; playServiceId
-          &#xAC12;&#xC744; &#xC124;&#xC815;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;</p>
-        <p>ASR.ExpectSpeech &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xD558;&#xC5EC; &#xB3D9;&#xC791;
-          &#xD568;.</p>
-        <p>(TextSource &#xC5D0; playServiceId &#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0;
-          ASR.ExpecSpeech &#xC5D0;&#xC11C; &#xBC1B;&#xC740; playServiceId, domainTypes,
-          asrContext &#xB97C; TextInput &#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xC9C0;
-          &#xC54A;&#xC74C;)</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| text | string | Y | 디바이스로 전달한 뒤 context를 추가하여 다시 Device Gateway로 전송해야 하는 text |
+| token | string | Y | 전송하는 text를 식별하기 위한 unique string |
+| playServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용<br>ASR.ExpectSpeech 보다 우선하여 동작 함.<br>(TextSource 에 playServiceId 가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음) |
 
 ### TextRedirect
 
@@ -213,60 +139,12 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xB85C; &#xC804;&#xB2EC;&#xD55C; &#xB4A4;
-        context&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xB2E4;&#xC2DC; Device
-        Gateway&#xB85C; &#xC804;&#xC1A1;&#xD574;&#xC57C; &#xD558;&#xB294; text</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC804;&#xC1A1;&#xD558;&#xB294; text&#xB97C; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; unique string</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xB514;&#xB809;&#xD2F0;&#xBE0C;&#xB97C; &#xC9C0;&#xC2DC;&#xD55C; PlayServiceId
-        (Play&#xC5D0;&#xC11C; NPK &#xD1B5;&#xD55C; &#xC751;&#xB2F5;&#xC77C;&#xB54C;&#xB294;
-        &#xB77C;&#xC6B0;&#xD130;&#xAC00; &#xC54C;&#xC544;&#xC11C; &#xCC44;&#xC6CC;&#xC90C;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">targetPlayServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xAC12;&#xC774; &#xC874;&#xC7AC;&#xD558;&#xBA74; TextInput&#xC758; playServiceId
-          &#xAC12;&#xC744; &#xC124;&#xC815;&#xD558;&#xB294;&#xB370; &#xC0AC;&#xC6A9;</p>
-        <p>&#xBA85;&#xD655;&#xD788; &#xB77C;&#xC6B0;&#xD305;&#xB418;&#xC5B4;&#xC57C;
-          &#xD558;&#xB294; Play&#xB97C; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xACBD;&#xC6B0;&#xC5D0;
-          &#xC0AC;&#xC6A9;&#xB418;&#xACE0;, &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74;
-          &#xB77C;&#xC6B0;&#xD305; &#xB85C;&#xC9C1;&#xC5D0; &#xC758;&#xD574; &#xB77C;&#xC6B0;&#xD305;</p>
-        <p>ASR.ExpectSpeech &#xBCF4;&#xB2E4; &#xC6B0;&#xC120;&#xD558;&#xC5EC; &#xB3D9;&#xC791;
-          &#xD568;.</p>
-        <p>(TextRedirect&#xC5D0; targetPlayServiceId&#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0;
-          ASR.ExpecSpeech &#xC5D0;&#xC11C; &#xBC1B;&#xC740; playServiceId, domainTypes,
-          asrContext &#xB97C; TextInput &#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xC9C0;
-          &#xC54A;&#xC74C;)</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| text | string | Y | 디바이스로 전달한 뒤 context를 추가하여 다시 Device Gateway로 전송해야 하는 text |
+| token | string | Y | 전송하는 text를 식별하기 위한 unique string |
+| playServiceId | string | Y | 디렉티브를 지시한 PlayServiceId (Play에서 NPK 통한 응답일때는 라우터가 알아서 채워줌) |
+| targetPlayServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용<br>명확히 라우팅되어야 하는 Play를 지정하는 경우에 사용되고, 지정하지 않으면 라우팅 로직에 의해 라우팅<br>ASR.ExpectSpeech 보다 우선하여 동작 함.<br>(TextRedirect에 targetPlayServiceId가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음) |
 
 ## Events
 
@@ -301,108 +179,17 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li>TextSource directive &#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xD55C; text</li>
-          <li>&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xD55C;
-            &#xC784;&#xC758;&#xC758; text</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <ul>
-          <li>TextSource&#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;&#xC778;
-            &#xACBD;&#xC6B0; TextSource&#xC758; token&#xC744; &#xADF8;&#xB300;&#xB85C;
-            &#xC0AC;&#xC6A9;</li>
-          <li>Chips interface, Display interface, Routine interface &#xC5D0; &#xC758;&#xD574;
-            &#xC0DD;&#xC131;&#xB41C; &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xACBD;&#xC6B0;
-            &#xD574;&#xB2F9; directive &#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xBC1B;&#xC740;
-            token &#xC744; &#xC0AC;&#xC6A9;</li>
-          <li>&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C; &#xC0DD;&#xC131;&#xB41C;
-            text&#xB294; &#xC784;&#xC758;&#xC758; &#xAC12;&#xC744; &#xAC16;&#xAC70;&#xB098;
-            &#xD544;&#xB4DC;&#xB97C; &#xAC16;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; &#xB428;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ASR/Display/Routine/Text interface &#xC5D0; &#xC758;&#xD574; &#xC0DD;&#xC131;&#xB41C;
-        &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; directive
-        &#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xBC1B;&#xC740; playServiceId &#xB97C;
-        &#xC0AC;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">domainTypes</td>
-      <td style="text-align:left">Array&lt;String&gt;</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ExpectSpeech&#xC5D0; &#xC758;&#xD55C; &#xBC1C;&#xD654;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
-        ExpectSpeech&#xC5D0;&#xC11C; &#xBC1B;&#xC740; domainTypes&#xB97C; &#xC801;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">asrContext</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">ExpectSpeech&#xC5D0; &#xC758;&#xD55C; &#xBC1C;&#xD654;&#xC778; &#xACBD;&#xC6B0;&#xC5D0;&#xB9CC;
-        ExpectSpeech&#xC5D0;&#xC11C; &#xBC1B;&#xC740; asrContext &#xB97C; &#xC801;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>task</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>sceneText</p>
-      </td>
-      <td style="text-align:left">Array&lt;String&gt;</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>asrContext.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"></td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| text | string | Y | TextSource directive 에서 전달한 text<br>디바이스에서 생성한 임의의 text |
+| token | string | N | TextSource에 의해 생성된 이벤트인 경우 TextSource의 token을 그대로 사용<br>Chips interface, Display interface, Routine interface 에 의해 생성된 이벤트의 경우 해당 directive 에서 전달받은 token 을 사용<br>디바이스에서 생성된 text는 임의의 값을 갖거나 필드를 갖지 않아도 됨 |
+| playServiceId | string | N | ASR/Display/Routine/Text interface 에 의해 생성된 이벤트의 경우 해당 directive 에서 전달받은 playServiceId 를 사용 |
+| domainTypes | array of string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 domainTypes를 적용 |
+| asrContext | object | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 asrContext 를 적용 |
+| asrContext.task | string | N | - |
+| asrContext.sceneId | string | N | - |
+| asrContext.sceneText | array of string | N | - |
+| asrContext.playServiceId | string | N | - |
 
 ### TextSourceFailed
 
@@ -425,7 +212,7 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | Y | TextSource에서 정의한 token |
+| token | string | Y |  TextSource에서 정의한 token |
 | errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 
 ### TextRedirectFailed
@@ -449,6 +236,6 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | Y | TextSource에서 정의한 token |
+| token | string | Y |  TextSource에서 정의한 token |
 | errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 

@@ -80,40 +80,8 @@ class MyBatteryStatusProvider: BatteryStatusProvider {
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">level</td>
-      <td style="text-align:left">Long</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC30;&#xD130;&#xB9AC; &#xC794;&#xB7C9;(0 ~ 100)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">charging</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xCDA9;&#xC804; &#xC5EC;&#xBD80;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">approximateLevel</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBC30;&#xD130;&#xB9AC; &#xC794;&#xB7C9;&#xC758; &#xADFC;&#xC0AC;&#xCE58;
-          &#xC5EC;&#xBD80;</p>
-        <p>( &#xC77C;&#xBD80; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC758; &#xACBD;&#xC6B0;
-          &#xC815;&#xD655;&#xD55C; &#xBC30;&#xD130;&#xB9AC; &#xC794;&#xB7C9;&#xC744;
-          &#xCE21;&#xC815;&#xD560; &#xC218; &#xC5C6;&#xC74C;)</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| level | Long | Y | 배터리 잔량(0 ~ 100) |
+| charging | boolean | Y | 충전 여부 |
+| approximateLevel | boolean | N | 배터리 잔량의 근사치 여부<br>( 일부 디바이스의 경우 정확한 배터리 잔량을 측정할 수 없음) |

@@ -144,7 +144,7 @@ extentionAgent.requestCommand(data: data, playServiceId: playServiceId)
 {% endtab %}
 
 {% tab title="Linux" %}
-```text
+```
 extension_handler->commandIssued(play_service_id, data)
 ```
 {% endtab %}

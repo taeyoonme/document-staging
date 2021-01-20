@@ -55,7 +55,7 @@ Built-in Action은 다음과 같습니다.
 
 즉, 마지막 발화부터 입력하는 스택\(Stack\) 구조이며, LIFO\(Last In First Out; 후입선출\)로 동작합니다.
 
-![](../../../.gitbook/assets/ch3_3231_02.png)
+![](../../../.gitbook/assets/ch3_3231_02-1.png)
 
 ## NUGU.ACTION.rewind
 

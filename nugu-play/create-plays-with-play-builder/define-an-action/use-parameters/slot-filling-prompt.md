@@ -12,14 +12,15 @@ Utterance Parameter 등록 및 매핑에 대한 자세한 내용은 [Parameter �
 
 ## 필수 Entity 정의하기
 
-1. Play Builder 좌측 메뉴에서 `Actions` &gt; `Custom Actions`를 클릭한 후, Slot-Filling Prompt를 설정할 Action을 선택합니다.
-2. 응답에 필요한 정보 가져오기 영역에서 Slot-Filling Prompt를 통해 Entity를 다시 받을 Utterance Parameter에 Entity를 매핑한 후 '필수' 박스에 체크합니다.
+1.  Play Builder 좌측 메뉴에서 `Actions` &gt; `Custom Actions`를 클릭한 후, Slot-Filling Prompt를 설정할 Action을 선택합니다.
 
-![](../../../../.gitbook/assets/ch3_32331_c01.png)
+2.  응답에 필요한 정보 가져오기 영역에서 Slot-Filling Prompt를 통해 Entity를 다시 받을 Utterance Parameter에 Entity를 매핑한 후 '필수' 박스에 체크합니다.
 
-1. 이후 Slot-filling Prompt를 입력합니다.
+![](../../../../.gitbook/assets/ch3_32331_c01-1.png)
 
-![](../../../../.gitbook/assets/ch3_32331_c02.gif)
+3.  이후 Slot-filling Prompt를 입력합니다.
+
+![](../../../../.gitbook/assets/ch3_32331_c02-1.gif)
 
 Slot-filling Prompt는 다른 Prompt와 달리 마지막 발화부터 입력하는 스택 구조이며 LIFO\(Last In First Out\)로 동작합니다. 여러 개의 Prompt를 입력하면 가장 마지막에 입력한 Prompt부터 차례대로 사용자에게 응답하게 됩니다.
 
@@ -29,7 +30,7 @@ Slot-filling Prompt는 다른 Prompt와 달리 마지막 발화부터 입력하�
 **종료 Prompt**에 대한 자세한 내용은 [Prompt의 유형](../use-responses/use-prompts.md#prompt-types)을 참고하세요.
 {% endhint %}
 
-![](../../../../.gitbook/assets/ch3_32331_c02%20%281%29.gif)
+![](../../../../.gitbook/assets/ch3_32331_c03.gif)
 
 ## Slot-filling Prompt 작성 시 주의 사항
 

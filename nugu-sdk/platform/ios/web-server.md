@@ -18,7 +18,7 @@ NUGU 서비스 관리 웹에서 사용할 cookie 를 설정합니다.
 
 override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     let cookie = NuguServiceCookie(
         authToken: AuthorizationStore.shared.authorizationToken,
         appVersion: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "",
@@ -28,6 +28,7 @@ override func viewDidLoad() {
     )
     nuguServiceWebView.setNuguServiceCookie(nuguServiceCookie: cookie)
 }
+
 ```
 {% endcode %}
 
@@ -41,7 +42,7 @@ override func viewDidLoad() {
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     nuguServiceWebView.javascriptDelegate = self
 }
 
@@ -59,12 +60,12 @@ extension NuguServiceWebViewController: NuguServiceWebJavascriptDelegate {
             UIApplication.shared.open(appStoreUrl, options: [:], completionHandler: nil)
         }
     }
-
+    
     func openInAppBrowser(url: String) {
         log.debug("openInAppBrowser : \(url)")
         present(SFSafariViewController(url: URL(string: url)!), animated: true, completion: nil)
     }
-
+    
     func closeWindow(reason: String) {
         log.debug("closeWindow : \(reason)")
         if reason == "WITHDRAWN_USER" {
@@ -76,6 +77,7 @@ extension NuguServiceWebViewController: NuguServiceWebJavascriptDelegate {
         }
     }
 }
+
 ```
 {% endcode %}
 
@@ -88,7 +90,7 @@ extension NuguServiceWebViewController: NuguServiceWebJavascriptDelegate {
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     nuguServiceWebView.loadUrlString(NuguServiceWebView.serviceSettingUrl)
 }
 ```
@@ -123,7 +125,7 @@ func application(_ app: UIApplication, open url: URL, options: [UIApplication.Op
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     NotificationCenter.default.addObserver(
         self,
         selector: #selector(refreshAfterOauth),

@@ -18,7 +18,7 @@ private val webView: NuguWebView by lazy { findViewById<NuguWebView>(R.id.webVie
 
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
+    
     with(webView) {
         authorization = NuguOAuth.getClient().getAuthorization()
         pocId = nuguPocId
@@ -39,7 +39,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ```swift
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
+    
      webView.windowListener = object: {
         override fun onCloseWindow(reason: String?) {
             if reason == "WITHDRAWN_USER" {
@@ -61,7 +61,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ```swift
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
+    
     webView.loadUrl(Const.SERVICE_SETTING_URL)
 }
 ```

@@ -32,7 +32,7 @@ Play 기본 정보는 Play 관련 필수 정보로 아래의 내용들을 등록
 **② Play 서비스ID**  
 개별 Play를 구분하는 고유ID이며, 한 번 저장한 후에는 변경이 불가능합니다. Play 서비스ID는 reverse domain name 표기 형태로 입력해야 하며, 다른 Play에서 이미 사용 중인 서비스ID는 등록할 수 없습니다. \(입력 예 : com.example.myPlay\)
 
-**③ Play 공개 유형**  
+**③ Play 공개 유형**   
 Play 타입은 Public Play와 Private Play로 구분됩니다. Play의 서비스 대상이 NUGU 전체 회원일 경우에는 Public Play를, Play 사용 권한을 부여 받은 특정인 또는 개인을 대상으로 할 경우에는 Private Play를 선택합니다. Play 타입은 심사 승인 이후에는 변경이 불가능하므로 신중하게 결정해야 합니다. Private Play 타입의 Play는 주로 NUGU biz에서 사용합니다.
 
 **④ Play 호출 이름**  

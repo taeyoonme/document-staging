@@ -10,7 +10,7 @@ description: iOS 환경에서 NUGU 서비스를 쉽게 사용할 수 있도록 N
 * 주요 기능이 교체 가능한 구조로 특성에 따라 쉽게 커스터마이징 가능합니다.
 
 {% hint style="warning" %}
-Objective-C 언어는 별도로 지원하지 않습니다. Objective-C 환경에서 사용하기 위해서는 별도로 Bridge 코드를 작성하여 사용해야 합니다.
+Objective-C 언어는 별도로 지원하지 않습니다. Objective-C 환경에서 사용하기 위해서는 별도로 Bridge 코드를 작성하여 사용해야 합니다. 
 {% endhint %}
 
 ## 지원하는 OS 버전

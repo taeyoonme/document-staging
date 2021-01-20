@@ -6,7 +6,7 @@
 
 배포가 완료된 Play는 `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 관리` 메뉴에서 상세 정보를 확인하고 상태를 변경할 수 있습니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m1uagcqecztq0v5s_ch5_531_c01__1%20%281%29.png)
+![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m1uagcqecztq0v5s_ch5_531_c01__1.png)
 
 이 페이지에서 확인할 수 있는 Play의 정보는 다음과 같습니다.
 
@@ -55,7 +55,7 @@ Play의 상태 변경\(Enable → Disable, Disable → Enable\)은 자유롭게 
 
 ![](../../.gitbook/assets/ch5_533_c01-1__2.png)
 
-2️⃣ 화면 상단의 `삭제` 버튼을 클릭합니다.
+2️⃣ 화면 상단의 `삭제` 버튼을 클릭합니다. 
 
 ![](../../.gitbook/assets/ch5_533_c02-1-20-1-__1.png)
 

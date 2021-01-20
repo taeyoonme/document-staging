@@ -4,8 +4,8 @@ description: TemplateRenderer 적용 방법
 
 # NUGU Display의 노출과 제어
 
-[Display 가이드](https://developers-doc.nugu.co.kr/nugu-sdk/capability-interface/display)에 소개된 DisplayAggregatorInterface.Renderer, DisplayAggregatorInterface.Controller 를 구현하고 DisplayAgent를 이용하여 Template 화면을 노출하고 이를 제어할 수 있습니다.
-
+[Display 가이드](https://developers-doc.nugu.co.kr/nugu-sdk/capability-interface/display)에 소개된 DisplayAggregatorInterface.Renderer, DisplayAggregatorInterface.Controller 를 구현하고 DisplayAgent를 이용하여 Template 화면을 노출하고 이를 제어할 수 있습니다.   
+  
 개발 편의를 위해 NUGU SDK는 이 과정을 구현한 **`TemplateRenderer`**를 제공합니다.  
 TemplateRenderer의 적용 방법을 설명합니다.
 
@@ -39,7 +39,7 @@ TemplateRenderer는 Fragment 형태로 Template 화면을 제공합니다.
 
 ## TemplateRenderer 등록
 
-nuguAndroidClient에 templateRenderer를 displayRenderer로 설정합니다.
+nuguAndroidClient에 templateRenderer를 displayRenderer로 설정합니다. 
 
 ```kotlin
 // MainActivity.kt in SampleApp
@@ -65,5 +65,6 @@ override fun onBackPressed() {
 ```
 
 SampleApp의 MainActivity에서의 사용예시입니다.  
-백키 이벤트가 발생했을때 template이 노출중인 상태라면 template을 제거하고, 아니라면 activity를 종료하는 케이스에 사용될 수 있습니다.
+백키 이벤트가 발생했을때 template이 노출중인 상태라면 template을 제거하고, 아니라면 activity를 종료하는 케이스에 사용될 수 있습니다.  
+
 

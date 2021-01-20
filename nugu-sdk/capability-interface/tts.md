@@ -39,7 +39,7 @@ let ttsAgent = nuguClient.ttsAgent
 {% endtab %}
 
 {% tab title="Linux" %}
-[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TTSAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+ [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TTSAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 ```text
 auto tts_handler(std::shared_ptr<ITTSHandler>(
@@ -65,7 +65,7 @@ val listener = object: TTSAgentInterface.Listener {
     override fun onStateChanged(state: State, dialogRequestId: String) {
         ...
     }
-
+    
     ...
 }
 ttsAgent.addListener(listener)
@@ -80,7 +80,7 @@ class MyTTSAgentDelegate: TTSAgentDelegate {
     func ttsAgentDidChange(state: TTSState, dialogRequestId: String) {
         ...
     }
-
+    
     ...
 }
 ttsAgent.add(delegate: MyTTSAgentDelegate())
@@ -99,7 +99,7 @@ public:
     {
         ...
     }
-
+    
     ...
 };
 auto tts_listener(std::make_shared<MyTTSListener>());
@@ -121,52 +121,11 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">ttsActivity</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>TTS &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;</p>
-        <p><b>IDLE, PLAYING, PAUSED, FINISHED, STOPPED</b>
-        </p>
-        <ul>
-          <li>IDLE&#xC778; &#xACBD;&#xC6B0;&#xB294; &#xCD5C;&#xCD08; &#xC804;&#xC6D0;&#xC744;
-            &#xCF30;&#xC744; &#xB54C;&#xB9CC; &#xAC00;&#xB2A5;&#xD558;&#xACE0; &#xC774;&#xD6C4;&#xC5D0;&#xB294;
-            &#xB098;&#xC62C; &#xC218; &#xC5C6;&#xC74C;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">engine</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>Device &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC74C;&#xC131;&#xD569;&#xC131;
-          engine &#xC744; &#xBA85;&#xC2DC;</p>
-        <p>NUGU &#xC74C;&#xC131;&#xD569;&#xC131; engine &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294;
-          &#xACBD;&#xC6B0; &quot;skt&quot;</p>
-        <p>(&#xAC12;&#xC744; &#xCC44;&#xC6B0;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; default
-          &quot;skt&quot;)</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD604;&#xC7AC; &#xC7AC;&#xC0DD;&#xC911;&#xC778; TTS &#xC758; token</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| ttsActivity | string | Y | TTS 재생 상태<br>**IDLE**, **PLAYING**, **PAUSED**, **FINISHED**, **STOPPED**<br>  - IDLE인 경우는 최초 전원을 켰을 때만 가능하고 이후에는 나올 수 없음 |
+| engine | string | N | Device 에서 사용하는 음성합성 engine 을 명시<br>NUGU 음성합성 engine 을 사용하는 경우 "skt"<br>(값을 채우지 않으면 default "skt") |
+| token | string | N | 현재 재생중인 TTS 의 token |
 
 ## Directive
 

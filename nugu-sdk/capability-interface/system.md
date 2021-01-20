@@ -43,7 +43,7 @@ let systemAgent = nuguClient.systemAgent
 
 ```text
 auto system_handler(std::shared_ptr<ISystemHandler>(
-            CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>()));
+	        CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>()));
 
 nugu_client->getCapabilityBuilder()
     ->add(system_handler.get())
@@ -86,7 +86,7 @@ public:
     {
         ...
     }
-
+    
     ...
 };
 auto system_listener(std::make_shared<MySystemListener>());
@@ -123,7 +123,7 @@ class MySystemAgentDelegate: SystemAgentDelegate {
     func systemAgentDidReceiveExceptionFail(code: SystemAgentExceptionCode.Fail, dialogRequestId: String) {
         ...
     }
-
+    
     ...
 }
 systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
@@ -142,7 +142,7 @@ public:
     {
         ...
     }
-
+    
     ...
 };
 auto system_listener(std::make_shared<MySystemListener>());
@@ -179,7 +179,7 @@ class MySystemAgentDelegate: SystemAgentDelegate {
     func systemAgentDidReceiveRevokeDevice(reason: SystemAgentRevokeReason, dialogRequestId: String) {
         ...
     }
-
+    
     ...
 }
 systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
@@ -198,7 +198,7 @@ public:
     {
         ...
     }
-
+    
     ...
 };
 auto system_listener(std::make_shared<MySystemListener>());
@@ -222,7 +222,7 @@ CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.g
 ### ResetUserInactivity
 
 {% hint style="info" %}
-Connection-oriented 디바이스에서만 사용
+Connection-oriented  디바이스에서만 사용
 {% endhint %}
 
 * UserInactivityReport 이벤트의 inactivity timer를 리셋시키기 위해 전송
@@ -244,7 +244,7 @@ Connection-oriented 디바이스에서만 사용
 ### HandoffConnection
 
 {% hint style="info" %}
-Connection-oriented 디바이스에서만 사용
+Connection-oriented  디바이스에서만 사용
 {% endhint %}
 
 * NUGU Platform과 TCP  connection을 맺고 유지하는 디바이스에게 연결을 끊고 다시 접속하라는 명령
@@ -271,74 +271,15 @@ Connection-oriented 디바이스에서만 사용
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">protocol</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li>H2_GRPC : grpc over http2</li>
-          <li>H2 : http2</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">hostname</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">domain</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">address</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">deprecated ip or domain</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">port</td>
-      <td style="text-align:left">Int</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">port</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">retryCountLimit</td>
-      <td style="text-align:left">Int</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">retry_count_limit&#xAE4C;&#xC9C0; &#xC694;&#xCCAD; &#xD55C; &#xD6C4; &#xB2E4;&#xC74C;
-        server&#xB85C; &#xC811;&#xC18D; &#xC2DC;&#xB3C4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">connectionTimeout</td>
-      <td style="text-align:left">Int</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">milliseconds</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">charge</td>
-      <td style="text-align:left">String</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <ul>
-          <li>NORMAL : &#xC77C;&#xBC18;&#xC801;&#xC778; &#xD1B5;&#xC2E0; &#xC694;&#xAE08;
-            &#xACFC;&#xAE08; (default)</li>
-          <li>FREE : &#xBB34;&#xACFC;&#xAE08; &#xD3EC;&#xD2B8;&#xB97C; &#xC774;&#xC6A9;&#xD558;&#xC5EC;
-            device gateway&#xC5D0; &#xC811;&#xC18D;&#xD574;&#xC11C; TTS.SpeechPlay
-            Event&#xB97C; &#xD1B5;&#xD574; &#xC74C;&#xC131; &#xD569;&#xC131;</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| protocol | String | Y | H2_GRPC : grpc over http2<br>H2 : http2 |
+| hostname | String | Y | domain |
+| address | String | Y | deprecated ip or domain |
+| port | Int | Y | port |
+| retryCountLimit | Int | Y | retry_count_limit까지 요청 한 후 다음 server로 접속 시도 |
+| connectionTimeout | Int | Y | milliseconds |
+| charge | String | N | NORMAL : 일반적인 통신 요금 과금 (default)<br>FREE : 무과금 포트를 이용하여 device gateway에 접속해서 TTS.SpeechPlay Event를 통해 음성 합성 |
 
 ### TurnOff
 
@@ -399,59 +340,13 @@ Connection-oriented 디바이스에서만 사용
 | code | string | Y | 서버에서 발생 |
 | description | string | N | 에러에 대한 설명 |
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">code</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">UNAUTHORIZED_REQUEST_EXCEPTION</td>
-      <td style="text-align:left">
-        <p>&#xC811;&#xC18D;&#xC2DC; &#xC778;&#xC99D; &#xC5D0;&#xB7EC;</p>
-        <ul>
-          <li>jwt &#xD1A0;&#xD070;&#xC774; &#xC720;&#xD6A8;&#xD558;&#xC9C0; &#xC54A;&#xAC70;&#xB098;
-            header&#xC5D0; &#xD1A0;&#xD070;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;
-            <br
-            />- grpc : System.Exception(UNAUTHORIZED_REQUEST_EXCEPTION)&#xC744; &#xB0B4;&#xB9AC;&#xACE0;
-            &#xC5F0;&#xACB0; &#xB04A;&#xC74C;
-            <br />- h2 : 403 &#xC5D0;&#xB7EC;</li>
-          <li>play router&#xC5D0;&#xC11C; &#xD1A0;&#xD070;&#xC774; &#xC720;&#xD6A8;&#xD558;&#xC9C0;
-            &#xC54A;&#xC544;&#xC11C; &#xC2E4;&#xD328;</li>
-          <li>jwt &#xD1A0;&#xD070;&#xC740; &#xC720;&#xD6A8;&#xD558;&#xC9C0;&#xB9CC;
-            &#xB514;&#xBC14;&#xC774;&#xC2A4; &#xC5F0;&#xACB0; &#xC9C1;&#xD6C4; habilis&#xB97C;
-            &#xC870;&#xD68C;&#xD574;&#xC11C; &#xD1A0;&#xD070;&#xC774; &#xC720;&#xD6A8;&#xD558;&#xC9C0;
-            &#xC54A;&#xC740; &#xAC83;&#xC774; &#xD655;&#xC778;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">ASR_RECOGNIZING_EXCEPTION</td>
-      <td style="text-align:left">&#xC74C;&#xC131; &#xC778;&#xC2DD; &#xC5D0;&#xB7EC;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">PLAY_ROUTER_PROCESSING_EXCEPTION</td>
-      <td style="text-align:left">
-        <p>Play router &#xC5D0;&#xB7EC;</p>
-        <ul>
-          <li>Fallback Play &#xC5F0;&#xB3D9; &#xC2E4;&#xD328;</li>
-          <li>Client &#xB85C;&#xC9C1; &#xC624;&#xB958;(&#xC798;&#xBABB;&#xB41C; &#xADDC;&#xACA9;&#xC73C;&#xB85C;
-            &#xC694;&#xCCAD;)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">TTS_SPEAKING_EXCEPTION</td>
-      <td style="text-align:left">&#xC74C;&#xC131; &#xD569;&#xC131; &#xC5D0;&#xB7EC;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">INTERNAL_SERVICE_EXCEPTION</td>
-      <td style="text-align:left">&#xAE30;&#xD0C0; &#xC54C; &#xC218; &#xC5C6;&#xB294; &#xC5D0;&#xB7EC;</td>
-    </tr>
-  </tbody>
-</table>
+| code | description |
+| :--- | :--- |
+| UNAUTHORIZED_REQUEST_EXCEPTION | 접속시 인증 에러<br>• jwt 토큰이 유효하지 않거나 header에 토큰이 없는 경우<br>   - grpc : System.Exception(UNAUTHORIZED_REQUEST_EXCEPTION)을 내리고 연결 끊음<br>   - h2 : 403 에러<br>• play router에서 토큰이 유효하지 않아서 실패<br>• jwt 토큰은 유효하지만 디바이스 연결 직후 habilis를 조회해서 토큰이 유효하지 않은 것이 확인 |
+| ASR_RECOGNIZING_EXCEPTION | 음성 인식 에러 |
+| PLAY_ROUTER_PROCESSING_EXCEPTION | Play router 에러<br>• Fallback Play 연동 실패<br>• Client 로직 오류(잘못된 규격으로 요청) |
+| TTS_SPEAKING_EXCEPTION | 음성 합성 에러 |
+| INTERNAL_SERVICE_EXCEPTION | 기타 알 수 없는 에러 |
 
 ### NoDirectives
 
@@ -518,7 +413,7 @@ NUGU 서버에서 디바이스가 등록 해제되면 전달됩니다.
 ### ResetConnection
 
 {% hint style="info" %}
-Connection-oriented 디바이스에서만 사용
+Connection-oriented  디바이스에서만 사용
 {% endhint %}
 
 * 이 요청을 받으면 클라이언트는 registry에 다시 접속해서 주소를 받아서 접속한다. 
@@ -533,14 +428,14 @@ Connection-oriented 디바이스에서만 사용
     "version": "1.1"
   },
   "payload": {
-      "description": "{{STRING}}"
+  	"description": "{{STRING}}"
   }
 }
 ```
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| description | String | N | 서버에서 정보를 남기기 위한 단순 로깅 용도 |
+| description | String | N | 서버에서 정보를 남기기 위한 단순 로깅 용도  |
 
 ## Events
 
@@ -564,7 +459,7 @@ Connection-oriented 디바이스에서만 사용
 ### UserInactivityReport
 
 {% hint style="info" %}
-Connection-oriented 디바이스에서만 사용
+Connection-oriented  디바이스에서만 사용
 {% endhint %}
 
 * 1시간동안 사용자 인터렉션이 없는 경우 보내야 함
@@ -591,7 +486,7 @@ Connection-oriented 디바이스에서만 사용
 ### Disconnect
 
 {% hint style="info" %}
-Connection-oriented 디바이스에서만 사용
+Connection-oriented  디바이스에서만 사용
 {% endhint %}
 
 * handoff 가 완료되어 더 이상 받을 directive나 TTS stream이 없는 경우
@@ -613,7 +508,7 @@ Connection-oriented 디바이스에서만 사용
 ### Echo
 
 {% hint style="info" %}
-Connection-oriented 디바이스에서만 사용
+Connection-oriented  디바이스에서만 사용
 {% endhint %}
 
 * device-gateway와 연결 상테를 테스트하기 위한 event
