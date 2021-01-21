@@ -266,8 +266,8 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y | - |
 | background | BackgroundObject | N | - |
-| content.header | TextObject | N | 본문 제목 - 줄바꿈 가능 \('\n'\) |
-| content.body | TextObject | Y | 본문 내용 - 줄바꿈 가능 \('\n'\) - Scrollable |
+| content.header | TextObject | N | 본문 제목<br> - 줄바꿈 가능 \('\n'\) |
+| content.body | TextObject | Y | 본문 내용<br> - 줄바꿈 가능 \('\n'\)<br> - Scrollable \(스크롤이 불가능한 디바이스\[일부 Btv\]에서는 최대 4줄까지만 표현\) |
 | content.footer | TextObject | N | 보조 설명 |
 
 #### Sample Code
@@ -605,7 +605,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | background | BackgroundObject | N |  |
 | content.image | ImageObject | Y |  |
 | content.header | TextObject | Y | 본문 제목 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| content.body | TextObject | N | 본문 내용<br> - 줄바꿈 가능 \('\n'\) - Scrollable |
+| content.body | TextObject | N | 본문 내용<br> - 줄바꿈 가능 \('\n'\)<br> - Scrollable \(스크롤이 불가능한 디바이스\[일부 Btv\]에서는 최대 4줄까지만 표현\) |
 | content.footer | TextObject | N | 보조설명<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
