@@ -1,10 +1,10 @@
 # AudioPlayer를 위한 Display Interface
 
-이 페이지에서는 AudioPlayer Interface를 사용할 때, 화면이 있는 디바이스에서 AudioPlayer 제어 화면을 제공할 때 사용하는 Display Interface를 안내합니다.   
+이 페이지에서는 AudioPlayer Interface를 사용할 때, 화면이 있는 디바이스에서 AudioPlayer 제어 화면을 제공할 때 사용하는 Display Interface를 안내합니다.
 
-AudioPlayer Interface를 위한 Display Interface를 사용하기 위해서는 `General` &gt; `기본 정보` &gt; `Capability Interface`에서 `AudioPlayer` 만 체크하면 됩니다. 
+AudioPlayer Interface를 위한 Display Interface를 사용하기 위해서는 `General` &gt; `기본 정보` &gt; `Capability Interface`에서 `AudioPlayer` 만 체크하면 됩니다.
 
-![](../../../../.gitbook/assets/capability_display_1.jpg)
+![](../../../../.gitbook/assets/assets_capability_display_1.jpg)
 
 #### 지원 디바이스
 
@@ -30,7 +30,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 #### AudioPlayer.Template1
 
-![](../../../../.gitbook/assets/display-template1.png)
+![](../../../../.gitbook/assets/assets_display-template1%20%281%29.png)
 
 ```javascript
 "metadata": {    
@@ -64,7 +64,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 #### AudioPlayer.Template2
 
-![](../../../../.gitbook/assets/display-template2.png)
+![](../../../../.gitbook/assets/assets_display-template2.png)
 
 ```javascript
 "metadata": {    
@@ -98,12 +98,12 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 'metadata' 필드에 Template 타입을 지정하지 않은 경우, Default Template으로 동작하게 되며, Play가 화면을 가진 디바이스에서 오디오 재생 시 Play 이름만 표시됩니다. AudioPlayer, Display Interface를 함께 사용하는 경우, Template1이나 Template2를 사용하기를 권장합니다.
 
-![](../../../../.gitbook/assets/display-default-template.png)
+![](../../../../.gitbook/assets/assets_display-default-template.png)
 
 {% hint style="info" %}
 T map은 Default, AudioPlayer.Template1, AudioPlayer.Template2과 같은 type과는 상관없이 아래 그림과 같이 제공됩니다.
 
- ![](../../../../.gitbook/assets/display-tmap-1.png)
+ ![](../../../../.gitbook/assets/assets_display-tmap-1.png)
 {% endhint %}
 
 ### 2. Display Interface용 Event를 처리하는 Action 생성

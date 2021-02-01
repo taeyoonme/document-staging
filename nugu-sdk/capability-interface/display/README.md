@@ -61,11 +61,11 @@ val controller = object: DisplayAggregatorInterface.Controller {
     override fun getFocusedItemToken(): String? {
         ...
     }
-    
+
     override fun getVisibleTokenList(): List<String>? {
         ...
     }
-    
+
     ...
 }
 
@@ -81,7 +81,7 @@ class MyDisplayAgentDelegate: DisplayAgentDelegate {
     func displayAgentRequestContext(templateId: String, completion: @escaping (DisplayContext?) -> Void) {
         ...
     }
-    
+
     ...
 }
 displayAgent.delegate = MyDisplayAgentDelegate()
@@ -106,7 +106,7 @@ val renderer = object: DisplayAggregatorInterface.Renderer {
     override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
         ...
     }
-    
+
     ...
 }
 displayAggregator.setRenderer(renderer)
@@ -119,11 +119,11 @@ val controller = object: DisplayAggregatorInterface.Controller {
     override fun controlFocus(direction: Direction): Boolean {
         ...
     }
-    
+
     override fun controlScroll(direction: Direction): Boolean {
         ...
     }
-    
+
     ...
 }
 displayAggregator.displayCardRendered(templateId, controller)
@@ -138,15 +138,15 @@ class MyDisplayAgentDelegate: DisplayAgentDelegate {
     func displayAgentShouldRender(template: DisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
         ...
     }
-    
+
     func displayAgentShouldMoveFocus(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -> Void) {
         ...
     }
-    
+
     func displayAgentShouldScroll(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -> Void) {
         ...
     }
-    
+
     ...
 }
 displayAgent.delegate = MyDisplayAgentDelegate()
@@ -234,9 +234,9 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 | :--- | :--- | :--- | :--- |
 | contentDescription | string | N | - |
 | sources | list | Y | 리스트로 제공되며 클라이언트에서 화면 크기에 가장 적합한 이미지를 사용해야 함 |
-| sources.url | string | Y | - | 
-| sources.size | string | N | X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE |
-| sources.widthPixels | long | N | - | 
+| sources.url | string | Y | - |
+| sources.size | string | N | X\_SMALL, SMALL, MEDIUM, LARGE, X\_LARGE |
+| sources.widthPixels | long | N | - |
 | sources.heightPixels | long | N | - |
 
 | size value | Recommended Size \(in pixels\) |
@@ -288,17 +288,17 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| type | string | N | text(default), image 중 하나의 값을 가질 수 있습니다. |
-| image |  <a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject">ImageObject</a> | N | 버튼 이미지<br>- type이 image인 경우에 한해 필수이며, 해당 이미지를 이용해 버튼을 표현한다. |
+| type | string | N | text\(default\), image 중 하나의 값을 가질 수 있습니다. |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | 버튼 이미지<br>- type이 image인 경우에 한해 필수이며, 해당 이미지를 이용해 버튼을 표현한다. |
 | text | string | N | 버튼 텍스트 <br>- type이 text인 경우에 한해 필수이며, 해당 텍스트를 이용해 버튼을 표현한다. |
 | token | string | Y | 클릭 시 전달될 토큰 값 |
-| eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type (Capability 명과 Event를 모두 명시해야 함)<br>- **Display.ElementSelected** :  default (eventType 값이 없는 경우 기본값)<br>- **Text.TextInput** |
+| eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br>- **Display.ElementSelected** :  default \(eventType 값이 없는 경우 기본값\)<br>- **Text.TextInput** |
 | textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | textInput.text | string | Y | 전달할 텍스트 |
 | textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
 | postback | object | N | 클릭 시 전달되는 임의의 Object<br>- 버튼 클릭 시 동작을 위해 필요한 정보를 임의의 JSON 포맷으로 추가 가능<br> - 기존에 token을 이 용도로 활용하는 경우가 많았는데, token은 identifier 역할을 하도록 하기 위해 추가 |
 | autoTrigger | object | N | 특정 시간이 지난 뒤 ElementSelected Event를 자동으로 발생시키는 경우 포함<br>하위 parameter들은 autoTrigger가 포함되면 모두 mandatory parameter |
-| autoTrigger.delayInMilliseconds | long | Y | TTS 종료 후 trigger 시킬때까지의 시간 (msec) |
+| autoTrigger.delayInMilliseconds | long | Y | TTS 종료 후 trigger 시킬때까지의 시간 \(msec\) |
 | autoTrigger.showTimer | bool | Y | 버튼에 timer 숫자를 보여줄지 설정 |
 | closeTemplateAfter | bool | N | trigger 또는 클릭 동작 후 template을 바로 닫을지, 아니면 template의 life cycle 대로 화면에 보여줄지 설정 |
 | style | object | N | 버튼의 추가적인 style을 정의함.<br>textObject의 style고 사용법이 동일함. |
@@ -318,10 +318,10 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| logo |  <a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject">ImageObject</a> | N | png 타입으로 투명 이미지로 제공해야 함 |
-| text | <a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject">TextObject</a> | Y | 제목 |
-| subtext | <a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject">TextObject</a> | N | ASR Text 등 부제목 |
-| subicon |  <a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject">ImageObject</a> | N | 서브 아이콘 \( 위치 : subText 왼쪽 \) |
+| logo | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | png 타입으로 투명 이미지로 제공해야 함 |
+| text | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | Y | 제목 |
+| subtext | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | N | ASR Text 등 부제목 |
+| subicon | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | 서브 아이콘 \( 위치 : subText 왼쪽 \) |
 | button | ButtonObject | N | 우측에 위치하는 버튼 |
 
 ### BackgroundObject
@@ -335,8 +335,8 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| image |  <a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject">ImageObject</a> | N | - |
-| color | string | N | color형식(RGB)<br>default : #000000 |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | - |
+| color | string | N | color형식\(RGB\)<br>default : \#000000 |
 
 ### Duration
 
@@ -355,7 +355,7 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| grammarGuide | array of string | N | 화면에 표시할 문자열들을 정의합니다.<br>사용예 : ["홈 화면으로 이동해줘", "선호채널 찾아줘"] |
+| grammarGuide | array of string | N | 화면에 표시할 문자열들을 정의합니다.<br>사용예 : \["홈 화면으로 이동해줘", "선호채널 찾아줘"\] |
 
 ### ToggleButtonObject
 
@@ -397,8 +397,6 @@ Template 의 종류를 구분하기 위한 속성입니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | type | string | Y | - TEXT<br>- IMAGE |
-| text | <a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject">TextObject</a> | N | - |
-| image | <a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject">ImageObject</a> | N | - | 
-
-### 
+| text | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | N | - |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | - |
 

@@ -100,9 +100,9 @@ AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| playerActivity | string | Y | 스피커의 오디오 플레이어 상태값을 나타냅니다.<br>**IDLE**, **PLAYING**, **PAUSED**, **STOPPED**, **FINISHED**, **BUFFER_UNDERRUN** |
+| playerActivity | string | Y | 스피커의 오디오 플레이어 상태값을 나타냅니다.<br>**IDLE**, **PLAYING**, **PAUSED**, **STOPPED**, **FINISHED**, **BUFFER\_UNDERRUN** |
 | token | string | N | 현재 재생 중인 곡의 token 값입니다.<br>AudioPlayer.Play Directive 전송 시 스트리밍 URL과 함께 전송되는 token 값<br>재생 중인 곡이 있는 경우에만 token이 존재 |
-| offsetInMilliseconds | long | Y | 현재 재생 중인 위치 (msec)를 나타냅니다.<br>재생 중인 곡이 없을 경우 기본 값은 0 |
+| offsetInMilliseconds | long | Y | 현재 재생 중인 위치 \(msec\)를 나타냅니다.<br>재생 중인 곡이 없을 경우 기본 값은 0 |
 
 ## Response Sample
 

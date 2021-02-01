@@ -19,7 +19,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 ## State Diagram
 
-![](../../.gitbook/assets/image__5.png)
+![](../../.gitbook/assets/assets_image__5.png)
 
 ## SDK Interface
 
@@ -323,13 +323,13 @@ audio_player_handler->requestShuffleCommand(false)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| sourceType | string | N | URL or ATTACHMENT(default 는 URL)<br> - ATTACHMENT 일 경우 stream에 url이 존재 하지 않음 |
-| cacheKey | string | N | 디바이스에서 미디어 캐시를 위한 unique key(디바이스 캐시 기능은 필수가 아님)<br>캐시가 불가능한 미디어 이면 디바이스로 내려주지 않음 |
+| sourceType | string | N | URL or ATTACHMENT\(default 는 URL\)<br> - ATTACHMENT 일 경우 stream에 url이 존재 하지 않음 |
+| cacheKey | string | N | 디바이스에서 미디어 캐시를 위한 unique key\(디바이스 캐시 기능은 필수가 아님\)<br>캐시가 불가능한 미디어 이면 디바이스로 내려주지 않음 |
 | audioItem.stream | object | Y | - |
-| audioItem.stream.url | string | N | 오디오 컨텐츠의 URL (URL에 의한 streaming만 지원)<br>sourceType 이 ATTACHMENT일 경우 없음 |
+| audioItem.stream.url | string | N | 오디오 컨텐츠의 URL \(URL에 의한 streaming만 지원\)<br>sourceType 이 ATTACHMENT일 경우 없음 |
 | audioItem.stream.<br>offsetInMilliseconds | long | Y | 시작부터 얼마만큼의 offset부터 재생할지 설정. 0이면 처음부터 재생 |
-| audioItem.stream.<br>progressReport.<br>progressReportDelayInMilliseconds | long | N | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed Event가 발생<br>(offsetInMilliseconds 값과는 무관하게 컨텐츠 시작 시간 기준으로 절대값을 의미) |
-| audioItem.stream.<br>progressReport.<br>progressReportIntervalInMilliseconds | long | N | 재생을 시작해서 지정된 주기마다 progressReportIntervalElapsed Event가 발생<br>(offsetInMilliseconds 값과는 무관하게 컨텐츠 시작 시간 기준으로 절대값을 의미) |
+| audioItem.stream.<br>progressReport.<br>progressReportDelayInMilliseconds | long | N | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed Event가 발생<br>\(offsetInMilliseconds 값과는 무관하게 컨텐츠 시작 시간 기준으로 절대값을 의미\) |
+| audioItem.stream.<br>progressReport.<br>progressReportIntervalInMilliseconds | long | N | 재생을 시작해서 지정된 주기마다 progressReportIntervalElapsed Event가 발생<br>\(offsetInMilliseconds 값과는 무관하게 컨텐츠 시작 시간 기준으로 절대값을 의미\) |
 | audioItem.stream.token | string | Y | 현재 stream을 나타내는 token<br>Resume 을 판단하기 위한 key 값으로 사용되기 때문에, Play 에서 제공하는 미디어 내에서 unique 함이 보장되어야 함. |
 | audioItem.stream.<br>expectedPreviousToken | string | N | 이전 stream을 나타내는 token |
 | audioItem.metadata | object | N | - |
@@ -391,19 +391,19 @@ audio_player_handler->requestShuffleCommand(false)
 | template.content.imageUrl | string | Y | image url |
 | template.content.durationSec | string | N | content duration in sec<br>**없거나 0, 음수, null이면 progress를 disabled 처리** |
 | template.content.<br>backgroundImageUrl | string | N | background image url |
-| template.content.<br>backgroundColor | string | N | background color<br>default - "#000" |
-| template.content.<br>badgeImageUrl | string | N | 이미지(content.imageUrl)의 오른쪽 상단에 표시될 Badge Image의 URL |
-| template.content.<br>badgeMessage | string | N | 이미지(content.imageUrl)의 왼쪽 하단에 표시될 Badge Message |
+| template.content.<br>backgroundColor | string | N | background color<br>default - "\#000" |
+| template.content.<br>badgeImageUrl | string | N | 이미지\(content.imageUrl\)의 오른쪽 상단에 표시될 Badge Image의 URL |
+| template.content.<br>badgeMessage | string | N | 이미지\(content.imageUrl\)의 왼쪽 하단에 표시될 Badge Message |
 | template.content.<br>lyrics | obejct | N | 가사 화면을 표시하기 위한 정보 |
 | template.content.<br>lyrics.title | string | Y | 가사 화면에서 보여질 제목 |
-| template.content.<br>lyrics.lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br>- **SYNC** : 자막 동기화<br>- **NON_SYNC** : 자막 동기화 없음 |
-| template.content.<br>lyrics.lyricsInfoList | array of lyricsInfo | Y | 가사 내용(lyricsInfo)의 목록<br>기본 값은 빈 배열 |
+| template.content.<br>lyrics.lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br>- **SYNC** : 자막 동기화<br>- **NON\_SYNC** : 자막 동기화 없음 |
+| template.content.<br>lyrics.lyricsInfoList | array of lyricsInfo | Y | 가사 내용\(lyricsInfo\)의 목록<br>기본 값은 빈 배열 |
 | template.content.<br>lyrics.lyricsInfoList.<br>time | integer | N | lyricsTyps 이 SYNC 이면 mandatory<br>lyricsInfo가 보여지는 시점의 millisecond 단위의 시간 정보 |
 | template.content.<br>lyrics.lyricsInfoList.<br>text | string | Y | lyricsInfo가 보여지는 시점의 가사 내용 |
-| template.content.<br>settings | object | N | 사용자가 설정한 정보를 표시함<br> - Play에서는 표시할 하위 field를 설정할 수 있음<br> - 설정한 field에 대한 Event와 Directive를 사용할 수 있음 |
-| template.content.<br>settings.favorite | boolean | N | 재생 중인 음원에 대한 좋아요 여부 |
-| template.content.<br>settings.repeat | string | N | 재생 목록에 대한 반복 설정<br> - **ALL** : 전곡 반복<br> - **ONE** : 한곡 반복<br> - **NONE** : 반복 없음 |
-| template.content.<br>settings.shuffle | boolean | N | 재생 목록의 음원을 임의의 순서로 재생할지 여부 |
+| template.content. settings | object | N | 사용자가 설정한 정보를 표시함  - Play에서는 표시할 하위 field를 설정할 수 있음  - 설정한 field에 대한 Event와 Directive를 사용할 수 있음 |
+| template.content. settings.favorite | boolean | N | 재생 중인 음원에 대한 좋아요 여부 |
+| template.content. settings.repeat | string | N | 재생 목록에 대한 반복 설정  - **ALL** : 전곡 반복  - **ONE** : 한곡 반복  - **NONE** : 반복 없음 |
+| template.content. settings.shuffle | boolean | N | 재생 목록의 음원을 임의의 순서로 재생할지 여부 |
 | template.grammarGuide | list of string | N | 발화 도움말 |
 
 #### audioItem.metadata.template - AudioPlayer.Template2
@@ -1323,3 +1323,4 @@ audio_player_handler->requestShuffleCommand(false)
 | :--- | :--- | :--- | :--- |
 | error.type | string | Y | **에러 타입 코드**<br> - **INVALID_COMMAND** : **IDLE/STOP** 상태일때 Request Pause/Resume/Next/Previous/Stop Command Directive 수신한 경우 (**STOP/IDLE 일때 RequestPlayCommand 는 정상요청이므로 제외에 유의**)<br> - **UNKNOWN_ERROR** : 그 이외에 처리중 에러난 경우 |
 | error.message | string | Y | STOP/IDLE 상태에서는 Request XXX Command 를 처리할 수 없음. |
+

@@ -11,19 +11,19 @@ NUGU 디바이스\(스피커\)와 연동하여 진행하는 테스트는 실제 
 
 ## Play Builder에서 채팅으로 테스트하기
 
-1.  Play Builder 우측 상단에 있는 `테스트` 버튼을 클릭하여 실행한 채팅창에 발화 내용을 입력한 후 버튼을 클릭합니다.\(예: 날씨 알려줘\)
+1. Play Builder 우측 상단에 있는 `테스트` 버튼을 클릭하여 실행한 채팅창에 발화 내용을 입력한 후 버튼을 클릭합니다.\(예: 날씨 알려줘\)
 
 * 단축키 Ctrl+D \(Mac에서는 ⌘ Command + D\) 를 눌러 실행할 수 있습니다.
 
 * Play Builder 내에서의 테스트는 사용자의 실제 발화를 어떻게 분석할지 확인할 수 있으며, 이 분석 결과를 바탕으로 실제로 의도한 대로 Prompt가 나가게 되는지도 확인할 수 있습니다.
 
-![](../../.gitbook/assets/ch3_325_c01-2.gif)
+![](../../.gitbook/assets/assets_ch3_325_c01-2.gif)
 
-2.  분석 결과를 확인하려면 입력 문장 바로 아래의 `NLU 분석 결과 열기`를 클릭합니다. 입력한 문장 아래 분석 결과가 표시됩니다.
+2. 분석 결과를 확인하려면 입력 문장 바로 아래의 `NLU 분석 결과 열기`를 클릭합니다. 입력한 문장 아래 분석 결과가 표시됩니다.
 
 * 분석 결과 표시를 닫으려면 `NLU 분석 결과 닫기`를 클릭합니다.
 
-![](../../.gitbook/assets/ch3_325_c02.png)
+![](../../.gitbook/assets/assets_ch3_325_c02.png)
 
 NLU 분석 결과는 문장을 직접 입력하여 학습시킨 Custom Intent에 대해서만 분석이 되며, 이 Custom Intent를 Trigger로 사용하는 Custom Action에 대해 응답 중 Prompt가 어떻게 나가게 되는지 확인할 수 있습니다.
 
@@ -54,7 +54,7 @@ Play Builder 내 테스트가 가능한 항목과 불가능한 항목은 다음�
 
 SKML 태그는 결과창에 그대로 나오게 되나, 실제로 발화되지는 않습니다.
 
-![](../../.gitbook/assets/ch3_325_c01.gif)
+![](../../.gitbook/assets/assets_ch3_325_c01.gif)
 
 테스트창에 30분 동안 입력이 없으면, 해당 Play를 담당하는 NLU 엔진이 비활성화 됩니다.  
 아무 텍스트를 입력하거나, User Utterance Model을 수정 또는 저장한 경우에는 NLU 엔진이 활성화되며, 1분 후에 다시 테스트할 수 있습니다.  
@@ -66,9 +66,9 @@ Initial Parameter를 정의했으나, 실제로 Backend proxy에서 Initial Para
 
 ### Play 테스트 가능 상태 확인하기
 
-Play의 상태가 등록중, 심사대기, 심사반려, 심사중, 심사완료, 배포대기 중인 경우에 스피커에서 테스트가 가능합니다. 
+Play의 상태가 등록중, 심사대기, 심사반려, 심사중, 심사완료, 배포대기 중인 경우에 스피커에서 테스트가 가능합니다.
 
-![](../../.gitbook/assets/play-status-is-registered.png)
+![](../../.gitbook/assets/assets_play-status-is-registered.png)
 
 {% hint style="info" %}
 Play를 등록하는 방법은 [Play 정보 등록](../play-registration-and-review/register-a-play.md)을 참고하세요.
@@ -92,19 +92,19 @@ NUGU 디바이스 테스트는 Play의 상태가 테스트 가능해 진 후 다
 * 테스트 기기는 최대 10대까지 등록할 수 있습니다.
 {% endhint %}
 
-1.  `NUGU developers` &gt; `회원 정보 관리`\(우측 상단 로그온 아이디 클릭\)를 클릭하여 회원 정보 관리 페이지로 이동합니다.
+1. `NUGU developers` &gt; `회원 정보 관리`\(우측 상단 로그온 아이디 클릭\)를 클릭하여 회원 정보 관리 페이지로 이동합니다.
 
-![](../../.gitbook/assets/ch3_325_c04.png)
+![](../../.gitbook/assets/assets_ch3_325_c04.png)
 
-2.  테스트 기기 등록 메뉴에서 `디바이스 검색` 버튼을 클릭합니다.
+2. 테스트 기기 등록 메뉴에서 `디바이스 검색` 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/ch3_325_c05.png)
+![](../../.gitbook/assets/assets_ch3_325_c05.png)
 
-3.  테스트 기기 추가 팝업에서 등록할 디바이스를 선택한 후 `확인`을 눌러 테스트 기기를 등록합니다.
+3. 테스트 기기 추가 팝업에서 등록할 디바이스를 선택한 후 `확인`을 눌러 테스트 기기를 등록합니다.
 
-![](../../.gitbook/assets/ch3_325_c06-1.png)
+![](../../.gitbook/assets/assets_ch3_325_c06-1.png)
 
 테스트 기기 등록이 완료되면 테스트 기기 등록 메뉴의 등록된 기기 목록에 등록된 디바이스가 표시됩니다. NUGU 디바이스 테스트를 중지하려면, 등록된 디바이스 우측의 `-` 버튼을 클릭하여 디바이스를 삭제합니다.
 
-![](../../.gitbook/assets/ch3_325_c07-1.png)
+![](../../.gitbook/assets/assets_ch3_325_c07-1.png)
 

@@ -6,13 +6,13 @@ description: Template 유지 정책의 커스텀
 
 `TemplateRenderer`는 NUGU의 Template유지정책에 따라 Template 을 노출하고 제거합니다.
 
-예를들어 응답 TTS재생이 종료되면 일정시간 후 연관된 Template은 자동으로 제거됩니다. 또한 미디어 플레이어 Template의 경우,  새로운 미디어 플레이 요청이 들어왔을때 기존의 모든 Template을 제거한후 노출됩니다.
+예를들어 응답 TTS재생이 종료되면 일정시간 후 연관된 Template은 자동으로 제거됩니다. 또한 미디어 플레이어 Template의 경우, 새로운 미디어 플레이 요청이 들어왔을때 기존의 모든 Template을 제거한후 노출됩니다.
 
-이런 기본 정책과 다른 자신만의 유지정책을 가지려면 ****`DisplayAggregatorInterface.Renderer`를 직접 구현하여 `NuguAndroidClient` 객체에 [displayRenderer로 등록](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/android/nugu-display#templaterenderer-1)하면 됩니다.
+이런 기본 정책과 다른 자신만의 유지정책을 가지려면 _\*\*_`DisplayAggregatorInterface.Renderer`를 직접 구현하여 `NuguAndroidClient` 객체에 [displayRenderer로 등록](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/android/nugu-display#templaterenderer-1)하면 됩니다.
 
 ## Renderer 구현
 
-DisplayAggregatorInterface.Renderer 인터페이스를 직접 구현하여 Template의 노출과 제거를 컨트롤 할 수 있습니다. 
+DisplayAggregatorInterface.Renderer 인터페이스를 직접 구현하여 Template의 노출과 제거를 컨트롤 할 수 있습니다.
 
 ```kotlin
 interface Renderer {
@@ -27,13 +27,13 @@ interface Renderer {
 * **update\(\) :** 이미 노출된 Template의 특정 요소를 업데이트 해야할때 호출됩니다.
 
 {% hint style="warning" %}
-각 메서드는 mainThread에서 호출됨을 보장하지 않습니다.   
+각 메서드는 mainThread에서 호출됨을 보장하지 않습니다.  
 필요한 로직이 mainThread에서 동작하도록 작성하시기 바랍니다.
 {% endhint %}
 
 ## Display 상태 전송
 
-DisplayAggregatorInterface.Renderer의 render\(\), clear\(\) 가 처리되거나 사용자가 백키로 화면을 닫는 등 화면의 노출상태가 변화하면 이를 `DisplayInterface`를 통해 NUGU SDK로 알려야 합니다.   
+DisplayAggregatorInterface.Renderer의 render\(\), clear\(\) 가 처리되거나 사용자가 백키로 화면을 닫는 등 화면의 노출상태가 변화하면 이를 `DisplayInterface`를 통해 NUGU SDK로 알려야 합니다.  
 \(DisplayInterface는 NuguAndroidClient.getDisplay\(\)로 얻을 수 있습니다.\)
 
 ```kotlin
@@ -48,15 +48,11 @@ fun displayCardCleared(templateId: String)
 * **displayCardCleared\(\)** : Template 화면이 제거되면 호출해야 합니다.
 
 {% hint style="warning" %}
-DisplayAggregatorInterface.Renderer의 render\(\)함수에서 처리결과로 true를 리턴했다면,  이후 반드시 displayCardRenderer\(\) 혹은 displayCardRenderFailed\(\)를 호출해야 합니다.
+DisplayAggregatorInterface.Renderer의 render\(\)함수에서 처리결과로 true를 리턴했다면, 이후 반드시 displayCardRenderer\(\) 혹은 displayCardRenderFailed\(\)를 호출해야 합니다.
 {% endhint %}
 
 {% hint style="warning" %}
-displayCardRendered\(\)가 호출되지 않은 템플릿에 대해 displayCardCleared\(\)가 호출되어서는 안됩니다.   
+displayCardRendered\(\)가 호출되지 않은 템플릿에 대해 displayCardCleared\(\)가 호출되어서는 안됩니다.  
 렌더링이 완료되지 않은 Template이 제거된 경우에는 displayCardRenderFailed\(\)를 호출해야 합니다.
 {% endhint %}
-
-
-
-
 

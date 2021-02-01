@@ -10,7 +10,7 @@ AudioPlayer Interface는 오디오 파일의 재생 외에 플레이어의 다�
 
 | 스트리밍 | 오디오 코덱 | 샘플링 주파수 | 비트율 | 비고 |
 | :--- | :--- | :--- | :--- | :--- |
-| HLS<br>(Http Live Streaming) | mp3 | &gt;= 44.1KHz | &gt;= 128kbps | - |
+| HLS<br>\(Http Live Streaming\) | mp3 | &gt;= 44.1KHz | &gt;= 128kbps | - |
 | MP4 over HTTP | AAC | &gt;= 44.1KHz | &gt;= 96kbps | 초기 버퍼링 시간을 줄이기 위해 moov atom을 파일의 앞쪽으로 이동시킨 MP4 파일을 권장합니다. |
 
 샘플링 주파수와 비트율은 최소 권장 사항을 의미합니다. 더 낮은 값을 사용해도 재생을 되지만 음질의 저하를 체감할 수 있기 때문에 최소 권장을 준수할 것을 강력히 권장합니다.
@@ -25,7 +25,7 @@ AudioPlayer Interface는 사용자의 발화와 스트리밍 상태의 변경에
 
 Play는 스피커의 오디오 플레이어의 상태와 사용자의 발화에 따라 적절한 처리를 할 수 있도록 개발해야 합니다. 여기서는 AudioPlayer Interface에서 제공하는 Built-in Intent, Directive, Event에 대해 설명합니다.
 
-![](../../../../.gitbook/assets/ch3_3331_01-1.png)
+![](../../../../.gitbook/assets/assets_ch3_3331_01-1.png)
 
 | 상태\(State\) | 설명 |
 | :--- | :--- |
@@ -108,16 +108,16 @@ Play Builder에서 Action을 정의하지 않는 경우 Fallback Action에 등�
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | url | string | Y | 오디오 콘텐츠의 URL을 입력합니다. |
-| offsetInMilliseconds | long | Y | 재생을 어느 offset(위치)에서 시작할지 설정합니다. 값이 '0'이면 처음부터 재생합니다. |
-| progressReportDelayInMilliseconds | long | N | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed 이벤트가 발생합니다. (offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.) |
-| progressReportIntervalInMilliseconds | long | N | 재생을 시작해서 지정된 주기마다 progressReportIntervalElapsed 이벤트가 발생합니다. (offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.) |
+| offsetInMilliseconds | long | Y | 재생을 어느 offset\(위치\)에서 시작할지 설정합니다. 값이 '0'이면 처음부터 재생합니다. |
+| progressReportDelayInMilliseconds | long | N | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed 이벤트가 발생합니다. \(offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.\) |
+| progressReportIntervalInMilliseconds | long | N | 재생을 시작해서 지정된 주기마다 progressReportIntervalElapsed 이벤트가 발생합니다. \(offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.\) |
 | token | string | Y | 현재 stream을 나타내는 token입니다.<br>token은 재생할 오디오 콘텐츠 별로 고유해야 합니다. |
 | expectedPreviousToken | string | N | 이전 stream을 나타내는 token입니다. |
 | metadata | object | N | reserved |
 
 audioItem.stream.progressReport는 오디오의 시작 시간을 기준으로 절대 위치에 해당하는 시간에 이벤트를 발생시켜야 합니다. 아래의 그림처럼 Play Directive에 의해 시작하는 위치와 무관하게 시작을 기준으로 설정한 시간이 되는 경우 이벤트가 발생됩니다.
 
-![](../../../../.gitbook/assets/ch3_3331_02-1.png)
+![](../../../../.gitbook/assets/assets_ch3_3331_02-1.png)
 
 #### Stop Directive
 

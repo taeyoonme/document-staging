@@ -16,7 +16,7 @@ description: 전화 수/발신 기능 제어를 위한 규격
 
 ## State Diagram
 
-![](../../.gitbook/assets/image__10.png)
+![](../../.gitbook/assets/assets_image__10.png)
 
 ## SDK Interface
 
@@ -212,14 +212,14 @@ class MyPhoneCallClient: PhoneCallClient {
 | template.intent | string | N | candidates의 용도<br> - **CALL** : 전화걸어줘<br> - **SEARCH** : 찾아줘<br> - **HISTORY** : 최근 통화 목록<br> - **REDIAL** : 재발신<br> - **MISSED** : 부재중통화<br> - **NONE** |
 | template.callType | string | N | **NORMAL** : 일반 전화<br>**SPEAKER** : 스피커폰<br>**VIDEO** : 비디오콜<br>**CALLAR** : 콜라 |
 | template.recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
-| template.recipientIntended.name | string | N | 검색에 요청할때 사용된 상대방 이름<br> (NLU 분석으로 나온 이름) |
-| template.label | string | N | NLU 분석 결과 label (집, 회사, ...)<br>정규화되어 있지 않고, 사용자 발화에서 분석된 값을 그대로 보냄 |
+| template.recipientIntended.name | string | N | 검색에 요청할때 사용된 상대방 이름<br>  \(NLU 분석으로 나온 이름\) |
+| template.label | string | N | NLU 분석 결과 label \(집, 회사, ...\)<br>정규화되어 있지 않고, 사용자 발화에서 분석된 값을 그대로 보냄 |
 | template.searchScene | string | N | [SendCandidates](./#sendcandidate) 참조 |
 | template.candidates | array of [Person](./#person) | N | 화면에 검색 결과 리스트를 디스플레이하는 중에만 context에 추가 |
-| recipient | object | N | 통화 상대방에 대한 정보<br>수신중(INCOMING) 상태에서는 발신자 정보를 세팅 (CallArrived Event의 caller 정보) |
+| recipient | object | N | 통화 상대방에 대한 정보<br>수신중\(INCOMING\) 상태에서는 발신자 정보를 세팅 \(CallArrived Event의 caller 정보\) |
 | recipient.name | string | N | 통화 상대방의 이름 |
 | recipient.token | string | N | 통화 상대방을 식별하기 위한 unique 값 |
-| recipient.isMobile | string | N | 통화 상대방 전화번호가 모바일 폰인지 여부 (TRUE/FALSE) |
+| recipient.isMobile | string | N | 통화 상대방 전화번호가 모바일 폰인지 여부 \(TRUE/FALSE\) |
 | recipient.isRecentMissed | string | N | 통화 상대방과의 가장 최근 통화가 부재중 통화인지 여부<br> - **TRUE** : 수신 중인 전화번호의 가장 최근 수신 이력이 있지만 못받은 경우<br> - **FALSE** : 수신 중인 전화번호의 수신 이력이 없거나, 있는데 부재중 통화가 아닌 경우 |
 
 ## Common Objects
@@ -265,17 +265,17 @@ class MyPhoneCallClient: PhoneCallClient {
 | address.road | string | N | 도로명 주소 |
 | address.jibun | string | N | 지번 주소 |
 | businessHours | object | N | 영업시간 |
-| businessHours.open | string | N | 날짜, 시간 정보로 ISO 8601 포맷 (2007-12-03T10:15:30) HH:mm |
-| businessHours.close | string | N | 날짜, 시간 정보로 ISO 8601 포맷 (2007-12-03T10:15:30) HH:mm |
+| businessHours.open | string | N | 날짜, 시간 정보로 ISO 8601 포맷 \(2007-12-03T10:15:30\) HH:mm |
+| businessHours.close | string | N | 날짜, 시간 정보로 ISO 8601 포맷 \(2007-12-03T10:15:30\) HH:mm |
 | businessHours.info | string | N | 부가정보 |
 | history | object | N | 통화 기록을 위한 정보 |
-| history.time | string | N | 날짜, 시간 정보로 ISO 8601 포맷 (2007-12-03T10:15:30) |
-| history.type | string | N | - **OUT** : 발신 통화 (Outgoing call)<br>- **OUT_CANCELED** : 발신 연결 안 됨 (Outgoing call canceled)<br>- **IN** : 수신 통화 (Incoming call)<br>- **REJECTED** : 수신 거절 (Rejected call)<br>- **MISSED** : 부재중 통화 (Missed call)<br>- **VOICE_MESSAGE** : 음성 메시지 (Voice message)<br>- **BLOCKED** : 수신 차단 (Blocked) |
-| history.callType | string | N | - **NORMAL** : 일반통화<br>- **VIDEO** : 영상통화<br>- **CALLAR** : 콜라 영상통화<br>- **GROUP** : 그룹통화<br>- **VOICE_MESSAGE** : 음성 메시지 (Voice message)<br> |
+| history.time | string | N | 날짜, 시간 정보로 ISO 8601 포맷 \(2007-12-03T10:15:30\) |
+| history.type | string | N | - **OUT** : 발신 통화 \(Outgoing call\)<br>- **OUT\_CANCELED** : 발신 연결 안 됨 \(Outgoing call canceled\)<br>- **IN** : 수신 통화 \(Incoming call\)<br>- **REJECTED** : 수신 거절 \(Rejected call\)<br>- **MISSED** : 부재중 통화 \(Missed call\)<br>- **VOICE\_MESSAGE** : 음성 메시지 \(Voice message\)<br>- **BLOCKED** : 수신 차단 \(Blocked\) |
+| history.callType | string | N | - **NORMAL** : 일반통화<br>- **VIDEO** : 영상통화<br>- **CALLAR** : 콜라 영상통화<br>- **GROUP** : 그룹통화<br>- **VOICE\_MESSAGE** : 음성 메시지 \(Voice message\) |
 | numInCallHistory | string | N | 발신기록 히스토리에 존재하는 건수<br>0, 1, 2, ... 값을 string 형태로 받음 |
 | token | string | N | 사용자 추가 정보를 식별하기 위해 임의로 정의한 key값을 포함<br>unique 여부는 사용되는 용도에 의해 결정 |
 | score | string | N | 검색 결과의 신뢰도 |
-| contacts | array of [Contact](./#contact) | N | - | 
+| contacts | array of [Contact](./#contact) | N | - |
 
 ### Contact
 
@@ -290,7 +290,7 @@ class MyPhoneCallClient: PhoneCallClient {
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| label | string | N | **MOBILE**<br>**COMPANY**<br>**HOME**<br>**USER_DEFINED** : 사용자가 지정한 값도 필요할지 검토 필요 |
+| label | string | N | **MOBILE**<br>**COMPANY**<br>**HOME**<br>**USER\_DEFINED** : 사용자가 지정한 값도 필요할지 검토 필요 |
 | number | string | N | 전화번호 |
 
 ## Directives
@@ -324,10 +324,10 @@ class MyPhoneCallClient: PhoneCallClient {
 | :--- | :--- | :--- | :--- |
 | intent | string | Y | **CALL** : 전화걸어줘<br>**SEARCH** : 찾아줘<br>**HISTORY** : 최근 통화 목록<br>**REDIAL** : 재발신<br>**MISSED** : 부재중통화<br>**NONE** |
 | recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
-| name | string | N | 검색에 요청할때 사용된 상대방 이름 (NLU 분석으로 나온 이름) |
-| label | string | N | NLU 분석 결과 label (집, 회사, ...)<br>정규화되어 있지 않고, 사용자 발화에서 분석된 값을 그대로 보냄 |
+| name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
+| label | string | N | NLU 분석 결과 label \(집, 회사, ...\)<br>정규화되어 있지 않고, 사용자 발화에서 분석된 값을 그대로 보냄 |
 | callType | string | N | **NORMAL** : 일반 전화<br>**SPEAKER** : 스피커폰<br>**VIDEO** : 비디오콜<br>**CALLAR** : 콜라 |
-| searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br>enum은 아니며 임의의 string이 올 수 있음 → 확장 가능성이 높아서 string으로 정의<br>(아래에 추가되는 값들은 여러 poc에서 공유해서 사용하는 값으로 추가 시 아래의 리스트를 계속 확장 가능)<br> - **DEFAULT** : 기본 검색 로직<br> - **T114ONLY** : T114 검색결과만 노출되는 검색 로직<br> - **T114INCLUDE** : T114 검색결과를 항상 포함하는 검색 로직<br> - **T114DIRECT** : 긴급전화 |
+| searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br>enum은 아니며 임의의 string이 올 수 있음 → 확장 가능성이 높아서 string으로 정의<br>\(아래에 추가되는 값들은 여러 poc에서 공유해서 사용하는 값으로 추가 시 아래의 리스트를 계속 확장 가능\)<br> - **DEFAULT** : 기본 검색 로직<br> - **T114ONLY** : T114 검색결과만 노출되는 검색 로직<br> - **T114INCLUDE** : T114 검색결과를 항상 포함하는 검색 로직<br> - **T114DIRECT** : 긴급전화 |
 | candidates | array of [Person](./#person) | N | candidates가 없으면 이 항목이 없어야 함 |
 
 ### MakeCall
@@ -462,7 +462,7 @@ class MyPhoneCallClient: PhoneCallClient {
 | caller | object | Y | 발신자 정보 |
 | caller.name | string | N | 이름 |
 | caller.token | string | Y | 전화를 건 상대방인 식별하기 위한 unique 값<br>CallArrived Event 후에 응답을 보낼때 해당 Event를 발생시킨 caller를 unique하게 구분하기 위해 SDK에서 생성하는 token 값 |
-| caller.isMobile | string | Y | 모바일 폰인지 여부(TRUE/FALSE) |
+| caller.isMobile | string | Y | 모바일 폰인지 여부\(TRUE/FALSE\) |
 | caller.isRecentMissed | string | Y | 가장 최근 통화가 부재중 통화인지 여부<br> - TRUE : 수신 중인 전화번호의 가장 최근 수신 이력이 있지만 못받은 경우<br> - FALSE : 수신 중인 전화번호의 수신 이력이 없거나, 있는데 부재중 통화가 아닌 경우 |
 
 ### CallEnded
@@ -528,7 +528,7 @@ class MyPhoneCallClient: PhoneCallClient {
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| errorCode | string | Y | **NO_SYSTEM_PERMISSION** : 권한없음<br>**CALL_TYPE_NOT_SUPPORTED** : 해당 callType 을 지원하지 않음 |
+| errorCode | string | Y | **NO\_SYSTEM\_PERMISSION** : 권한없음<br>**CALL\_TYPE\_NOT\_SUPPORTED** : 해당 callType 을 지원하지 않음 |
 | callType | string | Y | **NORMAL** : 일반 전화<br>**SPEAKER** : 스피커폰<br>**VIDEO** : 비디오콜<br>**CALLAR** : 콜라 |
 
 ### MakeCallSucceeded

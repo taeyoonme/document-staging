@@ -2,7 +2,7 @@
 
 NUGU 서비스에서 UI Display 를 담당하는 `DisplayAgent` 는 Display 의 동작, life cycle 을 `DisplayAgentDelegate` 를 통해 전달하고 있습니다. 사용자는 `DisplayAgentDelegate` 를 받아, 직접 DisplayView 를 그려줄 수도 있으나, `NuguUIKit` 은 사용자의 편의성을 위해 간단히 생성, 설정, 노출 가능한 `NuguDisplayWebView` 를 제공하고 있습니다. Template server 에 접속하여 Display 웹뷰를 내려받아 노출하는 `NuguDisplayWebView` 를 사용하는 방법은 크게 두가지가 있습니다.
 
-### DisplayWebViewPresenter 를 사용하기
+## DisplayWebViewPresenter 를 사용하기
 
 `NuguClientKit` 은 사용자가 더 쉽게, 편리하게 Display 를 노출하기 위해 `DisplayWebViewPresenter` 를 제공하고 있습니다. `DisplayWebViewPresenter` 는 사용자가 `DisplayAgentDelegate` 를 구현할 필요없이 내부적으로 `DisplayAgent` 동작 핸들링을 하고 있으며, 간단한 delegate 메소드만 사용자에게 제공합니다. `DisplayWebViewPresenter` 를 사용하기 위해선 제일 먼저 `NuguClientKit` 을 import 하도록 합니다.
 
@@ -26,7 +26,7 @@ import NuguClientKit
 * nuguClient : `DisplayAgentDelegate` 를 대신 핸들링하기 위해 전달해야하는 `NuguClient` 객체입니다. SampleApp 코드에서는 `NuguCentralManager` 가 가지고 있습니다.
 * clientInfo : `clientInfo` 인자에는 template server 와의 협의하에 custom dictionary injection 이 가능하며, 현재는 `["buttonColor": "white/blue"]`을 지원하고 있습니다.
 
-그 다음으로 `DisplayWebViewPresenterDelegate` 를 구현해주면 간단하게 끝납니다. 
+그 다음으로 `DisplayWebViewPresenterDelegate` 를 구현해주면 간단하게 끝납니다.
 
 * `onDisplayWebViewBuguButtonClick()` : `DisplayWebView` 의 NUGU 버튼이 선택되었을때 호출됨.
 
@@ -38,7 +38,7 @@ extension MainViewController: DisplayWebViewPresenterDelegate {
 }
 ```
 
-### NuguDisplayWebView 를 직접 사용하기
+## NuguDisplayWebView 를 직접 사용하기
 
 `DisplayWebViewPresenter` 의 도움없이, 직접 `NuguDisplayWebView` 를 생성하고 사용할 수 있습니다. `NuguDisplayWebView` 를 사용하기 위해, 먼저 `DisplayAgentDelegate` 를 구현하는 객체에 NuguUIKit 을 import합니다.
 
@@ -54,13 +54,13 @@ NuguDisplayWebView 의 노출, 갱신, 제거 타이밍은 분명합니다. Disp
             self?.addDisplayView(displayTemplate: template, completion: completion)
         }
     }
-    
+
     func displayAgentShouldUpdate(templateId: String, template: DisplayTemplate) {
         DispatchQueue.main.async { [weak self] in
             self?.updateDisplayView(displayTemplate: template)
         }
     }
-    
+
     func displayAgentDidClear(templateId: String) {
         DispatchQueue.main.async { [weak self] in
             self?.dismissDisplayView()
@@ -68,11 +68,11 @@ NuguDisplayWebView 의 노출, 갱신, 제거 타이밍은 분명합니다. Disp
     }
 ```
 
-`displayAgentShouldRender()` delegate 가 호출되었을때는, NuguDisplayWebView 를 노출해야하는 시점이므로 `addDisplayView()` 함수를 작성하여야 합니다. 
+`displayAgentShouldRender()` delegate 가 호출되었을때는, NuguDisplayWebView 를 노출해야하는 시점이므로 `addDisplayView()` 함수를 작성하여야 합니다.
 
-`addDisplayView()` 에서는 넘겨받은 `DisplayTemplate` 인자를 사용하여`NuguDisplayWebView` 의 `load()`  함수를  먼저 호출해주도록 합니다. `load()` 함수의 `clientInfo` 인자에는 template server 와의 협의하에 dictionary injection 이 가능하며, 현재는 `["buttonColor": "white/blue"]`을 지원하고 있습니다.
+`addDisplayView()` 에서는 넘겨받은 `DisplayTemplate` 인자를 사용하여`NuguDisplayWebView` 의 `load()` 함수를 먼저 호출해주도록 합니다. `load()` 함수의 `clientInfo` 인자에는 template server 와의 협의하에 dictionary injection 이 가능하며, 현재는 `["buttonColor": "white/blue"]`을 지원하고 있습니다.
 
-그리고 `NuguDisplayWebView` 의  각 이벤트에 맞는 call back block 코드를 작성해주어야 합니다.
+그리고 `NuguDisplayWebView` 의 각 이벤트에 맞는 call back block 코드를 작성해주어야 합니다.
 
 * `onClose` : 닫기 버튼이 눌러졌을때
 * `onItemSelect` : 리스트의 항목이 선택되었을때

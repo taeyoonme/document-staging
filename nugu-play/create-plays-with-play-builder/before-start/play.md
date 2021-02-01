@@ -6,7 +6,7 @@ Play는 NUGU 플랫폼의 엔진들과 통신해 서비스를 제공하는 단�
 
 Play로 서비스를 제공하기 위해서는 사용자의 발화를 이해하여 의도를 파악하고 그에 맞는 답변을 제공해야 합니다. 즉, 서비스 제공자는 사용자의 발화를 예상하고 이 발화들의 의도에 맞는 기능들을 정의해야 합니다.
 
-![](../../../.gitbook/assets/ch1_111_01-1.png)
+![](../../../.gitbook/assets/assets_ch1_111_01-1.png)
 
 ## Play 타입
 
@@ -40,13 +40,13 @@ Play 생성 시에 이 호출 이름을 정의해야 하고, 호출 이름에 �
 
 Built-in Intent인 'Open' 또는 'Start'를 사용하여 특정한 기능 수행 요청 없이 Play를 호출할 수 있습니다. ‘Open’에 해당하는 발화 예시로 ‘열어’, ‘오픈’이 있으며, ‘Start’에는 ‘시작’, ‘스타트’, ‘실행’이 해당됩니다.
 
-![](../../../.gitbook/assets/ch1_111_03-1.png)
+![](../../../.gitbook/assets/assets_ch1_111_03-1.png)
 
 ### 2\) Play 호출 이름 + 해당 Play의 Intent
 
 실행하고자 하는 Play의 기능을 호출 이름에 이어서 발화하여 Play를 시작할 수 있습니다. Play가 시작되며 곧바로 해당 Play의 Intent가 수행됩니다. 호출 이름과 Intent 사이에 '에게/에서/한테/로'와 같은 조사를 넣어 발화하거나 Entity를 함께 발화할 수도 있습니다.
 
-![](../../../.gitbook/assets/ch1_111_04.png)
+![](../../../.gitbook/assets/assets_ch1_111_04.png)
 
 {% hint style="info" %}
 **Welcome 메시지**
@@ -107,5 +107,5 @@ Play가 종료될 때에도 Closing 메시지를 재생하여 Play가 종료되�
 
 특정 명령을 통해 세션을 닫을 수 있고, 정해진 세션 유지 시간이 경과하거나 Capability Interface 중 AudioPlayer의 명령이 수행되면 세션이 닫힙니다.
 
-![](../../../.gitbook/assets/ch1_111_02.png)
+![](../../../.gitbook/assets/assets_ch1_111_02.png)
 

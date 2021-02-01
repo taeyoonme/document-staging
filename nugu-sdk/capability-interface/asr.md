@@ -18,7 +18,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## State Diagram
 
-![](../../.gitbook/assets/image__4.png)
+![](../../.gitbook/assets/assets_image__4.png)
 
 ## SDK Interface
 
@@ -135,7 +135,7 @@ asrAgent.startRecognition(initiator: .user)
 {% endtab %}
 
 {% tab title="Linux" %}
-```
+```text
 asr_handler->startRecognition()
 ```
 {% endtab %}
@@ -168,12 +168,12 @@ val resultListener = object: ASRAgentInterface.OnResultListener {
         // STT 중간 결과
         ...
     }
-    
+
     fun onCompleteResult(result: String, dialogRequestId: String) {
         // STT 최종 결과
         ...
     }
-    
+
     ...
 }
 asrAgent.addOnResultListener(resultListener)
@@ -188,7 +188,7 @@ class MyASRAgentDelegate: ASRAgentDelegate {
     func asrAgentDidChange(state: ASRState) {
         ...
     }
-    
+
     func asrAgentDidReceive(result: ASRResult, dialogRequestId: String) {
         // NotifyResult 결과 확인
         ...
@@ -210,19 +210,19 @@ public:
     {
         ...
     }
-    
+
     void onPartial(const std::string &text, const std::string &dialog_id) override
     {
         // STT 중간 결과
         ...
     }
-    
+
     void onComplete(const std::string &text, const std::string &dialog_id) override
     {
         // STT 최종 결과
         ...
     }
-    
+
     ...
 };
 auto asr_listener(std::make_shared<MyASRListener>());
@@ -268,7 +268,7 @@ asr_handler->stopRecognition()
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| engine | string | N | Device 에서 사용하는 음성인식 engine 을 명시<br>NUGU 음성인식 engine 을 사용하는 경우 "skt"<br>(값을 채우지 않으면 default "skt") |
+| engine | string | N | Device 에서 사용하는 음성인식 engine 을 명시 NUGU 음성인식 engine 을 사용하는 경우 "skt"<br>\(값을 채우지 않으면 default "skt"\) |
 
 ## Directives
 
@@ -314,9 +314,9 @@ asr_handler->stopRecognition()
 | asrContext.sceneText | array of string | N | - |
 | asrContext.playServiceId | string | N | - |
 | epd | object | N | End Point Detection 관련 정보<br>없으면 device의 default 값을 사용 하위의 3개 파라미터도 optional이기 때문에 존재하는 파라미터만 업데이트하고, 없는 파라미터는 device의 default 값을 사용 |
-| epd.timeoutMilliseconds | long | N | Wake up 후 종료까지 대기 시간 (단위: msec)<br>**이 값은 위의 timeoutInMilliseconds와는 다른 epd 전용값** |
-| epd.silenceIntervalInMilliseconds | long | N | end point detection 전에 기다리는 묵음 구간 (단위: msec) |
-| epd.maxSpeechDurationMilliseconds | long | N | 사용자 발화 최대 녹음 시간 (단위: msec) |
+| epd.timeoutMilliseconds | long | N | Wake up 후 종료까지 대기 시간 \(단위: msec\)<br>**이 값은 위의 timeoutInMilliseconds와는 다른 epd 전용값** |
+| epd.silenceIntervalInMilliseconds | long | N | end point detection 전에 기다리는 묵음 구간 \(단위: msec\) |
+| epd.maxSpeechDurationMilliseconds | long | N | 사용자 발화 최대 녹음 시간 \(단위: msec\) |
 
 ### NotifyResult
 
@@ -341,7 +341,7 @@ asr_handler->stopRecognition()
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | N | Recognize Event에서 사용한 token 값 (어떤 발화에 대한 분석 결과인지 식별하기 위한 용도) |
+| token | string | N | Recognize Event에서 사용한 token 값 \(어떤 발화에 대한 분석 결과인지 식별하기 위한 용도\) |
 | result | string | N | 인식 결과를 전송 |
 | state | string | Y | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장<br>**NONE** : 음성 인식 결과 없음<br>**ERROR** : Error 발생<br>**SOS** : SOS(Start of Speech)<br>**EOS** : EOS(End of Speech)<br>**FA** : Wakeup False Acceptance |
 
@@ -364,7 +364,7 @@ asr_handler->stopRecognition()
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| cause | string | Y | **WAKEUP_POWER** : 다른 wakeup보다 power가 적어서 취소됨 |
+| cause | string | Y | **WAKEUP\_POWER** : 다른 wakeup보다 power가 적어서 취소됨 |
 
 ## Events
 
@@ -422,27 +422,27 @@ asr_handler->stopRecognition()
 | property | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 property를 적용 |
 | domainTypes | array of string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 domainTypes를 적용 |
 | language | string | N | **KOR**, **ENG**, **JPN**, **CHN**, ...<br>default 값은 KOR |
-| endpointing | string | Y | **CLIENT** : 클라이언트 EPD(EndPointDetector) 사용<br>**SERVER** : 서버 EPD 사용 |
-| encoding | string | N | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장 (default) |
-| wakeup | object | N | 서버 EPD 사용시 필수 값.<br>wakeup을 포함해서 서버에 전달하는 경우 포함<br>wakeup 정보를 전달하는 경우 포함 (전달하는 pcm에 wakeup이 포함되지 않더라도 필요한 경우 전달) |
-| wakeup.word | string | Y | 전송하는 stream에 포함된 wakeup word( ex "아리아") |
+| endpointing | string | Y | **CLIENT** : 클라이언트 EPD\(EndPointDetector\) 사용<br>**SERVER** : 서버 EPD 사용 |
+| encoding | string | N | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장 \(default\) |
+| wakeup | object | N | 서버 EPD 사용시 필수 값.<br>wakeup을 포함해서 서버에 전달하는 경우 포함<br>wakeup 정보를 전달하는 경우 포함 \(전달하는 pcm에 wakeup이 포함되지 않더라도 필요한 경우 전달\) |
+| wakeup.word | string | Y | 전송하는 stream에 포함된 wakeup word\( ex "아리아"\) |
 | wakeup.boundary | object | N | 전송하는 stream에서 wakeup word에 대한 boundary 정보 |
 | wakeup.boundary.<br>start | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for start time |
 | wakeup.boundary.<br>end | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for end time |
 | wakeup.boundary.<br>detection | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for detection time |
-| wakeup.boundary.<br>metric | string | N | **sample(default)** / **byte** / **frame** / **time**<br>현재 sample 만 지원되며, 추후 byte / frame / time 속성 지원 예정 |
+| wakeup.boundary.<br>metric | string | N | **sample\(default\)** / **byte** / **frame** / **time**<br>현재 sample 만 지원되며, 추후 byte / frame / time 속성 지원 예정 |
 | wakeup.power | object | N | 전송하는 stream에 포함된 wakeup pcm의 power값 |
-| wakeup.power.noise | float | Y | wakeup pcm의 power중 noise를 의미하는 값 (주로 min값) |
-| wakeup.power.speech | float | Y | wakeup pcm의 power중 speech를 의미하는 값 (주로 max값) |
+| wakeup.power.noise | float | Y | wakeup pcm의 power중 noise를 의미하는 값 \(주로 min값\) |
+| wakeup.power.speech | float | Y | wakeup pcm의 power중 speech를 의미하는 값 \(주로 max값\) |
 | asrContext | object | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 asrContext를 적용 |
 | asrContext.task | string | N | - |
 | asrContext.sceneId | string | N | - |
 | asrContext.sceneText | array of string | N | - |
 | asrContext.playServiceId | string | N | - |
 | timeout | object | N | Server EPD 사용시 필수 값. |
-| timeout.listen | long | Y | SOS 를 기다리는 시간 (milliseconds) |
-| timeout.maxSpeech | long | Y | SOS이후 EOS를 기다리는 시간 (milliseconds) |
-| timeout.response | long | Y | EOS 이후 응답을 기다리는 시간 (milliseconds) |
+| timeout.listen | long | Y | SOS 를 기다리는 시간 \(milliseconds\) |
+| timeout.maxSpeech | long | Y | SOS이후 EOS를 기다리는 시간 \(milliseconds\) |
+| timeout.response | long | Y | EOS 이후 응답을 기다리는 시간 \(milliseconds\) |
 
 ### ResponseTimeout
 

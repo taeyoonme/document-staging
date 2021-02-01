@@ -175,8 +175,8 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | volumes | array of object | N | 볼륨 조절 불가한 경우는 전달하지 않음 |
-| volumes.name | string | Y | NUGU(MUSIC+VOICE_COMMAND), MUSIC, RINGTONE, CALL, NOTIFICATION, ALARM, VOICE_COMMAND, NAVIGATION, SYSTEM_SOUND<br>Reference: https://source.android.com/devices/audio/attributes#contexts |
-| volumes.group | string | N | volume의 group 값으로 영문자와 숫자를 이용하여 구성할 수 있음.(Play에서는 group 값을 mapping하여 TTS를 만들 때 사용할 수 있음)<br>grouping 되어 있지 않은 경우는 전달하지 않음<br>Reference: https://source.android.com/devices/automotive/audio#volume-and-groups |
+| volumes.name | string | Y | NUGU\(MUSIC+VOICE\_COMMAND\), MUSIC, RINGTONE, CALL, NOTIFICATION, ALARM, VOICE\_COMMAND, NAVIGATION, SYSTEM\_SOUND Reference: [https://source.android.com/devices/audio/attributes\#contexts](https://source.android.com/devices/audio/attributes#contexts) |
+| volumes.group | string | N | volume의 group 값으로 영문자와 숫자를 이용하여 구성할 수 있음.\(Play에서는 group 값을 mapping하여 TTS를 만들 때 사용할 수 있음\) grouping 되어 있지 않은 경우는 전달하지 않음<br>Reference: [https://source.android.com/devices/automotive/audio\#volume-and-groups](https://source.android.com/devices/automotive/audio#volume-and-groups) |
 | volumes.volume | long | N | 현재 설정된 볼륨<br>볼륨 조절 불가한 경우는 전달하지 않음 |
 | volumes.minVolume | long | N | 설정 가능한 최대 볼륨<br>볼륨 조절 불가한 경우는 전달하지 않음 |
 | volumes.maxVolume | long | N | 설정 가능한 최소 볼륨<br>볼륨 조절 불가한 경우는 전달하지 않음 |
@@ -213,7 +213,7 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | name | string | Y | Context 참조 |
-| rate | string | N | SLOW, FAST<br> - SLOW: 점진적으로 변경 (max 값으로 설정하는 시나리오에서 사용)<br> - FAST : 바로 변경 |
+| rate | string | N | SLOW, FAST<br> - SLOW: 점진적으로 변경 \(max 값으로 설정하는 시나리오에서 사용\)<br> - FAST : 바로 변경 |
 | volume | long | Y | 설정할 volume |
 
 ### SetMute

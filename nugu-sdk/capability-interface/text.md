@@ -115,7 +115,7 @@ text_handler->requestTextInput(text)
 | :--- | :--- | :--- | :--- |
 | text | string | Y | 디바이스로 전달한 뒤 context를 추가하여 다시 Device Gateway로 전송해야 하는 text |
 | token | string | Y | 전송하는 text를 식별하기 위한 unique string |
-| playServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용<br>ASR.ExpectSpeech 보다 우선하여 동작 함.<br>(TextSource 에 playServiceId 가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음) |
+| playServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용<br>ASR.ExpectSpeech 보다 우선하여 동작 함.<br>\(TextSource 에 playServiceId 가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음\) |
 
 ### TextRedirect
 
@@ -143,8 +143,8 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 | :--- | :--- | :--- | :--- |
 | text | string | Y | 디바이스로 전달한 뒤 context를 추가하여 다시 Device Gateway로 전송해야 하는 text |
 | token | string | Y | 전송하는 text를 식별하기 위한 unique string |
-| playServiceId | string | Y | 디렉티브를 지시한 PlayServiceId (Play에서 NPK 통한 응답일때는 라우터가 알아서 채워줌) |
-| targetPlayServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용<br>명확히 라우팅되어야 하는 Play를 지정하는 경우에 사용되고, 지정하지 않으면 라우팅 로직에 의해 라우팅<br>ASR.ExpectSpeech 보다 우선하여 동작 함.<br>(TextRedirect에 targetPlayServiceId가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음) |
+| playServiceId | string | Y | 디렉티브를 지시한 PlayServiceId \(Play에서 NPK 통한 응답일때는 라우터가 알아서 채워줌\) |
+| targetPlayServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용<br>명확히 라우팅되어야 하는 Play를 지정하는 경우에 사용되고, 지정하지 않으면 라우팅 로직에 의해 라우팅<br>ASR.ExpectSpeech 보다 우선하여 동작 함.<br>\(TextRedirect에 targetPlayServiceId가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음\) |
 
 ## Events
 
@@ -212,7 +212,7 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | Y |  TextSource에서 정의한 token |
+| token | string | Y | TextSource에서 정의한 token |
 | errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 
 ### TextRedirectFailed
@@ -236,6 +236,6 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | Y |  TextSource에서 정의한 token |
+| token | string | Y | TextSource에서 정의한 token |
 | errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 

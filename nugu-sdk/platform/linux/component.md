@@ -1,6 +1,6 @@
 # 구성요소
 
-![](../../../.gitbook/assets/linux_component.png)
+![](../../../.gitbook/assets/assets_linux_component.png)
 
 ## 구성요소 목록
 
@@ -19,7 +19,7 @@
 
 ## Github
 
-#### NUGU
+### NUGU
 
 | 이름 | 주소 |
 | :--- | :--- |

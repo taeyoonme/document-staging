@@ -47,7 +47,7 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 {% endhint %}
 
-발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요. 
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.
 
 {% hint style="success" %}
 NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,  
@@ -112,7 +112,7 @@ OAuth 2.0 API 는 [Authentication](../../authentication.md) 에서 확인이 가
 NUGU 회원 연동 방식을 사용하기 위해서는 T아이디 연동이 필요합니다.
 {% endhint %}
 
-#### 로그인 정보 설정 
+#### 로그인 정보 설정
 
 기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
 
@@ -160,7 +160,7 @@ authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginL
 
 ### **NUGU 회원 미사용 방식으**로 로그인
 
-#### 로그인 정보 설정 
+#### 로그인 정보 설정
 
 기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
 
@@ -194,13 +194,13 @@ authClient.login(object : NuguOAuthInterface.OnLoginListener {
 
 로그인 후, 우리는 NUGU의 모든 기능을 사용할 수 있습니다. 여기서는 NUGU의 모든 기능을 손쉽게 이용할 수 있도록 SDK에서 제공하는 `NuguAndroidClient` 클래스를 이용하여 음성인식을 시작하는 간단한 방법을 소개합니다.
 
-1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다. 
+1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다.
 
    ```kotlin
    val authDelegate = NuguOAuth.create(context)
    ```
 
-2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.   
+2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.
 
    ```kotlin
    // AudioSourceManager : AudioProvider에 대한 기본 구현 클래스
@@ -214,13 +214,13 @@ authClient.login(object : NuguOAuthInterface.OnLoginListener {
    val endPointDetector = EndPointDetector(EPD_MODEL_FILE_PATH)
    ```
 
-4.  마지막으로 `NuguAndroidClient`를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.
+4. 마지막으로 `NuguAndroidClient`를 생성하고, 음성인식을 시작합니다. 음성인식에 대한 결과는 각각의 리스너를 통해 받을 수 있습니다.
 
    ```kotlin
    val client = NuguAndroidClient.Builder(
-       context,    // Android Context
-       authDelegate,
-       audioProvider
+      context,    // Android Context
+      authDelegate,
+      audioProvider
    ).endPointDetector(endPointDetector).build()
 
    client.asrAgent?.addOnResultListener(...)
@@ -234,5 +234,5 @@ authClient.login(object : NuguOAuthInterface.OnLoginListener {
 
 아래 Github 주소를 통해 NUGU SDK for Android 소스 코드를 다운로드 받을 수 있습니다.
 
-{% embed url="https://github.com/nugu-developers/nugu-android" %}
+{% embed url="https://github.com/nugu-developers/nugu-android" caption="" %}
 

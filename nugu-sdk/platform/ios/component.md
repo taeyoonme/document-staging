@@ -1,6 +1,6 @@
 # 구성요소
 
-![](../../../.gitbook/assets/diagram.001.jpeg)
+![](../../../.gitbook/assets/assets_diagram.001.jpeg)
 
 ## 구성요소 목록
 
@@ -30,9 +30,9 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguAgents` Fram
 
 | 이름 | 주소 |
 | :--- | :--- |
-| `NuguCore`<br>`NuguAgents`<br>`NuguClientKit`<br>`NuguLoginKit`<br>`NuguServiceKit`<br>`NuguUIKit`<br>`KeenSense`<br>`JadeMarble` | https://github.com/nugu-developers/nugu-ios |
-| `NattyLog` | https://github.com/nugu-developers/natty-log-ios |
-| `SilverTray` | https://github.com/nugu-developers/keen-sense-ios |
+| `NuguCore`<br>`NuguAgents`<br>`NuguClientKit`<br>`NuguLoginKit`<br>`NuguServiceKit`<br>`NuguUIKit`<br>`KeenSense`<br>`JadeMarble` | [https://github.com/nugu-developers/nugu-ios](https://github.com/nugu-developers/nugu-ios) |
+| `NattyLog` | [https://github.com/nugu-developers/natty-log-ios](https://github.com/nugu-developers/natty-log-ios) |
+| `SilverTray` | [https://github.com/nugu-developers/keen-sense-ios](https://github.com/nugu-developers/keen-sense-ios) |
 
 ### External
 

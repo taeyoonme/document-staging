@@ -8,22 +8,22 @@ NUGU 서비스의 핵심 기능인 음성 인식을 표현하기 위한 View 입
 
 | Methods |
 | :--- |
-| **func changeState(state: NuguVoiceChrome.State)**<br>NuguVoiceChrome 의 상태(단계)와 animation 을 변경합니다. |
-| **func setChipsData(chipsData: [NuguChipsButton.NuguChipsButtonType], onChipsSelect: @escaping ((_ selectedChips: NuguChipsButton.NuguChipsButtonType) -> Void))**<br>NuguVoiceChrome 에 노출될 NuguChipsButton 을 설정합니다. |
-| **func setRecognizedText(text: String?)**<br>NuguVoiceChrome 에 출력될 인식 문구를 설정합니다. |
+| **func changeState\(state: NuguVoiceChrome.State\)**<br>NuguVoiceChrome 의 상태\(단계\)와 animation 을 변경합니다. |
+| **func setChipsData\(chipsData: \[NuguChipsButton.NuguChipsButtonType\], onChipsSelect: @escaping \(\(\_ selectedChips: NuguChipsButton.NuguChipsButtonType\) -&gt; Void\)\)**<br>NuguVoiceChrome 에 노출될 NuguChipsButton 을 설정합니다. |
+| **func setRecognizedText\(text: String?\)**<br>NuguVoiceChrome 에 출력될 인식 문구를 설정합니다. |
 
 ## VoiceChromePresenter
 
 `NuguVoiceChrome` 은 `VoiceChromePresenter` 의 도움없이 생성, 노출, 관리, 제거될 수 있으나 `VoiceChromePresenter` 를 사용하면 복잡한 사용 로직을 사용자를 대신해 관리해줍니다.
 
-1.`NuguVoiceChrome` `VoiceChromePresenter` 을 사용하기 위해 먼저 `NuguUIKit` 와 `NuguClientKit` 을 import 해줍니다.
+1. `NuguVoiceChrome` `VoiceChromePresenter` 을 사용하기 위해 먼저 `NuguUIKit` 와 `NuguClientKit` 을 import 해줍니다.
 
 ```swift
 import NuguClientKit
 import NuguUIKit
 ```
 
- 2. 그리고 `NuguVoiceChrome` 를 노출할 owner 의 코드에 다음과 같이 `NuguVoiceChrome` `VoiceChromePresenter` variable 을 initialize 해줍니다.
+2. 그리고 `NuguVoiceChrome` 를 노출할 owner 의 코드에 다음과 같이 `NuguVoiceChrome` `VoiceChromePresenter` variable 을 initialize 해줍니다.
 
 ```swift
     private lazy var nuguVoiceChrome: NuguVoiceChrome = {
@@ -42,7 +42,7 @@ import NuguUIKit
 * nuguVoiceChrome : 노출될 `NuguVoiceChrome` 객체를 설정해주어야합니다.
 * nuguClient : `NuguVoiceChrome` 을 대신 제어하기 위해 전달해야하는 `NuguClient` 객체입니다. SampleApp 코드에서는 `NuguCentralManager` 가 가지고 있습니다.
 
-3.`VoiceChromePresenter` 는 `NuguVoiceChrome` 을 노출하고 제거하는 함수를 제공하고 있습니다.
+3. `VoiceChromePresenter` 는 `NuguVoiceChrome` 을 노출하고 제거하는 함수를 제공하고 있습니다.
 
 ```swift
         do {
@@ -79,17 +79,17 @@ extension MainViewController: VoiceChromePresenterDelegate {
         // VoiceChrome 이 노출되기 전에 NuguButton 을 비활성화 시켜줍니다. 
         nuguButton.isActivated = false
     }
-    
+
     func voiceChromeWillHide() {
         // VoiceChrome 이 제거되기 전에 NuguButton 을 활성화 시켜줍니다. 
         nuguButton.isActivated = true
     }
-    
+
     func voiceChromeShouldDisableIdleTimer() -> Bool {
         // VoiceChrome 이 노출되는 동안 자동 화면 잠금을 활성화할지 결정합니다.
         true
     }
-    
+
     func voiceChromeShouldEnableIdleTimer() -> Bool {
         // VoiceChrome 이 노출되는 동안 자동 화면 잠금을 비활성화할지 결정합니다.
         true
@@ -99,7 +99,7 @@ extension MainViewController: VoiceChromePresenterDelegate {
 
 ## NuguButton
 
-`NuguButton`은 음성 인식을 시작하고, Wake up 감지 가능 상태를 표현하기 위해 제공되는 버튼입니다.  `NuguButton`은 코드, IBOutlet 상관없이 생성하여 사용 가능합니다.
+`NuguButton`은 음성 인식을 시작하고, Wake up 감지 가능 상태를 표현하기 위해 제공되는 버튼입니다. `NuguButton`은 코드, IBOutlet 상관없이 생성하여 사용 가능합니다.
 
 | **Attributes** |
 | :--- |
@@ -113,7 +113,7 @@ extension MainViewController: VoiceChromePresenterDelegate {
     // Wake up detector 활성화 표현을 위한 flip animation 을 활성화합니다.
     public func stopFlipAnimation() 
     // NuguButton 이 비활성화 되었을때 진행되는 NuguButton의 animation 을 pause 시킵니다.
-    public func pauseDeactivateAnimation() 
+    public func pauseDeactivateAnimation()
 ```
 
 ## NuguToast

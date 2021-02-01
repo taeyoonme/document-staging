@@ -2,7 +2,7 @@
 
 NUGU를 탑재한 기기의 상태에 따른 동작, 제공하는 물리적 버튼, 조명, 소리에 대한 가이드는 다음과 같습니다.
 
-## 기기 상태 
+## 기기 상태
 
 NUGU를 탑재한 기기의 상태는 다음과 같습니다.
 
@@ -17,7 +17,7 @@ NUGU를 탑재한 기기의 상태는 다음과 같습니다.
 
 #### **초기 기기 상태**
 
-NUGU 기기의 초기 상태는 다음과 같습니다. 마이크\(Microphone\) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off 
+NUGU 기기의 초기 상태는 다음과 같습니다. 마이크\(Microphone\) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off
 
 ## 버튼
 
@@ -54,7 +54,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
 | 시스템 에러 | Red | Red와 Orange 교차 | Red | 에러가 있거나, 사용 불가함 |
 | 펌웨어 업데이트 | Purple | Purple | Purple | NUGU가 업데이트 중임 |
 
-## 소리 
+## 소리
 
 효과음은 음성이 아닌 비프음이나 사운드 등을 의미합니다. 상황 별 정해진 특징적인 효과음을를 제공함으로써 음성으로 설명하지 않고도 상태 및 동작에 대하여 사용자가 인식할 수 있도록 합니다. 효과음은 대 상태를 알리는 데에 사용되는 1\) 기본 효과음과 특정 서비스 동작과 관련된 2\)서비스 효과음로 나뉩니다.
 
@@ -68,9 +68,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
 | :--- | :--- |
 | 부팅 완료 후 Welcome Prompt 직전 | • On/Off 설정 없으며 항상 소리를 제공<br>• 기기별로 설정 가능 |
 
-{% file src="../../.gitbook/assets/bootcomplete\_3800ms.ogg" caption="전원 켜짐 완료음" %}
-
-![](../../.gitbook/assets/undefined__2.png)
+![](../../.gitbook/assets/assets_undefined__2.png)
 
 **호출 효과 \(Wake up success\)**
 
@@ -80,15 +78,13 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
 | :--- | :--- |
 | Wake up 성공 시 | • 애플리케이션에서 On/Off 설정을 제공<br>• 기본 값은 ON<br>• 기기별로 설정 가능 |
 
-{% file src="../../.gitbook/assets/start\_listening\_500ms-1.wav" caption="호출 효과음" %}
-
 호출어 발화 시
 
-![](../../.gitbook/assets/2__3.png)
+![](../../.gitbook/assets/assets_2__3.png)
 
 Slot-filling 시
 
-![](../../.gitbook/assets/undefined__10.png)
+![](../../.gitbook/assets/assets_undefined__10.png)
 
 **인식 완료음 \(End listen\)**
 
@@ -98,9 +94,7 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 | :--- | :--- |
 | Wake up 후 발화 인식 성공 시 | • 애플리케이션에서 On/Off 설정을 제공<br>• 기기별로 설정 가능 |
 
-{% file src="../../.gitbook/assets/end\_listening\_500ms.wav" caption="인식 완료음" %}
-
-![](../../.gitbook/assets/undefined__3.png)
+![](../../.gitbook/assets/assets_undefined__3.png)
 
 #### **응답 실패 \(Response fail\)**
 
@@ -108,17 +102,15 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 
 | 재생 조건 | On/Off 설정 |
 | :--- | :--- |
-| • 잡음 인식 시<br>• 1음절 발화 인식 시 (일부 1음절 발화는 화이트 리스트로 관리, 인식 가능)<br>• 블랙 리스트로 관리되는 발화를 실행하여 OOD 처리되는 경우<br>• 호출 버튼을 눌러 진입된 listening 상태에서 사용자 발화가 없어 타임아웃 된 경우<br>• Slot-filling을 위한 listening 상태에서 사용자 발화가 없어 타임아웃 된 경우<br>• 호출 버튼을 눌러 listening 상태가 해제된 경우 | • App에서 On/Off 설정을 제공<br>• 기본 값은 ON<br>• 기기별로 설정 가능 |
-
-{% file src="../../.gitbook/assets/responsefail\_500ms \(1\).wav" caption="응답 실패음" %}
+| • 잡음 인식 시<br>• 1음절 발화 인식 시 \(일부 1음절 발화는 화이트 리스트로 관리, 인식 가능\)<br>• 블랙 리스트로 관리되는 발화를 실행하여 OOD 처리되는 경우<br>• 호출 버튼을 눌러 진입된 listening 상태에서 사용자 발화가 없어 타임아웃 된 경우<br>• Slot-filling을 위한 listening 상태에서 사용자 발화가 없어 타임아웃 된 경우<br>• 호출 버튼을 눌러 listening 상태가 해제된 경우 | • App에서 On/Off 설정을 제공<br>• 기본 값은 ON<br>• 기기별로 설정 가능 |
 
 잡음 / 1음절 발화 / 블랙 리스트 발화 시
 
-![](../../.gitbook/assets/2__4.png)
+![](../../.gitbook/assets/assets_2__4.png)
 
 Slot-filling을 위한 listening 상태에서 타임아웃 시
 
-![](../../.gitbook/assets/undefined__8.png)
+![](../../.gitbook/assets/assets_undefined__8.png)
 
 **전원 꺼짐 \(Power off\)**
 
@@ -128,7 +120,7 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
 | :--- | :--- |
 | 전원을 끌 경우 | • On/Off 설정 없으며 항상 소리를 제공<br>• 기기별로 설정 가능 |
 
-![](../../.gitbook/assets/undefined__6.png)
+![](../../.gitbook/assets/assets_undefined__6.png)
 
 ### **2\) 서비스 효과음\(Service Feedback Sound\)**
 
@@ -140,17 +132,17 @@ Slot-filling을 위한 listening 상태에서 타임아웃 시
 
 | 재생 조건 | 사용자 발화에 의한 동작 | 하드웨어 버튼 조작에 의한 동작 |
 | :--- | :--- | :--- |
-| 무드등이 켜질 때<br>(색 변경 포함) | 무드등 제어음 재생 O | 무드등 제어음 재생 X |
+| 무드등이 켜질 때<br>\(색 변경 포함\) | 무드등 제어음 재생 O | 무드등 제어음 재생 X |
 | 무드등이 꺼질 때 | 무드등 제어음 재생 O | 무드등 제어음 재생 X |
 
 **볼륨 제어 \(Volume up/down\)**
 
 볼륨을 올리거나 내릴 때 제공되는 효과입니다. 볼륨 제어 이후에 소리를 재생하여, 사용자가 변경된 볼륨 크기를 인지할 수 있도록 합니다. 음원이나 Prompt 재생 중에는 재생되고 있는 음원/Prompt로 볼륨 크기를 인지할 수 있으므로 볼륨 제어 효과음을 제공하지 않습니다. 볼륨을 0으로 변경 시에는 볼륨 제어 소리를 재생하여도 음소거 상태이므로 볼륨 제어 소리가 들리지 않게 되며 이는 정상 동작입니다. 하드웨어 버튼으로 볼륨 조절 시에도 소리를 제공하도록 합니다.
 
-| 사용자 발화 | 사용자 발화에 의한 동작 | 하드웨어 버튼 조작에 의한 동작 **** |
+| 사용자 발화 | 사용자 발화에 의한 동작 | 하드웨어 버튼 조작에 의한 동작 _\*\*_ |
 | :--- | :--- | :--- |
 | 볼륨을 높일 | 볼륨 제어음 재생 O | 볼륨 제어음 재생 O |
 | 볼륨을 낮출 때 | 볼륨 제어음 재생 O | 볼륨 제어음 재생 O |
 
-![](../../.gitbook/assets/undefined.png)
+![](../../.gitbook/assets/assets_undefined.png)
 

@@ -82,6 +82,7 @@ class MyBatteryStatusProvider: BatteryStatusProvider {
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| level | Long | Y | 배터리 잔량(0 ~ 100) |
+| level | Long | Y | 배터리 잔량\(0 ~ 100\) |
 | charging | boolean | Y | 충전 여부 |
-| approximateLevel | boolean | N | 배터리 잔량의 근사치 여부<br>( 일부 디바이스의 경우 정확한 배터리 잔량을 측정할 수 없음) |
+| approximateLevel | boolean | N | 배터리 잔량의 근사치 여부<br>\( 일부 디바이스의 경우 정확한 배터리 잔량을 측정할 수 없음\) |
+

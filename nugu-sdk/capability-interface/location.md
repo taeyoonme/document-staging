@@ -91,3 +91,4 @@ locationAgent.delegate = MyLocationAgentDelegate()
 | current | object | N | 현재 위치의 정보 |
 | current.latitude | string | Y | 위도 |
 | current.longitude | string | Y | 경도 |
+
