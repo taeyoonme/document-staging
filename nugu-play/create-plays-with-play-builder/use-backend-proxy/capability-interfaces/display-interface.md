@@ -4,7 +4,7 @@ Display Interface를 사용하면 화면을 가진 디바이스에서 화면에 
 
 Display Interface를 사용하기 위해서는 우선 `General` &gt; `기본 정보` 페이지의 Capability Interface에서 `Display 제어` 항목을 `ON`으로 설정해야 합니다.
 
-![](../../../../.gitbook/assets/capability_audio_1.jpg)
+![](../../../../.gitbook/assets/assets_capability_audio_1.jpg)
 
 {% hint style="danger" %}
 Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 않는 것을 권장합니다. 불가피한 경우, Display Interface의 우선순위를 높여서 사용하는 것을 권장합니다.
@@ -25,19 +25,19 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 
 
 | Type | NU300 | Btv |
 | :--- | :---: | :---: |
-| FullText1 | ![](../../../../.gitbook/assets/fulltext1_nu300__1.png) | ![](../../../../.gitbook/assets/fulltext1_btv__2.jpg) |
-| FullText2 | ![](../../../../.gitbook/assets/fulltext2_nu300__1.png) | ![](../../../../.gitbook/assets/fulltext2_btv__2.png) |
-| ImageText1 | ![](../../../../.gitbook/assets/imagetext1_nu300__1.png) | ![](../../../../.gitbook/assets/imagetext1_btv.png) |
-| ImageText2 | ![](../../../../.gitbook/assets/imagetext2_nu300.png) | ![](../../../../.gitbook/assets/imagetext2_btv__1.png) |
-| ImageText3 | ![](../../../../.gitbook/assets/imagetext3_nu300__1.png) | ![](../../../../.gitbook/assets/imagetext3_btv.png) |
-| ImageText4 | ![](../../../../.gitbook/assets/imagetext4_nu300.png) | ![](../../../../.gitbook/assets/imagetext4_btv.png) |
-| TextList1 | ![](../../../../.gitbook/assets/textlist1_nu300.png) | ![](../../../../.gitbook/assets/textlist1_btv.png) |
-| TextList2 | ![](../../../../.gitbook/assets/textlist2_nu300.png) | ![](../../../../.gitbook/assets/textlist2_btv__1.png) |
-| TextList3 | ![](../../../../.gitbook/assets/textlist3_nu300.png) | ![](../../../../.gitbook/assets/textlist3_btv.png) |
-| TextList4 | ![](../../../../.gitbook/assets/textlist4_nu300.png) | ![](../../../../.gitbook/assets/textlist4_btv.png) |
-| ImageList1 | ![](../../../../.gitbook/assets/imagelist1_nu300.png) | ![](../../../../.gitbook/assets/imagelist1_btv.png) |
-| ImageList2 | ![](../../../../.gitbook/assets/imagelist2_nu300.png) | ![](../../../../.gitbook/assets/imagelist2_btv.jpg) |
-| ImageList3 | ![](../../../../.gitbook/assets/imagelist3_nu300.png) | ![](../../../../.gitbook/assets/imagelist3_btv__1.png) |
+| FullText1 | ![](../../../../.gitbook/assets/assets_fulltext1_nu300__1.png) | ![](../../../../.gitbook/assets/assets_fulltext1_btv__2.jpg) |
+| FullText2 | ![](../../../../.gitbook/assets/assets_fulltext2_nu300__1.png) | ![](../../../../.gitbook/assets/assets_fulltext2_btv__2.png) |
+| ImageText1 | ![](../../../../.gitbook/assets/assets_imagetext1_nu300__1.png) | ![](../../../../.gitbook/assets/assets_imagetext1_btv.png) |
+| ImageText2 | ![](../../../../.gitbook/assets/assets_imagetext2_nu300.png) | ![](../../../../.gitbook/assets/assets_imagetext2_btv__1.png) |
+| ImageText3 | ![](../../../../.gitbook/assets/assets_imagetext3_nu300__1.png) | ![](../../../../.gitbook/assets/assets_imagetext3_btv.png) |
+| ImageText4 | ![](../../../../.gitbook/assets/assets_imagetext4_nu300.png) | ![](../../../../.gitbook/assets/assets_imagetext4_btv.png) |
+| TextList1 | ![](../../../../.gitbook/assets/assets_textlist1_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist1_btv.png) |
+| TextList2 | ![](../../../../.gitbook/assets/assets_textlist2_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist2_btv__1.png) |
+| TextList3 | ![](../../../../.gitbook/assets/assets_textlist3_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist3_btv.png) |
+| TextList4 | ![](../../../../.gitbook/assets/assets_textlist4_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist4_btv.png) |
+| ImageList1 | ![](../../../../.gitbook/assets/assets_imagelist1_nu300.png) | ![](../../../../.gitbook/assets/assets_imagelist1_btv.png) |
+| ImageList2 | ![](../../../../.gitbook/assets/assets_imagelist2_nu300.png) | ![](../../../../.gitbook/assets/assets_imagelist2_btv.jpg) |
+| ImageList3 | ![](../../../../.gitbook/assets/assets_imagelist3_nu300.png) | ![](../../../../.gitbook/assets/assets_imagelist3_btv__1.png) |
 
 ## Context
 
@@ -65,7 +65,7 @@ Template 유형 별로 알아보기 전, 화면 구성 요소에 대해 알아�
 
 ### TTS
 
-String type의 필드에 ""라고 입력하면, Play가 응답으로 내보낸 발화 텍스트를 해당 필드에 채워서 보냅니다.
+String type의 필드에 "\{\{$TTS\}\}"라고 입력하면, Play가 응답으로 내보낸 발화 텍스트를 해당 필드에 채워서 보냅니다.
 
 ```yaml
 {
@@ -123,7 +123,7 @@ String type의 필드에 ""라고 입력하면, Play가 응답으로 내보낸 �
 | logo | ImageObject | Y | 투명 배경의 이미지로 제공해야 함\(PNG\) | 50x50 가로 Size Flexible | STB2부터 적용 예정 사이즈 미정 |
 | text | TextObject | Y | 제목 | 42sp, \#FFFFFF | 36sp, \#1A1A1A |
 | subtext | TextObject | N | 부제목 | 공백 포함 20자 | - |
-| subicon | ImageObject | N | subText 왼쪽에 노출될 서브아이콘 | 위치 : subText 왼쪽 size : 36 x 36dp | 위치 : subText 왼쪽 size : 30 x 30dp |
+| subicon | ImageObject | N | subText 왼쪽에 노출될 서브아이콘 | 위치 : subText 왼쪽<br>size : 36 x 36dp | 위치 : subText 왼쪽<br>size : 30 x 30dp |
 | button | TextObject | N | 우측에 위치하는 버튼 \(버튼 안의 Text만 정의가능\) | - | - |
 
 ### ImageObject
@@ -153,7 +153,7 @@ String type의 필드에 ""라고 입력하면, Play가 응답으로 내보낸 �
 | :--- | :--- | :--- | :--- |
 | contentDescription | string | N | - |
 | heightPixels | long | N | - |
-| size | string | N | X\_SMALL, SMALL, MEDIUM, LARGE, X\_LARGE 화면 크기별 최적화를 위해 size 정보를 넣는 것을 권장합니다. |
+| size | string | N | X\_SMALL, SMALL, MEDIUM, LARGE, X\_LARGE<br>화면 크기별 최적화를 위해 size 정보를 넣는 것을 권장합니다. |
 | sources | list | Y | - |
 | url | string | Y | - |
 | widthPixels | long | N | - |
@@ -183,8 +183,8 @@ image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | image | ImageObject | N | - |
-| color | string | N | hex color code default : \#000000 |
-| opacity | number | N | NU300에만 유효 default : 0.7 |
+| color | string | N | hex color code<br>default : \#000000 |
+| opacity | number | N | NU300에만 유효<br>default : 0.7 |
 
 ### TextObject
 
@@ -198,7 +198,7 @@ image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
 | Parameter | type | 필수 | Description |
 | :--- | :--- | :--- | :--- |
 | color | string | N | hex color code |
-| style | json | N | 기본적으로는 상위 스타일\(directive 등\)을 따르며, FullText1,2의 body text에만 적용 가능. CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다. `text-align` : left, center, right `opacity` : 0 ~ 1 `display` : block, inline, none `margin` : 10px 예\) `{ "text-align":"center", "display": "block"}` |
+| style | json | N | 기본적으로는 상위 스타일\(directive 등\)을 따르며, FullText1,2의 body text에만 적용 가능.<br>CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br>`text-align` : left, center, right<br>`opacity` : 0 ~ 1<br>`display` : block, inline, none<br>`margin` : 10px<br>예\) `{ "text-align":"center", "display": "block"}` |
 | text | string | Y | - |
 
 TextObject는 Scrollable이 명시된 경우만 스크롤이 가능합니다.
@@ -253,11 +253,11 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y | - |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y | - |
 | background | BackgroundObject | N | - |
-| content.header | TextObject | N | 본문 제목  - 줄바꿈 가능 \('\n'\) |
-| content.body | TextObject | Y | 본문 내용  - 줄바꿈 가능 \('\n'\)  - Scrollable \(스크롤이 불가능한 디바이스\[일부 Btv\]에서는 최대 4줄까지만 표현\) |
+| content.header | TextObject | N | 본문 제목<br> - 줄바꿈 가능 \('\n'\) |
+| content.body | TextObject | Y | 본문 내용<br> - 줄바꿈 가능 \('\n'\)<br> - Scrollable \(스크롤이 불가능한 디바이스\[일부 Btv\]에서는 최대 4줄까지만 표현\) |
 | content.footer | TextObject | N | 보조 설명 |
 
 #### Sample Code
@@ -310,7 +310,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 #### 샘플 이미지
 
-![](../../../../.gitbook/assets/2019-11-07-10.40.57.png)
+![](../../../../.gitbook/assets/assets_2019-11-07-10.40.57.png)
 
 ### FullText2
 
@@ -338,10 +338,10 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y | - |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y | - |
 | background | BackgroundObject | N | - |
-| content.body | TextObject | Y | 본문 내용  - 줄바꿈 가능 \('\n'\)  - 최대 4줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.body | TextObject | Y | 본문 내용<br> - 줄바꿈 가능 \('\n'\)<br> - 최대 4줄까지 표현 \(넘는 문자는 ... 처리\) |
 | content.footer | TextObject | N | 보조 설명 |
 
 #### Sample Code
@@ -373,7 +373,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/fulltext2.png)
+![](../../../../.gitbook/assets/assets_fulltext2.png)
 
 ### ImageText1
 
@@ -404,14 +404,14 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y |  |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y |  |
 | background | BackgroundObject | N |  |
 | content.image | ImageObject | Y |  |
 | content.imageAlign | string | Y | LEFT, RIGHT |
-| content.header | TextObject | Y | 본문 제목  - 줄바꿈 가능 \('\n'\)  - 최대 3줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.header | TextObject | Y | 본문 제목<br> - 줄바꿈 가능 \('\n'\)<br> - 최대 3줄까지 표현 \(넘는 문자는 ... 처리\) |
 | content.body | TextObject | N | 본문 내용 |
-| content.footer | TextObject | N | 보조 설명  - 줄바꿈 가능 \('\n'\)  - 최대 2줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.footer | TextObject | N | 보조 설명<br> - 줄바꿈 가능 \('\n'\)<br> - 최대 2줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
 
@@ -467,7 +467,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagetext1.png)
+![](../../../../.gitbook/assets/assets_imagetext1.png)
 
 ### ImageText2
 
@@ -497,14 +497,14 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y |  |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y |  |
 | background | BackgroundObject | N |  |
 | content.image | ImageObject | Y |  |
 | content.imageAlign | string | Y | LEFT, RIGHT |
 | content.header | TextObject | N | 본문 제목 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| content.body | TextObject | Y | 본문 내용  - 줄바꿈 가능 \('\n'\)  - 최대 6줄까지 표현 \(넘는 문자는 ... 처리\) |
-| content.footer | TextObject | N | 보조 설명  - 줄바꿈 가능 \('\n'\)  - 최대 2줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.body | TextObject | Y | 본문 내용<br> - 줄바꿈 가능 \('\n'\)<br> - 최대 6줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.footer | TextObject | N | 보조 설명<br> - 줄바꿈 가능 \('\n'\)<br> - 최대 2줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
 
@@ -560,7 +560,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagetext2__1.png)
+![](../../../../.gitbook/assets/assets_imagetext2__1.png)
 
 ### ImageText3
 
@@ -590,13 +590,13 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y |  |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y |  |
 | background | BackgroundObject | N |  |
 | content.image | ImageObject | Y |  |
 | content.header | TextObject | Y | 본문 제목 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| content.body | TextObject | N | 본문 내용  - 줄바꿈 가능 \('\n'\)  - Scrollable \(스크롤이 불가능한 디바이스\[일부 Btv\]에서는 최대 4줄까지만 표현\) |
-| content.footer | TextObject | N | 보조설명  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.body | TextObject | N | 본문 내용<br> - 줄바꿈 가능 \('\n'\)<br> - Scrollable \(스크롤이 불가능한 디바이스\[일부 Btv\]에서는 최대 4줄까지만 표현\) |
+| content.footer | TextObject | N | 보조설명<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
 
@@ -644,7 +644,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagetext3__1.png)
+![](../../../../.gitbook/assets/assets_imagetext3__1.png)
 
 ### ImageText4
 
@@ -674,13 +674,13 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y |  |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y |  |
 | background | BackgroundObject | N |  |
 | content.image | ImageObject | Y |  |
-| content.header | TextObject | Y | 본문 제목  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| content.body | TextObject | Y | 본문 내용  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| content.footer | TextObject | N | 보조설명  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.body | TextObject | Y | 본문 내용<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| content.footer | TextObject | N | 보조설명<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
 
@@ -728,7 +728,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagetext4.png)
+![](../../../../.gitbook/assets/assets_imagetext4.png)
 
 ### TextList1
 
@@ -767,15 +767,15 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y |  |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y | - |
 | background | BackgroundObject | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default - false |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default - false |
 | listItems | list | Y | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
 | listItems.token | string | Y | 클릭은 한 item 전체에서 가능 |
-| listItems.header | TextObject | Y | 본문 제목  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.body | TextObject | Y | 본문 내용  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.footer | TextObject | N | 보조설명  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.body | TextObject | Y | 본문 내용<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.footer | TextObject | N | 보조설명<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
 
@@ -901,16 +901,16 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y | - |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y |  |
 | background | BackgroundObject | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default - false |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default - false |
 | listItems | list | Y | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
 | listItems.token | string | Y | 클릭은 한 item 전체에서 가능 |
 | listItems.image | ImageObject | Y | - |
-| listItems.header | TextObject | Y | 본문 제목  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.body | TextObject | Y | 본문 내용  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.footer | TextObject | N | 보조설명  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.body | TextObject | Y | 본문 내용<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.footer | TextObject | N | 보조설명<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
 
@@ -1024,7 +1024,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/textlist1.png)
+![](../../../../.gitbook/assets/assets_textlist1.png)
 
 ### TextList3
 
@@ -1066,17 +1066,17 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y |  |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y |  |
 | background | BackgroundObject | N |  |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default - false |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default - false |
 | listItems | list | Y | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
 | listItems.token | string | Y | 클릭은 한 item 전체에서 가능 |
 | listItems.image | ImageObject | N |  |
-| listItems.header | TextObject | Y | 본문 제목  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.body | array of TextObject | Y | 본문 내용 - 줄바꿈 허용 / 최대 4줄  - footer 정의 시 3줄 제한 \(footer객체는 빈객체\({}\)로도 정의가 되어 있으면 3줄로 제한됨\) |
-| listItems.footer | TextObject | N | 보조설명  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| caption | TextObject | N | 전체 리스트 아이템들에 대한 보조설명  - 텍스트 길이 : 최대 2줄\(단말에 따라 1줄\) |
+| listItems.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.body | array of TextObject | Y | 본문 내용 - 줄바꿈 허용 / 최대 4줄<br> - footer 정의 시 3줄 제한 \(footer객체는 빈객체\({}\)로도 정의가 되어 있으면 3줄로 제한됨\) |
+| listItems.footer | TextObject | N | 보조설명<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| caption | TextObject | N | 전체 리스트 아이템들에 대한 보조설명<br> - 텍스트 길이 : 최대 2줄\(단말에 따라 1줄\) |
 
 #### Sample Code
 
@@ -1147,7 +1147,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/textlist3.png)
+![](../../../../.gitbook/assets/assets_textlist3.png)
 
 ### TextList4
 
@@ -1177,13 +1177,13 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y | - |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y | - |
 | background | BackgroundObject | N | - |
-| listItems | list | Y | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
-| listItems.header | TextObject | Y | 본문 제목  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.body | array of TextObject | Y | List 아이템의 본문 내용  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.button | ButtonObject | N | List 아이템의 버튼  - body가 2줄인 경우에 최적화 되어 있음 |
+| listItems | list | Y | Scrollable (스크롤이 불가능한 디바이스에서는 짤림) |
+| listItems.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.body | array of TextObject | Y | List 아이템의 본문 내용<br> - 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems.button | ButtonObject | N | List 아이템의 버튼<br> - body가 2줄인 경우에 최적화 되어 있음 |
 
 #### Sample Code
 
@@ -1256,7 +1256,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/textlist4.png)
+![](../../../../.gitbook/assets/assets_textlist4.png)
 
 ### ImageList1
 
@@ -1295,16 +1295,16 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y | - |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y | - |
 | background | BackgroundObject | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default - false |
-| badgeNumberStyle | json | N | 아래와 같은 Json으로 badge style 정의 `{"background": "#f0f", "color": "red", "border-radius": "10px"}`  - background : Container의 color  - color : Badge font color  - border-radius : radius |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default - false |
+| badgeNumberStyle | json | N | 아래와 같은 Json으로 badge style 정의<br>`{"background": "#f0f", "color": "red", "border-radius": "10px"}`<br> - background : Container의 color<br> - color : Badge font color<br> - border-radius : radius |
 | listItems | list | Y | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
 | listItems.token | string | Y | 클릭은 한 item 전체에서 가능 |
 | listItems.image | ImageObject | Y | - |
-| listItems.header | TextObject | Y | 본문 제목  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.footer | TextObject | N | 보조설명  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.footer | TextObject | N | 보조설명<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
 
@@ -1396,7 +1396,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagelist1.png)
+![](../../../../.gitbook/assets/assets_imagelist1.png)
 
 ### ImageList2
 
@@ -1442,17 +1442,17 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y | - |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y | - |
 | background | BackgroundObject | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default - false |
-| badgeNumberStyle | json | N | 아래와 같은 Json으로 badge style 정의 `{"background": "#f0f", "color": "red", "border-radius": "10px"}`  - background : Container의 color  - color : Badge font color  - border-radius : radius |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default - false |
+| badgeNumberStyle | json | N | 아래와 같은 Json으로 badge style 정의<br>`{"background": "#f0f", "color": "red", "border-radius": "10px"}`<br> - background : Container의 color<br> - color : Badge font color<br> - border-radius : radius |
 | listItems | list | Y | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
 | listItems.token | string | Y | 클릭은 한 item 전체에서 가능 |
 | listItems.image | ImageObject | Y | - |
 | listItems.icon | ImageObject | N | 상태 아이콘 |
-| listItems.header | TextObject | Y | 본문 제목  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.footer | TextObject | N | 보조설명  - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.footer | TextObject | N | 보조설명<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
 
 #### Sample Code
 
@@ -1560,7 +1560,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagelist2__1.png)
+![](../../../../.gitbook/assets/assets_imagelist2__1.png)
 
 ### ImageList3
 
@@ -1591,14 +1591,14 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | version | string | Y | 인터페이스 버전, 기본값은 1.0 |
 | playServiceId | string | Y | 현재 template을 전송하는 play service id |
 | token | string | Y |  |
-| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**  - **SHORT** : 7sec  - **MID** : 15sec  - **LONG** : 30sec  - **LONGEST** : 10min |
+| duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y |  |
 | background | BackgroundObject | N |  |
 | listItems | list | Y | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
 | listItems.token | string | Y | 클릭 시에 전달될 토 |
 | listItems.header | TextObject | Y | List 제 - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.image | ImageObject | Y | List 이미지  - 리스트 제목 좌측에 위치하는 이미지 |
-| listItems.icon | TextObject | N | icon 이미지  - 리스트 제목 우측에 위치하는 new 등의 배지 |
+| listItems.image | ImageObject | Y | List 이미지<br> - 리스트 제목 좌측에 위치하는 이미지 |
+| listItems.icon | TextObject | N | icon 이미지<br> - 리스트 제목 우측에 위치하는 new 등의 배지 |
 
 #### Sample Code
 
@@ -1776,5 +1776,5 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/imagelist3__1.png)
+![](../../../../.gitbook/assets/assets_imagelist3__1.png)
 

@@ -28,11 +28,11 @@ Play의 심사 승인이 완료되면 Play 등록 현황 리스트에 `배포요
 
 1️⃣ `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 등록` 페이지의 등록 현황에서 배포 신청할 Play의 \[배포요청요\] 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/ch5_512_c01-1__1.png)
+![](../../.gitbook/assets/assets_ch5_512_c01-1__1.png)
 
 2️⃣ 배포요청 팝업창에서내용을 확인경한 후 `확인` 버튼을 클릭하면 배포 요청요이 완료됩니다.
 
-![](../../.gitbook/assets/ch5_512_c02-1__2.png)
+![](../../.gitbook/assets/assets_ch5_512_c02-1__2.png)
 
 배포요청 완료 후 운영자가 배포일을 지정하면 Play 개발자의 메일로 배포 완료 안내 메일이 발송 됩니다.
 
@@ -46,15 +46,15 @@ Play 배포 대기 상태\(지정한 배포일이 아직 도래하지 않은 상
 
 1️⃣ `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 등록` 페이지의 등록 현황에서 배포 신청을 취소할 Play의 `배포취소` 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/ch5_513_c01__2.png)
+![](../../.gitbook/assets/assets_ch5_513_c01__2.png)
 
 2️⃣ 배포 취소 확인 팝업창에서 `확인` 버튼을 클릭하면 배포 신청이 취소됩니다.
 
-![](../../.gitbook/assets/ch5_513_c02-1__2.png)
+![](../../.gitbook/assets/assets_ch5_513_c02-1__2.png)
 
 3️⃣ 배포 취소가 완료되면 해당 Play는 `배포대기`에서 `심사완료` 상태로 변경되고, `배포요청요` 버튼이 생성됩니다.
 
-![](../../.gitbook/assets/ch4_432_c03-1-20-1-__1%20%285%29.png)
+![](../../.gitbook/assets/assets_ch4_432_c03-1-20-1-.png)
 
 {% hint style="info" %}
 배포를 다시 신청하려면 일정을 재설정해야 합니다. 배포 신청에 대한 자세한 내용은 [배포 신청](distribute-a-play.md#distribution-request)을 참고하세요.

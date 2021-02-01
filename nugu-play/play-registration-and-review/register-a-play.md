@@ -4,7 +4,7 @@
 
 1️⃣`Play 등록하기` 버튼을 클릭하세요. Play Builder에서 개발한 Play 리스트 팝업이 표시됩니다.
 
-![](../../.gitbook/assets/ch4_41_c01-1-20-1-.png)
+![](../../.gitbook/assets/assets_ch4_41_c01-1-20-1-.png)
 
 2️⃣ 등록할 Play의 타입을 결정하고 `다음` 버튼을 클릭하여 Play의 Snapshot 버전을 선택하는 화면으로 이동합니다.
 
@@ -12,11 +12,11 @@
 Smarthome 타입의 경우 [Pre-built Play Builder로 스마트홈 Play 만들기](../smarthome-play/)를 참고하세요.
 {% endhint %}
 
-![](../../.gitbook/assets/ch4_41_c02__3.png)
+![](../../.gitbook/assets/assets_ch4_41_c02__3.png)
 
 3️⃣ 등록할 Snapshot 버전을 선택하고 확인 버튼을 클릭하여 Play 정보 등록 화면으로 이동합니다.
 
-![](../../.gitbook/assets/ch4_41_c03__3.png)
+![](../../.gitbook/assets/assets_ch4_41_c03__3.png)
 
 Play 정보 등록은 총 4단계이며, 1단계 기본 정보 입력 → 2단계 연동 정보 입력 → 3단계 배포/심사 정보 → 4단계 등록/심사 요청의 순서로 진행됩니다.
 
@@ -24,7 +24,7 @@ Play 정보 등록은 총 4단계이며, 1단계 기본 정보 입력 → 2단�
 
 Play 기본 정보는 Play 관련 필수 정보로 아래의 내용들을 등록해야 합니다. 입력을 완료하면 `다음` 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff91t-ptoy-phfygu_ch4_411_c01-1__5.png)
+![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-lqfeyfndhaalti4asmp_-lqff91t-ptoy-phfygu_ch4_411_c01-1__5.png)
 
 **① Play 서비스명**  
 사용자에게 보여지는 Play의 서비스명입니다. NUGU App과 향후 Play Ground\(스토어\)에 노출됩니다. Play의 서비스명은 최대 20자까지 입력할 수 있습니다.
@@ -99,7 +99,7 @@ Play 호출 이름은 위 조건을 기준으로 사용 승인 심사를 진행�
 
 사용자에게 제공할 Play 타입을 선택하고, 제공하려는 Play의 사용자 계정이 NUGU 사용자 계정과 연결이 필요할 경우 계정 연동에 관련된 정보를 입력합니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lnlllgwxiujzzgfjndn_-ll_m203hfgvtgslfubn_ch4_412_c01__3.png)
+![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-lnlllgwxiujzzgfjndn_-ll_m203hfgvtgslfubn_ch4_412_c01__3.png)
 
 **① 계정 연동 여부\(OAuth 연동 여부\)**
 
@@ -110,7 +110,7 @@ Play 호출 이름은 위 조건을 기준으로 사용 승인 심사를 진행�
 Private 타입의 Play에서 OAuth 계정 연동 없이 사용자별로 권한을 부여하거나 서비스를 제공해야 할 경우에 선택합니다.  
 이 옵션을 선택하면, Private Play 사용 권한을 제공하기 위해 초대한 사용자 정보\(이름, 이메일, 전화번호, 기타 입력한 추가 정보\)를 이용할 수 있습니다.
 
-![](../../.gitbook/assets/ch4_412_c02__2.png)
+![](../../.gitbook/assets/assets_ch4_412_c02__2.png)
 
 **ⓐ 로그인 URL**  
 사용자가 계정을 연동할 수 있도록 이동하는 URL을 등록합니다.
@@ -149,7 +149,7 @@ Play 심사 승인에 필요한 정보와 사용자에게 Play를 설명하기 �
 심사 요청에 대한 자세한 내용은 [심사 요청](play-review.md#review-request) 페이지를 참고해주세요.
 {% endhint %}
 
-![](../../.gitbook/assets/ch4_413_c01-20-1-.png)
+![](../../.gitbook/assets/assets_ch4_413_c01-20-1-.png)
 
 **① Play 사용 지역**  
 등록한 Play가 서비스될 지역을 선택하는 기능으로 국내에서만 Play를 제공할 수 있습니다.
@@ -171,7 +171,7 @@ Play 심사 승인에 필요한 정보와 사용자에게 Play를 설명하기 �
 
 **⑦ 면책 조항 제공 URL\(선택\)** Play와 관련된 면책 조항을 제공하는 URL을 입력해주세요. 추후 Play Ground에 정보가 제공됩니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m20gtnhf7hepxkm-_ch4_413_c02__1.png)
+![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m20gtnhf7hepxkm-_ch4_413_c02__1.png)
 
 **⑧ 카테고리 선택**  
 제공하려는 Play의 성격에 맞는 카테고리를 선택합니다.
@@ -186,7 +186,7 @@ NUGU App을 통해 사용자에게 제공될 Play에 대한 주요 안내 사항
 2. **주요 기능**: 해당 Play가 제공하는 대표 기능을 등록합니다.
 3. **대표 발화문**: 위 주요 기능에서 입력한 기능과 매칭되는 대표 발화문\(음성 명령어\)을 입력합니다. 기능당 1개씩만 입력할 수 있습니다.
 
-![](../../.gitbook/assets/assets_-ll_j0vst5q1ujfaettc_-lnlllgwxiujzzgfjndn_-ll_m20imb0oc1dpzqtd_ch4_413_c03__1.png)
+![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-lnlllgwxiujzzgfjndn_-ll_m20imb0oc1dpzqtd_ch4_413_c03__1.png)
 
 **⑪ 연결링크\(선택\)**  
 특정 페이지를 소개하고 싶을 경우, 텍스트로 입력하고 연결될 링크를 삽입할 수 있습니다. 다양한 콘텐츠를 소개하고 싶을 때 콘텐츠 리스트가 있는 페이지 연결이 가능합니다.

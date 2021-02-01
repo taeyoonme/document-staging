@@ -8,8 +8,8 @@ Voice Chrome 외에 디스플레이 기능을 추가하기 위해 LED를 사용�
 
 | Color | RGB | CMYK | Pantone |
 | :--- | :--- | :--- | :--- |
-| ![](../../.gitbook/assets/color_nugublue%20%282%29.png) NUGU Blue | 0,158, 255 \(\#009DFF\) | 85, 21, 0, 0 | 2925C |
-| ![](../../.gitbook/assets/color_green.png) Green | 0, 230, 136 \(\#00E688\) | 48, 0, 45, 0 | 2412C |
+| ![](../../.gitbook/assets/assets_color_nugublue__1.png) NUGU Blue | 0,158, 255 \(\#009DFF\) | 85, 21, 0, 0 | 2925C |
+| ![](../../.gitbook/assets/assets_color_green.png) Green | 0, 230, 136 \(\#00E688\) | 48, 0, 45, 0 | 2412C |
 
 ## **NUGU Voice Chrome 상태**
 
@@ -20,11 +20,11 @@ Idle 상태는 '**NUGU Voice Button**'을 사용하고, 나머지 상태는 그�
 
 | **상태** | **동작** | **설명** |
 | :--- | :--- | :--- |
-| **Idle** | ![](../../.gitbook/assets/00-idle.png) | Wake-up 가능한 대기 상태 |
-| **Listening-Passive** | ![](../../.gitbook/assets/01-listening_passive.gif) | 사용자 발화 입력 대기 상태 |
-| **Listening-Active** | ![](../../.gitbook/assets/02-listening_active.gif) | 사용자 발화 입력 중 상태 |
-| **Processing** | ![](../../.gitbook/assets/03-processing.gif) | 입력된 사용자 발화를 분석하는 상태 |
-| **Speaking** | ![](../../.gitbook/assets/04-speaking.gif) | 정보/동작에 대해서 TTS 답변하는 상태 |
+| **Idle** | ![](../../.gitbook/assets/assets_00-idle.png) | Wake-up 가능한 대기 상태 |
+| **Listening-Passive** | ![](../../.gitbook/assets/assets_01-listening_passive.gif) | 사용자 발화 입력 대기 상태 |
+| **Listening-Active** | ![](../../.gitbook/assets/assets_02-listening_active.gif) | 사용자 발화 입력 중 상태 |
+| **Processing** | ![](../../.gitbook/assets/assets_03-processing.gif) | 입력된 사용자 발화를 분석하는 상태 |
+| **Speaking** | ![](../../.gitbook/assets/assets_04-speaking.gif) | 정보/동작에 대해서 TTS 답변하는 상태 |
 
 \[동작설명\]
 
@@ -40,11 +40,11 @@ Idle 상태는 '**NUGU Voice Button**'을 사용하고, 나머지 상태는 그�
 NUGU Voice Button은 음성 입력이 가능한 대기 상태를 나타내는 버튼입니다.  
 BLUE / WHITE 컬러타입 중 한 가지를 선택 적용할 수 있습니다.
 
-![\(&#xC88C;\) BLUE / \(&#xC6B0;\) WHITE](../../.gitbook/assets/nugu-voice-button_type__1.png)
+![\(&#xC88C;\) BLUE / \(&#xC6B0;\) WHITE](../../.gitbook/assets/assets_nugu-voice-button_type__1.png)
 
 Idle 상태에 적용되며, **FAB** \(Floating Action Button\) 또는 **Button** 타입으로 사용하는 것을 권장합니다. \(FAB과 Button은 Elevation값에 차이가 있습니다.\)
 
-![\(1\) FAB / \(2\) Button](../../.gitbook/assets/nugu-voice-button.png)
+![\(1\) FAB / \(2\) Button](../../.gitbook/assets/assets_nugu-voice-button.png)
 
 FAB과 Button에 따른 사용 및 동작 정의는 다음과 같습니다.
 
@@ -55,17 +55,17 @@ FAB과 Button에 따른 사용 및 동작 정의는 다음과 같습니다.
 {% tab title="FAB" %}
 \(1\) **FAB**을 눌러 보이스크롬을 호출하면 FAB 버튼은 사라집니다.
 
-![](../../.gitbook/assets/fab_1__3.png)
+![](../../.gitbook/assets/assets_fab_1__3.png)
 
 \(1-1\) **FAB**은 스크롤 방향에 따라 노출 여부를 달리할 수 있습니다.
 
-![\(&#xC88C;\) Scroll down / \(&#xC6B0;\) Scroll up \(&#xC138;&#xB85C; &#xC2A4;&#xD06C;&#xB864;&#xC774; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9; &#xAC00;&#xB2A5;\)](../../.gitbook/assets/fab_2__2.png)
+![\(&#xC88C;\) Scroll down / \(&#xC6B0;\) Scroll up \(&#xC138;&#xB85C; &#xC2A4;&#xD06C;&#xB864;&#xC774; &#xC788;&#xB294; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0; &#xC801;&#xC6A9; &#xAC00;&#xB2A5;\)](../../.gitbook/assets/assets_fab_2__2.png)
 {% endtab %}
 
 {% tab title="Button" %}
 \(2\) **Button**을 눌러 Voice Chrome을 호출하면, Toggle Button 버튼으로 상태가 변경됩니다.
 
-![Toggle Button&#xC740; &#xD22C;&#xBA85;&#xB3C4;&#xAC00; &#xC801;&#xC6A9;&#xB41C; Container&#xC5D0; &#xB3C4;&#xD2B8; &#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158;&#xC774; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.](../../.gitbook/assets/button_1.png)
+![Toggle Button&#xC740; &#xD22C;&#xBA85;&#xB3C4;&#xAC00; &#xC801;&#xC6A9;&#xB41C; Container&#xC5D0; &#xB3C4;&#xD2B8; &#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158;&#xC774; &#xC801;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.](../../.gitbook/assets/assets_button_1.png)
 {% endtab %}
 {% endtabs %}
 
@@ -75,12 +75,12 @@ Voice Chrome 을 실행하면 NUGU Voice Chrome Window가 활성화됩니다. Vo
 
 | Light Theme | Dark Theme |
 | :--- | :--- |
-| ![](../../.gitbook/assets/voicechrome_light__1.png) | ![](../../.gitbook/assets/voicechrome_dark.png) |
+| ![](../../.gitbook/assets/assets_voicechrome_light__1.png) | ![](../../.gitbook/assets/assets_voicechrome_dark.png) |
 
 Voice Chrome Window를 닫는 동작은 아래 2가지입니다. App 화면 영역을 터치하면 Voice Chrome Window는 닫히는 것을 권장합니다.
 
 * App 화면 영역을 터치하면, **Voice Chrome이 닫히고, 해당 화면의 액션버튼이 실행**됩니다. 
 * Android back key는 모든 단계에서 닫기 동작이 가능합니다.
 
-![\(1\) App &#xD654;&#xBA74; &#xB2EB;&#xAE30;&#xB294; Listening-Passive/Listening-Active &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xB429;&#xB2C8;&#xB2E4;. \(Processing&#xC740; &#xB2EB;&#xAE30; &#xB3D9;&#xC791; &#xD558;&#xC9C0; &#xC54A;&#xC74C;\) ](../../.gitbook/assets/close__1.png)
+![\(1\) App &#xD654;&#xBA74; &#xB2EB;&#xAE30;&#xB294; Listening-Passive/Listening-Active &#xB2E8;&#xACC4;&#xC5D0;&#xC11C; &#xC791;&#xB3D9;&#xB429;&#xB2C8;&#xB2E4;. \(Processing&#xC740; &#xB2EB;&#xAE30; &#xB3D9;&#xC791; &#xD558;&#xC9C0; &#xC54A;&#xC74C;\) ](../../.gitbook/assets/assets_close__1.png)
 
