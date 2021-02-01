@@ -12,7 +12,7 @@ description: Linux 환경에서 NUGU 서비스를 쉽게 사용할 수 있도록
 
 ## 지원하는 Linux 배포판
 
-NUGU SDK for Linux는 Ubuntu Linux를 지원합니다. 
+NUGU SDK for Linux는 Ubuntu Linux를 지원합니다.
 
 * Version
   * Xenial\(16.04\)
@@ -22,7 +22,7 @@ NUGU SDK for Linux는 Ubuntu Linux를 지원합니다.
   * arm\(armhf, arm64\)
 
 {% hint style="info" %}
-사용중인 Linux가 Debian 계열의 Linux\(deb 패키지 설치가 가능\)일 경우, NUGU SDK for Linux 설치가 가능합니다.   
+사용중인 Linux가 Debian 계열의 Linux\(deb 패키지 설치가 가능\)일 경우, NUGU SDK for Linux 설치가 가능합니다.  
 하지만, Ubuntu 이외의 타 배포판에 대한 지원은 하지 않습니다.
 {% endhint %}
 

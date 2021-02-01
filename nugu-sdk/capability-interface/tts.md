@@ -39,7 +39,7 @@ let ttsAgent = nuguClient.ttsAgent
 {% endtab %}
 
 {% tab title="Linux" %}
- [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TTSAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TTSAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 ```text
 auto tts_handler(std::shared_ptr<ITTSHandler>(
@@ -65,7 +65,7 @@ val listener = object: TTSAgentInterface.Listener {
     override fun onStateChanged(state: State, dialogRequestId: String) {
         ...
     }
-    
+
     ...
 }
 ttsAgent.addListener(listener)
@@ -80,7 +80,7 @@ class MyTTSAgentDelegate: TTSAgentDelegate {
     func ttsAgentDidChange(state: TTSState, dialogRequestId: String) {
         ...
     }
-    
+
     ...
 }
 ttsAgent.add(delegate: MyTTSAgentDelegate())
@@ -99,7 +99,7 @@ public:
     {
         ...
     }
-    
+
     ...
 };
 auto tts_listener(std::make_shared<MyTTSListener>());
@@ -123,8 +123,8 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| ttsActivity | string | Y | TTS 재생 상태<br>**IDLE**, **PLAYING**, **PAUSED**, **FINISHED**, **STOPPED**<br>  - IDLE인 경우는 최초 전원을 켰을 때만 가능하고 이후에는 나올 수 없음 |
-| engine | string | N | Device 에서 사용하는 음성합성 engine 을 명시<br>NUGU 음성합성 engine 을 사용하는 경우 "skt"<br>(값을 채우지 않으면 default "skt") |
+| ttsActivity | string | Y | TTS 재생 상태 **IDLE**, **PLAYING**, **PAUSED**, **FINISHED**, **STOPPED**   - IDLE인 경우는 최초 전원을 켰을 때만 가능하고 이후에는 나올 수 없음 |
+| engine | string | N | Device 에서 사용하는 음성합성 engine 을 명시 NUGU 음성합성 engine 을 사용하는 경우 "skt" \(값을 채우지 않으면 default "skt"\) |
 | token | string | N | 현재 재생중인 TTS 의 token |
 
 ## Directive

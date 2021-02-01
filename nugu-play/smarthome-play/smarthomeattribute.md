@@ -40,7 +40,6 @@ IoT ServiceProvider 및 제품에 따라 지원하는 Attribute 값이 상이할
 | 쾌면풍 | PLEASANTSLEEP |
 | 자연 | NATURALWIND |
 | 자동풍 | AUTOWIND |
-| 정지 | STOP |
 | 1단\(계\) | SPEED1 |
 | 2단\(계\) | SPEED2 |
 | 3단\(계\) | SPEED3 |

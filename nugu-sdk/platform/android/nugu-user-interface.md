@@ -8,7 +8,7 @@ description: User Interface
 
 ## ChromeWindow
 
-ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU 음성 동작과 관련된 상태를 그래픽, 색상, 모션으로 표현하는 UI 모듈 입니다.   
+ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU 음성 동작과 관련된 상태를 그래픽, 색상, 모션으로 표현하는 UI 모듈 입니다.  
 구성요소로 NuguVoiceChromeView, NuguChipsView, Stt\(TextView\)가 포함되어있습니다.
 
 1. CoordinatorLayout에 android:id 태그를 설정합니다.
@@ -57,9 +57,9 @@ ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU �
 
 | Methods |
 | :--- |
-| **fun isShown() : Boolean**<br>chromeWindow의 visible 확인 |
-| **fun dismiss()**<br>chromeWindow를 종료 |
-| **fun setScreenOnWhileASR(screenOn: Boolean)**<br>ASR 중에 화면을 켜진 상태로 유지 |
+| **fun isShown\(\) : Boolean** chromeWindow의 visible 확인 |
+| **fun dismiss\(\)** chromeWindow를 종료 |
+| **fun setScreenOnWhileASR\(screenOn: Boolean\)** ASR 중에 화면을 켜진 상태로 유지 |
 
 ## NuguButton
 
@@ -84,10 +84,10 @@ NUGU Voice Button은 음성 입력이 가능한 대기 상태를 나타내는 �
 
 | Attribute |
 | :--- |
-| **types**<br>fab, button 제공 |
-| **colors**<br>blue, white 제공 |
-| **autoPlay**<br>뷰생성시 Animation을 자동으로 재생 (default:false) |
-| **loopPlay**<br>Animation을 재생을 반복 (default:true) |
+| **types** fab, button 제공 |
+| **colors** blue, white 제공 |
+| **autoPlay** 뷰생성시 Animation을 자동으로 재생 \(default:false\) |
+| **loopPlay** Animation을 재생을 반복 \(default:true\) |
 
 ## NuguToast
 
@@ -110,7 +110,7 @@ NUGU 토스트 메시지는 작은 팝업으로 작업에 관한 간단한 피�
 
 ## NuguSnackbar
 
-NUGU 스택바는 사용자에게 간단한 팝업 메시지를 제공합니다. 스낵바가 표시된 동안 현재 활동은 계속 표시되고 상호작용이 가능합니다. 잠시 후에 스낵바가 자동으로 닫힙니다. Snackbar 사용자가 메시지에 응답할 수 있도록 설계되어있지만 NuguSnackbar는 작업을 추가할 수 없습니다. 
+NUGU 스택바는 사용자에게 간단한 팝업 메시지를 제공합니다. 스낵바가 표시된 동안 현재 활동은 계속 표시되고 상호작용이 가능합니다. 잠시 후에 스낵바가 자동으로 닫힙니다. Snackbar 사용자가 메시지에 응답할 수 있도록 설계되어있지만 NuguSnackbar는 작업을 추가할 수 없습니다.
 
 1. Snackbar 메시지 빌드 및 표시
 
@@ -125,3 +125,4 @@ NUGU 스택바는 사용자에게 간단한 팝업 메시지를 제공합니다.
    * **duration** : LENGTH\_SHORT, LENGTH\_LONG, LENGTH\_INDEFINITE 선택
    * **callback**: dismissed 이벤트 콜백
    * **show** : 설정된 메시지 알림을 표시
+

@@ -2,11 +2,11 @@
 
 Utterance Parameter는 사용자의 발화에서 정보를 담아 직접 처리하거나 Backend Proxy로 보내는 파라미터입니다. 이 때, 하나의 파라미터에 여러 개의 Entity를 담아 동일하게 처리하고 싶을 경우, 여러 Entity를 매핑할 수 있습니다.
 
-![](../../../../.gitbook/assets/multi-entity-mapping1-1.png)
+![](../../../../.gitbook/assets/multi-entity-mapping1%20%282%29.png)
 
 위와 같이 설정한 경우, CITY로 분석된 Entity와 COUNTY로 분석된 Entity는 모두 `target` 파라미터에 담을 수 있게 됩니다. 이 Entity들은 사용자의 실제 발화에서 분석이 되면, 특별한 조건 없이, 매핑된 파라미터에 담기게 됩니다.
 
-![](../../../../.gitbook/assets/multi-entity-mapping2-1.png)
+![](../../../../.gitbook/assets/multi-entity-mapping2%20%283%29.png)
 
 ## Slot-filling 상황에서만 동작하는 Entity-mapping
 
@@ -14,17 +14,15 @@ Utterance Parameter는 사용자의 발화에서 정보를 담아 직접 처리�
 
 이때, 제공하는 기능에 따라 아래와 같이 각 Action에서 사용하는 Entity가 중복되어 데이터로 구성될 수 있습니다. 텍스트가 여러 Entity type에 중복된 경우, 사용자가 해당 텍스트만 발화했을 때 NLU엔진은 두 Entity type중 하나로 분석하게 됩니다.
 
-![](../../../../.gitbook/assets/multi-entity-mapping5-1.png)
+![](../../../../.gitbook/assets/multi-entity-mapping5%20%281%29.png)
 
-  
-  
-위의 경우에서, 사용자가 '아기상어' 라고 발화를 한 경우 SONG\_TITLE 또는 VIDEO\_TITLE로 분석됩니다. 특히, Slot-filling 상황에서라면 사용자는 Entity 하나만 발화할 가능성이 높으며, 사용자는 정상적으로 발화를 해도 Slot-filling이 되지 않게 됩니다. 이런 경우, 가급적 다음과 같이 하나의 Entity로 통합하여 User Utterance Model을 구성하는 것이 좋습니다. 
+위의 경우에서, 사용자가 '아기상어' 라고 발화를 한 경우 SONG\_TITLE 또는 VIDEO\_TITLE로 분석됩니다. 특히, Slot-filling 상황에서라면 사용자는 Entity 하나만 발화할 가능성이 높으며, 사용자는 정상적으로 발화를 해도 Slot-filling이 되지 않게 됩니다. 이런 경우, 가급적 다음과 같이 하나의 Entity로 통합하여 User Utterance Model을 구성하는 것이 좋습니다.
 
 ![](../../../../.gitbook/assets/multi-entity-mapping6.png)
 
-![](../../../../.gitbook/assets/multi-entity-mapping4.png)
+![](../../../../.gitbook/assets/multi-entity-mapping4%20%281%29.png)
 
-![](../../../../.gitbook/assets/multi-entity-mapping3-1.png)
+![](../../../../.gitbook/assets/multi-entity-mapping3%20%283%29.png)
 
 그러나 Entity type 사이에 중복되는 텍스트를 피할 수 없는 경우, 다음과 같이 Slot-filling 상황에서만 파라미터에 담기도록 Entity를 매핑하여 해결할 수 있습니다.
 

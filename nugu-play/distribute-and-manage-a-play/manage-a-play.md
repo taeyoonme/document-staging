@@ -55,7 +55,7 @@ Play의 상태 변경\(Enable → Disable, Disable → Enable\)은 자유롭게 
 
 ![](../../.gitbook/assets/ch5_533_c01-1__2.png)
 
-2️⃣ 화면 상단의 `삭제` 버튼을 클릭합니다. 
+2️⃣ 화면 상단의 `삭제` 버튼을 클릭합니다.
 
 ![](../../.gitbook/assets/ch5_533_c02-1-20-1-__1.png)
 

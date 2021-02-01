@@ -47,7 +47,7 @@ Built-in Action은 다음과 같습니다.
 
 사용자가 Play 세션 내에서 발화를 했지만 처리할 Intent가 없는 경우에 동작합니다.
 
-![](../../../.gitbook/assets/ch3_3231_c05.png)
+![](../../../.gitbook/assets/ch3_3231_c05%20%282%29.png)
 
 처리할 Intent가 없는 상황 즉, Fallback 상황은 종료 유형과 대기 유형을 혼합하여 Prompt를 구성하는 복합 유형입니다.
 
@@ -55,7 +55,7 @@ Built-in Action은 다음과 같습니다.
 
 즉, 마지막 발화부터 입력하는 스택\(Stack\) 구조이며, LIFO\(Last In First Out; 후입선출\)로 동작합니다.
 
-![](../../../.gitbook/assets/ch3_3231_02-1.png)
+![](../../../.gitbook/assets/ch3_3231_02%20%282%29.png)
 
 ## NUGU.ACTION.rewind
 

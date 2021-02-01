@@ -12,7 +12,7 @@ description: 텍스트 명령을 Play 로 전달하기 위한 규격
 | :--- | :--- | :--- |
 | 1.0 | 2019.11.24 | 규격 추가 |
 | 1.1 | 2020.03.23 | TextInput event 에 asrContext 필드 추가 |
-| 1.2 | 2020.06.05 | TextInput event 의 sessionId 필드 삭제<br>TextInput event 의 asrContext 에 playServiceId 필드 추가 |
+| 1.2 | 2020.06.05 | TextInput event 의 sessionId 필드 삭제 TextInput event 의 asrContext 에 playServiceId 필드 추가 |
 | 1.3 | 2020.09.02 | TextSource 에 playServiceId 추가 |
 | 1.4 | 2020.11.13 | TextRedirect directive 추가 |
 | 1.5 | 2020.11.30 | TextSourceFailed, TextRedirectFailed event 추가 |
@@ -115,7 +115,7 @@ text_handler->requestTextInput(text)
 | :--- | :--- | :--- | :--- |
 | text | string | Y | 디바이스로 전달한 뒤 context를 추가하여 다시 Device Gateway로 전송해야 하는 text |
 | token | string | Y | 전송하는 text를 식별하기 위한 unique string |
-| playServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용<br>ASR.ExpectSpeech 보다 우선하여 동작 함.<br>(TextSource 에 playServiceId 가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음) |
+| playServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용 ASR.ExpectSpeech 보다 우선하여 동작 함. \(TextSource 에 playServiceId 가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음\) |
 
 ### TextRedirect
 
@@ -143,8 +143,8 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 | :--- | :--- | :--- | :--- |
 | text | string | Y | 디바이스로 전달한 뒤 context를 추가하여 다시 Device Gateway로 전송해야 하는 text |
 | token | string | Y | 전송하는 text를 식별하기 위한 unique string |
-| playServiceId | string | Y | 디렉티브를 지시한 PlayServiceId (Play에서 NPK 통한 응답일때는 라우터가 알아서 채워줌) |
-| targetPlayServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용<br>명확히 라우팅되어야 하는 Play를 지정하는 경우에 사용되고, 지정하지 않으면 라우팅 로직에 의해 라우팅<br>ASR.ExpectSpeech 보다 우선하여 동작 함.<br>(TextRedirect에 targetPlayServiceId가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음) |
+| playServiceId | string | Y | 디렉티브를 지시한 PlayServiceId \(Play에서 NPK 통한 응답일때는 라우터가 알아서 채워줌\) |
+| targetPlayServiceId | string | N | 값이 존재하면 TextInput의 playServiceId 값을 설정하는데 사용 명확히 라우팅되어야 하는 Play를 지정하는 경우에 사용되고, 지정하지 않으면 라우팅 로직에 의해 라우팅 ASR.ExpectSpeech 보다 우선하여 동작 함. \(TextRedirect에 targetPlayServiceId가 있는 경우 ASR.ExpecSpeech 에서 받은 playServiceId, domainTypes, asrContext 를 TextInput 으로 전달하지 않음\) |
 
 ## Events
 
@@ -181,8 +181,8 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| text | string | Y | TextSource directive 에서 전달한 text<br>디바이스에서 생성한 임의의 text |
-| token | string | N | TextSource에 의해 생성된 이벤트인 경우 TextSource의 token을 그대로 사용<br>Chips interface, Display interface, Routine interface 에 의해 생성된 이벤트의 경우 해당 directive 에서 전달받은 token 을 사용<br>디바이스에서 생성된 text는 임의의 값을 갖거나 필드를 갖지 않아도 됨 |
+| text | string | Y | TextSource directive 에서 전달한 text 디바이스에서 생성한 임의의 text |
+| token | string | N | TextSource에 의해 생성된 이벤트인 경우 TextSource의 token을 그대로 사용 Chips interface, Display interface, Routine interface 에 의해 생성된 이벤트의 경우 해당 directive 에서 전달받은 token 을 사용 디바이스에서 생성된 text는 임의의 값을 갖거나 필드를 갖지 않아도 됨 |
 | playServiceId | string | N | ASR/Display/Routine/Text interface 에 의해 생성된 이벤트의 경우 해당 directive 에서 전달받은 playServiceId 를 사용 |
 | domainTypes | array of string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 domainTypes를 적용 |
 | asrContext | object | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 asrContext 를 적용 |
@@ -212,7 +212,7 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | Y |  TextSource에서 정의한 token |
+| token | string | Y | TextSource에서 정의한 token |
 | errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 
 ### TextRedirectFailed
@@ -236,6 +236,6 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| token | string | Y |  TextSource에서 정의한 token |
+| token | string | Y | TextSource에서 정의한 token |
 | errorCode | string | Y | NOT\_SUPPORTED\_STATE |
 

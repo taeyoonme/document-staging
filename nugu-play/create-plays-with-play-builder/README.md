@@ -1,7 +1,5 @@
 # Play Builder로 Play 만들기
 
-
-
 {% embed url="https://www.youtube.com/watch?v=1PB5j7FM0EE" caption="" %}
 
 Play를 만드는 과정은 크게 다음과 같습니다.
@@ -33,7 +31,7 @@ Play를 만드는 과정은 크게 다음과 같습니다.
 
 단계별로 조금 더 상세히 살펴보면 다음과 같습니다.
 
-![](../../.gitbook/assets/ch3_32_01_2-1.png)
+![](../../.gitbook/assets/ch3_32_01_2%20%281%29.png)
 
 다음 장\([아리아, 안녕!](hello-aria/)\)에서는 Play 만드는 법에 대해 간단하게 설명하고, 이후 각 과정에 대해 순서대로 상세하게 설명합니다.
 
@@ -41,6 +39,6 @@ Play를 만드는 과정은 크게 다음과 같습니다.
 Play Builder 내의 모든 상세 페이지에는 화면에 도움말이 직접 포함되어 있어 작업에 필요한 정보를 표시해 줍니다.  
 화면 하단의 `도움말` 버튼을 통해 도움말을 켜고 끌 수 있습니다.
 
-![](../../.gitbook/assets/ch3_32_c01_2__1.png)
+![](../../.gitbook/assets/ch3_32_c01_2%20%281%29.png)
 {% endhint %}
 

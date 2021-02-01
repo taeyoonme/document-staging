@@ -41,7 +41,7 @@ REST API URL 생성 규칙은 다음과 같습니다.
 
 ![](../../../.gitbook/assets/ch3_33_c01.png)
 
-![](../../../.gitbook/assets/ch3_33_c02-1.png)
+![](../../../.gitbook/assets/ch3_33_c02-1%20%282%29.png)
 
 ## Request Body
 

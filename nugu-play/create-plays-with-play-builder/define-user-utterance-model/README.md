@@ -12,7 +12,7 @@ Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` 
 
 1\) Play Builder 홈 화면에서 Intent를 추가할 Play를 클릭하여 선택한 후, `User Utterance Model` &gt; `Custom Intent` &gt; `Intent 추가` 버튼을 클릭합니다.
 
-![](../../../.gitbook/assets/ch3_322_c01.png)
+![](../../../.gitbook/assets/ch3_322_c01%20%281%29.png)
 
 2\) Intent Name 필드에 "날씨"와 관련한 Intent명을 먼저 정의합니다.
 
@@ -20,7 +20,7 @@ Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` 
 * NUGU 플랫폼에서는 'ask.weather'와 같은 네이밍 규칙으로 작성하고 있습니다.
 * Intent Name 앞에는 NUGU를 사용할 수 없으며, 중복은 허용하지 않습니다.  
 
-![](../../../.gitbook/assets/ch3_322_c02.png)
+![](../../../.gitbook/assets/ch3_322_c02%20%282%29.png)
 
 3\) 사용자 예상 발화를 Sentence 필드에 입력합니다.
 
@@ -32,15 +32,15 @@ Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` 
 예상 발화 작성에 대한 자세한 내용은 [예상 발화 작성 가이드라인](./) 및 [예상 발화 작성 가이드](how-to-write-customer-utterances.md)를 참고하세요.
 {% endhint %}
 
-![](../../../.gitbook/assets/ch3_322_c03-1.png)
+![](../../../.gitbook/assets/ch3_322_c03%20%281%29.png)
 
 위 1\) ~ 3\)의 과정을 연속 이미지로 보면 다음과 같습니다.
 
-![](../../../.gitbook/assets/ch3_322_c04.gif)
+![](../../../.gitbook/assets/ch3_322_c04%20%281%29.gif)
 
 4\) 예상 발화 문장 중 Entity로 지정할 단어가 있다면 마우스로 해당 텍스트를 선택합니다. 텍스트가 선택되면 Entity Type을 지정할 수 있는 팝업창이 표시됩니다.
 
-![](../../../.gitbook/assets/ch3_322_c05.png)
+![](../../../.gitbook/assets/ch3_322_c05%20%281%29.png)
 
 5\) 이 팝업에서 적절한 Type을 클릭하면 자동으로 지정됩니다.
 
@@ -66,7 +66,7 @@ Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` 
 
 위 4\) ~ 8\)의 과정을 연속 이미지로 보면 다음과 같습니다.
 
-![](../../../.gitbook/assets/ch3_322_c10.gif)
+![](../../../.gitbook/assets/ch3_322_c10%20%281%29.gif)
 
 그러나 아직은 'LOCATION'에 하나의 Entity만 있으므로 Entity를 더 추가하거나 다른 Type으로 변경해야 합니다.  
 이에 대한 자세한 내용은 아래의 [Custom Entity Type에 Entity 추가하기](./#custom-entity-type)에서 더 알아보도록 하겠습니다.
@@ -102,13 +102,13 @@ Entity는 Type을 기준으로 생성하고 정의하며 Entity Type은 Custom�
 
 2\) Entity Type List에서 'LOCATION'이라는 Entity Type을 선택합니다.
 
-![](../../../.gitbook/assets/ch3_322_c11-1.png)
+![](../../../.gitbook/assets/ch3_322_c11%20%283%29.png)
 
 3\) 화면에 표시한 '대표값'에 있는 인풋박스를 통해 '교동', '역삼동', '면목동'을 입력합니다.
 
 * 텍스트를 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역을 마우스 왼쪽 버튼으로 클릭하면 Entity가 등록됩니다.
 
-![](../../../.gitbook/assets/ch3_322_c12-1.png)
+![](../../../.gitbook/assets/ch3_322_c12%20%282%29.png)
 
 ### 동의어 Entity 추가하기 \(Entity 정규화\)
 
@@ -129,7 +129,7 @@ Entity는 Type을 기준으로 생성하고 정의하며 Entity Type은 Custom�
 * '에스케이'는 실제 구단명이 아니지만 흔히 불리는 이름이므로 추가를 하는 것이 좋습니다.
 * 또한 애칭, 약어, 영문 이름 혹은 정확하지는 않지만 불릴 가능성이 있는 이름이 있다면 함께 Entity로 추가해 주는 것도 좋습니다.
 
-![](../../../.gitbook/assets/ch3_322_c14-1.png)
+![](../../../.gitbook/assets/ch3_322_c14%20%282%29.png)
 
 4\) Entity 입력을 완료한 후 `Play 저장` 버튼을 클릭하면 'CLUBNAME' Custom Entity Type의 생성이 완료됩니다.
 
@@ -143,7 +143,7 @@ Built-in Entity는 NUGU play kit이 제공해 주는 Entity 목록으로서, 시
 
 `User Utterance Model` &gt; `Built-in Entity Types`로 이동하면 전체 목록을 확인할 수 있습니다.
 
-![](../../../.gitbook/assets/ch3_322_c15.png)
+![](../../../.gitbook/assets/ch3_322_c15%20%282%29.png)
 
 Built-in Entity Type는 정책상 Type 내에 있는 Entity 목록 전체를 열거하지 않습니다.
 
@@ -155,11 +155,11 @@ Built-in Entity Type도 Custom Entity Type과 마찬가지로 일부 Type에 대
 
 정규화를 제공하는 Type은 리스트 우측의 '상세보기' 열에 녹색 아이콘\(\)으로 표시가 되며, 해당 Type의 상세 화면으로 이동하여 확인할 수 있습니다.
 
-![](../../../.gitbook/assets/ch3_322_c17.png)
+![](../../../.gitbook/assets/ch3_322_c17%20%282%29.png)
 
 정규화 규칙을 제공하는 Type이라고 하더라도 상세 화면에서 보여지는 대표값이 해당 Type의 모든 Entity를 의미하는 것은 아닙니다.
 
-![](../../../.gitbook/assets/ch3_322_02-1.png)
+![](../../../.gitbook/assets/ch3_322_02%20%283%29.png)
 
 {% hint style="info" %}
 함께 보면 좋은 도움말

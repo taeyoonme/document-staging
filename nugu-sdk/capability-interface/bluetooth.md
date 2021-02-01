@@ -126,15 +126,15 @@ bluetoothAgent.setListener(listener)
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | device | object | Y | 디바이스의 블루투스 정보 |
-| device.name | string | Y | TTS로 읽어줄 때 사용가능한 필드 예: NUGU_123456 |
+| device.name | string | Y | TTS로 읽어줄 때 사용가능한 필드 예: NUGU\_123456 |
 | device.status | string | Y | ON / OFF |
-| device.profile | list | N | Pairing된 bluetooth device가 있을 경우 지원하는 profile의 목록<br>해당 목록은 지원하는 profile이 있을 경우 명시됨 |
-| device.profile.name | string | N | Pairing된 bluetooth device가 있을 경우 해당 device의 지원 profile의 이름을 나타냄<br>아래는 현재 확인된 profile list이며, 해당 device에서 사용하는 profile은 추가될 수 있음<br> - **HSP** : Headset Profile(전화 수발신을 위한 profile)<br> - **A2DP** : Advanced Audio Distribution Profile(오디오 재생 profile)<br> - **PBAP** : Phone Book Access Profile(Pairing된 device의 연락처를 수집할 수 있는 profile)<br> - **MAP** : Message Access Profile(문자 수발신을 위한 profile)<br> - **PAN** : Personal Area Networking(블루투스 테더링 profile)<br> Profile 이름은 bluetooth.com에 명시된 profile의 약자임 |
-| device.profile.enabled | string | N | Pairing된 bluetooth device가 있을 경우 해당 device의 지원 profile의 사용 여부를 나타냄 (TRUE/FALSE) |
+| device.profile | list | N | Pairing된 bluetooth device가 있을 경우 지원하는 profile의 목록 해당 목록은 지원하는 profile이 있을 경우 명시됨 |
+| device.profile.name | string | N | Pairing된 bluetooth device가 있을 경우 해당 device의 지원 profile의 이름을 나타냄 아래는 현재 확인된 profile list이며, 해당 device에서 사용하는 profile은 추가될 수 있음  - **HSP** : Headset Profile\(전화 수발신을 위한 profile\)  - **A2DP** : Advanced Audio Distribution Profile\(오디오 재생 profile\)  - **PBAP** : Phone Book Access Profile\(Pairing된 device의 연락처를 수집할 수 있는 profile\)  - **MAP** : Message Access Profile\(문자 수발신을 위한 profile\)  - **PAN** : Personal Area Networking\(블루투스 테더링 profile\)  Profile 이름은 bluetooth.com에 명시된 profile의 약자임 |
+| device.profile.enabled | string | N | Pairing된 bluetooth device가 있을 경우 해당 device의 지원 profile의 사용 여부를 나타냄 \(TRUE/FALSE\) |
 | activeDevice | object | N | 연결된 블루투스 기기 정보 |
-| activeDevice.id | string | N | ID(pairedDevices 목록 중 하나이어야 함) |
+| activeDevice.id | string | N | ID\(pairedDevices 목록 중 하나이어야 함\) |
 | activeDevice.name | string | N | - |
-| activeDevice.streaming | string | Y | streaming 상태 (INACTIVE/ACTIVE/PAUSED/UNUSABLE) |
+| activeDevice.streaming | string | Y | streaming 상태 \(INACTIVE/ACTIVE/PAUSED/UNUSABLE\) |
 
 ## Directive
 

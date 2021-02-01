@@ -25,13 +25,11 @@ NUGU SDK for Android 를 통한 개발을 위해서는 `NuguCore`, `NuguInterfac
 
 ## Github
 
-#### NUGU
+### NUGU
 
 | 이름 | 주소 |
 | :--- | :--- |
 | `nugu-android` | [https://github.com/nugu-developers/nugu-android](https://github.com/nugu-developers/nugu-android) |
-
-
 
 ## Download
 
@@ -47,7 +45,7 @@ dependencies {
     implementation "com.skt.nugu.sdk:nugu-ux-kit:${nugu_latestVersion}"
     implementation "com.skt.nugu.sdk:nugu-login-kit:${nugu_latestVersion}"
     implementation "com.skt.nugu.sdk:nugu-service-kit:${nugu_latestVersion}"
-    
+
     implementation "com.skt.nugu:keensense:${keensense_latestVersion}"
     implementation "com.skt.nugu:jademarble:${jademarble_latestVersion}"
     implementation "com.skt.nugu:silvertray:${silvertray_latestVersion}"

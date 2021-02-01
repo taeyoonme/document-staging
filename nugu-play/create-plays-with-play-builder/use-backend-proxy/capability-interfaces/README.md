@@ -42,7 +42,7 @@ Play는 Backend proxy로부터 Directive를 넘겨받아 디바이스로 전달�
 
 Directive 구현에 대한 자세한 내용은 은 [Backend proxy API Reference](../backend-proxy-api-reference.md)를 참고해 주세요.
 
-![](../../../../.gitbook/assets/ch3_333_02-1.png)
+![](../../../../.gitbook/assets/ch3_333_02%20%282%29.png)
 
 Directive가 정의된 Play를 사용하기 위해서 일반적으로 사용자는 "아리아 AA뮤직에서 최신 음악 틀어줘"와 같이 Play의 호출 이름\(Invocation name\)을 함께 발화해야 합니다.
 

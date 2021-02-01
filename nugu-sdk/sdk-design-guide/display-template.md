@@ -4,12 +4,13 @@
 
 SK텔레콤 담당자와 협의를 통해 Display Template 서버에서 추가 작업이 진행된 후 연동 개발을 할 수 있습니다.
 
-### 지원 디바이스 및 해상도
+## 지원 디바이스 및 해상도
 
 Display Template은 아래 디바이스 및 해상도를 지원합니다.
 
-| 디바이스 | 해상도 (px) | Orientation |
+| 디바이스 | 해상도 \(px\) | Orientation |
 | :--- | :--- | :--- |
-| TV (B tv) | 1920 x 1080 | Landscape |
-| Display Speaker (NUGU nemo) | 1280 x 800 | Landscape |
-| Mobile | 360 x 640 (Android)<br>375 x 667 (iOS) | Portrait |
+| TV \(B tv\) | 1920 x 1080 | Landscape |
+| Display Speaker \(NUGU nemo\) | 1280 x 800 | Landscape |
+| Mobile | 360 x 640 \(Android\) 375 x 667 \(iOS\) | Portrait |
+

@@ -1,7 +1,5 @@
 # NUGU play
 
-
-
 {% embed url="https://www.youtube.com/watch?v=1PB5j7FM0EE" caption="" %}
 
 Play Builder는 Play를 만드는 도구입니다. 좋은 콘텐츠를 보유하고 있는 업체 또는 개인이 NUGU 사용자에게 자신의 서비스를 제공할 수 있도록 도와줍니다.
