@@ -57,9 +57,9 @@ ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU �
 
 | Methods |
 | :--- |
-| **fun isShown\(\) : Boolean**<br>chromeWindow의 visible 확인 |
-| **fun dismiss\(\)**<br>chromeWindow를 종료 |
-| **fun setScreenOnWhileASR\(screenOn: Boolean\)**<br>ASR 중에 화면을 켜진 상태로 유지 |
+| **fun isShown\(\) : Boolean** chromeWindow의 visible 확인 |
+| **fun dismiss\(\)** chromeWindow를 종료 |
+| **fun setScreenOnWhileASR\(screenOn: Boolean\)** ASR 중에 화면을 켜진 상태로 유지 |
 
 ## NuguButton
 
@@ -84,10 +84,10 @@ NUGU Voice Button은 음성 입력이 가능한 대기 상태를 나타내는 �
 
 | Attribute |
 | :--- |
-| **types**<br>fab, button 제공 |
-| **colors**<br>blue, white 제공 |
-| **autoPlay**<br>뷰생성시 Animation을 자동으로 재생 \(default:false\) |
-| **loopPlay**<br>Animation을 재생을 반복 \(default:true\) |
+| **types** fab, button 제공 |
+| **colors** blue, white 제공 |
+| **autoPlay** 뷰생성시 Animation을 자동으로 재생 \(default:false\) |
+| **loopPlay** Animation을 재생을 반복 \(default:true\) |
 
 ## NuguToast
 

@@ -19,16 +19,16 @@ TemplateView \(이하 View로 표기\) 는 버튼이 클릭되거나, 보여지�
 
 | Methods |
 | :--- |
-| **fun onElementSelected\(tokenId: String\)**<br>View내 버튼 클릭시 호출된다. |
-| **fun onChipSelected\(text: String\)**<br>View내 chip\(추천 명령어\) 클릭시 호출된다. |
-| **fun onCloseClicked\(\)**<br>View내 닫기 버튼 클릭시 호출된다. |
-| **fun onNuguButtonSelected\(\)**<br>View내 누구 버튼 \(아리아 호출\) 클릭시 호출된다. |
-| **fun onPlayerCommand\(command: String, param: String = ""\)**<br>미디어 재생 관련 동작이 필요할때 호출된다. \(ex. View내 재생/일시정지 버튼 클릭\) |
-| **fun onContextChanged\(context: String\)**<br>View의 display context 변경이 있을때 호출된다. \(ex. focus item 변화, visible item 리스트의 변화\) |
-| **fun showToast\(text: String\)**<br>View에서 응용레벨로 Toast노출을 요청할때 호출된다. |
-| **fun showActivity\(className: String\)**<br>View에서 응용레벨로 Activity 노출을 요청할때 호출된다. |
-| **fun playTTS\(text: String\)**<br>View에서 응용레벨로 TTS 재생을 요청할때 호출된다. |
-| **fun setClientListener\(listener: ClientListener\)**<br>handler에 ClientListener를 설정한다. |
+| **fun onElementSelected\(tokenId: String\)** View내 버튼 클릭시 호출된다. |
+| **fun onChipSelected\(text: String\)** View내 chip\(추천 명령어\) 클릭시 호출된다. |
+| **fun onCloseClicked\(\)** View내 닫기 버튼 클릭시 호출된다. |
+| **fun onNuguButtonSelected\(\)** View내 누구 버튼 \(아리아 호출\) 클릭시 호출된다. |
+| **fun onPlayerCommand\(command: String, param: String = ""\)** 미디어 재생 관련 동작이 필요할때 호출된다. \(ex. View내 재생/일시정지 버튼 클릭\) |
+| **fun onContextChanged\(context: String\)** View의 display context 변경이 있을때 호출된다. \(ex. focus item 변화, visible item 리스트의 변화\) |
+| **fun showToast\(text: String\)** View에서 응용레벨로 Toast노출을 요청할때 호출된다. |
+| **fun showActivity\(className: String\)** View에서 응용레벨로 Activity 노출을 요청할때 호출된다. |
+| **fun playTTS\(text: String\)** View에서 응용레벨로 TTS 재생을 요청할때 호출된다. |
+| **fun setClientListener\(listener: ClientListener\)** handler에 ClientListener를 설정한다. |
 
 ## TemplateHandler.ClientListener
 
@@ -36,11 +36,11 @@ TemplateHandler가 View에서 응용레벨로의 메시지 전달 혹은 요청�
 
 | Methods |
 | :--- |
-| **fun onMediaStateChanged\(activity: AudioPlayerAgentInterface.State, currentTimeMs: Long, currentProgress: Float\)**<br>미디어 재생 상태 변경시 호출된다. |
-| **fun onMediaDurationRetrieved\(durationMs: Long\)**<br>미디어의 재생시간이 구해졌을때 호출된다. |
-| **fun onMediaProgressChanged\(progress: Float, currentTimeMs: Long\)**<br>미디어의 재생경과 업데이트시 호출된다. |
-| **fun controlFocus\(direction: Direction\): Boolean**<br>View에 focus 이동을 요청한다. |
-| **fun controlScroll\(direction: Direction\): Boolean**<br>View에 scroll 을 요청한다. |
-| **fun getFocusedItemToken\(\): String?**<br>View내에 현재 focusing 중인 아이템의 토큰정보를 요구한다. |
-| **fun getVisibleTokenList\(\): List?**<br>View내에 현재 visible한 아이템 리스트정보를 요구한다. |
+| **fun onMediaStateChanged\(activity: AudioPlayerAgentInterface.State, currentTimeMs: Long, currentProgress: Float\)** 미디어 재생 상태 변경시 호출된다. |
+| **fun onMediaDurationRetrieved\(durationMs: Long\)** 미디어의 재생시간이 구해졌을때 호출된다. |
+| **fun onMediaProgressChanged\(progress: Float, currentTimeMs: Long\)** 미디어의 재생경과 업데이트시 호출된다. |
+| **fun controlFocus\(direction: Direction\): Boolean** View에 focus 이동을 요청한다. |
+| **fun controlScroll\(direction: Direction\): Boolean** View에 scroll 을 요청한다. |
+| **fun getFocusedItemToken\(\): String?** View내에 현재 focusing 중인 아이템의 토큰정보를 요구한다. |
+| **fun getVisibleTokenList\(\): List?** View내에 현재 visible한 아이템 리스트정보를 요구한다. |
 
