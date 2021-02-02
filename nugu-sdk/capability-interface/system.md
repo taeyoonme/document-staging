@@ -273,13 +273,13 @@ Connection-oriented 디바이스에서만 사용
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| protocol | String | Y | H2\_GRPC : grpc over http2<br>H2 : http2 |
+| protocol | String | Y | H2\_GRPC : grpc over http2 H2 : http2 |
 | hostname | String | Y | domain |
 | address | String | Y | deprecated ip or domain |
 | port | Int | Y | port |
 | retryCountLimit | Int | Y | retry\_count\_limit까지 요청 한 후 다음 server로 접속 시도 |
 | connectionTimeout | Int | Y | milliseconds |
-| charge | String | N | NORMAL : 일반적인 통신 요금 과금 \(default\)<br>FREE : 무과금 포트를 이용하여 device gateway에 접속해서 TTS.SpeechPlay Event를 통해 음성 합성 |
+| charge | String | N | NORMAL : 일반적인 통신 요금 과금 \(default\) FREE : 무과금 포트를 이용하여 device gateway에 접속해서 TTS.SpeechPlay Event를 통해 음성 합성 |
 
 ### TurnOff
 
@@ -342,9 +342,9 @@ Connection-oriented 디바이스에서만 사용
 
 | code | description |
 | :--- | :--- |
-| UNAUTHORIZED\_REQUEST\_EXCEPTION | 접속시 인증 에러<br>• jwt 토큰이 유효하지 않거나 header에 토큰이 없는 경우<br>   - grpc : System.Exception\(UNAUTHORIZED\_REQUEST\_EXCEPTION\)을 내리고 연결 끊음<br>   - h2 : 403 에러<br>• play router에서 토큰이 유효하지 않아서 실패<br>• jwt 토큰은 유효하지만 디바이스 연결 직후 habilis를 조회해서 토큰이 유효하지 않은 것이 확인 |
+| UNAUTHORIZED\_REQUEST\_EXCEPTION | 접속시 인증 에러 • jwt 토큰이 유효하지 않거나 header에 토큰이 없는 경우    - grpc : System.Exception\(UNAUTHORIZED\_REQUEST\_EXCEPTION\)을 내리고 연결 끊음    - h2 : 403 에러 • play router에서 토큰이 유효하지 않아서 실패 • jwt 토큰은 유효하지만 디바이스 연결 직후 habilis를 조회해서 토큰이 유효하지 않은 것이 확인 |
 | ASR\_RECOGNIZING\_EXCEPTION | 음성 인식 에러 |
-| PLAY\_ROUTER\_PROCESSING\_EXCEPTION | Play router 에러<br>• Fallback Play 연동 실패<br>• Client 로직 오류\(잘못된 규격으로 요청\) |
+| PLAY\_ROUTER\_PROCESSING\_EXCEPTION | Play router 에러 • Fallback Play 연동 실패 • Client 로직 오류\(잘못된 규격으로 요청\) |
 | TTS\_SPEAKING\_EXCEPTION | 음성 합성 에러 |
 | INTERNAL\_SERVICE\_EXCEPTION | 기타 알 수 없는 에러 |
 

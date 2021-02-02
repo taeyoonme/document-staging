@@ -128,10 +128,10 @@ private val authClient by lazy {
 
 #### 인 앱 브라우저를 통해 로그인
 
-`loginByInAppbrowser()`를 호출 후에 `NuguOAuthInterface.OnLoginListener`를 통해 인증 결과를 받습니다.
+`loginWithTid()`를 호출 후에 `NuguOAuthInterface.OnLoginListener`를 통해 인증 결과를 받습니다.
 
 ```kotlin
-authClient.loginByInAppBrowser( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
+authClient.loginWithTid( activity = this, listener = object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
                 // Save Credentials
             }
@@ -147,7 +147,7 @@ authClient.loginByInAppBrowser( activity = this, listener = object : NuguOAuthIn
 발급 받은 refresh-token이 이미 있다면, 이 후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.
 
 ```kotlin
-authClient.loginSilently("{refresh-token}", object : NuguOAuthInterface.OnLoginListener {
+authClient.loginSilentlyWithTid("{refresh-token}", object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
                 // Save Credentials 
             }
@@ -176,10 +176,10 @@ private val authClient by lazy {
 
 #### 로그인
 
-`login()`를 호출 후에 `NuguOAuthInterface.OnLoginListener`를 통해 인증 결과를 받습니다.
+`loginAnonymously()`를 호출 후에 `NuguOAuthInterface.OnLoginListener`를 통해 인증 결과를 받습니다.
 
 ```kotlin
-authClient.login(object : NuguOAuthInterface.OnLoginListener {
+authClient.loginAnonymously(object : NuguOAuthInterface.OnLoginListener {
             override fun onSuccess(credentials: Credentials) {
                 // Save credentials
             }
