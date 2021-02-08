@@ -22,11 +22,11 @@ NLG Translator를 입력하는 방법은 다음과 같습니다.
 
 1. Play Builder 홈 화면에서 NLG Translator를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Translator` &gt; `+NLG Translator 추가`를 클릭합니다.
 
-   ![](../../.gitbook/assets/assets_ch3_324_c01%20%282%29.png)
+   ![](../../.gitbook/assets/assets_ch3_324_c01.png)
 
 2. Translator의 Filter명을 입력하고, 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-   ![](../../.gitbook/assets/assets_ch3_324_c02%20%283%29.png)
+   ![](../../.gitbook/assets/assets_ch3_324_c02.png)
 
 이렇게 Translator가 적용된 `{{status}}` Parameter에 "01"이라는 값이 들어오면 Translator가 "맑겠습니다."라는 텍스트로 변환시키게 됩니다.
 

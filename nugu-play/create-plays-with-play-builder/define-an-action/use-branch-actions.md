@@ -38,7 +38,7 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 
 위 '날씨 안내' Action에 대한 조건\(Precondition\)만 자세히 보면 다음과 같습니다.
 
-![](../../../.gitbook/assets/assets_ch3_3232_07%20%282%29.png)
+![](../../../.gitbook/assets/assets_ch3_3232_07-1.png)
 
 ### Action Tree 만들기
 
