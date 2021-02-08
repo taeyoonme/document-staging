@@ -9,7 +9,9 @@ TemplateView를 직접 구현하고 이를 TemplateView 생성로직에 적용�
 
 ## TemplateView 구현
 
-TemplateView는 TemplateRenderer를 통해 전달되는 템플릿 노출, 템플릿 업데이트를 처리해야 합니다. TemplateView Interface에서 필수로 override 해야 하는 method입니다.
+TemplateView는 TemplateRenderer를 통해 전달되는 템플릿의 노출과 업데이트를 처리해야 합니다.   
+  
+TemplateView Interface에서 필수로 override 해야 하는 method입니다.
 
 <table>
   <thead>
