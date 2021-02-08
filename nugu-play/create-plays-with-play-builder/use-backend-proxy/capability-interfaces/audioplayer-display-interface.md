@@ -103,7 +103,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 {% hint style="info" %}
 T map은 Default, AudioPlayer.Template1, AudioPlayer.Template2과 같은 type과는 상관없이 아래 그림과 같이 제공됩니다.
 
-![](../../../../.gitbook/assets/assets_display-tmap-1.png)
+ ![](../../../../.gitbook/assets/assets_display-tmap-1.png)
 {% endhint %}
 
 ### 2. Display Interface용 Event를 처리하는 Action 생성

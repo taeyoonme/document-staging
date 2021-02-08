@@ -17,12 +17,12 @@ description: >-
 | Requirement | Android | iOS | Linux |
 | :--- | :--- | :--- | :--- |
 | OS Version | &gt;= Android 5.0\(API level 21\) | &gt;= iOS 10.0+ | &gt;= Ubuntu Linux 16.04 |
-| Platform | Android | iOS | Ubuntu Linux Raspberry Pi Generic Linux |
+| Platform | Android | iOS | Ubuntu Linux<br>Raspberry Pi<br>Generic Linux |
 | Language | Kotlin | Swift | C, C++ |
 | Architecture | arm7, arm64 | arm7, arm64 | x86\_64, arm64, armhf |
 | Repository | Github | Github | Github |
-| Release | Maven | Cocoapods Carthage | APT repository |
-| Storage | Touch로만 wake up: 13MB Wake up word 1개: 14MB Wake up word 2개: 15MB | Touch로만 wake up: 14MB Wake up word 1개: 15MB Wake up word 2개: 16MB | Touch로만 wake up: 6MB Wake up word 1개: 7MB Wake up word 2개: 8MB |
+| Release | Maven | Cocoapods<br>Carthage | APT repository |
+| Storage | Touch로만 wake up: 13MB<br>Wake up word 1개: 14MB<br>Wake up word 2개: 15MB | Touch로만 wake up: 14MB<br>Wake up word 1개: 15MB<br>Wake up word 2개: 16MB | Touch로만 wake up: 6MB<br>Wake up word 1개: 7MB<br>Wake up word 2개: 8MB |
 
 {% page-ref page="ios/" %}
 
