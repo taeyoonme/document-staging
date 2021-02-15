@@ -114,16 +114,13 @@ NUGU 회원 연동 방식을 사용하기 위해서는 T아이디 연동이 필�
 
 #### 로그인 정보 설정
 
-기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
+기기별 고유식별자\(`deviceUniqueId`\)를 변경 가능합니다. \(이미 NuguOAuth.create 에서 설정 되어있다면 생략\)
 
 ```kotlin
-private val authClient by lazy {
-    // Configure Nugu OAuth Options
-    val options = NuguOAuthOptions.Builder()
-        .deviceUniqueId("{your-device-uniqueId}")
-        .build()
-    NuguOAuth.getClient(options)
-}
+val newOptions = NuguOAuthOptions.Builder()
+            .deviceUniqueId("{your-device-uniqueId}")
+            .build()
+NuguOAuth.getClient().setOptions(newOptions)
 ```
 
 #### Tid 로그인
@@ -162,16 +159,13 @@ authClient.loginSilentlyWithTid("{refresh-token}", object : NuguOAuthInterface.O
 
 #### 로그인 정보 설정
 
-기기별 고유식별자\(`deviceUniqueId`\)를 설정합니다.
+기기별 고유식별자\(`deviceUniqueId`\)를 변경 가능합니다. \(이미 NuguOAuth.create 에서 설정 되어있다면 생략\)
 
 ```kotlin
-private val authClient by lazy {
-    // Configure Nugu OAuth Options
-    val options = NuguOAuthOptions.Builder()
-        .deviceUniqueId("{your-device-uniqueId}")
-        .build()
-    NuguOAuth.getClient(options)
-}
+val newOptions = NuguOAuthOptions.Builder()
+            .deviceUniqueId("{your-device-uniqueId}")
+            .build()
+NuguOAuth.getClient().setOptions(newOptions)
 ```
 
 #### 로그인
@@ -197,7 +191,13 @@ authClient.loginAnonymously(object : NuguOAuthInterface.OnLoginListener {
 1. 인증 정보 처리를 위임할 `AuthDelegate`를 정의합니다.
 
    ```kotlin
-   val authDelegate = NuguOAuth.create(context)
+   // Parameter로 OAuth 옵션을 설정해야 합니다.
+   // 설정된 옵션은 이후 NuguOAuth.setOptions을 사용하여 변경 가능합니다.
+   val authDelegate = NuguOAuth.create(
+                   options = NuguOAuthOptions.Builder()
+                       .deviceUniqueId(deviceUniqueId(context))
+                       .build()
+               )
    ```
 
 2. 음성인식에 사용할 기본 `AudioProvider`를 생성합니다.
