@@ -6,6 +6,10 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2021-02-15
+
+* [NUGU 음성인식 사용하기](platform/android/start.md#step-5-nugu)\(Android\) 업데이트
+
 ### 2021-02-01
 
 * [테스트 환경 설정](platform/ios/testing_sdk_integration.md)\(iOS\) 가이드 주소값 수정 
