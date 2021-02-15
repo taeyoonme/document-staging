@@ -8,7 +8,7 @@ NUGU를 탑재한 기기의 상태는 다음과 같습니다.
 
 | 기기 상태 | 설명 |
 | :--- | :--- |
-| **음소거** | 기기의 소리가 출력되지 않는 상태입니다.<br>음소거 상태일 때는 Prompt나 사운드, 비프음을 볼륨 레벨 0으로 출력합니다.<br>단, alert형 안내(알람 울림, 타이머 울림, Notification 울림, 전화벨 울림)가 실행될 때는 음소거 상태일지라로 원래 음량으로 실행됩니다. |
+| **음소거** | 기기의 소리가 출력되지 않는 상태입니다.<br>음소거 상태일 때는 Prompt나 사운드, 비프음을 볼륨 레벨 0으로 출력합니다.<br>단, alert형 안내\(알람 울림, 타이머 울림, Notification 울림, 전화벨 울림\)가 실행될 때는 음소거 상태일지라로 원래 음량으로 실행됩니다. |
 | **마이크 켜짐/꺼짐** | NUGU 기의 음성인식 마이크가 꺼져 있는 상태로, 이 상태에서는 음성으로 에이전트를 wake up할 수 없습니다. |
 | **야간 모드** | 디스플레이가 있는 기에서 전원 절약을 위하 화면 표시가 최소화된 상태입니다. |
 | **화면 켜짐/꺼짐** | 디스플레이가 있는 기에서 화면이 켜져있거나 꺼져있는 상태입니다. |
@@ -26,7 +26,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
 | 버튼 유형 | 기능 |
 | :--- | :--- |
 | **호출 버튼** | • 호출어를 말하는 것과 동일하게, listening-passive 상태가 되도록 합니다.<br>• 마이크가 꺼져 있는 상태에서 wake-up 버튼을 누를 경우, 마이크가 켜지고 listening - passive 상태로 변경됩니다. 한번 마이크가 켜지면 해당 상태는 유지됩니다. |
-| **마이크 버튼** | • 기기의 마이크를 끄거나 켭니다.<br>• 마이크가 꺼진 상태 (microphone off) 상태에서 호출어를 발화하여도 기기가 wake up되지 않습니다. |
+| **마이크 버튼** | • 기기의 마이크를 끄거나 켭니다.<br>• 마이크가 꺼진 상태 \(microphone off\) 상태에서 호출어를 발화하여도 기기가 wake up되지 않습니다. |
 | **볼륨 조절 버튼** | • 볼륨 조절 버튼은 증가 버튼과 감소 버튼이 각각 제공되며, 한 번 누를 때마다 음량을 증감합니다.<br>• 길게 누르면 연속적으로 음량을 증가 또는 감소시킵니다.<br>• 이 버튼이 동작될 때는 증감된 음량이 어느 정도인지를 사용자가 알 수 있도록 소리 피드백이 제공됩니다. |
 | **음소거 버튼** | • 기기를 음소거 상태로 설정하거나 해제합니다. |
 | **블루투스 버튼** | • 블루투스로 다른 기기와 페어링을 하거나 해제합니다. |
@@ -70,6 +70,8 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
 
 ![](../../.gitbook/assets/assets_undefined__2.png)
 
+{% file src="../../.gitbook/assets/bootcomplete\_3800ms \(1\).ogg" caption="전원 켜짐 완료음" %}
+
 **호출 효과 \(Wake up success\)**
 
 호출어를 발화하여 대화 상가 listening 상태가 되는 순간에 비프음을 제공합니다. 사용자의 발화를 인식할 준비가 되었다는 의미로써, 호출어를 발화하지 않고 호출 버튼을 누른 경우나 필수 entity를 입력받기 위해 speaking 상태 이후 바로 listening 상태가 될 때\(Slot-filling\)에도 해당 비프음이 발생됩니다.
@@ -86,6 +88,8 @@ Slot-filling 시
 
 ![](../../.gitbook/assets/assets_undefined__10.png)
 
+{% file src="../../.gitbook/assets/assets\_start\_listening\_500ms-1.wav" caption="호출 효과음" %}
+
 **인식 완료음 \(End listen\)**
 
 Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 종료 되었을때 비프음을 제공합니다. NUGU App에서 텍스트 명령 전송 시에는 제공하지 않습니다.
@@ -95,6 +99,8 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 | Wake up 후 발화 인식 성공 시 | • 애플리케이션에서 On/Off 설정을 제공<br>• 기기별로 설정 가능 |
 
 ![](../../.gitbook/assets/assets_undefined__3.png)
+
+{% file src="../../.gitbook/assets/assets\_end\_listening\_500ms.wav" caption="인식 완료음" %}
 
 #### **응답 실패 \(Response fail\)**
 
@@ -111,6 +117,8 @@ Listening 상태에서 사용자의 발화가 완료되어 Listening 상태가 �
 Slot-filling을 위한 listening 상태에서 타임아웃 시
 
 ![](../../.gitbook/assets/assets_undefined__8.png)
+
+{% file src="../../.gitbook/assets/assets\_responsefail\_500ms.wav" caption="응답 실패음" %}
 
 **전원 꺼짐 \(Power off\)**
 
