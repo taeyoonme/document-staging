@@ -6,7 +6,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## Version
 
-최신 버전은 1.3 입니다.
+최신 버전은 1.5 입니다.
 
 | Version | Date | Description |
 | :--- | :--- | :--- |
@@ -15,6 +15,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 | 1.2 | 2020.06.05 | Recognize directive, ExpectSpeech event 의 asrContext 에 playServiceId 필드 추가 |
 | 1.3 | 2020.06.09 | Recognize directive, ExpectSpeech event 의 sessionId 필드 삭제 |
 | 1.4 | 2020.11.18 | ExpectSpeech directive 에 epd 필드 추가 |
+| 1.5 | 2021.03.03 | Context 에 state, initiator 필드 추가 |
 
 ## State Diagram
 
@@ -261,14 +262,66 @@ asr_handler->stopRecognition()
 {
   "ASR": {
     "version": "1.2",
-    "engine": "{{STRING}}"
+    "engine": "{{STRING}}",
+    "state": "{{STRING}}",
+    "initiator": "{{STRING}}"
   }
 }
 ```
 
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| engine | string | N | Device 에서 사용하는 음성인식 engine 을 명시 NUGU 음성인식 engine 을 사용하는 경우 "skt" \(값을 채우지 않으면 default "skt"\) |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">engine</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">Device &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC74C;&#xC131;&#xC778;&#xC2DD;
+        engine &#xC744; &#xBA85;&#xC2DC; NUGU &#xC74C;&#xC131;&#xC778;&#xC2DD;
+        engine &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0; &quot;skt&quot;
+        <br
+        />(&#xAC12;&#xC744; &#xCC44;&#xC6B0;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; default
+        &quot;skt&quot;)</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">state</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p>IDLE, EXPECTING_SPEECH, LISTENING, RECOGNIZING, BUSY</p>
+        <p><a href="asr.md#state-diagram">State Diagram</a> &#xCC38;&#xACE0;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">initiator</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p><b>WAKE_UP_WORD, PRESS_AND_HOLD, TAP, EXPECT_SPEECH, EARSET</b>
+        </p>
+        <p>&#xB9C8;&#xC774;&#xD06C; &#xC624;&#xD508;&#xC774; &#xC5B4;&#xB5BB;&#xAC8C;
+          &#xD2B8;&#xB9AC;&#xAC70;&#xB418;&#xC5C8;&#xB294;&#xC9C0;</p>
+        <ul>
+          <li><b>WAKE_UP_WORD</b> - &#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xB85C;
+            Wakeup</li>
+          <li><b>PRESS_AND_HOLD</b>- PTT &#xBC29;&#xC2DD;&#xC73C;&#xB85C; Wakeup</li>
+          <li><b>TAP</b> - NUGU &#xBC84;&#xD2BC; &#xB4F1;&#xC5D0; &#xC758;&#xD574;&#xC11C;
+            Wakeup</li>
+          <li><b>EXPECT_SPEECH</b> - ASR.ExpectSpeech</li>
+          <li><b>EARSET</b> - &#xC774;&#xC5B4;&#xC14B; VoiceCommand &#xB4F1;&#xC744;
+            &#xD1B5;&#xD574; Wakeup</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Directives
 
