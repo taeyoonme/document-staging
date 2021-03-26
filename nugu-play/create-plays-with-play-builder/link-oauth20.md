@@ -197,7 +197,7 @@ Content-Length:
 
 1. Play의 상태가 등록중, 심사대기, 심사반려, 심사중, 심사완료, 배포대기 중인 경우에 스피커에서 테스트가 가능합니다.
 
-   ![](../../.gitbook/assets/assets_play-status-is-registered%20%287%29.png)
+   ![](../../.gitbook/assets/assets_play-status-is-registered__1.png)
 
 2. [테스트하기](test-a-play.md)에서 '디바이스\(스피커\)에서 테스트하기' 항목을 참고하여 테스트 스피커를 추가합니다.
 3. NUGU 앱에 접속하여 왼쪽 위의 햄버거 메뉴를 클릭한 후 NUGU play 항목에서 내가 만든 Play를 클릭합니다.

@@ -6,50 +6,15 @@ description: 문자 확인 및 전송 기능 제어를 위한 규격
 
 ## Version
 
-최신 버전은 1.4 입니다.
+최신 버전은 1.3 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2020.07.02</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.07.13</td>
-      <td style="text-align:left">Context &#xC758; template &#xC5D0; info &#xD544;&#xB4DC; &#xCD94;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.08.13</td>
-      <td style="text-align:left">contact type &#xC5D0; EMERGENCY &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.3</td>
-      <td style="text-align:left">2020.11.02</td>
-      <td style="text-align:left">SendCandidates directive &#xC5D0; searchScene &#xD544;&#xB4DC; &#xCD94;&#xAC00;
-        <br
-        />Context &#xC5D0; searchScene &#xD544;&#xB4DC; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.4</td>
-      <td style="text-align:left">2021.01.19</td>
-      <td style="text-align:left">
-        <p>Context &#xC5D0; messageToSend &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>SendCandidates directive &#xC5D0; messageToSend &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2020.07.02 | 규격 추가 |
+| 1.1 | 2020.07.13 | Context 의 template 에 info 필드 추 |
+| 1.2 | 2020.08.13 | contact type 에 EMERGENCY 추가 |
+| 1.3 | 2020.11.02 | SendCandidates directive 에 searchScene 필드 추가<br>Context 에 searchScene 필드 추가 |
+| 1.4 | 2021.01.19 | Context 에 messageToSend 필드 추가<br>SendCandidates directive 에 messageToSend 필드 추가 |
 ## SDK Interface
 
 ### MessageAgent 사용
@@ -190,168 +155,20 @@ messageAgent.addOnPlaybackListener(listener)
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">readActivity</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC774;&#xC804; &#xBC1C;&#xD654;&#xAC00; &#xC7AC;&#xC0DD; &#xC0C1;&#xD0DC;&#xB97C;
-        &#xC804;&#xB2EC;
-        <br /><b>IDLE</b>, <b>PLAYING</b>, <b>PAUSED</b>, <b>FINISHED</b>, <b>STOPPED</b>
-        <br
-        />- IDLE&#xC778; &#xACBD;&#xC6B0;&#xB294; &#xCD5C;&#xCD08; &#xC804;&#xC6D0;&#xC744;
-        &#xCF30;&#xC744; &#xB54C;&#xB9CC; &#xAC00;&#xB2A5;&#xD558;&#xACE0; &#xC774;&#xD6C4;&#xC5D0;&#xB294;
-        &#xB098;&#xC62C; &#xC218; &#xC5C6;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">readActivity&#xC5D0;&#xC11C; &#xC7AC;&#xC0DD; &#xC911;&#xC778; prompt&#xC758;
-        token</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">context &#xC720;&#xC9C0; &#xC815;&#xCC45;&#xACFC; &#xB3D9;&#xC77C;&#xD558;&#xAC8C;
-        &#xAD00;&#xB9AC;&#xB418;&#xC5B4;&#xC57C; &#xD568; &#x2192; Play Stack&#xC5D0;
-        &#xD604;&#xC7AC; Play&#xAC00; &#xAC00;&#xC7A5; &#xC704;&#xC5D0; &#xC788;&#xB294;
-        &#xB3D9;&#xC548;&#xC740; &#xBCF4;&#xB0B4;&#xC8FC;&#xC5B4;&#xC57C; &#xD568;
-        <br
-        />- &#xD654;&#xBA74;&#xC5D0; template&#xC774; &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;
-        &#xB418;&#xB294; &#xB3D9;&#xC548;
-        <br />- &#xC571;&#xC5D0;&#xC11C; &#xD654;&#xBA74;&#xC744; &#xADF8;&#xB9AC;&#xB294;
-        &#xACBD;&#xC6B0; &#xC571;&#xC774; &#xC815;&#xD655;&#xD55C; &#xC2DC;&#xC810;
-        &#xD30C;&#xC545; &#xAC00;&#xB2A5;
-        <br />- &#xD654;&#xBA74;&#xC774; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;&#xB294; DM
-        &#xBC0F; TTS &#xC885;&#xB8CC; &#xD6C4; 7&#xCD08;
-        <br />- DM&#xC774; &#xC720;&#xC9C0;&#xB418;&#xB294; &#xB3D9;&#xC548;&#xC740;
-        SDK&#xB85C;&#xBD80;&#xD130; &#xB300;&#xD654; &#xC138;&#xC158; &#xC720;&#xC9C0;
-        &#xC0C1;&#xD669;&#xC744; &#xD53C;&#xB4DC;&#xBC31; &#xBC1B;&#xC544; &#xC804;&#xB2EC;
-        <br
-        />&#xB300;&#xD45C;&#xC801;&#xC778; &#xACBD;&#xC6B0;&#xB294; &#xC704;&#xC758;
-        &#xB450; &#xACBD;&#xC6B0;&#xC640; &#xAC19;&#xC73C;&#xBA70; &#xC790;&#xC138;&#xD55C;
-        &#xAD6C;&#xD604;&#xC740; context &#xAD00;&#xB9AC; &#xC815;&#xCC45; &#xCC38;&#xC870;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>info</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD604;&#xC7AC; template&#xC5D0; &#xD3EC;&#xD568;&#xB41C; &#xB370;&#xC774;&#xD130;&#xAC00;
-        &#xC5B4;&#xB5A4; &#xC815;&#xBCF4;&#xB97C; &#xB2F4;&#xACE0; &#xC788;&#xB294;&#xC9C0;
-        &#xC2DD;&#xBCC4;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xAC12;
-        <br />- <b>PHONE_BOOK</b> : &#xC8FC;&#xC18C;&#xB85D; &#xC870;&#xD68C; &#xACB0;&#xACFC;&#xB97C;
-        &#xD3EC;&#xD568;
-        <br />- <b>MESSAGE</b> : &#xC218;&#xC2E0;&#xB41C; Message &#xC815;&#xBCF4;&#xB97C;
-        &#xD3EC;&#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>recipientIntended</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBC1C;&#xD654;&#xC5D0;&#xC11C; &#xBD84;&#xC11D;&#xB41C; recipient &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>recipientIntended.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC80;&#xC0C9;&#xC5D0; &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB41C;
-        &#xC0C1;&#xB300;&#xBC29; &#xC774;&#xB984; (NLU &#xBD84;&#xC11D;&#xC73C;&#xB85C;
-        &#xB098;&#xC628; &#xC774;&#xB984;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>recipientIntended.</p>
-        <p>label</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC9D1;, &#xD68C;&#xC0AC; &#xB4F1;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; &#xB77C;&#xBCA8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>searchScene</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
-        &#xC704;&#xD574; &#xCD94;&#xAC00;
-        <br />- <b>DEFAULT</b> : &#xAE30;&#xBCF8; &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;
-        <br
-        />- <b>T114DIRECT</b> : &#xAE34;&#xAE09;&#xC804;&#xD654;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>candidates</p>
-      </td>
-      <td style="text-align:left">array of <a href="./#contact">Contact</a>
-      </td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xD654;&#xBA74;&#xC5D0; &#xAC80;&#xC0C9; &#xACB0;&#xACFC; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C;
-        &#xB514;&#xC2A4;&#xD50C;&#xB808;&#xC774;&#xD558;&#xB294; &#xC911;&#xC5D0;&#xB9CC;
-        context&#xC5D0; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>messageToSend</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBC1C;&#xC2E0;&#xC6A9;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xBA54;&#xC138;&#xC9C0;</p>
-        <p>SendCandidates&#xC758; &#xAC19;&#xC740; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C;
-          &#xD1B5;&#xD574; &#xC804;&#xB2EC;&#xBC1B;&#xC740; MSG_BODY&#xB97C; &#xADF8;&#xB300;&#xB85C;
-          &#xBC18;&#xD658;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>messageToSend.</p>
-        <p>text</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBCF8;&#xBB38;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>messageToSend.</p>
-        <p>type</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBA54;&#xC138;&#xC9C0;&#xC758; &#xD0C0;&#xC785;</td>
-    </tr>
-  </tbody>
-</table>
-
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| readActivity | string | Y | 이전 발화가 재생 상태를 전달<br>**IDLE**, **PLAYING**, **PAUSED**, **FINISHED**, **STOPPED**<br> - IDLE인 경우는 최초 전원을 켰을 때만 가능하고 이후에는 나올 수 없음 |
+| token | string | N | readActivity에서 재생 중인 prompt의 token |
+| template | object | N | context 유지 정책과 동일하게 관리되어야 함 → Play Stack에 현재 Play가 가장 위에 있는 동안은 보내주어야 함<br> - 화면에 template이 디스플레이 되는 동안<br>  - 앱에서 화면을 그리는 경우 앱이 정확한 시점 파악 가능<br> - 화면이 없는 경우는 DM 및 TTS 종료 후 7초<br>  - DM이 유지되는 동안은 SDK로부터 대화 세션 유지 상황을 피드백 받아 전달<br>대표적인 경우는 위의 두 경우와 같으며 자세한 구현은 context 관리 정책 참조 |
+| template.<br>info | string | N | 현재 template에 포함된 데이터가 어떤 정보를 담고 있는지 식별하기 위한 값<br> - **PHONE\_BOOK** : 주소록 조회 결과를 포함<br> - **MESSAGE** : 수신된 Message 정보를 포함 |
+| template.<br>recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
+| template.<br>recipientIntended.name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
+| template.<br>recipientIntended.label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
+| template.<br>searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br> - **DEFAULT** : 기본 검색 로직<br> - **T114DIRECT** : 긴급전화 |
+| template.<br>candidates | array of [Contact](./#contact) | N | 화면에 검색 결과 리스트를 디스플레이하는 중에만 context에 추가 |
+| template.<br>messageToSend | object | N | 발신용으로 사용할 메세지<br>SendCandidates의 같은 파라미터를 통해 전달받은 MSG_BODY를 그대로 반환 |
+| template.<br>messageToSend.<br>text | string | Y | 본문 |
+| template.<br>messageToSend.<br>type | string | N | 메세지의 타입 |
 ## Common Objects
 
 ### Contact
@@ -374,121 +191,20 @@ messageAgent.addOnPlaybackListener(listener)
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">candidates&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xBA74; &#xAC01; candidate&#xB294;
-        &#xCD5C;&#xC18C;&#xD55C; &#xC774;&#xB984;&#xC740; &#xD3EC;&#xD568;&#xD574;&#xC57C;
-        &#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">recipient candidates&#xC758; &#xD0C0;&#xC785;
-        <br />- <b>CONTACT</b> : &#xC5F0;&#xB77D;&#xCC98; &#xAC80;&#xC0C9;
-        <br />- <b>EXCHANGE</b> : exchange &#xAC80;&#xC0C9;
-        <br />- <b>T114</b> : T114 &#xAC80;&#xC0C9;
-        <br />- <b>NONE</b> : &#xD2B9;&#xC815; &#xCE74;&#xD14C;&#xACE0;&#xB9AC;&#xC5D0;
-        &#xC18D;&#xD558;&#xC9C0; &#xC54A;&#xC74C;
-        <br />- <b>EMERGENCY</b> : &#xAE34;&#xAE09; &#xC7AC;&#xB09C;, &#xC548;&#xC804;
-        &#xC548;&#xB0B4; &#xBB38;&#xC790;&#xC758; &#xACBD;&#xC6B0; &quot;&#xC548;&#xC804;
-        &#xC548;&#xB0B4; &#xBB38;&#xC790;&quot;&#xB85C; TTS &#xB098;&#xAC08; &#xC608;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">number</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">label</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"><b>MOBILE</b>
-        <br /><b>COMPANY</b>
-        <br /><b>HOME</b>
-        <br /><b>USER_DEFINED</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">profileImgUrl</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">message</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">-</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>message.</p>
-        <p>text</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBCF4;&#xB0B4;&#xB294; or &#xBC1B;&#xB294; &#xBA54;&#xC138;&#xC9C0;
-        &#xB0B4;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>message.</p>
-        <p>type</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBA54;&#xC138;&#xC9C0;&#xC758; &#xD0C0;&#xC785;
-        <br />- <b>SMS</b>
-        <br />- <b>MMS</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">time</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xB0A0;&#xC9DC;, &#xC2DC;&#xAC04; &#xC815;&#xBCF4;&#xB85C; ISO 8601 &#xD3EC;&#xB9F7;
-        (2007-12-03T10:15:30)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">numInMessageHistory</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBB38;&#xC790; &#xC218;&#xC2E0; &#xB0B4;&#xC5ED;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xB294;
-        &#xAC74;&#xC218;
-        <br />0, 1, 2, ... &#xAC12;&#xC744; string &#xD615;&#xD0DC;&#xB85C; &#xBC1B;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xCD94;&#xAC00; &#xC815;&#xBCF4;&#xB97C; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
-        &#xC704;&#xD574; &#xC784;&#xC758;&#xB85C; &#xC815;&#xC758;&#xD55C; key&#xAC12;&#xC744;
-        &#xD3EC;&#xD568;
-        <br />unique &#xC5EC;&#xBD80;&#xB294; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC6A9;&#xB3C4;&#xC5D0;
-        &#xC758;&#xD574; &#xACB0;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">score</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC80;&#xC0C9; &#xACB0;&#xACFC;&#xC758; &#xC2E0;&#xB8B0;&#xB3C4;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| name | string | N | candidates가 존재하면 각 candidate는 최소한 이름은 포함해야 함 |
+| type | string | N | recipient candidates의 타입<br> - **CONTACT** : 연락처 검색<br> - **EXCHANGE** : exchange 검색<br> - **T114** : T114 검색<br> - **NONE** : 특정 카테고리에 속하지 않음<br> - **EMERGENCY** : 긴급 재난, 안전 안내 문자의 경우 "안전 안내 문자"로 TTS 나갈 예정 |
+| number | string | N | - |
+| label | string | N | **MOBILE**<br>**COMPANY**<br>**HOME**<br>**USER\_DEFINED** |
+| profileImgUrl | string | N | - |
+| message | object | N | - |
+| message.text | string | Y | 보내는 or 받는 메세지 내용 |
+| message.type | string | Y | 메세지의 타입<br> - **SMS**<br> - **MMS** |
+| time | string | N | 날짜, 시간 정보로 ISO 8601 포맷 \(2007-12-03T10:15:30\) |
+| numInMessageHistory | string | N | 문자 수신 내역에 존재하는 건수<br>0, 1, 2, ... 값을 string 형태로 받음 |
+| token | string | N | 사용자 추가 정보를 식별하기 위해 임의로 정의한 key값을 포함<br>unique 여부는 사용되는 용도에 의해 결정 |
+| score | string | N | 검색 결과의 신뢰도 |
 
 ## Directives
 
@@ -519,104 +235,17 @@ messageAgent.addOnPlaybackListener(listener)
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">intent</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left"><b>SEND</b> : &#xBB38;&#xC790;&#xBCF4;&#xB0B4;&#xC918;
-        <br /><b>READ</b> : &#xBB38;&#xC790;&#xC77D;&#xC5B4;&#xC918;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">recipientIntended</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBC1C;&#xD654;&#xC5D0;&#xC11C; &#xBD84;&#xC11D;&#xB41C; recipient &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipientIntended.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC80;&#xC0C9;&#xC5D0; &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB41C;
-        &#xC0C1;&#xB300;&#xBC29; &#xC774;&#xB984; (NLU &#xBD84;&#xC11D;&#xC73C;&#xB85C;
-        &#xB098;&#xC628; &#xC774;&#xB984;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipientIntended.</p>
-        <p>label</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC9D1;, &#xD68C;&#xC0AC; &#xB4F1;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; &#xB77C;&#xBCA8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">searchScene</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC80;&#xC0C9; &#xB300;&#xC0C1;&#xACFC; &#xD654;&#xBA74;&#xC744; &#xC815;&#xC758;&#xD558;&#xAE30;
-        &#xC704;&#xD574; &#xCD94;&#xAC00;
-        <br />- <b>DEFAULT</b> : &#xAE30;&#xBCF8; &#xAC80;&#xC0C9; &#xB85C;&#xC9C1;
-        <br
-        />- <b>T114DIRECT</b> : &#xAE34;&#xAE09;&#xC804;&#xD654;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">candidates</td>
-      <td style="text-align:left">array of <a href="./#contact">Contact</a>
-      </td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">candidates&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC774; &#xD56D;&#xBAA9;&#xC774;
-        &#xC5C6;&#xC5B4;&#xC57C; &#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>messageToSend</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xBC1C;&#xC2E0;&#xC6A9;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xBA54;&#xC138;&#xC9C0;</p>
-        <p>SendCandidates&#xC758; &#xAC19;&#xC740; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C;
-          &#xD1B5;&#xD574; &#xC804;&#xB2EC;&#xBC1B;&#xC740; MSG_BODY&#xB97C; &#xADF8;&#xB300;&#xB85C;
-          &#xBC18;&#xD658;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>messageToSend.</p>
-        <p>text</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBCF8;&#xBB38;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>messageToSend.</p>
-        <p>type</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBA54;&#xC138;&#xC9C0;&#xC758; &#xD0C0;&#xC785;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| intent | string | N | **SEND** : 문자보내줘<br>**READ** : 문자읽어줘 |
+| recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
+| recipientIntended.<br>name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
+| recipientIntended.<br>label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
+| searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br> - **DEFAULT** : 기본 검색 로직<br> - **T114DIRECT** : 긴급전화 |
+| candidates | array of [Contact](./#contact) | N | candidates가 없으면 이 항목이 없어야 함 |
+| template.<br>messageToSend | object | N | 발신용으로 사용할 메세지<br>SendCandidates의 같은 파라미터를 통해 전달받은 MSG_BODY를 그대로 반환 |
+| template.<br>messageToSend.<br>text | string | Y | 본문 |
+| template.<br>messageToSend.<br>type | string | N | 메세지의 타입 |
 
 ### SendMessage
 
@@ -662,63 +291,12 @@ messageAgent.addOnPlaybackListener(listener)
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">recipientIntended</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBC1C;&#xD654;&#xC5D0;&#xC11C; &#xBD84;&#xC11D;&#xB41C; recipient &#xC815;&#xBCF4;
-        <br
-        />optional &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xD3EC;&#xD568;&#xB418;&#xC9C0;
-        &#xC54A;&#xC73C;&#xBA74; &#xC804;&#xCCB4; &#xBB38;&#xC790;&#xB97C; &#xBCF4;&#xB0B4;&#xC918;&#xC57C;
-        &#xD568;
-        <br />&#xD56D;&#xBAA9;&#xC774; &#xC874;&#xC7AC;&#xD560; &#xACBD;&#xC6B0; SendCandidates&#xC640;
-        &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xC870;&#xAC74;&#xC5D0; &#xB9DE;&#xB294;
-        &#xB300;&#xC0C1;&#xC790;&#xC758; &#xBB38;&#xC790;&#xB9AC;&#xC2A4;&#xD2B8;&#xB9CC;
-        GetMessageSucceeded&#xB85C; &#xC804;&#xB2EC;&#xD558;&#xACE0; &#xD56D;&#xBAA9;&#xC774;
-        &#xC5C6;&#xC744; &#xACBD;&#xC6B0; &#xC804;&#xCCB4; &#xBB38;&#xC790;&#xB9AC;&#xC2A4;&#xD2B8;&#xB97C;
-        GetMessageSucceeded&#xB85C; &#xC804;&#xB2EC;&#xD574;&#xC57C;&#xD568;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipientIntended.</p>
-        <p>name</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC80;&#xC0C9;&#xC5D0; &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xC0AC;&#xC6A9;&#xB41C;
-        &#xC0C1;&#xB300;&#xBC29; &#xC774;&#xB984; (NLU &#xBD84;&#xC11D;&#xC73C;&#xB85C;
-        &#xB098;&#xC628; &#xC774;&#xB984;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>recipientIntended.</p>
-        <p>label</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC9D1;, &#xD68C;&#xC0AC; &#xB4F1;&#xC744; &#xAD6C;&#xBD84;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; &#xB77C;&#xBCA8;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">candidates</td>
-      <td style="text-align:left">array of <a href="./#contact">Contact</a>
-      </td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">candidates&#xAC00; &#xC5C6;&#xC73C;&#xBA74; &#xC774; &#xD56D;&#xBAA9;&#xC774;
-        &#xC5C6;&#xC5B4;&#xC57C; &#xD568;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| recipientIntended | object | N | 발화에서 분석된 recipient 정보<br>optional 파라미터로 포함되지 않으면 전체 문자를 보내줘야 함<br>항목이 존재할 경우 SendCandidates와 동일하게 조건에 맞는 대상자의 문자리스트만 GetMessageSucceeded로 전달하고 항목이 없을 경우 전체 문자리스트를 GetMessageSucceeded로 전달해야함. |
+| recipientIntended.<br>name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
+| recipientIntended.<br>label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
+| candidates | array of [Contact](./#contact) | N | candidates가 없으면 이 항목이 없어야 함 |
 
 ### ReadMessage
 
@@ -741,7 +319,7 @@ messageAgent.addOnPlaybackListener(listener)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| receivedTime | string | N | Application에서 읽은 메시지를 처리하기 위한 timeStamp timeStamp 값은 디바이스에서 문자 메시지의 \(수신한\) 시간값\(LONG\)으로 GetMessageSucceeded 의 candidates \(문자 메시지 리스트\) 의 time 값 Application은 해당 시간값 이후에 수신된 문자 메시지를 GetMessageSucceeded 응답데이터로 전달한다. |
+| receivedTime | string | N | Application에서 읽은 메시지를 처리하기 위한 timeStamp<br>timeStamp 값은 디바이스에서 문자 메시지의 \(수신한\) 시간값\(LONG\)으로 GetMessageSucceeded 의 candidates \(문자 메시지 리스트\) 의 time 값<br>Application은 해당 시간값 이후에 수신된 문자 메시지를 GetMessageSucceeded 응답데이터로 전달한다. |
 | token | string | Y | 현재 TTS를 식별하기 위한 unique string |
 
 ## Events

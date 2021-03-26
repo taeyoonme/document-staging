@@ -123,8 +123,8 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| ttsActivity | string | Y | TTS 재생 상태 **IDLE**, **PLAYING**, **PAUSED**, **FINISHED**, **STOPPED**   - IDLE인 경우는 최초 전원을 켰을 때만 가능하고 이후에는 나올 수 없음 |
-| engine | string | N | Device 에서 사용하는 음성합성 engine 을 명시 NUGU 음성합성 engine 을 사용하는 경우 "skt" \(값을 채우지 않으면 default "skt"\) |
+| ttsActivity | string | Y | TTS 재생 상태<br>**IDLE**, **PLAYING**, **PAUSED**, **FINISHED**, **STOPPED**<br>  - IDLE인 경우는 최초 전원을 켰을 때만 가능하고 이후에는 나올 수 없음 |
+| engine | string | N | Device 에서 사용하는 음성합성 engine 을 명시<br>NUGU 음성합성 engine 을 사용하는 경우 "skt"<br>\(값을 채우지 않으면 default "skt"\) |
 | token | string | N | 현재 재생중인 TTS 의 token |
 
 ## Directive

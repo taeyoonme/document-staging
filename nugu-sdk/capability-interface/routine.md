@@ -8,42 +8,15 @@ description: 루틴을 실행하기 위한 규격
 
 최신 버전은 1.2 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2020.11.10</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.11.13</td>
-      <td style="text-align:left">
-        <p>Context &#xC758; actions &#xC5D0; postDelayInMilliseconds &#xCD94;&#xAC00;</p>
-        <p>Start directive &#xC758; actions &#xC5D0; postDelayInMilliseconds &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.12.10</td>
-      <td style="text-align:left">
-        <p>Context &#xC758; routineActivity &#xC5D0; INTERRUPTED &#xCD94;&#xAC00;</p>
-        <p></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2020.11.10 | 규격 추가 |
+| 1.1 | 2020.11.13 | Context 의 actions 에 postDelayInMilliseconds 추가<br>Start directive 의 actions 에 postDelayInMilliseconds 추가 |
+| 1.2 | 2020.12.10 | Context 의 routineActivity 에 INTERRUPTED 추가 |
 
 ## State Diagram
 
-![](../../.gitbook/assets/image%20%282%29.png)
+![](../../.gitbook/assets/assets_images2.png)
 
 ## SDK Interface
 
@@ -72,69 +45,12 @@ Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 A
 }
 ```
 
-
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>Routine.Play Directive&#xC5D0;&#xC11C; &#xC804;&#xB2EC;&#xD55C; &#xB8E8;&#xD2F4;&#xC744;
-          &#xC2DD;&#xBCC4;&#xD558;&#xAE30; &#xC704;&#xD55C; unique&#xD55C; string</p>
-        <p>&#xC5F0;&#xC18D;&#xB41C; &#xB8E8;&#xD2F4; &#xAC04;&#xC5D0; &#xB3D9;&#xC77C;&#xD55C;
-          token&#xC744; &#xC804;&#xB2EC;&#xD558;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D;
-          &#xC8FC;&#xC758;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">routineActivity</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <ul>
-          <li><b>IDLE</b> - &#xB8E8;&#xD2F4;&#xC744; &#xD55C;&#xBC88;&#xB3C4; &#xC2E4;&#xD589;&#xD558;&#xC9C0;
-            &#xC54A;&#xC740; &#xACBD;&#xC6B0;</li>
-          <li><b>PLAYING</b> - &#xB8E8;&#xD2F4;&#xC774; &#xC2E4;&#xD589;&#xB418;&#xACE0;
-            &#xC788;&#xB294; &#xACBD;&#xC6B0;</li>
-          <li><b>INTERRUPTED</b> - &#xB8E8;&#xD2F4;&#xC774; &#xC5B4;&#xB5A4; &#xC774;&#xC720;&#xB85C;&#xB4E0;
-            &#xC911;&#xB2E8;&#xB41C; &#xACBD;&#xC6B0;</li>
-          <li><b>FINISHED</b> - &#xB9C8;&#xC9C0;&#xB9C9; &#xC561;&#xC158;&#xAE4C;&#xC9C0;
-            &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xC2E4;&#xD589;&#xC774; &#xC885;&#xB8CC;&#xB41C;
-            &#xACBD;&#xC6B0;</li>
-          <li><b>STOPPED</b> - &#xB05D;&#xAE4C;&#xC9C0; &#xC2E4;&#xD589;&#xD558;&#xC9C0;
-            &#xBABB;&#xD558;&#xACE0; &#xC885;&#xB8CC;&#xB41C; &#xACBD;&#xC6B0;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">currentAction</td>
-      <td style="text-align:left">int</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD604;&#xC7AC; &#xC2E4;&#xD589; &#xC911;&#xC778; Action&#xC758; &#xC21C;&#xC11C;</p>
-        <p>1&#xBD80;&#xD130; &#xC2DC;&#xC791;&#xD558;&#xBA70;, &#xB9C8;&#xC9C0;&#xB9C9;
-          Action&#xC758; &#xAC12;&#xC740; actions &#xC758; &#xAC1C;&#xC218;&#xC640;
-          &#xAC19;&#xC544;&#xC57C; &#xD568;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">actions</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Start Directive &#xCC38;&#xC870;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | N | Routine.Play Directive에서 전달한 루틴을 식별하기 위한 unique한 string<br>연속된 루틴 간에 동일한 token을 전달하지 않도록 주의 |
+| routineActivity | string | Y | * **IDLE** - 루틴을 한번도 실행하지 않은 경우<br>* **PLAYING** - 루틴이 실행되고 있는 경우<br>* **INTERRUPTED** - 루틴이 어떤 이유로든 중단된 경우<br>* **FINISHED** - 마지막 액션까지 정상적으로 실행이 종료된 경우<br>* **STOPPED** - 끝까지 실행하지 못하고 종료된 경우 |
+| currentAction | int | N | 현재 실행 중인 Action의 순서<br>1부터 시작하며, 마지막 Action의 값은 actions 의 개수와 같아야 함 |
+| actions | list | N | Start Directive 참조 |
 
 ## Directives
 
@@ -166,120 +82,16 @@ Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 A
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC804;&#xB2EC;&#xD558;&#xB294; &#xB8E8;&#xD2F4;&#xC744; &#xC2DD;&#xBCC4;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; unique string</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">actions</td>
-      <td style="text-align:left">list</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xB8E8;&#xD2F4;&#xC744; &#xAD6C;&#xC131;&#xD558;&#xB294; Action&#xC744;
-        &#xD3EC;&#xD568;&#xD558;&#xB294; list</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>actions.</p>
-        <p>type</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xC804;&#xC1A1;&#xD558;&#xB294; Event Type</p>
-        <ul>
-          <li><b>TEXT</b> - Text.TextInput&#xC73C;&#xB85C; &quot;text&quot; &#xD30C;&#xB77C;&#xBBF8;&#xD130;
-            &#xC804;&#xC1A1;</li>
-          <li><b>DATA</b> - Routine.ActionTriggered Event&#xB85C; data&#xB97C; &#xC804;&#xC1A1;</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>actions.</p>
-        <p>text</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>type &#xC774; TEXT &#xC77C; &#xB54C; &#xD544;&#xC218; &#xAC12;</p>
-        <p>Action&#xC744; &#xC2E4;&#xD589;&#xD558;&#xAE30; &#xC704;&#xD55C; &#xBC1C;&#xD654;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>actions.</p>
-        <p>data</p>
-      </td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>type &#xC774; DATA &#xC77C; &#xB54C; &#xD544;&#xC218; &#xAC12;</p>
-        <p>ActionTriggered Event&#xB97C; &#xC804;&#xC1A1;&#xD560;&#xB54C; &#xD568;&#xAED8;
-          &#xC804;&#xC1A1;&#xD558;&#xB294; &#xB370;&#xC774;&#xD130;</p>
-        <p>ActionTriggered Event&#xC758; &quot;data&quot; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC5D0;
-          &#xC774; object&#xB97C; &#xADF8;&#xB300;&#xB85C; &#xBCF5;&#xC0AC;&#xD574;&#xC11C;
-          &#xC804;&#xC1A1;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>actions.</p>
-        <p>playServiceId</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>text &#xB610;&#xB294; event&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB294; Play
-          Service Id</p>
-        <p>TEXT&#xB294; &#xC774; &#xAC12;&#xC774; &#xC5C6;&#xC73C;&#xBA74; &#xB77C;&#xC6B0;&#xD305;
-          &#xB85C;&#xC9C1;&#xB300;&#xB85C; &#xB77C;&#xC6B0;&#xD305;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>actions.</p>
-        <p>token</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Text.TextInput event &#xC758; &quot;token&quot; parameter &#xB85C; &#xC804;&#xB2EC;&#xD574;&#xC57C;
-        &#xD568;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>actions.</p>
-        <p>postDelayInMilliseconds</p>
-      </td>
-      <td style="text-align:left">long</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>&#xD574;&#xB2F9; Action &#xC758; ActionTriggered event &#xC694;&#xCCAD;&#xC73C;&#xB85C;
-          &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xBAA8;&#xB4E0; directive &#xB97C; &#xC2E4;&#xD589;&#xD55C;
-          &#xD6C4;
-          <br />&#xB2E4;&#xC74C; Action &#xC758; ActionTriggered event &#xB97C; &#xC694;&#xCCAD;&#xD558;&#xAE30;
-          &#xC804;&#xAE4C;&#xC9C0; &#xAC15;&#xC81C;&#xB85C; &#xC124;&#xC815;&#xD558;&#xB294;
-          delay &#xC2DC;&#xAC04;</p>
-        <ul>
-          <li>&#xB2E8;&#xC704; - msec</li>
-          <li>default - 0 (delay&#xAC00; &#xC5C6;&#xC74C;)</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| token | string | Y | 전달하는 루틴을 식별하기 위한 unique string |
+| actions | list | Y | 루틴을 구성하는 Action을 포함하는 list |
+| actions.<br>type | string | Y | 전송하는 Event Type<br>* **TEXT** - Text.TextInput으로 "text" 파라미터 전송<br>* **DATA** - Routine.ActionTriggered Event로 data를 전송 |
+| actions.<br>text | string | N | type 이 TEXT 일 때 필수 값<br>Action을 실행하기 위한 발화 |
+| actions.<br>data | object | N | type 이 DATA 일 때 필수 값<br>ActionTriggered Event를 전송할때 함께 전송하는 데이터<br>ActionTriggered Event의 "data" 파라미터에 이 object를 그대로 복사해서 전송 |
+| actions.<br>playServiceId | string | N | text 또는 event를 실행하는 Play Service Id<br>TEXT는 이 값이 없으면 라우팅 로직대로 라우팅 |
+| actions.<br>token | string | N | Text.TextInput event 의 "token" parameter 로 전달해야 함 |
+| actions.<br>postDelayInMilliseconds | long | N | 해당 Action 의 ActionTriggered event 요청으로 전달받은 모든 directive 를 실행한 후<br>다음 Action 의 ActionTriggered event 를 요청하기 전까지 강제로 설정하는 delay 시간<br>* 단위 - msec<br>* default - 0 (delay가 없음) |
 
 ### Stop
 

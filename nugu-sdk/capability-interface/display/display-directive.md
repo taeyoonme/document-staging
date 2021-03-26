@@ -137,8 +137,8 @@ List 의 스크롤 이동 요청입니다.
 | content | object | Y | - |
 | content.image | [ImageObject](./#imageobject) | N | - |
 | content.imageAlign | string | N | LEFT, RIGHT |
-| content.header | [TextObject](./#textobject) | N | 본문 제목  - 줄바꿈 가능 \('\n'\) |
-| content.body | [TextObject](./#textobject) | N | 본문 내용  - 줄바꿈 가능 \('\n'\)  - Scrollable |
+| content.header | [TextObject](./#textobject) | N | 본문 제목<br> - 줄바꿈 가능 \('\n'\) |
+| content.body | [TextObject](./#textobject) | N | 본문 내용<br> - 줄바꿈 가능 \('\n'\)<br> - Scrollable |
 | content.footer | [TextObject](./#textobject) | N | 보조 설명 |
 | grammarGuide | [GrammarGuide](./#grammarguide) | N | - |
 | supportFocusedItemToken | bool | N | Context에 있는 focusedItemToken이 지원되어야 하는지 여부 |
@@ -197,20 +197,20 @@ List 의 스크롤 이동 요청입니다.
 | duration | [Duration](./#duration) | N | - |
 | title | [TitleObject](./#titleobject) | Y | - |
 | background | [BackgroundObject](./#backgroundobject) | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default - false |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default - false |
 | badgeNumberMode | string | N | badge 숫자를 설정하는 방법 IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\) PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\) default - IMMUTABILITY |
-| focusable | bool | N | List Template의 item들이 focus 가능한지 여부 default - true |
+| focusable | bool | N | List Template의 item들이 focus 가능한지 여부<br>default - true |
 | anchorItemToken | string | N | display 될 때 첫 번째로 보여지는 아이템의 토큰 |
 | listItems | array | Y | Scrollable |
 | listItems.token | string | Y | 클릭은 한 item 전체에서 가능 |
 | listItems.image | [ImageObject](./#imageobject) | N | - |
 | listItems.icon | [ImageObject](./#imageobject) | N | - |
-| listItems.header | [TextObject](./#textobject) | N | 본문 제목 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.body | [TextObject](./#textobject) | N | 본문 내용 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.footer | [TextObject](./#textobject) | N | 보조설명 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.type | string | N | list item의 type을 의미하며, 정의하지 않으면 위의 예시와 같은 일반형을 의미함. "SEPARATOR"로 정의할 경우에는 아래와 같은 header만이 유효한 구분용 타이틀 항목이 표시됨. |
+| listItems.header | [TextObject](./#textobject) | N | 본문 제목<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.body | [TextObject](./#textobject) | N | 본문 내용<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.footer | [TextObject](./#textobject) | N | 보조설명<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.type | string | N | list item의 type을 의미하며, 정의하지 않으면 위의 예시와 같은 일반형을 의미함.<br>"SEPARATOR"로 정의할 경우에는 아래와 같은 header만이 유효한 구분용 타이틀 항목이 표시됨. |
 | listItems.toggle | [ToggleButtonObject](./#togglebuttonobject) | N | 리스트아이템의 우측에 표시되는 토글 버튼 |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - Display.ElementSelected -  default \(eventType 값이 없는 경우 기본값\)  - Text.TextInput -  default \(eventType 값이 없는 경우 기본값\) |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - Display.ElementSelected -  default \(eventType 값이 없는 경우 기본값\)<br> - Text.TextInput -  default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
@@ -271,23 +271,23 @@ List 의 스크롤 이동 요청입니다.
 | duration | [Duration](./#duration) | N | - |
 | title | [TitleObject](./#titleobject) | Y | - |
 | background | [BackgroundObject](./#backgroundobject) | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default - false |
-| badgeNumberMode | string | N | badge 숫자를 설정하는 방법 IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\) PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\) default - IMMUTABILITY |
-| focusable | bool | N | List Template의 item들이 focus 가능한지 여부 default - true |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default - false |
+| badgeNumberMode | string | N | badge 숫자를 설정하는 방법 IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\) PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\)<br>default - IMMUTABILITY |
+| focusable | bool | N | List Template의 item들이 focus 가능한지 여부<br>default - true |
 | anchorItemToken | string | N | display 될 때 첫 번째로 보여지는 아이템의 토큰 |
 | listItems | array | Y | Scrollable |
 | listItems.token | string | Y | 클릭은 한 item 전체에서 가능 |
 | listItems.image | [ImageObject](./#imageobject) | N | - |
 | listItems.icon | [ImageObject](./#imageobject) | N | - |
-| listItems.header | [TextObject](./#textobject) | N | 본문 제목 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.body | array of [TextObject](./#textobject) | N | 본문 내용 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.footer | [TextObject](./#textobject) | N | 보조설명 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.button | [ButtonObject](./#buttonobject) | N | List 아이템의 버튼 body가 2줄인 경우에 최적화 되어 있음. |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** :  default \(eventType 값이 없는 경우 기본값\)  - **Text.TextInput** :  default \(eventType 값이 없는 경우 기본값\) |
+| listItems.header | [TextObject](./#textobject) | N | 본문 제목<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.body | array of [TextObject](./#textobject) | N | 본문 내용<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.footer | [TextObject](./#textobject) | N | 보조설명<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.button | [ButtonObject](./#buttonobject) | N | List 아이템의 버튼<br>body가 2줄인 경우에 최적화 되어 있음. |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** :  default \(eventType 값이 없는 경우 기본값\)<br> - **Text.TextInput** :  default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
-| caption | [TextObject](./#textobject) | N | 전체 리스트 아이템들에 대한 보조설명 텍스트 길이 : 최대 2줄\(단말에 따라 1줄\) |
+| caption | [TextObject](./#textobject) | N | 전체 리스트 아이템들에 대한 보조설명<br>텍스트 길이 : 최대 2줄\(단말에 따라 1줄\) |
 | grammarGuide | [GrammarGuide](./#grammarguide) | N | - |
 | supportFocusedItemToken | bool | N | Context에 있는 focusedItemToken이 지원되어야 하는지 여부 |
 | supportVisibleTokenList | bool | N | Context에 있는 visibleTokenList가 지원되어야 하는지 여부 |
@@ -348,7 +348,7 @@ List 의 스크롤 이동 요청입니다.
 | content.temperature.current | [TextObject](./#textobject) | N | 현재 온도 |
 | content.temperature.max | [TextObject](./#textobject) | N | 최고 온도 |
 | content.temperature.min | [TextObject](./#textobject) | N | 최저 온도 |
-| content.body | [TextObject](./#textobject) | N | 미세먼지, 오전, 건조주의보 등의 날씨에 대한 설명 HTML 표현 가능 |
+| content.body | [TextObject](./#textobject) | N | 미세먼지, 오전, 건조주의보 등의 날씨에 대한 설명<br>HTML 표현 가능 |
 | content.footer | [TextObject](./#textobject) | N | body 아래 표현되는 텍스트\(html 가능\) |
 | content.listItems | list | N | 시간별 날씨 정보 표현을 위한 리스트 |
 | content.listItems.header | [TextObject](./#textobject) | N | - |
@@ -623,7 +623,7 @@ List 의 스크롤 이동 요청입니다.
 | background | [BackgroundObject](./#backgroundobject) | N | - |
 | listItems | list | Y | - |
 | listItems.token | string | Y | - |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)  - **Text.TextInput** :  default \(eventType 값이 없는 경우 기본값\) |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)<br> - **Text.TextInput** :  default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
@@ -691,18 +691,18 @@ List 의 스크롤 이동 요청입니다.
 | duration | [Duration](./#duration) | N | - |
 | title | [TitleObject](./#titleobject) | Y | - |
 | background | [BackgroundObject](./#backgroundobject) | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default : false |
-| badgeNumberMode | string | N | badge 숫자를 설정하는 방법  -  IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)  - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\)  - default : IMMUTABILITY |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default : false |
+| badgeNumberMode | string | N | badge 숫자를 설정하는 방법<br> -  IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)<br> - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\)<br> - default : IMMUTABILITY |
 | listItems.token | string | Y | - |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)  - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)<br> - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
 | listItems.title | [TextObject](./#textobject) | Y | item의 제목 텍스트 |
 | listItems.subtitle | [TextObject](./#textobject) | N | category가 people, epg인 경우에만 표시됨. |
 | listItems.description | [TextObject](./#textobject) | N | category가 people인 경우에만 표시됨. |
-| listItems.image | [ImageObject](./#imageobject) | N | item의 배경 이미지 vod, epg인 경우는 필수. |
-| listItems.category | [TextObject](./#textobject) | Y | item의 종류. vod, epg, people 중 한가지 값을 가져야 함. |
+| listItems.image | [ImageObject](./#imageobject) | N | item의 배경 이미지<br>vod, epg인 경우는 필수. |
+| listItems.category | [TextObject](./#textobject) | Y | item의 종류.<br>vod, epg, people 중 한가지 값을 가져야 함. |
 | listItems.badge | [TextObject](./#textobject) | N | 아이템 우상단에 표시되는 뱃지 |
 | listItems.subBadge | [TextObject](./#textobject) | N | 아이템 좌상단에 표시되는 뱃지 |
 | listItems.subIcon | [ImageObject](./#imageobject) | N | epg category인 경우, subtitle 좌측에 표시되는 icon |
@@ -763,7 +763,7 @@ List 의 스크롤 이동 요청입니다.
 | content.footer | [TextObject](./#textobject) | Y | - |
 | content.listItems | list | N | - |
 | content.listItems.token | string | Y | - |
-| content.listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\) - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
+| content.listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)<br>- **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
@@ -825,22 +825,22 @@ List 의 스크롤 이동 요청입니다.
 | title | [TitleObject](./#titleobject) | Y | - |
 | titltIcon | [TextObject](./#textobject) | N | - |
 | background | [BackgroundObject](./#backgroundobject) | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default : false |
-| badgeNumberMode | string | N | badge 숫자를 설정하는 방법  - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)  - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\) default - IMMUTABILITY |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default : false |
+| badgeNumberMode | string | N | badge 숫자를 설정하는 방법<br> - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)<br> - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\)<br>default - IMMUTABILITY |
 | listItems | object | Y | - |
-| listItems.type | string | Y | 아이템의 타입  - **MAIN** : 현재 처리 중인 도메인의 아이템 \(ex. 비디오\)  - **TOPIC** : 다른 리스트 아임템과 동일하게 스크롤  - **SEPARATOR** : 리스트 아이템간의 구분자 \(클릭할 수 없음\)  - **ETC** : 다른 도메인에서 처리하기 위한 아이템 \(ex. 음악\) |
-| listItems.token | string | N | - **MAIN** : mandatory - **TOPIC** : optional \(포함되는 경우 해당 항목을 클릭할 수 있음\)   - token을 포함하지 않으면 클릭할 수 없고, focus도 이동하지 않으며, context의 visibleTokenList에도 포함되지 않음 - **SEPARATOR** : 포함하면 안됨 - **ETC** : mandatory |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)  - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
+| listItems.type | string | Y | 아이템의 타입<br> - **MAIN** : 현재 처리 중인 도메인의 아이템 \(ex. 비디오\)<br> - **TOPIC** : 다른 리스트 아임템과 동일하게 스크롤<br> - **SEPARATOR** : 리스트 아이템간의 구분자 \(클릭할 수 없음\)<br> - **ETC** : 다른 도메인에서 처리하기 위한 아이템 \(ex. 음악\) |
+| listItems.token | string | N | - **MAIN** : mandatory<br>- **TOPIC** : optional \(포함되는 경우 해당 항목을 클릭할 수 있음\)<br>  - token을 포함하지 않으면 클릭할 수 없고, focus도 이동하지 않으며, context의 visibleTokenList에도 포함되지 않음<br>- **SEPARATOR** : 포함하면 안됨<br>- **ETC** : mandatory |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)<br> - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | N | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
 | listItems.title | [TextObject](./#textobject) | Y | item의 제목 텍스트 |
 | listItems.subtitle | [TextObject](./#textobject) | N | category가 people, epg인 경우에만 표시됨. |
 | listItems.description | [TextObject](./#textobject) | N | category가 people인 경우에만 표시됨. |
-| listItems.image | [ImageObject](./#imageobject) | N | item의 배경 이미지 vod, epg인 경우는 필수. |
-| listItems.category | [TextObject](./#textobject) | N \(listItems.type == MAIN이면 Y\) | type이 MAIN인 경우는 꼭 포함해야 함 item의 종류. vod, epg, people 중 한가지 값을 가져야 함. |
+| listItems.image | [ImageObject](./#imageobject) | N | item의 배경 이미지<br>vod, epg인 경우는 필수. |
+| listItems.category | [TextObject](./#textobject) | N<br>\(listItems.type == MAIN이면 Y\) | type이 MAIN인 경우는 꼭 포함해야 함<br>item의 종류.<br>vod, epg, people 중 한가지 값을 가져야 함. |
 | listItems.subIcon | [ImageObject](./#imageobject) | N | epg category인 경우, subtitle 좌측에 표시되는 icon |
-| listItems.progress | long | N | epg category인 경우, image 아래에 표시되는 프로그레스바  - 0~100의 값을 가지며 %를 의미 |
+| listItems.progress | long | N | epg category인 경우, image 아래에 표시되는 프로그레스바<br> - 0~100의 값을 가지며 %를 의미 |
 | listItems.topLeft | [BadgeObject](./#badgeobject) | N | 아이템 좌상단에 표시되는 뱃지 |
 | listItems.topRight | [BadgeObject](./#badgeobject) | N | 아이템 우상단에 표시되는 뱃지 |
 | listItems.bottomLeft | [BadgeObject](./#badgeobject) | N | 아이템 좌하단에 표시되는 뱃지 |
@@ -901,13 +901,13 @@ List 의 스크롤 이동 요청입니다.
 | contextLayer | [ContextLayer](./#contextlayer) | N | - |
 | duration | [Duration](./#duration) | N | - |
 | title | [TitleObject](./#titleobject) | Y | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default : false |
-| badgeNumberMode | string | N | badge 숫자를 설정하는 방법  - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)  - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\) default - IMMUTABILITY |
-| focusable | bool | N | List Template의 item들이 focus 가능한지 여부 default - true |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default : false |
+| badgeNumberMode | string | N | badge 숫자를 설정하는 방법<br> - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)<br> - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\)<br>default - IMMUTABILITY |
+| focusable | bool | N | List Template의 item들이 focus 가능한지 여부<br>default - true |
 | anchorItemToken | string | N | display 될 때 첫 번째로 보여지는 아이템의 토큰 |
 | listItems | list | Y | - |
 | listItems.token | string | Y | - |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)  - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)<br> - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
@@ -974,9 +974,9 @@ List 의 스크롤 이동 요청입니다.
 | contextLayer | [ContextLayer](./#contextlayer) | N | - |
 | duration | [Duration](./#duration) | N | - |
 | title | [TitleObject](./#titleobject) | Y | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default : false |
-| badgeNumberMode | string | N | badge 숫자를 설정하는 방법  - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)  - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\) default - IMMUTABILITY |
-| focusable | bool | N | List Template의 item들이 focus 가능한지 여부 default : true |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default : false |
+| badgeNumberMode | string | N | badge 숫자를 설정하는 방법<br> - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)<br> - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\)<br>default - IMMUTABILITY |
+| focusable | bool | N | List Template의 item들이 focus 가능한지 여부<br>default : true |
 | anchorItemToken | string | N | display 될 때 첫 번째로 보여지는 아이템의 토큰 |
 | content.image | [ImageObject](./#imageobject) | Y | 상품 이미지 |
 | content.header | [TextObject](./#textobject) | Y | 제목 \(상품명-최대 2줄 노출\) |
@@ -985,7 +985,7 @@ List 의 스크롤 이동 요청입니다.
 | content.priceDesc | [TextObject](./#textobject) | N | 가격 정보2 |
 | content.listItems | list | Y | 옵션 정보 |
 | listItems.token | string | Y | 옵션 토큰 |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)  - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)<br> - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
@@ -1161,7 +1161,7 @@ List 의 스크롤 이동 요청입니다.
 | duration | [Duration](./#duration) | N | - |
 | title | [TitleObject](./#titleobject) | Y | - |
 | listItems.token | string | Y | - |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)  - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)<br> - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
@@ -1172,8 +1172,8 @@ List 의 스크롤 이동 요청입니다.
 | listItems.icon | [ImageObject](./#imageobject) | N | 이미지 후측하단의 아이콘 이미지 |
 | listItems.inactive | bool | N | dimmed 및 focus 이동시 무시 여부 |
 | grammarGuide | [GrammarGuide](./#grammarguide) | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default : false |
-| badgeNumberMode | string | N | badge 숫자를 설정하는 방법  - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)  - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\) default - IMMUTABILITY |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default : false |
+| badgeNumberMode | string | N | badge 숫자를 설정하는 방법<br> - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)<br> - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\)<br>default - IMMUTABILITY |
 | supportFocusedItemToken | boolean | N | Context에 있는 focusedItemToken이 지원되어야 하는지 여부 |
 | supportVisibleTokenList | boolean | N | Context에 있는 visibleTokenList가 지원되어야 하는지 여부 |
 
@@ -1284,7 +1284,7 @@ List 의 스크롤 이동 요청입니다.
 | token | string | Y | template을 식별하기 위한 unique identifier |
 | contextLayer | [ContextLayer](./#contextlayer) | N | - |
 | profileImageUrl | string | Y | 다른 사람과 통화일때 상대방의 profile image url\(Device일 경우는 Device image URL\) |
-| nameImageUrl | string | N | 상대방의 display name 우측에 표시되는 이미지URL \(T114 일경우 이미지 아이콘 URL\) |
+| nameImageUrl | string | N | 상대방의 display name 우측에 표시되는 이미지URL<br>\(T114 일경우 이미지 아이콘 URL\) |
 | name | string | Y | 상대방의 display name |
 | mdn | string | N | 상대방의 display mdn |
 | supportFocusedItemToken | boolean | N | Context에 있는 focusedItemToken이 지원되어야 하는지 여부 |
@@ -1380,29 +1380,29 @@ List 의 스크롤 이동 요청입니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | token | string | Y | template을 식별하기 위한 unique identifier |
-| subType | string | N | 클라이언트에서 자체적으로 정의한 subType을 통해 Dummy를 어떻게 디스플레이해야 할지 식별 Dummy는 다양한 형태로 디스플레이될 수 있기 때문에 정의했으며, 임의의 값을 사용할 수 있음 |
+| subType | string | N | 클라이언트에서 자체적으로 정의한 subType을 통해 Dummy를 어떻게 디스플레이해야 할지 식별<br>Dummy는 다양한 형태로 디스플레이될 수 있기 때문에 정의했으며, 임의의 값을 사용할 수 있음 |
 | contextLayer | [ContextLayer](./#contextlayer) | N | - |
 | duration | [Duration](./#duration) | N | - |
 | title | [TitleObject](./#titleobject) | N | - |
 | background | [BackgroundObject](./#backgroundobject) | N | - |
-| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\) default : false |
-| badgeNumberMode | string | N | badge 숫자를 설정하는 방법  - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)  - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\) default : IMMUTABILITY |
-| focusable | bool | N | List Template의 item들이 focus 가능한지 여부 default : true |
+| badgeNumber | bool | N | 사용자가 숫자\(순서\)를 발화하여 item을 선택하도록 badge를 표시할지 여부 \(true - 표시함, false - 표시하지 않음\)<br>default : false |
+| badgeNumberMode | string | N | badge 숫자를 설정하는 방법<br> - IMMUTABILITY\(item의 위치가 변경되어도 badge 숫자는 유지됨\)<br> - PAGE\(item의 위치가 변경되었을 때 첫 번째 보여지는 item의 badge 숫자가 1부터 시작됨\)<br>default : IMMUTABILITY |
+| focusable | bool | N | List Template의 item들이 focus 가능한지 여부<br>default : true |
 | anchorItemToken | string | N | display 될 때 첫 번째로 보여지는 아이템의 토큰 |
 | listItems | list | N | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
 | listItems.token | string | N | 클릭은 한 item 전체에서 가능 |
-| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)  - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)  - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
+| listItems.eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br> - **Display.ElementSelected** : default \(eventType 값이 없는 경우 기본값\)<br> - **Text.TextInput** : default \(eventType 값이 없는 경우 기본값\) |
 | listItems.textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | listItems.textInput.text | string | Y | 전달할 텍스트 |
 | listItems.textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
 | listItems.image | [ImageObject](./#imageobject) | N | - |
-| listItems.header | [TextObject](./#textobject) | N | 본문 제목 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.body | [TextObject](./#textobject) | N | 본문 내용 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.footer | [TextObject](./#textobject) | N | 보조설명 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
-| listItems.type | string | N | list item의 type을 의미하며, 정의하지 않으면 위의 예시와 같은 일반형을 의미함. "SEPARATOR"로 정의할 경우에는 아래와 같은 header만이 유효한 구분용 타이틀 항목이 표시됨. |
-| listItem.toggle | [ToggleButtonObject](./#togglebuttonobject) | N | 리스트아이템의 우측에 표시되는 토글 버튼 [ToggleButtonObject](./#togglebuttonobject) 참조 |
+| listItems.header | [TextObject](./#textobject) | N | 본문 제목<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.body | [TextObject](./#textobject) | N | 본문 내용<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.footer | [TextObject](./#textobject) | N | 보조설명<br>최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.type | string | N | list item의 type을 의미하며, 정의하지 않으면 위의 예시와 같은 일반형을 의미함.<br>"SEPARATOR"로 정의할 경우에는 아래와 같은 header만이 유효한 구분용 타이틀 항목이 표시됨. |
+| listItem.toggle | [ToggleButtonObject](./#togglebuttonobject) | N | 리스트아이템의 우측에 표시되는 토글 버튼<br>[ToggleButtonObject](./#togglebuttonobject) 참조 |
 | listItem.data | Object | N | 각 item 별로 추가로 필요한 데이터를 JSON 포맷으로 추가 가능 |
-| listItem.postback | Object | N | 클릭 시 전달되는 임의의 Object  - 버튼 클릭 시 동작을 위해 필요한 정보를 임의의 JSON 포맷으로 추가 가능  - 기존에 token을 이 용도로 활용하는 경우가 많았는데, token은 identifier 역할을 하도록 하기 위해 추가 |
+| listItem.postback | Object | N | 클릭 시 전달되는 임의의 Object<br> - 버튼 클릭 시 동작을 위해 필요한 정보를 임의의 JSON 포맷으로 추가 가능<br> - 기존에 token을 이 용도로 활용하는 경우가 많았는데, token은 identifier 역할을 하도록 하기 위해 추가 |
 | buttonList | list of [ButtonObject](./#buttonobject) | N | Template 하단의 선택 버튼\(ex&gt; "취소", "확인"\) |
 | grammarGuide | [GrammarGuide](./#grammarguide) | N | - |
 | supportFocusedItemToken | boolean | N | Context에 있는 focusedItemToken이 지원되어야 하는지 여부 |

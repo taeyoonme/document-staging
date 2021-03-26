@@ -8,69 +8,15 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 최신 버전은 1.6 입니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Version</th>
-      <th style="text-align:left">Date</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">1.0</td>
-      <td style="text-align:left">2019.11.13</td>
-      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.1</td>
-      <td style="text-align:left">2020.03.03</td>
-      <td style="text-align:left">lyric, favorite, repeat, shuffle, template.settings &#xAD00;&#xB828; directive/event
-        &#xCD94;&#xAC00;
-        <br />AudioPlayer.Template1 &#xC5D0; lyrics, settings, badge &#xAD00;&#xB828;
-        &#xD544;&#xB4DC; &#xCD94;&#xAC00;
-        <br />AudioPlayer.Play &#xC5D0; cacheKey &#xD544;&#xB4DC; &#xCD94;&#xAC00;
-        <br
-        />AudioPlayer.UpdateMetadata directive &#xCD94;&#xAC00;
-        <br />AudioPlayer.Template1&#xC758; content.imageUrl&#xC744; Mandatory&#xB85C;
-        &#xC218;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.2</td>
-      <td style="text-align:left">2020.03.12</td>
-      <td style="text-align:left">Request{Play/Resume/Next/Previous/Pause/Stop}Command Directive
-        <br />Request{Play/Resume/Next/Previous/Pause/Stop}CommandIssued Event &#xCD94;&#xAC00;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.3</td>
-      <td style="text-align:left">2020.06.05</td>
-      <td style="text-align:left">PlaybackStopped event &#xC5D0; reason &#xD544;&#xB4DC; &#xCD94;&#xAC00;.
-        <br
-        />RequestCommandFailed event &#xCD94;&#xAC00;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.4</td>
-      <td style="text-align:left">2020.08.12</td>
-      <td style="text-align:left">Context &#xC5D0; playServiceId &#xCD94;&#xAC00;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.5</td>
-      <td style="text-align:left">2020.12.09</td>
-      <td style="text-align:left">PlaybackStopped event &#xC758; reason &#xD544;&#xB4DC; &#xAC12;&#xC5D0;
-        &#xB300;&#xD55C; &#xC870;&#xAC74; &#xC218;&#xC815;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">1.6</td>
-      <td style="text-align:left">2021.03.05</td>
-      <td style="text-align:left">
-        <p>AudioPlayer.Template1 &#xC758; lyrics &#xC5D0; showButton &#xD544;&#xB4DC;
-          &#xCD94;&#xAC00;</p>
-        <p>AudioPlayer.Template2 &#xC5D0; lyrics &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-        <p>AudioPlayer.Template2 &#xC5D0; subtitle1 &#xD544;&#xB4DC; &#xCD94;&#xAC00;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Version | Date | Description |
+| :--- | :--- | :--- |
+| 1.0 | 2019.11.13 | 규격 추가 |
+| 1.1 | 2020.03.03 | lyric, favorite, repeat, shuffle, template.settings 관련 directive/event 추가<br>AudioPlayer.Template1 에 lyrics, settings, badge 관련 필드 추가<br>AudioPlayer.Play 에 cacheKey 필드 추가<br>AudioPlayer.UpdateMetadata directive 추가<br>AudioPlayer.Template1의 content.imageUrl을 Mandatory로 수정 |
+| 1.2 | 2020.03.12 | Request{Play/Resume/Next/Previous/Pause/Stop}Command Directive<br>Request{Play/Resume/Next/Previous/Pause/Stop}CommandIssued Event 추가. |
+| 1.3 | 2020.06.05 | PlaybackStopped event 에 reason 필드 추가.<br>RequestCommandFailed event 추가. |
+| 1.4 | 2020.08.12 | Context 에 playServiceId 추가 |
+| 1.5 | 2020.12.09 | PlaybackStopped event 의 reason 필드 값에 대한 조건 수정 |
+| 1.6 | 2021.03.05 | AudioPlayer.Template1 의 lyrics 에 showButton 필드 추가<br>AudioPlayer.Template2 에 lyrics 필드 추가<br>AudioPlayer.Template2 에 subtitle1 필드 추가 |
 
 ## State Diagram
 
@@ -378,17 +324,17 @@ audio_player_handler->requestShuffleCommand(false)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| sourceType | string | N | URL or ATTACHMENT\(default 는 URL\)  - ATTACHMENT 일 경우 stream에 url이 존재 하지 않음 |
-| cacheKey | string | N | 디바이스에서 미디어 캐시를 위한 unique key\(디바이스 캐시 기능은 필수가 아님\) 캐시가 불가능한 미디어 이면 디바이스로 내려주지 않음 |
+| sourceType | string | N | URL or ATTACHMENT\(default 는 URL\)<br> - ATTACHMENT 일 경우 stream에 url이 존재 하지 않음 |
+| cacheKey | string | N | 디바이스에서 미디어 캐시를 위한 unique key\(디바이스 캐시 기능은 필수가 아님\)<br>캐시가 불가능한 미디어 이면 디바이스로 내려주지 않음 |
 | audioItem.stream | object | Y | - |
-| audioItem.stream.url | string | N | 오디오 컨텐츠의 URL \(URL에 의한 streaming만 지원\) sourceType 이 ATTACHMENT일 경우 없음 |
-| audioItem.stream. offsetInMilliseconds | long | Y | 시작부터 얼마만큼의 offset부터 재생할지 설정. 0이면 처음부터 재생 |
-| audioItem.stream. progressReport. progressReportDelayInMilliseconds | long | N | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed Event가 발생 \(offsetInMilliseconds 값과는 무관하게 컨텐츠 시작 시간 기준으로 절대값을 의미\) |
-| audioItem.stream. progressReport. progressReportIntervalInMilliseconds | long | N | 재생을 시작해서 지정된 주기마다 progressReportIntervalElapsed Event가 발생 \(offsetInMilliseconds 값과는 무관하게 컨텐츠 시작 시간 기준으로 절대값을 의미\) |
-| audioItem.stream.token | string | Y | 현재 stream을 나타내는 token Resume 을 판단하기 위한 key 값으로 사용되기 때문에, Play 에서 제공하는 미디어 내에서 unique 함이 보장되어야 함. |
-| audioItem.stream. expectedPreviousToken | string | N | 이전 stream을 나타내는 token |
+| audioItem.stream.url | string | N | 오디오 컨텐츠의 URL \(URL에 의한 streaming만 지원\)<br>sourceType 이 ATTACHMENT일 경우 없음 |
+| audioItem.stream.<br>offsetInMilliseconds | long | Y | 시작부터 얼마만큼의 offset부터 재생할지 설정. 0이면 처음부터 재생 |
+| audioItem.stream.<br>progressReport.<br>progressReportDelayInMilliseconds | long | N | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed Event가 발생<br>\(offsetInMilliseconds 값과는 무관하게 컨텐츠 시작 시간 기준으로 절대값을 의미\) |
+| audioItem.stream.<br>progressReport.<br>progressReportIntervalInMilliseconds | long | N | 재생을 시작해서 지정된 주기마다 progressReportIntervalElapsed Event가 발생<br>\(offsetInMilliseconds 값과는 무관하게 컨텐츠 시작 시간 기준으로 절대값을 의미\) |
+| audioItem.stream.token | string | Y | 현재 stream을 나타내는 token<br>Resume 을 판단하기 위한 key 값으로 사용되기 때문에, Play 에서 제공하는 미디어 내에서 unique 함이 보장되어야 함. |
+| audioItem.stream.<br>expectedPreviousToken | string | N | 이전 stream을 나타내는 token |
 | audioItem.metadata | object | N | - |
-| audioItem.metadata.template | object | N | 각 type별 포맷은 아래에 기술 template이 정의되지 않은 경우 Display를 포함하는 디바이스는 Default 화면을 보여주어야 함 |
+| audioItem.metadata.template | object | N | 각 type별 포맷은 아래에 기술<br>template이 정의되지 않은 경우 Display를 포함하는 디바이스는 Default 화면을 보여주어야 함 |
 
 #### audioItem.metadata.template - AudioPlayer.Template1
 
@@ -437,264 +383,34 @@ audio_player_handler->requestShuffleCommand(false)
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">disableTemplate</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">true&#xBA74; &#xC2A4;&#xD06C;&#xB9B0;&#xC744; &#xAC00;&#xC9C4; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;
-        AudioPlayer &#xC7AC;&#xC0DD; &#xC2DC; template&#xC744; display&#xD558;&#xC9C0;
-        &#xC54A;&#xC74C;
-        <br />default - false</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">AudioPlayer template type
-        <br />- AudioPlayer.Template1
-        <br />- AudioPlayer.Template2</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />title.
-        <br />iconUrl</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">icon image url</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />title.
-        <br />text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">title text</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />title</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">content &#xC601;&#xC5ED;&#xC758; title</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.
-          <br />content.</p>
-        <p>subtitle1</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">subtitle1</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />subtitle2</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">subtitle2</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />imageUrl</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">image url</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />durationSec</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">content duration in sec
-        <br /><b>&#xC5C6;&#xAC70;&#xB098; 0, &#xC74C;&#xC218;, null&#xC774;&#xBA74; progress&#xB97C; disabled &#xCC98;&#xB9AC;</b>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />backgroundImageUrl</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">background image url</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />backgroundColor</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">background color
-        <br />default - &quot;#000&quot;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />badgeImageUrl</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC774;&#xBBF8;&#xC9C0;(content.imageUrl)&#xC758; &#xC624;&#xB978;&#xCABD;
-        &#xC0C1;&#xB2E8;&#xC5D0; &#xD45C;&#xC2DC;&#xB420; Badge Image&#xC758; URL</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />badgeMessage</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC774;&#xBBF8;&#xC9C0;(content.imageUrl)&#xC758; &#xC67C;&#xCABD; &#xD558;&#xB2E8;&#xC5D0;
-        &#xD45C;&#xC2DC;&#xB420; Badge Message</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics</td>
-      <td style="text-align:left">obejct</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC; &#xD654;&#xBA74;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics.title</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC; &#xD654;&#xBA74;&#xC5D0;&#xC11C; &#xBCF4;&#xC5EC;&#xC9C8;
-        &#xC81C;&#xBAA9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.
-          <br />content.
-          <br />lyrics.</p>
-        <p>lyricsType</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC;&#xC758; &#xC885;&#xB958;
-        <br />- <b>NONE</b> : &#xC790;&#xB9C9; &#xC5C6;&#xC74C;
-        <br />- <b>SYNC</b> : &#xC790;&#xB9C9; &#xB3D9;&#xAE30;&#xD654;
-        <br />- <b>NON_SYNC</b> : &#xC790;&#xB9C9; &#xB3D9;&#xAE30;&#xD654; &#xC5C6;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics.
-        <br />lyricsInfoList</td>
-      <td style="text-align:left">array of lyricsInfo</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC; &#xB0B4;&#xC6A9;(lyricsInfo)&#xC758; &#xBAA9;&#xB85D;
-        <br
-        />&#xAE30;&#xBCF8; &#xAC12;&#xC740; &#xBE48; &#xBC30;&#xC5F4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics.
-        <br />lyricsInfoList.
-        <br />time</td>
-      <td style="text-align:left">integer</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">lyricsTyps &#xC774; SYNC &#xC774;&#xBA74; mandatory
-        <br />lyricsInfo&#xAC00; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC2DC;&#xC810;&#xC758;
-        millisecond &#xB2E8;&#xC704;&#xC758; &#xC2DC;&#xAC04; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics.
-        <br />lyricsInfoList.
-        <br />text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">lyricsInfo&#xAC00; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC2DC;&#xC810;&#xC758;
-        &#xAC00;&#xC0AC; &#xB0B4;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.
-        <br />lyrics.
-        <br />showButton</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC; &#xD654;&#xBA74;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; &#xBC84;&#xD2BC;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.
-        <br />lyrics.
-        <br />showButton.
-        <br />text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC84;&#xD2BC; text</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />settings</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790;&#xAC00; &#xC124;&#xC815;&#xD55C; &#xC815;&#xBCF4;&#xB97C;
-        &#xD45C;&#xC2DC;&#xD568; - Play&#xC5D0;&#xC11C;&#xB294; &#xD45C;&#xC2DC;&#xD560;
-        &#xD558;&#xC704; field&#xB97C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC74C;
-        - &#xC124;&#xC815;&#xD55C; field&#xC5D0; &#xB300;&#xD55C; Event&#xC640;
-        Directive&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />settings.
-        <br />favorite</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC7AC;&#xC0DD; &#xC911;&#xC778; &#xC74C;&#xC6D0;&#xC5D0; &#xB300;&#xD55C;
-        &#xC88B;&#xC544;&#xC694; &#xC5EC;&#xBD80;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />settings.
-        <br />repeat</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC7AC;&#xC0DD; &#xBAA9;&#xB85D;&#xC5D0; &#xB300;&#xD55C; &#xBC18;&#xBCF5;
-        &#xC124;&#xC815; - <b>ALL</b> : &#xC804;&#xACE1; &#xBC18;&#xBCF5; - <b>ONE</b> :
-        &#xD55C;&#xACE1; &#xBC18;&#xBCF5; - <b>NONE</b> : &#xBC18;&#xBCF5; &#xC5C6;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />settings.
-        <br />shuffle</td>
-      <td style="text-align:left">boolean</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xC7AC;&#xC0DD; &#xBAA9;&#xB85D;&#xC758; &#xC74C;&#xC6D0;&#xC744; &#xC784;&#xC758;&#xC758;
-        &#xC21C;&#xC11C;&#xB85C; &#xC7AC;&#xC0DD;&#xD560;&#xC9C0; &#xC5EC;&#xBD80;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />grammarGuide</td>
-      <td style="text-align:left">list of string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBC1C;&#xD654; &#xB3C4;&#xC6C0;&#xB9D0;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| disableTemplate | bool | N | true면 스크린을 가진 디바이스에서 AudioPlayer 재생 시 template을 display하지 않음<br>default - false |
+| template.type | string | Y | AudioPlayer template type<br> - AudioPlayer.Template1<br> - AudioPlayer.Template2 |
+| template.<br>title.<br>iconUrl | string | N | icon image url |
+| template.<br>title.<br>text | string | Y | title text |
+| template.<br>content.<br>title | string | Y | content 영역의 title |
+| template.<br>content.<br>subtitle1 | string | Y | subtitle1 |
+| template.<br>content.<br>subtitle2 | string | N | subtitle2 |
+| template.<br>content.<br>imageUrl | string | Y | image url |
+| template.<br>content.<br>durationSec | string | N | content duration in sec<br>**없거나 0, 음수, null이면 progress를 disabled 처리** |
+| template.<br>content.<br>backgroundImageUrl | string | N | background image url |
+| template.<br>content.<br>backgroundColor | string | N | background color<br>default - "\#000" |
+| template.<br>content.<br>badgeImageUrl | string | N | 이미지\(content.imageUrl\)의 오른쪽 상단에 표시될 Badge Image의 URL |
+| template.<br>content.<br>badgeMessage | string | N | 이미지\(content.imageUrl\)의 왼쪽 하단에 표시될 Badge Message |
+| template.<br>content.<br>lyrics | obejct | N | 가사 화면을 표시하기 위한 정보 |
+| template.<br>content.<br>lyrics.title | string | Y | 가사 화면에서 보여질 제목 |
+| template.<br>content.<br>lyrics.lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br>- **SYNC** : 자막 동기화<br>- **NON\_SYNC** : 자막 동기화 없음 |
+| template.<br>content.<br>lyrics.lyricsInfoList | array of lyricsInfo | Y | 가사 내용\(lyricsInfo\)의 목록<br>기본 값은 빈 배열 |
+| template.<br>content.<br>lyrics.lyricsInfoList.<br>time | integer | N | lyricsTyps 이 SYNC 이면 mandatory<br>lyricsInfo가 보여지는 시점의 millisecond 단위의 시간 정보 |
+| template.<br>content.<br>lyrics.lyricsInfoList.<br>text | string | Y | lyricsInfo가 보여지는 시점의 가사 내용 |
+| content.<br>lyrics.<br>showButton | object | N | 가사 화면을 표시하기 위한 버튼 |
+| content.<br>lyrics.<br>showButton.<br>text | string | Y | 버튼 text |
+| template.<br>content.<br>>settings | object | N | 사용자가 설정한 정보를 표시함  - Play에서는 표시할 하위 field를 설정할 수 있음  - 설정한 field에 대한 Event와 Directive를 사용할 수 있음 |
+| template.<br>content.<br>settings.favorite | boolean | N | 재생 중인 음원에 대한 좋아요 여부 |
+| template.<br>content.<br>settings.repeat | string | N | 재생 목록에 대한 반복 설정  - **ALL** : 전곡 반복  - **ONE** : 한곡 반복  - **NONE** : 반복 없음 |
+| template.<br>content.<br>settings.shuffle | boolean | N | 재생 목록의 음원을 임의의 순서로 재생할지 여부 |
+| template.<br>grammarGuide | list of string | N | 발화 도움말 |
 
 #### audioItem.metadata.template - AudioPlayer.Template2
 
@@ -732,215 +448,27 @@ audio_player_handler->requestShuffleCommand(false)
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">disableTemplate</td>
-      <td style="text-align:left">bool</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">true&#xBA74; &#xC2A4;&#xD06C;&#xB9B0;&#xC744; &#xAC00;&#xC9C4; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xC5D0;&#xC11C;
-        AudioPlayer &#xC7AC;&#xC0DD; &#xC2DC; template&#xC744; display&#xD558;&#xC9C0;
-        &#xC54A;&#xC74C;
-        <br />default : false</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>type</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">AudioPlayer template type
-        <br />- AudioPlayer.Template1
-        <br />- AudioPlayer.Template2</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>title.</p>
-        <p>iconUrl</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">icon image url</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>title.</p>
-        <p>text</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">title text</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>content.
-          <br />title</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">content &#xC601;&#xC5ED;&#xC758; title</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>content.
-          <br />subtitle</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">subtitle</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.
-          <br />content.</p>
-        <p>subtitle1</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">lyrics&#xAC00; &#xC788;&#xB294; &#xACBD;&#xC6B0;, &#xAC00;&#xC0AC;&#xD654;&#xBA74;
-        &#xC81C;&#xBAA9; &#xC6B0;&#xCE21;&#xC758; &#xC18C;&#xC81C;&#xBAA9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>content.
-          <br />imageUrl</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">background image url</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>content.
-          <br />durationSec</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">content duration in sec
-        <br />&#xC5C6;&#xAC70;&#xB098; 0, &#xC74C;&#xC218;, null&#xC774;&#xBA74; progress&#xB97C;
-        &#xD654;&#xBA74;&#xC5D0;&#xC11C; disabled &#xCC98;&#xB9AC;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>content.
-          <br />backgroundColor</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">background color
-        <br />default : &quot;#000&quot;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics</td>
-      <td style="text-align:left">obejct</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC; &#xD654;&#xBA74;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics.title</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC; &#xD654;&#xBA74;&#xC5D0;&#xC11C; &#xBCF4;&#xC5EC;&#xC9C8;
-        &#xC81C;&#xBAA9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.
-          <br />content.
-          <br />lyrics.</p>
-        <p>lyricsType</p>
-      </td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC;&#xC758; &#xC885;&#xB958;
-        <br />- <b>NONE</b> : &#xC790;&#xB9C9; &#xC5C6;&#xC74C;
-        <br />- <b>SYNC</b> : &#xC790;&#xB9C9; &#xB3D9;&#xAE30;&#xD654;
-        <br />- <b>NON_SYNC</b> : &#xC790;&#xB9C9; &#xB3D9;&#xAE30;&#xD654; &#xC5C6;&#xC74C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics.
-        <br />lyricsInfoList</td>
-      <td style="text-align:left">array of lyricsInfo</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC; &#xB0B4;&#xC6A9;(lyricsInfo)&#xC758; &#xBAA9;&#xB85D;
-        <br
-        />&#xAE30;&#xBCF8; &#xAC12;&#xC740; &#xBE48; &#xBC30;&#xC5F4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics.
-        <br />lyricsInfoList.
-        <br />time</td>
-      <td style="text-align:left">integer</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">lyricsTyps &#xC774; SYNC &#xC774;&#xBA74; mandatory
-        <br />lyricsInfo&#xAC00; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC2DC;&#xC810;&#xC758;
-        millisecond &#xB2E8;&#xC704;&#xC758; &#xC2DC;&#xAC04; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">template.
-        <br />content.
-        <br />lyrics.
-        <br />lyricsInfoList.
-        <br />text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">lyricsInfo&#xAC00; &#xBCF4;&#xC5EC;&#xC9C0;&#xB294; &#xC2DC;&#xC810;&#xC758;
-        &#xAC00;&#xC0AC; &#xB0B4;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.
-        <br />lyrics.
-        <br />showButton</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xAC00;&#xC0AC; &#xD654;&#xBA74;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xAE30;
-        &#xC704;&#xD55C; &#xBC84;&#xD2BC;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">content.
-        <br />lyrics.
-        <br />showButton.
-        <br />text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC84;&#xD2BC; text</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p>template.</p>
-        <p>grammarGuide</p>
-      </td>
-      <td style="text-align:left">list of string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">&#xBC1C;&#xD654; &#xB3C4;&#xC6C0;&#xB9D0;</td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| disableTemplate | bool | N | true면 스크린을 가진 디바이스에서 AudioPlayer 재생 시 template을 display하지 않음<br>default : false |
+| template.<br>type | string | Y | AudioPlayer template type<br> - AudioPlayer.Template1<br> - AudioPlayer.Template2 |
+| template.<br>title.<br>iconUrl | string | N | icon image url |
+| template.<br>title.<br>text | string | Y | title text |
+| template.<br>content.<br>title | string | Y | content 영역의 title |
+| template.<br>content.<br>subtitle | string | Y | subtitle |
+| template.<br>content.<br>subtitle1 | string | Y | lyrics가 있는 경우, 가사화면 제목 우측의 소제목 |
+| template.<br>content.<br>imageUrl | string | N | background image url |
+| template.<br>content.<br>durationSec | string | N | content duration in sec<br>없거나 0, 음수, null이면 progress를 화면에서 disabled 처리 |
+| template.<br>content.<br>backgroundColor | string | N | background color<br>default : "#000" |
+| template.<br>content.<br>lyrics | obejct | N | 가사 화면을 표시하기 위한 정보 |
+| template.<br>content.<br>lyrics.<br>title | string | Y | 가사 화면에서 보여질 제목 |
+| template.<br>content.<br>lyrics.<br>lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br> - **SYNC** : 자막 동기화<br> - **NON_SYNC** : 자막 동기화 없음 |
+| template.<br>content.<br>lyrics.<br>lyricsInfoList | array of lyricsInfo | Y | 가사 내용(lyricsInfo)의 목록<br>기본 값은 빈 배열 |
+| template.<br>content.<br>lyrics.<br>lyricsInfoList.<br>time | integer | N | lyricsTyps 이 SYNC 이면 mandatory<br>lyricsInfo가 보여지는 시점의 millisecond 단위의  시간 정보 |
+| template.<br>content.<br>lyrics.<br>lyricsInfoList.<br>text | string | Y | lyricsInfo가 보여지는 시점의 가사 내용 |
+| content.<br>lyrics.<br>showButton | object | N | 가사 화면을 표시하기 위한 버튼 |
+| content.<br>lyrics.<br>showButton.<br>text | string | Y | 버튼 text |
+| template.<br>grammarGuide | list of string | N | 발화 도움말 |
 
 ### Stop
 
@@ -1012,9 +540,9 @@ audio_player_handler->requestShuffleCommand(false)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| metadata.template. content.settings.favorite | boolean | N | AudioPlayer.Template1의 settings.favorite 와 연동 |
-| metadata.template. content.settings.repeat | string | N | AudioPlayer.Template1의 settings.repeat 과 연동  - **ALL** : 전곡 반복  - **ONE** : 한곡 반복  - **NONE** : 반복 없음 |
-| metadata.template. content.settings.shuffle | boolean | N | AudioPlayer.Template1의 settings.shuffle 과 연동 |
+| metadata.template.<br>content.settings.favorite | boolean | N | AudioPlayer.Template1의 settings.favorite 와 연동 |
+| metadata.template.<br>content.settings.repeat | string | N | AudioPlayer.Template1의 settings.repeat 과 연동<br> - **ALL** : 전곡 반복<br> - **ONE** : 한곡 반복<br> - **NONE** : 반복 없음 |
+| metadata.template.<br>content.settings.shuffle | boolean | N | AudioPlayer.Template1의 settings.shuffle 과 연동 |
 
 ### ShowLyrics
 
@@ -1306,7 +834,7 @@ audio_player_handler->requestShuffleCommand(false)
 | :--- | :--- | :--- | :--- |
 | token | string | Y | 현재 재생 중인 stream의 token |
 | offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
-| reason | string | N | 이 이벤트가 만들어진 이유를 명시하기 위한 객체 **STOP**, **PLAY\_ANOTHER** 중 하나.  - **PLAY\_ANOTHER** : 동일 play 내에서 다른 곡 재생을 위해 이전에 재생하던 곡을 정지했을 때 올려주는 값.  - **STOP** : 그 외 정지의 경우. |
+| reason | string | N | 이 이벤트가 만들어진 이유를 명시하기 위한 객체<br>**STOP**, **PLAY_ANOTHER** 중 하나.<br> - **PLAY_ANOTHER** : 동일 play 내에서 다른 곡 재생을 위해 이전에 재생하던 곡을 정지했을 때 올려주는 값.<br> - **STOP** : 그 외 정지의 경우. |
 
 ### PlaybackFailed
 
@@ -1340,11 +868,11 @@ audio_player_handler->requestShuffleCommand(false)
 | :--- | :--- | :--- | :--- |
 | token | string | Y | 재생에 실패한 stream의 token |
 | offsetInMilliseconds | long | Y | PlaybackFailed를 보낼 때 재생 중인 stream의 offset 값 |
-| error.type | string | Y | **MEDIA\_ERROR\_UNKNOWN** **MEDIA\_ERROR\_INVALID\_REQUEST** **MEDIA\_ERROR\_SERVICE\_UNAVAILABLE** **MEDIA\_ERROR\_INTERNAL\_SERVER\_ERROR** **MEDIA\_ERROR\_INTERNAL\_DEVICE\_ERROR** |
+| error.type | string | Y | **MEDIA_ERROR_UNKNOWN**<br>**MEDIA_ERROR_INVALID_REQUEST**<br>**MEDIA_ERROR_SERVICE_UNAVAILABLE**<br>**MEDIA_ERROR_INTERNAL_SERVER_ERROR**<br>**MEDIA_ERROR_INTERNAL_DEVICE_ERROR** |
 | error.message | string | Y | 에러에 대해 자세히 기술 |
 | currentPlaybackState.token | string | Y | 현재 재생 중인 stream의 token으로 위에 있는 token과 다를 수 있음 |
-| currentPlaybackState. offsetInMilliseconds | long | Y | 에러가 발생했을 때 현재 재생 중인 stream의 offset 값 |
-| currentPlaybackState. playActivity | string | Y | player의 상태 **PLAYING**, **PAUSED**, **FINISHED**, **IDLE** |
+| currentPlaybackState.<br>offsetInMilliseconds | long | Y | 에러가 발생했을 때 현재 재생 중인 stream의 offset 값 |
+| currentPlaybackState.<br>playActivity | string | Y | player의 상태<br>**PLAYING**, **PAUSED**, **FINISHED**, **IDLE** |
 
 ### ProgressReportDelayElapsed
 
@@ -1498,7 +1026,7 @@ audio_player_handler->requestShuffleCommand(false)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| repeat | boolean | Y | 재생 목록에 대한 반복 설정  - **ALL** : 전곡 반복  - **ONE** : 한곡 반복  - **NONE** : 반복 없음 |
+| repeat | boolean | Y | 재생 목록에 대한 반복 설정<br> - **ALL** : 전곡 반복<br> - **ONE** : 한곡 반복<br> - **NONE** : 반복 없음 |
 
 ### ShuffleCommandIssued
 
@@ -1819,6 +1347,6 @@ audio_player_handler->requestShuffleCommand(false)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| error.type | string | Y | **에러 타입 코드**  - **INVALID\_COMMAND** : **IDLE/STOP** 상태일때 Request Pause/Resume/Next/Previous/Stop Command Directive 수신한 경우 \(**STOP/IDLE 일때 RequestPlayCommand 는 정상요청이므로 제외에 유의**\)  - **UNKNOWN\_ERROR** : 그 이외에 처리중 에러난 경우 |
+| error.type | string | Y | **에러 타입 코드**<br> - **INVALID_COMMAND** : **IDLE/STOP** 상태일때 Request Pause/Resume/Next/Previous/Stop Command Directive 수신한 경우 (**STOP/IDLE 일때 RequestPlayCommand 는 정상요청이므로 제외에 유의**)<br> - **UNKNOWN_ERROR** : 그 이외에 처리중 에러난 경우 |
 | error.message | string | Y | STOP/IDLE 상태에서는 Request XXX Command 를 처리할 수 없음. |
 

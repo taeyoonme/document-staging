@@ -11,7 +11,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 | Version | Date | Description |
 | :--- | :--- | :--- |
 | 1.0 | 2019.11.24 | 규격 추가 |
-| 1.1 | 2020.04.29 | Recognize directive 에 wakeup, timeout 필드 추가 Recognize directive, ExpechSpeech event 에 asrContext 필 추가 |
+| 1.1 | 2020.04.29 | Recognize directive 에 wakeup, timeout 필드 추가<br>Recognize directive, ExpechSpeech event 에 asrContext 필 추가 |
 | 1.2 | 2020.06.05 | Recognize directive, ExpectSpeech event 의 asrContext 에 playServiceId 필드 추가 |
 | 1.3 | 2020.06.09 | Recognize directive, ExpectSpeech event 의 sessionId 필드 삭제 |
 | 1.4 | 2020.11.18 | ExpectSpeech directive 에 epd 필드 추가 |
@@ -269,60 +269,11 @@ asr_handler->stopRecognition()
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">engine</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">Device &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC74C;&#xC131;&#xC778;&#xC2DD;
-        engine &#xC744; &#xBA85;&#xC2DC; NUGU &#xC74C;&#xC131;&#xC778;&#xC2DD;
-        engine &#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0; &quot;skt&quot;
-        <br
-        />(&#xAC12;&#xC744; &#xCC44;&#xC6B0;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; default
-        &quot;skt&quot;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">state</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>IDLE, EXPECTING_SPEECH, LISTENING, RECOGNIZING, BUSY</p>
-        <p><a href="asr.md#state-diagram">State Diagram</a> &#xCC38;&#xACE0;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">initiator</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p><b>WAKE_UP_WORD, PRESS_AND_HOLD, TAP, EXPECT_SPEECH, EARSET</b>
-        </p>
-        <p>&#xB9C8;&#xC774;&#xD06C; &#xC624;&#xD508;&#xC774; &#xC5B4;&#xB5BB;&#xAC8C;
-          &#xD2B8;&#xB9AC;&#xAC70;&#xB418;&#xC5C8;&#xB294;&#xC9C0;</p>
-        <ul>
-          <li><b>WAKE_UP_WORD</b> - &#xC0AC;&#xC6A9;&#xC790; &#xBC1C;&#xD654;&#xB85C;
-            Wakeup</li>
-          <li><b>PRESS_AND_HOLD</b>- PTT &#xBC29;&#xC2DD;&#xC73C;&#xB85C; Wakeup</li>
-          <li><b>TAP</b> - NUGU &#xBC84;&#xD2BC; &#xB4F1;&#xC5D0; &#xC758;&#xD574;&#xC11C;
-            Wakeup</li>
-          <li><b>EXPECT_SPEECH</b> - ASR.ExpectSpeech</li>
-          <li><b>EARSET</b> - &#xC774;&#xC5B4;&#xC14B; VoiceCommand &#xB4F1;&#xC744;
-            &#xD1B5;&#xD574; Wakeup</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| engine | string | N | Device 에서 사용하는 음성인식 engine 을 명시 NUGU 음성인식 engine 을 사용하는 경우 "skt"<br>\(값을 채우지 않으면 default "skt"\) |
+| state | string | Y | IDLE, EXPECTING_SPEECH, LISTENING, RECOGNIZING, BUSY<br><a href="asr.md#state-diagram">State Diagram</a> 참고 |
+| initiator | string | N | **WAKE_UP_WORD, PRESS_AND_HOLD, TAP, EXPECT_SPEECH, EARSET**<br>마이크 오픈이 어떻게 트리거되었는지<br>* **WAKE_UP_WORD** - 사용자 발화로 Wakeup<br>* **PRESS_AND_HOLD** - PTT 방식으로 Wakeup<br>* **TAP** - NUGU 버튼 등에 의해서 Wakeup<br>* **EXPECT_SPEECH** - ASR.ExpectSpeech<br>* **EARSET** - 이어셋 VoiceCommand 등을 통해 Wakeup |
 ## Directives
 
 ### ExpectSpeech
@@ -358,16 +309,16 @@ asr_handler->stopRecognition()
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| playServiceId | string | N | **Y** : 회신받아야 하는 경우 **N** : 마이크만 열고 싶은경우 default : N |
-| property | string | N | **NORMAL** : 일반 발화를 입력으로 받음 **DICTATION** : dictation 서버로 라우팅하여 처리 필드가 없는 경우 default 값은 NORMAL |
+| playServiceId | string | N | **Y** : 회신받아야 하는 경우<br>**N** : 마이크만 열고 싶은경우<br>default : N |
+| property | string | N | **NORMAL** : 일반 발화를 입력으로 받음<br>**DICTATION** : dictation 서버로 라우팅하여 처리<br>필드가 없는 경우 default 값은 NORMAL |
 | domainTypes | array of string | N | ExpectSpeech 의한 발화시에 NLU에서 사용할 domainType 셋팅 정보 |
 | asrContext | object | N | - |
 | asrContext.task | string | N | - |
 | asrContext.sceneId | string | N | - |
 | asrContext.sceneText | array of string | N | - |
 | asrContext.playServiceId | string | N | - |
-| epd | object | N | End Point Detection 관련 정보 없으면 device의 default 값을 사용 하위의 3개 파라미터도 optional이기 때문에 존재하는 파라미터만 업데이트하고, 없는 파라미터는 device의 default 값을 사용 |
-| epd.timeoutMilliseconds | long | N | Wake up 후 종료까지 대기 시간 \(단위: msec\) **이 값은 위의 timeoutInMilliseconds와는 다른 epd 전용값** |
+| epd | object | N | End Point Detection 관련 정보<br>없으면 device의 default 값을 사용 하위의 3개 파라미터도 optional이기 때문에 존재하는 파라미터만 업데이트하고, 없는 파라미터는 device의 default 값을 사용 |
+| epd.timeoutMilliseconds | long | N | Wake up 후 종료까지 대기 시간 \(단위: msec\)<br>**이 값은 위의 timeoutInMilliseconds와는 다른 epd 전용값** |
 | epd.silenceIntervalInMilliseconds | long | N | end point detection 전에 기다리는 묵음 구간 \(단위: msec\) |
 | epd.maxSpeechDurationMilliseconds | long | N | 사용자 발화 최대 녹음 시간 \(단위: msec\) |
 
@@ -396,7 +347,7 @@ asr_handler->stopRecognition()
 | :--- | :--- | :--- | :--- |
 | token | string | N | Recognize Event에서 사용한 token 값 \(어떤 발화에 대한 분석 결과인지 식별하기 위한 용도\) |
 | result | string | N | 인식 결과를 전송 |
-| state | string | Y | **PARTIAL** : 사용자 발화의 일부분 **COMPLETE** : 사용자 발화의 전체 문장 **NONE** : 음성 인식 결과 없음 **ERROR** : Error 발생 **SOS** : SOS\(Start of Speech\) **EOS** : EOS\(End of Speech\) **FA** : Wakeup False Acceptance |
+| state | string | Y | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장<br>**NONE** : 음성 인식 결과 없음<br>**ERROR** : Error 발생<br>**SOS** : SOS(Start of Speech)<br>**EOS** : EOS(End of Speech)<br>**FA** : Wakeup False Acceptance |
 
 ### CancelRecognize
 
@@ -474,16 +425,16 @@ asr_handler->stopRecognition()
 | playServiceId | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용 |
 | property | string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 property를 적용 |
 | domainTypes | array of string | N | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 domainTypes를 적용 |
-| language | string | N | **KOR**, **ENG**, **JPN**, **CHN**, ... default 값은 KOR |
-| endpointing | string | Y | **CLIENT** : 클라이언트 EPD\(EndPointDetector\) 사용 **SERVER** : 서버 EPD 사용 |
-| encoding | string | N | **PARTIAL** : 사용자 발화의 일부분 **COMPLETE** : 사용자 발화의 전체 문장 \(default\) |
-| wakeup | object | N | 서버 EPD 사용시 필수 값. wakeup을 포함해서 서버에 전달하는 경우 포함 wakeup 정보를 전달하는 경우 포함 \(전달하는 pcm에 wakeup이 포함되지 않더라도 필요한 경우 전달\) |
+| language | string | N | **KOR**, **ENG**, **JPN**, **CHN**, ...<br>default 값은 KOR |
+| endpointing | string | Y | **CLIENT** : 클라이언트 EPD\(EndPointDetector\) 사용<br>**SERVER** : 서버 EPD 사용 |
+| encoding | string | N | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장 \(default\) |
+| wakeup | object | N | 서버 EPD 사용시 필수 값.<br>wakeup을 포함해서 서버에 전달하는 경우 포함<br>wakeup 정보를 전달하는 경우 포함 \(전달하는 pcm에 wakeup이 포함되지 않더라도 필요한 경우 전달\) |
 | wakeup.word | string | Y | 전송하는 stream에 포함된 wakeup word\( ex "아리아"\) |
 | wakeup.boundary | object | N | 전송하는 stream에서 wakeup word에 대한 boundary 정보 |
-| wakeup.boundary. start | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함. sample count for start time |
-| wakeup.boundary. end | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함. sample count for end time |
-| wakeup.boundary. detection | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함. sample count for detection time |
-| wakeup.boundary. metric | string | N | **sample\(default\)** / **byte** / **frame** / **time** 현재 sample 만 지원되며, 추후 byte / frame / time 속성 지원 예정 |
+| wakeup.boundary.<br>start | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for start time |
+| wakeup.boundary.<br>end | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for end time |
+| wakeup.boundary.<br>detection | long | Y | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br>sample count for detection time |
+| wakeup.boundary.<br>metric | string | N | **sample\(default\)** / **byte** / **frame** / **time**<br>현재 sample 만 지원되며, 추후 byte / frame / time 속성 지원 예정 |
 | wakeup.power | object | N | 전송하는 stream에 포함된 wakeup pcm의 power값 |
 | wakeup.power.noise | float | Y | wakeup pcm의 power중 noise를 의미하는 값 \(주로 min값\) |
 | wakeup.power.speech | float | Y | wakeup pcm의 power중 speech를 의미하는 값 \(주로 max값\) |

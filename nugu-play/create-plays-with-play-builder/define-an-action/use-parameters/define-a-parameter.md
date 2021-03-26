@@ -20,16 +20,20 @@ Parameter의 사용 방법을 알아보기 위해, 다음과 같이 사용자에
 
 * 시간, 날짜 표현은 Built-in Entity Type에서 선택합니다.
 * 동 이름은 Custom Entity Type으로 추가합니다.
-* Play Builder 홈 화면에서 Parameter를 추가할 Play를 클릭하여 선택한 후, `Custom Actions` 버튼을 클릭합니다.
-* Action List에서 'answer.weather'라는 Action을 선택합니다.
-* 응답에 필요한 정보 가져오기 영역의 Utterance Parameter 입력 필드에 Parameter명을 입력하고 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
+
+2. Play Builder 홈 화면에서 Parameter를 추가할 Play를 클릭하여 선택한 후, `Custom Actions` 버튼을 클릭합니다.
+
+3. Action List에서 'answer.weather'라는 Action을 선택합니다.
+
+4. 응답에 필요한 정보 가져오기 영역의 Utterance Parameter 입력 필드에 Parameter명을 입력하고 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
 ![](../../../../.gitbook/assets/assets_ch3_3233_c02.png)
 
 * 영자, 숫자, 특수문자인 언더바\(`_`\), 하이픈\(`-`\)만 사용하여 40자 이내에서 작성할 수 있으며, Play 내에서 같은 이름을 중복해서 등록할 수 없습니다.
 * 이번 예에서는 '오늘'과 같이 특정일을 담을 Parameter와 '면목동'과 같이 지역을 담을 Parameter를 담을 2개의 Utterance Parameter를 만듭니다.
 * Parameter명을 각각 'day'와 'location'으로 지정합니다.
-* 추가한 Parameter 우측 Mapping 항목의 `Entity mapping을 위해 이곳을 클릭하세요.` 버튼을 클릭한 후 Entity mapping 창에서 'day' Parameter에는 '오늘'이 담겨 있는 'BID\_DT\_DAY'를, 'location' Parameter에는 'LOC\_DONG' Entity Type를 각각 매핑합니다.
+
+5. 추가한 Parameter 우측 Mapping 항목의 `Entity mapping을 위해 이곳을 클릭하세요.` 버튼을 클릭한 후 Entity mapping 창에서 'day' Parameter에는 '오늘'이 담겨 있는 'BID\_DT\_DAY'를, 'location' Parameter에는 'LOC\_DONG' Entity Type를 각각 매핑합니다.
 
 ![](../../../../.gitbook/assets/assets_ch3_3233_c03__1.gif)
 
@@ -50,17 +54,18 @@ Backend proxy에 대한 자세한 내용은 [외부 연동 서버\(Backend proxy
 
 ![](../../../../.gitbook/assets/assets_ch3_3233_c04.png)
 
-1. Backend Parameter 입력 필드에 Parameter명을 입력하고 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
+2. Backend Parameter 입력 필드에 Parameter명을 입력하고 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
 ![](../../../../.gitbook/assets/assets_ch3_3233_c05.png)
 
 * 영자, 숫자, 특수문자인 언더바\(`_`\), 하이픈\(`-`\)만 사용하여 40자 이내로 작성할 수 있습니다.
 * Backend Parameter명을 "status"로 지정합니다.
-* Play Builder 우측 상단에 있는 `Play 저장`을 눌러 Play를 저장합니다.
+
+3. Play Builder 우측 상단에 있는 `Play 저장`을 눌러 Play를 저장합니다.
 
 Play의 Parameter 설정이 완료되면, 이제 Backend proxy에서 이 Parameter에 적절한 값을 전달해 주도록 Backend proxy 동작 환경을 설정해야 합니다.
 
-1. 이렇게 입력을 하고, Backend proxy가 기상 정보를 Backend Parameter에 담아주면 다음과 같은 상태가 됩니다.
+4. 이렇게 입력을 하고, Backend proxy가 기상 정보를 Backend Parameter에 담아주면 다음과 같은 상태가 됩니다.
 
 ![](../../../../.gitbook/assets/assets_ch3_3233_04__1.png)
 
