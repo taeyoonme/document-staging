@@ -11,6 +11,7 @@ NUGU 서비스 관리 웹에서 사용할 cookie 를 설정합니다.
 * pocId: [https://developers.nugu.co.kr/\#/sdk/pocList](https://developers.nugu.co.kr/#/sdk/pocList) 에서 확인 가능
 * theme: LIGHT 또는 DARK
 * oauthRedirectUri: NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 호출되는 url \(ex&gt; nugu.public.sample://oauth\_refresh\)
+* deviceUniqueId: NuguOauthClient 의 인증을 통해 관리되는 device unique id
 
 {% code title="NuguServiceWebViewController.swift" %}
 ```swift
@@ -24,7 +25,8 @@ override func viewDidLoad() {
         appVersion: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "",
         pocId: pocId,
         theme: "LIGHT",
-        oauthRedirectUri: url
+        oauthRedirectUri: url,
+        deviceUniqueId: NuguCentralManager.shared.oauthClient.deviceUniqueId
     )
     nuguServiceWebView.setNuguServiceCookie(nuguServiceCookie: cookie)
 }
@@ -47,7 +49,6 @@ override func viewDidLoad() {
 
 extension NuguServiceWebViewController: NuguServiceWebJavascriptDelegate {
     func openExternalApp(openExternalAppItem: WebOpenExternalApp) {
-        log.debug("openExternalApp : \(openExternalAppItem)")
         if let appSchemeUrl = URL(string: openExternalAppItem.scheme ?? ""),
             UIApplication.shared.canOpenURL(appSchemeUrl) == true {
             UIApplication.shared.open(appSchemeUrl, options: [:], completionHandler: nil)
@@ -61,12 +62,10 @@ extension NuguServiceWebViewController: NuguServiceWebJavascriptDelegate {
     }
 
     func openInAppBrowser(url: String) {
-        log.debug("openInAppBrowser : \(url)")
         present(SFSafariViewController(url: URL(string: url)!), animated: true, completion: nil)
     }
 
     func closeWindow(reason: String) {
-        log.debug("closeWindow : \(reason)")
         if reason == "WITHDRAWN_USER" {
             navigationController?.dismiss(animated: true, completion: {
                 // 인증 정보 파기
@@ -81,18 +80,69 @@ extension NuguServiceWebViewController: NuguServiceWebJavascriptDelegate {
 
 ## NUGU 서비스 관리 웹 호출
 
-* `NuguServiceWebView.serviceSettingUrl`: NUGU 서비스 관리 웹 사이트
-* `NuguServiceWebView.agreementUrl`: NUGU 이용약관 웹 사이트
+* `serviceSettingUrl`: NUGU 서비스 관리 웹 사이트
+* `agreementUrl`: NUGU 이용약관 웹 사이트
 
-{% code title="NuguServiceWebViewController.swift" %}
+NuguServiceWebView 가 가지고 있던 `serviceSettingUrl` 과 `agreementUrl` 은 deprecate 되었습니다.
+
 ```swift
-override func viewDidLoad() {
-    super.viewDidLoad()
+final public class NuguServiceWebView: WKWebView {
 
-    nuguServiceWebView.loadUrlString(NuguServiceWebView.serviceSettingUrl)
+    /// Url for service setting web page (deprecated)
+    @available(*, deprecated, message: "Use `ConfigurationStore`")
+    public static var serviceSettingUrl: String {
+        return domain + "/3pp/main.html?screenCode=setting_webview"
+    }
+    
+    /// Url for agreement web page (deprecated)
+    @available(*, deprecated, message: "Use `ConfigurationStore`")
+    public static var agreementUrl: String {
+        return domain + "/3pp/agreement/list.html"
+    }
 }
 ```
-{% endcode %}
+
+대신 ConfigurationStore 에서 `serviceSettingUrl` 과 `agreementUrl` 을 제공합니다.
+
+```swift
+public class ConfigurationStore {
+    /// Get the web page url to configure play settings for the user device.
+    ///
+    /// - Parameter completion: The closure to receive result.
+    func serviceSettingUrl(completion: @escaping (Result<String, Error>) -> Void) {
+        configurationMetadata { result in
+            switch result {
+            case .success(let configurationMetadata):
+                if let urlString = configurationMetadata.serviceSetting {
+                    completion(.success(urlString))
+                } else {
+                    completion(.failure(ConfigurationError.invalidUrl))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    /// Get the web page url for the terms of service.
+    ///
+    /// - Parameter completion: The closure to receive result.
+    func agreementUrl(completion: @escaping (Result<String, Error>) -> Void) {
+        configurationMetadata { result in
+            switch result {
+            case .success(let configurationMetadata):
+                if let urlString = configurationMetadata.termOfServiceUri {
+                    completion(.success(urlString))
+                } else {
+                    completion(.failure(ConfigurationError.invalidUrl))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+}
+```
 
 ## Play 로그인 결과 전달
 
@@ -109,10 +159,10 @@ static let oauthRefresh = Notification.Name("com.skt.Romaine.oauth_refresh")
 {% code title="AppDelegate.swift" %}
 ```swift
 func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-    if url.absoluteString == SampleApp.oauthRedirectUri {
-        NotificationCenter.default.post(name: .oauthRefresh, object: nil, userInfo: nil)
-        return true
-    }
+    if ConfigurationStore.shared.isServiceWebRedirectUrl(url: url) {
+            NotificationCenter.default.post(name: .oauthRefresh, object: nil, userInfo: nil)
+            return true
+        }
 }
 ```
 {% endcode %}

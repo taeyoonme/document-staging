@@ -78,47 +78,6 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
 {% endtab %}
 {% endtabs %}
 
-### 음성인식 모델 파일 설정하기
-
-#### 다운로드 받기
-
-[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 음성인식 모델 파일을 다운로드 받습니다.
-
-#### 설정하기
-
-다운로드 받은 파일을 Application 에 복사하고 target 으로 추가합니다.
-
-* Example
-  * `{application path}/Supporting Files/skt_trigger_search_tinkerbell.raw`
-  * `{application path}/Supporting Files/skt_trigger_am_tinkerbell.raw`
-  * `{application path}/Supporting Files/skt_trigger_search_aria.raw`
-  * `{application path}/Supporting Files/skt_trigger_am_aria.raw`
-  * `{application path}/Supporting Files/skt_epd_model.raw`
-
-음성인식 모델 파일을 SDK 로 전달합니다.
-
-{% tabs %}
-{% tab title="EndPointDetector 모델 파일 설정" %}
-```swift
-if let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw") {
-    client.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
-}
-```
-{% endtab %}
-{% endtabs %}
-
-{% tabs %}
-{% tab title="KeywordDetector 모델 파일 설정" %}
-```swift
-if let netFile = Bundle.main.url(forResource: "skt_trigger_am_aria", withExtension: "raw"),
-   let searchFile = Bundle.main.url(forResource: "skt_trigger_search_aria", withExtension: "raw") {
-    let keyword.keywordSource = KeywordSource(keyword: "아리아", netFileUrl: netFile, searchFileUrl: searchFile)
-    client.keywordDetector.keywordSource = keyword.keywordSource
-}
-```
-{% endtab %}
-{% endtabs %}
-
 ### Configuration 파일 설정하기
 
 #### 다운로드 받기
@@ -216,7 +175,7 @@ lazy private(set) var oauthClient: NuguOAuthClient = {
 }()
 
 func login() {
-    oauthClient.authorizeWithTid(parentViewController: viewController) { (result) in
+    oauthClient.loginWithTid(parentViewController: viewController) { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo
@@ -237,7 +196,7 @@ func login() {
 {% tab title="ViewController.swift" %}
 ```swift
 func refresh() {
-    oauthClient.refreshToken(refreshToken: refreshToken) { (result) in
+    oauthClient.loginSilentlyWithTid(refreshToken: refreshToken) { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo
@@ -271,7 +230,7 @@ lazy private(set) var oauthClient: NuguOAuthClient = {
 }()
 
 func login() {
-    oauthClient.authorize { (result) in
+    oauthClient.loginAnonymously { (result) in
         switch result {
         case .success(let authInfo):
             // Save authInfo

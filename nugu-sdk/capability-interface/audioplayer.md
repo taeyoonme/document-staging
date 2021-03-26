@@ -6,7 +6,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 ## Version
 
-최신 버전은 1.5 입니다.
+최신 버전은 1.6 입니다.
 
 | Version | Date | Description |
 | :--- | :--- | :--- |
@@ -16,6 +16,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 | 1.3 | 2020.06.05 | PlaybackStopped event 에 reason 필드 추가.<br>RequestCommandFailed event 추가. |
 | 1.4 | 2020.08.12 | Context 에 playServiceId 추가 |
 | 1.5 | 2020.12.09 | PlaybackStopped event 의 reason 필드 값에 대한 조건 수정 |
+| 1.6 | 2021.03.05 | AudioPlayer.Template1 의 lyrics 에 showButton 필드 추가<br>AudioPlayer.Template2 에 lyrics 필드 추가<br>AudioPlayer.Template2 에 subtitle1 필드 추가 |
 
 ## State Diagram
 
@@ -366,7 +367,10 @@ audio_player_handler->requestShuffleCommand(false)
               "time": {{Integer}},
               "text": "{{String}}"
             }
-          ]
+          ],
+          "showButton": {
+            "text": "{{String}}"
+          }
         },
         "settings": {
           "favorite": {{BOOLEAN},
@@ -383,28 +387,30 @@ audio_player_handler->requestShuffleCommand(false)
 | :--- | :--- | :--- | :--- |
 | disableTemplate | bool | N | true면 스크린을 가진 디바이스에서 AudioPlayer 재생 시 template을 display하지 않음<br>default - false |
 | template.type | string | Y | AudioPlayer template type<br> - AudioPlayer.Template1<br> - AudioPlayer.Template2 |
-| template.title.iconUrl | string | N | icon image url |
-| template.title.text | string | Y | title text |
-| template.content.title | string | Y | content 영역의 title |
-| template.content.subtitle1 | string | Y | subtitle1 |
-| template.content.subtitle2 | string | N | subtitle2 |
-| template.content.imageUrl | string | Y | image url |
-| template.content.durationSec | string | N | content duration in sec<br>**없거나 0, 음수, null이면 progress를 disabled 처리** |
-| template.content.<br>backgroundImageUrl | string | N | background image url |
-| template.content.<br>backgroundColor | string | N | background color<br>default - "\#000" |
-| template.content.<br>badgeImageUrl | string | N | 이미지\(content.imageUrl\)의 오른쪽 상단에 표시될 Badge Image의 URL |
-| template.content.<br>badgeMessage | string | N | 이미지\(content.imageUrl\)의 왼쪽 하단에 표시될 Badge Message |
-| template.content.<br>lyrics | obejct | N | 가사 화면을 표시하기 위한 정보 |
-| template.content.<br>lyrics.title | string | Y | 가사 화면에서 보여질 제목 |
-| template.content.<br>lyrics.lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br>- **SYNC** : 자막 동기화<br>- **NON\_SYNC** : 자막 동기화 없음 |
-| template.content.<br>lyrics.lyricsInfoList | array of lyricsInfo | Y | 가사 내용\(lyricsInfo\)의 목록<br>기본 값은 빈 배열 |
-| template.content.<br>lyrics.lyricsInfoList.<br>time | integer | N | lyricsTyps 이 SYNC 이면 mandatory<br>lyricsInfo가 보여지는 시점의 millisecond 단위의 시간 정보 |
-| template.content.<br>lyrics.lyricsInfoList.<br>text | string | Y | lyricsInfo가 보여지는 시점의 가사 내용 |
-| template.content. settings | object | N | 사용자가 설정한 정보를 표시함  - Play에서는 표시할 하위 field를 설정할 수 있음  - 설정한 field에 대한 Event와 Directive를 사용할 수 있음 |
-| template.content. settings.favorite | boolean | N | 재생 중인 음원에 대한 좋아요 여부 |
-| template.content. settings.repeat | string | N | 재생 목록에 대한 반복 설정  - **ALL** : 전곡 반복  - **ONE** : 한곡 반복  - **NONE** : 반복 없음 |
-| template.content. settings.shuffle | boolean | N | 재생 목록의 음원을 임의의 순서로 재생할지 여부 |
-| template.grammarGuide | list of string | N | 발화 도움말 |
+| template.<br>title.<br>iconUrl | string | N | icon image url |
+| template.<br>title.<br>text | string | Y | title text |
+| template.<br>content.<br>title | string | Y | content 영역의 title |
+| template.<br>content.<br>subtitle1 | string | Y | subtitle1 |
+| template.<br>content.<br>subtitle2 | string | N | subtitle2 |
+| template.<br>content.<br>imageUrl | string | Y | image url |
+| template.<br>content.<br>durationSec | string | N | content duration in sec<br>**없거나 0, 음수, null이면 progress를 disabled 처리** |
+| template.<br>content.<br>backgroundImageUrl | string | N | background image url |
+| template.<br>content.<br>backgroundColor | string | N | background color<br>default - "\#000" |
+| template.<br>content.<br>badgeImageUrl | string | N | 이미지\(content.imageUrl\)의 오른쪽 상단에 표시될 Badge Image의 URL |
+| template.<br>content.<br>badgeMessage | string | N | 이미지\(content.imageUrl\)의 왼쪽 하단에 표시될 Badge Message |
+| template.<br>content.<br>lyrics | obejct | N | 가사 화면을 표시하기 위한 정보 |
+| template.<br>content.<br>lyrics.title | string | Y | 가사 화면에서 보여질 제목 |
+| template.<br>content.<br>lyrics.lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br>- **SYNC** : 자막 동기화<br>- **NON\_SYNC** : 자막 동기화 없음 |
+| template.<br>content.<br>lyrics.lyricsInfoList | array of lyricsInfo | Y | 가사 내용\(lyricsInfo\)의 목록<br>기본 값은 빈 배열 |
+| template.<br>content.<br>lyrics.lyricsInfoList.<br>time | integer | N | lyricsTyps 이 SYNC 이면 mandatory<br>lyricsInfo가 보여지는 시점의 millisecond 단위의 시간 정보 |
+| template.<br>content.<br>lyrics.lyricsInfoList.<br>text | string | Y | lyricsInfo가 보여지는 시점의 가사 내용 |
+| content.<br>lyrics.<br>showButton | object | N | 가사 화면을 표시하기 위한 버튼 |
+| content.<br>lyrics.<br>showButton.<br>text | string | Y | 버튼 text |
+| template.<br>content.<br>>settings | object | N | 사용자가 설정한 정보를 표시함  - Play에서는 표시할 하위 field를 설정할 수 있음  - 설정한 field에 대한 Event와 Directive를 사용할 수 있음 |
+| template.<br>content.<br>settings.favorite | boolean | N | 재생 중인 음원에 대한 좋아요 여부 |
+| template.<br>content.<br>settings.repeat | string | N | 재생 목록에 대한 반복 설정  - **ALL** : 전곡 반복  - **ONE** : 한곡 반복  - **NONE** : 반복 없음 |
+| template.<br>content.<br>settings.shuffle | boolean | N | 재생 목록의 음원을 임의의 순서로 재생할지 여부 |
+| template.<br>grammarGuide | list of string | N | 발화 도움말 |
 
 #### audioItem.metadata.template - AudioPlayer.Template2
 
@@ -422,9 +428,20 @@ audio_player_handler->requestShuffleCommand(false)
       "content": {
         "title": "{{STRING}}",
         "subtitle": "{{STRING}}",
+        "subtitle1": "{{STRING}}",
         "imageUrl": "{{STRING}}",
         "durationSec": "{{STRING}}",
-        "backgroundColor": "{{STRING}}"
+        "backgroundColor": "{{STRING}}",
+        "lyrics" : {
+          "title" : "{{String}}",
+          "lyricsType" : "{{String}}",
+          "lyricsInfoList" : [
+            {"time":"{{Integer}}","text": "{{String}}"}
+          ],
+          "showButton": {
+            "text": "{{String}}"
+          }
+        }
       }
     }
   }
@@ -434,15 +451,24 @@ audio_player_handler->requestShuffleCommand(false)
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | disableTemplate | bool | N | true면 스크린을 가진 디바이스에서 AudioPlayer 재생 시 template을 display하지 않음<br>default : false |
-| template.type | string | Y | AudioPlayer template type<br> - AudioPlayer.Template1<br> - AudioPlayer.Template2 |
-| template.title.iconUrl | string | N | icon image url |
-| template.title.text | string | Y | title text |
-| template.content.<br>title | string | Y | content 영역의 title |
-| template.content.<br>subtitle | string | Y | subtitle |
-| template.content.<br>imageUrl | string | N | background image url |
-| template.content.<br>durationSec | string | N | content duration in sec<br>없거나 0, 음수, null이면 progress를 화면에서 disabled 처리 |
-| template.content.<br>backgroundColor | string | N | background color<br>default : "#000" |
-| template.grammarGuide | list of string | N | 발화 도움말 |
+| template.<br>type | string | Y | AudioPlayer template type<br> - AudioPlayer.Template1<br> - AudioPlayer.Template2 |
+| template.<br>title.<br>iconUrl | string | N | icon image url |
+| template.<br>title.<br>text | string | Y | title text |
+| template.<br>content.<br>title | string | Y | content 영역의 title |
+| template.<br>content.<br>subtitle | string | Y | subtitle |
+| template.<br>content.<br>subtitle1 | string | Y | lyrics가 있는 경우, 가사화면 제목 우측의 소제목 |
+| template.<br>content.<br>imageUrl | string | N | background image url |
+| template.<br>content.<br>durationSec | string | N | content duration in sec<br>없거나 0, 음수, null이면 progress를 화면에서 disabled 처리 |
+| template.<br>content.<br>backgroundColor | string | N | background color<br>default : "#000" |
+| template.<br>content.<br>lyrics | obejct | N | 가사 화면을 표시하기 위한 정보 |
+| template.<br>content.<br>lyrics.<br>title | string | Y | 가사 화면에서 보여질 제목 |
+| template.<br>content.<br>lyrics.<br>lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br> - **SYNC** : 자막 동기화<br> - **NON_SYNC** : 자막 동기화 없음 |
+| template.<br>content.<br>lyrics.<br>lyricsInfoList | array of lyricsInfo | Y | 가사 내용(lyricsInfo)의 목록<br>기본 값은 빈 배열 |
+| template.<br>content.<br>lyrics.<br>lyricsInfoList.<br>time | integer | N | lyricsTyps 이 SYNC 이면 mandatory<br>lyricsInfo가 보여지는 시점의 millisecond 단위의  시간 정보 |
+| template.<br>content.<br>lyrics.<br>lyricsInfoList.<br>text | string | Y | lyricsInfo가 보여지는 시점의 가사 내용 |
+| content.<br>lyrics.<br>showButton | object | N | 가사 화면을 표시하기 위한 버튼 |
+| content.<br>lyrics.<br>showButton.<br>text | string | Y | 버튼 text |
+| template.<br>grammarGuide | list of string | N | 발화 도움말 |
 
 ### Stop
 

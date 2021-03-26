@@ -136,6 +136,8 @@
     * [PhoneCall](nugu-sdk/capability-interface/phonecall.md)
     * [Message](nugu-sdk/capability-interface/message.md)
     * [MediaPlayer](nugu-sdk/capability-interface/mediaplayer.md)
+    * [Routine](nugu-sdk/capability-interface/routine.md)
+    * [Utility](nugu-sdk/capability-interface/utility.md)
   * [Platform](nugu-sdk/platform/README.md)
     * [iOS](nugu-sdk/platform/ios/README.md)
       * [시작하기](nugu-sdk/platform/ios/start.md)

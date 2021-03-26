@@ -14,7 +14,7 @@ description: 문자 확인 및 전송 기능 제어를 위한 규격
 | 1.1 | 2020.07.13 | Context 의 template 에 info 필드 추 |
 | 1.2 | 2020.08.13 | contact type 에 EMERGENCY 추가 |
 | 1.3 | 2020.11.02 | SendCandidates directive 에 searchScene 필드 추가<br>Context 에 searchScene 필드 추가 |
-
+| 1.4 | 2021.01.19 | Context 에 messageToSend 필드 추가<br>SendCandidates directive 에 messageToSend 필드 추가 |
 ## SDK Interface
 
 ### MessageAgent 사용
@@ -145,7 +145,11 @@ messageAgent.addOnPlaybackListener(listener)
         "label": "{{STRING}}"
       },
       "searchScene": "{{STRING}}",
-      "candidates": [array of Contact]
+      "candidates": [array of Contact],
+      "messageToSend": {
+        "text": "{{STRING}}",
+        "type": "{{STRING}}"
+      }
     }
   }
 }
@@ -156,13 +160,15 @@ messageAgent.addOnPlaybackListener(listener)
 | readActivity | string | Y | 이전 발화가 재생 상태를 전달<br>**IDLE**, **PLAYING**, **PAUSED**, **FINISHED**, **STOPPED**<br> - IDLE인 경우는 최초 전원을 켰을 때만 가능하고 이후에는 나올 수 없음 |
 | token | string | N | readActivity에서 재생 중인 prompt의 token |
 | template | object | N | context 유지 정책과 동일하게 관리되어야 함 → Play Stack에 현재 Play가 가장 위에 있는 동안은 보내주어야 함<br> - 화면에 template이 디스플레이 되는 동안<br>  - 앱에서 화면을 그리는 경우 앱이 정확한 시점 파악 가능<br> - 화면이 없는 경우는 DM 및 TTS 종료 후 7초<br>  - DM이 유지되는 동안은 SDK로부터 대화 세션 유지 상황을 피드백 받아 전달<br>대표적인 경우는 위의 두 경우와 같으며 자세한 구현은 context 관리 정책 참조 |
-| template.info | string | N | 현재 template에 포함된 데이터가 어떤 정보를 담고 있는지 식별하기 위한 값<br> - **PHONE\_BOOK** : 주소록 조회 결과를 포함<br> - **MESSAGE** : 수신된 Message 정보를 포함 |
-| template.recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
-| template.recipientIntended.name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
-| template.recipientIntended.label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
-| template.searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br> - **DEFAULT** : 기본 검색 로직<br> - **T114DIRECT** : 긴급전화 |
-| template.candidates | array of [Contact](./#contact) | N | 화면에 검색 결과 리스트를 디스플레이하는 중에만 context에 추가 |
-
+| template.<br>info | string | N | 현재 template에 포함된 데이터가 어떤 정보를 담고 있는지 식별하기 위한 값<br> - **PHONE\_BOOK** : 주소록 조회 결과를 포함<br> - **MESSAGE** : 수신된 Message 정보를 포함 |
+| template.<br>recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
+| template.<br>recipientIntended.name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
+| template.<br>recipientIntended.label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
+| template.<br>searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br> - **DEFAULT** : 기본 검색 로직<br> - **T114DIRECT** : 긴급전화 |
+| template.<br>candidates | array of [Contact](./#contact) | N | 화면에 검색 결과 리스트를 디스플레이하는 중에만 context에 추가 |
+| template.<br>messageToSend | object | N | 발신용으로 사용할 메세지<br>SendCandidates의 같은 파라미터를 통해 전달받은 MSG_BODY를 그대로 반환 |
+| template.<br>messageToSend.<br>text | string | Y | 본문 |
+| template.<br>messageToSend.<br>type | string | N | 메세지의 타입 |
 ## Common Objects
 
 ### Contact
@@ -220,7 +226,11 @@ messageAgent.addOnPlaybackListener(listener)
       "label": "{{STRING}}"
     },
     "searchScene": "{{STRING}}",
-    "candidates": [array of Contact]
+    "candidates": [array of Contact],
+    "messageToSend": {
+      "text": "{{STRING}}",
+      "type": "{{STRING}}"
+    }
   }
 }
 ```
@@ -229,10 +239,13 @@ messageAgent.addOnPlaybackListener(listener)
 | :--- | :--- | :--- | :--- |
 | intent | string | N | **SEND** : 문자보내줘<br>**READ** : 문자읽어줘 |
 | recipientIntended | object | N | 발화에서 분석된 recipient 정보 |
-| recipientIntended.name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
-| recipientIntended.label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
+| recipientIntended.<br>name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
+| recipientIntended.<br>label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
 | searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br> - **DEFAULT** : 기본 검색 로직<br> - **T114DIRECT** : 긴급전화 |
 | candidates | array of [Contact](./#contact) | N | candidates가 없으면 이 항목이 없어야 함 |
+| template.<br>messageToSend | object | N | 발신용으로 사용할 메세지<br>SendCandidates의 같은 파라미터를 통해 전달받은 MSG_BODY를 그대로 반환 |
+| template.<br>messageToSend.<br>text | string | Y | 본문 |
+| template.<br>messageToSend.<br>type | string | N | 메세지의 타입 |
 
 ### SendMessage
 
@@ -281,8 +294,8 @@ messageAgent.addOnPlaybackListener(listener)
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | recipientIntended | object | N | 발화에서 분석된 recipient 정보<br>optional 파라미터로 포함되지 않으면 전체 문자를 보내줘야 함<br>항목이 존재할 경우 SendCandidates와 동일하게 조건에 맞는 대상자의 문자리스트만 GetMessageSucceeded로 전달하고 항목이 없을 경우 전체 문자리스트를 GetMessageSucceeded로 전달해야함. |
-| recipientIntended.name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
-| recipientIntended.label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
+| recipientIntended.<br>name | string | N | 검색에 요청할때 사용된 상대방 이름 \(NLU 분석으로 나온 이름\) |
+| recipientIntended.<br>label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
 | candidates | array of [Contact](./#contact) | N | candidates가 없으면 이 항목이 없어야 함 |
 
 ### ReadMessage

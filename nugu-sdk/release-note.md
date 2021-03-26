@@ -6,6 +6,23 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2021-03-25
+
+* Capability interface - [AudioPlayer](capability-interface/audioplayer.md) 1.6 업데이트
+* Capability interface - [ASR](capability-interface/asr.md) 1.5 업데이트
+* Capability interface - [Message](capability-interface/message.md) 1.4 업데이트
+* Capability interface - [Routine](capability-interface/routine.md) 추가
+* Capability interface - [Utilitity](capability-interface/utility.md) 추가
+
+### 2021-03-11
+
+* [시작하기](platform/ios/start.md)\(iOS\) 변경 사항 업데이트 
+* [NUGU 서비스 관리 web server 연동](platform/ios/web-server.md)\(iOS\) 변경 사항 업데이트
+
+### 2021-02-15
+
+* [NUGU 음성인식 사용하기](platform/android/start.md#step-5-nugu)\(Android\) 업데이트
+
 ### 2021-02-01
 
 * [테스트 환경 설정](platform/ios/testing_sdk_integration.md)\(iOS\) 가이드 주소값 수정 

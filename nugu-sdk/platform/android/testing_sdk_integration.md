@@ -26,7 +26,7 @@
            // Create NuguAndroidClient
            client = NuguAndroidClient.Builder(
                context,
-               NuguOAuth.create(context),
+               NuguOAuth.create(options),
                audioSourceManager
            ).transportFactory(transport)
           .build()

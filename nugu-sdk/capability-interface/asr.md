@@ -6,7 +6,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## Version
 
-최신 버전은 1.3 입니다.
+최신 버전은 1.5 입니다.
 
 | Version | Date | Description |
 | :--- | :--- | :--- |
@@ -15,6 +15,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 | 1.2 | 2020.06.05 | Recognize directive, ExpectSpeech event 의 asrContext 에 playServiceId 필드 추가 |
 | 1.3 | 2020.06.09 | Recognize directive, ExpectSpeech event 의 sessionId 필드 삭제 |
 | 1.4 | 2020.11.18 | ExpectSpeech directive 에 epd 필드 추가 |
+| 1.5 | 2021.03.03 | Context 에 state, initiator 필드 추가 |
 
 ## State Diagram
 
@@ -261,7 +262,9 @@ asr_handler->stopRecognition()
 {
   "ASR": {
     "version": "1.2",
-    "engine": "{{STRING}}"
+    "engine": "{{STRING}}",
+    "state": "{{STRING}}",
+    "initiator": "{{STRING}}"
   }
 }
 ```
@@ -269,7 +272,8 @@ asr_handler->stopRecognition()
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | engine | string | N | Device 에서 사용하는 음성인식 engine 을 명시 NUGU 음성인식 engine 을 사용하는 경우 "skt"<br>\(값을 채우지 않으면 default "skt"\) |
-
+| state | string | Y | IDLE, EXPECTING_SPEECH, LISTENING, RECOGNIZING, BUSY<br><a href="asr.md#state-diagram">State Diagram</a> 참고 |
+| initiator | string | N | **WAKE_UP_WORD, PRESS_AND_HOLD, TAP, EXPECT_SPEECH, EARSET**<br>마이크 오픈이 어떻게 트리거되었는지<br>* **WAKE_UP_WORD** - 사용자 발화로 Wakeup<br>* **PRESS_AND_HOLD** - PTT 방식으로 Wakeup<br>* **TAP** - NUGU 버튼 등에 의해서 Wakeup<br>* **EXPECT_SPEECH** - ASR.ExpectSpeech<br>* **EARSET** - 이어셋 VoiceCommand 등을 통해 Wakeup |
 ## Directives
 
 ### ExpectSpeech
