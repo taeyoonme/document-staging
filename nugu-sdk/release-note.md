@@ -6,6 +6,10 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2021-03-30
+
+*  iOS [1.0 으로 업그레이드](platform/ios/1.0.md) 문서 추가
+
 ### 2021-03-25
 
 * Capability interface - [AudioPlayer](capability-interface/audioplayer.md) 1.6 업데이트

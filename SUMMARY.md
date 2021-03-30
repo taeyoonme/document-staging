@@ -147,6 +147,7 @@
       * [NUGU Display의 노출과 제어](nugu-sdk/platform/ios/nugu-display-template-server.md)
       * [NUGU 사용자 인터페이스](nugu-sdk/platform/ios/nugu.md)
       * [테스트 환경 설정](nugu-sdk/platform/ios/testing_sdk_integration.md)
+      * [1.0 으로 업그레이드](nugu-sdk/platform/ios/1.0.md)
     * [Android](nugu-sdk/platform/android/README.md)
       * [시작하기](nugu-sdk/platform/android/start.md)
       * [구성요소](nugu-sdk/platform/android/intro_components.md)

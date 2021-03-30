@@ -14,7 +14,7 @@ description: Directive 의 실행 순서를 제어하기 위한 규격
 
 ## SDK Interface
 
-Utility 는 하나의 응답으로 전달되는 Directive들의 실행 순서 및 Blocking 처리 로직을 포함하고 있는 규격으로  Application 에서 처리할 별도의 interface 가 없습니다.
+Utility 는 하나의 응답으로 전달되는 Directive들의 실행 순서 및 Blocking 처리 로직을 포함하고 있는 규격으로 Application 에서 처리할 별도의 interface 가 없습니다.
 
 ## Context
 
@@ -50,4 +50,5 @@ Block Directive를 기준으로 이전 Directive들이 모두 실행된 후 이�
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| sleepInMillisecond | long | N | 다음 Directive를 실행하기 전에 대기하는 시간<br>지정되지 않으면 바로 시작 (default - 0) |
+| sleepInMillisecond | long | N | 다음 Directive를 실행하기 전에 대기하는 시간 지정되지 않으면 바로 시작 \(default - 0\) |
+
