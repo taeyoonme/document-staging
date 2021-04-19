@@ -17,7 +17,7 @@ Play 생성과 함께 추가되는 Universal Intent는 다음과 같습니다.
 | Universal Intent | NUGU.INTENT.stop | 그만, 종료, 멈춰, 스톱, 정지, 중지 | 필수 |
 |  | NUGU.INTENT.rewind | 다시, 다시 틀어줘, 다시 들려줘, 다시 시작, 처음으로, 처음부터 | 필수 |
 
-Play를 빌드하기 위해서는 Universal Intent을 처리할 Action이 반드시 존재해야 합니다. 이렇게 반드시 정의해야하는 Action은 Built-in Action으로 자동 추가되며 Play를 생성할 때 입력한 기본응답을 통해 자동 정의됩니다.
+Play를 빌드하기 위해서는 Universal Intent을 처리할 Action이 반드시 존재해야 합니다. Universal Intent를 trigger로 설정한 Action을 생성하지 않은 경우, Built-in Action이 자동 추가되며 Play를 생성할 때 입력한 기본응답을 통해 자동 정의됩니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3221_01.png)
 
@@ -61,5 +61,5 @@ NUGU.INTENT.stop은 항상 Play를 종료시킵니다. 따라서 Custom Action�
 
 NUGU.INTENT.rewind 또한 Control/Universal에 모두 포함된 Intent 입니다.
 
-그러나 이 Intent는 stop과 달리 AudioPlayer Interface를 사용함으로 설정하면, Universal Intent에서 제외됩니다. 따라서 AudioPlayer를 사용함으로 설정하면 rewind는 오직 Custom Action의 trigger로만 사용되며, 만일 이 Intent를 Trigger로 갖는 Action을 정의하지 않으면, 사용자가 '다시'라고 말을 해도 Fallback 처리되는 Play가 됩니다.
+AudioPlayer를 사용함으로 설정하면 NUGU.INTENT.rewind는 오직 Custom Action의 trigger로만 사용되며, 만일 이 Intent를 Trigger로 갖는 Action을 정의하지 않으면, 사용자가 '다시'라고 말을 해도 Fallback 처리되는 Play가 됩니다.
 
