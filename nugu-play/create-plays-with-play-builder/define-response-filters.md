@@ -22,11 +22,11 @@ NLG Translator를 입력하는 방법은 다음과 같습니다.
 
 1. Play Builder 홈 화면에서 NLG Translator를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Translator` &gt; `+NLG Translator 추가`를 클릭합니다.
 
-   ![](../../.gitbook/assets/assets_ch3_324_c01.png)
+   ![](../../.gitbook/assets/assets_ch3_324_c01%20%283%29.png)
 
 2. Translator의 Filter명을 입력하고, 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-   ![](../../.gitbook/assets/assets_ch3_324_c02.png)
+   ![](../../.gitbook/assets/assets_ch3_324_c02%20%283%29.png)
 
 이렇게 Translator가 적용된 `{{status}}` Parameter에 "01"이라는 값이 들어오면 Translator가 "맑겠습니다."라는 텍스트로 변환시키게 됩니다.
 
@@ -37,7 +37,7 @@ Parameter에 담긴 값이 Filter의 Source와 정확히 일치할 때만 동작
 Play Builder는 Response Filter를 쉽게 입력할 수 있도록 자동완성 기능을 지원합니다.  
 Parameter 의 끝의 기호 `}}` 뒤에 특수기호 &gt;를 입력하면 앞서 정의한 NLG Translator의 리스트가 표시되며, 원하는 Filter를 선택합니다.
 
-![](../../.gitbook/assets/assets_ch3_323412_c01.gif)
+![](../../.gitbook/assets/assets_ch3_323412_c01%20%281%29.gif)
 
 ## NLG Normalizer <a id="nlg-normalizer"></a>
 
@@ -45,15 +45,15 @@ NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점�
 
 1. Play Builder 홈 화면에서 NLG Normalizer를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Normalizer` &gt; `+NLG Normalizer 추가`를 클릭합니다.
 
-![](../../.gitbook/assets/assets_ch3_324_c04-1.png)
+![](../../.gitbook/assets/assets_ch3_324_c04-1%20%282%29.png)
 
 1. Normalizer의 Filter명을 입력하고, 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/assets_ch3_324_c05-1.png)
+![](../../.gitbook/assets/assets_ch3_324_c05-1%20%282%29.png)
 
 1. NLG Normalizer의 자동 완성 기능으로 적용하기 위한 기호는 = 이며, 사용 방법은 NLG Translator와 같습니다.
 
-![](../../.gitbook/assets/assets_ch3_323412_c02.gif)
+![](../../.gitbook/assets/assets_ch3_323412_c02%20%281%29.gif)
 
 ## NLG Function <a id="nlg-function"></a>
 
@@ -62,7 +62,7 @@ NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점�
 1. Play Builder 홈 화면에서 NLG Function를 추가할 Play를 클릭하여 선택한 후 `Response Filters` &gt; `NLG Function`을 누릅니다.
 2. NLG Function 타입을 선택 및 이름을 입력하고, 후 변경 전의 값을 Source에, 바뀔 값을 Target에 각각 입력한 후 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/assets_ch3_324_c08_2.png)
+![](../../.gitbook/assets/assets_ch3_324_c08_2%20%282%29.png)
 
 * NLG Function은 날짜 형식에 사용하는 DATE 타입을 제공합니다.
 * 날짜 형식에 맞는 문자열이 있다면, 보다 더 적합한 날짜 형태로 변경합니다.  
@@ -73,9 +73,9 @@ NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점�
 
 1. NLF Function의 자동완성을 위한 기호는 : 이며, 사용 방법은 NLG Translator와 같습니다.
 
-![](../../.gitbook/assets/assets_ch3_323412_c03-1.gif)
+![](../../.gitbook/assets/assets_ch3_323412_c03-1%20%284%29.gif)
 
 참고로, Response Filter는 종류에 상관없이 중첩해서 사용할 수 있습니다.
 
-![](../../.gitbook/assets/assets_ch3_324_c10.png)
+![](../../.gitbook/assets/assets_ch3_324_c10%20%283%29.png)
 

@@ -30,7 +30,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 #### AudioPlayer.Template1
 
-![](../../../../.gitbook/assets/assets_display-template1.png)
+![](../../../../.gitbook/assets/assets_display-template1%20%282%29.png)
 
 ```javascript
 "metadata": {    
@@ -64,7 +64,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 #### AudioPlayer.Template2
 
-![](../../../../.gitbook/assets/assets_display-template2.png)
+![](../../../../.gitbook/assets/assets_display-template2%20%282%29.png)
 
 ```javascript
 "metadata": {    
@@ -98,12 +98,12 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 'metadata' 필드에 Template 타입을 지정하지 않은 경우, Default Template으로 동작하게 되며, Play가 화면을 가진 디바이스에서 오디오 재생 시 Play 이름만 표시됩니다. AudioPlayer, Display Interface를 함께 사용하는 경우, Template1이나 Template2를 사용하기를 권장합니다.
 
-![](../../../../.gitbook/assets/assets_display-default-template.png)
+![](../../../../.gitbook/assets/assets_display-default-template%20%281%29.png)
 
 {% hint style="info" %}
 T map은 Default, AudioPlayer.Template1, AudioPlayer.Template2과 같은 type과는 상관없이 아래 그림과 같이 제공됩니다.
 
-![](../../../../.gitbook/assets/assets_display-tmap-1.png)
+![](../../../../.gitbook/assets/assets_display-tmap-1%20%283%29.png)
 {% endhint %}
 
 ### 2. Display Interface용 Event를 처리하는 Action 생성

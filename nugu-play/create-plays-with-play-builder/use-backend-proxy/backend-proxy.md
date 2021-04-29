@@ -4,7 +4,7 @@ Play에서는 사용자의 발화를 분석한 내용을 기반으로 적절한 
 
 NUGU 플랫폼의 Dialog Manager는 지정된 포맷\(Backend proxy API 규격\)으로 요청을 하기 때문에 외부 서비스의 REST API 포맷이 Backend proxy API 규격과 다르다면 포맷을 변환해주기 위한 Backend proxy 서버를 개발해야 합니다.
 
-![](../../../.gitbook/assets/assets_ch3_33_01-1.png)
+![](../../../.gitbook/assets/assets_ch3_33_01-1%20%282%29.png)
 
 이 서버는 Play Builder를 통해 Play를 만드는 과정에서 정의한 파라미터와 [Backend proxy API Reference](backend-proxy-api-reference.md)에서 제공하는 규격을 사용하여 직접 개발해야 합니다.
 
@@ -41,7 +41,7 @@ REST API URL 생성 규칙은 다음과 같습니다.
 
 ![](../../../.gitbook/assets/assets_ch3_33_c01.png)
 
-![](../../../.gitbook/assets/assets_ch3_33_c02-1.png)
+![](../../../.gitbook/assets/assets_ch3_33_c02-1%20%282%29.png)
 
 ## Request Body
 
@@ -57,7 +57,7 @@ NUGU 플랫폼에서 Play Builder에 설정된 정보로부터 action.parameters
 
 예를 들어 설명하면 아래와 같습니다.
 
-![](../../../.gitbook/assets/assets_ch3_33_c03.png)
+![](../../../.gitbook/assets/assets_ch3_33_c03%20%281%29.png)
 
 Backend Parameter의 경우 Backend proxy에서 처리한 결과를 가져오는 용도로 사용되기 때문에 Request Body에는 null을 갖게 됩니다.
 
@@ -96,7 +96,7 @@ Response에서 모든 값을 그대로 똑같이 포함하는 이유는 입출�
 
 ### resultCode
 
-![](../../../.gitbook/assets/assets_ch3_33_c04.png)
+![](../../../.gitbook/assets/assets_ch3_33_c04%20%281%29.png)
 
 "output" 필드 외에 "resultCode"가 정의되어 있습니다. 이 필드는 위 그림에서 설정한 Exception Code에 의해 결정됩니다.
 

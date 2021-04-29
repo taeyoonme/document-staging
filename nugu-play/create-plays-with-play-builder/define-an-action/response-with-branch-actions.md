@@ -4,7 +4,7 @@
 
 그러나, Output의 세번째 유형 Response + Branch Action을 통해서는 컨텍스트를 이어 가는 멀티턴 대화를 구성할 수 있습니다. Response + Branch Action이 선택된 Action은 Response를 내보낸 뒤에 사용자의 발화를 다시 듣고, Branch Action 중 조건을 만족시키는 Action으로 이동합니다.
 
-![](../../../.gitbook/assets/assets_ch3_intent_branch_menu.png)
+![](../../../.gitbook/assets/assets_ch3_intent_branch_menu%20%281%29.png)
 
 Response + Branch Action는 세 요소로 구성됩니다.
 
@@ -34,7 +34,7 @@ Default Branch를 지정하지 않은 경우에는, Reprompt를 1개 이상 정�
 
 Reprompt를 2개 이상 입력한 경우, 두번째 Prompt부터는 대기 Prompt로 지정됩니다. 이 대기 Prompt가 발화된 후에는 멀티턴 시작 Response 후의 대기 상태로 이동하여 다시 사용자의 발화를 듣습니다. 이렇게 이동한 대기 상태도 기존의 컨텍스트를 유지한 채 다시 사용자의 발화를 듣는 대기 상태입니다.
 
-![](../../../.gitbook/assets/assets_ch3_intent_branch_example-1.png)
+![](../../../.gitbook/assets/assets_ch3_intent_branch_example-1%20%283%29.png)
 
 {% hint style="info" %}
 Reprompt에서 2개를 초과하는 대기 Prompt 사용은 피해주세요.

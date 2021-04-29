@@ -54,7 +54,7 @@ Play 배포 대기 상태\(지정한 배포일이 아직 도래하지 않은 상
 
 3️⃣ 배포 취소가 완료되면 해당 Play는 `배포대기`에서 `심사완료` 상태로 변경되고, `배포요청요` 버튼이 생성됩니다.
 
-![](../../.gitbook/assets/assets_ch4_432_c03-1-20-1-.png)
+![](../../.gitbook/assets/assets_ch4_432_c03-1-20-1-__1%20%2812%29%20%286%29.png)
 
 {% hint style="info" %}
 배포를 다시 신청하려면 일정을 재설정해야 합니다. 배포 신청에 대한 자세한 내용은 [배포 신청](distribute-a-play.md#distribution-request)을 참고하세요.

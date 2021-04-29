@@ -51,7 +51,7 @@
 
 제공 받은 Private Play의 상세 정보는 NUGU App에서 확인할 수 있습니다.
 
-![](../../.gitbook/assets/assets_ch6_633_c01.png)
+![](../../.gitbook/assets/assets_ch6_633_c01%20%282%29.png)
 
 {% hint style="info" %}
 Private Play 사용자는 언제든지 NUGU App에서 Private Play 이용 권한을 해제할 수 있습니다. 해제 시 Private Play 이용 권한이 삭제되며, 삭제된 이후에는 Private Play를 이용할 수 없습니다.

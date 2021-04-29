@@ -8,7 +8,7 @@
 
 [아리아, 안녕!](../hello-aria/)에서 살펴보았듯이 Intent를 처리하기 위해 하나의 Action을 만들고, 이 Action에 응답을 작성할 수 있습니다. 이때의 Intent를 Action의 Trigger라고 표현하며 이 Intent가 들어오면 항상 연결된 Action이 동작하게 됩니다.
 
-![](../../../.gitbook/assets/assets_ch3_323_01-1.png)
+![](../../../.gitbook/assets/assets_ch3_323_01-1%20%283%29.png)
 
 이와 같이 Action은 하나의 Intent를 처리하는 역할을 하기도 하지만, Action 하위에 또 다른 Action을 추가하여 Tree 구조를 만든 뒤 응답을 작성할 수도 있습니다.
 

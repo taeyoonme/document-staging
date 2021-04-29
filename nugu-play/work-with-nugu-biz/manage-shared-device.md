@@ -119,7 +119,7 @@ Setup Tool을 통해 디바이스 그룹에 등록한 전용 디바이스를 삭
 
 1️⃣`NUGU developers` &gt; `NUGU biz` &gt; `전용 디바이스 관리` 페이지의 디바이스 그룹 현황 리스트에서 등록된 디바이스를 삭제할 디바이스 그룹명을 클릭하여 선택합니다.
 
-![](../../.gitbook/assets/assets_ch6_625_c07-1-20-1-.png)
+![](../../.gitbook/assets/assets_ch6_625_c07-1-20-1-%20%282%29.png)
 
 2️⃣ 상세 페이지의 등록된 디바이스 항목에서 삭제할 디바이스를 선택한 후 `디바이스 삭제` 버튼을 클릭합니다.
 
@@ -137,7 +137,7 @@ Setup Tool을 통해 디바이스 그룹에 등록한 전용 디바이스를 삭
 
 1️⃣`NUGU developers` &gt; `NUGU biz` &gt; `전용 디바이스 관리` 페이지의 디바이스 그룹 현황 리스트에서 Private Play 추가 또는 삭제할 디바이스 그룹명을 클릭하여 선택합니다.
 
-![](../../.gitbook/assets/assets_ch6_625_c07-1-20-1-__1.png)
+![](../../.gitbook/assets/assets_ch6_625_c07-1-20-1-%20%282%29%20%281%29.png)
 
 2️⃣ 상세 페이지의 Private Play 항목에서 `Play 추가하기` 버튼을 클릭하여 Private Play 추가할 수 있습니다.
 

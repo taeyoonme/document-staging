@@ -171,6 +171,8 @@
     * [Display Template](nugu-sdk/sdk-design-guide/display-template.md)
     * [NUGU Inside](nugu-sdk/sdk-design-guide/nugu-inside.md)
     * [Error handling](nugu-sdk/sdk-design-guide/error-handling.md)
+  * [PoC 관리하기](nugu-sdk/manage-poc/README.md)
+    * [이용 통계 확인](nugu-sdk/manage-poc/undefined.md)
   * [Release note](nugu-sdk/release-note.md)
 * [관련정보](reference/README.md)
   * [NUGU 대화 상태](reference/status.md)
