@@ -51,7 +51,7 @@ ClientManager.getClient().setDisplayRenderer(templateRenderer)
 ## TemplateRenderer 사용 \(모든 템플릿 제거\)
 
 TemplateRenderer를 등록하는 것만으로도 Template 노출, 업데이트, 제거는 물론 상호작용까지 알아서 처리됩니다.  
-다만 백키 클릭과 같이 TemplateRenderer가 알아챌 수 없는 이벤트로, 노출중인 모든 template을 제거하는 유즈케이스 대응을 위해 clearAll\(\) 메서드를 제공합니다.
+다만 백키 클릭과 같이 TemplateRenderer가 알아챌 수 없는 이벤트로 모든 template을 제거하는 유즈케이스 대응을 위해 clearAll\(\) 메서드를 제공합니다.
 
 ```kotlin
 // TemplateRenderer.kt in NuguUXKit
@@ -65,5 +65,5 @@ override fun onBackPressed() {
 ```
 
 SampleApp의 MainActivity에서의 사용예시입니다.  
-백키 이벤트가 발생했을때 template이 노출중인 상태라면 template을 제거하고, 아니라면 activity를 종료하는 케이스에 사용될 수 있습니다.
+백키 이벤트가 발생했을때 template이 노출상태라면 template을 제거하고, 아니면 activity를 종료하는 케이스에 사용될 수 있습니다.
 
