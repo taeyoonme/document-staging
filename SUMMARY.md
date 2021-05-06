@@ -173,6 +173,7 @@
     * [NUGU Inside](nugu-sdk/sdk-design-guide/nugu-inside.md)
     * [Error handling](nugu-sdk/sdk-design-guide/error-handling.md)
   * [PoC 관리하기](nugu-sdk/manage-poc/README.md)
+    * [PoC 관리](nugu-sdk/manage-poc/poc.md)
     * [이용 통계 확인](nugu-sdk/manage-poc/undefined.md)
   * [Release note](nugu-sdk/release-note.md)
 * [관련정보](reference/README.md)
