@@ -109,6 +109,7 @@
     * [Play 운영 정책](nugu-play/distribute-and-manage-a-play/play-operation-policy.md)
   * [NUGU biz 이용하기](nugu-play/work-with-nugu-biz/README.md)
     * [주요 개념](nugu-play/work-with-nugu-biz/nugu-biz-concept.md)
+    * [체험판 및 정식판](nugu-play/work-with-nugu-biz/undefined.md)
     * [전용 디바이스 관리](nugu-play/work-with-nugu-biz/manage-shared-device.md)
     * [사용자 그룹 관리](nugu-play/work-with-nugu-biz/manage-enrolled-user.md)
   * [Release note](nugu-play/releases.md)
