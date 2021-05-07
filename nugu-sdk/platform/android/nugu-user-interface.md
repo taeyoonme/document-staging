@@ -31,7 +31,7 @@ ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU �
    ```text
    chromeWindow.setOnChromeWindowCallback(object : ChromeWindow.OnChromeWindowCallback {
        override fun onExpandStarted() {
-         // ChromeWindow 시
+         // ChromeWindow 시작 
        }
 
        override fun onHiddenFinished() {
