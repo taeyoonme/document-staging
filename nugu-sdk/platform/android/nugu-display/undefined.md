@@ -27,7 +27,7 @@ interface Renderer {
 * **update\(\) :** 이미 노출된 Template의 특정 요소를 업데이트 해야할때 호출됩니다.
 
 {% hint style="warning" %}
-각 메서드는 mainThread에서 호출 보장하지 않습니다.  
+각 메서드는 mainThread에서 호출됨을 보장하지 않습니다.  
 필요한 로직이 mainThread에서 동작하도록 작성하시기 바랍니다.
 {% endhint %}
 
@@ -48,7 +48,7 @@ fun displayCardCleared(templateId: String)
 * **displayCardCleared\(\)** : Template 화면이 제거되면 호출해야 합니다.
 
 {% hint style="warning" %}
-DisplayAggregatorInterface.Renderer의 render\(\)에서 처리결과로 true를 리턴했다면, 이후 반드시 displayCardRenderer\(\) 혹은 displayCardRenderFailed\(\)를 호출해야 합니다.
+DisplayAggregatorInterface.Renderer의 render\(\)함수에서 처리결과로 true를 리턴했다면, 이후 반드시 displayCardRenderer\(\) 혹은 displayCardRenderFailed\(\)를 호출해야 합니다.
 {% endhint %}
 
 {% hint style="warning" %}
