@@ -178,7 +178,7 @@ NUGU play와 기본 NUGU서비스 간 간섭을 방지하고자 아래와 같은
 
 심사 요청과 동시에 Play 상태는 심사 대기로 전환되고, Play 심사 담당자에게 심사 요청 사항이 자동으로 전달됩니다. Play 상태는 `NUGU developers` &gt; `NUGU play kit` &gt; `관리` 페이지의 **등록 현황**에서 확인할 수 있습니다.
 
-![](../../.gitbook/assets/assets_ch4_432_c03-1-20-1-__2.png)
+![](../../.gitbook/assets/assets_ch4_432_c03-1-20-1-__1%20%2812%29%20%2814%29.png)
 
 {% hint style="warning" %}
 심사 요청된 Play 정보를 운영자가 검토하여 필수 정보가 누락된 경우에는 본격적인 심사 과정을 진행하기 전에 반려할 수 있습니다.  
@@ -207,5 +207,5 @@ Play 심사가 시작하기 전인 심사 요청 상태\(**심사대기** 상태
 Play 등록 상태는 `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 등록` 페이지의 **등록 현황**에서 확인할 수 있습니다.
 {% endhint %}
 
-![](../../.gitbook/assets/assets_ch4_432_c03-1-20-1-__1.png)
+![](../../.gitbook/assets/assets_ch4_432_c03-1-20-1-__1%20%2812%29.png)
 

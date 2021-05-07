@@ -272,8 +272,9 @@ asr_handler->stopRecognition()
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | engine | string | N | Device 에서 사용하는 음성인식 engine 을 명시 NUGU 음성인식 engine 을 사용하는 경우 "skt"<br>\(값을 채우지 않으면 default "skt"\) |
-| state | string | Y | IDLE, EXPECTING_SPEECH, LISTENING, RECOGNIZING, BUSY<br><a href="asr.md#state-diagram">State Diagram</a> 참고 |
-| initiator | string | N | **WAKE_UP_WORD, PRESS_AND_HOLD, TAP, EXPECT_SPEECH, EARSET**<br>마이크 오픈이 어떻게 트리거되었는지<br>* **WAKE_UP_WORD** - 사용자 발화로 Wakeup<br>* **PRESS_AND_HOLD** - PTT 방식으로 Wakeup<br>* **TAP** - NUGU 버튼 등에 의해서 Wakeup<br>* **EXPECT_SPEECH** - ASR.ExpectSpeech<br>* **EARSET** - 이어셋 VoiceCommand 등을 통해 Wakeup |
+| state | string | Y | IDLE, EXPECTING\_SPEECH, LISTENING, RECOGNIZING, BUSY<br>[State Diagram](asr.md#state-diagram) 참고 |
+| initiator | string | N | **WAKE\_UP\_WORD, PRESS\_AND\_HOLD, TAP, EXPECT\_SPEECH, EARSET**<br>마이크 오픈이 어떻게 트리거되었는지<br>* **WAKE\_UP\_WORD** - 사용자 발화로 Wakeup<br>* **PRESS\_AND\_HOLD** - PTT 방식으로 Wakeup<br>* **TAP** - NUGU 버튼 등에 의해서 Wakeup<br>* **EXPECT\_SPEECH** - ASR.ExpectSpeech<br>* **EARSET** - 이어셋 VoiceCommand 등을 통해 Wakeup |
+
 ## Directives
 
 ### ExpectSpeech
@@ -347,7 +348,7 @@ asr_handler->stopRecognition()
 | :--- | :--- | :--- | :--- |
 | token | string | N | Recognize Event에서 사용한 token 값 \(어떤 발화에 대한 분석 결과인지 식별하기 위한 용도\) |
 | result | string | N | 인식 결과를 전송 |
-| state | string | Y | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장<br>**NONE** : 음성 인식 결과 없음<br>**ERROR** : Error 발생<br>**SOS** : SOS(Start of Speech)<br>**EOS** : EOS(End of Speech)<br>**FA** : Wakeup False Acceptance |
+| state | string | Y | **PARTIAL** : 사용자 발화의 일부분<br>**COMPLETE** : 사용자 발화의 전체 문장<br>**NONE** : 음성 인식 결과 없음<br>**ERROR** : Error 발생<br>**SOS** : SOS\(Start of Speech\)<br>**EOS** : EOS\(End of Speech\)<br>**FA** : Wakeup False Acceptance |
 
 ### CancelRecognize
 

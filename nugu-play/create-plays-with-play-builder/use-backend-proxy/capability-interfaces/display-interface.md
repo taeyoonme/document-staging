@@ -25,13 +25,13 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 
 
 | Type | NU300 | Btv |
 | :--- | :---: | :---: |
-| FullText1 | ![](../../../../.gitbook/assets/assets_fulltext1_nu300__1.png) | ![](../../../../.gitbook/assets/assets_fulltext1_btv__2.jpg) |
-| FullText2 | ![](../../../../.gitbook/assets/assets_fulltext2_nu300__1.png) | ![](../../../../.gitbook/assets/assets_fulltext2_btv__2.png) |
+| FullText1 | ![](../../../../.gitbook/assets/assets_fulltext1_nu300__1%20%281%29.png) | ![](../../../../.gitbook/assets/assets_fulltext1_btv__2%20%282%29.jpg) |
+| FullText2 | ![](../../../../.gitbook/assets/assets_fulltext2_nu300__1.png) | ![](../../../../.gitbook/assets/assets_fulltext2_btv__2%20%282%29.png) |
 | ImageText1 | ![](../../../../.gitbook/assets/assets_imagetext1_nu300__1.png) | ![](../../../../.gitbook/assets/assets_imagetext1_btv.png) |
 | ImageText2 | ![](../../../../.gitbook/assets/assets_imagetext2_nu300.png) | ![](../../../../.gitbook/assets/assets_imagetext2_btv__1.png) |
-| ImageText3 | ![](../../../../.gitbook/assets/assets_imagetext3_nu300__1.png) | ![](../../../../.gitbook/assets/assets_imagetext3_btv.png) |
-| ImageText4 | ![](../../../../.gitbook/assets/assets_imagetext4_nu300.png) | ![](../../../../.gitbook/assets/assets_imagetext4_btv.png) |
-| TextList1 | ![](../../../../.gitbook/assets/assets_textlist1_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist1_btv.png) |
+| ImageText3 | ![](../../../../.gitbook/assets/assets_imagetext3_nu300__1%20%281%29.png) | ![](../../../../.gitbook/assets/assets_imagetext3_btv%20%281%29.png) |
+| ImageText4 | ![](../../../../.gitbook/assets/assets_imagetext4_nu300%20%282%29.png) | ![](../../../../.gitbook/assets/assets_imagetext4_btv.png) |
+| TextList1 | ![](../../../../.gitbook/assets/assets_textlist1_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist1_btv%20%281%29.png) |
 | TextList2 | ![](../../../../.gitbook/assets/assets_textlist2_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist2_btv__1.png) |
 | TextList3 | ![](../../../../.gitbook/assets/assets_textlist3_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist3_btv.png) |
 | TextList4 | ![](../../../../.gitbook/assets/assets_textlist4_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist4_btv.png) |
@@ -65,7 +65,7 @@ Template 유형 별로 알아보기 전, 화면 구성 요소에 대해 알아�
 
 ### TTS
 
-String type의 필드에 "&#123;&#123;$TTS&#125;&#125;"라고 입력하면, Play가 응답으로 내보낸 발화 텍스트를 해당 필드에 채워서 보냅니다.
+String type의 필드에 "{{$TTS}}"라고 입력하면, Play가 응답으로 내보낸 발화 텍스트를 해당 필드에 채워서 보냅니다.
 
 ```yaml
 {
@@ -1396,7 +1396,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets_imagelist1.png)
+![](../../../../.gitbook/assets/assets_imagelist1%20%282%29.png)
 
 ### ImageList2
 

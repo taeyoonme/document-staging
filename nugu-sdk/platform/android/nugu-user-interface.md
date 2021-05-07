@@ -31,7 +31,7 @@ ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU �
    ```text
    chromeWindow.setOnChromeWindowCallback(object : ChromeWindow.OnChromeWindowCallback {
        override fun onExpandStarted() {
-         // ChromeWindow 시
+         // ChromeWindow 시작 
        }
 
        override fun onHiddenFinished() {
@@ -44,14 +44,12 @@ ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU �
    })
    ```
 
-4. 추가적으로 SpeechRecognizerAggregatorInterface.OnStateChangeListener, DialogUXStateAggregatorInterface.Listener, ASRAgentInterface.OnResultListener, TTSAgentInterface.Listener 리스너를 연결해야 합니다.
+4. 추가적으로 DialogUXStateAggregatorInterface.Listener, ASRAgentInterface.OnResultListener 리스너를 연결해야 합니다.
 
    ```text
    chromeWindow.apply {
-       speechRecognizerAggregator.addListener(this)
        ClientManager.getClient().addDialogUXStateListener(this)
        ClientManager.getClient().addASRResultListener(this)
-       ClientManager.getClient().ttsAgent?.addListener(this)
    }
    ```
 
@@ -60,6 +58,7 @@ ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU �
 | **fun isShown\(\) : Boolean**<br>chromeWindow의 visible 확인 |
 | **fun dismiss\(\)**<br>chromeWindow를 종료 |
 | **fun setScreenOnWhileASR\(screenOn: Boolean\)**<br>ASR 중에 화면을 켜진 상태로 유지 |
+| **fun setOnCustomChipsProvider\(provider: CustomChipsProvider\)**<br>chromeWindow에 표시될 custom chips \(발화 가이드\) 프로바이더 설정 |
 
 ## NuguButton
 

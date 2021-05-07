@@ -20,7 +20,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 ## State Diagram
 
-![](../../.gitbook/assets/assets_image__5.png)
+![](../../.gitbook/assets/assets_image__5%20%282%29.png)
 
 ## SDK Interface
 
@@ -462,7 +462,7 @@ audio_player_handler->requestShuffleCommand(false)
 | template.<br>content.<br>backgroundColor | string | N | background color<br>default : "#000" |
 | template.<br>content.<br>lyrics | obejct | N | 가사 화면을 표시하기 위한 정보 |
 | template.<br>content.<br>lyrics.<br>title | string | Y | 가사 화면에서 보여질 제목 |
-| template.<br>content.<br>lyrics.<br>lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br> - **SYNC** : 자막 동기화<br> - **NON_SYNC** : 자막 동기화 없음 |
+| template.<br>content.<br>lyrics.<br>lyricsType | string | Y | 가사의 종류<br> - **NONE** : 자막 없음<br> - **SYNC** : 자막 동기화<br> - **NON\_SYNC** : 자막 동기화 없음 |
 | template.<br>content.<br>lyrics.<br>lyricsInfoList | array of lyricsInfo | Y | 가사 내용(lyricsInfo)의 목록<br>기본 값은 빈 배열 |
 | template.<br>content.<br>lyrics.<br>lyricsInfoList.<br>time | integer | N | lyricsTyps 이 SYNC 이면 mandatory<br>lyricsInfo가 보여지는 시점의 millisecond 단위의  시간 정보 |
 | template.<br>content.<br>lyrics.<br>lyricsInfoList.<br>text | string | Y | lyricsInfo가 보여지는 시점의 가사 내용 |
@@ -834,7 +834,7 @@ audio_player_handler->requestShuffleCommand(false)
 | :--- | :--- | :--- | :--- |
 | token | string | Y | 현재 재생 중인 stream의 token |
 | offsetInMilliseconds | long | Y | 현재 재생 중인 stream의 offset 값 |
-| reason | string | N | 이 이벤트가 만들어진 이유를 명시하기 위한 객체<br>**STOP**, **PLAY_ANOTHER** 중 하나.<br> - **PLAY_ANOTHER** : 동일 play 내에서 다른 곡 재생을 위해 이전에 재생하던 곡을 정지했을 때 올려주는 값.<br> - **STOP** : 그 외 정지의 경우. |
+| reason | string | N | 이 이벤트가 만들어진 이유를 명시하기 위한 객체<br>**STOP**, **PLAY\_ANOTHER** 중 하나.<br> - **PLAY\_ANOTHER** : 동일 play 내에서 다른 곡 재생을 위해 이전에 재생하던 곡을 정지했을 때 올려주는 값.<br> - **STOP** : 그 외 정지의 경우. |
 
 ### PlaybackFailed
 
@@ -868,7 +868,7 @@ audio_player_handler->requestShuffleCommand(false)
 | :--- | :--- | :--- | :--- |
 | token | string | Y | 재생에 실패한 stream의 token |
 | offsetInMilliseconds | long | Y | PlaybackFailed를 보낼 때 재생 중인 stream의 offset 값 |
-| error.type | string | Y | **MEDIA_ERROR_UNKNOWN**<br>**MEDIA_ERROR_INVALID_REQUEST**<br>**MEDIA_ERROR_SERVICE_UNAVAILABLE**<br>**MEDIA_ERROR_INTERNAL_SERVER_ERROR**<br>**MEDIA_ERROR_INTERNAL_DEVICE_ERROR** |
+| error.type | string | Y | **MEDIA\_ERROR\_UNKNOWN**<br>**MEDIA\_ERROR\_INVALID\_REQUEST**<br>**MEDIA\_ERROR\_SERVICE\_UNAVAILABLE**<br>**MEDIA\_ERROR\_INTERNAL\_SERVER\_ERROR**<br>**MEDIA\_ERROR\_INTERNAL\_DEVICE\_ERROR** |
 | error.message | string | Y | 에러에 대해 자세히 기술 |
 | currentPlaybackState.token | string | Y | 현재 재생 중인 stream의 token으로 위에 있는 token과 다를 수 있음 |
 | currentPlaybackState.<br>offsetInMilliseconds | long | Y | 에러가 발생했을 때 현재 재생 중인 stream의 offset 값 |
@@ -1347,6 +1347,6 @@ audio_player_handler->requestShuffleCommand(false)
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| error.type | string | Y | **에러 타입 코드**<br> - **INVALID_COMMAND** : **IDLE/STOP** 상태일때 Request Pause/Resume/Next/Previous/Stop Command Directive 수신한 경우 (**STOP/IDLE 일때 RequestPlayCommand 는 정상요청이므로 제외에 유의**)<br> - **UNKNOWN_ERROR** : 그 이외에 처리중 에러난 경우 |
+| error.type | string | Y | **에러 타입 코드**<br> - **INVALID\_COMMAND** : **IDLE/STOP** 상태일때 Request Pause/Resume/Next/Previous/Stop Command Directive 수신한 경우 \(**STOP/IDLE 일때 RequestPlayCommand 는 정상요청이므로 제외에 유의**\)<br> - **UNKNOWN\_ERROR** : 그 이외에 처리중 에러난 경우 |
 | error.message | string | Y | STOP/IDLE 상태에서는 Request XXX Command 를 처리할 수 없음. |
 

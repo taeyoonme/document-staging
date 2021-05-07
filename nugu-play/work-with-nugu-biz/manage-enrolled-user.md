@@ -29,6 +29,7 @@
 1️⃣ `NUGU developers` &gt; `NUGU biz` &gt; `사용자 그룹 관리` &gt; `사용자 초대` 메뉴에서 사용자를 등록합니다.
 
 * 사용자 등록은 첨부파일을 이용하여 일괄 등록하거나 직접 입력할 수 있습니다.
+* 체험판 회원의 경우 10명의 사용자만 초대가 가능합니다.
 * 직접 입력 시 이름, 이메일, 휴대폰 정보는 필수 입력 정보입니다.
 
 ![](../../.gitbook/assets/assets_ch6_632_c01__3.png)
@@ -51,7 +52,7 @@
 
 제공 받은 Private Play의 상세 정보는 NUGU App에서 확인할 수 있습니다.
 
-![](../../.gitbook/assets/assets_ch6_633_c01.png)
+![](../../.gitbook/assets/assets_ch6_633_c01%20%282%29.png)
 
 {% hint style="info" %}
 Private Play 사용자는 언제든지 NUGU App에서 Private Play 이용 권한을 해제할 수 있습니다. 해제 시 Private Play 이용 권한이 삭제되며, 삭제된 이후에는 Private Play를 이용할 수 없습니다.

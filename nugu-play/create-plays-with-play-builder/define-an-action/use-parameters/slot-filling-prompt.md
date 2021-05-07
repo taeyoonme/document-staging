@@ -16,11 +16,11 @@ Utterance Parameter 등록 및 매핑에 대한 자세한 내용은 [Parameter �
 
 2. 응답에 필요한 정보 가져오기 영역에서 Slot-Filling Prompt를 통해 Entity를 다시 받을 Utterance Parameter에 Entity를 매핑한 후 '필수' 박스에 체크합니다.
 
-![](../../../../.gitbook/assets/assets_ch3_32331_c01-1.png)
+![](../../../../.gitbook/assets/assets_ch3_32331_c01-1%20%283%29.png)
 
 3. 이후 Slot-filling Prompt를 입력합니다.
 
-![](../../../../.gitbook/assets/assets_ch3_32331_c02-1.gif)
+![](../../../../.gitbook/assets/assets_ch3_32331_c03%20%2812%29%20%286%29.gif)
 
 Slot-filling Prompt는 다른 Prompt와 달리 마지막 발화부터 입력하는 스택 구조이며 LIFO\(Last In First Out\)로 동작합니다. 여러 개의 Prompt를 입력하면 가장 마지막에 입력한 Prompt부터 차례대로 사용자에게 응답하게 됩니다.
 
@@ -30,7 +30,7 @@ Slot-filling Prompt는 다른 Prompt와 달리 마지막 발화부터 입력하�
 **종료 Prompt**에 대한 자세한 내용은 [Prompt의 유형](../use-responses/use-prompts.md#prompt-types)을 참고하세요.
 {% endhint %}
 
-![](../../../../.gitbook/assets/assets_ch3_32331_c03.gif)
+![](../../../../.gitbook/assets/assets_ch3_32331_c03%20%2812%29.gif)
 
 ## Slot-filling Prompt 작성 시 주의 사항
 

@@ -4,7 +4,7 @@ Play를 처음 생성한 뒤 좌측의 `General`의 하위 메뉴에서 Play와 
 
 ## 기본 정보\(`General` &gt; `기본 정보`\) <a id="setting"></a>
 
-![](../../.gitbook/assets/assets_customize-a-play1.jpg)
+![](../../.gitbook/assets/assets_customize-a-play1%20%282%29.jpg)
 
 **① Play 이름**  
 Play를 생성할 때 등록한 것으로서, Play Builder 내에서 ID 역할을 하며, 중복과 변경이 허용되지 않습니다.
@@ -19,7 +19,7 @@ NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경�
 현재는 AudioPlayer Interface만 지원합니다. 자세한 내용은 [AudioPlayer Interface 지원하는 Play 만들기](create-a-play-with-audioplayer/)를 참고하세요.
 {% endhint %}
 
-![](../../.gitbook/assets/assets_customize-a-play2-1.jpg)
+![](../../.gitbook/assets/assets_customize-a-play2-1%20%283%29.jpg)
 
 **④ 합성음 목소리**
 
@@ -45,7 +45,7 @@ NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경�
 
 ## 외부 연동 서버 설정 및 예외 상황 관리\(`General` &gt; `외부 서버 연결 정보`\) <a id="setting-backend-proxy"></a>
 
-![](../../.gitbook/assets/assets_customize-a-play3.jpg)
+![](../../.gitbook/assets/assets_customize-a-play3%20%282%29.jpg)
 
 **⑥ Web URL**  
 외부 연동 서버\(Backend proxy\)의 Web URL을 입력합니다.  
@@ -75,11 +75,11 @@ Play에서 정상적인 응답을 못하는 경우\(예: 콘텐츠 서버의 무
 
 Intent\(혹은 precondition\)와 Action과의 관계 및 Action Tree를 보여줍니다.
 
-![](../../.gitbook/assets/assets_ch3_321_c04.png)
+![](../../.gitbook/assets/assets_ch3_321_c04%20%282%29.png)
 
 ## 빌드/History\(`General` &gt; `빌드 / History`\)
 
 빌드 이력\(History\)을 확인할 수 있습니다. 또한, 이 페이지에서도 `Play 빌드` 버튼을 이용하여 Play를 빌드할 수 있습니다.
 
-![](../../.gitbook/assets/assets_ch3_321_c05-1.png)
+![](../../.gitbook/assets/assets_ch3_321_c05-1%20%283%29.png)
 

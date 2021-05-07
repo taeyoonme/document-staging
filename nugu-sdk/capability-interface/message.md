@@ -15,6 +15,7 @@ description: 문자 확인 및 전송 기능 제어를 위한 규격
 | 1.2 | 2020.08.13 | contact type 에 EMERGENCY 추가 |
 | 1.3 | 2020.11.02 | SendCandidates directive 에 searchScene 필드 추가<br>Context 에 searchScene 필드 추가 |
 | 1.4 | 2021.01.19 | Context 에 messageToSend 필드 추가<br>SendCandidates directive 에 messageToSend 필드 추가 |
+
 ## SDK Interface
 
 ### MessageAgent 사용
@@ -166,7 +167,7 @@ messageAgent.addOnPlaybackListener(listener)
 | template.<br>recipientIntended.label | string | N | 집, 회사 등을 구분하기 위한 라벨 |
 | template.<br>searchScene | string | N | 검색 대상과 화면을 정의하기 위해 추가<br> - **DEFAULT** : 기본 검색 로직<br> - **T114DIRECT** : 긴급전화 |
 | template.<br>candidates | array of [Contact](./#contact) | N | 화면에 검색 결과 리스트를 디스플레이하는 중에만 context에 추가 |
-| template.<br>messageToSend | object | N | 발신용으로 사용할 메세지<br>SendCandidates의 같은 파라미터를 통해 전달받은 MSG_BODY를 그대로 반환 |
+| template.<br>messageToSend | object | N | 발신용으로 사용할 메세지<br>SendCandidates의 같은 파라미터를 통해 전달받은 MSG\_BODY를 그대로 반환 |
 | template.<br>messageToSend.<br>text | string | Y | 본문 |
 | template.<br>messageToSend.<br>type | string | N | 메세지의 타입 |
 ## Common Objects
