@@ -14,8 +14,8 @@ Play 사용을 위해 사용자가 발화한 음성명령 Top 100
 **실패 발화 Top 100**  
 Play 사용을 위해 사용자가 발화한 음성명령 중 실패한 발화 Top 100
 
-**Intent Top 100**  
-Play 사용을 위해 사용자가 발화한 음성명령의 Intent Top 100
+**Intent Top 10**  
+Play 사용을 위해 사용자가 발화한 음성명령의 Intent Top 10
 
 ## 주요 통계 <a id="main-stats"></a>
 
