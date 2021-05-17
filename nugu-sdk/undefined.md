@@ -56,7 +56,109 @@
   </tbody>
 </table>
 
+
+
+## 계정 연동 방식
+
 NUGU SDK 를 연동하는 방식은 'NUGU 계정 미사용 방식'과 'NUGU 계정 연동 방식' 두가지를 제공합니다. 체험판의 경우에는 'NUGU 계정 미사용 방식'만 지원하지만 정식판에서는 두가지 방식 모두 제공합니다. 'NUGU 계정 연동 방식'은 사용자의 T아이디를 기반으로 하고 있으며 사용자가 음악 서비스의 개인 계정을 연동하거나, 생년월일 기반의 운세 서비스를 제공하는 등 사용자 개인화된 서비스 경험을 제공할 수 있습니다. 
 
-체험판 신청서를 작성하거나 제휴 프로세스가 완료되면 NUGU SDK 를 사용할 수 있는 인증정보가 제공됩니다. 다음 PoC 관리하기 가이드에 따라 NUGU SDK 를 사용해보세요. 
+
+
+## 체험판 제공 서비스
+
+체험판에서 사용할 수 있는 기본 지원 play 와 각각의 대표 발화 아래와 같습니다. 
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Play</th>
+      <th style="text-align:left">&#xC0C1;&#xC138;</th>
+      <th style="text-align:left">&#xB300;&#xD45C; &#xBC1C;&#xD654;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">&#xB0A0;&#xC9DC;/&#xC2DC;&#xAC04;</td>
+      <td style="text-align:left">&#xB0A0;&#xC9DC;&#xC640; &#xC2DC;&#xAC04;&#xC744; &#xD655;&#xC778;&#xD560;
+        &#xC218; &#xC788;&#xB294; play</td>
+      <td style="text-align:left">
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC624;&#xB298; &#xBA70;&#xCE60;&#xC774;&#xC57C;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC624;&#xB298; &#xBB34;&#xC2A8; &#xC694;&#xC77C;&#xC774;&#xC57C;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xAD11;&#xBCF5;&#xC808;&#xC740; &#xBB34;&#xC2A8;
+          &#xC694;&#xC77C;&#xC774;&#xC57C;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC9C0;&#xAE08; &#xBA87;&#xC2DC;&#xC57C;?&quot;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#xAC10;&#xC131;&#xB300;&#xD654;</td>
+      <td style="text-align:left">&#xC778;&#xC0AC;&#xBD80;&#xD130; &#xB9D0;&#xB3D9;&#xBB34;&#xAE4C;&#xC9C0;
+        &#xB300;&#xD654;&#xD560; &#xC218; &#xC788;&#xB294; play</td>
+      <td style="text-align:left">
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC548;&#xB155;?&quot; &quot;&#xC544;&#xB9AC;&#xC544;,
+          &#xC798;&#xC790;&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC88B;&#xC740; &#xC544;&#xCE68;!&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xB18D;&#xB2F4;&#xD574;&#xBD10;&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xD798;&#xB4E4;&quot;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">NUGU &#xBC31;&#xACFC;</td>
+      <td style="text-align:left">&#xC2DC;&#xC0AC;&#xC0C1;&#xC2DD;, &#xC0AC;&#xC790;&#xC131;&#xC5B4;, &#xC720;&#xD589;&#xC5B4;
+        &#xB4F1; &#xB2E4;&#xC591;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xCC3E;&#xC544;&#xBCFC;
+        &#xC218; &#xC788;&#xB294; play</td>
+      <td style="text-align:left">
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC778;&#xACF5;&#xC9C0;&#xB2A5;&#xC774;
+          &#xBB50;&#xC57C;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC911;&#xC559;&#xB300; &#xC5F0;&#xADF9;&#xC601;&#xD654;&#xACFC;
+          &#xC804;&#xACF5; &#xBC30;&#xC6B0;&#xB294; &#xB204;&#xAC00; &#xC788;&#xC5B4;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC138;&#xACC4;&#xC5D0;&#xB294; &#xBA87;
+          &#xAC1C;&#xC758; &#xB098;&#xB77C;&#xAC00; &#xC788;&#xC5B4;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xAC01;&#xC8FC;&#xAD6C;&#xAC80;&#xC774;
+          &#xBB50;&#xC57C;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC18C;&#xD655;&#xD589;&#xC774; &#xBB34;&#xC2A8;
+          &#xB73B;&#xC774;&#xC57C;?&quot;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#xB0A0;&#xC528;</td>
+      <td style="text-align:left">&#xAD81;&#xAE08;&#xD55C; &#xC9C0;&#xC5ED;&#xC758; &#xB0A0;&#xC528;&#xC640;
+        &#xBBF8;&#xC138;&#xBA3C;&#xC9C0; &#xC815;&#xBCF4;&#xB97C; &#xC54C;&#xB824;&#xC8FC;&#xB294;
+        play</td>
+      <td style="text-align:left">
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC624;&#xB298;/&#xB0B4;&#xC77C;/&#xC774;&#xBC88;&#xC8FC;/&#xB2E4;&#xC74C;
+          &#xB0A0;&#xC528; &#xC54C;&#xB824;&#xC918;&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xB0B4;&#xC77C; &#xC81C;&#xC8FC;&#xB3C4;
+          &#xB0A0;&#xC528; &#xC5B4;&#xB54C;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC624;&#xB298; &#xB300;&#xC804; &#xBBF8;&#xC138;&#xBA3C;&#xC9C0;
+          &#xC5B4;&#xB54C;?&quot;</p>
+        <p>&quot;&#xC544;&#xB9AC;&#xC544;, &#xC624;&#xB298; &#xC138;&#xCC28;&#xD560;&#xAE4C;?&quot;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">&#xD074;&#xB798;&#xC2DD; &#xB9E4;&#xB2C8;&#xC800;</td>
+      <td style="text-align:left">&#xD074;&#xB798;&#xC2DD;&#xC744; &#xCD94;&#xCC9C;&#xD558;&#xACE0; &#xC7AC;&#xC0DD;&#xAD00;&#xB828;
+        &#xCEE8;&#xD2B8;&#xB864;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; play</td>
+      <td
+      style="text-align:left">
+        <p>&quot;&#xD074;&#xB798;&#xC2DD;&#xB9E4;&#xB2C8;&#xC800;&#xC5D0;&#xC11C;
+          &#xCD94;&#xCC9C; &#xD074;&#xB798;&#xC2DD; &#xD2C0;&#xC5B4;&#xC918;.&quot;</p>
+        <p>&quot;&#xD074;&#xB798;&#xC2DD;&#xB9E4;&#xB2C8;&#xC800;&#xC5D0;&#xC11C;
+          &#xC7A0;&#xC798; &#xB54C; &#xB4E3;&#xAE30; &#xC88B;&#xC740; &#xC74C;&#xC545;
+          &#xD2C0;&#xC5B4;&#xC918;.&quot;</p>
+        <p>&quot;&#xD074;&#xB798;&#xC2DD;&#xB9E4;&#xB2C8;&#xC800;&#xC5D0;&#xC11C;
+          &#xC7AC;&#xC988; &#xD2C0;&#xC5B4;&#xC918;,&quot;</p>
+        <p>&quot;(&#xC74C;&#xC545; &#xC7AC;&#xC0DD; &#xC911;) &#xC774; &#xC74C;&#xC545;
+          &#xBB50;&#xC57C;?&quot;</p>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
+정식판으로 업그레이드 하게 되면 더 많은 NUGU play 를 사용해보실 수 있습니다. NUGU play 에 대해 더 자세히 알고 싶다면 [https://www.nugu.co.kr/static/service/](https://www.nugu.co.kr/static/service/) 를 참고해주세요.  
+
+
+
+## 체험판 신청
+
+체험판 신청서를 작성하거나 제휴 프로세스가 완료되면 NUGU SDK 를 사용할 수 있는 인증정보가 제공됩니다. 다음 체험판 신청하기 가이드에 따라 NUGU SDK 체험판을 사용해보세요. 
 
