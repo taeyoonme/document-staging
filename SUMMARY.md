@@ -115,6 +115,7 @@
   * [Release note](nugu-play/releases.md)
 * [NUGU SDK](nugu-sdk/README.md)
   * [체험판과 정식판](nugu-sdk/undefined.md)
+  * [체험판 신청하기](nugu-sdk/undefined-1.md)
   * [PoC 관리하기](nugu-sdk/manage-poc/README.md)
     * [PoC 관리](nugu-sdk/manage-poc/poc.md)
     * [이용 통계 확인](nugu-sdk/manage-poc/undefined.md)
