@@ -70,7 +70,7 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 * 체험판은 [체험판 신청](https://developers.nugu.co.kr/#/sdk/sdkTrial)을 통해 발급 가능합니다.
 {% endhint %}
 
-발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요. 
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.
 
 * 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서 확인 가능합니다.
 

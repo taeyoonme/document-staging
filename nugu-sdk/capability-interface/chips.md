@@ -149,9 +149,9 @@ CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get(
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| target | string | Y | **DM**  - ASR.ExpectSpeech, Session.Set 와 같이 전달되는 발화가이드 |
+| target | string | Y | **DM**<br> - ASR.ExpectSpeech, Session.Set 와 같이 전달되는 발화가이드 |
 | chips | list | Y | 발화 가이드 목록 |
-| chips.type | string | Y | **ACTION** : 보이스크롬 가이드의 '액션버튼'으로 기능 단위의 동작 처리를 위한 발화 가이드. **GENERAL** : 기본 발화 가이드. |
-| chips.text | string | Y | 버튼 텍스트  - Text.TextInput event 를 보내기 위한 텍스트 명령 문자열 |
+| chips.type | string | Y | **ACTION** : 보이스크롬 가이드의 '액션버튼'으로 기능 단위의 동작 처리를 위한 발화 가이드.<br>**GENERAL** : 기본 발화 가이드. |
+| chips.text | string | Y | 버튼 텍스트<br> - Text.TextInput event 를 보내기 위한 텍스트 명령 문자열 |
 | chips.token | string | N | Text.TextInput event 의 출처를 구분하기 위한 값 |
 
