@@ -93,7 +93,7 @@ NUGU계정 미사용, 체험판 사용 시에는 code와 redirect\_url 입력이
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="grant\_type" type="string" required=true %}
-authorization\_code \(신규\), client\_credentials \(NUGU 회원 미사용, 체험\)
+authorization\_code \(신규\), client\_credentials \(NUGU 회원 미사용, 체험판\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="code" type="string" required=false %}
