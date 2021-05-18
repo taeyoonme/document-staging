@@ -105,7 +105,7 @@ NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증�
 
 {% embed url="https://github.com/nugu-developers/nugu-linux/wiki/Sample-OAuth2" caption="NUGU SDK for Linux OAuth2 client python sample" %}
 
-[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 nugu-config.json 파일을 다운로드 받은 후,  Client ID, Client Secret 정보를 활용하여 위 OAuth2 client 예제를 통해 인증을 진행할 수 있습니다.
+[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 nugu-config.json 파일을 다운로드 받은 후, Client ID, Client Secret 정보를 활용하여 위 OAuth2 client 예제를 통해 인증을 진행할 수 있습니다.
 
 * 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서  nugu-config.json 파일을 다운로드 받습니다.
 
