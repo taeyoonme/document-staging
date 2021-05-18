@@ -30,7 +30,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 #### AudioPlayer.Template1
 
-![](../../../../.gitbook/assets/assets_display-template1%20%282%29%20%282%29%20%282%29.png)
+![](../../../../.gitbook/assets/assets_display-template1%20%282%29%20%282%29.png)
 
 ```javascript
 "metadata": {    
@@ -64,7 +64,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 #### AudioPlayer.Template2
 
-![](../../../../.gitbook/assets/assets_display-template2%20%282%29%20%282%29%20%282%29.png)
+![](../../../../.gitbook/assets/assets_display-template2%20%282%29%20%282%29.png)
 
 ```javascript
 "metadata": {    

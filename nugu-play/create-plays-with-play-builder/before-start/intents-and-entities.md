@@ -44,7 +44,7 @@ Entity는 필요한 경우에만 정의하는 선택 요소이지만, 정의한 
 **Entity Type**은 특정 Entity들의 집합 또는 그 범주를 의미하며,  
 **Entity Role**은 특정 Entity의 발화 문장에서의 역할을 의미합니다.
 
-![](../../../.gitbook/assets/assets_ch1_112_01-1%20%282%29%20%282%29%20%282%29.png)
+![](../../../.gitbook/assets/assets_ch1_112_01-1%20%282%29%20%282%29.png)
 
 Entity Type은 Built-in Entity Type과 Custom Entity type으로 구분됩니다.
 
