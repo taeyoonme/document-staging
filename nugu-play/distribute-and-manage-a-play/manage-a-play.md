@@ -6,7 +6,7 @@
 
 배포가 완료된 Play는 `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 관리` 메뉴에서 상세 정보를 확인하고 상태를 변경할 수 있습니다.
 
-![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m1uagcqecztq0v5s_ch5_531_c01__1%20%281%29.png)
+![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m1uagcqecztq0v5s_ch5_531_c01__1%20%281%29%20%281%29.png)
 
 이 페이지에서 확인할 수 있는 Play의 정보는 다음과 같습니다.
 
@@ -39,7 +39,7 @@
 
 \(Play 사용 여부 현황은 `NUGU developers` &gt; `NUGU play kit` &gt; `관리` &gt; `Play 관리` 페이지의 `관리 현황`에서 확인할 수 있습니다.\)
 
-![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m1uagcqecztq0v5s_ch5_531_c01__1%20%281%29.png)
+![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_m1uagcqecztq0v5s_ch5_531_c01__1%20%281%29%20%281%29.png)
 
 {% hint style="info" %}
 Play의 상태 변경\(Enable → Disable, Disable → Enable\)은 자유롭게 설정할 수 있으나 NUGU developers의 관리자가 직권 중지한 Play는 개발자가 직접 재개할 수 없습니다.

@@ -8,7 +8,7 @@ Voice Chrome 외에 디스플레이 기능을 추가하기 위해 LED를 사용�
 
 | Color | RGB | CMYK | Pantone |
 | :--- | :--- | :--- | :--- |
-| ![](../../.gitbook/assets/assets_color_nugublue__1%20%285%29.png) NUGU Blue | 0,158, 255 \(\#009DFF\) | 85, 21, 0, 0 | 2925C |
+| ![](../../.gitbook/assets/assets_color_nugublue__1%20%285%29%20%286%29.png) NUGU Blue | 0,158, 255 \(\#009DFF\) | 85, 21, 0, 0 | 2925C |
 | ![](../../.gitbook/assets/assets_color_green.png) Green | 0, 230, 136 \(\#00E688\) | 48, 0, 45, 0 | 2412C |
 
 ## **NUGU Voice Chrome 상태**
@@ -55,7 +55,7 @@ FAB과 Button에 따른 사용 및 동작 정의는 다음과 같습니다.
 {% tab title="FAB" %}
 \(1\) **FAB**을 눌러 보이스크롬을 호출하면 FAB 버튼은 사라집니다.
 
-![](../../.gitbook/assets/assets_fab_1__3%20%282%29.png)
+![](../../.gitbook/assets/assets_fab_1__3%20%282%29%20%282%29.png)
 
 \(1-1\) **FAB**은 스크롤 방향에 따라 노출 여부를 달리할 수 있습니다.
 

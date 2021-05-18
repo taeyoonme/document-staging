@@ -47,13 +47,19 @@ carthage update --platform iOS
 {% hint style="warning" %}
 NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
+
+* 체험판은 [체험판 신청](https://developers.nugu.co.kr/#/sdk/sdkTrial)을 통해 발급 가능합니다.
 {% endhint %}
 
-제휴를 통해 생성된 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.
+
+* 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서 확인 가능합니다.
 
 {% hint style="success" %}
 NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,  
-Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다.
+Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다. 
+
+* 체험판은 Redirect URI가 필요하지 않습니다.
 {% endhint %}
 
 #### info.plist 파일에 URL Scheme 추가
@@ -83,6 +89,8 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
 #### 다운로드 받기
 
 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 nugu-config.plist 파일을 다운로드 받습니다.
+
+* 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서 nugu-config.plist 파일을 다운로드 받습니다.
 
 #### 설정하기
 
@@ -122,7 +130,9 @@ NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plis
 
 ## Step 4: NUGU 로그인 추가
 
-NUGU 로그인은 **NUGU 회원 연동 방식**과 **NUGU 회원 미사용 방식** 두 가지로 제공됩니다.
+NUGU 로그인은 **NUGU 회원 연동 방식**과 **NUGU 회원 미사용 방식** 두 가지로 제공됩니다. 
+
+* 체험판은 NUGU 회원 미사용 방식만 가능합니다.
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
