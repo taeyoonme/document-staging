@@ -2,7 +2,7 @@
 
 NUGU 플랫폼 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)의 규격을 지원하고, NUGU의 회원 체계는 SK텔레콤의 [T아이디](https://www.skt-id.co.kr)를 따릅니다.
 
-플랫폼 인증을 위해서는 NUGU에서 별도로 발급하는 `Client Id, Client Secret`과 제휴사에서 등록한 `Redirect Uri` 정보가 필요합니다. 인증 정보는 체험판 신청으로 발급 받을 수 있으며, 정식판 제휴 시에는 PoC 관리 메뉴에서 발급 받은 정보를 확인 할 수 있습니다.
+플랫폼 인증을 위해서는 NUGU에서 별도로 발급하는 `Client Id, Client Secret`과 제휴사에서 등록한 `Redirect Uri` 정보가 필요합니다.
 
 ## Authorize Endpoint
 
@@ -20,7 +20,7 @@ NUGU 플랫폼 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)의 규
 {% endapi-method-summary %}
 
 {% api-method-description %}
-\*NUGU계 미사용, 체험판 사용 시에 불필요합니다.
+
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -70,9 +70,7 @@ Location: {redirect_uri}?code={code}&state={state}
 
 ## Token Endpoint
 
-`grant_type=refresh_token`, `grant_type=authorization_code` , `grant_type=client_credentials` 가사용 됩니다.
-
-NUGU계정 미사용, 체험판은 `grant_type=client_credentials` 을 사용합니다.
+`grant_type=refresh_token`, `grant_type=authorization_code` 만 사용 됩니다.
 
 Client 인증 정보는 Body Parameter\(application/x-www-form-urlencoded\)를 사용 합니다.
 
@@ -82,7 +80,7 @@ Client 인증 정보는 Body Parameter\(application/x-www-form-urlencoded\)를 �
 {% endapi-method-summary %}
 
 {% api-method-description %}
-NUGU계정 미사용, 체험판 사용 시에는 code와 redirect\_url 입력이 불필요합니다.
+
 {% endapi-method-description %}
 
 {% api-method-spec %}
@@ -93,14 +91,14 @@ NUGU계정 미사용, 체험판 사용 시에는 code와 redirect\_url 입력이
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="grant\_type" type="string" required=true %}
-authorization\_code \(신규\), client\_credentials \(NUGU 회원 미사용, 체험\)
+authorization\_code \(신규\)
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="code" type="string" required=false %}
+{% api-method-parameter name="code" type="string" required=true %}
 응답 받은 code 값을 사용 합니다.
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="redirect\_uri" type="string" required=false %}
+{% api-method-parameter name="redirect\_uri" type="string" required=true %}
 인증 요청 시 사용된 redirect\_uri를 사용합니다.
 {% endapi-method-parameter %}
 
