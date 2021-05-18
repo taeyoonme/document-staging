@@ -20,7 +20,7 @@ NUGU 플랫폼 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)의 규
 {% endapi-method-summary %}
 
 {% api-method-description %}
-\*NUGU계 미사용, 체험판 사용 시에 불필요합니다.
+\*NUGU계정 미사용, 체험판 사용 시에 불필요합니다.
 {% endapi-method-description %}
 
 {% api-method-spec %}
