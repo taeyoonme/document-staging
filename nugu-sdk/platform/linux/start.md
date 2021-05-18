@@ -66,15 +66,25 @@ sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-example
 {% hint style="warning" %}
 NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
+
+* 체험판은 [체험판 신청](https://developers.nugu.co.kr/#/sdk/sdkTrial)을 통해 발급 가능합니다.
 {% endhint %}
 
-발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.
+발급받은 PoC 정보를 확인하기 위해서 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요. 
+
+* 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서 확인 가능합니다.
+
+{% hint style="success" %}
+* 체험판은 Redirect URI가 필요하지 않습니다.
+{% endhint %}
 
 ### 음성인식 모델 파일 설정하기
 
 #### 다운로드 받기
 
 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 음성인식 모델 파일을 다운로드 받습니다.
+
+* 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서 음성인식 모델파일을 다운로드 받습니다.
 
 #### 설정하기
 
@@ -94,6 +104,10 @@ NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증�
 하지만, 인증을 쉽게 테스트할 수 있도록 아래의 NUGU SDK for Linux Github에 Python으로 작성된 별도의 웹기반 OAuth2 client 예제를 제공하고 있습니다.
 
 {% embed url="https://github.com/nugu-developers/nugu-linux/wiki/Sample-OAuth2" caption="NUGU SDK for Linux OAuth2 client python sample" %}
+
+[NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 nugu-config.json 파일을 다운로드 받은 후,  Client ID, Client Secret 정보를 활용하여 위 OAuth2 client 예제를 통해 인증을 진행할 수 있습니다.
+
+* 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서  nugu-config.json 파일을 다운로드 받습니다.
 
 ## Step 4: NUGU 사용하기
 

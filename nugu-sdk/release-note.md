@@ -8,7 +8,7 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 
 ### 2021-05-20
 
-* [체험판과 정식 ](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-M_x4KZe6BYAk6OZ0gRZ/nugu-sdk/undefined)안내 추가
+* [체험판과 정식판 ](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-M_x4KZe6BYAk6OZ0gRZ/nugu-sdk/undefined)안내 추가
 * [체험판 신청하기](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-M_x4KZe6BYAk6OZ0gRZ/nugu-sdk/undefined-1) 절차 안내 추가
 * [Authentication](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-M_x4KZe6BYAk6OZ0gRZ/nugu-sdk/authentication) NUGU계정 미사용, 체험판 안내 추가
 * [Platform - iOS - 시작하기](https://app.gitbook.com/@nugu-developers-docs/s/dev/~/drafts/-M_x4KZe6BYAk6OZ0gRZ/nugu-sdk/platform/ios/start) 체험판 안내 추가
