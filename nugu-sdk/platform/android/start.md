@@ -111,7 +111,7 @@ Manifest에 추가한 android.permission.RECORD\_AUDIO 권한은 런타임에 �
 
 NUGU 로그인은 **NUGU 회원 연동 방식**과 **NUGU 회원 미사용 방식** 두 가지로 제공됩니다.
 
-* 체험판은 NUGU 회원 미사용 방식만 가능합니다.
+* 체험판은 [NUGU 회원 미사용 방식](start.md#nugu-1)만 가능합니다.
 
 {% hint style="info" %}
 NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
