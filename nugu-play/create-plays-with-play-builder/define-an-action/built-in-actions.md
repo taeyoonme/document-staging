@@ -2,7 +2,7 @@
 
 Play Builder의 사용자가 Play를 만들면서 생성한 Action을 Custom Action이라고 하며, 꼭 만들어야 하거나 만들기를 권장하는 Action을 미리 생성하여 Built-in Action으로 제공하고 있습니다.
 
-모든 Play에서 항상 정의해야 하는 Action 4개는 play를 만들 때 자동으로 생성됩니다.
+모든 Play에서 항상 정의해야 하는 Action 4개는 Play를 만들 때 자동으로 생성됩니다.
 
 Built-in Action은 다음과 같습니다.
 
