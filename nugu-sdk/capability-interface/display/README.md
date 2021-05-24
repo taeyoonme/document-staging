@@ -6,7 +6,7 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 
 ## Version
 
-최신 버전은 1.6 입니다.
+최신 버전은 1.7 입니다.
 
 | Version | Date | Description |
 | :--- | :--- | :--- |
@@ -17,6 +17,7 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 | 1.4 | 2020.06.22 | ButtonObject 에 postback, autoTrigger, closeTemplateAfter, disable 필드 추가 ElementSelected event 에 postback 필드 추가 Dummy directive 추가 |
 | 1.5 | 2020.09.02 | Template 에 eventType, textInput 필드 추가 |
 | 1.6 | 2020.10.16 | BadgeObject, UnifiedSearch1 추가 |
+| 1.7 | 2021.05.24 | StyleGrammarGuide, FloatingBannerObject 추가 |
 
 ## SDK Interface
 
@@ -193,7 +194,7 @@ displayAgent.notifyUserInteraction()
 ```text
 {
   "Display": {
-    "version": "1.3",
+    "version": "1.7",
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
     "focusedItemToken": "{{STRING}}",
@@ -322,7 +323,7 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 | text | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | Y | 제목 |
 | subtext | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | N | ASR Text 등 부제목 |
 | subicon | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | 서브 아이콘 \( 위치 : subText 왼쪽 \) |
-| button | ButtonObject | N | 우측에 위치하는 버튼 |
+| button | [ButtonObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#buttonobject) | N | 우측에 위치하는 버튼 |
 
 ### BackgroundObject
 
@@ -356,6 +357,101 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | grammarGuide | array of string | N | 화면에 표시할 문자열들을 정의합니다. 사용예 : \["홈 화면으로 이동해줘", "선호채널 찾아줘"\] |
+
+### StyleGrammarGuide
+
+GrammarGuide의 확장된 발화가이드 입니다.
+
+```text
+[
+    {
+        "text": "{{STRING}}",
+        "type": "{{STRING}}",
+        "style": {}
+    }
+]
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">text</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xD654;&#xBA74;&#xC5D0; &#xD45C;&#xC2DC;&#xD560; &#xBB38;&#xC790;&#xC5F4;&#xB4E4;&#xC744;
+        &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">type</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p>NONE, NUDGE, STYLE</p>
+        <p>NONE: &#xAE30;&#xBCF8; UI</p>
+        <p>NUDGE: &#xB11B;&#xC9C0; UI</p>
+        <p>STYLE: style &#xD544;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">style</td>
+      <td style="text-align:left">object</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p>uiType &#xC774; STYLE &#xC77C; &#xB54C;, &#xD544;&#xC218;</p>
+        <p>CSS &#xC18D;&#xC131;&#xC740; &#xBAA8;&#xB450; &#xAC00;&#xB2A5;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### FloatingBannerObject
+
+Banner에 사용되는 image object 입니다.
+
+```text
+{
+    "image": ImageObject,
+    "style": Object
+}
+```
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">image</td>
+      <td style="text-align:left"><a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject">ImageObject</a>
+      </td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">banner&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; image object</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">style</td>
+      <td style="text-align:left">object</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">
+        <p>banner&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xB294; style object.</p>
+        <p>&#xC0AC;&#xC6A9;&#xC608; : style: { right: &quot;115px&quot;, bottom:
+          &quot;430px&quot; }</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ### ToggleButtonObject
 
