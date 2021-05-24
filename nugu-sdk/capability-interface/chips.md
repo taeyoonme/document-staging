@@ -32,7 +32,7 @@ description: 보이스 크롬에 노출되는 발화 가이드를 제공하기 �
       <td style="text-align:left">2021.04.08</td>
       <td style="text-align:left">
         <p>Render directive &#xC758; chips.type &#xC5D0; NUDGE &#xCD94;&#xAC00;</p>
-        <p>Render directive &#xC758; target &#xC5D0; LISTEN, SPEAKING &#xCD94;</p>
+        <p>Render directive &#xC758; target &#xC5D0; LISTEN, SPEAKING &#xCD94;&#xAC00;</p>
       </td>
     </tr>
   </tbody>
