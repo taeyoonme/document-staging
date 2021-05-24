@@ -6,12 +6,37 @@ description: 보이스 크롬에 노출되는 발화 가이드를 제공하기 �
 
 ## Version
 
-최신 버전은 1.1 입니다.
+최신 버전은 1.2 입니다.
 
-| Version | Date | Description |
-| :--- | :--- | :--- |
-| 1.0 | 2020.07.02 | 규격 추가 |
-| 1.1 | 2020.10.26 | Render directive 의 chips 에 token 필드 추가 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">Version</th>
+      <th style="text-align:left">Date</th>
+      <th style="text-align:left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">1.0</td>
+      <td style="text-align:left">2020.07.02</td>
+      <td style="text-align:left">&#xADDC;&#xACA9; &#xCD94;&#xAC00;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.1</td>
+      <td style="text-align:left">2020.10.26</td>
+      <td style="text-align:left">Render directive &#xC758; chips &#xC5D0; token &#xD544;&#xB4DC; &#xCD94;&#xAC00;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">1.2</td>
+      <td style="text-align:left">2021.04.08</td>
+      <td style="text-align:left">
+        <p>Render directive &#xC758; chips.type &#xC5D0; NUDGE &#xCD94;&#xAC00;</p>
+        <p>Render directive &#xC758; target &#xC5D0; LISTEN, SPEAKING &#xCD94;</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## SDK Interface
 
@@ -115,7 +140,7 @@ CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get(
 ```text
 {
   "Chips": {
-    "version": "1.1"
+    "version": "1.2"
   }
 }
 ```
@@ -131,7 +156,7 @@ CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get(
     "name": "Render",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.2"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -147,11 +172,66 @@ CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get(
 }
 ```
 
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| target | string | Y | **DM**  - ASR.ExpectSpeech, Session.Set 와 같이 전달되는 발화가이드 |
-| chips | list | Y | 발화 가이드 목록 |
-| chips.type | string | Y | **ACTION** : 보이스크롬 가이드의 '액션버튼'으로 기능 단위의 동작 처리를 위한 발화 가이드. **GENERAL** : 기본 발화 가이드. |
-| chips.text | string | Y | 버튼 텍스트  - Text.TextInput event 를 보내기 위한 텍스트 명령 문자열 |
-| chips.token | string | N | Text.TextInput event 의 출처를 구분하기 위한 값 |
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">parameter</th>
+      <th style="text-align:left">type</th>
+      <th style="text-align:left">mandatory</th>
+      <th style="text-align:left">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:left">target</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p><b>DM</b>
+          <br />- ASR.ExpectSpeech, Session.Set &#xC640; &#xAC19;&#xC774; &#xC804;&#xB2EC;&#xB418;&#xB294;
+          &#xBC1C;&#xD654;&#xAC00;&#xC774;&#xB4DC;</p>
+        <p><b>LISTEN</b>
+          <br />- Session.Set &#xC5C6;&#xC774; ASR.ExpectSpeech &#xBC1C;&#xC0DD; &#xC2DC;
+          LISTEN &#xC744; &#xC0AC;&#xC6A9;</p>
+        <p><b>SPEAKING</b>
+          <br />- TTS.Speak &#xC640; &#xD568;&#xAED8; &#xC81C;&#xACF5;&#xB418;&#xB294;
+          &#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">chips</td>
+      <td style="text-align:left">list</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC; &#xBAA9;&#xB85D;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">chips.type</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">
+        <p><b>ACTION</b> : &#xBCF4;&#xC774;&#xC2A4;&#xD06C;&#xB86C; &#xAC00;&#xC774;&#xB4DC;&#xC758;
+          &apos;&#xC561;&#xC158;&#xBC84;&#xD2BC;&apos;&#xC73C;&#xB85C; &#xAE30;&#xB2A5;
+          &#xB2E8;&#xC704;&#xC758; &#xB3D9;&#xC791; &#xCC98;&#xB9AC;&#xB97C; &#xC704;&#xD55C;
+          &#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC;
+          <br /><b>GENERAL</b> : &#xAE30;&#xBCF8; &#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC;</p>
+        <p><b>NUDGE </b>: &#xB11B;&#xC9C0; &#xBC1C;&#xD654; &#xAC00;&#xC774;&#xB4DC;</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">chips.text</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">Y</td>
+      <td style="text-align:left">&#xBC84;&#xD2BC; &#xD14D;&#xC2A4;&#xD2B8;
+        <br />- Text.TextInput event &#xB97C; &#xBCF4;&#xB0B4;&#xAE30; &#xC704;&#xD55C;
+        &#xD14D;&#xC2A4;&#xD2B8; &#xBA85;&#xB839; &#xBB38;&#xC790;&#xC5F4;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">chips.token</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">N</td>
+      <td style="text-align:left">Text.TextInput event &#xC758; &#xCD9C;&#xCC98;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xAE30;
+        &#xC704;&#xD55C; &#xAC12;</td>
+    </tr>
+  </tbody>
+</table>
 
