@@ -16,7 +16,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 | 1.3 | 2020.06.09 | Recognize directive, ExpectSpeech event 의 sessionId 필드 삭제 |
 | 1.4 | 2020.11.18 | ExpectSpeech directive 에 epd 필드 추가 |
 | 1.5 | 2021.03.03 | Context 에 state, initiator 필드 추가 |
-| 1.6 | 2021.05.24 | ASR.ExpectSpeech directive 에 listenTimeoutFailBeep 필드 추가 |
+| 1.6 | 2021.05.31 | ASR.ExpectSpeech directive 에 listenTimeoutFailBeep 필드 추가 |
 
 ## State Diagram
 

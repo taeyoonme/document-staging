@@ -17,7 +17,7 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 | 1.4 | 2020.06.22 | ButtonObject 에 postback, autoTrigger, closeTemplateAfter, disable 필드 추가 ElementSelected event 에 postback 필드 추가 Dummy directive 추가 |
 | 1.5 | 2020.09.02 | Template 에 eventType, textInput 필드 추가 |
 | 1.6 | 2020.10.16 | BadgeObject, UnifiedSearch1 추가 |
-| 1.7 | 2021.05.24 | StyleGrammarGuide, FloatingBannerObject 추가 |
+| 1.7 | 2021.05.31 | StyleGrammarGuide, FloatingBannerObject 추가 |
 
 ## SDK Interface
 
