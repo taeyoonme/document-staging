@@ -14,9 +14,9 @@
 
 ## "resume" Built-in Intent를 처리하는 Action 정의
 
-1. Action을 정의할 Play가 `General` &gt; `기본 정보` 페이지의 Capability Interface에서 AudioPlayer Interface 제어 항목이 `ON`으로 설정되어 있는지 확인합니다. ![](../../../.gitbook/assets/assets_ch3_327_c02%20%282%29%20%282%29%20%282%29.png)  
+1. Action을 정의할 Play가 `General` &gt; `기본 정보` 페이지의 Capability Interface에서 AudioPlayer Interface 제어 항목이 `ON`으로 설정되어 있는지 확인합니다. ![](../../../.gitbook/assets/assets_ch3_327_c02%20%282%29%20%282%29%20%282%29.png)
 2. Play에 'resume'이라는 Action을 생성합니다.  
-3. Trigger의 Intent 항목에서 NUGU.INTENT.resume을 선택합니다. ![](../../../.gitbook/assets/assets_ch3_327_c03%20%282%29%20%282%29%20%282%29%20%283%29.png)  
+3. Trigger의 Intent 항목에서 NUGU.INTENT.resume을 선택합니다. ![](../../../.gitbook/assets/assets_ch3_327_c03%20%282%29%20%282%29%20%282%29%20%283%29.png)
 
 ## 스피커의 상태를 처리하는 Branch Action 생성
 

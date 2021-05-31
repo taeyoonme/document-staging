@@ -11,10 +11,10 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 | Version | Date | Description |
 | :--- | :--- | :--- |
 | 1.0 | 2019.11.17 | 규격 추가 |
-| 1.1 | 2019.12.09 | Close directive CloseSucceeded, CloseFailed event 추가 Weather1/2/3/4/5, FullImage directive 추가 |
-| 1.2 | 2020.03.03 | Duration 추가 Score1/2 directive 추가 ControlFocus, ControlScroll directive 추가 ControlFocusSucceeded, ControlFocusFailed, ControlScrollSucceeded, ControlScrollFailed event 추가 SearchList1/2 directive 추가 Call1/2/3 directive 추가 FullText3 directive 추가 |
-| 1.3 | 2020.04.29 | Timer directive 추가 Template 에 supportFocusedItemToken, supportVisibleTokenList 필드 추가 |
-| 1.4 | 2020.06.22 | ButtonObject 에 postback, autoTrigger, closeTemplateAfter, disable 필드 추가 ElementSelected event 에 postback 필드 추가 Dummy directive 추가 |
+| 1.1 | 2019.12.09 | Close directive<br>CloseSucceeded, CloseFailed event 추가<br>Weather1/2/3/4/5, FullImage directive 추가 |
+| 1.2 | 2020.03.03 | Duration 추가<br>Score1/2 directive 추가<br>ControlFocus, ControlScroll directive 추가<br>ControlFocusSucceeded, ControlFocusFailed, ControlScrollSucceeded, ControlScrollFailed event 추가<br>SearchList1/2 directive 추가<br>Call1/2/3 directive 추가<br>FullText3 directive 추가 |
+| 1.3 | 2020.04.29 | Timer directive 추가<br>Template 에 supportFocusedItemToken, supportVisibleTokenList 필드 추가 |
+| 1.4 | 2020.06.22 | ButtonObject 에 postback, autoTrigger, closeTemplateAfter, disable 필드 추가<br>ElementSelected event 에 postback 필드 추가<br>Dummy directive 추가 |
 | 1.5 | 2020.09.02 | Template 에 eventType, textInput 필드 추가 |
 | 1.6 | 2020.10.16 | BadgeObject, UnifiedSearch1 추가 |
 | 1.7 | 2021.05.31 | StyleGrammarGuide, FloatingBannerObject 추가 |
@@ -260,9 +260,9 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| text | string | Y | Text 중간에 강조 표현을 위한 마크업 사용 가능 스펙 - 볼드 : &lt;b&gt;볼드&lt;/b&gt; - 기울림 : &lt;i&gt;기울림&lt;/i&gt; - 밑줄 : &lt;u&gt;밑줄&lt;/u&gt; - 윗첨자 : &lt;sup&gt;윗첨자&lt;/sup&gt; - 아래첨자 : &lt;sub&gt;아래첨자&lt;/sub&gt; - 취소선 : &lt;s&gt;취소선&lt;/s&gt; - 색상 : &lt;font color="red"&gt;빨강&lt;/font&gt;  위에 요소외 다른 마크업 사용 시 마크업 요소 사용 불가, 원본 표시 |
-| color | string | N | color 형식 \(RGB\)  default 값은 디바이스마다 다름 |
-| style | object | N | 기본적으로는 상위 스타일\(directive 등\)을 따름.  CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다. - text-align : left, center, right - opacity : 0 ~ 1 - display : block, inline, none - margin : 10px - 사용예.  { "text-align":"center", "display": "block" } |
+| text | string | Y | Text 중간에 강조 표현을 위한 마크업 사용 가능 스펙<br>- 볼드 : &lt;b&gt;볼드&lt;/b&gt;<br>- 기울림 : &lt;i&gt;기울림&lt;/i&gt;<br>- 밑줄 : &lt;u&gt;밑줄&lt;/u&gt;<br>- 윗첨자 : &lt;sup&gt;윗첨자&lt;/sup&gt;<br>- 아래첨자 : &lt;sub&gt;아래첨자&lt;/sub&gt;<br>- 취소선 : &lt;s&gt;취소선&lt;/s&gt;<br>- 색상 : &lt;font color="red"&gt;빨강&lt;/font&gt;<br> 위에 요소외 다른 마크업 사용 시 마크업 요소 사용 불가, 원본 표시 |
+| color | string | N | color 형식 \(RGB\)<br> default 값은 디바이스마다 다름 |
+| style | object | N | 기본적으로는 상위 스타일\(directive 등\)을 따름.<br> CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br>- text-align : left, center, right<br>- opacity : 0 ~ 1<br>- display : block, inline, none<br>- margin : 10px<br>- 사용예.<br> { "text-align":"center", "display": "block" } |
 
 ### ButtonObject
 
@@ -290,19 +290,19 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | type | string | N | text\(default\), image 중 하나의 값을 가질 수 있습니다. |
-| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | 버튼 이미지 - type이 image인 경우에 한해 필수이며, 해당 이미지를 이용해 버튼을 표현한다. |
-| text | string | N | 버튼 텍스트  - type이 text인 경우에 한해 필수이며, 해당 텍스트를 이용해 버튼을 표현한다. |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | 버튼 이미지<br>- type이 image인 경우에 한해 필수이며, 해당 이미지를 이용해 버튼을 표현한다. |
+| text | string | N | 버튼 텍스트 <br>- type이 text인 경우에 한해 필수이며, 해당 텍스트를 이용해 버튼을 표현한다. |
 | token | string | Y | 클릭 시 전달될 토큰 값 |
-| eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\) - **Display.ElementSelected** :  default \(eventType 값이 없는 경우 기본값\) - **Text.TextInput** |
+| eventType | string | N | 클릭 시 플랫폼으로 전달하는 Event Type \(Capability 명과 Event를 모두 명시해야 함\)<br>- **Display.ElementSelected** :  default \(eventType 값이 없는 경우 기본값\)<br>- **Text.TextInput** |
 | textInput | object | N | eventType == TextTextInput인 경우 필수 |
 | textInput.text | string | Y | 전달할 텍스트 |
 | textInput.playServiceId | string | N | 특정 Play로 지정하여 라우팅하는 경우 사용 |
-| postback | object | N | 클릭 시 전달되는 임의의 Object - 버튼 클릭 시 동작을 위해 필요한 정보를 임의의 JSON 포맷으로 추가 가능  - 기존에 token을 이 용도로 활용하는 경우가 많았는데, token은 identifier 역할을 하도록 하기 위해 추가 |
-| autoTrigger | object | N | 특정 시간이 지난 뒤 ElementSelected Event를 자동으로 발생시키는 경우 포함 하위 parameter들은 autoTrigger가 포함되면 모두 mandatory parameter |
+| postback | object | N | 클릭 시 전달되는 임의의 Object<br>- 버튼 클릭 시 동작을 위해 필요한 정보를 임의의 JSON 포맷으로 추가 가능<br> - 기존에 token을 이 용도로 활용하는 경우가 많았는데, token은 identifier 역할을 하도록 하기 위해 추가 |
+| autoTrigger | object | N | 특정 시간이 지난 뒤 ElementSelected Event를 자동으로 발생시키는 경우 포함<br>하위 parameter들은 autoTrigger가 포함되면 모두 mandatory parameter |
 | autoTrigger.delayInMilliseconds | long | Y | TTS 종료 후 trigger 시킬때까지의 시간 \(msec\) |
 | autoTrigger.showTimer | bool | Y | 버튼에 timer 숫자를 보여줄지 설정 |
 | closeTemplateAfter | bool | N | trigger 또는 클릭 동작 후 template을 바로 닫을지, 아니면 template의 life cycle 대로 화면에 보여줄지 설정 |
-| style | object | N | 버튼의 추가적인 style을 정의함. textObject의 style고 사용법이 동일함. |
+| style | object | N | 버튼의 추가적인 style을 정의함.<br>textObject의 style고 사용법이 동일함. |
 | disable | bool | N | 이 속성이 true이면 버튼을 disable 처리함. |
 
 ### TitleObject
@@ -337,7 +337,7 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | - |
-| color | string | N | color형식\(RGB\) default : \#000000 |
+| color | string | N | color형식\(RGB\)<br>default : \#000000 |
 
 ### Duration
 
@@ -356,7 +356,7 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| grammarGuide | array of string | N | 화면에 표시할 문자열들을 정의합니다. 사용예 : \["홈 화면으로 이동해줘", "선호채널 찾아줘"\] |
+| grammarGuide | array of string | N | 화면에 표시할 문자열들을 정의합니다.<br>사용예 : \["홈 화면으로 이동해줘", "선호채널 찾아줘"\] |
 
 ### StyleGrammarGuide
 
@@ -372,45 +372,11 @@ GrammarGuide의 확장된 발화가이드 입니다.
 ]
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">text</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD654;&#xBA74;&#xC5D0; &#xD45C;&#xC2DC;&#xD560; &#xBB38;&#xC790;&#xC5F4;&#xB4E4;&#xC744;
-        &#xC815;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">type</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>NONE, NUDGE, STYLE</p>
-        <p>NONE: &#xAE30;&#xBCF8; UI</p>
-        <p>NUDGE: &#xB11B;&#xC9C0; UI</p>
-        <p>STYLE: style &#xD544;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">style</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>uiType &#xC774; STYLE &#xC77C; &#xB54C;, &#xD544;&#xC218;</p>
-        <p>CSS &#xC18D;&#xC131;&#xC740; &#xBAA8;&#xB450; &#xAC00;&#xB2A5;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| text | string | Y | 화면에 표시할 문자열들을 정의합니다. |
+| type | string | Y | NONE, NUDGE, STYLE<br>NONE: 기본 UI<br>NUDGE: 넛지 UI<br>STYLE: style 필드를 사용 |
+| style | object | N | uiType 이 STYLE 일 때, 필수<br>CSS 속성은 모두 가능 |
 
 ### FloatingBannerObject
 
@@ -423,35 +389,10 @@ Banner에 사용되는 image object 입니다.
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">parameter</th>
-      <th style="text-align:left">type</th>
-      <th style="text-align:left">mandatory</th>
-      <th style="text-align:left">description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">image</td>
-      <td style="text-align:left"><a href="../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject">ImageObject</a>
-      </td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">banner&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; image object</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">style</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">N</td>
-      <td style="text-align:left">
-        <p>banner&#xC5D0; &#xC801;&#xC6A9;&#xB418;&#xB294; style object.</p>
-        <p>&#xC0AC;&#xC6A9;&#xC608; : style: { right: &quot;115px&quot;, bottom:
-          &quot;430px&quot; }</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | banner에 사용되는 image object |
+| style | object | N | banner에 적용되는 style object.<br>사용예 : style: { right: "115px", bottom: "430px" } |
 
 ### ToggleButtonObject
 
@@ -492,7 +433,7 @@ Template 의 종류를 구분하기 위한 속성입니다.
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| type | string | Y | - TEXT - IMAGE |
+| type | string | Y | - TEXT<br>- IMAGE |
 | text | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | N | - |
 | image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | - |
 
