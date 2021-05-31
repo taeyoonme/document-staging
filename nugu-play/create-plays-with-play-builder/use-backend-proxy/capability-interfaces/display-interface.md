@@ -25,13 +25,13 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 
 
 | Type | NU300 | Btv |
 | :--- | :---: | :---: |
-| FullText1 | ![](../../../../.gitbook/assets/assets_fulltext1_nu300__1%20%281%29.png) | ![](../../../../.gitbook/assets/assets_fulltext1_btv__2%20%282%29.jpg) |
-| FullText2 | ![](../../../../.gitbook/assets/assets_fulltext2_nu300__1.png) | ![](../../../../.gitbook/assets/assets_fulltext2_btv__2%20%282%29.png) |
+| FullText1 | ![](../../../../.gitbook/assets/assets_fulltext1_nu300__1%20%281%29%20%281%29%20%281%29.png) | ![](../../../../.gitbook/assets/assets_fulltext1_btv__2%20%282%29%20%282%29%20%282%29%20%285%29.jpg) |
+| FullText2 | ![](../../../../.gitbook/assets/assets_fulltext2_nu300__1.png) | ![](../../../../.gitbook/assets/assets_fulltext2_btv__2%20%282%29%20%282%29%20%282%29%20%281%29.png) |
 | ImageText1 | ![](../../../../.gitbook/assets/assets_imagetext1_nu300__1.png) | ![](../../../../.gitbook/assets/assets_imagetext1_btv.png) |
 | ImageText2 | ![](../../../../.gitbook/assets/assets_imagetext2_nu300.png) | ![](../../../../.gitbook/assets/assets_imagetext2_btv__1.png) |
-| ImageText3 | ![](../../../../.gitbook/assets/assets_imagetext3_nu300__1%20%281%29.png) | ![](../../../../.gitbook/assets/assets_imagetext3_btv%20%281%29.png) |
-| ImageText4 | ![](../../../../.gitbook/assets/assets_imagetext4_nu300%20%282%29.png) | ![](../../../../.gitbook/assets/assets_imagetext4_btv.png) |
-| TextList1 | ![](../../../../.gitbook/assets/assets_textlist1_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist1_btv%20%281%29.png) |
+| ImageText3 | ![](../../../../.gitbook/assets/assets_imagetext3_nu300__1%20%281%29.png) | ![](../../../../.gitbook/assets/assets_imagetext3_btv%20%281%29%20%281%29%20%282%29.png) |
+| ImageText4 | ![](../../../../.gitbook/assets/assets_imagetext4_nu300%20%282%29%20%282%29%20%282%29%20%282%29.png) | ![](../../../../.gitbook/assets/assets_imagetext4_btv.png) |
+| TextList1 | ![](../../../../.gitbook/assets/assets_textlist1_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist1_btv%20%281%29%20%281%29%20%281%29%20%284%29.png) |
 | TextList2 | ![](../../../../.gitbook/assets/assets_textlist2_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist2_btv__1.png) |
 | TextList3 | ![](../../../../.gitbook/assets/assets_textlist3_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist3_btv.png) |
 | TextList4 | ![](../../../../.gitbook/assets/assets_textlist4_nu300.png) | ![](../../../../.gitbook/assets/assets_textlist4_btv.png) |
@@ -1180,9 +1180,9 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 | duration | string | N | **SHORT\(default\)**, **MID**, **LONG**, **LONGEST**<br> - **SHORT** : 7sec<br> - **MID** : 15sec<br> - **LONG** : 30sec<br> - **LONGEST** : 10min |
 | title | TitleObject | Y | - |
 | background | BackgroundObject | N | - |
-| listItems | list | Y | Scrollable (스크롤이 불가능한 디바이스에서는 짤림) |
-| listItems.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
-| listItems.body | array of TextObject | Y | List 아이템의 본문 내용<br> - 최대 1줄까지 표현 (넘는 문자는 ... 처리) |
+| listItems | list | Y | Scrollable \(스크롤이 불가능한 디바이스에서는 짤림\) |
+| listItems.header | TextObject | Y | 본문 제목<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
+| listItems.body | array of TextObject | Y | List 아이템의 본문 내용<br> - 최대 1줄까지 표현 \(넘는 문자는 ... 처리\) |
 | listItems.button | ButtonObject | N | List 아이템의 버튼<br> - body가 2줄인 경우에 최적화 되어 있음 |
 
 #### Sample Code
@@ -1396,7 +1396,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets_imagelist1%20%282%29.png)
+![](../../../../.gitbook/assets/assets_imagelist1%20%282%29%20%282%29%20%282%29%20%285%29.png)
 
 ### ImageList2
 

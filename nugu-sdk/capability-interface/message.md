@@ -170,6 +170,7 @@ messageAgent.addOnPlaybackListener(listener)
 | template.<br>messageToSend | object | N | 발신용으로 사용할 메세지<br>SendCandidates의 같은 파라미터를 통해 전달받은 MSG\_BODY를 그대로 반환 |
 | template.<br>messageToSend.<br>text | string | Y | 본문 |
 | template.<br>messageToSend.<br>type | string | N | 메세지의 타입 |
+
 ## Common Objects
 
 ### Contact

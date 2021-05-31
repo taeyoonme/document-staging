@@ -6,7 +6,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## Version
 
-최신 버전은 1.5 입니다.
+최신 버전은 1.6 입니다.
 
 | Version | Date | Description |
 | :--- | :--- | :--- |
@@ -16,6 +16,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 | 1.3 | 2020.06.09 | Recognize directive, ExpectSpeech event 의 sessionId 필드 삭제 |
 | 1.4 | 2020.11.18 | ExpectSpeech directive 에 epd 필드 추가 |
 | 1.5 | 2021.03.03 | Context 에 state, initiator 필드 추가 |
+| 1.6 | 2021.05.31 | ASR.ExpectSpeech directive 에 listenTimeoutFailBeep 필드 추가 |
 
 ## State Diagram
 
@@ -261,7 +262,7 @@ asr_handler->stopRecognition()
 ```text
 {
   "ASR": {
-    "version": "1.2",
+    "version": "1.6",
     "engine": "{{STRING}}",
     "state": "{{STRING}}",
     "initiator": "{{STRING}}"
@@ -286,7 +287,7 @@ asr_handler->stopRecognition()
     "name": "ExpectSpeech",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.6"
   },
   "payload": {
     "playServiceId": "{{STRING}}",
@@ -303,7 +304,8 @@ asr_handler->stopRecognition()
       "timeoutMilliseconds": {{LONG}},
       "silenceIntervalInMilliseconds": {{LONG}},
       "maxSpeechDurationMilliseconds": {{LONG}}
-    }
+    },
+    "listenTimeoutFailBeep": {{BOOLEAN}}
   }
 }
 ```
@@ -322,6 +324,7 @@ asr_handler->stopRecognition()
 | epd.timeoutMilliseconds | long | N | Wake up 후 종료까지 대기 시간 \(단위: msec\)<br>**이 값은 위의 timeoutInMilliseconds와는 다른 epd 전용값** |
 | epd.silenceIntervalInMilliseconds | long | N | end point detection 전에 기다리는 묵음 구간 \(단위: msec\) |
 | epd.maxSpeechDurationMilliseconds | long | N | 사용자 발화 최대 녹음 시간 \(단위: msec\) |
+| listenTimeoutFailBeep | boolean | N | Listening timeout 발생시 beep 재생 여부 \(default 값은 true\) |
 
 ### NotifyResult
 
@@ -334,7 +337,7 @@ asr_handler->stopRecognition()
     "name": "NotifyResult",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.6"
   },
   "payload": {
     "token": "{{STRING}}",
@@ -359,7 +362,7 @@ asr_handler->stopRecognition()
     "name": "CancelRecognize",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
+    "version": "1.6"
   },
   "payload": {
     "cause": "{{STRING}}"
@@ -382,7 +385,7 @@ asr_handler->stopRecognition()
     "name": "Recognize",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.6"
   },
   "payload": {
     "codec": "{{STRING}}",
@@ -460,7 +463,7 @@ asr_handler->stopRecognition()
     "name": "ResponseTimeout",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.6"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -483,7 +486,7 @@ asr_handler->stopRecognition()
     "name": "ListenTimeout",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.6"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -506,7 +509,7 @@ asr_handler->stopRecognition()
     "name": "StopRecognize",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.6"
   },
   "payload": {
     "playServiceId": "{{STRING}}"
@@ -529,7 +532,7 @@ asr_handler->stopRecognition()
     "name": "ListenFailed",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
+    "version": "1.6"
   },
   "payload": {
     "playServiceId": "{{STRING}}"

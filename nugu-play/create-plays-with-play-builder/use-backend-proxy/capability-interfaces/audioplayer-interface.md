@@ -25,7 +25,7 @@ AudioPlayer Interface는 사용자의 발화와 스트리밍 상태의 변경에
 
 Play는 스피커의 오디오 플레이어의 상태와 사용자의 발화에 따라 적절한 처리를 할 수 있도록 개발해야 합니다. 여기서는 AudioPlayer Interface에서 제공하는 Built-in Intent, Directive, Event에 대해 설명합니다.
 
-![](../../../../.gitbook/assets/assets_ch3_3331_01-1%20%282%29.png)
+![](../../../../.gitbook/assets/assets_ch3_3331_01-1%20%282%29%20%282%29%20%282%29%20%284%29.png)
 
 | 상태\(State\) | 설명 |
 | :--- | :--- |
@@ -117,7 +117,7 @@ Play Builder에서 Action을 정의하지 않는 경우 Fallback Action에 등�
 
 audioItem.stream.progressReport는 오디오의 시작 시간을 기준으로 절대 위치에 해당하는 시간에 이벤트를 발생시켜야 합니다. 아래의 그림처럼 Play Directive에 의해 시작하는 위치와 무관하게 시작을 기준으로 설정한 시간이 되는 경우 이벤트가 발생됩니다.
 
-![](../../../../.gitbook/assets/assets_ch3_3331_02-1%20%282%29.png)
+![](../../../../.gitbook/assets/assets_ch3_3331_02-1%20%282%29%20%282%29%20%282%29%20%284%29.png)
 
 #### Stop Directive
 

@@ -6,7 +6,7 @@ description: 텍스트 명령을 Play 로 전달하기 위한 규격
 
 ## Version
 
-최신 버전은 1.3 입니다.
+최신 버전은 1.5 입니다.
 
 | Version | Date | Description |
 | :--- | :--- | :--- |
@@ -83,7 +83,7 @@ text_handler->requestTextInput(text)
 ```text
 {
   "Text": {
-    "version": "1.1"
+    "version": "1.5"
   }
 }
 ```
@@ -101,7 +101,7 @@ text_handler->requestTextInput(text)
     "name": "TextSource",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.3"
+    "version": "1.5"
   },
   "payload": {
     "text": "{{STRING}}",
@@ -128,7 +128,7 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
     "name": "TextRedirect",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.3"
+    "version": "1.5"
   },
   "payload": {
     "text": "{{STRING}}",
@@ -157,7 +157,7 @@ Play에서 다른 Play로 처리를 넘기는데, 특정 Text를 전달해서 �
     "name": "TextInput",
     "messageId": "{{STRING}}",
     "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
+    "version": "1.5"
   },
   "payload": {
     "text": "{{STRING}}",

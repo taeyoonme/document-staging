@@ -3,10 +3,9 @@
 지금까지 Parameter의 개념과 작성\(등록\)하는 방법에 대하여 알아보았습니다. 이제부터는 이와 같이 만들어진 Parameter를 사용하여 Play의 Response\(응답\)을 작성하는 방법을 알아보겠습니다.
 
 1. Play Builder 좌측 메뉴에서 `Actions` &gt; `Custom Actions`를 클릭한 후, `answer.weather` Action을 선택합니다.
-
 2. Output 정의 영역에서 Output 유형은 `Response` 버튼을 선택하고, Prompt 유형은 `대기` 또는 `종료` 버튼을 클릭합니다.
 
-![](../../../../.gitbook/assets/assets_ch3_3233_c06%20%282%29.png)
+![](../../../../.gitbook/assets/assets_ch3_3233_c06%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
 * Prompt 유형에서 '대기'는 Prompt가 스피커를 통해 발화되고 난 후 세션이 끊어지지 않고 유지되는 옵션이며, '종료'는 발화 후 세션이 끊어지는 옵션을 의미합니다.
 
@@ -22,7 +21,7 @@
 
 지금까지 작업한 `answer.weather` Action은 다음과 같은 구조를 갖게 되며, Backend proxy가 기상정보를 'status'에 담아서 제공을 할 경우 "여수의 오늘 날씨는 흐립니다"와 같은 답변이 나가게 됩니다.
 
-![](../../../../.gitbook/assets/assets_ch3_3233_07%20%284%29.png)
+![](../../../../.gitbook/assets/assets_ch3_3233_07%20%284%29%20%284%29%20%284%29%20%283%29.png)
 
 {% hint style="info" %}
 이 장과 함께 보면 좋은 도움말

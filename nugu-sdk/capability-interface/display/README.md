@@ -6,7 +6,7 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 
 ## Version
 
-최신 버전은 1.6 입니다.
+최신 버전은 1.7 입니다.
 
 | Version | Date | Description |
 | :--- | :--- | :--- |
@@ -17,6 +17,7 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 | 1.4 | 2020.06.22 | ButtonObject 에 postback, autoTrigger, closeTemplateAfter, disable 필드 추가<br>ElementSelected event 에 postback 필드 추가<br>Dummy directive 추가 |
 | 1.5 | 2020.09.02 | Template 에 eventType, textInput 필드 추가 |
 | 1.6 | 2020.10.16 | BadgeObject, UnifiedSearch1 추가 |
+| 1.7 | 2021.05.31 | StyleGrammarGuide, FloatingBannerObject 추가 |
 
 ## SDK Interface
 
@@ -193,7 +194,7 @@ displayAgent.notifyUserInteraction()
 ```text
 {
   "Display": {
-    "version": "1.3",
+    "version": "1.7",
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
     "focusedItemToken": "{{STRING}}",
@@ -260,8 +261,8 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | text | string | Y | Text 중간에 강조 표현을 위한 마크업 사용 가능 스펙<br>- 볼드 : &lt;b&gt;볼드&lt;/b&gt;<br>- 기울림 : &lt;i&gt;기울림&lt;/i&gt;<br>- 밑줄 : &lt;u&gt;밑줄&lt;/u&gt;<br>- 윗첨자 : &lt;sup&gt;윗첨자&lt;/sup&gt;<br>- 아래첨자 : &lt;sub&gt;아래첨자&lt;/sub&gt;<br>- 취소선 : &lt;s&gt;취소선&lt;/s&gt;<br>- 색상 : &lt;font color="red"&gt;빨강&lt;/font&gt;<br> 위에 요소외 다른 마크업 사용 시 마크업 요소 사용 불가, 원본 표시 |
-| color | string | N | color 형식 (RGB)<br> default 값은 디바이스마다 다름 |
-| style | object | N | 기본적으로는 상위 스타일(directive 등)을 따름.<br> CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br>- text-align : left, center, right<br>- opacity : 0 ~ 1<br>- display : block, inline, none<br>- margin : 10px<br>- 사용예.<br> { "text-align":"center", "display": "block" } |
+| color | string | N | color 형식 \(RGB\)<br> default 값은 디바이스마다 다름 |
+| style | object | N | 기본적으로는 상위 스타일\(directive 등\)을 따름.<br> CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br>- text-align : left, center, right<br>- opacity : 0 ~ 1<br>- display : block, inline, none<br>- margin : 10px<br>- 사용예.<br> { "text-align":"center", "display": "block" } |
 
 ### ButtonObject
 
@@ -322,7 +323,7 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 | text | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | Y | 제목 |
 | subtext | [TextObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#textobject) | N | ASR Text 등 부제목 |
 | subicon | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | 서브 아이콘 \( 위치 : subText 왼쪽 \) |
-| button | ButtonObject | N | 우측에 위치하는 버튼 |
+| button | [ButtonObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#buttonobject) | N | 우측에 위치하는 버튼 |
 
 ### BackgroundObject
 
@@ -356,6 +357,42 @@ TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어�
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | grammarGuide | array of string | N | 화면에 표시할 문자열들을 정의합니다.<br>사용예 : \["홈 화면으로 이동해줘", "선호채널 찾아줘"\] |
+
+### StyleGrammarGuide
+
+GrammarGuide의 확장된 발화가이드 입니다.
+
+```text
+[
+    {
+        "text": "{{STRING}}",
+        "type": "{{STRING}}",
+        "style": {}
+    }
+]
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| text | string | Y | 화면에 표시할 문자열들을 정의합니다. |
+| type | string | Y | NONE, NUDGE, STYLE<br>NONE: 기본 UI<br>NUDGE: 넛지 UI<br>STYLE: style 필드를 사용 |
+| style | object | N | uiType 이 STYLE 일 때, 필수<br>CSS 속성은 모두 가능 |
+
+### FloatingBannerObject
+
+Banner에 사용되는 image object 입니다.
+
+```text
+{
+    "image": ImageObject,
+    "style": Object
+}
+```
+
+| parameter | type | mandatory | description |
+| :--- | :--- | :--- | :--- |
+| image | [ImageObject](../../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md#imageobject) | N | banner에 사용되는 image object |
+| style | object | N | banner에 적용되는 style object.<br>사용예 : style: { right: "115px", bottom: "430px" } |
 
 ### ToggleButtonObject
 

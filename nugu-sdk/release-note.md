@@ -6,6 +6,12 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2021-05-31
+
+* Capability interface - [ASR](capability-interface/asr.md) 1.6 업데이트
+* Capability interface - [Chips](capability-interface/chips.md) 1.2 업데이트
+* Capability interface - [Display](capability-interface/display/) 1.7 업데이트
+
 ### 2021-05-20
 
 * [체험판과 정식판 ](describetrial.md)안내 추가

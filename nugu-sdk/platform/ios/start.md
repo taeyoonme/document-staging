@@ -57,7 +57,7 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 {% hint style="success" %}
 NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,  
-Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다. 
+Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다.
 
 * 체험판은 Redirect URI가 필요하지 않습니다.
 {% endhint %}
@@ -130,7 +130,7 @@ NUGU 서비스는 음성인식을 위하여 마이크 권한 문구를 Info.plis
 
 ## Step 4: NUGU 로그인 추가
 
-NUGU 로그인은 **NUGU 회원 연동 방식**과 **NUGU 회원 미사용 방식** 두 가지로 제공됩니다. 
+NUGU 로그인은 **NUGU 회원 연동 방식**과 **NUGU 회원 미사용 방식** 두 가지로 제공됩니다.
 
 * 체험판은 NUGU 회원 미사용 방식만 가능합니다.
 
