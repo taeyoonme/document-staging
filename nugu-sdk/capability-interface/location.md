@@ -54,7 +54,8 @@ val provider = object: LocationProvider {
         ...
     }
 }
-locationAgent.setLocationProvider(provider)
+NuguAndroidClient.Builder(...)
+    .enableLocation(provider)
 ```
 {% endtab %}
 
