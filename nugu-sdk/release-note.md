@@ -1,6 +1,6 @@
 # Release note
 
-##  Change Log
+## Change Log
 
 {% hint style="info" %}
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
