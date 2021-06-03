@@ -33,7 +33,7 @@ class MySoundProvider: SoundProvider {
     ...
 }
 NuguAndroidClient.Builder(...)
-    .soundProvider(MySoundProvider())
+    .enableSound(MySoundProvider())
 ```
 {% endtab %}
 

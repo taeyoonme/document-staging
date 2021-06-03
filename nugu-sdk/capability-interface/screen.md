@@ -37,7 +37,7 @@ class MyScreen: Screen {
     ...
 }
 NuguAndroidClient.Builder(...)
-    .screen(MyScreen())
+    .enableScreen(MyScreen())
 ```
 {% endtab %}
 {% endtabs %}

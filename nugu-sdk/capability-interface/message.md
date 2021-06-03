@@ -41,7 +41,7 @@ class MyMessageClient: MessageClient {
     ...
 }
 NuguAndroidClient().Builder()
-    .messageClient(MyMessageClient())
+    .enableMessage(MyMessageClient())
 ```
 {% endtab %}
 {% endtabs %}

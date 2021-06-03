@@ -406,7 +406,7 @@ audio_player_handler->requestShuffleCommand(false)
 | template.<br>content.<br>lyrics.lyricsInfoList.<br>text | string | Y | lyricsInfo가 보여지는 시점의 가사 내용 |
 | content.<br>lyrics.<br>showButton | object | N | 가사 화면을 표시하기 위한 버튼 |
 | content.<br>lyrics.<br>showButton.<br>text | string | Y | 버튼 text |
-| template.<br>content.<br>>settings | object | N | 사용자가 설정한 정보를 표시함  - Play에서는 표시할 하위 field를 설정할 수 있음  - 설정한 field에 대한 Event와 Directive를 사용할 수 있음 |
+| template.<br>content.<br>settings | object | N | 사용자가 설정한 정보를 표시함  - Play에서는 표시할 하위 field를 설정할 수 있음  - 설정한 field에 대한 Event와 Directive를 사용할 수 있음 |
 | template.<br>content.<br>settings.favorite | boolean | N | 재생 중인 음원에 대한 좋아요 여부 |
 | template.<br>content.<br>settings.repeat | string | N | 재생 목록에 대한 반복 설정  - **ALL** : 전곡 반복  - **ONE** : 한곡 반복  - **NONE** : 반복 없음 |
 | template.<br>content.<br>settings.shuffle | boolean | N | 재생 목록의 음원을 임의의 순서로 재생할지 여부 |

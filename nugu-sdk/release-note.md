@@ -6,6 +6,10 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2021-06-02
+
+* Capability interface - [Location](capability-interface/location.md#locationagent), [Extension](capability-interface/extension.md#extensionagent), [Bluetooth](capability-interface/bluetooth.md#bluetoothagent), [Mic](capability-interface/mic.md#micagent), [Screen](capability-interface/screen.md#screenagent), [Battery](capability-interface/battery.md#batteryagent), [Sound](capability-interface/sound.md#soundagent), [Message](capability-interface/message.md#messageagent) 업데이트 
+
 ### 2021-05-31
 
 * Capability interface - [ASR](capability-interface/asr.md) 1.6 업데이트

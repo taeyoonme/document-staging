@@ -38,7 +38,7 @@ class MyBluetoothProvider: BluetoothProvider {
     ...
 }
 NuguAndroidClient.Builder(...)
-    .bluetoothProvider(MyBluetoothProvider())
+    .enableBluetooth(MyBluetoothProvider())
 ```
 {% endtab %}
 {% endtabs %}

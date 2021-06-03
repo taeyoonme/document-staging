@@ -27,7 +27,7 @@ Linux 는 LocationAgent 를 지원하지 않습니다.
 NuguAndroidClient instance 를 통해 LocationAgent instance 에 접근할 수 있습니다.
 
 ```text
-val locationAgent = nuguAndroidClient.locationAgent
+val locationAgent = nuguAndroidClient.getAgent(LocationAgent.NAMESPACE)
 ```
 {% endtab %}
 
@@ -54,7 +54,8 @@ val provider = object: LocationProvider {
         ...
     }
 }
-locationAgent.setLocationProvider(provider)
+NuguAndroidClient.Builder(...)
+    .enableLocation(provider)
 ```
 {% endtab %}
 

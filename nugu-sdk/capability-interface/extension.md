@@ -40,7 +40,7 @@ class MyExtensionAgentClient: ExtensionAgentInterface.Client {
     ...
 }
 NuguAndroidClient.Builder(...)
-    .extensionClient(MyExtensionAgentClient())
+    .enableExtension(MyExtensionAgentClient())
 ```
 {% endtab %}
 

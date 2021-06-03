@@ -125,7 +125,7 @@ nugu_client->getCapabilityBuilder()
 {% tabs %}
 {% tab title="Android" %}
 ```text
-speechRecognizerAggregator.startListening()
+speechRecognizerAggregator.startListening(initiator = TAP)
 ```
 {% endtab %}
 

@@ -37,7 +37,7 @@ class MyMicrophone: Microphone {
     ...
 }
 NuguAndroidClient.Builder(...)
-    .defaultMicrophone(MyMicrophone())
+    .enableMicrophone(MyMicrophone())
 ```
 {% endtab %}
 

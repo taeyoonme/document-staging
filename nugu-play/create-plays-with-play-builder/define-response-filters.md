@@ -78,5 +78,5 @@ NLG Normalizer는 Translator와 기능이 유사하지만, 가장 큰 차이점�
 
 참고로, Response Filter는 종류에 상관없이 중첩해서 사용할 수 있습니다.
 
-![](../../.gitbook/assets/assets_ch3_324_c10%20%283%29.png)
+![](https://github.com/nugudevelopers/document/tree/2ab8ae3d36f23e462af7fbe946d932b1452e8e46/.gitbook/assets/assets_ch3_324_c10%20%283%29.png)
 
