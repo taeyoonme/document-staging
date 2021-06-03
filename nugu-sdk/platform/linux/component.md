@@ -1,6 +1,6 @@
 # 구성요소
 
-![](../../../.gitbook/assets/assets_linux_component.png)
+![](../../../.gitbook/static/linux_component.png)
 
 ## 구성요소 목록
 
