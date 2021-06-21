@@ -30,7 +30,7 @@ NUGU SDK for iOS 를 통한 개발을 위해서는 `NuguCore`, `NuguAgents` Fram
 
 | 이름 | 주소 |
 | :--- | :--- |
-| `NuguCore`<br>`NuguAgents`<br>`NuguClientKit`<br>`NuguLoginKit`<br>`NuguServiceKit`<br>`NuguUIKit`<br>`KeenSense`<br>`JadeMarble` | [https://github.com/nugu-developers/nugu-ios](https://github.com/nugu-developers/nugu-ios) |
+| `NuguCore` `NuguAgents` `NuguClientKit` `NuguLoginKit` `NuguServiceKit` `NuguUIKit` `KeenSense` `JadeMarble` | [https://github.com/nugu-developers/nugu-ios](https://github.com/nugu-developers/nugu-ios) |
 | `NattyLog` | [https://github.com/nugu-developers/natty-log-ios](https://github.com/nugu-developers/natty-log-ios) |
 | `SilverTray` | [https://github.com/nugu-developers/keen-sense-ios](https://github.com/nugu-developers/keen-sense-ios) |
 

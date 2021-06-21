@@ -57,12 +57,11 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 * Backend proxy 사용 여부 : 'ON'
 * Backend Parameter: 'status', 'resultcode'
 * Parameter 등록 및 설정 방법에 대한 자세한 내용은 [Parameter](use-parameters/)를 참고하세요.
-
-4. Output 정의 영역에서 `Branch Action` 버튼을 클릭하여 Output 유형을 Branch로 선택합니다.
+* Output 정의 영역에서 `Branch Action` 버튼을 클릭하여 Output 유형을 Branch로 선택합니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c04-1%20%282%29%20%282%29%20%282%29%20%285%29.png)
 
-5. Output 정의 영역의 Branch Action list 내에 위치한 입력 필드에 Branch명\(하위 Action명\)을 입력한 후 `Enter` 키를 누르거나 입력 필드 외 영역을 마우스 왼쪽 버튼을 클릭하여 Branch를 등록합니다.
+1. Output 정의 영역의 Branch Action list 내에 위치한 입력 필드에 Branch명\(하위 Action명\)을 입력한 후 `Enter` 키를 누르거나 입력 필드 외 영역을 마우스 왼쪽 버튼을 클릭하여 Branch를 등록합니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c05%20%282%29%20%282%29%20%282%29%20%285%29.png)
 
@@ -71,8 +70,7 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 * Branch를 만든 경우에는 하나를 반드시 Default Branch로 지정해주어야 합니다.
 * Default Branch는 Branch의 Trigger를 조건을 하나도 만족시키지 못한 경우에 실행되는 Action이며, Default로 선택된 Branch Action은 Trigger 정의가 필요 없습니다.
 * Default를 선택하면 자동으로 Branch Action list 최하단으로 이동하게 됩니다.
-
-6. `Play 저장` 버튼을 클릭하여 지금까지 입력한 상황을 저장합니다. Branch Action 리스트의 상세 항목이 편집 상태로 변경됩니다.
+* `Play 저장` 버튼을 클릭하여 지금까지 입력한 상황을 저장합니다. Branch Action 리스트의 상세 항목이 편집 상태로 변경됩니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c06%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
@@ -82,7 +80,7 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c07%20%282%29%20%282%29%20%282%29%20%283%29.png)
 
-2. 이동한 Branch Action 설정 화면의 Trigger 영역에서 조건\(Condition\)을 추가하기 위해 `+` &gt; `Condition` 버튼을 클릭하면 하단에 셀렉트 박스\(Select Box\)가 표시됩니다.
+1. 이동한 Branch Action 설정 화면의 Trigger 영역에서 조건\(Condition\)을 추가하기 위해 `+` &gt; `Condition` 버튼을 클릭하면 하단에 셀렉트 박스\(Select Box\)가 표시됩니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c08.png)
 
@@ -94,8 +92,7 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 ![](../../../.gitbook/assets/assets_ch3_3232_c09-1%20%282%29%20%282%29%20%282%29%20%283%29.png)
 
 * 이 설정은 resultcode라는 Parameter가 '정상'일 경우 이 Branch를 실행한다라는 의미입니다.
-
-4. `+` 버튼을 클릭하여 조건\(Condition\)을 하나 더 추가한 후 `+` 버튼 좌측에 생긴 And/Or 조건은 And를 선택한 상태에서, 첫 번째 셀렉트 박스에서 **location**를 선택하고, 두 번째 셀렉트 박스에서 **존재하는 경우**를 선택합니다.
+* `+` 버튼을 클릭하여 조건\(Condition\)을 하나 더 추가한 후 `+` 버튼 좌측에 생긴 And/Or 조건은 And를 선택한 상태에서, 첫 번째 셀렉트 박스에서 **location**를 선택하고, 두 번째 셀렉트 박스에서 **존재하는 경우**를 선택합니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c10.png)
 
@@ -107,7 +104,7 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 
 ![](../../../.gitbook/assets/assets_ch3_3232_08%20%282%29.png)
 
-5. 이제 이 페이지의 Output 정의 영역에서 `Response` 버튼을 클릭하고, Prompt에 "의 날씨는 ."라고 입력합니다. 이제 첫 번째 'a.w.location' Action의 입력이 완료되었습니다.
+1. 이제 이 페이지의 Output 정의 영역에서 `Response` 버튼을 클릭하고, Prompt에 "의 날씨는 ."라고 입력합니다. 이제 첫 번째 'a.w.location' Action의 입력이 완료되었습니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c11-1%20%282%29%20%282%29%20%282%29%20%281%29.png)
 
@@ -121,47 +118,41 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c12-1%20%283%29%20%283%29%20%282%29.png)
 
-2. Output 정의 영역에서 `Branch Action` 버튼을 클릭하여 Output 유형을 Branch로 선택합니다.
+1. Output 정의 영역에서 `Branch Action` 버튼을 클릭하여 Output 유형을 Branch로 선택합니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c13%20%281%29.png)
 
-3. Output 정의 영역의 Branch Action List 내에 위치한 입력 필드에 Branch명\(하위 Action명\)을 입력한 후 `Enter` 키를 눌러 Branch를 등록합니다.
-
-* 다음과 같이 3개의 Branch를 새로 만듭니다.
+1. Output 정의 영역의 Branch Action List 내에 위치한 입력 필드에 Branch명\(하위 Action명\)을 입력한 후 `Enter` 키를 눌러 Branch를 등록합니다.
+2. 다음과 같이 3개의 Branch를 새로 만듭니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c14-1%20%282%29%20%282%29%20%282%29%20%283%29.png)
 
-4. Branch 중 하나\(예:a\_w\_d\_future\)를 선택\(V 표시\)하여 "Default Branch"로 지정한 후, `Play 저장` 버튼을 클릭하여 지금까지 입력한 상황을 저장합니다.
-
-* Branch Action 리스트의 상세 항목이 편집 상태로 변경됩니다.
+1. Branch 중 하나\(예:a\_w\_d\_future\)를 선택\(V 표시\)하여 "Default Branch"로 지정한 후, `Play 저장` 버튼을 클릭하여 지금까지 입력한 상황을 저장합니다.
+2. Branch Action 리스트의 상세 항목이 편집 상태로 변경됩니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c15%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-5. Branch Action별로 구체적인 설정을 하기 위해 설정할 Branch의 항목\(예: a\_w\_d\_past\)의 편집 버튼을 클릭합니다.
+1. Branch Action별로 구체적인 설정을 하기 위해 설정할 Branch의 항목\(예: a\_w\_d\_past\)의 편집 버튼을 클릭합니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_c16%20%282%29%20%282%29%20%282%29%20%282%29.png)
 
-6. "a\_w\_location" 설정과 동일한 방법으로 "a\_w\_day"의 각 Branch Action을 다음과 같이 정의합니다.
-
-* a\_w\_d\_past
+1. "a\_w\_location" 설정과 동일한 방법으로 "a\_w\_day"의 각 Branch Action을 다음과 같이 정의합니다.
+2. a\_w\_d\_past
    * Trigger : day\_check == 과거
    * Response : 에는 
-* a\_w\_d\_present  
+3. a\_w\_d\_present  
    * Trigger : day\_check == 현재
    * Response : 지금 밖은 
-* a\_w\_d\_future
+4. a\_w\_d\_future
    * Trigger : 자동입력
    * Response : 은 
-
-7. 마지막으로, 남은 "a\_w\_only"와 "a\_w\_default" Branch Action을 동일한 방법으로 다음과 같이 정의합니다.
-
-* a\_w\_only
+5. 마지막으로, 남은 "a\_w\_only"와 "a\_w\_default" Branch Action을 동일한 방법으로 다음과 같이 정의합니다.
+6. a\_w\_only
    * Trigger :  == 정상
    * Response : 오늘은 
-* a\_w\_default
+7. a\_w\_default
    * Trigger : 자동입력
    * Response : 제가 답할 수 없는 요청이에요
-
 8. 이로써 위에서 예로 든 구조의 Action Tree가 구성되었습니다. 이를 다시 그림으로 살펴보면 다음과 같습니다.
 
 ![](../../../.gitbook/assets/assets_ch3_3232_09-1%20%283%29%20%283%29%20%283%29%20%282%29.png)

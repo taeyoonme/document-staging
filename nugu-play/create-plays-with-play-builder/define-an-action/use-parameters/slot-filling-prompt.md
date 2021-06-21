@@ -13,12 +13,11 @@ Utterance Parameter 등록 및 매핑에 대한 자세한 내용은 [Parameter �
 ## 필수 Entity 정의하기
 
 1. Play Builder 좌측 메뉴에서 `Actions` &gt; `Custom Actions`를 클릭한 후, Slot-Filling Prompt를 설정할 Action을 선택합니다.
-
 2. 응답에 필요한 정보 가져오기 영역에서 Slot-Filling Prompt를 통해 Entity를 다시 받을 Utterance Parameter에 Entity를 매핑한 후 '필수' 박스에 체크합니다.
 
 ![](../../../../.gitbook/assets/assets_ch3_32331_c01-1%20%283%29%20%283%29%20%283%29%20%283%29.png)
 
-3. 이후 Slot-filling Prompt를 입력합니다.
+1. 이후 Slot-filling Prompt를 입력합니다.
 
 ![](../../../../.gitbook/assets/assets_ch3_32331_c03%20%2812%29%20%284%29.gif)
 
