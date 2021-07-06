@@ -15,5 +15,7 @@ Objective-C 언어는 별도로 지원하지 않습니다. Objective-C 환경에
 
 ## 지원하는 OS 버전
 
-NUGU SDK for iOS는 iOS 10.0 이상을 지원합니다.
+NUGU SDK for iOS는 iOS 12.0 or 10.0 이상을 지원합니다.
+
+iOS 12.0+ \(v1.3.0 or more\) iOS 10.0+ \(less than v1.3.0\)
 

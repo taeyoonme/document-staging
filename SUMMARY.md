@@ -152,6 +152,7 @@
       * [NUGU 서비스 관리 web server 연동](nugu-sdk/platform/ios/web-server.md)
       * [NUGU Display의 노출과 제어](nugu-sdk/platform/ios/nugu-display-template-server.md)
       * [NUGU 사용자 인터페이스](nugu-sdk/platform/ios/nugu.md)
+      * [Dark Mode 지원](nugu-sdk/platform/ios/dark-mode.md)
       * [테스트 환경 설정](nugu-sdk/platform/ios/testing_sdk_integration.md)
       * [1.0 으로 업그레이드](nugu-sdk/platform/ios/1.0.md)
     * [Android](nugu-sdk/platform/android/README.md)

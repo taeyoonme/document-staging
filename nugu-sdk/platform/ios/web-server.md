@@ -13,22 +13,17 @@ NUGU 서비스 관리 웹에서 사용할 cookie 를 설정합니다.
 * oauthRedirectUri: NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 호출되는 url \(ex&gt; nugu.public.sample://oauth\_refresh\)
 * deviceUniqueId: NuguOauthClient 의 인증을 통해 관리되는 device unique id
 
+`NuguClientKit` 에서는 사용자의 편의를 위해 `NuguServiceWebView` 의 cookie 값을 default 로 설정해주고 있습니다. 이를 위해선 `addCookie` 함수를 사용하시고, 직접 cookie 를 설정해주시고 싶다면 `setCookie` 를 사용합니다.
+
+`NuguClientKit` 은 사용자의 편의를 위해서 cookie 를 default 로 제공하고 있습니다. Default cookie 를 사용하려면 `addCooklie` 함수를, 직접 cookie 를 세팅하려면 `setCookie` 함수를 사용하면 됩니다.
+
 {% code title="NuguServiceWebViewController.swift" %}
 ```swift
 @IBOutlet private weak var nuguServiceWebView: NuguServiceWebView!
 
 override func viewDidLoad() {
     super.viewDidLoad()
-
-    let cookie = NuguServiceCookie(
-        authToken: AuthorizationStore.shared.authorizationToken,
-        appVersion: Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "",
-        pocId: pocId,
-        theme: "LIGHT",
-        oauthRedirectUri: url,
-        deviceUniqueId: NuguCentralManager.shared.oauthClient.deviceUniqueId
-    )
-    nuguServiceWebView.setNuguServiceCookie(nuguServiceCookie: cookie)
+    nuguServiceWebView.addCookie(nil)
 }
 ```
 {% endcode %}
@@ -38,6 +33,7 @@ override func viewDidLoad() {
 * `openExternalApp(openExternalAppItem:)` : 외부 앱 실행 요청
 * `openInAppBrowser(url:)` : 인 앱 브라우저 실행 요청
 * `closeWindow(reason:)` : `ViewController` 종료 요청. `reason` 이 `WITHDRAWN_USER` 인 경우 회원탈퇴 요청으로 인한 종료이기 때문에, 인증정보 등을 파기해야 합니다.
+* `requestActiveRoutine` : Routine 설정, 조회를 위해 필요한 정보를 전달해줍니다. Routine 을 지원하지 않을 경우 비워두시면 됩니다.
 
 {% code title="NuguServiceWebViewController.swift" %}
 ```swift
@@ -73,6 +69,14 @@ extension NuguServiceWebViewController: NuguServiceWebJavascriptDelegate {
         } else {
             navigationController?.popViewController(animated: true)
         }
+    }
+    
+    func requestActiveRoutine() {
+        guard let routineItem = NuguCentralManager.shared.client.routineAgent.routineItem,
+              NuguCentralManager.shared.client.routineAgent.state == .playing else {
+            return
+        }
+        nuguServiceWebView.onRoutineStatusChanged(token: routineItem.payload.token, status: RoutineState.playing.routineActivity)
     }
 }
 ```

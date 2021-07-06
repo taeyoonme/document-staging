@@ -4,7 +4,7 @@
 
 * Xcode 11.0 or later
 * Swift 5.1
-* iOS 10.0 or later
+* iOS 12.0+ \(v1.3.0 or more\) iOS 10.0+ \(less than v1.3.0\)
 
 ## Step 2: NUGU SDK 설치하기
 
@@ -298,7 +298,8 @@ func setAudioSession() throws {
 2. `NuguClient` 인스턴스를 생성합니다.
 
    ```swift
-   let client = NuguClient(delegate: self)
+   let nuguBuilder = NuguClient.Builder()
+   let client = nuguBuilder.build()
    ```
 
 3. 로그인 결과로 받은 Access-token을 `NuguClientDelegate` 로 전달해야 합니다.
