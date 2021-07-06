@@ -104,7 +104,7 @@ TemplateHandler가 View에서 응용레벨로의 메시지 전달 혹은 요청�
 
 ## TemplateHandler 적용
 
-작성한 커스텀 TemplateHandler를 TemplateRenderer에 적용하면 templateType에 따라 원하는 TemplateHandler가 동작할 수 있게 할 수 있습니다.
+작성한 커스텀 TemplateHandler를 리턴하는 TemplateHandlerFactory 를 TemplateRenderer에 적용하면 커스텀 TemplateHandler가 동작합니다.
 
 ```text
 TemplateRenderer.templateHandlerFactory = object : TemplateHandler.TemplateHandlerFactory() {
