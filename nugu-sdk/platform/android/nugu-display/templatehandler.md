@@ -106,7 +106,7 @@ TemplateHandler가 View에서 응용레벨로의 메시지 전달 혹은 요청�
 
 작성한 커스텀 TemplateHandler를 리턴하는 TemplateHandlerFactory 를 TemplateRenderer에 적용하면 커스텀 TemplateHandler가 동작합니다.
 
-```text
+```kotlin
 TemplateRenderer.templateHandlerFactory = object : TemplateHandler.TemplateHandlerFactory() {
     override fun onCreate(
         nuguProvider: TemplateRenderer.NuguClientProvider,

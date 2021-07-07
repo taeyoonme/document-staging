@@ -165,6 +165,7 @@
         * [TemplateHandler](nugu-sdk/platform/android/nugu-display/templatehandler.md)
         * [TemplateView](nugu-sdk/platform/android/nugu-display/templateview.md)
       * [NUGU 사용자 인터페이스](nugu-sdk/platform/android/nugu-user-interface.md)
+      * [Dark Mode 지원](nugu-sdk/platform/android/dark-mode.md)
       * [테스트 환경 설정](nugu-sdk/platform/android/testing_sdk_integration.md)
     * [Linux](nugu-sdk/platform/linux/README.md)
       * [시작하기](nugu-sdk/platform/linux/start.md)
