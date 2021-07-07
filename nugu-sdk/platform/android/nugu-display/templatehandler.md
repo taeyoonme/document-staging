@@ -4,13 +4,13 @@ description: 'Template, 응용레벨 사이의 상호작용 커스텀'
 
 # TemplateHandler
 
-`TemplateRenderer`는 _\*\*_`TemplateView`를 사용하여 화면을 구성합니다.
+`TemplateRenderer`는 `TemplateView`를 사용하여 화면을 구성합니다.
 
 TemplateView 에서 버튼클릭이나 상태 변경이 일어나면 이를 응용레벨에 알려 처리되도록 해야 합니다. 마찬가지로 응용레벨에서 display에 필요한 상태변경이나 명령이 발생하면 TemplateView에 알려 갱신 처리를 해야 합니다. 이와 같은 TemplateView와 응용레벨에서의 상호작용은 `TemplateHandler`인터페이스를 통해 이루어집니다.
 
 TemplateHandler는 `TemplateHandlerFactory`에서 생성합니다. 
 
-특정 상호작용을 제한하거나 동작 변경이 필요하다면 SDK의 기본 Handler인 `BasicTemplateHandler`를 상속 후 필요한 메서드를 override 하여 TemplateHandlerFactory에 의해 생성되도록 적용하면 됩니다.
+특정 상호작용을 제한하거나 동작 변경이 필요하다면 SDK의 기본 Handler인 `BasicTemplateHandler`를 상속 후 필요한 메서드를 override 하여 커스텀 TemplateHandler를 작성하고, 이를 TemplateHandlerFactory에 의해 생성되도록 적용하면 됩니다.
 
 ## TemplateHandler
 
