@@ -6,6 +6,14 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2021-07-14
+
+*  [시작하기](platform/ios/start.md)\(iOS\) 업데이트
+*  [NUGU 서비스 관리 web server 연동](platform/ios/web-server.md)\(iOS\) 변경 사항 업데이트
+*  [Nugu Display의 노출과 제어](platform/ios/nugu-display-template-server.md)\(iOS\) 변경 사항 업데이트
+*  [NUGU 사용자 인터페이스](platform/ios/nugu.md)\(iOS\) 변경 사항 업데이트
+*  [Dark Mode 지원](platform/ios/dark-mode.md)\(iOS\) 가이드 추가
+
 ### 2021-06-02
 
 * Capability interface - [Location](capability-interface/location.md#locationagent), [Extension](capability-interface/extension.md#extensionagent), [Bluetooth](capability-interface/bluetooth.md#bluetoothagent), [Mic](capability-interface/mic.md#micagent), [Screen](capability-interface/screen.md#screenagent), [Battery](capability-interface/battery.md#batteryagent), [Sound](capability-interface/sound.md#soundagent), [Message](capability-interface/message.md#messageagent) 업데이트 
