@@ -1,10 +1,10 @@
 ---
-description: Nugu SDK 의 UI Component 들은 Dark / Light 모드를 지원합니다.
+description: NUGU SDK 의 UI Component 들은 Dark / Light 모드를 지원합니다.
 ---
 
 # Dark Mode 지원
 
-Nugu SDK 의 `NuguVoiceChrome`, `AudioDisplayView` 등과 같은 UI Component 들은 각자 theme 이라는 변수를 통해 Dark / Light 모드 테마를 지원하고 있습니다. theme 변수를 직접 변경해주면 해당 UI Component 의 테마는 동적으로 변경됩니다.
+NUGU SDK 의 `NuguVoiceChrome`, `AudioDisplayView` 등과 같은 UI Component 들은 각자 theme 이라는 변수를 통해 Dark / Light 모드 테마를 지원하고 있습니다. theme 변수를 직접 변경해주면 해당 UI Component 의 테마는 동적으로 변경됩니다.
 
 ```swift
 public class NuguVoiceChrome: UIView {
