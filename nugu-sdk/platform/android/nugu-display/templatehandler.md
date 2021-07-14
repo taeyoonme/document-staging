@@ -4,13 +4,13 @@ description: 'Template, 응용레벨 사이의 상호작용 커스텀'
 
 # TemplateHandler
 
-`TemplateRenderer`는 _\*\*_`TemplateView`를 사용하여 화면을 구성합니다.
+`TemplateRenderer`는 `TemplateView`를 사용하여 화면을 구성합니다.
 
 TemplateView 에서 버튼클릭이나 상태 변경이 일어나면 이를 응용레벨에 알려 처리되도록 해야 합니다. 마찬가지로 응용레벨에서 display에 필요한 상태변경이나 명령이 발생하면 TemplateView에 알려 갱신 처리를 해야 합니다. 이와 같은 TemplateView와 응용레벨에서의 상호작용은 `TemplateHandler`인터페이스를 통해 이루어집니다.
 
 TemplateHandler는 `TemplateHandlerFactory`에서 생성합니다. 
 
-특정 상호작용을 제한하거나 동작 변경이 필요하다면 SDK의 기본 Handler인 `BasicTemplateHandler`를 상속 후 필요한 메서드를 override 하여 TemplateHandlerFactory에 의해 생성되도록 적용하면 됩니다.
+특정 상호작용을 제한하거나 동작 변경이 필요하다면 SDK의 기본 Handler인 `BasicTemplateHandler`를 상속 후 필요한 메서드를 override 하여 커스텀 TemplateHandler를 작성하고, 이를 TemplateHandlerFactory에 의해 생성되도록 적용하면 됩니다.
 
 ## TemplateHandler
 
@@ -34,18 +34,17 @@ TemplateView \(이하 View로 표기\) 는 버튼이 클릭되거나, 보여지�
         &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left">
-        <p><b>fun onCloseAllClicked()</b>
-          <br />View&#xB0B4; &#xB2EB;&#xAE30; &#xBC84;&#xD2BC; &#xD074;&#xB9AD;&#xC2DC;
-          &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</p>
-        <p>SDK&#xC5D0;&#xC11C;&#xB294; &#xB178;&#xCD9C;&#xC911;&#xC778; &#xBAA8;&#xB4E0;
-          &#xD15C;&#xD50C;&#xB9BF;&#xBDF0;&#xB97C; &#xC885;&#xB8CC;&#xD558;&#xB294;
-          &#xB3D9;&#xC791;&#xC774; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;.</p>
-      </td>
+      <td style="text-align:left"><b>fun onCloseClicked()</b>
+        <br />View&#xB0B4; &#xB2EB;&#xAE30; &#xBC84;&#xD2BC; &#xD074;&#xB9AD;&#xC2DC;
+        &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left"><b>fun onCloseClicked()</b>
-        <br />View&#xB0B4; &#xD648; &#xBC84;&#xD2BC; &#xD074;&#xB9AD;&#xC2DC; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
+      <td style="text-align:left">
+        <p><b>fun onCloseAllClicked()</b>
+          <br />View&#xB0B4; &#xD648; &#xBC84;&#xD2BC; &#xD074;&#xB9AD;&#xC2DC; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</p>
+        <p>SDK&#xC5D0;&#xC11C;&#xB294; &#xB178;&#xCD9C;&#xC911;&#xC778; &#xBAA8;&#xB4E0;
+          &#xD15C;&#xD50C;&#xB9BF;&#xC744; &#xC885;&#xB8CC;&#xD55C;&#xB2E4;.</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left"><b>fun onNuguButtonSelected()</b>
@@ -106,7 +105,7 @@ TemplateHandler가 View에서 응용레벨로의 메시지 전달 혹은 요청�
 
 작성한 커스텀 TemplateHandler를 리턴하는 TemplateHandlerFactory 를 TemplateRenderer에 적용하면 커스텀 TemplateHandler가 동작합니다.
 
-```text
+```kotlin
 TemplateRenderer.templateHandlerFactory = object : TemplateHandler.TemplateHandlerFactory() {
     override fun onCreate(
         nuguProvider: TemplateRenderer.NuguClientProvider,
