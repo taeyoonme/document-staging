@@ -78,8 +78,8 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 
 ### 2021-01-04
 
-* [Android 구성요소](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/android/intro_components#undefined) 중 NuguUXKit 설명 업데이트 
-* [Nugu Display의 노출과 제어](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/android/nugu-display)\(Android\) 가이드 추가
+* [Android 구성요소](platform/android/intro_components.md#undefined) 중 NuguUXKit 설명 업데이트 
+* [Nugu Display의 노출과 제어](platform/android/nugu-display/)\(Android\) 가이드 추가
 * [Display Template](sdk-design-guide/display-template.md) \(UX\) 가이드 추가
 
 ### 2020-12-29
