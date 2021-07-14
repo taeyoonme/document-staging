@@ -14,7 +14,7 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 * [NUGU 사용자 인터페이스](platform/ios/nugu.md)\(iOS\) 변경 사항 업데이트
 * [Dark Mode 지원](platform/ios/dark-mode.md)\(iOS\) 가이드 추가
 * [Dark Mode 지원](platform/android/dark-mode.md)\(Android\) 가이드 추가
-* [TemplateHandler](platform/android/nugu-display/templatehandler.md) \(Android\) 변경 사항 업데이트
+* [TemplateHandler](platform/android/nugu-display/templatehandler.md)\(Android\) 변경 사항 업데이트
 
 ### 2021-06-02
 
@@ -31,9 +31,9 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 * [체험판과 정식판 ](describetrial.md)안내 추가
 * [체험판 신청하기](trialprocess.md) 절차 안내 추가
 * [Authentication](authentication.md) NUGU계정 미사용, 체험판 안내 추가
-* [시작하기](platform/ios/start.md) \(iOS\) 체험판 안내 추가
-* [시작하기](platform/android/start.md) \(Android\) 체험판 안내 추가
-* [시작하기](platform/linux/start.md) \(Linux\) 체험판 안내 추가
+* [시작하기](platform/ios/start.md)\(iOS\) 체험판 안내 추가
+* [시작하기](platform/android/start.md)\(Android\) 체험판 안내 추가
+* [시작하기](platform/linux/start.md)\(Linux\) 체험판 안내 추가
 
 ### 2021-03-30
 
@@ -80,7 +80,7 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 
 * [Android 구성요소](platform/android/intro_components.md#undefined) 중 NuguUXKit 설명 업데이트 
 * [Nugu Display의 노출과 제어](platform/android/nugu-display/)\(Android\) 가이드 추가
-* [Display Template](sdk-design-guide/display-template.md) \(UX\) 가이드 추가
+* [Display Template](sdk-design-guide/display-template.md)\(UX\) 가이드 추가
 
 ### 2020-12-29
 
