@@ -79,7 +79,7 @@ Device-level error 발생 시에는 error 원인에 맞는 error code를 응답�
 | DeviceTurnedOff | - | SmartHomeDevice의 전원이 꺼져 있어 제어가 불가한 상태인 경우의 에러입니다. 해당 제어 명령이 전원을 켤 경우 수행할 수 있다면 이 에러로 응답해야 합니다. |
 | AlreadyTurnOn | - | 해당 SmartHomeDevice가 이미 켜져 있는데 켜달라는 제어 요청을 받은 경우입니다. PowerControl Capability, TurnOn Directive의 제어 명령 시 발생 가능한 에러입니다. |
 | AlreadyTurnOff | - | 해당 SmartHomeDevice가 이미 꺼져 있는데 꺼달라는 제어 요청을 받은 경우입니다. PowerControl Capability, TurnOff Directive의 제어 명령 시 발생 가능 에러입니다. |
-| TemperatureOutofRange | minTemperature maxTemperature | SmartHomeDevice에 설정하고자 하는 온도가 해당 SmartHomeDevice의 제어 범위 밖일 경우에 대한 에러입니다. 제어 가능한 최소/최대 온도 설정 범위를 함께 응답해야 합니다. |
+| TemperatureOutofRange | minTemperature<br>maxTemperature | SmartHomeDevice에 설정하고자 하는 온도가 해당 SmartHomeDevice의 제어 범위 밖일 경우에 대한 에러입니다. 제어 가능한 최소/최대 온도 설정 범위를 함께 응답해야 합니다. |
 | AlreadyAtMaxTemp | - | SmartHomeDevice의 설정 온도를 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 온도로 설정되어 있는 경우입니다. |
 | AlreadyAtMinTemp | - | SmartHomeDevice의 설정 온도를 내리려고 했을 때 해당 SmartHomeDevice가 이미 최저 온도로 설정되어 있는 경우입니다. |
 | NotAvailableSetAirflow | - | 해당 SmartHomeDevice가 풍량 조절 불가한 모델일 경우입니다. 동일한 SmartHomeDeviceType 중 풍량 제어가 가능한 모델과 가능하지 않은 모델을 함께 제공하는 IoT ServiceProvider일 경우 해당 응답을 사용할 수 있습니다. |
@@ -98,7 +98,7 @@ Device-level error 발생 시에는 error 원인에 맞는 error code를 응답�
 | NotSupportBrightnessControl | - | 스마트홈 조명이 밝기 조절 불가한 모델일 경우입니다. |
 | NotSupportChangeColor | - | 스마트홈 조명이 색상 변경 불가한 모델일 경우입니다. |
 | UnsupportedColorType | - | 스마트홈 조명이 지원하지 않는 색상 타입인 경우입니다. |
-| HumidityOutofRange | minHumidity maxHumidity | SmartHomeDevice에 설정하고자 하는 습도가 해당 SmartHomeDevice의 제어 범위 밖일 경우에 대한 에러입니다. 제어 가능한 최소/최대 습도 설정 범위를 함께 응답해야 합니다. |
+| HumidityOutofRange | minHumidity<br>maxHumidity | SmartHomeDevice에 설정하고자 하는 습도가 해당 SmartHomeDevice의 제어 범위 밖일 경우에 대한 에러입니다. 제어 가능한 최소/최대 습도 설정 범위를 함께 응답해야 합니다. |
 | AlreadyAtMaxHumidity | - | SmartHomeDevice의 설정 습도를 올리려고 했을 때 해당 SmartHomeDevice가 이미 최고 습도로 설정되어 있는 경우입니다. |
 | AlreadyAtMinHumidity | - | SmartHomeDevice의 설정 습도를 내리려고 했을 때 해당 SmartHomeDevice가 이미 최저 습도로 설정되어 있는 경우입니다. |
 | NotSupportedInCurrentMode | mode | 현재 설정된 모드에서 요청한 기능을 수행할 수 없을 때에 대한 에러입니다. |

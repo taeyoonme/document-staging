@@ -12,7 +12,7 @@ description: 보이스 크롬에 노출되는 발화 가이드를 제공하기 �
 | :--- | :--- | :--- |
 | 1.0 | 2020.07.02 | 규격 추가 |
 | 1.1 | 2020.10.26 | Render directive 의 chips 에 token 필드 추가 |
-| 1.2 | 2021.05.31 | Render directive 의 chips.type 에 NUDGE 추가 Render directive 의 target 에 LISTEN, SPEAKING 추가 |
+| 1.2 | 2021.05.31 | Render directive 의 chips.type 에 NUDGE 추가<br>Render directive 의 target 에 LISTEN, SPEAKING 추가 |
 
 ## SDK Interface
 
@@ -150,9 +150,9 @@ CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get(
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| target | string | Y | **DM**  - ASR.ExpectSpeech, Session.Set 와 같이 전달되는 발화가이드 **LISTEN**  - Session.Set 없이 ASR.ExpectSpeech 발생 시 LISTEN 을 사용 **SPEAKING** - TTS.Speak 와 함께 제공되는 발화 가이드 |
+| target | string | Y |**DM**<br> - ASR.ExpectSpeech, Session.Set 와 같이 전달되는 발화가이드<br>**LISTEN**<br> - Session.Set 없이 ASR.ExpectSpeech 발생 시 LISTEN 을 사용<br>**SPEAKING** - TTS.Speak 와 함께 제공되는 발화 가이드 |
 | chips | list | Y | 발화 가이드 목록 |
-| chips.type | string | Y | **ACTION** : 보이스크롬 가이드의 '액션버튼'으로 기능 단위의 동작 처리를 위한 발화 가이드. **GENERAL** : 기본 발화 가이드 **NUDGE** : 넛지 발화 가이드 |
-| chips.text | string | Y | 버튼 텍스트  - Text.TextInput event 를 보내기 위한 텍스트 명령 문자열 |
+| chips.type | string | Y |**ACTION** : 보이스크롬 가이드의 '액션버튼'으로 기능 단위의 동작 처리를 위한 발화 가이드.<br>**GENERAL** : 기본 발화 가이드<br>**NUDGE** : 넛지 발화 가이드 | 
+| chips.text | string | Y | 버튼 텍스트<br> - Text.TextInput event 를 보내기 위한 텍스트 명령 문자열 |
 | chips.token | string | N | Text.TextInput event 의 출처를 구분하기 위한 값 |
 

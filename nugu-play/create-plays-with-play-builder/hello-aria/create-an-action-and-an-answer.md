@@ -28,17 +28,18 @@ Action은 Play 개발자\(제작사\)가 사용자의 예상 발화에 대해 �
 
 ![](../../../.gitbook/assets/assets_ch3_313_c02%20%282%29%20%282%29%20%282%29%20%284%29.gif)
 
-1. Trigger 선택 영역에서 Trigger 유형을 **Intent**로 선택한 후 이전에 만들었던 2개의 Intent 중 이 Action이 처리할 날씨 관련 Intent\(예: ask.weather\)를 선택해 줍니다.
+3. Trigger 선택 영역에서 Trigger 유형을 **Intent**로 선택한 후 이전에 만들었던 2개의 Intent 중 이 Action이 처리할 날씨 관련 Intent\(예: ask.weather\)를 선택해 줍니다.
 
 ![](../../../.gitbook/assets/assets_ch3_313_c03-1%20%283%29%20%283%29%20%283%29%20%281%29.gif)
 
-1. Output 정의 영역의 Prompt list 내에 위치한 입력 필드에 응답을 입력하고 `Enter` 키를 누르거나 마우스를 입력 필드 외 영역을 클릭하여 Action을 등록합니다.
-2. Prompt List 내에 작성된 Prompt는 응답 하나를 의미하며, 여러 개를 입력하면 그 중 하나가 스피커로 랜덤 재생됩니다.
-3. 입력한 응답을 삭제하려면 Prompt list에서 각 응답마다 표시된 휴지통\(![](../../../.gitbook/assets/assets_trash%20%282%29.png)\) 아이콘을 누릅니다.
+4. Output 정의 영역의 Prompt list 내에 위치한 입력 필드에 응답을 입력하고 `Enter` 키를 누르거나 마우스를 입력 필드 외 영역을 클릭하여 Action을 등록합니다.
+
+* Prompt List 내에 작성된 Prompt는 응답 하나를 의미하며, 여러 개를 입력하면 그 중 하나가 스피커로 랜덤 재생됩니다.
+* 입력한 응답을 삭제하려면 Prompt list에서 각 응답마다 표시된 휴지통\(![](../../../.gitbook/assets/assets_trash%20%282%29.png)\) 아이콘을 누릅니다.
 
 ![](../../../.gitbook/assets/assets_ch3_313_c04%20%282%29%20%282%29%20%282%29%20%282%29.gif)
 
-1. Play Builder 우측 상단에 있는 `Play 저장`을 누르면 Intent\(ask.weather\)와 Action\(answer.weather\)이 연결되어 해당 Play에 저장됩니다.
+5. Play Builder 우측 상단에 있는 `Play 저장`을 누르면 Intent\(ask.weather\)와 Action\(answer.weather\)이 연결되어 해당 Play에 저장됩니다.
 
 ![](../../../.gitbook/assets/assets_ch3_313_c05-1%20%282%29%20%282%29%20%282%29%20%283%29.png)
 

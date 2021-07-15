@@ -17,75 +17,19 @@ TemplateHandler는 `TemplateHandlerFactory`에서 생성합니다.
 TemplateView \(이하 View로 표기\) 는 버튼이 클릭되거나, 보여지는 item list에 변화가 생길때 이를 응용레벨로 알려 처리되도록 합니다. 또한 Toast나 Activity의 노출을 요청할 수도 있습니다.  
 각 상황에 호출되는 메서드들은 아래와 같습니다.
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Methods</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left"><b>fun onElementSelected(tokenId: String)</b>
-        <br />View&#xB0B4; &#xBC84;&#xD2BC; &#xD074;&#xB9AD;&#xC2DC; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun onChipSelected(text: String)</b>
-        <br />View&#xB0B4; chip(&#xCD94;&#xCC9C; &#xBA85;&#xB839;&#xC5B4;) &#xD074;&#xB9AD;&#xC2DC;
-        &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun onCloseClicked()</b>
-        <br />View&#xB0B4; &#xB2EB;&#xAE30; &#xBC84;&#xD2BC; &#xD074;&#xB9AD;&#xC2DC;
-        &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">
-        <p><b>fun onCloseAllClicked()</b>
-          <br />View&#xB0B4; &#xD648; &#xBC84;&#xD2BC; &#xD074;&#xB9AD;&#xC2DC; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</p>
-        <p>SDK&#xC5D0;&#xC11C;&#xB294; &#xB178;&#xCD9C;&#xC911;&#xC778; &#xBAA8;&#xB4E0;
-          &#xD15C;&#xD50C;&#xB9BF;&#xC744; &#xC885;&#xB8CC;&#xD55C;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun onNuguButtonSelected()</b>
-        <br />View&#xB0B4; &#xB204;&#xAD6C; &#xBC84;&#xD2BC; (&#xC544;&#xB9AC;&#xC544;
-        &#xD638;&#xCD9C;) &#xD074;&#xB9AD;&#xC2DC; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun onPlayerCommand(command: String, param: String = &quot;&quot;)</b>
-        <br
-        />&#xBBF8;&#xB514;&#xC5B4; &#xC7AC;&#xC0DD; &#xAD00;&#xB828; &#xB3D9;&#xC791;&#xC774;
-        &#xD544;&#xC694;&#xD560;&#xB54C; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;. (ex.
-        View&#xB0B4; &#xC7AC;&#xC0DD;/&#xC77C;&#xC2DC;&#xC815;&#xC9C0; &#xBC84;&#xD2BC;
-        &#xD074;&#xB9AD;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun onContextChanged(context: String)</b>
-        <br />View&#xC758; display context &#xBCC0;&#xACBD;&#xC774; &#xC788;&#xC744;&#xB54C;
-        &#xD638;&#xCD9C;&#xB41C;&#xB2E4;. (ex. focus item &#xBCC0;&#xD654;, visible
-        item &#xB9AC;&#xC2A4;&#xD2B8;&#xC758; &#xBCC0;&#xD654;)</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun showToast(text: String)</b>
-        <br />View&#xC5D0;&#xC11C; &#xC751;&#xC6A9;&#xB808;&#xBCA8;&#xB85C; Toast&#xB178;&#xCD9C;&#xC744;
-        &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun showActivity(className: String)</b>
-        <br />View&#xC5D0;&#xC11C; &#xC751;&#xC6A9;&#xB808;&#xBCA8;&#xB85C; Activity
-        &#xB178;&#xCD9C;&#xC744; &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun playTTS(text: String)</b>
-        <br />View&#xC5D0;&#xC11C; &#xC751;&#xC6A9;&#xB808;&#xBCA8;&#xB85C; TTS &#xC7AC;&#xC0DD;&#xC744;
-        &#xC694;&#xCCAD;&#xD560;&#xB54C; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"><b>fun setClientListener(listener: ClientListener)</b>
-        <br />handler&#xC5D0; ClientListener&#xB97C; &#xC124;&#xC815;&#xD55C;&#xB2E4;.</td>
-    </tr>
-  </tbody>
-</table>
+| Methods |
+| :--- |
+| **fun onElementSelected\(tokenId: String\)**<br>View내 버튼 클릭시 호출된다. |
+| **fun onChipSelected\(text: String\)**<br>View내 chip\(추천 명령어\) 클릭시 호출된다. |
+| **fun onCloseClicked\(\)**<br>View내 닫기 버튼 클릭시 호출된다. |
+| **fun onCloseAllClicked\(\)**<br>View내 홈 버튼 클릭시 호출된다.<br>SDK에서는 노출중인 모든 템플릿을 종료한다. |
+| **fun onNuguButtonSelected\(\)**<br>View내 누구 버튼 \(아리아 호출\) 클릭시 호출된다. |
+| **fun onPlayerCommand\(command: String, param: String = ""\)**<br>미디어 재생 관련 동작이 필요할때 호출된다. \(ex. View내 재생/일시정지 버튼 클릭\) |
+| **fun onContextChanged\(context: String\)**<br>View의 display context 변경이 있을때 호출된다. \(ex. focus item 변화, visible item 리스트의 변화\) |
+| **fun showToast\(text: String\)**<br>View에서 응용레벨로 Toast노출을 요청할때 호출된다. |
+| **fun showActivity\(className: String\)**<br>View에서 응용레벨로 Activity 노출을 요청할때 호출된다. |
+| **fun playTTS\(text: String\)**<br>View에서 응용레벨로 TTS 재생을 요청할때 호출된다. |
+| **fun setClientListener\(listener: ClientListener\)**<br>handler에 ClientListener를 설정한다. |
 
 ## TemplateHandler.ClientListener
 
@@ -93,13 +37,13 @@ TemplateHandler가 View에서 응용레벨로의 메시지 전달 혹은 요청�
 
 | Methods |
 | :--- |
-| **fun onMediaStateChanged\(activity: AudioPlayerAgentInterface.State, currentTimeMs: Long, currentProgress: Float\)** 미디어 재생 상태 변경시 호출된다. |
-| **fun onMediaDurationRetrieved\(durationMs: Long\)** 미디어의 재생시간이 구해졌을때 호출된다. |
-| **fun onMediaProgressChanged\(progress: Float, currentTimeMs: Long\)** 미디어의 재생경과 업데이트시 호출된다. |
-| **fun controlFocus\(direction: Direction\): Boolean** View에 focus 이동을 요청한다. |
-| **fun controlScroll\(direction: Direction\): Boolean** View에 scroll 을 요청한다. |
-| **fun getFocusedItemToken\(\): String?** View내에 현재 focusing 중인 아이템의 토큰정보를 요구한다. |
-| **fun getVisibleTokenList\(\): List?** View내에 현재 visible한 아이템 리스트정보를 요구한다. |
+| **fun onMediaStateChanged\(activity: AudioPlayerAgentInterface.State, currentTimeMs: Long, currentProgress: Float\)**<br>미디어 재생 상태 변경시 호출된다. |
+| **fun onMediaDurationRetrieved\(durationMs: Long\)**<br>미디어의 재생시간이 구해졌을때 호출된다. |
+| **fun onMediaProgressChanged\(progress: Float, currentTimeMs: Long\)**<br>미디어의 재생경과 업데이트시 호출된다. |
+| **fun controlFocus\(direction: Direction\): Boolean**<br>View에 focus 이동을 요청한다. |
+| **fun controlScroll\(direction: Direction\): Boolean**<br>View에 scroll 을 요청한다. |
+| **fun getFocusedItemToken\(\): String?**<br>View내에 현재 focusing 중인 아이템의 토큰정보를 요구한다. |
+| **fun getVisibleTokenList\(\): List?**<br>View내에 현재 visible한 아이템 리스트정보를 요구한다. |
 
 ## TemplateHandler 적용
 
