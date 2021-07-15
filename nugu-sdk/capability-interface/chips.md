@@ -6,7 +6,7 @@ description: 보이스 크롬에 노출되는 발화 가이드를 제공하기 �
 
 ## Version
 
-최신 버전은 1.1 입니다.
+최신 버전은 1.2 입니다.
 
 | Version | Date | Description |
 | :--- | :--- | :--- |

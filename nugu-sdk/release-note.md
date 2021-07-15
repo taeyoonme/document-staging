@@ -6,6 +6,16 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### 2021-07-14
+
+* [시작하기](platform/ios/start.md)\(iOS\) 업데이트
+* [NUGU 서비스 관리 web server 연동](platform/ios/web-server.md)\(iOS\) 변경 사항 업데이트
+* [NUGU Display의 노출과 제어](platform/ios/nugu-display-template-server.md)\(iOS\) 변경 사항 업데이트
+* [NUGU 사용자 인터페이스](platform/ios/nugu.md)\(iOS\) 변경 사항 업데이트
+* [Dark Mode 지원](platform/ios/dark-mode.md)\(iOS\) 가이드 추가
+* [Dark Mode 지원](platform/android/dark-mode.md)\(Android\) 가이드 추가
+* [TemplateHandler](platform/android/nugu-display/templatehandler.md)\(Android\) 변경 사항 업데이트
+
 ### 2021-06-02
 
 * Capability interface - [Location](capability-interface/location.md#locationagent), [Extension](capability-interface/extension.md#extensionagent), [Bluetooth](capability-interface/bluetooth.md#bluetoothagent), [Mic](capability-interface/mic.md#micagent), [Screen](capability-interface/screen.md#screenagent), [Battery](capability-interface/battery.md#batteryagent), [Sound](capability-interface/sound.md#soundagent), [Message](capability-interface/message.md#messageagent) 업데이트 
@@ -21,13 +31,13 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 * [체험판과 정식판 ](describetrial.md)안내 추가
 * [체험판 신청하기](trialprocess.md) 절차 안내 추가
 * [Authentication](authentication.md) NUGU계정 미사용, 체험판 안내 추가
-* [시작하기](platform/ios/start.md) \(iOS\) 체험판 안내 추가
-* [시작하기](platform/android/start.md) \(Android\) 체험판 안내 추가
-* [시작하기](platform/linux/start.md) \(Linux\) 체험판 안내 추가
+* [시작하기](platform/ios/start.md)\(iOS\) 체험판 안내 추가
+* [시작하기](platform/android/start.md)\(Android\) 체험판 안내 추가
+* [시작하기](platform/linux/start.md)\(Linux\) 체험판 안내 추가
 
 ### 2021-03-30
 
-*  iOS [1.0 으로 업그레이드](platform/ios/1.0.md) 문서 추가
+* iOS [1.0 으로 업그레이드](platform/ios/1.0.md) 문서 추가
 
 ### 2021-03-25
 
@@ -68,9 +78,9 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에�
 
 ### 2021-01-04
 
-* [Android 구성요소](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/android/intro_components#undefined) 중 NuguUXKit 설명 업데이트 
-* [Nugu Display의 노출과 제어](https://app.gitbook.com/@nugu-developers-docs/s/dev/nugu-sdk/platform/android/nugu-display)\(Android\) 가이드 추가
-* [Display Template](sdk-design-guide/display-template.md) \(UX\) 가이드 추가
+* [Android 구성요소](platform/android/intro_components.md#undefined) 중 NuguUXKit 설명 업데이트 
+* [Nugu Display의 노출과 제어](platform/android/nugu-display/)\(Android\) 가이드 추가
+* [Display Template](sdk-design-guide/display-template.md)\(UX\) 가이드 추가
 
 ### 2020-12-29
 

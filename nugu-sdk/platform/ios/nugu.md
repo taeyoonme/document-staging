@@ -26,9 +26,6 @@ import NuguUIKit
 2. 그리고 `NuguVoiceChrome` 를 노출할 owner 의 코드에 다음과 같이 `NuguVoiceChrome` `VoiceChromePresenter` variable 을 initialize 해줍니다.
 
 ```swift
-    private lazy var nuguVoiceChrome: NuguVoiceChrome = {
-        NuguVoiceChrome(frame: CGRect())
-    }()
     private lazy var voiceChromePresenter: VoiceChromePresenter = {
         VoiceChromePresenter(
             viewController: self,
@@ -39,7 +36,6 @@ import NuguUIKit
 ```
 
 * viewController : `NuguVoiceChrome` 을 add / insert 할 parentView 를 소유하고 있는 viewController 입니다. ViewController 대신에 view 를 인자로 직접 설정할 수도 있습니다.
-* nuguVoiceChrome : 노출될 `NuguVoiceChrome` 객체를 설정해주어야합니다.
 * nuguClient : `NuguVoiceChrome` 을 대신 제어하기 위해 전달해야하는 `NuguClient` 객체입니다. SampleApp 코드에서는 `NuguCentralManager` 가 가지고 있습니다.
 
 3. `VoiceChromePresenter` 는 `NuguVoiceChrome` 을 노출하고 제거하는 함수를 제공하고 있습니다.
@@ -85,14 +81,8 @@ extension MainViewController: VoiceChromePresenterDelegate {
         nuguButton.isActivated = true
     }
 
-    func voiceChromeShouldDisableIdleTimer() -> Bool {
-        // VoiceChrome 이 노출되는 동안 자동 화면 잠금을 활성화할지 결정합니다.
-        true
-    }
-
-    func voiceChromeShouldEnableIdleTimer() -> Bool {
-        // VoiceChrome 이 노출되는 동안 자동 화면 잠금을 비활성화할지 결정합니다.
-        true
+    func voiceChromeChipsDidClick(chips: NuguChipsButton.NuguChipsButtonType) {
+        chipsDidSelect(selectedChips: chips)
     }
 }
 ```
