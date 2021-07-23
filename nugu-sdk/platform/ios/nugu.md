@@ -8,9 +8,9 @@ NUGU 서비스의 핵심 기능인 음성 인식을 표현하기 위한 View 입
 
 | Methods |
 | :--- |
-| **func changeState\(state: NuguVoiceChrome.State\)**<br>NuguVoiceChrome 의 상태\(단계\)와 animation 을 변경합니다. |
-| **func setChipsData\(chipsData: \[NuguChipsButton.NuguChipsButtonType\], onChipsSelect: @escaping \(\(\_ selectedChips: NuguChipsButton.NuguChipsButtonType\) -&gt; Void\)\)**<br>NuguVoiceChrome 에 노출될 NuguChipsButton 을 설정합니다. |
-| **func setRecognizedText\(text: String?\)**<br>NuguVoiceChrome 에 출력될 인식 문구를 설정합니다. |
+| **func changeState\(state: NuguVoiceChrome.State\)** NuguVoiceChrome 의 상태\(단계\)와 animation 을 변경합니다. |
+| **func setChipsData\(chipsData: \[NuguChipsButton.NuguChipsButtonType\], onChipsSelect: @escaping \(\(\_ selectedChips: NuguChipsButton.NuguChipsButtonType\) -&gt; Void\)\)** NuguVoiceChrome 에 노출될 NuguChipsButton 을 설정합니다. |
+| **func setRecognizedText\(text: String?\)** NuguVoiceChrome 에 출력될 인식 문구를 설정합니다. |
 
 ## VoiceChromePresenter
 
@@ -23,7 +23,7 @@ import NuguClientKit
 import NuguUIKit
 ```
 
-2. 그리고 `NuguVoiceChrome` 를 노출할 owner 의 코드에 다음과 같이 `NuguVoiceChrome` `VoiceChromePresenter` variable 을 initialize 해줍니다.
+1. 그리고 `NuguVoiceChrome` 를 노출할 owner 의 코드에 다음과 같이 `NuguVoiceChrome` `VoiceChromePresenter` variable 을 initialize 해줍니다.
 
 ```swift
     private lazy var voiceChromePresenter: VoiceChromePresenter = {
@@ -37,8 +37,7 @@ import NuguUIKit
 
 * viewController : `NuguVoiceChrome` 을 add / insert 할 parentView 를 소유하고 있는 viewController 입니다. ViewController 대신에 view 를 인자로 직접 설정할 수도 있습니다.
 * nuguClient : `NuguVoiceChrome` 을 대신 제어하기 위해 전달해야하는 `NuguClient` 객체입니다. SampleApp 코드에서는 `NuguCentralManager` 가 가지고 있습니다.
-
-3. `VoiceChromePresenter` 는 `NuguVoiceChrome` 을 노출하고 제거하는 함수를 제공하고 있습니다.
+* `VoiceChromePresenter` 는 `NuguVoiceChrome` 을 노출하고 제거하는 함수를 제공하고 있습니다.
 
 ```swift
         do {
@@ -63,7 +62,7 @@ import NuguUIKit
 voiceChromePresenter.dismissVoiceChrome()
 ```
 
-4. `VoiceChromeDelegate` 를 설정해주고, 전달받은 delegate 상황을 핸들링하여야 합니다.
+1. `VoiceChromeDelegate` 를 설정해주고, 전달받은 delegate 상황을 핸들링하여야 합니다.
 
 ```swift
 voiceChromePresenter.delegate = self

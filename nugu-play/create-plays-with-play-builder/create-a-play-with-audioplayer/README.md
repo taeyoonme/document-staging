@@ -4,7 +4,7 @@ AudioPlayer Interface를 사용하여 Play를 만들 경우, NUGU SDK에 연결�
 
 AudioPlayer Interface를 사용하기 위해서는 `General` &gt; `기본 정보` &gt; `Capability Interface 추가` 에서 `AudioPlayer` 항목을 체크 합니다.
 
-![](../../../.gitbook/assets/assets_capability_audio%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29.png)
+![](../../../.gitbook/assets/assets_capability_audio%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29.png)
 
 설정을 하고 저장을 하면, 해당 Play는 Built-in Intent가 자동으로 더 추가되고 AudioPlayer를 사용할 수 있는 Play가 됩니다.
 
