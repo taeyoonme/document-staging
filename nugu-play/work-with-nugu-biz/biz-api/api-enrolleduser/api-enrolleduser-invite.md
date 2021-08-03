@@ -150,9 +150,9 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 | 400 | GROUP004 | targetPlayServiceIds, targetGroupApiToken 중복 요청하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | GROUP005 | 그룹에 Private Play 설정 없이 초대하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | USER001 | Biz사용자 초대/수정시 email이 없거나 사이즈를 초과한 경우 |
-| 400 | USER002 | Biz사용자 초대/수정시 namel이 없거나 사이즈를 초과한 경우 |
+| 400 | USER002 | Biz사용자 초대/수정시 name이 없거나 사이즈를 초과한 경우 |
 | 400 | USER003 | Biz사용자 초대/수정시 alias의사이즈를 초과한 경우 |
-| 400 | USER004 | Bizt사용자 초대/수정시 기존에 중복된 email이 존재할 경우 |
+| 400 | USER004 | Biz사용자 초대/수정시 기존에 중복된 email이 존재할 경우 |
 | 400 | USER005 | Biz사용자 초대/수정시 phone 정보가 불 충분할 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | USER006 | Biz사용자 초대/수정시 초대 사유\(reason\) 정보가 불 충분할 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | USER007 | 체험판 회원의 경우 허용 사용자를 초과하는 경우  ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |

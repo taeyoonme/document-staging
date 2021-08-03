@@ -150,7 +150,7 @@
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
         <p>&#xC0AC;&#xC6A9;&#xD560; Display Template</p>
-        <p>fullText1, imageText2&#xC911; &#xD558;&#xB098;</p>
+        <p>FullText1, ImageText2&#xC911; &#xD558;&#xB098;</p>
       </td>
     </tr>
     <tr>

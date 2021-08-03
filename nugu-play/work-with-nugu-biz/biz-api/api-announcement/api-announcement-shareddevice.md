@@ -150,7 +150,7 @@
       <td style="text-align:left">Y</td>
       <td style="text-align:left">
         <p>&#xC0AC;&#xC6A9;&#xD560; Display Template</p>
-        <p>fullText1, fullText2, imageText2&#xC911; &#xD558;&#xB098;</p>
+        <p>FullText1, ImageText2&#xC911; &#xD558;&#xB098;</p>
       </td>
     </tr>
     <tr>
@@ -223,7 +223,7 @@
 | 400 | V1ANN201 | displat.type 값이 잘못됨 |
 | 400 | V1ANN202 | display.title 값이 없음 |
 | 400 | V1ANN203 | display.header 값이 없음 |
-| 400 | V1ANN204 | displat.body 값이 없음 |
+| 400 | V1ANN204 | display.body 값이 없음 |
 
 ### 3.2 Body <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.2Body"></a>
 
