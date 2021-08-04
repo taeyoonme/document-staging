@@ -114,6 +114,7 @@
     * [Biz 사용자 관리](nugu-play/work-with-nugu-biz/manage-enrolled-user/README.md)
       * [Biz 사용자 초대 \(체험판\)](nugu-play/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial.md)
       * [Biz 사용자 초대 \(정식판\)](nugu-play/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz.md)
+      * [Biz 사용자 설정 \(NUGU APP\)](nugu-play/work-with-nugu-biz/manage-enrolled-user/biz-nugu-app.md)
     * [Biz API](nugu-play/work-with-nugu-biz/biz-api/README.md)
       * [API 발송 \(Announcement\)](nugu-play/work-with-nugu-biz/biz-api/api-announcement/README.md)
         * [전용디바이스 그룹별 Announcement 전송](nugu-play/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice.md)
