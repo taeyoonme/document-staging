@@ -8,7 +8,7 @@ Play Builder에서 만든 Play를 NUGU play kit으로 Private Play를 등록 할
 
 ## 2. 사용자의 Private play 확인
 
-배포된 Private Play는 Biz 사용자의 NUGU APP 화면에서 다음과 같이 확인 가능합니다.
+배포된 Private Play는 Biz 사용자의 NUGU APP 화면에서 다음과 같은 방법으 확인 가능합니다.
 
 #### 1\) NUGU APP의 NUGU play 목록에서 확인
 
