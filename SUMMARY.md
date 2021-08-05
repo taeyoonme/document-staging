@@ -111,7 +111,7 @@
     * [주요 개념](nugu-play/work-with-nugu-biz/nugu-biz-concept.md)
     * [체험판 및 정식판](nugu-play/work-with-nugu-biz/describebiz.md)
     * [Private Play](nugu-play/work-with-nugu-biz/private-play.md)
-    * [전용 디바이스 관리](nugu-play/work-with-nugu-biz/manage-shared-device.md)
+    * [Biz 전용 디바이스 관리](nugu-play/work-with-nugu-biz/manage-shared-device.md)
     * [Biz 사용자 관리](nugu-play/work-with-nugu-biz/manage-enrolled-user/README.md)
       * [Biz 사용자 초대 \(체험판\)](nugu-play/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial.md)
       * [Biz 사용자 초대 \(정식판\)](nugu-play/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz.md)
