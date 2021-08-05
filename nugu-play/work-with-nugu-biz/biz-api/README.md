@@ -21,6 +21,8 @@ Biz API는 제휴를 통한 정식판 권한 사용자에게 제공되며, API�
 | 204 | 삭제 시 정상적인 응답 |
 | 400 | 잘못된 요청에 의한 응답값 |
 | 403 | 퍼블리셔 API Token이 유효하지 않거나, 유효하지 않은 자원에 접근할 경우 리턴 |
+| 415 | 지원하지 않는 컨텐츠\(미디어\) 오류 |
+| 500 | 기타 서버 오류 |
 
 ## 4.오류 : 400 응답시
 
@@ -38,21 +40,22 @@ Biz API는 제휴를 통한 정식판 권한 사용자에게 제공되며, API�
 
 | errorCode | 설 |
 | :--- | :--- |
+| PUB001 | Biz Kit 기본 필수정보 없이 초대하는 경 |
 | PLAY001 | 요청한 play의 playServiceId가 없거나 잘못된 경우 |
 | PLAY002 | 요청한 play가 서비스중이 아닌 경우 |
 | PLAY003 | 퍼블리셔의 소유가 아닌 play를 요청한 경우 |
 | GROUP001 | 그룹이 존재하지 않거나, 퍼블리셔의 소유가 아닌 경우 |
 | GROUP002 | 그룹생성/수정시 그룹명이 없거나, 사이즈를 초과할 경우 |
 | GROUP003 | 그룹생성/수정시 alias의 사이즈를 초과한 경우 |
-| GROUP004 | targetPlayServiceIds, targetGroupApiToken 중복 요청하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
-| GROUP005 | 그룹에 Private Play 설정 없이 초대하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
+| GROUP004 | targetPlayServiceIds, targetGroupApiToken 중복 요청하는 경우  |
+| GROUP005 | 그룹에 Private Play 설정 없이 초대하는 경우  |
 | USER001 | Biz사용자 초대/수정시 email이 없거나 사이즈를 초과한 경우 |
 | USER002 | Biz사용자 초대/수정시 namel이 없거나 사이즈를 초과한 경우 |
 | USER003 | Biz사용자 초대/수정시 alias의사이즈를 초과한 경우 |
 | USER004 | Bizt사용자 초대/수정시 기존에 중복된 email이 존재할 경우 |
-| USER005 | Biz사용자 초대/수정시 phone 정보가 불 충분할 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
-| USER006 | Biz사용자 초대/수정시 초대 사유\(reason\) 정보가 불 충분할 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
-| USER007 | 체험판 회원의 경우 허용 사용자를 초과하는 경우  ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
+| USER005 | Biz사용자 초대/수정시 phone 정보가 불 충분할 경우  |
+| USER006 | Biz사용자 초대/수정시 초대 사유\(reason\) 정보가 불 충분할 경우  |
+| USER007 | 체험판 회원의 경우 허용 사용자를 초과하는 경우   |
 | V1ANN001 | body 값을 파싱할 수 없음 |
 | V1ANN002 | playServiceId 없음 |
 | V1ANN101 | tts, display 객체가 모두 존재하지 않음 |
