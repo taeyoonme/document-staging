@@ -2,7 +2,7 @@
 
 Biz 사용자를 대상으로 Announcement 등 API를 발송할 때, 제휴사 계정을 인증하여 해당 계정 기준으로 토큰을 발급하고 발송 할 수 있도록 합니다. 
 
-유의사
+유의사항
 
 * Developers는 Biz 사용자를 식별하는 키로 email을 사용한다.
   * **email이 다르지만 Biz Api Token이 같은 경우를 허용하지 않는다.**

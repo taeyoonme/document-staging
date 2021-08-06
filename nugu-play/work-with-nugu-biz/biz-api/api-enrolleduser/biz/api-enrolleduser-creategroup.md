@@ -1,7 +1,5 @@
 # Biz 사용자 그룹 생성
 
-
-
 Biz 사용자를 관리하기 위한 그룹을 생성하는 기능입니다.
 
 ## 1 URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-1URL"></a>

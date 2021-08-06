@@ -34,12 +34,11 @@
             "cause": "서비스 사용을 위한 초대",
             "createdDate": "2017-11-06T06:00:00.000Z",
             "targetPlayServiceIds": ["aaa.bbb.ccc", "ddd.eee.fff"],
-            "targetGroupApiToken": "XXX",
+            "targetGroupId": "XXX",
             "users": [
-    퍼블리셔 API Token이 유효하지 않을 경우의 응답          {
+                {
                     "email": "XXX",
-                    "name": "XXX",
-                    "token": "XXX",
+                    "name": "XXX"
                     "alias": "XXX",
                     "status": "ENABLE"
                 }

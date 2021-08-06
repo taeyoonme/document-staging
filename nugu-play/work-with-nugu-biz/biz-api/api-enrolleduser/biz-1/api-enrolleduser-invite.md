@@ -4,7 +4,7 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 
 * Biz Service 초대장 발송 시에는, Biz Kit 기본 정보 필수값이 미리 입력되어 있어야 합니다. [Biz Kit 기본 정보 입력](../../../manage-enrolled-user/enrolled-user-invitation-biz.md) 참
 
-## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-1URL"></a>
+## 1 URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-1URL"></a>
 
 ```text
 [POST] {{hostName}}/api/v1/enrolledUser/invitation
@@ -20,7 +20,7 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 {
     "reason": "서비스 사용을 위한 초대",
     "targetPlayServiceIds": ["aaa.bbb.ccc", "ddd.eee.fff"],
-    "targetGroupApiToken": "XXX",
+    "targetGroupId": "XXX",
     "users": [
         {
             "email": "XXX",
@@ -69,17 +69,17 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
       <td style="text-align:left">&#xAC01;&#xAC01; 100</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">&#xCD08;&#xB300; &#xB300;&#xC0C1; play&#xC758; playServiceId
-        <br />targetGroupApiToken &#xACFC; &#xC911;&#xBCF5;&#xD574;&#xC11C; &#xC694;&#xCCAD;&#xD560;
+        <br />targetGroupId &#xACFC; &#xC911;&#xBCF5;&#xD574;&#xC11C; &#xC694;&#xCCAD;&#xD560;
         &#xC218; &#xC5C6;&#xB2E4;.</td>
     </tr>
     <tr>
-      <td style="text-align:left">targetGroupApiToken</td>
+      <td style="text-align:left">targetGroupId</td>
       <td style="text-align:left">body</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">100</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">
-        <p>&#xCD08;&#xB300; &#xB300;&#xC0C1; &#xADF8;&#xB8F9;</p>
+        <p>&#xCD08;&#xB300; &#xB300;&#xC0C1; &#xADF8;&#xB8F9; ID</p>
         <p>targetPlayServiceIds &#xACFC; &#xC911;&#xBCF5;&#xD574;&#xC11C; &#xC694;&#xCCAD;&#xD560;
           &#xC218; &#xC5C6;&#xB2E4;.</p>
       </td>
@@ -139,10 +139,9 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 
 | HTTP Status | errorCode | 설명 |
 | :--- | :--- | :--- |
-| HTTP Status | errorCode | 설명 |
 | 201 |  | 정상 초대 |
 | 403 |  | 퍼블리셔 API Token이 유효하지 않거나, 유효하지 않은 자원에 접근할 경우 리턴 |
-| 401 |  | 초대하는 사용자중 이메일이 중복된 경우의 응답 |
+| 400 | PUB001 | Biz Kit 기본 필수정보 없는 상태 |
 | 400 | PLAY001 | 요청한 play의 playServiceId가 없거나 잘못된 경우 |
 | 400 | PLAY002 | 요청한 play가 서비스중이 아닌 경우 |
 | 400 | PLAY003 | 퍼블리셔의 소유가 아닌 play를 요청한 경우 |
@@ -150,9 +149,8 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 | 400 | GROUP004 | targetPlayServiceIds, targetGroupApiToken 중복 요청하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | GROUP005 | 그룹에 Private Play 설정 없이 초대하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | USER001 | Biz사용자 초대/수정시 email이 없거나 사이즈를 초과한 경우 |
-| 400 | USER002 | Biz사용자 초대/수정시 name이 없거나 사이즈를 초과한 경우 |
+| 400 | USER002 | Biz사용자 초대/수정시 namel이 없거나 사이즈를 초과한 경우 |
 | 400 | USER003 | Biz사용자 초대/수정시 alias의사이즈를 초과한 경우 |
-| 400 | USER004 | Biz사용자 초대/수정시 기존에 중복된 email이 존재할 경우 |
 | 400 | USER005 | Biz사용자 초대/수정시 phone 정보가 불 충분할 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | USER006 | Biz사용자 초대/수정시 초대 사유\(reason\) 정보가 불 충분할 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | USER007 | 체험판 회원의 경우 허용 사용자를 초과하는 경우  ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
