@@ -12,7 +12,7 @@ Play Builder에서 만든 Play를, NUGU play kit에서 Private Play 속성으 �
 
 #### 1\) NUGU APP의 NUGU play 목록에서 확인
 
-* TID 기준으로, 등록된 Biz 사용자의  APP화면에 NUGU play 목록을 펼쳐 볼 때 해당 Private Play를 확인 할 수 있습니다. 해당 Private Play는 초대 받아 권한을 받은 사용자에게만 노출됩니다.
+* TID 기준으로 등록된 Biz 사용자의  APP화면에 NUGU play 목록을 펼쳐 볼 때 해당 Private Play를 확인 할 수 있습니다. 해당 Private Play는 초대 받아 권한을 받은 사용자에게만 노출됩니다.
 
 ![](../../.gitbook/assets/nugu_play.jpg)
 
