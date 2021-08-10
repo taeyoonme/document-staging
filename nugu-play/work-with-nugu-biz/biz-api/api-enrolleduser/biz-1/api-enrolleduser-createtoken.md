@@ -5,9 +5,9 @@ Biz 사용자를 대상으로 Announcement 등 API를 발송할 때, 제휴사 �
 유의사항
 
 * Developers는 Biz 사용자를 식별하는 키로 email을 사용한다.
-  * email이 다르지만 Biz Api Token이 같은 경우를 허용하지 않는다.
+  * **email이 다르지만 Biz Api Token이 같은 경우를 허용하지 않는다.**
 *  Developers는 초대받은 Biz 사용자가 모든 초대과정을 정상적으로 마친 경우에만 정상적인 Biz 사용자로서 식별하며, 사용자에 의한 페이지 이탈등의 행위로 초대과정이 중단된 경우 상태를 유지하지 않는다. 
-* 제휴사는 userApiToken을 전달했으나\(제휴사 서비스에 저장했으나\), 사용자가 초대행위를 마치지 않고 중단했다면, 생성한 userApiToken은 사용할 수 없다.
+  * **제휴사는 userApiToken을 전달했으나\(제휴사 서비스에 저장했으나\), 사용자가 초대행위를 마치지 않고 중단했다면, 생성한 userApiToken은 사용할 수 없다.**
 
 ## 1. 절차 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;APIToken&#xC0DD;&#xC131;v1-1.&#xC808;&#xCC28;"></a>
 
@@ -36,7 +36,7 @@ Biz 사용자를 대상으로 Announcement 등 API를 발송할 때, 제휴사 �
 * Developers에서 사용자 API Token을 저장하는 API
 * Developers는 전달받은 파라미터가 유효하지 않을 경우, confirmUrl로 결과코드를 전송한다.
 
-### 3.1 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;APIToken&#xC0DD;&#xC131;v1-2.1Request.1"></a>
+### 2.1 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;APIToken&#xC0DD;&#xC131;v1-2.1Request.1"></a>
 
 <table>
   <thead>
@@ -82,7 +82,7 @@ Biz 사용자를 대상으로 Announcement 등 API를 발송할 때, 제휴사 �
   </tbody>
 </table>
 
-### 3.2 Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;APIToken&#xC0DD;&#xC131;v1-2.2Response.1"></a>
+### 2.2 Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;APIToken&#xC0DD;&#xC131;v1-2.2Response.1"></a>
 
 ## 4. 인증 결과 전송 \[Developers 요청\] <a id="Biz&#xC0AC;&#xC6A9;&#xC790;APIToken&#xC0DD;&#xC131;v1-4.&#xC778;&#xC99D;&#xACB0;&#xACFC;&#xC804;&#xC1A1;[Developers&#xC694;&#xCCAD;]"></a>
 

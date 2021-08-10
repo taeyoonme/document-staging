@@ -146,7 +146,7 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 | 400 | PLAY002 | 요청한 play가 서비스중이 아닌 경우 |
 | 400 | PLAY003 | 퍼블리셔의 소유가 아닌 play를 요청한 경우 |
 | 400 | GROUP001 | 그룹이 존재하지 않거나, 퍼블리셔의 소유가 아닌 경우 |
-| 400 | GROUP004 | targetPlayServiceIds, targetGroupApiToken 중복 요청하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
+| 400 | GROUP004 | targetPlayServiceIds, targetGroupId 중복 요청하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | GROUP005 | 그룹에 Private Play 설정 없이 초대하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
 | 400 | USER001 | Biz사용자 초대/수정시 email이 없거나 사이즈를 초과한 경우 |
 | 400 | USER002 | Biz사용자 초대/수정시 namel이 없거나 사이즈를 초과한 경우 |
