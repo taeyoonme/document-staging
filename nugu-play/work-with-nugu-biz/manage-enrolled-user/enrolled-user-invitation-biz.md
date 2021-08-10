@@ -12,7 +12,7 @@ Biz 사용자 관리 정식판에서는 Biz Service 단위로 사용자를 초�
 
 ### Biz Service 정보 입력
 
-Biz Service로 사용자를 초대하기 위한 기본 정보를 입력합니다. 초대 받는 사용자의 초대장 및 NUGU APP 설정화면에서 표시되는 정보입니다. Biz Service는 퍼블리셔가 제공하는 여러가지 Play 등 모든 서비스를 포괄하는 개념으로 별도의 정보입력이 필요합니다.
+Biz Service로 사용자를 초대하기 위한 기본 정보를 입력합니다. 초대 받는 사용자의 초대장 및 NUGU APP 설정화면에서 표시되는 정보입니다. Biz Service는 Private Play들을 포함하여 퍼블리셔가 제공하는  모든 서비스를 포괄하는 개념으로, Private Play 외 별도로Service  정보입력이 필요합니다.
 
 ![](../../../.gitbook/assets/image%20%285%29.png)
 
