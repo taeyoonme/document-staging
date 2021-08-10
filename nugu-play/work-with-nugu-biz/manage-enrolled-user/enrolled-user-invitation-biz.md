@@ -100,7 +100,7 @@ Biz 사용자 관리 &gt; 사용자 그룹 관리에서 초대할 사용자가 �
 
 정식판 권한의 Biz Service 단위 초대 시에는 해당 기능을 활용하기 위한 추가 정보를 입력할 수 있습니다.
 
-* BIz API 제휴사 계정 인증 :  Biz Kit 기본 정보 입력에서, 퍼블리셔가 인증 URL를 등록한 경우 초대장에 활성화 되며, 초대받은 사용자가 해당 계정을 로그인 인증 할 수 있습니다. 인증하는 경우,  인증한 제휴사 게정 기준으로 토큰이 발급되어, Announcement 등의 Biz API 수신 시 활용 될 수 있습니다. 
+* Biz API 제휴사 계정 인증 :  Biz Kit 기본 정보 입력에서, 퍼블리셔가 인증 URL를 등록한 경우 초대장에 활성화 되며, 초대받은 사용자가 해당 계정을 로그인 인증 할 수 있습니다. 인증하는 경우,  인증한 제휴사 게정 기준으로 토큰이 발급되어, Announcement 등의 Biz API 수신 시 활용 될 수 있습니다. 
 
 ![](../../../.gitbook/assets/image%20%2814%29.png)
 
@@ -113,7 +113,7 @@ Biz 사용자 관리 &gt; 사용자 그룹 관리에서 초대할 사용자가 �
 ![](../../../.gitbook/assets/image%20%2831%29.png)
 
 {% hint style="info" %}
-ㅇBiz API 수신 가능 디바이스는 "주요개념"의 "NUGU 디바이스\(NUGU device\)"를 참고해 주세요.
+Biz API 수신 가능 디바이스는 "[주요개념](../nugu-biz-concept.md)"의 "NUGU 디바이스\(NUGU device\)"를 참고해 주세요.
 {% endhint %}
 
 ### Biz Service 초대 완료
