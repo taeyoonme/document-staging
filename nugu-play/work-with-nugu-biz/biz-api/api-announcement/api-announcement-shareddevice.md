@@ -189,16 +189,13 @@
       <td style="text-align:left">
         <p>&#xC774;&#xBBF8;&#xC9C0;</p>
         <ul>
-          <li>
-            <p>&#xC5C6;&#xC744; &#xACBD;&#xC6B0; &#xC544;&#xB798;&#xC758; &#xC774;&#xBBF8;&#xC9C0;
-              &#xC1A1;&#xCD9C;(</p>
-            <p><a href="https://cdn.sktnugu.com/aladdin/image/push/img_notification.png">https://cdn.sktnugu.com/aladdin/image/push/img_notification.png</a>)</p>
-          </li>
+          <li>&#xC5C6;&#xC744; &#xACBD;&#xC6B0; &#xC544;&#xB798;&#xC758; &#xC774;&#xBBF8;&#xC9C0;
+            &#xC1A1;&#xCD9C;</li>
         </ul>
         <p>
-          <img src="https://tde.sktelecom.com/wiki/download/thumbnails/367730104/img_notification.png?version=1&amp;modificationDate=1621573187000&amp;api=v2"
-          alt/>
+          <img src="../../../../.gitbook/assets/img_notification.png" alt/>
         </p>
+        <p></p>
       </td>
     </tr>
   </tbody>
@@ -220,7 +217,7 @@
 | 400 | V1ANN103 | tts.speed 값이 잘못됨 |
 | 400 | V1ANN104 | tts.pause1 값이 잘못됨 |
 | 400 | V1ANN105 | tts.pause2 값이 잘못됨 |
-| 400 | V1ANN201 | displat.type 값이 잘못됨 |
+| 400 | V1ANN201 | display.type 값이 잘못됨 |
 | 400 | V1ANN202 | display.title 값이 없음 |
 | 400 | V1ANN203 | display.header 값이 없음 |
 | 400 | V1ANN204 | display.body 값이 없음 |
@@ -231,9 +228,16 @@
 
 ```text
 {
-    "devices": [
-        {"uniqueName": "XXX", "token": "XXX", "resultCode": "XXX" },
-        {"uniqueName": "XXX", "token": "XXX", "resultCode": "XXX" },
+    "users": [
+        {
+            "id": "XXX",
+            "name": "XXX",
+            "email": "XXX",
+            "resultCode": "OK",
+            "deviceResults": [
+                {"code": "XXX"}
+            ]
+        }
     ]
 }
 ```
@@ -250,41 +254,60 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">devices</td>
+      <td style="text-align:left">users</td>
       <td style="text-align:left">array of object</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xC694;&#xCCAD; &#xADF8;&#xB8F9;&#xB0B4; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xB4E4;&#xC758;
+      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xC694;&#xCCAD; &#xADF8;&#xB8F9;&#xB0B4; &#xC0AC;&#xC6A9;&#xC790;&#xB4E4;&#xC758;
         &#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</td>
     </tr>
     <tr>
-      <td style="text-align:left">devices[].uniqueName</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC758; unique name</td>
+      <td style="text-align:left">users[].deviceResults</td>
+      <td style="text-align:left">array of object</td>
+      <td style="text-align:left">&#xAE30;&#xAE30;&#xBCC4; &#xC751;&#xB2F5;&#xAC12;</td>
     </tr>
     <tr>
-      <td style="text-align:left">devices[].token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC758; API Token</td>
+      <td style="text-align:left">users[].deviceResults[].code</td>
+      <td style="text-align:left">enum</td>
+      <td style="text-align:left">
+        <p>&#xAE30;&#xAE30;&#xBCC4; &#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</p>
+        <p>NOT_CONNECTED : &#xC0AC;&#xC6A9;&#xC790;&#xC5D0; &#xC5F0;&#xACB0;&#xB418;&#xC9C0;
+          &#xC54A;&#xC740; &#xAE30;&#xAE30;</p>
+        <p>TIMEOUT : &#xAE30;&#xAE30;&#xC640;&#xC758; &#xC5F0;&#xACB0; &#xC2E4;&#xD328;</p>
+        <p>CONNECT_ERROR : &#xAE30;&#xAE30;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xAC70;&#xB098;,
+          &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0; &#xBB38;&#xC81C;&#xAC00; &#xC788;&#xC74C;</p>
+      </td>
     </tr>
     <tr>
-      <td style="text-align:left">devices[].resultCode</td>
+      <td style="text-align:left">users[].email</td>
       <td style="text-align:left">string</td>
+      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; Biz &#xC0AC;&#xC6A9;&#xC790; &#xC774;&#xBA54;&#xC77C;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">users[].id</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; Biz &#xC0AC;&#xC6A9;&#xC790; ID</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">users[].name</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; Biz &#xC0AC;&#xC6A9;&#xC790; &#xC774;&#xB984;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">users[].resultCode</td>
+      <td style="text-align:left">enum</td>
       <td style="text-align:left">
         <p>&#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</p>
-        <p>OK : &#xBC1C;&#xC1A1; &#xC131;&#xACF5;</p>
-        <p>NOT_AGREE : &#xBC1C;&#xC1A1;&#xC744; &#xD5C8;&#xC6A9;&#xD558;&#xC9C0;
-          &#xC54A;&#xC740; &#xACBD;&#xC6B0;</p>
-        <p>NO_DEVICE : &#xBC1C;&#xC1A1;&#xC744; &#xD5C8;&#xC6A9;&#xD588;&#xC73C;&#xB098;,
-          &#xD5C8;&#xC6A9;&#xD55C; &#xAE30;&#xAE30;&#xAC00; &#xC5C6;&#xB294; &#xACBD;&#xC6B0;</p>
-        <p>NOT_CONNECTED : &#xD5C8;&#xC6A9;&#xB41C; &#xAE30;&#xAE30;&#xAC00; &#xC788;&#xC73C;&#xB098;,
-          &#xC694;&#xCCAD;&#xD55C; &#xC0AC;&#xC6A9;&#xC790;&#xC5D0;&#xAC8C; &#xC5F0;&#xACB0;&#xB418;&#xC9C0;
-          &#xC54A;&#xC740; &#xACBD;&#xC6B0;</p>
-        <p>TIMEOUT : &#xAE30;&#xAE30;&#xC640;&#xC758; &#xC5F0;&#xACB0;&#xC774; &#xC6D0;&#xD560;&#xCE58;
-          &#xC54A;&#xC740; &#xACBD;&#xC6B0;</p>
-        <p>CONNECT_ERROR : &#xAE30;&#xAE30;&#xAC00; &#xAEBC;&#xC838;&#xC788;&#xAC70;&#xB098;,
-          &#xAE30;&#xAE30; &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0; &#xBB38;&#xC81C;&#xAC00;
-          &#xC788;&#xC744; &#xACBD;&#xC6B0;</p>
+        <p>OK : &#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xBAA8;&#xB450;
+          &#xC131;&#xACF5;</p>
+        <p>SOME_OK : &#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC77C;&#xBD80;
+          &#xC131;&#xACF5;</p>
+        <p>FAIL : &#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xBAA8;&#xB450;
+          &#xC2E4;&#xD328;</p>
+        <p>NOT_AGREE : API &#xC218;&#xC2E0; &#xAC70;&#xBD80;</p>
+        <p>NO_DEVICE : API &#xC218;&#xC2E0; &#xD5C8;&#xC6A9; &#xAE30;&#xAE30; &#xC5C6;&#xC74C;</p>
       </td>
     </tr>
   </tbody>
 </table>
+
+
 
