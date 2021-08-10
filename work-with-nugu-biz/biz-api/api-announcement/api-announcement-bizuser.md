@@ -1,16 +1,18 @@
-# Biz 사용자 그룹별 Announcement 전송
+# Biz 사용자별 Announcement 전송
 
-등록된 Biz 사용자의 그룹 토큰을 기준으로, Biz 사용자가 수신 지정한 디바이스에 Announcement API를 발송 할 수 있습니다.
+등록된 Biz 사용자가 Biz API 수신 및 제휴사 계정 인증을 한 경우, 계정 인증을 통해 생성된 토큰을 바탕으로 개인에게 특화된 Announcement 메세지를 사용자의 디바이스에 발송 할 수 있습니다.
 
-## 1. URL
+## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-1URL"></a>
 
 ```text
-[POST] {{hostName}}/api/v1/enrolledUser/group/{groupApiToken}/announcement?callBack={callBackUrl}
+[POST] {{hostName}}/api/v1/enrolledUser/user/{userApiToken}/announcement
 ```
 
-## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2Request"></a>
+## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2Request"></a>
 
-### 2.1 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2.1Body"></a>
+### 2.1 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2.1Body"></a>
+
+**body**
 
 ```text
 {
@@ -32,9 +34,9 @@
 }
 ```
 
+\*\*\*\*
 
-
-### 2.2 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2.2&#xC124;&#xBA85;"></a>
+### 2.2 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2.2&#xC124;&#xBA85;"></a>
 
 <table>
   <thead>
@@ -55,21 +57,11 @@
       <td style="text-align:left">&#xD37C;&#xBE14;&#xB9AC;&#xC154;&#xAC00; &#xBCF4;&#xC720;&#xD55C; &#xD1A0;&#xD070;</td>
     </tr>
     <tr>
-      <td style="text-align:left">groupApiToken</td>
+      <td style="text-align:left">userApiToken</td>
       <td style="text-align:left">path</td>
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1;&#xD560; &#xADF8;&#xB8F9;&#xC758; API &#xD1A0;&#xD070;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">callBackUrl</td>
-      <td style="text-align:left">query param</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&#xCC98;&#xB9AC;&#xACB0;&#xACFC;&#xB97C; &#xBC1B;&#xC744; URL</p>
-        <p>&#xBBF8;&#xC785;&#xB825;&#xC2DC; &#xC804;&#xC1A1;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</p>
-      </td>
+      <td style="text-align:left">&#xBC1C;&#xC1A1;&#xD560; &#xC0AC;&#xC6A9;&#xC790;&#xC758; API &#xD1A0;&#xD070;</td>
     </tr>
     <tr>
       <td style="text-align:left">playServiceId</td>
@@ -187,36 +179,29 @@
       <td style="text-align:left">string</td>
       <td style="text-align:left"></td>
       <td style="text-align:left">
+        <p></p>
         <p>&#xC774;&#xBBF8;&#xC9C0;</p>
         <ul>
           <li>ImageText Type&#xC5D0;&#xC11C; &#xC774;&#xBBF8;&#xC9C0;&#xAC00; &#xC5C6;&#xC744;
             &#xACBD;&#xC6B0;, &#xB514;&#xD3F4;&#xD2B8; &#xC774;&#xBBF8;&#xC9C0; &#xB178;&#xCD9C;</li>
         </ul>
-        <p></p>
         <p>
-          <img src="../../../../.gitbook/assets/img_notification.png" alt/>
-        </p>
-        <p></p>
-        <p>
-          <img src="https://tde.sktelecom.com/wiki/download/thumbnails/367730102/img_notification.png?version=1&amp;modificationDate=1621571998000&amp;api=v2"
-          alt/>
+          <img src="../../../.gitbook/assets/img_notification.png" alt/>
         </p>
       </td>
     </tr>
   </tbody>
 </table>
 
+## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3Response"></a>
 
-
-## 3 Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3Response"></a>
-
-### 3.1 HTTP Status <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.1HTTPStatus"></a>
+### 3.1 HTTP Status <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.1HTTPStatus"></a>
 
 | HTTP Status | errorCode | 설명 |
 | :--- | :--- | :--- |
 | 202 |  | 정상 요청 |
 | 403 |  | 퍼블리셔 API Token이 유효하지 않거나, 유효하지 않은 자원에 접근할 경우 리턴 |
-| 404 |  | 발송 요청한 그룹이 존재하지 않을 때 응답값 |
+| 404 |  | 발송 요청한 사용자가 존재하지 않을 때 응답값 |
 | 400 | V1ANN001 | body 값을 파싱할 수 없음 |
 | 400 | V1ANN002 | playServiceId 없음 |
 | 400 | V1ANN101 | tts, display 객체가 모두 존재하지 않음 |
@@ -224,29 +209,26 @@
 | 400 | V1ANN103 | tts.speed 값이 잘못됨 |
 | 400 | V1ANN104 | tts.pause1 값이 잘못됨 |
 | 400 | V1ANN105 | tts.pause2 값이 잘못됨 |
-| 400 | V1ANN201 | displat.type 값이 잘못됨 |
+| 400 | V1ANN201 | display.type 값이 잘못됨 |
 | 400 | V1ANN202 | display.title 값이 없음 |
 | 400 | V1ANN203 | display.header 값이 없음 |
 | 400 | V1ANN204 | displat.body 값이 없음 |
 
-### 3.2 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.2Body"></a>
+### 3.2 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.2Body"></a>
 
 * callback URL을 입력했을 경우에만 전달받음
 
 ```text
 {
-    "users": [
-        {"email": "XXX", "token": "XXX", "resultCode": "XXX" },
-        {"email": "XXX", "token": "XXX", "resultCode": "XXX" },
-    ]
+    "resultCode": "XXX"
 }
 ```
 
-| 123456 |
+| 123 |
 | :--- |
 
 
-### 3.3 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.3&#xC124;&#xBA85;"></a>
+### 3.3 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.3&#xC124;&#xBA85;"></a>
 
 <table>
   <thead>
@@ -258,26 +240,14 @@
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">users</td>
-      <td style="text-align:left">array of object</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xC694;&#xCCAD; &#xADF8;&#xB8F9;&#xB0B4; &#xC0AC;&#xC6A9;&#xC790;&#xB4E4;&#xC758;
-        &#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</td>
+      <td style="text-align:left">resultCode</td>
+      <td style="text-align:left">string</td>
+      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</td>
     </tr>
     <tr>
-      <td style="text-align:left">users[].email</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1;&#xC790;&#xC758; &#xC774;&#xBA54;&#xC77C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1;&#xC790;&#xC758; &#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].resultCode</td>
-      <td style="text-align:left">string</td>
+      <td style="text-align:left"></td>
+      <td style="text-align:left"></td>
       <td style="text-align:left">
-        <p>&#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</p>
         <p>OK : &#xBC1C;&#xC1A1; &#xC131;&#xACF5;</p>
         <p>NOT_AGREE : &#xBC1C;&#xC1A1;&#xC744; &#xD5C8;&#xC6A9;&#xD558;&#xC9C0;
           &#xC54A;&#xC740; &#xACBD;&#xC6B0;</p>
@@ -295,4 +265,6 @@
     </tr>
   </tbody>
 </table>
+
+
 

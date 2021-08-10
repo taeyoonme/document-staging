@@ -15,7 +15,7 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 전용 디바이스로 설정되면 NUGU 개인 계정과 연결 없이, 해당 공간을 이용하는 사람은 누구나 이용 가능합니다. 사무 공간, 호텔, 병원 등 다양한 공용 공간에서, 특화된 Private Play를 제공하는 전용 디바이스를 이용할 수 있고, Announcement 메세지를 보낼 수 있습니다.
 
-![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_lykoyg3z0bs-tyu2_ch1_12_01__1.png)
+![](../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_lykoyg3z0bs-tyu2_ch1_12_01__1.png)
 
 ## Biz 사용자 관리\(Enrolled User\)
 
@@ -23,7 +23,7 @@ NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누�
 
 예를 들어, 자사 임직원 또는 단체에 소속된 회원만 초대하여, 초대를 수락 회원들의 NUGU 디바이스에서 Private Play를 사용하게 하거나, Announcement 메세지를 수신 할 수 있도록 할 수 있습니다.
 
-![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_lykq7xatd5mtnj0k_ch1_12_02__1.png)
+![](../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_lykq7xatd5mtnj0k_ch1_12_02__1.png)
 
 
 
