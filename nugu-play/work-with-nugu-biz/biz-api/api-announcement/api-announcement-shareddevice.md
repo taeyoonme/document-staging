@@ -5,7 +5,7 @@
 ## 1. URL <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-1URL"></a>
 
 ```text
-[POST] https://biz-api.nugu.co.kr/api/v1/sharedDevice/group/{groupApiToken}/announcement?callBack={callBackUrl}
+[POST] https://biz-api.nugu.co.kr/api/v1/sharedDevice/group/{groupApiToken}/announcement
 ```
 
 ## 2. Request <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2Request"></a>
@@ -60,16 +60,6 @@
       <td style="text-align:left">string</td>
       <td style="text-align:left">Y</td>
       <td style="text-align:left">&#xBC1C;&#xC1A1;&#xD560; &#xADF8;&#xB8F9;&#xC758; API &#xD1A0;&#xD070;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">callBackUrl</td>
-      <td style="text-align:left">query param</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&#xCC98;&#xB9AC;&#xACB0;&#xACFC;&#xB97C; &#xBC1B;&#xC744; URL</p>
-        <p>&#xBBF8;&#xC785;&#xB825;&#xC2DC; &#xC804;&#xC1A1;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;.</p>
-      </td>
     </tr>
     <tr>
       <td style="text-align:left">playServiceId</td>
@@ -222,92 +212,7 @@
 | 400 | V1ANN203 | display.header 값이 없음 |
 | 400 | V1ANN204 | display.body 값이 없음 |
 
-### 3.2 Body <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.2Body"></a>
-
-* callback URL을 입력했을 경우에만 전달받음
-
-```text
-{
-    "users": [
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "email": "XXX",
-            "resultCode": "OK",
-            "deviceResults": [
-                {"code": "XXX"}
-            ]
-        }
-    ]
-}
-```
-
-### 3.3 설명 <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.3&#xC124;&#xBA85;"></a>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC774;&#xB984;</th>
-      <th style="text-align:left">&#xC18D;&#xC131;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">users</td>
-      <td style="text-align:left">array of object</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xC694;&#xCCAD; &#xADF8;&#xB8F9;&#xB0B4; &#xC0AC;&#xC6A9;&#xC790;&#xB4E4;&#xC758;
-        &#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].deviceResults</td>
-      <td style="text-align:left">array of object</td>
-      <td style="text-align:left">&#xAE30;&#xAE30;&#xBCC4; &#xC751;&#xB2F5;&#xAC12;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].deviceResults[].code</td>
-      <td style="text-align:left">enum</td>
-      <td style="text-align:left">
-        <p>&#xAE30;&#xAE30;&#xBCC4; &#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</p>
-        <p>NOT_CONNECTED : &#xC0AC;&#xC6A9;&#xC790;&#xC5D0; &#xC5F0;&#xACB0;&#xB418;&#xC9C0;
-          &#xC54A;&#xC740; &#xAE30;&#xAE30;</p>
-        <p>TIMEOUT : &#xAE30;&#xAE30;&#xC640;&#xC758; &#xC5F0;&#xACB0; &#xC2E4;&#xD328;</p>
-        <p>CONNECT_ERROR : &#xAE30;&#xAE30;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xAC70;&#xB098;,
-          &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0; &#xBB38;&#xC81C;&#xAC00; &#xC788;&#xC74C;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].email</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; Biz &#xC0AC;&#xC6A9;&#xC790; &#xC774;&#xBA54;&#xC77C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].id</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; Biz &#xC0AC;&#xC6A9;&#xC790; ID</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; Biz &#xC0AC;&#xC6A9;&#xC790; &#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].resultCode</td>
-      <td style="text-align:left">enum</td>
-      <td style="text-align:left">
-        <p>&#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</p>
-        <p>OK : &#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xBAA8;&#xB450;
-          &#xC131;&#xACF5;</p>
-        <p>SOME_OK : &#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xC77C;&#xBD80;
-          &#xC131;&#xACF5;</p>
-        <p>FAIL : &#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30; &#xBAA8;&#xB450;
-          &#xC2E4;&#xD328;</p>
-        <p>NOT_AGREE : API &#xC218;&#xC2E0; &#xAC70;&#xBD80;</p>
-        <p>NO_DEVICE : API &#xC218;&#xC2E0; &#xD5C8;&#xC6A9; &#xAE30;&#xAE30; &#xC5C6;&#xC74C;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+###  <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.2Body"></a>
 
 
 

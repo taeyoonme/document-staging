@@ -5,7 +5,7 @@
 ## 1. URL
 
 ```text
-[POST] https://biz-api.nugu.co.kr/api/v1/enrolledUser/group/{groupApiToken}/announcement?callBack={callBackUrl}
+[POST] https://biz-api.nugu.co.kr/api/v1/enrolledUser/group/{groupApiToken}/announcement
 ```
 
 ## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2Request"></a>
@@ -224,67 +224,10 @@
 | 400 | V1ANN103 | tts.speed 값이 잘못됨 |
 | 400 | V1ANN104 | tts.pause1 값이 잘못됨 |
 | 400 | V1ANN105 | tts.pause2 값이 잘못됨 |
-| 400 | V1ANN201 | displat.type 값이 잘못됨 |
+| 400 | V1ANN201 | display.type 값이 잘못됨 |
 | 400 | V1ANN202 | display.title 값이 없음 |
 | 400 | V1ANN203 | display.header 값이 없음 |
-| 400 | V1ANN204 | displat.body 값이 없음 |
+| 400 | V1ANN204 | display.body 값이 없음 |
 
-### 3.2 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.2Body"></a>
-
-* callback URL을 입력했을 경우에만 전달받음
-
-```text
-{
-    "devices": [
-        {
-            "uniqueName": "XXX",
-            "token": "XXX",
-            "resultCode": "XXX"
-        }
-    ]
-}
-```
-
-### 3.3 설명 <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.3&#xC124;&#xBA85;"></a>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC774;&#xB984;</th>
-      <th style="text-align:left">&#xC18D;&#xC131;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">devices</td>
-      <td style="text-align:left">array of object</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xC694;&#xCCAD; &#xADF8;&#xB8F9;&#xB0B4; &#xB514;&#xBC14;&#xC774;&#xC2A4;&#xB4E4;&#xC758;
-        &#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">devices[].uniqueName</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC758; unique name</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">devices[].token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; &#xAE30;&#xAE30;&#xC758; API Token</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">devices[].resultCode</td>
-      <td style="text-align:left">enum</td>
-      <td style="text-align:left">
-        <p>&#xBC1C;&#xC1A1; &#xACB0;&#xACFC;</p>
-        <p>OK : &#xBC1C;&#xC1A1; &#xC131;&#xACF5;</p>
-        <p>NOT_CONNECTED : &#xC0AC;&#xC6A9;&#xC790;&#xC5D0; &#xC5F0;&#xACB0;&#xB418;&#xC9C0;
-          &#xC54A;&#xC740; &#xAE30;&#xAE30;</p>
-        <p>TIMEOUT : &#xAE30;&#xAE30;&#xC640;&#xC758; &#xC5F0;&#xACB0; &#xC2E4;&#xD328;</p>
-        <p>CONNECT_ERROR : &#xAE30;&#xAE30;&#xAC00; &#xAEBC;&#xC838; &#xC788;&#xAC70;&#xB098;,
-          &#xB124;&#xD2B8;&#xC6CC;&#xD06C;&#xC5D0; &#xBB38;&#xC81C;&#xAC00; &#xC788;&#xC74C;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+###  <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.2Body"></a>
 
