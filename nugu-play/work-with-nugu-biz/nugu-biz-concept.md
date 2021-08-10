@@ -66,11 +66,7 @@ NUGU biz의 전용 디바이스와 등록된 사용자\(이용 권한을 획득�
 
 ## Biz API
 
-NUGU biz kit의 정식판에서는 퍼블리셔에서 Biz 전용 디바이스와 Biz 사용자 관리에 유용한 API를 추가적으로 제공합니다. 자세한 내용은 Biz API의 설명을 참고하세요.
-
-* [Biz 사용자 API](biz-api/api-enrolleduser/)
-* [Biz 전용 디바이스 조회 API](biz-api/api-shareddevice/)
-* [API 발송 \(Announcement\)](biz-api/api-announcement/)
+NUGU biz kit의 정식판에서는 퍼블리셔에서 Biz 전용 디바이스와 Biz 사용자 관리에 유용한 API를 추가적으로 제공합니다. 자세한 내용은 [Biz API](biz-api/)의 설명을 참고하세요.
 
 ## Annoucement
 
