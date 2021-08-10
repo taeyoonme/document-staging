@@ -1,12 +1,12 @@
 # Private Play
 
-NUGU biz의 전용 디바이스와 등록된 사용자\(이용 권한을 획득한 사용자\)만 이용할 수 있는 Play입니다. Private Play는 NUGU App에서 확인할 수 있으며, 일반 사용자에게는 노출되지 않습니다. 
+NUGU biz kit의 Biz 전용 디바이스와, 등록된 Biz 사용자\(이용 권한을 획득한 사용자\)만 이용할 수 있는 Play입니다. Biz 사용자에게 등록된 Private Play는 NUGU App에서 확인할 수 있으며, 일반 사용자에게는 노출되지 않습니다. 
 
 ## 1. Private Play 등록 하기
 
-Play Builder에서 만든 Play를 NUGU play kit으로 Private Play를 등록 할 수 있습니다. Play 등록 시, Play 공개 유형을 "Private"으로 선택하여 등록하면 됩니다. 자세한 내용은 [Play 정보 등록](../nugu-play/play-registration-and-review/register-a-play.md) 참고하세요.
+Play Builder에서 만든 Play를, NUGU play kit에서 Private Play 속성으 등록 할 수 있습니다. Play 등록 시, Play 공개 유형을 "Private"으로 선택하여 등록하면 됩니다. 자세한 내용은 [Play 정보 등록](../nugu-play/play-registration-and-review/register-a-play.md) 참고하세요.
 
-## 2. 사용자의 Private play 확인
+## 2. Biz 사용자의 Private play 확인
 
 배포된 Private Play는 Biz 사용자의 NUGU APP 화면에서 다음과 같은 방법으 확인 가능합니다.
 
