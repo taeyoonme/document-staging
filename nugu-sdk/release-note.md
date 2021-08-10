@@ -6,6 +6,10 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### **2021-08-10**
+
+* [템플릿 내 누구버튼 컬러 변경](platform/ios/nugu.md#nugubutton)\(Android\) 가이드 추가 
+
 ### 2021-07-14
 
 * [시작하기](platform/ios/start.md)\(iOS\) 업데이트
