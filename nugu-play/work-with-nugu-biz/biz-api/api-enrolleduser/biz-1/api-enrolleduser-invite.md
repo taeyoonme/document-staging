@@ -7,7 +7,7 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 ## 1 URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-1URL"></a>
 
 ```text
-[POST] {{hostName}}/api/v1/enrolledUser/invitation
+[POST] https://biz-api.nugu.co.kr/api/v1/enrolledUser/invitation
 ```
 
 ## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-2Request"></a>

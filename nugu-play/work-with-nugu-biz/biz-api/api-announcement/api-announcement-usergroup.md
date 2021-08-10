@@ -5,7 +5,7 @@
 ## 1. URL
 
 ```text
-[POST] {{hostName}}/api/v1/enrolledUser/group/{groupApiToken}/announcement?callBack={callBackUrl}
+[POST] https://biz-api.nugu.co.kr/api/v1/enrolledUser/group/{groupApiToken}/announcement?callBack={callBackUrl}
 ```
 
 ## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2Request"></a>

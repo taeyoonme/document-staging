@@ -5,7 +5,7 @@
 ## 1. URL <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-1URL"></a>
 
 ```text
-[POST] {{hostName}}/api/v1/sharedDevice/group/{groupApiToken}/announcement?callBack={callBackUrl}
+[POST] https://biz-api.nugu.co.kr/api/v1/sharedDevice/group/{groupApiToken}/announcement?callBack={callBackUrl}
 ```
 
 ## 2. Request <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2Request"></a>

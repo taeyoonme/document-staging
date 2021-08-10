@@ -5,7 +5,7 @@ Biz 사용자 그룹 정보를 상세 확인 할 수 있는 기능입니다.
 ## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0C1;&#xC138;&#xC870;&#xD68C;v1-1.URL"></a>
 
 ```text
-[GET] {{hostName}}/api/v1/enrolledUser/group/{groupId}
+[GET] https://biz-api.nugu.co.kr/api/v1/enrolledUser/group/{groupId}
 ```
 
 ## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0C1;&#xC138;&#xC870;&#xD68C;v1-2.Request"></a>

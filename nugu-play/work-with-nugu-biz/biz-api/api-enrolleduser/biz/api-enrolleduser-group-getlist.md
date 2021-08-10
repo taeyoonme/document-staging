@@ -5,7 +5,7 @@
 ## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBAA9;&#xB85D;&#xC870;&#xD68C;v1-1.URL"></a>
 
 ```text
-[GET] {{hostName}}/api/v1/enrolledUser/group?page=1&pageSize=20
+[GET] https://biz-api.nugu.co.kr/api/v1/enrolledUser/group?page=1&pageSize=20
 ```
 
 ## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xBAA9;&#xB85D;&#xC870;&#xD68C;v1-2.Request"></a>

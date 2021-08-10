@@ -5,7 +5,7 @@ Biz 사용자 그룹의 정보를 수정하는 기능입니다.
 ## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-1URL"></a>
 
 ```text
-[PUT] {{hostName}}/api/v1/enrolledUser/group/{groupId}
+[PUT] https://biz-api.nugu.co.kr/api/v1/enrolledUser/group/{groupId}
 ```
 
 ## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-2Request"></a>
@@ -47,7 +47,6 @@ Biz 사용자 그룹의 정보를 수정하는 기능입니다.
 | 400 | PLAY003 | 퍼블리셔의 소유가 아닌 play를 요청한 경우 |
 | 400 | GROUP002 | 그룹생성/수정시 그룹명이 없거나, 사이즈를 초과할 경우 |
 | 400 | GROUP003 | 그룹생성/수정시 alias의 사이즈를 초과한 경우 |
-|  |  |  |
 |  |  |  |
 
 ### 3.2 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-3.2Body"></a>

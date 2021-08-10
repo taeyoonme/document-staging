@@ -5,7 +5,7 @@
 ## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;&#xBAA9;&#xB85D;&#xC870;&#xD68C;v1-1.URL"></a>
 
 ```text
-[GET] {{hostName}}/api/v1/invitation
+[GET] https://biz-api.nugu.co.kr/api/v1/invitation
 ```
 
 ## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;&#xBAA9;&#xB85D;&#xC870;&#xD68C;v1-2.Request"></a>
