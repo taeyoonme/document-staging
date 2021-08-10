@@ -5,7 +5,7 @@
 ## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC0AD;&#xC81C;v1-1.URL"></a>
 
 ```text
-[DELETE] https://biz-api.nugu.co.kr/api/v1/enrolledUser/user/{userId}
+[DELETE] https://biz-api.sktnugu.com/api/v1/enrolledUser/user/{userId}
 ```
 
 ## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC0AD;&#xC81C;v1-2.Request"></a>

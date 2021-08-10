@@ -5,7 +5,7 @@ Biz 사용자를 관리하기 위한 그룹을 생성하는 기능입니다.
 ## 1 URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-1URL"></a>
 
 ```text
-[POST] https://biz-api.nugu.co.kr/api/v1/enrolledUser/group
+[POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/group
 ```
 
 ## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-2Request"></a>

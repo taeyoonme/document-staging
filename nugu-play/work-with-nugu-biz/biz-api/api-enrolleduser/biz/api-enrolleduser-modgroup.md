@@ -5,7 +5,7 @@ Biz 사용자 그룹의 정보를 수정하는 기능입니다.
 ## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-1URL"></a>
 
 ```text
-[PUT] https://biz-api.nugu.co.kr/api/v1/enrolledUser/group/{groupId}
+[PUT] https://biz-api.sktnugu.com/api/v1/enrolledUser/group/{groupId}
 ```
 
 ## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-2Request"></a>

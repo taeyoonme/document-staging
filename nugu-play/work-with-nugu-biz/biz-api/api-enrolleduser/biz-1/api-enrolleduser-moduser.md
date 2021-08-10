@@ -5,7 +5,7 @@
 ## 1 URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-1URL"></a>
 
 ```text
-[PUT] https://biz-api.nugu.co.kr/api/v1/enrolledUser/user/{userId}
+[PUT] https://biz-api.sktnugu.com/api/v1/enrolledUser/user/{userId}
 ```
 
 ## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-2Request"></a>

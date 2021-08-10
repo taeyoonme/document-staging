@@ -5,7 +5,7 @@
 ## 1. URL <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xC870;&#xD68C;v1-1.URL"></a>
 
 ```text
-[GET] https://biz-api.nugu.co.kr/api/v1/sharedDevice/group
+[GET] https://biz-api.sktnugu.com/api/v1/sharedDevice/group
 ```
 
 ## 2. Request <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xC870;&#xD68C;v1-1.URL"></a>

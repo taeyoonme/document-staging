@@ -5,7 +5,7 @@
 ## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-1URL"></a>
 
 ```text
-[POST] https://biz-api.nugu.co.kr/api/v1/enrolledUser/user/{userApiToken}/announcement
+[POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/user/{userApiToken}/announcement
 ```
 
 ## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2Request"></a>
