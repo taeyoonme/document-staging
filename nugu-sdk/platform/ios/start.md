@@ -5,6 +5,8 @@
 * Xcode 11.0 or later
 * Swift 5.1
 * iOS 12.0+ \(v1.3.0 or more\) iOS 10.0+ \(less than v1.3.0\)
+* macOS 10.15.0+ \(v1.4.0 or more\) including mac catalyst
+* tvOS 13.0+ \(v1.4.0 or more\)
 
 ## Step 2: NUGU SDK 설치하기
 
@@ -35,7 +37,7 @@ github "nugu-developers/nugu-ios"
 터미널을 열어 Podfile이 있는 프로젝트 경로에서 아래 Script를 실행합니다.
 
 ```swift
-carthage update --platform iOS
+carthage update 
 ```
 {% endtab %}
 {% endtabs %}
