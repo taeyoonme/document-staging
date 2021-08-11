@@ -2,13 +2,13 @@
 
 초대 ****완료되어 등록된 사용자의 정보를 수정하는 기능입니다.
 
-## 1 URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-1URL"></a>
+## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-1URL"></a>
 
 ```text
 [PUT] https://biz-api.sktnugu.com/api/v1/enrolledUser/user/{userId}
 ```
 
-## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-2Request"></a>
+## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-2Request"></a>
 
 ### 2.1 body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-2.1body"></a>
 
@@ -92,7 +92,7 @@
   </tbody>
 </table>
 
-## 3 Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-3Response"></a>
+## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-3Response"></a>
 
 ### 3.1 HTTP Status <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-3.1HTTPStatus"></a>
 

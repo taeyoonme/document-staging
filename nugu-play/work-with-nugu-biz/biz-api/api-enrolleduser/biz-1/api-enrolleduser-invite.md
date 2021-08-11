@@ -4,13 +4,13 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 
 * Biz Service 초대장 발송 시에는, Biz Kit 기본 정보 필수값이 미리 입력되어 있어야 합니다. [Biz Kit 기본 정보 입력](../../../manage-enrolled-user/enrolled-user-invitation-biz.md) 참
 
-## 1 URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-1URL"></a>
+## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-1URL"></a>
 
 ```text
 [POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/invitation
 ```
 
-## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-2Request"></a>
+## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-2Request"></a>
 
 ### 2.1 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-2.1Body"></a>
 
@@ -133,7 +133,7 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
   </tbody>
 </table>
 
-## 3 Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-3Response"></a>
+## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-3Response"></a>
 
 ### 3.1 HTTP Status <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-3.1HTTPStatus"></a>
 

@@ -8,7 +8,7 @@ Biz 사용자 그룹의 정보를 수정하는 기능입니다.
 [PUT] https://biz-api.sktnugu.com/api/v1/enrolledUser/group/{groupId}
 ```
 
-## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-2Request"></a>
+## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-2Request"></a>
 
 ### 2.1 body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-2.1body"></a>
 

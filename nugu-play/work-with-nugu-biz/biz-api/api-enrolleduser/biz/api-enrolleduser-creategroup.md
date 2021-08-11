@@ -2,13 +2,13 @@
 
 Biz 사용자를 관리하기 위한 그룹을 생성하는 기능입니다.
 
-## 1 URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-1URL"></a>
+## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-1URL"></a>
 
 ```text
 [POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/group
 ```
 
-## 2 Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-2Request"></a>
+## 2. Request <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-2Request"></a>
 
 ### 2.1 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-2.1Body"></a>
 
@@ -31,7 +31,7 @@ Biz 사용자를 관리하기 위한 그룹을 생성하는 기능입니다.
 | alias | body | string | 100 |  | 생성할 그룹의 Alias |
 | playServiceIds | body | array of string | 각각 100 |  | 퍼블리셔가 소유한 그룹에 할당할 private play 목록 |
 
-## 3 Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-3Response"></a>
+## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-3Response"></a>
 
 ### 3.1 Http Status <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0DD;&#xC131;v1-3.1HttpStatus"></a>
 
