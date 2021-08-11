@@ -34,104 +34,17 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 
 ### 2.2 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-2.2&#xC124;&#xBA85;"></a>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC774;&#xB984;</th>
-      <th style="text-align:left">&#xC720;&#xD615;</th>
-      <th style="text-align:left">&#xC18D;&#xC131;</th>
-      <th style="text-align:left">&#xAE38;&#xC774;</th>
-      <th style="text-align:left">&#xD544;&#xC218;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Publisher-Token</td>
-      <td style="text-align:left">Header</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD37C;&#xBE14;&#xB9AC;&#xC154;&#xAC00; &#xBCF4;&#xC720;&#xD55C; &#xD1A0;&#xD070;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">reason</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">400</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xCD08;&#xB300; &#xC0AC;&#xC720;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">targetPlayServiceIds</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">array of string</td>
-      <td style="text-align:left">&#xAC01;&#xAC01; 100</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xCD08;&#xB300; &#xB300;&#xC0C1; play&#xC758; playServiceId
-        <br />targetGroupId &#xACFC; &#xC911;&#xBCF5;&#xD574;&#xC11C; &#xC694;&#xCCAD;&#xD560;
-        &#xC218; &#xC5C6;&#xB2E4;.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">targetGroupId</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">100</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&#xCD08;&#xB300; &#xB300;&#xC0C1; &#xADF8;&#xB8F9; ID</p>
-        <p>targetPlayServiceIds &#xACFC; &#xC911;&#xBCF5;&#xD574;&#xC11C; &#xC694;&#xCCAD;&#xD560;
-          &#xC218; &#xC5C6;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">array of object</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xCD08;&#xB300;&#xD55C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].email</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">350</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xCD08;&#xB300;&#xD55C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC774;&#xBA54;&#xC77C;</p>
-        <p>&#xB9CC;&#xC77C; &#xCD08;&#xB300;&#xB41C; &#xB9AC;&#xC2A4;&#xD2B8;&#xC5D0;
-          &#xB3D9;&#xC77C;&#xD55C; &#xC774;&#xBA54;&#xC77C;&#xC774; &#xC874;&#xC7AC;&#xD560;
-          &#xACBD;&#xC6B0; &#xC7AC;&#xCD08;&#xB300;&#xAC00; &#xC774;&#xB904;&#xC9C0;&#xBA70;,
-          name, alias&#xAC00; &#xAC31;&#xC2E0;&#xB41C;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].name</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">100</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xCD08;&#xB300;&#xD55C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].phone</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">12</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xCD08;&#xB300;&#xD55C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC804;&#xD654;&#xBC88;&#xD638;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].alias</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">100</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xCD08;&#xB300;&#xD55C; &#xC0AC;&#xC6A9;&#xC790;&#xC758; Alias</td>
-    </tr>
-  </tbody>
-</table>
+|이름 | 유형 | 속성 | 길이 | 필수 | 설명 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Publisher-Token | Header | string |  | Y | 퍼블리셔가 보유한 토큰 |
+| reason | body | string | 400 |  | 초대 사유 |
+| targetPlayServiceIds | body | array of string | 각각 100 |  | 초대 대상 play의 playServiceId<br>targetGroupId 과 중복해서 요청할 수 없다. |
+| targetGroupId | body | string | 100 |  | 초대 대상 그룹 ID<br>targetPlayServiceIds 과 중복해서 요청할 수 없다. |
+| users | body | array of object |  |  | 초대한 사용자의 정보 |
+| users\[\].email | body | string | 350 | Y | 초대한 사용자의 이메일<br>만일 초대된 리스트에 동일한 이메일이 존재할 경우 재초대가 이뤄지며, name, alias가 갱신된다. |
+| users\[\].name | body | string | 100 | Y | 초대한 사용자의 이름 |
+| users\[\].phone | body | string | 12 | Y | 초대한 사용자의 전화번호 |
+| users\[\].alias | body | string | 100 |  | 초대한 사용자의 Alias |
 
 ## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-3Response"></a>
 
@@ -146,14 +59,14 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 | 400 | PLAY002 | 요청한 play가 서비스중이 아닌 경우 |
 | 400 | PLAY003 | 퍼블리셔의 소유가 아닌 play를 요청한 경우 |
 | 400 | GROUP001 | 그룹이 존재하지 않거나, 퍼블리셔의 소유가 아닌 경우 |
-| 400 | GROUP004 | targetPlayServiceIds, targetGroupId 중복 요청하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
-| 400 | GROUP005 | 그룹에 Private Play 설정 없이 초대하는 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
+| 400 | GROUP004 | targetPlayServiceIds, targetGroupId 중복 요청하는 경우 |
+| 400 | GROUP005 | 그룹에 Private Play 설정 없이 초대하는 경우 |
 | 400 | USER001 | Biz사용자 초대/수정시 email이 없거나 사이즈를 초과한 경우 |
 | 400 | USER002 | Biz사용자 초대/수정시 name이 없거나 사이즈를 초과한 경우 |
 | 400 | USER003 | Biz사용자 초대/수정시 alias의사이즈를 초과한 경우 |
-| 400 | USER005 | Biz사용자 초대/수정시 phone 정보가 불 충분할 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
-| 400 | USER006 | Biz사용자 초대/수정시 초대 사유\(reason\) 정보가 불 충분할 경우 ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
-| 400 | USER007 | 체험판 회원의 경우 허용 사용자를 초과하는 경우  ![\(star\)](https://tde.sktelecom.com/wiki/s/ko_KR/8100/b0984b7297905b7c7bd946458f753ce0130bfc8c/_/images/icons/emoticons/star_yellow.svg) |
+| 400 | USER005 | Biz사용자 초대/수정시 phone 정보가 불 충분할 경우 |
+| 400 | USER006 | Biz사용자 초대/수정시 초대 사유\(reason\) 정보가 불 충분할 경우 |
+| 400 | USER007 | 체험판 회원의 경우 허용 사용자를 초과하는 경우 |
 
 ### 3.2 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;v1-3.2Body"></a>
 

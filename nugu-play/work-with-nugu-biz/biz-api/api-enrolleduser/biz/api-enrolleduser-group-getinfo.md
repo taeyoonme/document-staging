@@ -24,7 +24,6 @@ Biz 사용자 그룹 정보를 상세 확인 할 수 있는 기능입니다.
 | 200 | 정상 응답 |
 | 403 | 퍼블리셔 API Token이 유효하지 않을 경우의 응답 |
 | 404 | 대상 그룹을 찾을 수 없을 때 응답 |
-|  |  |
 
 ### 3.2 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0C1;&#xC138;&#xC870;&#xD68C;v1-3.2Body"></a>
 
@@ -53,114 +52,19 @@ Biz 사용자 그룹 정보를 상세 확인 할 수 있는 기능입니다.
 
 ### 3.3 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC0C1;&#xC138;&#xC870;&#xD68C;v1-3.3&#xC124;&#xBA85;"></a>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC774;&#xB984;</th>
-      <th style="text-align:left">&#xC18D;&#xC131;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">&#xC774;&#xB984;</td>
-      <td style="text-align:left">&#xC18D;&#xC131;</td>
-      <td style="text-align:left">&#xC124;&#xBA85;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">id</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">
-        <p>&#xADF8;&#xB8F9; ID</p>
-        <p>unmappedUser&#xC77C; &#xACBD;&#xC6B0; null</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">
-        <p>&#xADF8;&#xB8F9; &#xC774;&#xB984;</p>
-        <p>unmappedUser&#xC77C; &#xACBD;&#xC6B0; null</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">token</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">
-        <p>&#xADF8;&#xB8F9; API &#xD1A0;&#xD070;</p>
-        <p>unmappedUser&#xC77C; &#xACBD;&#xC6B0; null</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">alias</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">
-        <p>&#xADF8;&#xB8F9; &#xBD80;&#xAC00; &#xC815;&#xBCF4;</p>
-        <p>unmappedUser&#xC77C; &#xACBD;&#xC6B0; null</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceIds</td>
-      <td style="text-align:left">array of string</td>
-      <td style="text-align:left">
-        <p>&#xADF8;&#xB8F9;&#xC5D0; &#xC18D;&#xD55C; private play service id &#xBAA9;&#xB85D;</p>
-        <p>unmappedUser&#xC77C; &#xACBD;&#xC6B0; []</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users</td>
-      <td style="text-align:left">array of object</td>
-      <td style="text-align:left">&#xADF8;&#xB8F9;&#xC5D0; &#xC18D;&#xD55C; &#xC0AC;&#xC6A9;&#xC790; &#xBAA9;&#xB85D;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].id</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; ID</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].name</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].email</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xC774;&#xBA54;&#xC77C;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].alias</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xCD94;&#xAC00; &#xC815;&#xBCF4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].serviceType</td>
-      <td style="text-align:left">enum</td>
-      <td style="text-align:left">&#xC0AC;&#xC6A9;&#xC790; &#xCD08;&#xB300; &#xC720;&#xD615;
-        <br />SERVICE ; &#xC11C;&#xBE44;&#xC2A4;
-        <br />PLAY : play</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].apiAgreeType</td>
-      <td style="text-align:left">enum</td>
-      <td style="text-align:left">Biz API &#xC218;&#xC2E0; &#xB3D9;&#xC758; &#xC720;&#xD615;
-        <br />ALL : &#xB3D9;&#xC758;
-        <br />SOME : &#xC77C;&#xBD80; &#xB3D9;&#xC758;
-        <br />NONE : &#xBBF8;&#xB3D9;&#xC758;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].authType</td>
-      <td style="text-align:left">enum</td>
-      <td style="text-align:left">&#xC81C;&#xD734;&#xC0AC; &#xC778;&#xC99D; &#xC5EC;&#xBD80; &#xC720;&#xD615;
-        <br
-        />ALL : &#xC778;&#xC99D;
-        <br />SOME : &#xC77C;&#xBD80; &#xC778;&#xC99D;
-        <br />NONE : &#xBBF8;&#xC778;&#xC99D;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">users[].acceptedDateTime</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xCD08;&#xB300; &#xC2B9;&#xC778;&#xC77C;(ISO-8601)</td>
-    </tr>
-  </tbody>
-</table>
-
+|이름 | 속성 | 설명 |
+| :--- | :--- | :--- |
+| id | string | 그룹 ID<br>unmappedUser일 경우 null |
+| name | string | 그룹 이름<br>unmappedUser일 경우 null |
+| token | string | 그룹 API 토큰<br>unmappedUser일 경우 null |
+| alias | string | 그룹 부가 정보<br>unmappedUser일 경우 null |
+| playServiceIds | array of string | 그룹에 속한 private play service id 목록<br>unmappedUser일 경우 [] |
+| users | array of object | 그룹에 속한 사용자 목록 |
+| users\[\].id | string | 사용자 ID |
+| users\[\].name | string | 사용자 이름 |
+| users\[\].email | string | 사용자 이메일 |
+| users\[\].alias | string | 사용자 추가 정보 |
+| users\[\].serviceType | enum | 사용자 초대 유형<br>SERVICE : 서비스<br>PLAY : play |
+| users\[\].apiAgreeType | enum | Biz API 수신 동의 유형<br>ALL : 동의<br>SOME : 일부 동의<br>NONE : 미동의 |
+| users\[\].authType | enum | 제휴사 인증 여부 유형<br>ALL : 인증<br>SOME : 일부 인증<br>NONE : 미인증 |
+| users\[\].acceptedDateTime | string | 초대 승인일\(ISO-8601\) |

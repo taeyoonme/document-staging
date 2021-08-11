@@ -34,164 +34,25 @@
 }
 ```
 
-\*\*\*\*
-
 ### 2.2 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-2.2&#xC124;&#xBA85;"></a>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC774;&#xB984;</th>
-      <th style="text-align:left">&#xC720;&#xD615;</th>
-      <th style="text-align:left">&#xC18D;&#xC131;</th>
-      <th style="text-align:left">&#xD544;&#xC218;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Publisher-Token</td>
-      <td style="text-align:left">Header</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD37C;&#xBE14;&#xB9AC;&#xC154;&#xAC00; &#xBCF4;&#xC720;&#xD55C; &#xD1A0;&#xD070;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">userApiToken</td>
-      <td style="text-align:left">path</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBC1C;&#xC1A1;&#xD560; &#xC0AC;&#xC6A9;&#xC790;&#xC758; API &#xD1A0;&#xD070;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">playServiceId</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xBC1C;&#xC1A1; &#xB300;&#xC0C1; play</p>
-        <p>&#xB300;&#xC0C1; play&#xC758; &#xD569;&#xC131;&#xC74C;, TTS Domain&#xC744;
-          &#xAE30;&#xC900;&#xC73C;&#xB85C; SKML&#xC744; &#xC0DD;&#xC131;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">tts</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">TTS&#xB97C; &#xAD6C;&#xC131;&#xD558;&#xB294; &#xAC1D;&#xCCB4;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">tts.text</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xBC1C;&#xD654;&#xBB38;&#xC7A5;</p>
-        <p>&#xBC1C;&#xD654;&#xBB38;&#xC7A5;, Display &#xAC1D;&#xCCB4; &#xC911; &#xBC18;&#xB4DC;&#xC2DC;
-          1&#xAC1C; &#xC774;&#xC0C1;&#xC740; &#xC874;&#xC7AC;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">tts.speed</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&#xBC1C;&#xD654;&#xC18D;&#xB3C4;
-          <br />85, 90... 120&#xAE4C;&#xC9C0;&#xC758; 5&#xB2E8;&#xC704; &#xAC12;</p>
-        <p>&#xAE30;&#xBCF8;&#xAC12;&#xC740; 100</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">tts.pause1</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&#xBB38;&#xC7A5; &#xC0AC;&#xC774; &#xBB35;&#xC74C; &#xAD6C;&#xAC04; &#xAE38;&#xC774;</p>
-        <p>300, 400... 900&#xAE4C;&#xC9C0;&#xC758; 100&#xB2E8;&#xC704; &#xAC12;</p>
-        <p>&#xAE30;&#xBCF8;&#xAC12;&#xC740; 600</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">tts.pause2</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>100, 200... 500&#xAE4C;&#xC9C0;&#xC758; 100&#xB2E8;&#xC704; &#xAC12;</p>
-        <p>&#xAE30;&#xBCF8;&#xAC12;&#xC740; 300</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">display</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">object</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>Display &#xAC1D;&#xCCB4;</p>
-        <p>&#xBC1C;&#xD654;&#xBB38;&#xC7A5;, Display &#xAC1D;&#xCCB4; &#xC911; &#xBC18;&#xB4DC;&#xC2DC;
-          1&#xAC1C; &#xC774;&#xC0C1;&#xC740; &#xC874;&#xC7AC;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">display.type</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">
-        <p>&#xC0AC;&#xC6A9;&#xD560; Display Template</p>
-        <p>FullText1, ImageText2&#xC911; &#xD558;&#xB098;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">display.title</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD654;&#xBA74; &#xD0C0;&#xC774;&#xD2C0;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">display.header</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBCF8;&#xBB38; &#xC81C;&#xBAA9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">display.body</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xBCF8;&#xBB38; &#xB0B4;&#xC6A9;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">display.footer</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xBCF8;&#xBB38; &#xBD80;&#xAC00; &#xC124;&#xBA85;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">display.image</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p></p>
-        <p>&#xC774;&#xBBF8;&#xC9C0;</p>
-        <ul>
-          <li>ImageText Type&#xC5D0;&#xC11C; &#xC774;&#xBBF8;&#xC9C0;&#xAC00; &#xC5C6;&#xC744;
-            &#xACBD;&#xC6B0;, &#xB514;&#xD3F4;&#xD2B8; &#xC774;&#xBBF8;&#xC9C0; &#xB178;&#xCD9C;</li>
-        </ul>
-        <p>
-          <img src="../../../../.gitbook/assets/img_notification.png" alt/>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| 이름 | 유형 | 속성 | 필수 | 설명 |
+| :--- | :--- | :--- | :--- | :--- |
+| Publisher-Token | Header | string | Y | 퍼블리셔가 보유한 토큰 |
+| userApiToken | path | string | Y | 발송할 사용자의 API 토큰 |
+| playServiceId | body | string | Y | 발송 대상 play<br>대상 play의 합성음, TTS Domain을 기준으로 SKML을 생성 |
+| tts | body | object | | TTS를 구성하는 객체 |
+| tts.text | body | string | Y | 발화문장<br>발화문장, Display 객체 중 반드시 1개 이상은 존재해야 한다. |
+| tts.speed | body | string | | 발화속도<br>85, 90... 120까지의 5단위 값<br>기본값은 100 |
+| tts.pause1 | body | string | | 문장 사이 묵음 구간 길이<br>300, 400... 900까지의 100단위 값<br>기본값은 600 |
+| tts.pause2 | body | string | | 100, 200... 500까지의 100단위 값<br>기본값은 300 |
+| display | body | object | Y | Display 객체<br>발화문장, Display 객체 중 반드시 1개 이상은 존재해야 한다. |
+| display.type | body | string | Y | 사용할 Display Template<br>FullText1, ImageText2중 하나 |
+| display.title | body | string | Y | 화면 타이틀 |
+| display.header | body | string | Y | 본문 제목 |
+| display.body | body | string | Y | 본문 내용 |
+| display.footer | body | string | | 본문 부가 설명 |
+| display.image | body | string | | 이미지<br>ImageText Type에서 이미지가 없을 경우, 디폴트 이미지 노출<br>![](../../../../.gitbook/assets/img_notification.png) |
 
 ## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3Response"></a>
 
@@ -213,6 +74,3 @@
 | 400 | V1ANN202 | display.title 값이 없음 |
 | 400 | V1ANN203 | display.header 값이 없음 |
 | 400 | V1ANN204 | display.body 값이 없음 |
-
-###  <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3.2Body"></a>
-

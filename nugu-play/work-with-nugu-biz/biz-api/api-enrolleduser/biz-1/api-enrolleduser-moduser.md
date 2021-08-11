@@ -1,6 +1,6 @@
 # Biz 사용자 수정
 
-초대 ****완료되어 등록된 사용자의 정보를 수정하는 기능입니다.
+초대 완료되어 등록된 사용자의 정보를 수정하는 기능입니다.
 
 ## 1. URL <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-1URL"></a>
 
@@ -24,73 +24,13 @@
 
 ### 2.2 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-2.2&#xC124;&#xBA85;"></a>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">&#xC774;&#xB984;</th>
-      <th style="text-align:left">&#xC720;&#xD615;</th>
-      <th style="text-align:left">&#xC18D;&#xC131;</th>
-      <th style="text-align:left">&#xAE38;&#xC774;</th>
-      <th style="text-align:left">&#xD544;&#xC218;</th>
-      <th style="text-align:left">&#xC124;&#xBA85;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">Publisher-Token</td>
-      <td style="text-align:left">Header</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xD37C;&#xBE14;&#xB9AC;&#xC154;&#xAC00; &#xBCF4;&#xC720;&#xD55C; &#xD1A0;&#xD070;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">userId</td>
-      <td style="text-align:left">path</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC218;&#xC815;&#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xC0AC;&#xC6A9;&#xC790;&#xC758;
-        API &#xD1A0;&#xD070;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">name</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">100</td>
-      <td style="text-align:left">Y</td>
-      <td style="text-align:left">&#xC218;&#xC815;&#xD560; &#xC0AC;&#xC6A9;&#xC790;&#xC758; &#xC774;&#xB984;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">alias</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left">&#xAC01;&#xAC01; 100</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">&#xC218;&#xC815;&#xD560; &#xC0AC;&#xC6A9;&#xC790;&#xC758; Alias</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">targetGroupId</td>
-      <td style="text-align:left">body</td>
-      <td style="text-align:left">string</td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>&#xBCC0;&#xACBD;&#xD560; &#xADF8;&#xB8F9; ID
-          <br />&#xBBF8;&#xC785;&#xB825;&#xC2DC; &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBA70;,
-          &#xBCC0;&#xACBD;&#xC2DC; &#xC11C;&#xBE44;&#xC2A4; &#xB3D9;&#xC758; &#xC0AC;&#xC6A9;&#xC790;&#xC758;
-          &#xACBD;&#xC6B0; &#xBCC4;&#xB3C4;&#xC758; &#xACFC;&#xC815;&#xC5C6;&#xC774;
-          &#xBCC0;&#xACBD;&#xC774; &#xAC00;&#xB2A5;&#xD558;&#xB098;, Play &#xB3D9;&#xC758;
-          &#xC0AC;&#xC6A9;&#xC790;&#xC77C; &#xACBD;&#xC6B0; &#xD574;&#xB2F9; &#xADF8;&#xB8F9;&#xC73C;&#xB85C;
-          &#xC7AC;&#xCD08;&#xB300;&#xB418;&#xB294; &#xC808;&#xCC28;&#xB97C; &#xAC70;&#xCE5C;&#xB2E4;.</p>
-        <p>&#xB610;&#xD55C; Play &#xB3D9;&#xC758; &#xC0AC;&#xC6A9;&#xC790;&#xC77C;
-          &#xACBD;&#xC6B0; &#xB3D9;&#xC758;&#xB97C; &#xC644;&#xB8CC;&#xD558;&#xAE30;
-          &#xC804;&#xAE4C;&#xC9C0; &#xADF8;&#xB8F9;&#xC774; &#xBCC0;&#xACBD;&#xB418;&#xC9C0;
-          &#xC54A;&#xB294;&#xB2E4;.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+|이름 | 유형 | 속성 | 길이 | 필수 | 설명 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Publisher-Token | Header | string |  | Y | 퍼블리셔가 보유한 토큰 |
+| userId | path | string |  | Y | 수정하고자 하는 사용자의 API 토큰 |
+| name | body | string | 100 | Y | 수정할 사용자의 이름 |
+| alias | body | string | 각각 100 |  | 수정할 사용자의 Alias |
+| targetGroupId | body | string |  |  | 변경할 그룹 ID<br>미입력시 변경되지 않으며, 변경시 서비스 동의 사용자의 경우 별도의 과정없이 변경이 가능하나, Play 동의 사용자일 경우 해당 그룹으로 재초대되는 절차를 거친다.<br>또한 Play 동의 사용자일 경우 동의를 완료하기 전까지 그룹이 변경되지 않는다. |
 
 ## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-3Response"></a>
 
@@ -107,8 +47,6 @@
 | 400 | USER004 | Bizt사용자 초대/수정시 기존에 중복된 email이 존재할 경우 |
 | 400 | USER008 | Biz Kit 기본 필수정보 없는 상태 |
 | 400 | GROUP001 | 그룹이 존재하지 않거나, 퍼블리셔의 소유가 아닌 경우 |
-|  |  |  |
-|  |  |  |
 
 ### 3.2 Body <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-3.2Body"></a>
 

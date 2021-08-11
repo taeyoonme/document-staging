@@ -88,11 +88,6 @@ NUGU Voice Button은 음성 입력이 가능한 대기 상태를 나타내는 �
 | **autoPlay** 뷰생성시 Animation을 자동으로 재생 \(default:false\) |
 | **loopPlay** Animation을 재생을 반복 \(default:true\) |
 
-{% hint style="info" %}
-Template 내의 NuguButton 색상은 **TemplateView.nuguButtonColor** 정적변수를 설정하여 변경 가능합니다.  
-ex\) TemplateView.nuguButtonColor = NuguButtonColor.WHITE
-{% endhint %}
-
 ## NuguToast
 
 NUGU 토스트 메시지는 작은 팝업으로 작업에 관한 간단한 피드백을 제공합니다. 메시지에 필요한 공간만 차지하며 진행 중인 활동은 그대로 표시되고 상호작용도 유지됩니다. 토스트 메시지는 시간이 초과하면 자동으로 사라집니다. \(android.widget.Toast 기반으로 커스터마이징\)

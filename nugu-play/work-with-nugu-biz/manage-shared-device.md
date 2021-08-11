@@ -25,7 +25,7 @@ NUGU 디바이스를 사무 공간, 호텔, 병원 등 다양한 공용 공간�
 
 사전 준비가 끝나면 다음으로 디바이스 그룹을 생성합니다.
 
-1️⃣`NUGU developers` &gt;`NUGU play kit` &gt;  `NUGU biz kit` **** &gt; `Biz전용 디바이스 관리` 메뉴에서 `그룹 생성하` 버튼을 클릭합니다.
+1️⃣`NUGU developers` &gt;`NUGU play kit` &gt;  `NUGU biz kit` &gt; `Biz전용 디바이스 관리` 메뉴에서 `그룹 생성하` 버튼을 클릭합니다.
 
 ![](../../.gitbook/assets/biz-%20%281%29.jpg)
 
@@ -43,7 +43,7 @@ NUGU 디바이스를 사무 공간, 호텔, 병원 등 다양한 공용 공간�
 
 디바이스 그룹을 생성한 후에는 \[Setup Tool\]을 설치하고 사용할 디바이스를 등록합니다.
 
-1️⃣`NUGU developers` &gt;`NUGU play kit` &gt;  `NUGU biz kit` **** &gt; `Biz전용 디바이스 관리` 메뉴에서 `Setup Tool 다운로드` 버튼을 클릭하여 설치 파일을 내려받아 프로그램을 설치합니다.
+1️⃣`NUGU developers` &gt;`NUGU play kit` &gt;  `NUGU biz kit` &gt; `Biz전용 디바이스 관리` 메뉴에서 `Setup Tool 다운로드` 버튼을 클릭하여 설치 파일을 내려받아 프로그램을 설치합니다.
 
 ![](../../.gitbook/assets/setup_tool-.jpg)
 
@@ -96,7 +96,7 @@ NUGU 디바이스를 사무 공간, 호텔, 병원 등 다양한 공용 공간�
 
 ### 디바이스 그룹 정보 수정
 
-`NUGU developers` &gt;`NUGU play kit` &gt;  `NUGU biz kit` **** &gt; `Biz전용 디바이스 관리`페이지의 디바이스 그룹 현황 리스트에서 정보를 수정할 디바이스 그룹명을 클릭하여 선택합니다.
+`NUGU developers` &gt;`NUGU play kit` &gt;  `NUGU biz kit` &gt; `Biz전용 디바이스 관리`페이지의 디바이스 그룹 현황 리스트에서 정보를 수정할 디바이스 그룹명을 클릭하여 선택합니다.
 
 ![](../../.gitbook/assets/biz-1.jpg)
 
