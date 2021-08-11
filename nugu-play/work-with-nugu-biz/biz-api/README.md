@@ -40,17 +40,17 @@ Biz API는 제휴를 통한 정식판 권한 사용자에게 제공되며, API�
 
 | errorCode | 설 |
 | :--- | :--- |
-| PUB001 | Biz Kit 기본 필수정보 없이 초대하는 경 |
+| PUB001 | Biz Kit 기본 필수정보 없이 초대하는 경우 |
 | PLAY001 | 요청한 play의 playServiceId가 없거나 잘못된 경우 |
 | PLAY002 | 요청한 play가 서비스중이 아닌 경우 |
 | PLAY003 | 퍼블리셔의 소유가 아닌 play를 요청한 경우 |
 | GROUP001 | 그룹이 존재하지 않거나, 퍼블리셔의 소유가 아닌 경우 |
 | GROUP002 | 그룹생성/수정시 그룹명이 없거나, 사이즈를 초과할 경우 |
 | GROUP003 | 그룹생성/수정시 alias의 사이즈를 초과한 경우 |
-| GROUP004 | targetPlayServiceIds, targetGroupApiToken 중복 요청하는 경우  |
+| GROUP004 | targetPlayServiceIds, targetGroupId 중복 요청하는 경우  |
 | GROUP005 | 그룹에 Private Play 설정 없이 초대하는 경우  |
 | USER001 | Biz사용자 초대/수정시 email이 없거나 사이즈를 초과한 경우 |
-| USER002 | Biz사용자 초대/수정시 namel이 없거나 사이즈를 초과한 경우 |
+| USER002 | Biz사용자 초대/수정시 name이 없거나 사이즈를 초과한 경우 |
 | USER003 | Biz사용자 초대/수정시 alias의사이즈를 초과한 경우 |
 | USER004 | Bizt사용자 초대/수정시 기존에 중복된 email이 존재할 경우 |
 | USER005 | Biz사용자 초대/수정시 phone 정보가 불 충분할 경우  |
@@ -63,10 +63,10 @@ Biz API는 제휴를 통한 정식판 권한 사용자에게 제공되며, API�
 | V1ANN103 | tts.speed 값이 잘못됨 |
 | V1ANN104 | tts.pause1 값이 잘못됨 |
 | V1ANN105 | tts.pause2 값이 잘못됨 |
-| V1ANN201 | displat.type 값이 잘못됨 |
+| V1ANN201 | display.type 값이 잘못됨 |
 | V1ANN202 | display.title 값이 없음 |
 | V1ANN203 | display.header 값이 없음 |
-| V1ANN204 | displat.body 값이 없음 |
+| V1ANN204 | display.body 값이 없음 |
 
 
 

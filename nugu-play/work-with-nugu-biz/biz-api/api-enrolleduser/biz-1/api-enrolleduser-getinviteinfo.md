@@ -55,8 +55,8 @@
 | invitations\[\].id | int | 초대에 대한 식별자 |
 | invitations\[\].cause | string | 초대 사유 |
 | invitations\[\].createdDate | string | ISO8601 |
-| invitations\[\].targetPlayServiceIds | array of string | 초대 대상 play의 playServiceId<br>targetGroupApiToken 과 중복해서 요청할 수 없다. |
-| invitations\[\].targetGroupApiToken | string | 초대 대상 그룹<br>targetPlayServiceIds 과 중복해서 요청할 수 없다. |
+| invitations\[\].targetPlayServiceIds | array of string | 초대 대상 play의 playServiceId<br>targetGroupId 와 중복해서 요청할 수 없다. |
+| invitations\[\].targetGroupId | string | 초대 대상 그룹<br>targetPlayServiceIds 와 중복해서 요청할 수 없다. |
 | invitations\[\].users | array of object | 초대한 사용자의 정보 |
 | invitations\[\].users\[\].email | string | 초대한 사용자의 이메일<br>퍼블리셔내 동일한 이메일을 초대받은 사용자가 있을 수 없다. |
 | invitations\[\].users\[\].name | string | 초대한 사용자의 이름 |

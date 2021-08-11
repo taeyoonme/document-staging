@@ -38,8 +38,8 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Publisher-Token | Header | string |  | Y | 퍼블리셔가 보유한 토큰 |
 | reason | body | string | 400 |  | 초대 사유 |
-| targetPlayServiceIds | body | array of string | 각각 100 |  | 초대 대상 play의 playServiceId<br>targetGroupId 과 중복해서 요청할 수 없다. |
-| targetGroupId | body | string | 100 |  | 초대 대상 그룹 ID<br>targetPlayServiceIds 과 중복해서 요청할 수 없다. |
+| targetPlayServiceIds | body | array of string | 각각 100 |  | 초대 대상 play의 playServiceId<br>targetGroupId 와 중복해서 요청할 수 없다. |
+| targetGroupId | body | string | 100 |  | 초대 대상 그룹 ID<br>targetPlayServiceIds 와 중복해서 요청할 수 없다. |
 | users | body | array of object |  |  | 초대한 사용자의 정보 |
 | users\[\].email | body | string | 350 | Y | 초대한 사용자의 이메일<br>만일 초대된 리스트에 동일한 이메일이 존재할 경우 재초대가 이뤄지며, name, alias가 갱신된다. |
 | users\[\].name | body | string | 100 | Y | 초대한 사용자의 이름 |
