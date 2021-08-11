@@ -32,7 +32,7 @@ Biz 사용자 그룹의 정보를 수정하는 기능입니다.
 | alias | body | string | 100 |  | 생성할 그룹의 Alias |
 | playServiceIds | body | array of string | 각각 100 |  | 퍼블리셔가 소유한 그룹에 할당할 private play 목록 |
 
-## 3 Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-3Response"></a>
+## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-3Response"></a>
 
 ### 3.1 HTTP Status <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xADF8;&#xB8F9;&#xC218;&#xC815;v1-3.1HTTPStatus"></a>
 
