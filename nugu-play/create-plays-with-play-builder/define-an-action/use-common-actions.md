@@ -18,11 +18,11 @@ Common Action에서 X, X1, X2, X3를 만든 뒤, B2와 C3에서 이동할 액션
 
 ![](../../../.gitbook/assets/assets_common4%20%282%29%20%282%29%20%282%29%20%281%29.gif)
 
-2. 일반 Action을 만듭니다.
+1. 일반 Action을 만듭니다.
 
 ![](../../../.gitbook/assets/assets_common5%20%282%29%20%282%29%20%282%29%20%284%29.png)
 
-3. Common Action과 연결할 Action\(B2, C3\)으로 이동하여, `Output 유형` &gt; `Common Action`을 선택하고, 이동할 Common Action을 선택합니다.
+1. Common Action과 연결할 Action\(B2, C3\)으로 이동하여, `Output 유형` &gt; `Common Action`을 선택하고, 이동할 Common Action을 선택합니다.
 
 ![](../../../.gitbook/assets/assets_common3-1%20%283%29%20%283%29%20%283%29%20%283%29.gif)
 

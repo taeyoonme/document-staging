@@ -1,5 +1,13 @@
 # Release note
 
+## Version 2.0.0
+
+업데이트일 : 2021년 8월 12일
+
+### 1. 향상/변경된 기능
+
+* NUGU biz kit 고도화에 의한 용어, 기능변경 및 Biz API 지원 추가 : [자세히 알아보기](work-with-nugu-biz/)
+
 ## Version 1.9.0
 
 업데이트일 : 2019년 12월 19일

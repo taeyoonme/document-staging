@@ -12,5 +12,5 @@ Display Template은 아래 디바이스 및 해상도를 지원합니다.
 | :--- | :--- | :--- |
 | TV \(B tv\) | 1920 x 1080 | Landscape |
 | Display Speaker \(NUGU nemo\) | 1280 x 800 | Landscape |
-| Mobile | 360 x 640 \(Android\)<br>375 x 667 \(iOS\) | Portrait |
+| Mobile | 360 x 640 \(Android\) 375 x 667 \(iOS\) | Portrait |
 

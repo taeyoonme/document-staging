@@ -1,28 +1,29 @@
-# NUGU biz 이용하기
+# NUGU biz kit
 
-NUGU biz는 NUGU play kit에서 만든 Private Play를 개발자가 지정한 전용 디바이스\(Shared Device\) 또는 특정 사용자 그룹\(Enrolled User\)만 사용할 수 있도록 관리하는 기능을 제공합니다.
+NUGU biz kit은 NUGU 플랫폼과 연동된 디바이스를 비즈니스 환경에서 활용하기 위한 상품입니다. 비즈니스 용도를 위해 NUGU play kit에서 Private Play를 만들고, 특정 디바이스 또는 사용자 그룹만 사용할 수 있도록 관리 할 수 있습니다. 또한 해당 디바이스 및 사용자를 대상으로 Announcement \(tts, image\) 메세지를 보낼 수 있습니다.
 
-NUGU biz는 NUGU 디바이스를 대규모로 관리하고, Private Play를 사용하기 위한 사용자 권한 등록 등 특정 사용자 그룹을 관리할 수 있는 도구를 제공하기 때문에, NUGU를 비즈니스 용도로도 쉽게 이용할 수 있습니다.
+* [주요 개념](nugu-biz-concept.md)
+* [체험판 및 정식판](describebiz.md)
+* [Private Play](private-play.md)
+* [Biz 전용 디바이스 관리](manage-shared-device.md)
+* [Biz 사용자 관리](manage-enrolled-user/)
+* [Biz API](biz-api/)
 
-NUGU biz에서 제공하는 기능을 이용하기 위해서는 먼저, NUGU developers에 회원 가입을 해야 합니다.
-
-* [주요 개념](nugu-biz-concept.md#nugu-biz-concept)
-* [전용 디바이스 관리](manage-shared-device.md)
-* [사용자 그룹 관리](manage-enrolled-user.md)
-
-## 전용 디바이스 관리\(Shared Device\)
+## Biz 전용 디바이스 관리\(Shared Device\)
 
 NUGU 디바이스를 사업장/영업장 등과 같은 공용 공간에서 누구나 사용할 수 있도록 설정하는 기능입니다.
 
-전용 디바이스로 설정되면 NUGU 개인 계정과 연결 없이, 해당 공간을 이용하는 사람은 누구나 이용 가능합니다. 사무 공간, 호텔, 병원 등 다양한 공용 공간에서 전용 디바이스를 이용할 수 있습니다.
+전용 디바이스로 설정되면 NUGU 개인 계정과 연결 없이, 해당 공간을 이용하는 사람은 누구나 이용 가능합니다. 사무 공간, 호텔, 병원 등 다양한 공용 공간에서, 특화된 Private Play를 제공하는 전용 디바이스를 이용할 수 있고, Announcement 메세지를 보낼 수 있습니다.
 
 ![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_lykoyg3z0bs-tyu2_ch1_12_01__1.png)
 
-## 사용자 그룹 관리\(Enrolled User\)
+## Biz 사용자 관리\(Enrolled User\)
 
-특정 사용자 그룹을 초대하여, Private Play를 사용할 수 있도록 권한을 부여하고 관리하는 기능입니다.
+특정 사용자 그룹을 초대하여,  해당 사용자가 보유한 디바이스에서 퍼블리셔가 제공하는 서비스를 이용할 수 있도록 권한을 부여하고 관리하는 기능입니다.
 
-예를 들어, 자사 임직원 또는 단체에 소속된 회원만 초대하여 회원들의 NUGU 디바이스에서 Private Play를 사용하게 할 수 있습니다. 초대된 사용자가 초대 승인 및 인증 절차를 완료하면 Private Play를 이용할 수 있습니다.
+예를 들어, 자사 임직원 또는 단체의 소속 회원만 초대하여, 초대를 수락 회원들의 NUGU 디바이스에서 Private Play를 사용하게 하거나, Announcement 메세지를 수신 할 수 있도록 할 수 있습니다.
 
 ![](../../.gitbook/assets/assets_assets_-ll_j0vst5q1ujfaettc_-ll_luqqzmrqidwasrtv_-ll_lykq7xatd5mtnj0k_ch1_12_02__1.png)
+
+
 
