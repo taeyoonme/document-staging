@@ -19,3 +19,7 @@ NUGU SDK for iOS는 iOS 12.0 or 10.0 이상을 지원합니다.
 
 iOS 12.0+ \(v1.3.0 or more\) iOS 10.0+ \(less than v1.3.0\)
 
+macOS 10.15.0+ \(v1.4.0 or more\) including mac catalyst
+
+tvOS 13.0+ \(v1.4.0 or more\)
+
