@@ -86,7 +86,7 @@ NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. �
 
 Slot-filling 시
 
-![](../../.gitbook/assets/assets_undefined__10%20%282%29%20%282%29%20%282%29%20%285%29%20%285%29.png)
+![](../../.gitbook/assets/assets_undefined__10%20%282%29%20%282%29%20%282%29%20%285%29%20%285%29%20%285%29%20%285%29%20%286%29.png)
 
 {% file src="../../.gitbook/assets/assets\_start\_listening\_500ms-1.wav" caption="호출 효과음" %}
 

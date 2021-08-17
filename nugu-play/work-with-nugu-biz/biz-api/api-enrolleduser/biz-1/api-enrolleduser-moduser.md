@@ -24,13 +24,13 @@
 
 ### 2.2 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-2.2&#xC124;&#xBA85;"></a>
 
-|이름 | 유형 | 속성 | 길이 | 필수 | 설명 |
+| 이름 | 유형 | 속성 | 길이 | 필수 | 설명 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Publisher-Token | Header | string |  | Y | 퍼블리셔가 보유한 토큰 |
 | userId | path | string |  | Y | 수정하고자 하는 사용자의 API 토큰 |
 | name | body | string | 100 | Y | 수정할 사용자의 이름 |
 | alias | body | string | 각각 100 |  | 수정할 사용자의 Alias |
-| targetGroupId | body | string |  |  | 변경할 그룹 ID<br>미입력시 변경되지 않으며, 변경시 서비스 동의 사용자의 경우 별도의 과정없이 변경이 가능하나, Play 동의 사용자일 경우 해당 그룹으로 재초대되는 절차를 거친다.<br>또한 Play 동의 사용자일 경우 동의를 완료하기 전까지 그룹이 변경되지 않는다. |
+| targetGroupId | body | string |  |  | 변경할 그룹 ID 미입력시 변경되지 않으며, 변경시 서비스 동의 사용자의 경우 별도의 과정없이 변경이 가능하나, Play 동의 사용자일 경우 해당 그룹으로 재초대되는 절차를 거친다. 또한 Play 동의 사용자일 경우 동의를 완료하기 전까지 그룹이 변경되지 않는다. |
 
 ## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC218;&#xC815;v1-3Response"></a>
 

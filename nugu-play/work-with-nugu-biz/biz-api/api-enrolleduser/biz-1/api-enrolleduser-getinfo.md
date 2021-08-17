@@ -59,26 +59,27 @@
 
 ### 3.3 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC0C1;&#xC138;&#xC870;&#xD68C;v1-3.3&#xC124;&#xBA85;"></a>
 
-|이름 | 속성 | 설명 |
+| 이름 | 속성 | 설명 |
 | :--- | :--- | :--- |
 | id | string | Biz 사용자 ID |
 | name | string | Biz 사용자 이름 |
-| token | string | Biz 사용자 토큰<br>사용자 초대 유형이 PLAY일 경우 null |
+| token | string | Biz 사용자 토큰 사용자 초대 유형이 PLAY일 경우 null |
 | email | string | Biz 사용자 이메일 |
 | alias | string | Biz 사용자 부가 정보 |
 | phone | string | Biz 사용자 핸드폰 번호\(-제외\) |
 | group | object | 속한 그룹 정보 |
 | group.id | string | 그룹 ID |
 | group.name | string | 그룹명 |
-| serviceType | enum | 사용자 초대 유형<br>SERVICE : 서비스<br>PLAY : play |
-| serviceAgreeYn | Y/N | 서비스 이용동의 여부<br>사용자 초대 유형이 PLAY일 경우 N |
-| serviceApiAgreeYn | Y/N | 서비스 API 수신동의 여부<br>사용자 초대 유형이 PLAY일 경우 N |
-| serviceApiAllowedDeviceCount | int | 서비스 API 수신 허용 기기 수<br>사용자 초대 유형이 PLAY일 경우 0 |
+| serviceType | enum | 사용자 초대 유형 SERVICE : 서비스 PLAY : play |
+| serviceAgreeYn | Y/N | 서비스 이용동의 여부 사용자 초대 유형이 PLAY일 경우 N |
+| serviceApiAgreeYn | Y/N | 서비스 API 수신동의 여부 사용자 초대 유형이 PLAY일 경우 N |
+| serviceApiAllowedDeviceCount | int | 서비스 API 수신 허용 기기 수 사용자 초대 유형이 PLAY일 경우 0 |
 | serviceAcceptedDateTime | string | 초대 승인일\(ISO-8601\) |
 | plays | array of object | 승인된 private play 목록 |
 | plays\[\].playServiceId | string | play service id |
-| plays\[\].token | string | play별 토큰<br>사용자 초대 유형이 SERVICE일 경우 token |
-| plays\[\].agreeYn | Y/N | play별 이용동의 여부<br>사용자 초대 유형이 SERVICE일 경우 Y |
-| plays\[\].apiAgreeYn | Y/N | play별 API 수신 동의 여부<br>사용자 초대 유형이 SERVICE일 경우 Y |
-| plays\[\].apiAllowedDeviceCount | int | play별 API 수신 허용 기기 수<br>사용자 초대 유형이 SERVICE일 경우 serviceApiAllowedDeviceCount |
-| plays\[\].acceptedDateTime | string | play별 초대 승인일\(ISO-8601\)<br>사용자 초대 유형이 SERVICE일 경우 serviceAcceptedDateTime |
+| plays\[\].token | string | play별 토큰 사용자 초대 유형이 SERVICE일 경우 token |
+| plays\[\].agreeYn | Y/N | play별 이용동의 여부 사용자 초대 유형이 SERVICE일 경우 Y |
+| plays\[\].apiAgreeYn | Y/N | play별 API 수신 동의 여부 사용자 초대 유형이 SERVICE일 경우 Y |
+| plays\[\].apiAllowedDeviceCount | int | play별 API 수신 허용 기기 수 사용자 초대 유형이 SERVICE일 경우 serviceApiAllowedDeviceCount |
+| plays\[\].acceptedDateTime | string | play별 초대 승인일\(ISO-8601\) 사용자 초대 유형이 SERVICE일 경우 serviceAcceptedDateTime |
+

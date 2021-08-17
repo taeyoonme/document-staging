@@ -64,11 +64,11 @@
 | users\[\].email | string | Biz 사용자 이메일 |
 | users\[\].alias | string | Biz 사용자 추가 정보 |
 | users\[\].phone | string | Biz 사용자 전화번호 |
-| users\[\].group | string | Biz 사용자 소속 그룹 정보<br>미분류일 경우 null |
-| users\[\].group.id | string  | Biz 사용자 소속 그룹 ID |
+| users\[\].group | string | Biz 사용자 소속 그룹 정보 미분류일 경우 null |
+| users\[\].group.id | string | Biz 사용자 소속 그룹 ID |
 | users\[\].group.name | string | Biz 사용자 소속 그룹 이름 |
-| users\[\].serviceType | enum | 사용자 초대 유형<br>SERVICE : 서비스<br>PLAY : play |
-| users\[\].apiAgreeType | enum | Biz API 수신 동의 유형<br>ALL : 동의<br>SOME : 일부 동의<br>NONE : 미동의 |
-| users\[\].authType | enum | 제휴사 인증 여부 유형<br>ALL : 인증<br>SOME : 일부 인증<br>NONE : 미인증 |
+| users\[\].serviceType | enum | 사용자 초대 유형 SERVICE : 서비스 PLAY : play |
+| users\[\].apiAgreeType | enum | Biz API 수신 동의 유형 ALL : 동의 SOME : 일부 동의 NONE : 미동의 |
+| users\[\].authType | enum | 제휴사 인증 여부 유형 ALL : 인증 SOME : 일부 인증 NONE : 미인증 |
 | users\[\].acceptedDateTime | string | 초대 승인일\(ISO-8601\) |
 
