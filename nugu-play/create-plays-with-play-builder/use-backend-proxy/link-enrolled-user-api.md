@@ -1,6 +1,6 @@
-# Enrolled user 정보 수신 연동 개발
+# Biz 사용자\(Enrolled user\) 정보 수신 연동 개발
 
-Private Play에 한하여 [사용자 그룹 관리](https://github.com/nugudevelopers/document/tree/38a11c4f0cb05a1e16b93fc6ffb82b035852ac8c/work-with-nugu-biz/manage-enrolled-user.html#manage-enrolled-user)를 통해 추가한 사용자 정보를 Backend proxy에서 받을 수 있습니다. 연동규격에서 제공하는 사용자 정보는 다음과 같습니다.
+Private Play에 한하여 [사용자 그룹 관리](../../work-with-nugu-biz/manage-enrolled-user/)를 통해 추가한 사용자 정보를 Backend proxy에서 받을 수 있습니다. 연동규격에서 제공하는 사용자 정보는 다음과 같습니다.
 
 ```bash
 POST /action.name
