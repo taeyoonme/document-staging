@@ -42,7 +42,7 @@ Biz 사용자를 대상으로 Announcement 등 API를 발송할 때, 제휴사 �
 | :--- | :--- | :--- | :--- | :--- |
 | status | query param | string | Y | Developers에서 사용자를 식별하는 키값으로서 인증 요청에 전달된 값을 바꾸어서는 안된다. |
 | userApiToken | query param | string | Y | 인증을 마친후 생성한 Biz 사용자 API Token |
-| confirmUrl | query param | string |  | 사용자가 정상적인 초대행위를 마친 경우 제휴사에 성공결과를 전달하기 위한 URL 없을 경우 전송하지 않는다. |
+| confirmUrl | query param | string |  | 사용자가 정상적인 초대행위를 마친 경우 제휴사에 성공결과를 전달하기 위한 URL<br>없을 경우 전송하지 않는다. |
 
 ### 3.2 Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;APIToken&#xC0DD;&#xC131;v1-2.2Response.1"></a>
 
@@ -66,5 +66,5 @@ Biz 사용자를 대상으로 Announcement 등 API를 발송할 때, 제휴사 �
 | 이름 | 유형 | 속성 | 필수 | 설명 |
 | :--- | :--- | :--- | :--- | :--- |
 | userApiToken | body | string | Y | 진행중인 Biz 사용자 API Token |
-| resultCode | body | enum | Y | OK : 사용자 생성 완료 CONFLICT : 생성한 Biz Api Token이 다른 Biz 사용자에 중복된 경우 |
+| resultCode | body | enum | Y | OK : 사용자 생성 완료<br>CONFLICT : 생성한 Biz Api Token이 다른 Biz 사용자에 중복된 경우 |
 
