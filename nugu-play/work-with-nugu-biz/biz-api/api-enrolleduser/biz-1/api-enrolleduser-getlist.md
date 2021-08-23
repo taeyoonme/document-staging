@@ -65,7 +65,7 @@
 | users\[\].alias | string | Biz 사용자 추가 정보 |
 | users\[\].phone | string | Biz 사용자 전화번호 |
 | users\[\].group | string | Biz 사용자 소속 그룹 정보<br>미분류일 경우 null |
-| users\[\].group.id | string  | Biz 사용자 소속 그룹 ID |
+| users\[\].group.id | string | Biz 사용자 소속 그룹 ID |
 | users\[\].group.name | string | Biz 사용자 소속 그룹 이름 |
 | users\[\].serviceType | enum | 사용자 초대 유형<br>SERVICE : 서비스<br>PLAY : play |
 | users\[\].apiAgreeType | enum | Biz API 수신 동의 유형<br>ALL : 동의<br>SOME : 일부 동의<br>NONE : 미동의 |

@@ -52,7 +52,7 @@
 | display.header | body | string | Y | 본문 제목 |
 | display.body | body | string | Y | 본문 내용 |
 | display.footer | body | string |  | 본문 부가 설명 |
-| display.image | body | string | | 이미지<br>ImageText Type에서 이미지가 없을 경우, 디폴트 이미지 노출<br>![](../../../../.gitbook/assets/img_notification.png) |
+| display.image | body | string |  | 이미지<br>ImageText Type에서 이미지가 없을 경우, 디폴트 이미지 노출<br>![](../../../../.gitbook/assets/img_notification.png) |
 
 ## 3. Response <a id="id-&#xC804;&#xC6A9;&#xB514;&#xBC14;&#xC774;&#xC2A4;&#xADF8;&#xB8F9;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3Response"></a>
 
@@ -74,3 +74,4 @@
 | 400 | V1ANN202 | display.title 값이 없음 |
 | 400 | V1ANN203 | display.header 값이 없음 |
 | 400 | V1ANN204 | display.body 값이 없음 |
+

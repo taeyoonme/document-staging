@@ -52,7 +52,7 @@
         * [AudioPlayer를 위한 Display Interface](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface.md)
         * [Display Interface](nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface.md)
       * [Backend proxy API Reference](nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference.md)
-      * [Enrolled user 정보 수신 연동 개발](nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api.md)
+      * [Biz 사용자\(Enrolled user\) 정보 수신 연동 개발](nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api.md)
     * [OAuth 2.0 연동하기](nugu-play/create-plays-with-play-builder/link-oauth20.md)
     * [지원 도구](nugu-play/create-plays-with-play-builder/support-tools/README.md)
       * [훈련 데이터 검증](nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1.md)

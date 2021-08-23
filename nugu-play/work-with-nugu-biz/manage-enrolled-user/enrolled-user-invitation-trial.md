@@ -49,7 +49,7 @@ Biz 사용자 관리 &gt; 사용자 그룹 관리에서 초대할 사용자가 �
 
 * 초대자 파일로 등록
 
-![](../../../.gitbook/assets/image%20%2813%29.png)
+![](../../../.gitbook/assets/image%20%2827%29.png)
 
 ### 초대장 미리보기
 
@@ -75,14 +75,14 @@ Biz 사용자 관리 &gt; 사용자 그룹 관리에서 초대할 사용자가 �
 
 ![](../../../.gitbook/assets/image%20%2829%29.png)
 
-![](../../../.gitbook/assets/image%20%2823%29.png)
+![](../../../.gitbook/assets/image%20%284%29%20%281%29.png)
 
-![](../../../.gitbook/assets/image%20%286%29.png)
+![](../../../.gitbook/assets/image%20%2818%29.png)
 
 {% hint style="info" %}
-ㅇ이메일마다 하나의 NUGU ID만 인증 할 수 있습니다.
+이메일마다 하나의 NUGU ID만 인증 할 수 있습니다.
 
-ㅇPrivate Play 사용자는 언제든지 NUGU App에서 Private Play 이용 권한을 해제할 수 있습니다. 해제 시 Private Play 이용 권한이 제거되며, 제된 이후에는 Private Play를 이용할 수 없습니다.
+Private Play 사용자는 언제든지 NUGU App에서 Private Play 이용 권한을 해제할 수 있습니다. 해제 시 Private Play 이용 권한이 제거되며, 제된 이후에는 Private Play를 이용할 수 없습니다.
 
 만약, 권한 재부여를 원할 경우에는 서비스 관리자가 NUGU developers를 통해 다시 초대장을 발송해야 합니다.
 {% endhint %}

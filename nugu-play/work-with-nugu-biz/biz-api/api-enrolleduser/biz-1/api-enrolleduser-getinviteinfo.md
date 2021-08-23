@@ -49,7 +49,7 @@
 
 ### 3.3 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xCD08;&#xB300;&#xBAA9;&#xB85D;&#xC870;&#xD68C;v1-3.3&#xC124;&#xBA85;"></a>
 
-|이름 | 속성 | 설명 |
+| 이름 | 속성 | 설명 |
 | :--- | :--- | :--- |
 | invitations | array of object | 현재 진행중인 초대 목록 |
 | invitations\[\].id | int | 초대에 대한 식별자 |
@@ -63,3 +63,4 @@
 | invitations\[\].users\[\].token | string | 초대한 사용자의 API 토큰<br>신규 초대시 존재하지 않는다. |
 | invitations\[\].users\[\].alias | string | 초대한 사용자의 Alias |
 | invitations\[\].users\[\].status | enum | 사용자에 대한 초대장 유효 여부<br>ENABLE, DISABLE |
+

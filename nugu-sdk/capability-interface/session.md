@@ -155,5 +155,5 @@ CapabilityFactory::makeCapability<SessionAgent, ISessionHandler>(session_listene
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| sessionId | string | Y | |
+| sessionId | string | Y |  |
 

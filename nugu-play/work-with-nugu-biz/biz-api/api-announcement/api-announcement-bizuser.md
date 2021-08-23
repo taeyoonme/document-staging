@@ -41,18 +41,18 @@
 | Publisher-Token | Header | string | Y | 퍼블리셔가 보유한 토큰 |
 | userApiToken | path | string | Y | 발송할 사용자의 API 토큰 |
 | playServiceId | body | string | Y | 발송 대상 play<br>대상 play의 합성음, TTS Domain을 기준으로 SKML을 생성 |
-| tts | body | object | | TTS를 구성하는 객체 |
+| tts | body | object |  | TTS를 구성하는 객체 |
 | tts.text | body | string | Y | 발화문장<br>발화문장, Display 객체 중 반드시 1개 이상은 존재해야 한다. |
-| tts.speed | body | string | | 발화속도<br>85, 90... 120까지의 5단위 값<br>기본값은 100 |
-| tts.pause1 | body | string | | 문장 사이 묵음 구간 길이<br>300, 400... 900까지의 100단위 값<br>기본값은 600 |
-| tts.pause2 | body | string | | 100, 200... 500까지의 100단위 값<br>기본값은 300 |
+| tts.speed | body | string |  | 발화속도<br>85, 90... 120까지의 5단위 값<br>기본값은 100 |
+| tts.pause1 | body | string |  | 문장 사이 묵음 구간 길이<br>300, 400... 900까지의 100단위 값<br>기본값은 600 |
+| tts.pause2 | body | string |  | 100, 200... 500까지의 100단위 값<br>기본값은 300 |
 | display | body | object | Y | Display 객체<br>발화문장, Display 객체 중 반드시 1개 이상은 존재해야 한다. |
 | display.type | body | string | Y | 사용할 Display Template<br>FullText1, ImageText2중 하나 |
 | display.title | body | string | Y | 화면 타이틀 |
 | display.header | body | string | Y | 본문 제목 |
 | display.body | body | string | Y | 본문 내용 |
-| display.footer | body | string | | 본문 부가 설명 |
-| display.image | body | string | | 이미지<br>ImageText Type에서 이미지가 없을 경우, 디폴트 이미지 노출<br>![](../../../../.gitbook/assets/img_notification.png) |
+| display.footer | body | string |  | 본문 부가 설명 |
+| display.image | body | string |  | 이미지<br>ImageText Type에서 이미지가 없을 경우, 디폴트 이미지 노출<br>![](../../../../.gitbook/assets/img_notification.png) |
 
 ## 3. Response <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xBCC4;Announcement&#xC804;&#xC1A1;v1-3Response"></a>
 
@@ -74,3 +74,4 @@
 | 400 | V1ANN202 | display.title 값이 없음 |
 | 400 | V1ANN203 | display.header 값이 없음 |
 | 400 | V1ANN204 | display.body 값이 없음 |
+

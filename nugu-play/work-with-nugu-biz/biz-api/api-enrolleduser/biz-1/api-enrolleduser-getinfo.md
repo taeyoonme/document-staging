@@ -59,7 +59,7 @@
 
 ### 3.3 설명 <a id="Biz&#xC0AC;&#xC6A9;&#xC790;&#xC0C1;&#xC138;&#xC870;&#xD68C;v1-3.3&#xC124;&#xBA85;"></a>
 
-|이름 | 속성 | 설명 |
+| 이름 | 속성 | 설명 |
 | :--- | :--- | :--- |
 | id | string | Biz 사용자 ID |
 | name | string | Biz 사용자 이름 |
@@ -82,3 +82,4 @@
 | plays\[\].apiAgreeYn | Y/N | play별 API 수신 동의 여부<br>사용자 초대 유형이 SERVICE일 경우 Y |
 | plays\[\].apiAllowedDeviceCount | int | play별 API 수신 허용 기기 수<br>사용자 초대 유형이 SERVICE일 경우 serviceApiAllowedDeviceCount |
 | plays\[\].acceptedDateTime | string | play별 초대 승인일\(ISO-8601\)<br>사용자 초대 유형이 SERVICE일 경우 serviceAcceptedDateTime |
+
