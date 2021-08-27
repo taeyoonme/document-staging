@@ -55,12 +55,12 @@
 | invitations\[\].id | int | 초대에 대한 식별자 |
 | invitations\[\].cause | string | 초대 사유 |
 | invitations\[\].createdDate | string | ISO8601 |
-| invitations\[\].targetPlayServiceIds | array of string | 초대 대상 play의 playServiceId<br>targetGroupId 와 중복해서 요청할 수 없다. |
-| invitations\[\].targetGroupId | string | 초대 대상 그룹<br>targetPlayServiceIds 와 중복해서 요청할 수 없다. |
+| invitations\[\].targetPlayServiceIds | array of string | 초대 대상 play의 playServiceId targetGroupId 와 중복해서 요청할 수 없다. |
+| invitations\[\].targetGroupId | string | 초대 대상 그룹 targetPlayServiceIds 와 중복해서 요청할 수 없다. |
 | invitations\[\].users | array of object | 초대한 사용자의 정보 |
-| invitations\[\].users\[\].email | string | 초대한 사용자의 이메일<br>퍼블리셔내 동일한 이메일을 초대받은 사용자가 있을 수 없다. |
+| invitations\[\].users\[\].email | string | 초대한 사용자의 이메일 퍼블리셔내 동일한 이메일을 초대받은 사용자가 있을 수 없다. |
 | invitations\[\].users\[\].name | string | 초대한 사용자의 이름 |
-| invitations\[\].users\[\].token | string | 초대한 사용자의 API 토큰<br>신규 초대시 존재하지 않는다. |
+| invitations\[\].users\[\].token | string | 초대한 사용자의 API 토큰 신규 초대시 존재하지 않는다. |
 | invitations\[\].users\[\].alias | string | 초대한 사용자의 Alias |
-| invitations\[\].users\[\].status | enum | 사용자에 대한 초대장 유효 여부<br>ENABLE, DISABLE |
+| invitations\[\].users\[\].status | enum | 사용자에 대한 초대장 유효 여부 ENABLE, DISABLE |
 
