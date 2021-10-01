@@ -72,7 +72,7 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
 
 ## Platform 에 따른 지원 현황
 
-2021-03-25 기준
+2021-10-01 기준
 
 | Capability interface | Description | Android | iOS | Linux |
 | :--- | :--- | :--- | :--- | :--- |
@@ -93,8 +93,8 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
 | Chips | 발화 가이드 제공 | 지원 | 지원 | 지원 |
 | Session | 음성 인식 세션 제어 | 지원 | 지원 | 지원 |
 | PhoneCall | 통화 기능 제어 | 지원 | 지원 | 플랫폼 특성상 미지원 |
-| Message | 문자 기능 제어 | 지원 | 추후 지원 예정 | 플랫폼 특성상 미지원 |
+| Message | 문자 기능 제어 | 지원 | 지원 | 플랫폼 특성상 미지원 |
 | MediaPlayer | 음악 앱 제어 | 지원 | 지원 | 미지원 |
-| Routine | 루틴 실행 | 지원 | 추후 지원 예정 | 추후 지원 예정 |
+| Routine | 루틴 실행 | 지원 | 지원 | 추후 지원 예정 |
 | Utility | Directive 실행 순서 제어 | 지원 | 지원 | 지원 |
 

@@ -8,6 +8,11 @@
 * macOS 10.15.0+ \(v1.4.0 or more\) including mac catalyst
 * tvOS 13.0+ \(v1.4.0 or more\)
 
+{% hint style="warning" %}
+iOS Nugu SDK 는 1.2.8 이상에서 다양한 인터페이스와 안정성을 보장합니다.   
+iOS12 이상에서는 최신 버전을, iOS11 미만에서는 1.2.8 사용을 권장합니다.
+{% endhint %}
+
 ## Step 2: NUGU SDK 설치하기
 
 {% tabs %}

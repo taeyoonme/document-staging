@@ -6,6 +6,12 @@
 Android, iOS, Linux 의 자세한 변경사항은 [Github](source-code.md) 에서 확인하실 수 있습니다.
 {% endhint %}
 
+### **2021-10-01**
+
+* [시작하기](platform/ios/start.md)\(iOS\)에 권장 버전 정보 추가
+* [테스트 환경 설정](platform/ios/testing_sdk_integration.md)\(iOS\) 가이드 주소값 수정 
+* [Platform 에 따른 Capability interface 지원 현황](capability-interface/#platform)\(iOS\) 수
+
 ### **2021-08-10**
 
 * [템플릿 내 누구버튼 컬러 변경](platform/android/nugu-user-interface.md#nugubutton)\(Android\) 가이드 추가
