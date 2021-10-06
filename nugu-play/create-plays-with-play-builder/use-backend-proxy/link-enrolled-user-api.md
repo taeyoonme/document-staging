@@ -46,8 +46,8 @@ Content-Type: application/json
 | profile.privatePlay.enrolledUser.phoneNo | string | Y | 초대 사용자 전화번호 |
 | profile.privatePlay.enrolledUser.email | string | Y | 초대 사용자 이메일 |
 | profile.privatePlay.enrolledUser.tag | string | N | 초대 사용자 추가 정보 \(대리점 코드, 사번, 인트라넷 사용자 아이디 등 필요한 정보를 넣어서 이용\) |
-| profile.privatePlay.enrolledUser.userToken | string | N | 초대 사용자에게 [Biz 사용자 API Token 생성](../../work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken.md) 과정에  생성한 Token 정보 |
-| profile.privatePlay.enrolledUser.serviceType | string | N | 초대 받아 등록된 사용자의 초대 유형 \(PLAY, SERVICE\) |
+| profile.privatePlay.enrolledUser.userToken | string | N | 초대 사용자에게 [Biz 사용자 API Token 생성](../../work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken.md) 과정에  생성한 Token 정보, Biz Kit 정식판 퍼블리셔 전용 |
+| profile.privatePlay.enrolledUser.serviceType | string | N | 초대 받아 등록된 사용자의 초대 유형, Biz Kit 정식판 퍼블리셔 전 \(PLAY, SERVICE\)  |
 
 {% hint style="danger" %}
 연동 규격에 사용자 개인 정보를 포함하고 있으므로 Private Play의 Backend proxy server는 HTTPS를 사용해야 합니다. Private Play에서 HTTP를 이용해 Backend proxy server를 개발할 경우 심사 반려됩니다.
