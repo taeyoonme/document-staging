@@ -22,10 +22,6 @@ description: 문자 확인 및 전송 기능 제어를 위한 규격
 
 MessageCall interface 규격에 따른 디바이스의 동작 제어는 MessageAgent 가 처리합니다.
 
-{% hint style="warning" %}
-Linux 는 MessageAgent 를 지원하지 않습니다.
-{% endhint %}
-
 {% tabs %}
 {% tab title="Android" %}
 NuguAndroidClient instance 를 통해 MessageAgent instance 에 접근할 수 있습니다.
@@ -42,6 +38,19 @@ class MyMessageClient: MessageClient {
 }
 NuguAndroidClient().Builder()
     .enableMessage(MyMessageClient())
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [MessageAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+
+```text
+auto message_handler(std::shared_ptr<IMessageHandler>(
+        CapabilityFactory::makeCapability<MessageAgent, IMessageHandler>()));
+
+nugu_client->getCapabilityBuilder()
+    ->add(message_handler.get())
+    ->construct();
 ```
 {% endtab %}
 {% endtabs %}
@@ -90,6 +99,31 @@ class MyMessageClient: MessageClient {
 }
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+[IMessageListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageListener.html) 를 추가합니다.
+
+```text
+class MyMessageListener : public IMessageListener {
+public:
+    ...
+
+    void processSendCandidates(const std::string& payload) override
+    {
+        ...
+    }
+    
+    void processSendMessage(const std::string& payload) override
+    {
+        ...
+    }
+
+    ...
+};
+auto message_listener(std::make_shared<MyMessageListener>());
+CapabilityFactory::makeCapability<MessageAgent, IMessageHandler>(message_listener.get());
+```
+{% endtab %}
 {% endtabs %}
 
 ### 문자 읽기
@@ -111,6 +145,26 @@ class MyMessageClient: MessageClient {
 ```
 
 문자 재생은 SDK 에서 실행됩니다.
+{% endtab %}
+
+{% tab title="Linux" %}
+[IMessageListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageListener.html) 를 추가합니다.
+
+```text
+class MyMessageListener : public IMessageListener {
+public:
+    ...
+
+    void processGetMessage(const std::string& payload) override
+    {
+        ...
+    }
+
+    ...
+};
+auto message_listener(std::make_shared<MyMessageListener>());
+CapabilityFactory::makeCapability<MessageAgent, IMessageHandler>(message_listener.get());
+```
 {% endtab %}
 {% endtabs %}
 

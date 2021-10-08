@@ -47,6 +47,19 @@ NuguClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니
 let audioPlayerAgent = nuguClient.audioPlayerAgent
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [DisplayAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IDisplayHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+
+```text
+auto display_handler(std::shared_ptr<IDisplayHandler>(
+        CapabilityFactory::makeCapability<DisplayAgent, IDisplayHandler>()));
+
+nugu_client->getCapabilityBuilder()
+    ->add(display_handler.get())
+    ->construct();
+```
+{% endtab %}
 {% endtabs %}
 
 ### Context 구성
@@ -153,6 +166,31 @@ class MyDisplayAgentDelegate: DisplayAgentDelegate {
 displayAgent.delegate = MyDisplayAgentDelegate()
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+[IDisplayListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IDisplayListener.html) 를 추가합니다.
+
+```text
+class MyDisplayListener : public IDisplayListener {
+public:
+    ...
+
+    void renderDisplay(const std::string& id, const std::string& type, const std::string& json, const std::string& dialog_id) override
+    {
+        ...
+    }
+    
+    bool clearDisplay(const std::string& id, bool unconditionally, bool has_next) override
+    {
+        ...
+    }
+
+    ...
+};
+auto display_listener(std::make_shared<MyDisplayListener>());
+CapabilityFactory::makeCapability<DisplayAgent, IDisplayHandler>(display_listener.get());
+```
+{% endtab %}
 {% endtabs %}
 
 ### 사용자 인터렉션 처리
@@ -171,6 +209,12 @@ displayAggregator.setElementSelected(templateId, token, postback)
 displayAgent.elementDidSelect(templateId: displayTemplate.templateId, token: token, postback: postback)
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+```
+display_handler->elementSelected(id, item_token, postback)
+```
+{% endtab %}
 {% endtabs %}
 
 Template 에 화면에 대한 사용자 interaction 발생시 SDK 로 notify 해주어야 내부 timer\(template 일정시간 노출 후 종료하기 위한\) 가 갱신됩니다.
@@ -185,6 +229,12 @@ displayAggregator.notifyUserInteraction(templateId)
 {% tab title="iOS" %}
 ```text
 displayAgent.notifyUserInteraction()
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+```
+display_handler->refreshRenderingTimer(id)
 ```
 {% endtab %}
 {% endtabs %}
