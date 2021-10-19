@@ -2,9 +2,9 @@
 
 AudioPlayer Interface를 사용하여 Play를 만들 경우, NUGU SDK에 연결된 디바이스에서 스트리밍을 통해 음악을 재생할 수 있습니다.
 
-AudioPlayer Interface를 사용하기 위해서는 `General` &gt; `기본 정보` &gt; `Capability Interface 추가` 에서 `AudioPlayer` 항목을 체크 합니다.
+AudioPlayer Interface를 사용하기 위해서는 `General` > `기본 정보` > `Capability Interface 추가` 에서 `AudioPlayer` 항목을 체크 합니다.
 
-![](../../../.gitbook/assets/assets_capability_audio%20%281%29%20%281%29%20%281%29%20%282%29%20%282%29%20%282%29%20%282%29%20%282%29.png)
+![](<../../../.gitbook/assets/assets\_capability\_audio (1) (1) (1) (2) (2) (2) (2) (2) (1).png>)
 
 설정을 하고 저장을 하면, 해당 Play는 Built-in Intent가 자동으로 더 추가되고 AudioPlayer를 사용할 수 있는 Play가 됩니다.
 
@@ -17,4 +17,3 @@ AudioPlayer Interface를 사용하기 위해서는 `General` &gt; `기본 정보
 {% hint style="info" %}
 AudioPlayer Interface에서 제공하는 Built-in Intent, Directive, Event에 대한 자세한 설명은 [Capability Interfaces](../use-backend-proxy/capability-interfaces/)를 참고하세요.
 {% endhint %}
-

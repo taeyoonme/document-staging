@@ -2,32 +2,32 @@
 
 ## **NUGU inside 마크**
 
-NUGU inside 마크는 NUGU의 기술이 탑재되었음을 직접적으로 알려주는 중요한 브랜드 요소입니다.  
+NUGU inside 마크는 NUGU의 기술이 탑재되었음을 직접적으로 알려주는 중요한 브랜드 요소입니다.\
 적용 매체와 환경의 특성을 파악하여 인쇄 매체와 같은 표현물에 NUGU inside 마크가 제대로 표시되도록 해야 합니다.
 
-![](../../.gitbook/assets/assets_inside_mark.png)
+![](../../.gitbook/assets/assets\_inside\_mark.png)
 
-최소 공간 규정은 마크의 NUGU 심볼의 너비만큼의 여백을 두고 적용합니다.  
+최소 공간 규정은 마크의 NUGU 심볼의 너비만큼의 여백을 두고 적용합니다.\
 마크 최소 크기는 인쇄물일 때 1.2 밀리미터, 화면에 표시할 경우 30 픽셀의 높이를 준수합니다.
 
-![](../../.gitbook/assets/assets_inside_guide.png)
+![](../../.gitbook/assets/assets\_inside\_guide.png)
 
 ## **NUGU inside 색상**
 
-| Color | RGB | CMYK | Pantone |
-| :--- | :--- | :--- | :--- |
-| ![](../../.gitbook/assets/assets_color_nugublue__1%20%285%29%20%286%29%20%286%29%20%282%29%20%281%29.png) NUGU Blue | 0,158, 255 \(\#009DFF\) | 85, 21, 0, 0 | 2925C |
-| ![](../../.gitbook/assets/assets_color_black-1.png) Black | 34, 34, 34 \(\#222222\) | 75, 68, 67, 90 |  |
-| ![](../../.gitbook/assets/assets_color_white__1.png) White | 255, 255, 255 \(\#FFFFFF\) | 0, 0, 0, 0 |  |
+| Color                                                                                           | RGB                     | CMYK           | Pantone |
+| ----------------------------------------------------------------------------------------------- | ----------------------- | -------------- | ------- |
+| ![](<../../.gitbook/assets/assets\_color\_nugublue\_\_1 (5) (6) (6) (2) (1) (8).png>) NUGU Blue | 0,158, 255 (#009DFF)    | 85, 21, 0, 0   | 2925C   |
+| ![](../../.gitbook/assets/assets\_color\_black-1.png) Black                                     | 34, 34, 34 (#222222)    | 75, 68, 67, 90 |         |
+| ![](<../../.gitbook/assets/assets\_color\_white\_\_1 (1).png>) White                            | 255, 255, 255 (#FFFFFF) | 0, 0, 0, 0     |         |
 
 ## **NUGU inside 배경색상**
 
-NUGU inside 마크 배경 색상의 명암에 따라 positive와 negative로 사용할 수 있습니다. 어두운 배경과 NUGU blue 색상이 배경으로 사용되는 경우는 negative로만 사용합니다.  
+NUGU inside 마크 배경 색상의 명암에 따라 positive와 negative로 사용할 수 있습니다. 어두운 배경과 NUGU blue 색상이 배경으로 사용되는 경우는 negative로만 사용합니다.\
 NUGU inside 배경은 기기나 제품, 재질 등에 따라 맞게 적용해야 하며 아래 조합 중 하나를 사용해야 합니다.
 
-![&#xBC30;&#xACBD;&#xC0C9;&#xC0C1;&#xC5D0; &#xB530;&#xB77C; &#xC801;&#xC6A9;&#xAC00;&#xB2A5;&#xD55C; &#xB9C8;&#xD06C;](../../.gitbook/assets/assets_usage1.png)
+![배경색상에 따라 적용가능한 마크](../../.gitbook/assets/assets\_usage1.png)
 
-![&#xC624;&#xC6A9;&#xB41C; &#xC0AC;&#xB840;](../../.gitbook/assets/assets_usage2.png)
+![오용된 사례](../../.gitbook/assets/assets\_usage2.png)
 
 ## **NUGU inside 적용규칙**
 
@@ -35,20 +35,19 @@ NUGU inside 배경은 기기나 제품, 재질 등에 따라 맞게 적용해야
 
 서비스 브랜드 로고와 NUGU inside 마크가 조합된 형태는 브랜드 로고 우측이나 하단에 마크가 위치하며, 예시와 같은 간격을 두고 사용합니다.
 
-![&#xAC00;&#xB85C; &#xC870;&#xD569;&#xD615;](../../.gitbook/assets/assets_inside_guide_btv-3.png)
+![가로 조합형](../../.gitbook/assets/assets\_inside\_guide\_btv-3.png)
 
-![&#xC138;&#xB85C; &#xC870;&#xD569;&#xD615;](../../.gitbook/assets/assets_inside_guide_btv2.png)
+![세로 조합형](../../.gitbook/assets/assets\_inside\_guide\_btv2.png)
 
 ### 기기 적용
 
 기기에 적용 시 마크의 최소 크기와 정해진 색상과 배경을 준수해야 합니다.
 
-![](../../.gitbook/assets/assets_inside_app1.png)
+![](../../.gitbook/assets/assets\_inside\_app1.png)
 
 ## NUGU inside 텍스트 표기
 
-본문 텍스트 또 그에 준하는 문장 속에 NUGU inside라는 명칭이 나오는 경우 마크를 사용하지 않습니다.  
+본문 텍스트 또 그에 준하는 문장 속에 NUGU inside라는 명칭이 나오는 경우 마크를 사용하지 않습니다.\
 제품/서비스 브랜드 조합형은 해당 브랜드명만 표기합니다.
 
-![](../../.gitbook/assets/assets_inside_text.png)
-
+![](../../.gitbook/assets/assets\_inside\_text.png)
