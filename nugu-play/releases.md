@@ -6,7 +6,7 @@
 
 ### 1. 향상/변경된 기능
 
-* NUGU biz kit 고도화에 의한 용어, 기능변경 및 Biz API 지원 추가 : [자세히 알아보기](work-with-nugu-biz/)
+* NUGU biz kit 고도화에 의한 용어, 기능변경 및 Biz API 지원 추가 : [자세히 알아보기](../work-with-nugu-biz/)
 
 ## Version 1.9.0
 
@@ -26,9 +26,9 @@
 
 ### 1. 향상/변경된 기능
 
-* Action 목록에서 Root Action 기준으로 접기 기능 추가 
-* Action name 글자 수 제한 확 
-* Root Action에서 정의한 예외 상황\(exception code\)가 Branch에서 노출되도록 변경
+* Action 목록에서 Root Action 기준으로 접기 기능 추가
+* Action name 글자 수 제한 확
+* Root Action에서 정의한 예외 상황(exception code)가 Branch에서 노출되도록 변경
 * Directive를 사용할 때도 '대기'를 output 유형으로 선택할 수 있도록 변
 
 ### 2. 버그 수정
@@ -79,14 +79,14 @@
 * Welcome Action에서 Common Action을 output으로 선택할 수 있도록 변경
 * Parameter에서 Array 형식 처리할 수 있도록 변경
 * User Utterance Model Import시 Validation
-* Entity 허용 문자에 . \(dot\) 추가
+* Entity 허용 문자에 . (dot) 추가
 * Built-in Entity type 상세화면에서 동의어 노출
 * NLU function 타입을 'DATE'에서 'DATETIME'으로 변경
 
 ### 3. 버그 수정
 
 * 발화옵션 자동완성 '한글 숫자 읽기' 자동입력 오류 수정
-* Action 생성 페이지에서, Intent 없을 경우 멈추는 현상 수정 
+* Action 생성 페이지에서, Intent 없을 경우 멈추는 현상 수정
 
 ## Version 1.4.0
 
@@ -102,7 +102,7 @@
 
 ### 3. 버그 수정
 
-* Prompt 입력창에서 백스페이스 글자 삭제 버그 수정 
+* Prompt 입력창에서 백스페이스 글자 삭제 버그 수정
 * Translator 이름 중복 버그 수정 및 정렬 수정
 * 학습 문장 분석 도구 내 Intent 미노출 현상 수정
 * Play 구조에서 Common Action 하위 브랜치 노출
@@ -126,7 +126,7 @@
 
 ### 3. 버그 수정
 
-* Intent 리스트 최종 수정 시간이 정확히 표시 안되는 현상 수정 
+* Intent 리스트 최종 수정 시간이 정확히 표시 안되는 현상 수정
 * 자동완성 UI 수정
 * 일부 단어 Entity 검색 안되는 버그 수정
 * 여러 개의 Response Filter를 적용할 때 멈추는 현상 수정
@@ -144,10 +144,9 @@
 ### 2. 향상/변경된 기능
 
 * Utterance Parameter에 Entity mapping 방식 변경 : [자세히 알아보기](create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter.md#utterance-parameter)
-* Entity value 및 동의어 입력 시 허용 특수기호 추가
+*   Entity value 및 동의어 입력 시 허용 특수기호 추가
 
-  ' \(Apostrophe\), & \(Ampersand\), - \(Hyphen\)
-
+    ' (Apostrophe), & (Ampersand), - (Hyphen)
 * 저장 버튼 동작 수정
 * Entity value 및 동의어 입력 시 띄어쓰기 허용
 * 여러 Prompt 등록 후 하나를 Silent prompt로 지정하면 모두 Silent prompt로 변경
@@ -165,27 +164,25 @@
 
 ### 1. 새로운 기능
 
-* 멀티턴 대화 지원 \(Response + Branch Action\) : [자세히 알아보기](create-plays-with-play-builder/define-an-action/response-with-branch-actions.md) 
+* 멀티턴 대화 지원 (Response + Branch Action) : [자세히 알아보기](create-plays-with-play-builder/define-an-action/response-with-branch-actions.md)
 * AudioPlayer Interface용 Display Interface 추가 : [자세히 알아보기](create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface.md)
 * 다른 Intent 에서 Entity type 더 가져오기 기능 추가 : [자세히 알아보기](https://github.com/nugudevelopers/document/tree/c48f4d593fd49f4cb9b70cb4bec6906c6ed33ee7/create-plays-with-play-builder/response-with-branch-actions.md#multi-turn-branch)
 * Silent Prompt : [자세히 알아보기](create-plays-with-play-builder/define-an-action/use-responses/use-prompts.md#silent-prompt)
 
 ### 2. 향상/변경된 기능
 
-* Entity value 및 동의어 입력 시 특수기호 허용 제외
+*   Entity value 및 동의어 입력 시 특수기호 허용 제외
 
-  \_ \(Underbar\)
-
+    \_ (Underbar)
 * Entity value 및 동의어 입력 시 띄어쓰기 허용
 
 ### 3. 버그 수정
 
 * Fallback 처리 되어야 하는 발화들이 특정 Custom Intent로 분석되는 현상 수정
-* 상세 페이지에서 Ctrl\(Cmd\) + A 키가 동작하지 않는 현상 수정
+* 상세 페이지에서 Ctrl(Cmd) + A 키가 동작하지 않는 현상 수정
 
 ### 4. 다음 업데이트 추가 예정 기능
 
-* Entity value 및 동의어 입력 시 허용 특수기호 추가
+*   Entity value 및 동의어 입력 시 허용 특수기호 추가
 
-  ' \(Apostrophe\), & \(Ampersand\), - \(Hyphen\)
-
+    ' (Apostrophe), & (Ampersand), - (Hyphen)
