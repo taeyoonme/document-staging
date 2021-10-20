@@ -65,7 +65,7 @@ OAuth Scope는 Access Token으로 사용할 수 있는 리소스의 허용 범�
 
 ### 5단계: NUGU developers에서 OAuth 연동 정보 입력
 
-2단계부터 4단계에 걸쳐 확인한 정보를 `NUGU developers` > `NUGU play kit` > `관리` 메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
+2단계부터 4단계에 걸쳐 확인한 정보를 `Developers` > `Play kit` > `Play 관` 메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
 
 ![](<../../.gitbook/assets/assets\_ch3\_331\_c05\_2-1 (3) (3) (3) (4) (1) (4).png>)
 
@@ -103,7 +103,7 @@ OAuth 2.0 Serve는 인터넷의 기술 문서를 참고하여 구축할 수 있�
 
 ### Play의 OAuth 연동 정보 작성
 
-`NUGU developers` > `NUGU play kit` > `관리`" 메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
+`Developers` > `Play kit` > `Play 관`  메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
 
 \*(별표) 표시는 필수 제공해야 하는 내용입니다.
 

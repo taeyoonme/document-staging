@@ -1,5 +1,17 @@
 # Release note
 
+## Version 2.1.0
+
+업데이트일 : 2021년 10월 21일
+
+### 1. 2021년 Developers 고도화 내용 현행&#x20;
+
+* NUGU biz kit 고도화에 의한 메뉴 위치, UI에 대한 내용 전체 현행화
+
+### 2. 스마트홈 Play 등록, 테스트 가이드 추가&#x20;
+
+* Play 정보 등록 (smarthome play) 내용 추가 : [자세히 알아보기 ](broken-reference)
+
 ## Version 2.0.0
 
 업데이트일 : 2021년 8월 12일
