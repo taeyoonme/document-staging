@@ -1,6 +1,6 @@
 # Play 심사
 
-`NUGU play kit` > `관리` 메뉴에서 Play 심사에 필요한 각종 정보(기본 정보, 연동 정보, 배포 정보, 심사 정보)들을 모두 빠짐없이 등록을 한 후에 심사 요청을 하면 Play에 대한 심사가 시작됩니다.([심사 요청](play-review.md#review-request))
+`Developers Console` >  `Play kit` > `Play 관리`심사 착수 후 2\~3주(워킹데이 10\~15일)입니다.메뉴에서 Play 심사에 필요한 각종 정보(기본 정보, 연동 정보, 배포 정보, 심사 정보)들을 모두 빠짐없이 등록을 한 후에 심사 요청을 하면 Play에 대한 심사가 시작됩니다.([심사 요청](play-review.md#review-request))
 
 Play 심사 중에는 Play 정보를 수정할 수 없기 때문에 수정이 필요한 경우에는 심사 요청을 취소하고, 정보를 수정하여 다시 요청하면 됩니다.([심사 취소](play-review.md#review-cancellation))
 
@@ -15,7 +15,7 @@ Play 심사 승인이 거절되면 Play 반려 사유 리포트를 Play 기본 �
 ## 심사 프로세스 <a href="review-process" id="review-process"></a>
 
 개발 완료 및 충분한 테스트를 마친 Play는 [심사 요청](play-review.md#review-request) 이후 다음의 프로세스에 따라 심사합니다.\
-심사 소요 기간은 각 기준을 충족했을 때, 심사 착수 후 2~~3주(워킹데이 10~~15일)입니다.
+심사 소요 기간은 각 기준을 충족했을 때, 심사 착수 후 2\~3주(워킹데이 10\~15일)입니다.
 
 ![](<../../.gitbook/assets/assets\_ch4\_401\_c01 (1).png>)
 
@@ -174,11 +174,11 @@ NUGU play와 기본 NUGU서비스 간 간섭을 방지하고자 아래와 같은
 
 등록/심사 요청 페이지 하단에 위치한 `심사요청` 버튼을 클릭하여 Play의 심사를 요청합니다.
 
-![](../../.gitbook/assets/assets\_ch4\_431\_c01\_1\_\_2.png)
+![](../../.gitbook/assets/simsago.png)
 
-심사 요청과 동시에 Play 상태는 심사 대기로 전환되고, Play 심사 담당자에게 심사 요청 사항이 자동으로 전달됩니다. Play 상태는 `NUGU developers` > `NUGU play kit` > `관리` 페이지의 **등록 현황**에서 확인할 수 있습니다.
+심사 요청과 동시에 Play 상태는 심사 대기로 전환되고, Play 심사 담당자에게 심사 요청 사항이 자동으로 전달됩니다. Play 상태는 `Developers Console` > `Play kit` > `Play 관리` 페이지에서 확인할 수 있습니다.
 
-![](<../../.gitbook/assets/assets\_ch4\_432\_c03-1-20-1-\_\_1 (12) (5) (1) (28).png>)
+![](../../.gitbook/assets/simsajung.png)
 
 {% hint style="warning" %}
 심사 요청된 Play 정보를 운영자가 검토하여 필수 정보가 누락된 경우에는 본격적인 심사 과정을 진행하기 전에 반려할 수 있습니다.\
@@ -193,18 +193,14 @@ Play 심사가 시작하기 전인 심사 요청 상태(**심사대기** 상태)
 운영자가 심사 요청을 받아 심사를 시작한 경우(`심사중` 상태)에는 심사 취소를 할 수 없습니다.
 {% endhint %}
 
-1️⃣ `NUGU developers` > `NUGU play kit` > `관리` > `Play 등록` 페이지의 등록 현황에서 심사를 취소할 **심사대기** 상태의 Play를 클릭하여 선택합니다.
-
-![](../../.gitbook/assets/assets\_ch4\_432\_c01-1\_\_1.png)
+1️⃣ `Developers Console` > P`lay kit` > `Play 관리`에서 심사를 취소할 **심사대기** 상태의 Play를 클릭하여 선택합니다.
 
 2️⃣ 배포/심사 정보 페이지 하단에 위치한 `심사취소` 버튼을 클릭하여 심사 취소를 완료합니다.
 
-![](../../.gitbook/assets/assets\_ch4\_432\_c02\_\_3.png)
+![](../../.gitbook/assets/simsacancel2.png)
 
 3️⃣ 심사 취소 요청과 동시에 Play는 등록 중 상태로 바뀝니다.
 
 {% hint style="info" %}
-Play 등록 상태는 `NUGU developers` > `NUGU play kit` > `관리` > `Play 등록` 페이지의 **등록 현황**에서 확인할 수 있습니다.
+Play 등록 상태는 `Developers Console` > P`lay kit` > `Play 관리` 페이지에서 확인할 수 있습니다.
 {% endhint %}
-
-![](<../../.gitbook/assets/assets\_ch4\_432\_c03-1-20-1-\_\_1 (12) (5) (1) (29).png>)
