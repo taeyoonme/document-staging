@@ -99,6 +99,7 @@
     * [SmartHomeError](nugu-play/smarthome-play/smarthomeerror.md)
   * [Play 정보 등록 및 심사 요청하기](nugu-play/play-registration-and-review/README.md)
     * [Play 정보 등록](nugu-play/play-registration-and-review/register-a-play.md)
+    * [Play 정보 등록 (smarthome play)](nugu-play/play-registration-and-review/play-smarthome-play.md)
     * [Play 정보 수정 및 삭제](nugu-play/play-registration-and-review/modify-or-delete-play-information.md)
     * [Play 심사](nugu-play/play-registration-and-review/play-review.md)
   * [Play 배포 및 관리하기](nugu-play/distribute-and-manage-a-play/README.md)
