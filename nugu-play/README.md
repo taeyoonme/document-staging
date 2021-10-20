@@ -2,7 +2,7 @@
 
 {% embed url="https://www.youtube.com/watch?v=1PB5j7FM0EE" %}
 
-Play Builder는 Play를 만드는 도구입니다. 좋은 콘텐츠를 보유하고 있는 업체 또는 개인이 NUGU 사용자에게 자신의 서비스를 제공할 수 있도록 도와줍니다.
+NUGU play는 NUGU 플랫폼을 통하여 사용자의 요청에 응답하여 서비스의 단위이며, Play Builder에 Play를 만들 수 있습니다. 좋은 콘텐츠를 보유하고 있는 업체 또는 개인이  Play를 통하여, NUGU 사용자에게 자신의 서비스를 제공할 수 있도록 도와줍니다.
 
 사용자의 발화를 이해하는 User Utterance Model, 그리고 이를 기반으로 기능을 수행하는 Action들을 조합하여 하나의 완결된 Play를 만듭니다. 하나의 Play를 완성하기 위해서는 크게
 

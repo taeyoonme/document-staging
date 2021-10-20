@@ -4,8 +4,6 @@ Play를 처음 생성한 뒤 좌측의 `General`의 하위 메뉴에서 Play와 
 
 ## 기본 정보(`General` > `기본 정보`) <a href="setting" id="setting"></a>
 
-![](<../../.gitbook/assets/assets\_customize-a-play1 (2) (2) (2) (3) (3) (2) (3).jpg>)
-
 **① Play 이름**\
 Play를 생성할 때 등록한 것으로서, Play Builder 내에서 ID 역할을 하며, 중복과 변경이 허용되지 않습니다.
 
@@ -15,8 +13,16 @@ Play Builder 내에서 사용되는 것으로 여러 버전의 Play를 만들고
 **③ Capability Interface**\
 NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경우, 사용할 Interface를 체크하면 사용이 가능하며 여러 개의 Interface 간 중복해서 사용할 수 있습니다. 단, Capability Interface를 사용하기 위해서는 Backend proxy와 필수적으로 연동되어 있어야 합니다.
 
+![](../../.gitbook/assets/capa.png)
+
 {% hint style="info" %}
-현재는 AudioPlayer Interface만 지원합니다. 자세한 내용은 [AudioPlayer Interface 지원하는 Play 만들기](create-a-play-with-audioplayer/)를 참고하세요.
+현재는 AudioPlayer Interface와, Display Interface를 지원합니다.  자세한 내용은&#x20;
+
+[AudioPlayer Interface 지원하는 Play 만들기](create-a-play-with-audioplayer/)
+
+[Display Interface ](use-backend-proxy/capability-interfaces/display-interface.md)
+
+를 참고하세요.
 {% endhint %}
 
 ![](<../../.gitbook/assets/assets\_customize-a-play2-1 (3) (3) (3) (4) (4) (2) (4).jpg>)
