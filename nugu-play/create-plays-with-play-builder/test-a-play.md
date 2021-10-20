@@ -3,7 +3,7 @@
 Play가 제대로 동작하는지 테스트하는 방법은 크게 두 가지입니다.
 
 * Play Builder에서 채팅으로 테스트
-* NUGU 디바이스(스피커)에서 음성으로 테스트
+* NUGU 디바이스(스피커, T전화 등)에서 음성으로 테스트
 
 Play Builder에서 채팅으로 테스트하는 방법은 Play Builder를 통해 직접 학습시킨 Intent에 대해 어떻게 분석이 되고 어떻게 동작하는지 확인할 수 있는 테스트입니다.\
 NUGU 디바이스(스피커)와 연동하여 진행하는 테스트는 실제 사용자에게 제공될 서비스 그대로를 점검할 수 있는 테스트입니다.\
@@ -59,20 +59,20 @@ SKML 태그는 결과창에 그대로 나오게 되나, 실제로 발화되지�
 
 Initial Parameter를 정의했으나, 실제로 Backend proxy에서 Initial Parameter를 전달하지 않으면 응답이 늦을 수도 있습니다.
 
-## 디바이스(스피커)에서 테스트하기 <a href="test-a-play-using-speaker" id="test-a-play-using-speaker"></a>
+## 디바이스에서 테스트하기 <a href="test-a-play-using-speaker" id="test-a-play-using-speaker"></a>
 
 ### Play 테스트 가능 상태 확인하기
 
 Play의 상태가 등록중, 심사대기, 심사반려, 심사중, 심사완료, 배포대기 중인 경우에 스피커에서 테스트가 가능합니다.
 
-![](<../../.gitbook/assets/assets\_play-status-is-registered (7) (7) (1) (9).png>)
+![](../../.gitbook/assets/test1.png)
 
 {% hint style="info" %}
 Play를 등록하는 방법은 [Play 정보 등록](../play-registration-and-review/register-a-play.md)을 참고하세요.
 {% endhint %}
 
 {% hint style="danger" %}
-NUGU 디바이스 테스트는 Play의 상태가 테스트 가능해 진 후 다음날부터 가능합니다.
+NUGU 디바이스 테스트는 음성인식 학습 등의 사유로 Play 및 테스트기기 등록 다음날부터 가능합니다.
 
 하루가 지나도 NUGU 디바이스에서 Play를 테스트할 수 없다면, `Support` > `문의 사항`으로 문의해 주시기 바랍니다.
 {% endhint %}
@@ -89,18 +89,12 @@ NUGU 디바이스 테스트는 Play의 상태가 테스트 가능해 진 후 다
 * 테스트 기기는 최대 10대까지 등록할 수 있습니다.
 {% endhint %}
 
-1. `NUGU developers` > `회원 정보 관리`(우측 상단 로그온 아이디 클릭)를 클릭하여 회원 정보 관리 페이지로 이동합니다.
+`1.Developers Console` > `Play Kit`에서 Play가 등록완료 상태가 된 경우, 하단의 디바이스 등록 버튼을 통해 계정에 연결된 기기를 테스트 기기로 등록 할 수 있습니다.
 
-![](<../../.gitbook/assets/assets\_ch3\_325\_c04 (2) (2) (2) (3) (3) (3) (3) (3) (2).png>)
+![](../../.gitbook/assets/test2.png)
 
-1. 테스트 기기 등록 메뉴에서 `디바이스 검색` 버튼을 클릭합니다.
+2\. 다른 방법으로는 `Developers Console` > `Account `> `회원 정보 관리`에서 하단의 디바이스 등록 버튼을 통해 계정에 연결된 기기를 테스트 기기로 등록 할 수 있습니다.
 
-![](<../../.gitbook/assets/assets\_ch3\_325\_c05 (2) (2) (2) (3) (3) (3) (3) (3) (2).png>)
-
-1. 테스트 기기 추가 팝업에서 등록할 디바이스를 선택한 후 `확인`을 눌러 테스트 기기를 등록합니다.
-
-![](<../../.gitbook/assets/assets\_ch3\_325\_c06-1 (2) (2) (2) (3) (3) (3) (3) (3) (2).png>)
+![](../../.gitbook/assets/test3.png)
 
 테스트 기기 등록이 완료되면 테스트 기기 등록 메뉴의 등록된 기기 목록에 등록된 디바이스가 표시됩니다. NUGU 디바이스 테스트를 중지하려면, 등록된 디바이스 우측의 `-` 버튼을 클릭하여 디바이스를 삭제합니다.
-
-![](<../../.gitbook/assets/assets\_ch3\_325\_c07-1 (2) (2) (2) (3) (3) (3) (3) (3) (2).png>)

@@ -2,9 +2,9 @@
 
 Play Builder를 이용하여 다음 순서에 따라 Play를 생성하세요.
 
-1.  `NUGU developers` > `NUGU play kit` > `개발` 페이지에서 `Play Builder 로 가기` 버튼을 클릭하여 Play Builder를 실행합니다.
+1.  `Developers Console` > `Play kit`페이지에서 `Play Builder` 버튼을 클릭하여 Play Builder를 실행합니다.
 
-    ![](../../../.gitbook/assets/assets\_ch3\_311\_c01\_2-1.png)
+
 2.  Play Builder 첫 화면의 Custom Plays에서 `새 Play 생성` 버튼을 클릭합니다.
 
     ![](<../../../.gitbook/assets/assets\_ch3\_311\_c02 (1) (1).png>)
