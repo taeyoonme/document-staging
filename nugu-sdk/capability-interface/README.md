@@ -72,12 +72,12 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
 
 ## Platform 에 따른 지원 현황
 
-2021-03-25 기준
+2021-10-01 기준
 
 | Capability interface | Description | Android | iOS | Linux |
 | :--- | :--- | :--- | :--- | :--- |
 | AudioPlayer | 음악 재생 | 지원 | 지원 | 지원 |
-| Display | UI template data 제공 | 지원 | 지원 | 추후 지원 예정 |
+| Display | UI template data 제공 | 지원 | 지원 | 지원 |
 | System | 디바이스 전원 제어 네트워크 연결 제어 | 지원 | 일부지원\(디바이스 전원 제어는 플랫폼 특성상 미지원\) | 지원 |
 | TTS | TTS 재생 | 지원 | 지원 | 지원 |
 | ASR | 사용자 음성 인식 | 지원 | 지원 | 지원 |
@@ -92,9 +92,9 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
 | Sound | Beep 음 재생 | 지원 | 지원 | 지원 |
 | Chips | 발화 가이드 제공 | 지원 | 지원 | 지원 |
 | Session | 음성 인식 세션 제어 | 지원 | 지원 | 지원 |
-| PhoneCall | 통화 기능 제어 | 지원 | 지원 | 플랫폼 특성상 미지원 |
-| Message | 문자 기능 제어 | 지원 | 추후 지원 예정 | 플랫폼 특성상 미지원 |
+| PhoneCall | 통화 기능 제어 | 지원 | 지원 | 지원 |
+| Message | 문자 기능 제어 | 지원 | 지원 | 지원 |
 | MediaPlayer | 음악 앱 제어 | 지원 | 지원 | 미지원 |
-| Routine | 루틴 실행 | 지원 | 추후 지원 예정 | 추후 지원 예정 |
+| Routine | 루틴 실행 | 지원 | 지원 | 지원 |
 | Utility | Directive 실행 순서 제어 | 지원 | 지원 | 지원 |
 

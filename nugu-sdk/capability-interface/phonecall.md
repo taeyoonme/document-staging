@@ -24,10 +24,6 @@ description: 전화 수/발신 기능 제어를 위한 규격
 
 PhoneCall interface 규격에 따른 디바이스의 동작 제어는 PhoneCallAgent 가 처리합니다.
 
-{% hint style="warning" %}
-Linux 는 PhoneCallAgent 를 지원하지 않습니다.
-{% endhint %}
-
 {% tabs %}
 {% tab title="Android" %}
 NuguAndroidClient 생성시 PhoneCallAgent 를 추가합니다.
@@ -64,6 +60,19 @@ NuguClient instance 를 통해 PhoneCallAgent instance 에 접근할 수 있습�
 
 ```text
 let phoneCallAgent = nuguClient.phoneCallAgent
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [PhoneCallAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IPhoneCallHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
+
+```text
+auto phonecall_handler(std::shared_ptr<IPhoneCallHandler>(
+        CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>()));
+
+nugu_client->getCapabilityBuilder()
+    ->add(phonecall_handler.get())
+    ->construct();
 ```
 {% endtab %}
 {% endtabs %}
@@ -147,6 +156,31 @@ class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
 phoneCallAgent.delegate = self
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+[IPhoneCallListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IPhoneCallListener.html) 를 추가합니다.
+
+```text
+class MyPhoneCallListener : public IPhoneCallListener {
+public:
+    ...
+
+    void processSendCandidates(const std::string& payload) override
+    {
+        ...
+    }
+    
+    void processMakeCall(const std::string& payload) override
+    {
+        ...
+    }
+
+    ...
+};
+auto phonecall_listener(std::make_shared<MyPhoneCallListener>());
+CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_listener.get());
+```
+{% endtab %}
 {% endtabs %}
 
 ### 수신
@@ -174,6 +208,26 @@ class MyPhoneCallClient: PhoneCallClient {
     }
     ...
 }
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+[IPhoneCallListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IPhoneCallListener.html) 를 추가합니다.
+
+```text
+class MyPhoneCallListener : public IPhoneCallListener {
+public:
+    ...
+
+    void processAcceptCall(const std::string& payload)
+    {
+        ...
+    }
+    
+    ...
+};
+auto phonecall_listener(std::make_shared<MyPhoneCallListener>());
+CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_listener.get());
 ```
 {% endtab %}
 {% endtabs %}

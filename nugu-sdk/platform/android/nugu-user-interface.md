@@ -14,7 +14,7 @@ ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU �
 1. CoordinatorLayout에 android:id 태그를 설정합니다.
 
    ```text
-   <android.support.design.widget.CoordinatorLayout
+   <androidx.coordinatorlayout.widget.CoordinatorLayout
            android:id="@+id/coordinator"
            android:layout_width="match_parent"
            android:layout_height="match_parent">

@@ -17,6 +17,7 @@ NUGU SDK for Linux는 Ubuntu Linux를 지원합니다.
 * Version
   * Xenial\(16.04\)
   * Bionic\(18.04\)
+  * Focal\(20.04\)
 * CPU Architecture
   * 64bit x86\(amd64\)
   * arm\(armhf, arm64\)

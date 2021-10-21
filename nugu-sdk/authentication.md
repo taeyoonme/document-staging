@@ -14,59 +14,43 @@ NUGU 플랫폼 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)의 규
 >
 > %7B%22deviceSerialNumber%22%3A%22DEVICE\_SERIAL\_NUMBER%22%7D
 
-{% api-method method="get" host="https://api.host.domain" path="/v1/auth/oauth/authorize" %}
-{% api-method-summary %}
-인증 요청 \(Authorize Endpoint\)
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://api.host.domain" path="/v1/auth/oauth/authorize" method="get" summary="인증 요청 (Authorize Endpoint)" %}
+{% swagger-description %}
 \*NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-query-parameters %}
-{% api-method-parameter name="client\_id" type="string" required=true %}
+{% swagger-parameter name="client:id" type="string" in="query" %}
 발급받은 ClientId를 사용 합니다.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="response\_type" type="string" required=true %}
+{% swagger-parameter name="response:type" type="string" in="query" %}
 code 만 사용 됩니다.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="redirect\_uri" type="string" required=true %}
+{% swagger-parameter name="redirect:uri" type="string" in="query" %}
 설정한 RedirectUri를 사용합니다.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="scope" type="string" required=true %}
-\(TODO\)
-{% endapi-method-parameter %}
+{% swagger-parameter name="scope" type="string" in="query" %}
+(TODO)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="data" type="string" required=true %}
+{% swagger-parameter name="data" type="string" in="query" %}
 추가적인 데이터를 포함됩니다.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="state" type="string" required=true %}
+{% swagger-parameter name="state" type="string" in="query" %}
 CSRF를 위해 사용 되는 값입니다.
-{% endapi-method-parameter %}
-{% endapi-method-query-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=302 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="302" description="" %}
+```
 HTTP/1.1 302 
 Date: Mon, 14 Oct 2019 02:24:58 GMT
 Location: {redirect_uri}?code={code}&state={state}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 ## Token Endpoint
 
@@ -74,53 +58,39 @@ Location: {redirect_uri}?code={code}&state={state}
 
 NUGU계정 미사용, 체험판은 `grant_type=client_credentials` 을 사용합니다.
 
-Client 인증 정보는 Body Parameter\(application/x-www-form-urlencoded\)를 사용 합니다.
+Client 인증 정보는 Body Parameter(application/x-www-form-urlencoded)를 사용 합니다.
 
-{% api-method method="post" host="https://api.host.domain" path="/v1/auth/oauth/token" %}
-{% api-method-summary %}
-토큰 요청 \(Token Endpoint\)
-{% endapi-method-summary %}
+{% swagger baseUrl="https://api.host.domain" path="/v1/auth/oauth/token" method="post" summary="토큰 요청 (Token Endpoint)" %}
+{% swagger-description %}
+NUGU계정 미사용, 체험판 사용 시에는 code와 redirect_url 입력이 불필요합니다.
+{% endswagger-description %}
 
-{% api-method-description %}
-NUGU계정 미사용, 체험판 사용 시에는 code와 redirect\_url 입력이 불필요합니다.
-{% endapi-method-description %}
+{% swagger-parameter name="data" type="string" in="body" %}
+추가적인 데이터가 포함 됩니다. ex) {"deviceSerialNumber":"DEVICE_SERIAL_NUMBER"}
+{% endswagger-parameter %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="data" type="string" required=true %}
-추가적인 데이터가 포함 됩니다. ex\) {"deviceSerialNumber":"DEVICE\_SERIAL\_NUMBER"}
-{% endapi-method-parameter %}
+{% swagger-parameter name="grant:type" type="string" in="body" %}
+authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험판)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="grant\_type" type="string" required=true %}
-authorization\_code \(신규\), client\_credentials \(NUGU 회원 미사용, 체험판\)
-{% endapi-method-parameter %}
-
-{% api-method-parameter name="code" type="string" required=false %}
+{% swagger-parameter name="code" type="string" in="body" %}
 응답 받은 code 값을 사용 합니다.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="redirect\_uri" type="string" required=false %}
-인증 요청 시 사용된 redirect\_uri를 사용합니다.
-{% endapi-method-parameter %}
+{% swagger-parameter name="redirect:uri" type="string" in="body" %}
+인증 요청 시 사용된 redirect_uri를 사용합니다.
+{% endswagger-parameter %}
 
-{% api-method-parameter name="client\_id" type="string" required=true %}
+{% swagger-parameter name="client:id" type="string" in="body" %}
 발급 받은 ClientId를 사용합니다.
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="client\_secret" type="string" required=true %}
+{% swagger-parameter name="client:secret" type="string" in="body" %}
 발급 받은 ClientSecret을 사용합니다.
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 02:24:59 GMT
 Content-Type: application/json;charset=UTF-8
@@ -133,41 +103,20 @@ Content-Type: application/json;charset=UTF-8
   "jti" : "ae8ed411-e9cc-44dc-8eb5-87857c3d36ae"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-invalid\_request - 잘못 된 요청입니다.  
-invalid\_grant - 유효하지 않은 grant\_type 입니다.  
-unsupported\_grant\_type - 지원하지 않는 grant\_type 입니다.  
-invalid\_scope - 유효하지 않은 scope 입니다.  
-redirect\_uri\_mismatch - 요청 한 redirect\_uri와 일치하지 않습니다.  
-unsupported\_response\_type - 지원하지 않는 response\_type 입니다.
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="400" description="" %}
+```
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
 
 {"error":"invalid_grant","error_description":"Invalid authorization code: 0rrbEjnOfqxIv6uNic6C"}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-error.unauthorized - 인가되지 않은 사용자 정보 입니다.  
-error.unauthorized\_client - 인가되지 않은 클라이언트 입니다.  
-error.invalid\_token - 유효하지 않은 토큰 입니다.  
-error.invalid\_client - 유효하지 않은 클라이언 정보 입니다.  
-error.access\_denied - 접근이 거부 되었습니다.  
-code.user\_account\_closed - 탈퇴한 사용자 입니다.  
-code.user\_account\_paused - 휴면 상태 사용자 입니다.  
-code.user\_device\_disconnected - 연결 해제된 상태입니다.  
-code.user\_device\_unexpected - 내부 검증 토큰이 불일치 합니다.
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="401" description="" %}
+```
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -175,52 +124,36 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {"error":"invalid_client","error_description":"Bad client credentials"}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="https://api.host.domain" path="/v1/auth/oauth/token" %}
-{% api-method-summary %}
-토큰 갱신 요청 \(Token Endpoint\)
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="https://api.host.domain" path="/v1/auth/oauth/token" method="post" summary="토큰 갱신 요청 (Token Endpoint)" %}
+{% swagger-description %}
 \*NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="data" type="string" required=true %}
-추가적인 데이터가 포함 됩니다. ex\) {"deviceSerialNumber":"DEVICE\_SEERIAL\_NUMBER"}
-{% endapi-method-parameter %}
+{% swagger-parameter name="data" type="string" in="body" %}
+추가적인 데이터가 포함 됩니다. ex) {"deviceSerialNumber":"DEVICE_SEERIAL_NUMBER"}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="grant\_type" type="string" required=true %}
-refresh\_token \(갱신\)
-{% endapi-method-parameter %}
+{% swagger-parameter name="grant:type" type="string" in="body" %}
+refresh_token (갱신)
+{% endswagger-parameter %}
 
-{% api-method-parameter name="refresh\_token" type="string" required=true %}
-신규 발급 시 응답 받은 refresh\_token을 사용합니다.
-{% endapi-method-parameter %}
+{% swagger-parameter name="refresh:token" type="string" in="body" %}
+신규 발급 시 응답 받은 refresh_token을 사용합니다.
+{% endswagger-parameter %}
 
-{% api-method-parameter name="client\_id" type="string" required=true %}
+{% swagger-parameter name="client:id" type="string" in="body" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="client\_secret" type="string" required=true %}
+{% swagger-parameter name="client:secret" type="string" in="body" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
@@ -233,28 +166,20 @@ Content-Type: application/json;charset=UTF-8
   "jti" : "7725ef4f-778c-4452-97eb-8145ef5b293d"
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="400" description="" %}
+```
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
 
 {"error":"invalid_grant","error_description":""}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="401" description="" %}
+```
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -262,128 +187,88 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {"error":"invalid_client","error_description":"Bad client credentials"}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 ## Revoke Endpoint
 
-{% api-method method="post" host="" path="/v1/auth/oauth/revoke" %}
-{% api-method-summary %}
-연결 해제 \(Revoke Endpoint\)
-{% endapi-method-summary %}
+{% swagger path="/v1/auth/oauth/revoke" method="post" summary="연결 해제 (Revoke Endpoint)" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter name="data" type="string" in="body" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="data" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
+{% swagger-parameter name="token" type="string" in="body" %}
 
-{% api-method-parameter name="token" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
+{% swagger-parameter name="client:id" type="string" in="body" %}
 
-{% api-method-parameter name="client\_id" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
+{% swagger-parameter name="client:secret" type="string" in="body" %}
 
-{% api-method-parameter name="client\_secret" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
 
 {}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="400" description="" %}
+```
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
 
 {"error":"invalid_token","error_description":""}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="401" description="" %}
+```
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
 
 {"error":"invalid_client","error_description":""}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
 ## Introspect Endpoint
 
-{% api-method method="post" host="" path="/v1/auth/oauth/introspect" %}
-{% api-method-summary %}
-연결 조회 \(Introspect Endpoint\)
-{% endapi-method-summary %}
+{% swagger path="/v1/auth/oauth/introspect" method="post" summary="연결 조회 (Introspect Endpoint)" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter name="data" type="string" in="body" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-form-data-parameters %}
-{% api-method-parameter name="data" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
+{% swagger-parameter name="token" type="string" in="body" %}
 
-{% api-method-parameter name="token" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
+{% swagger-parameter name="client:id" type="string" in="body" %}
 
-{% api-method-parameter name="client\_id" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
+{% swagger-parameter name="client:secret" type="string" in="body" %}
 
-{% api-method-parameter name="client\_secret" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-form-data-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="200" description="" %}
+```
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
@@ -392,36 +277,25 @@ Content-Type: application/json;charset=UTF-8
 "active":true
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="400" description="" %}
+```
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
 
 {"error":"invalid_token","error_description":""}
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=401 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
-```text
+{% swagger-response status="401" description="" %}
+```
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
 
 {"error":"invalid_client","error_description":""}
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}
