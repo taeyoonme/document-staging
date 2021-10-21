@@ -17,7 +17,7 @@ Play 심사 승인이 거절되면 Play 반려 사유 리포트를 Play 기본 �
 개발 완료 및 충분한 테스트를 마친 Play는 [심사 요청](play-review.md#review-request) 이후 다음의 프로세스에 따라 심사합니다.\
 심사 소요 기간은 각 기준을 충족했을 때, 심사 착수 후 2\~3주(워킹데이 10\~15일)입니다.
 
-![](<../../.gitbook/assets/assets\_ch4\_401\_c01 (1).png>)
+![](../../.gitbook/assets/play-review-01.png)
 
 {% hint style="info" %}
 심사완료 직전, 수정 피드백 반영을 위해 일시 반려할 수 있습니다.

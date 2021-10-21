@@ -4,7 +4,7 @@
 
 그러나, Output의 세번째 유형 Response + Branch Action을 통해서는 컨텍스트를 이어 가는 멀티턴 대화를 구성할 수 있습니다. Response + Branch Action이 선택된 Action은 Response를 내보낸 뒤에 사용자의 발화를 다시 듣고, Branch Action 중 조건을 만족시키는 Action으로 이동합니다.
 
-![](<../../../.gitbook/assets/assets\_ch3\_intent\_branch\_menu (1) (1).png>)
+![](../../../.gitbook/assets/response-with-branch-actions-01.png)
 
 Response + Branch Action는 세 요소로 구성됩니다.
 
@@ -22,7 +22,7 @@ Response + Branch Action의 Branch Action은 Default 지정이 필수가 아닙�
 
 Branch Action을 만들 때, precondition으로 사용할 Entity가 첫 Intent에 없으면 Branch Action의 precondition을 정의할 수 없습니다. 이 경우, Utterance Parameter의 Entity mapping 팝업 창에서 '다른 Intent의 Entity Type 더 불러오기' 버튼을 눌러, Play 내 모든 Entity Type을 가져 온 다음 원하는 Entity Type을 Utterance Parameter에 매핑하여 사용할 수 있습니다.
 
-![](<../../../.gitbook/assets/assets\_ch3\_intent\_branch\_entity (1).png>)
+![](../../../.gitbook/assets/response-with-branch-actions-02.png)
 
 {% hint style="danger" %}
 다른 Intent에서 Entity type 더 불러와서 Utterance Parameter에 mapping을 한 후에는, 불러온 Intent 수정이 되지 않습니다. 해당 Intent를 수정하기 위해서는 Entity mapping을 끊어줘야 합니다.
@@ -34,7 +34,7 @@ Default Branch를 지정하지 않은 경우에는, Reprompt를 1개 이상 정�
 
 Reprompt를 2개 이상 입력한 경우, 두번째 Prompt부터는 대기 Prompt로 지정됩니다. 이 대기 Prompt가 발화된 후에는 멀티턴 시작 Response 후의 대기 상태로 이동하여 다시 사용자의 발화를 듣습니다. 이렇게 이동한 대기 상태도 기존의 컨텍스트를 유지한 채 다시 사용자의 발화를 듣는 대기 상태입니다.
 
-![](<../../../.gitbook/assets/assets\_ch3\_intent\_branch\_example-1 (3) (3) (3) (4) (4) (4).png>)
+![](../../../.gitbook/assets/response-with-branch-actions-03.png)
 
 {% hint style="info" %}
 Reprompt에서 2개를 초과하는 대기 Prompt 사용은 피해주세요.

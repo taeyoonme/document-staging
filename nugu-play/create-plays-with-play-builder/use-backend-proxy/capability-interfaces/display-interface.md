@@ -4,7 +4,7 @@ Display Interface를 사용하면 화면을 가진 디바이스에서 화면에 
 
 Display Interface를 사용하기 위해서는 우선 `General` > `기본 정보` 페이지의 Capability Interface에서 `Display 제어` 항목을 `ON`으로 설정해야 합니다.
 
-![](../../../../.gitbook/assets/assets\_capability\_audio\_1.jpg)
+![](../../../../.gitbook/assets/display-interface-39.jpg)
 
 {% hint style="danger" %}
 Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 않는 것을 권장합니다. 불가피한 경우, Display Interface의 우선순위를 높여서 사용하는 것을 권장합니다.
@@ -25,19 +25,19 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 
 
 | Type       |                                                   NU300                                                  |                                                   Btv                                                  |
 | ---------- | :------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------: |
-| FullText1  | ![](<../../../../.gitbook/assets/assets\_fulltext1\_nu300\_\_1 (1) (1) (1) (4) (4) (5) (6) (7) (6).png>) | ![](<../../../../.gitbook/assets/assets\_fulltext1\_btv\_\_2 (2) (2) (2) (5) (5) (5) (6) (7) (6).jpg>) |
-| FullText2  |                    ![](../../../../.gitbook/assets/assets\_fulltext2\_nu300\_\_1.png)                    |         ![](<../../../../.gitbook/assets/assets\_fulltext2\_btv\_\_2 (2) (2) (2) (2) (8).png>)         |
-| ImageText1 |                    ![](../../../../.gitbook/assets/assets\_imagetext1\_nu300\_\_1.png)                   |                      ![](../../../../.gitbook/assets/assets\_imagetext1\_btv.png)                      |
-| ImageText2 |                      ![](../../../../.gitbook/assets/assets\_imagetext2\_nu300.png)                      |                    ![](../../../../.gitbook/assets/assets\_imagetext2\_btv\_\_1.png)                   |
-| ImageText3 |                 ![](<../../../../.gitbook/assets/assets\_imagetext3\_nu300\_\_1 (1).png>)                |     ![](<../../../../.gitbook/assets/assets\_imagetext3\_btv (1) (1) (4) (4) (5) (6) (7) (6).png>)     |
-| ImageText4 |         ![](<../../../../.gitbook/assets/assets\_imagetext4\_nu300 (2) (2) (2) (4) (1) (8).png>)         |                      ![](../../../../.gitbook/assets/assets\_imagetext4\_btv.png)                      |
-| TextList1  |                       ![](../../../../.gitbook/assets/assets\_textlist1\_nu300.png)                      |    ![](<../../../../.gitbook/assets/assets\_textlist1\_btv (1) (1) (1) (4) (4) (4) (5) (6) (5).png>)   |
-| TextList2  |                       ![](../../../../.gitbook/assets/assets\_textlist2\_nu300.png)                      |                    ![](../../../../.gitbook/assets/assets\_textlist2\_btv\_\_1.png)                    |
-| TextList3  |                       ![](../../../../.gitbook/assets/assets\_textlist3\_nu300.png)                      |                       ![](../../../../.gitbook/assets/assets\_textlist3\_btv.png)                      |
-| TextList4  |                    ![](<../../../../.gitbook/assets/assets\_textlist4\_nu300 (1).png>)                   |                       ![](../../../../.gitbook/assets/assets\_textlist4\_btv.png)                      |
-| ImageList1 |                      ![](../../../../.gitbook/assets/assets\_imagelist1\_nu300.png)                      |                      ![](../../../../.gitbook/assets/assets\_imagelist1\_btv.png)                      |
-| ImageList2 |                      ![](../../../../.gitbook/assets/assets\_imagelist2\_nu300.png)                      |                      ![](../../../../.gitbook/assets/assets\_imagelist2\_btv.jpg)                      |
-| ImageList3 |                      ![](../../../../.gitbook/assets/assets\_imagelist3\_nu300.png)                      |                    ![](../../../../.gitbook/assets/assets\_imagelist3\_btv\_\_1.png)                   |
+| FullText1  | ![](../../../../.gitbook/assets/display-interface-01.png) | ![](../../../../.gitbook/assets/display-interface-02.jpg) |
+| FullText2  |                    ![](../../../../.gitbook/assets/display-interface-03.png)                    |         ![](../../../../.gitbook/assets/display-interface-04.png)         |
+| ImageText1 |                    ![](../../../../.gitbook/assets/display-interface-05.png)                   |                      ![](../../../../.gitbook/assets/display-interface-06.png)                      |
+| ImageText2 |                      ![](../../../../.gitbook/assets/display-interface-07.png)                      |                    ![](../../../../.gitbook/assets/display-interface-08.png)                   |
+| ImageText3 |                 ![](../../../../.gitbook/assets/display-interface-09.png)                |     ![](../../../../.gitbook/assets/display-interface-10.png)     |
+| ImageText4 |         ![](../../../../.gitbook/assets/display-interface-11.png)         |                      ![](../../../../.gitbook/assets/display-interface-12.png)                      |
+| TextList1  |                       ![](../../../../.gitbook/assets/display-interface-13.png)                      |    ![](../../../../.gitbook/assets/display-interface-14.png)   |
+| TextList2  |                       ![](../../../../.gitbook/assets/display-interface-15.png)                      |                    ![](../../../../.gitbook/assets/display-interface-16.png)                    |
+| TextList3  |                       ![](../../../../.gitbook/assets/display-interface-17.png)                      |                       ![](../../../../.gitbook/assets/display-interface-18.png)                      |
+| TextList4  |                    ![](../../../../.gitbook/assets/display-interface-19.png)                   |                       ![](../../../../.gitbook/assets/display-interface-20.png)                      |
+| ImageList1 |                      ![](../../../../.gitbook/assets/display-interface-21.png)                      |                      ![](../../../../.gitbook/assets/display-interface-22.png)                      |
+| ImageList2 |                      ![](../../../../.gitbook/assets/display-interface-23.png)                      |                      ![](../../../../.gitbook/assets/display-interface-24.jpg)                      |
+| ImageList3 |                      ![](../../../../.gitbook/assets/display-interface-25.png)                      |                    ![](../../../../.gitbook/assets/display-interface-26.png)                   |
 
 ## Context
 
@@ -310,7 +310,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 
 #### 샘플 이미지
 
-![](../../../../.gitbook/assets/assets\_2019-11-07-10.40.57.png)
+![](../../../../.gitbook/assets/display-interface-27.png)
 
 ### FullText2
 
@@ -373,7 +373,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_fulltext2.png)
+![](../../../../.gitbook/assets/display-interface-28.png)
 
 ### ImageText1
 
@@ -467,7 +467,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_imagetext1.png)
+![](../../../../.gitbook/assets/display-interface-29.png)
 
 ### ImageText2
 
@@ -560,7 +560,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_imagetext2\_\_1.png)
+![](../../../../.gitbook/assets/display-interface-30.png)
 
 ### ImageText3
 
@@ -644,7 +644,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_imagetext3\_\_1.png)
+![](../../../../.gitbook/assets/display-interface-31.png)
 
 ### ImageText4
 
@@ -728,7 +728,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_imagetext4.png)
+![](../../../../.gitbook/assets/display-interface-32.png)
 
 ### TextList1
 
@@ -1024,7 +1024,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_textlist1.png)
+![](../../../../.gitbook/assets/display-interface-33.png)
 
 ### TextList3
 
@@ -1147,7 +1147,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_textlist3.png)
+![](../../../../.gitbook/assets/display-interface-34.png)
 
 ### TextList4
 
@@ -1256,7 +1256,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_textlist4.png)
+![](../../../../.gitbook/assets/display-interface-35.png)
 
 ### ImageList1
 
@@ -1396,7 +1396,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](<../../../../.gitbook/assets/assets\_imagelist1 (2) (2) (2) (3) (8).png>)
+![](../../../../.gitbook/assets/display-interface-36.png)
 
 ### ImageList2
 
@@ -1560,7 +1560,7 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](../../../../.gitbook/assets/assets\_imagelist2\_\_1.png)
+![](../../../../.gitbook/assets/display-interface-37.png)
 
 ### ImageList3
 
@@ -1776,4 +1776,4 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-![](<../../../../.gitbook/assets/assets\_imagelist3\_\_1 (1).png>)
+![](../../../../.gitbook/assets/display-interface-38.png)

@@ -1,6 +1,6 @@
 # 구성요소
 
-![](../../../.gitbook/assets/Diagram\_v1.4.0.001.jpeg)
+![](../../../.gitbook/assets/component-01.jpeg)
 
 ## 구성요소 목록
 

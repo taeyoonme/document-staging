@@ -20,7 +20,7 @@ description: Play 에서 전달하는 음원을 재생하기 위한 규격
 
 ## State Diagram
 
-![](<../../.gitbook/assets/assets\_image\_\_5 (2) (2) (2) (5) (1) (8).png>)
+![](../../.gitbook/assets/audioplayer-01.png)
 
 ## SDK Interface
 

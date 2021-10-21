@@ -44,10 +44,10 @@ Play 배포 대기 상태(지정한 배포일이 아직 도래하지 않은 상�
 
 1️⃣ `Developers` > `Play kit` > `관리` 페이지에서 배포 신청을 취소할 Play의 `배포취소` 버튼을 클릭합니다.
 
-![](../../.gitbook/assets/bepo\_cancel.png)
+![](../../.gitbook/assets/distribute-a-play-02.png)
 
 2️⃣ 배포 취소 확인 팝업창에서 `확인` 버튼을 클릭하면 배포 신청이 취소됩니다.
 
 3️⃣ 배포 취소가 완료되면 해당 Play는 `배포대기`에서 `심사완료` 상태로 변경되고, `배포요청` 버튼이 생성됩니다.
 
-![](<../../.gitbook/assets/assets\_ch4\_432\_c03-1-20-1-\_\_1 (12) (5) (1) (19).png>)
+![](../../.gitbook/assets/distribute-a-play-03.png)
