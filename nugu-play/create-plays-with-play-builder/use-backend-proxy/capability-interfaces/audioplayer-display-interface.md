@@ -53,7 +53,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 | Parameter           | Type   | Required | Description                                                                 |
 | ------------------- | ------ | -------- | --------------------------------------------------------------------------- |
-| type                | string | Y        | AudioPlayer template type 1) AudioPlayer.Template1 2) AudioPlayer.Template2 |
+| type                | string | Y        | <p>AudioPlayer template type</p><p> 1) AudioPlayer.Template1</p><p> 2) AudioPlayer.Template2</p> |
 | title.iconUrl       | string | N        | icon image url                                                              |
 | title.text          | string | Y        | title text                                                                  |
 | content.title       | string | Y        | content 영역의 title                                                           |
@@ -86,7 +86,7 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 
 | Parameter           | Type   | Required | Description                                                                 |
 | ------------------- | ------ | -------- | --------------------------------------------------------------------------- |
-| type                | string | Y        | AudioPlayer template type 1) AudioPlayer.Template1 2) AudioPlayer.Template2 |
+| type                | string | Y        | <p>AudioPlayer template type</p><p> 1) AudioPlayer.Template1</p><p> 2) AudioPlayer.Template2</p> |
 | title.iconUrl       | string | N        | icon image url                                                              |
 | title.text          | string | Y        | title text                                                                  |
 | content.title       | string | Y        | content 영역의 title                                                           |
