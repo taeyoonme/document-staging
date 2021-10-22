@@ -8,7 +8,7 @@ Backend proxy는 응답을 생성하기 위해 필요한 정보를 외부로부�
 개발에 대한 자세한 내용은 [외부 연동 서버\(Backend proxy\)](use-backend-proxy/)를 참고하세요.
 {% endhint %}
 
-![](../../.gitbook/assets/assets_image-3.png)
+![](../../.gitbook/assets/create-a-play-using-backend-proxy-01.png)
 
 Backend proxy는 위 그림과 같이 다음의 경우에 사용합니다.
 

@@ -20,7 +20,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## State Diagram
 
-![](../../.gitbook/assets/assets_image__4.png)
+![](../../.gitbook/assets/asr-01.png)
 
 ## SDK Interface
 
