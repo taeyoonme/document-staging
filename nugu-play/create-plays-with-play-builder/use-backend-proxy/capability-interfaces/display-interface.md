@@ -23,21 +23,21 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 
 
 다음과 같은 유형의 화면 Template을 지원합니다.
 
-|    Type    |                           NU300                           | Btv                                                       |     |
-| :--------: | :-------------------------------------------------------: | --------------------------------------------------------- | :-: |
-|  FullText1 | ![](../../../../.gitbook/assets/display-interface-01.png) | ![](../../../../.gitbook/assets/display-interface-02.jpg) |     |
-|  FullText2 | ![](../../../../.gitbook/assets/display-interface-03.png) | ![](../../../../.gitbook/assets/display-interface-04.png) |     |
-| ImageText1 | ![](../../../../.gitbook/assets/display-interface-05.png) | ![](../../../../.gitbook/assets/display-interface-06.png) |     |
-| ImageText2 | ![](../../../../.gitbook/assets/display-interface-07.png) | ![](../../../../.gitbook/assets/display-interface-08.png) |     |
-| ImageText3 | ![](../../../../.gitbook/assets/display-interface-09.png) | ![](../../../../.gitbook/assets/display-interface-10.png) |     |
-| ImageText4 | ![](../../../../.gitbook/assets/display-interface-11.png) | ![](../../../../.gitbook/assets/display-interface-12.png) |     |
-|  TextList1 | ![](../../../../.gitbook/assets/display-interface-13.png) | ![](../../../../.gitbook/assets/display-interface-14.png) |     |
-|  TextList2 | ![](../../../../.gitbook/assets/display-interface-15.png) | ![](../../../../.gitbook/assets/display-interface-16.png) |     |
-|  TextList3 | ![](../../../../.gitbook/assets/display-interface-17.png) | ![](../../../../.gitbook/assets/display-interface-18.png) |     |
-|  TextList4 | ![](../../../../.gitbook/assets/display-interface-19.png) | ![](../../../../.gitbook/assets/display-interface-20.png) |     |
-| ImageList1 | ![](../../../../.gitbook/assets/display-interface-21.png) | ![](../../../../.gitbook/assets/display-interface-22.png) |     |
-| ImageList2 | ![](../../../../.gitbook/assets/display-interface-23.png) | ![](../../../../.gitbook/assets/display-interface-24.jpg) |     |
-| ImageList3 | ![](../../../../.gitbook/assets/display-interface-25.png) | ![](../../../../.gitbook/assets/display-interface-26.png) |     |
+|    Type    |                           NU300                           | Btv                                                       |
+| :--------: | :-------------------------------------------------------: | --------------------------------------------------------- |
+|  FullText1 | ![](../../../../.gitbook/assets/display-interface-01.png) | ![](../../../../.gitbook/assets/display-interface-02.jpg) |
+|  FullText2 | ![](../../../../.gitbook/assets/display-interface-03.png) | ![](../../../../.gitbook/assets/display-interface-04.png) |
+| ImageText1 | ![](../../../../.gitbook/assets/display-interface-05.png) | ![](../../../../.gitbook/assets/display-interface-06.png) |
+| ImageText2 | ![](../../../../.gitbook/assets/display-interface-07.png) | ![](../../../../.gitbook/assets/display-interface-08.png) |
+| ImageText3 | ![](../../../../.gitbook/assets/display-interface-09.png) | ![](../../../../.gitbook/assets/display-interface-10.png) |
+| ImageText4 | ![](../../../../.gitbook/assets/display-interface-11.png) | ![](../../../../.gitbook/assets/display-interface-12.png) |
+|  TextList1 | ![](../../../../.gitbook/assets/display-interface-13.png) | ![](../../../../.gitbook/assets/display-interface-14.png) |
+|  TextList2 | ![](../../../../.gitbook/assets/display-interface-15.png) | ![](../../../../.gitbook/assets/display-interface-16.png) |
+|  TextList3 | ![](../../../../.gitbook/assets/display-interface-17.png) | ![](../../../../.gitbook/assets/display-interface-18.png) |
+|  TextList4 | ![](../../../../.gitbook/assets/display-interface-19.png) | ![](../../../../.gitbook/assets/display-interface-20.png) |
+| ImageList1 | ![](../../../../.gitbook/assets/display-interface-21.png) | ![](../../../../.gitbook/assets/display-interface-22.png) |
+| ImageList2 | ![](../../../../.gitbook/assets/display-interface-23.png) | ![](../../../../.gitbook/assets/display-interface-24.jpg) |
+| ImageList3 | ![](../../../../.gitbook/assets/display-interface-25.png) | ![](../../../../.gitbook/assets/display-interface-26.png) |
 
 ## Context
 
@@ -53,11 +53,11 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 
 }
 ```
 
-| Parameter     |  Type  |  필수 | Description                              |
-| ------------- | ------ | --- | ---------------------------------------- |
-| version       | string |  Y  | 인터페이스 버전                                 |
-| playServiceId | string |  N  | template을 전송한 Play의 play service id      |
-| token         | string |  N  | 클릭하는 template을 식별하기 위한 unique identifier |
+| Parameter     | Type   | 필수 | Description                              |
+| ------------- | ------ | -- | ---------------------------------------- |
+| version       | string | Y  | 인터페이스 버전                                 |
+| playServiceId | string | N  | template을 전송한 Play의 play service id      |
+| token         | string | N  | 클릭하는 template을 식별하기 위한 unique identifier |
 
 ## 화면 구성 요소
 
@@ -149,15 +149,15 @@ String type의 필드에 "`{{TTS}}`"라고 입력하면, Play가 응답으로 �
 }
 ```
 
-| Parameter          | Type   | 필수 | Description                                                                   |
-| ------------------ | ------ | -- | ----------------------------------------------------------------------------- |
-| contentDescription | string | N  | -                                                                             |
-| heightPixels       | long   | N  | -                                                                             |
-| size               | string | N  | <p>X\_SMALL, SMALL, MEDIUM, LARGE, X\_LARGE</p><p>화면 크기별 최적화를 위해 size 정보를 넣는 것을 권장합니다.</p> |
-| sources            | list   | Y  | -                                                                             |
-| url                | string | Y  | -                                                                             |
-| widthPixels        | long   | N  | -                                                                             |
-| heightPixels       | long   | N  | -                                                                             |
+| Parameter          | Type   | 필수 | Description                                                                              |
+| ------------------ | ------ | -- | ---------------------------------------------------------------------------------------- |
+| contentDescription | string | N  | -                                                                                        |
+| heightPixels       | long   | N  | -                                                                                        |
+| size               | string | N  | <p>X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE</p><p>화면 크기별 최적화를 위해 size 정보를 넣는 것을 권장합니다.</p> |
+| sources            | list   | Y  | -                                                                                        |
+| url                | string | Y  | -                                                                                        |
+| widthPixels        | long   | N  | -                                                                                        |
+| heightPixels       | long   | N  | -                                                                                        |
 
 Size 별 권장 사이즈는 아래의 표를 참고하세요.
 
@@ -180,9 +180,9 @@ Size 별 권장 사이즈는 아래의 표를 참고하세요.
 
 image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
 
-| parameter | type        | mandatory | description                      |
-| --------- | ----------- | --------- | -------------------------------- |
-| image     | ImageObject | N         | -                                |
+| parameter | type        | mandatory | description                                   |
+| --------- | ----------- | --------- | --------------------------------------------- |
+| image     | ImageObject | N         | -                                             |
 | color     | string      | N         | <p>hex color code</p><p>default : #000000</p> |
 | opacity   | number      | N         | <p>NU300에만 유효</p><p>default : 0.7</p>         |
 
@@ -195,11 +195,11 @@ image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
 }
 ```
 
-| Parameter | type   | 필수 | Description                                                                                                                                                                                                                                                |
-| --------- | ------ | -- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| color     | string | N  | hex color code                                                                                                                                                                                                                                             |
-| style     | json   | N  | <p>기본적으로는 상위 스타일(directive 등)을 따르며, FullText1, 2의 body text에만 적용 가능.</p><p>CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.</p><p>`text-align` : left, center, right</p><p>`opacity` : 0 \~ 1</p><p>`display` : block, inline, none</p><p>`margin` : 10px</p><p>예) `{ "text-align":"center", "display": "block"}`</p> |
-| text      | string | Y  | -                                                                                                                                                                                                                                                          |
+| Parameter | type   | 필수 | Description                                                                                                                                                                                                                                                                                                                                                  |
+| --------- | ------ | -- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| color     | string | N  | hex color code                                                                                                                                                                                                                                                                                                                                               |
+| style     | json   | N  | <p>기본적으로는 상위 스타일(directive 등)을 따르며, FullText1, 2의 body text에만 적용 가능.</p><p>CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.</p><p><code>text-align</code> : left, center, right</p><p><code>opacity</code> : 0 ~ 1</p><p><code>display</code> : block, inline, none</p><p><code>margin</code> : 10px</p><p>예) <code>{ "text-align":"center", "display": "block"}</code></p> |
+| text      | string | Y  | -                                                                                                                                                                                                                                                                                                                                                            |
 
 TextObject는 Scrollable이 명시된 경우만 스크롤이 가능합니다.
 
@@ -247,18 +247,18 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter      | Type             | 필수 | Description                                                                                                                      |
-| -------------- | ---------------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type           | string           | Y  | Display.FullText1                                                                                                                |
-| version        | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId  | string           | Y  | 현재 template을 전송하는 play service id                                                                                                |
-| token          | string           | Y  | -                                                                                                                                |
-| duration       | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title          | TitleObject      | Y  | -                                                                                                                                |
-| background     | BackgroundObject | N  | -                                                                                                                                |
-| content.header | TextObject       | N  | <p>본문 제목</p><p> - 줄바꿈 가능 ('\n')</p>                                                                                                            |
-| content.body   | TextObject       | Y  | <p>본문 내용</p><p> - 줄바꿈 가능 ('\n')</p><p> - Scrollable (스크롤이 불가능한 디바이스\[일부 Btv]에서는 최대 4줄까지만 표현)</p>                                                      |
-| content.footer | TextObject       | N  | 보조 설명                                                                                                                            |
+| Parameter      | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| -------------- | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type           | string           | Y  | Display.FullText1                                                                                                                                                                                                                                                       |
+| version        | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId  | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token          | string           | Y  | -                                                                                                                                                                                                                                                                       |
+| duration       | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title          | TitleObject      | Y  | -                                                                                                                                                                                                                                                                       |
+| background     | BackgroundObject | N  | -                                                                                                                                                                                                                                                                       |
+| content.header | TextObject       | N  | <p>본문 제목</p><p>- 줄바꿈 가능 ('\n')</p>                                                                                                                                                                                                                                      |
+| content.body   | TextObject       | Y  | <p>본문 내용</p><p>- 줄바꿈 가능 ('\n')</p><p>- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)</p>                                                                                                                                                                           |
+| content.footer | TextObject       | N  | 보조 설명                                                                                                                                                                                                                                                                   |
 
 #### Sample Code
 
@@ -332,17 +332,17 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter      | Type             | 필 | Description                                                                                                                      |
-| -------------- | ---------------- | - | -------------------------------------------------------------------------------------------------------------------------------- |
-| type           | string           | Y | Display.FullText2                                                                                                                |
-| version        | string           | Y | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId  | string           | Y | 현재 template을 전송하는 play service id                                                                                                |
-| token          | string           | Y | -                                                                                                                                |
-| duration       | string           | N | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title          | TitleObject      | Y | -                                                                                                                                |
-| background     | BackgroundObject | N | -                                                                                                                                |
-| content.body   | TextObject       | Y | <p>본문 내용</p><p> - 줄바꿈 가능 ('\n')</p><p> - 최대 4줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                               |
-| content.footer | TextObject       | N | 보조 설명                                                                                                                            |
+| Parameter      | Type             | 필 | Description                                                                                                                                                                                                                                                             |
+| -------------- | ---------------- | - | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type           | string           | Y | Display.FullText2                                                                                                                                                                                                                                                       |
+| version        | string           | Y | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId  | string           | Y | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token          | string           | Y | -                                                                                                                                                                                                                                                                       |
+| duration       | string           | N | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title          | TitleObject      | Y | -                                                                                                                                                                                                                                                                       |
+| background     | BackgroundObject | N | -                                                                                                                                                                                                                                                                       |
+| content.body   | TextObject       | Y | <p>본문 내용</p><p>- 줄바꿈 가능 ('\n')</p><p>- 최대 4줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                   |
+| content.footer | TextObject       | N | 보조 설명                                                                                                                                                                                                                                                                   |
 
 #### Sample Code
 
@@ -398,20 +398,20 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| parameter          | type             | 필수 | Description                                                                                                                      |
-| ------------------ | ---------------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type               | string           | Y  | Display.ImageText1                                                                                                               |
-| version            | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId      | string           | Y  | 현재 template을 전송하는 play service id                                                                                                |
-| token              | string           | Y  |                                                                                                                                  |
-| duration           | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title              | TitleObject      | Y  |                                                                                                                                  |
-| background         | BackgroundObject | N  |                                                                                                                                  |
-| content.image      | ImageObject      | Y  |                                                                                                                                  |
-| content.imageAlign | string           | Y  | LEFT, RIGHT                                                                                                                      |
-| content.header     | TextObject       | Y  | <p>본문 제목</p><p> - 줄바꿈 가능 ('\n')</p><p> - 최대 3줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                               |
-| content.body       | TextObject       | N  | 본문 내용                                                                                                                            |
-| content.footer     | TextObject       | N  | <p>보조 설명</p><p> - 줄바꿈 가능 ('\n')</p><p> - 최대 2줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                               |
+| parameter          | type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| ------------------ | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type               | string           | Y  | Display.ImageText1                                                                                                                                                                                                                                                      |
+| version            | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId      | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token              | string           | Y  |                                                                                                                                                                                                                                                                         |
+| duration           | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title              | TitleObject      | Y  |                                                                                                                                                                                                                                                                         |
+| background         | BackgroundObject | N  |                                                                                                                                                                                                                                                                         |
+| content.image      | ImageObject      | Y  |                                                                                                                                                                                                                                                                         |
+| content.imageAlign | string           | Y  | LEFT, RIGHT                                                                                                                                                                                                                                                             |
+| content.header     | TextObject       | Y  | <p>본문 제목</p><p>- 줄바꿈 가능 ('\n')</p><p>- 최대 3줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                   |
+| content.body       | TextObject       | N  | 본문 내용                                                                                                                                                                                                                                                                   |
+| content.footer     | TextObject       | N  | <p>보조 설명</p><p>- 줄바꿈 가능 ('\n')</p><p>- 최대 2줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                   |
 
 #### Sample Code
 
@@ -491,20 +491,20 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter          | Type             | 필수 | Description                                                                                                                      |
-| ------------------ | ---------------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type               | string           | Y  | Display.ImageText2                                                                                                               |
-| version            | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId      | string           | Y  | 현재 template을 전송하는 play service id                                                                                                |
-| token              | string           | Y  |                                                                                                                                  |
-| duration           | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title              | TitleObject      | Y  |                                                                                                                                  |
-| background         | BackgroundObject | N  |                                                                                                                                  |
-| content.image      | ImageObject      | Y  |                                                                                                                                  |
-| content.imageAlign | string           | Y  | LEFT, RIGHT                                                                                                                      |
-| content.header     | TextObject       | N  | 본문 제목 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                 |
-| content.body       | TextObject       | Y  | <p>본문 내용</p><p> - 줄바꿈 가능 ('\n')</p><p> - 최대 6줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                               |
-| content.footer     | TextObject       | N  | <p>보조 설명</p><p> - 줄바꿈 가능 ('\n')</p><p> - 최대 2줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                               |
+| Parameter          | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| ------------------ | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type               | string           | Y  | Display.ImageText2                                                                                                                                                                                                                                                      |
+| version            | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId      | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token              | string           | Y  |                                                                                                                                                                                                                                                                         |
+| duration           | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title              | TitleObject      | Y  |                                                                                                                                                                                                                                                                         |
+| background         | BackgroundObject | N  |                                                                                                                                                                                                                                                                         |
+| content.image      | ImageObject      | Y  |                                                                                                                                                                                                                                                                         |
+| content.imageAlign | string           | Y  | LEFT, RIGHT                                                                                                                                                                                                                                                             |
+| content.header     | TextObject       | N  | 본문 제목 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                                        |
+| content.body       | TextObject       | Y  | <p>본문 내용</p><p>- 줄바꿈 가능 ('\n')</p><p>- 최대 6줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                   |
+| content.footer     | TextObject       | N  | <p>보조 설명</p><p>- 줄바꿈 가능 ('\n')</p><p>- 최대 2줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                   |
 
 #### Sample Code
 
@@ -584,19 +584,19 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter      | Type             | 필수 | Description                                                                                                                      |
-| -------------- | ---------------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type           | string           | Y  | Display.ImageText3                                                                                                               |
-| version        | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId  | string           | Y  | 현재 template을 전송하는 play service id                                                                                                |
-| token          | string           | Y  |                                                                                                                                  |
-| duration       | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title          | TitleObject      | Y  |                                                                                                                                  |
-| background     | BackgroundObject | N  |                                                                                                                                  |
-| content.image  | ImageObject      | Y  |                                                                                                                                  |
-| content.header | TextObject       | Y  | 본문 제목 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                 |
-| content.body   | TextObject       | N  | <p>본문 내용</p><p> - 줄바꿈 가능 ('\n')</p><p> - Scrollable (스크롤이 불가능한 디바이스\[일부 Btv]에서는 최대 4줄까지만 표현)</p>                                                      |
-| content.footer | TextObject       | N  | <p>보조설명</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                |
+| Parameter      | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| -------------- | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type           | string           | Y  | Display.ImageText3                                                                                                                                                                                                                                                      |
+| version        | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId  | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token          | string           | Y  |                                                                                                                                                                                                                                                                         |
+| duration       | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title          | TitleObject      | Y  |                                                                                                                                                                                                                                                                         |
+| background     | BackgroundObject | N  |                                                                                                                                                                                                                                                                         |
+| content.image  | ImageObject      | Y  |                                                                                                                                                                                                                                                                         |
+| content.header | TextObject       | Y  | 본문 제목 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                                        |
+| content.body   | TextObject       | N  | <p>본문 내용</p><p>- 줄바꿈 가능 ('\n')</p><p>- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)</p>                                                                                                                                                                           |
+| content.footer | TextObject       | N  | <p>보조설명</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                          |
 
 #### Sample Code
 
@@ -668,19 +668,19 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter      | Type             | 필수 | Description                                                                                                                      |
-| -------------- | ---------------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type           | string           | Y  | Display.ImageText4                                                                                                               |
-| version        | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId  | string           | Y  | 현재 template을 전송하는 play service id                                                                                                |
-| token          | string           | Y  |                                                                                                                                  |
-| duration       | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title          | TitleObject      | Y  |                                                                                                                                  |
-| background     | BackgroundObject | N  |                                                                                                                                  |
-| content.image  | ImageObject      | Y  |                                                                                                                                  |
-| content.header | TextObject       | Y  | <p>본문 제목</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                               |
-| content.body   | TextObject       | Y  | <p>본문 내용</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                               |
-| content.footer | TextObject       | N  | <p>보조설명</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                |
+| Parameter      | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| -------------- | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type           | string           | Y  | Display.ImageText4                                                                                                                                                                                                                                                      |
+| version        | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId  | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token          | string           | Y  |                                                                                                                                                                                                                                                                         |
+| duration       | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title          | TitleObject      | Y  |                                                                                                                                                                                                                                                                         |
+| background     | BackgroundObject | N  |                                                                                                                                                                                                                                                                         |
+| content.image  | ImageObject      | Y  |                                                                                                                                                                                                                                                                         |
+| content.header | TextObject       | Y  | <p>본문 제목</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| content.body   | TextObject       | Y  | <p>본문 내용</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| content.footer | TextObject       | N  | <p>보조설명</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                          |
 
 #### Sample Code
 
@@ -761,21 +761,21 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter        | Type             | 필 | Description                                                                                                                      |
-| ---------------- | ---------------- | - | -------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y | Display.TextList1                                                                                                                |
-| version          | string           | Y | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId    | string           | Y | 현재 template을 전송하는 play service id                                                                                                |
-| token            | string           | Y |                                                                                                                                  |
-| duration         | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title            | TitleObject      | Y | -                                                                                                                                |
-| background       | BackgroundObject | N | -                                                                                                                                |
-| badgeNumber      | bool             | N | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p> default - false</p>                                       |
-| listItems        | list             | Y | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                |
-| listItems.token  | string           | Y | 클릭은 한 item 전체에서 가능                                                                                                               |
-| listItems.header | TextObject       | Y | <p>본문 제목</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                               |
-| listItems.body   | TextObject       | Y | <p>본문 내용</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                               |
-| listItems.footer | TextObject       | N | <p>보조설명</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                |
+| Parameter        | Type             | 필 | Description                                                                                                                                                                                                                                                             |
+| ---------------- | ---------------- | - | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | string           | Y | Display.TextList1                                                                                                                                                                                                                                                       |
+| version          | string           | Y | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId    | string           | Y | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token            | string           | Y |                                                                                                                                                                                                                                                                         |
+| duration         | string           | N | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title            | TitleObject      | Y | -                                                                                                                                                                                                                                                                       |
+| background       | BackgroundObject | N | -                                                                                                                                                                                                                                                                       |
+| badgeNumber      | bool             | N | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p>default - false</p>                                                                                                                                                                 |
+| listItems        | list             | Y | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
+| listItems.token  | string           | Y | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
+| listItems.header | TextObject       | Y | <p>본문 제목</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| listItems.body   | TextObject       | Y | <p>본문 내용</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| listItems.footer | TextObject       | N | <p>보조설명</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                          |
 
 #### Sample Code
 
@@ -895,22 +895,22 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter        | Type             | 필수 | Description                                                                                                                      |
-| ---------------- | ---------------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y  | Display.TextList2                                                                                                                |
-| version          | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId    | string           | Y  | 현재 template을 전송하는 play service id                                                                                                |
-| token            | string           | Y  | -                                                                                                                                |
-| duration         | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title            | TitleObject      | Y  |                                                                                                                                  |
-| background       | BackgroundObject | N  | -                                                                                                                                |
-| badgeNumber      | bool             | N  | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p>default - false</p>                                       |
-| listItems        | list             | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                |
-| listItems.token  | string           | Y  | 클릭은 한 item 전체에서 가능                                                                                                               |
-| listItems.image  | ImageObject      | Y  | -                                                                                                                                |
-| listItems.header | TextObject       | Y  | </p><p>본문 제목</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                               |
-| listItems.body   | TextObject       | Y  | </p><p>본문 내용</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                               |
-| listItems.footer | TextObject       | N  | </p><p>보조설명</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                |
+| Parameter        | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| ---------------- | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | string           | Y  | Display.TextList2                                                                                                                                                                                                                                                       |
+| version          | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId    | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token            | string           | Y  | -                                                                                                                                                                                                                                                                       |
+| duration         | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title            | TitleObject      | Y  |                                                                                                                                                                                                                                                                         |
+| background       | BackgroundObject | N  | -                                                                                                                                                                                                                                                                       |
+| badgeNumber      | bool             | N  | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p>default - false</p>                                                                                                                                                                 |
+| listItems        | list             | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
+| listItems.token  | string           | Y  | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
+| listItems.image  | ImageObject      | Y  | -                                                                                                                                                                                                                                                                       |
+| listItems.header | TextObject       | Y  | <p>본문 제목</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| listItems.body   | TextObject       | Y  | <p>본문 내용</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| listItems.footer | TextObject       | N  | <p>보조설명</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                          |
 
 #### Sample Code
 
@@ -1060,23 +1060,23 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter        | Type                | 필수 | Description                                                                                                                      |
-| ---------------- | ------------------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string              | Y  | Display.TextList3                                                                                                                |
-| version          | string              | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId    | string              | Y  | 현재 template을 전송하는 play service id                                                                                                |
-| token            | string              | Y  |                                                                                                                                  |
-| duration         | string              | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title            | TitleObject         | Y  |                                                                                                                                  |
-| background       | BackgroundObject    | N  |                                                                                                                                  |
-| badgeNumber      | bool                | N  | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p> default - false</p>                                       |
-| listItems        | list                | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                |
-| listItems.token  | string              | Y  | 클릭은 한 item 전체에서 가능                                                                                                               |
-| listItems.image  | ImageObject         | N  |                                                                                                                                  |
-| listItems.header | TextObject          | Y  | <p>본문 제목</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                               |
-| listItems.body   | array of TextObject | Y  | <p>본문 내용</p><p> - 줄바꿈 허용 / 최대 4줄 - footer 정의 시 3줄 제한 (footer객체는 빈객체({})로도 정의가 되어 있으면 3줄로 제한됨)</p>                                              |
-| listItems.footer | TextObject          | N  | <p>보조설명</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                |
-| caption          | TextObject          | N  | <p>전체 리스트 아이템들에 대한 보조설명</p><p> - 텍스트 길이 : 최대 2줄(단말에 따라 1줄)</p>                                                                                 |
+| Parameter        | Type                | 필수 | Description                                                                                                                                                                                                                                                             |
+| ---------------- | ------------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | string              | Y  | Display.TextList3                                                                                                                                                                                                                                                       |
+| version          | string              | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId    | string              | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token            | string              | Y  |                                                                                                                                                                                                                                                                         |
+| duration         | string              | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title            | TitleObject         | Y  |                                                                                                                                                                                                                                                                         |
+| background       | BackgroundObject    | N  |                                                                                                                                                                                                                                                                         |
+| badgeNumber      | bool                | N  | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p>default - false</p>                                                                                                                                                                 |
+| listItems        | list                | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
+| listItems.token  | string              | Y  | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
+| listItems.image  | ImageObject         | N  |                                                                                                                                                                                                                                                                         |
+| listItems.header | TextObject          | Y  | <p>본문 제목</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| listItems.body   | array of TextObject | Y  | <p>본문 내용</p><p>- 줄바꿈 허용 / 최대 4줄 - footer 정의 시 3줄 제한 (footer객체는 빈객체({})로도 정의가 되어 있으면 3줄로 제한됨)</p>                                                                                                                                                                        |
+| listItems.footer | TextObject          | N  | <p>보조설명</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                          |
+| caption          | TextObject          | N  | <p>전체 리스트 아이템들에 대한 보조설명</p><p>- 텍스트 길이 : 최대 2줄(단말에 따라 1줄)</p>                                                                                                                                                                                                           |
 
 #### Sample Code
 
@@ -1171,19 +1171,19 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| parameter        | type                | mandatory | description                                                                                                                      |
-| ---------------- | ------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string              | Y         | Display.TextList4                                                                                                                |
-| version          | string              | Y         | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId    | string              | Y         | 현재 template을 전송하는 play service id                                                                                                |
-| token            | string              | Y         | -                                                                                                                                |
-| duration         | string              | N         | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title            | TitleObject         | Y         | -                                                                                                                                |
-| background       | BackgroundObject    | N         | -                                                                                                                                |
-| listItems        | list                | Y         | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                |
-| listItems.header | TextObject          | Y         | <p>본문 제목</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                               |
-| listItems.body   | array of TextObject | Y         | <p>List 아이템의 본문 내용</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                     |
-| listItems.button | ButtonObject        | N         | <p>List 아이템의 버튼</p><p> - body가 2줄인 경우에 최적화 되어 있음</p>                                                                                           |
+| parameter        | type                | mandatory | description                                                                                                                                                                                                                                                             |
+| ---------------- | ------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | string              | Y         | Display.TextList4                                                                                                                                                                                                                                                       |
+| version          | string              | Y         | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId    | string              | Y         | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token            | string              | Y         | -                                                                                                                                                                                                                                                                       |
+| duration         | string              | N         | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title            | TitleObject         | Y         | -                                                                                                                                                                                                                                                                       |
+| background       | BackgroundObject    | N         | -                                                                                                                                                                                                                                                                       |
+| listItems        | list                | Y         | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
+| listItems.header | TextObject          | Y         | <p>본문 제목</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| listItems.body   | array of TextObject | Y         | <p>List 아이템의 본문 내용</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                               |
+| listItems.button | ButtonObject        | N         | <p>List 아이템의 버튼</p><p>- body가 2줄인 경우에 최적화 되어 있음</p>                                                                                                                                                                                                                     |
 
 #### Sample Code
 
@@ -1289,22 +1289,22 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter        | Type             | 필수 | Description                                                                                                                                                                        |
-| ---------------- | ---------------- | -- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y  | Display.ImageList1                                                                                                                                                                 |
-| version          | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                 |
-| playServiceId    | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                  |
-| token            | string           | Y  | -                                                                                                                                                                                  |
-| duration        | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title            | TitleObject      | Y  | -                                                                                                                                                                                  |
-| background       | BackgroundObject | N  | -                                                                                                                                                                                  |
-| badgeNumber      | bool             | N  | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p>default - false</p>                                                                                         |
-| badgeNumberStyle | json             | N  | <p>아래와 같은 Json으로 badge style 정의</p><p>`{"background": "#f0f", "color": "red", "border-radius": "10px"}`</p><p> - background : Container의 color</p><p> - color : Badge font color</p><p> - border-radius : radius</p> |
-| listItems        | list             | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                  |
-| listItems.token  | string           | Y  | 클릭은 한 item 전체에서 가능                                                                                                                                                                 |
-| listItems.image  | ImageObject      | Y  | -                                                                                                                                                                                  |
-| listItems.header | TextObject       | Y  | <p>본문 제목</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                 |
-| listItems.footer | TextObject       | N  | <p>보조설명</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                  |
+| Parameter        | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| ---------------- | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | string           | Y  | Display.ImageList1                                                                                                                                                                                                                                                      |
+| version          | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId    | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token            | string           | Y  | -                                                                                                                                                                                                                                                                       |
+| duration         | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title            | TitleObject      | Y  | -                                                                                                                                                                                                                                                                       |
+| background       | BackgroundObject | N  | -                                                                                                                                                                                                                                                                       |
+| badgeNumber      | bool             | N  | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p>default - false</p>                                                                                                                                                                 |
+| badgeNumberStyle | json             | N  | <p>아래와 같은 Json으로 badge style 정의</p><p><code>{"background": "#f0f", "color": "red", "border-radius": "10px"}</code></p><p>- background : Container의 color</p><p>- color : Badge font color</p><p>- border-radius : radius</p>                                            |
+| listItems        | list             | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
+| listItems.token  | string           | Y  | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
+| listItems.image  | ImageObject      | Y  | -                                                                                                                                                                                                                                                                       |
+| listItems.header | TextObject       | Y  | <p>본문 제목</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| listItems.footer | TextObject       | N  | <p>보조설명</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                          |
 
 #### Sample Code
 
@@ -1436,23 +1436,23 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter        | Type             | 필수 | Description                                                                                                                                                                        |
-| ---------------- | ---------------- | -- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y  | Display.ImageList2                                                                                                                                                                 |
-| version          | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                 |
-| playServiceId    | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                  |
-| token            | string           | Y  | -                                                                                                                                                                                  |
-| duration         | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title            | TitleObject      | Y  | -                                                                                                                                                                                  |
-| background       | BackgroundObject | N  | -                                                                                                                                                                                  |
-| badgeNumber      | bool             | N  | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p>default - false</p>                                                                                         |
-| badgeNumberStyle | json             | N  | <p>아래와 같은 Json으로 badge style 정의</p><p>`{"background": "#f0f", "color": "red", "border-radius": "10px"}`</p><p> - background : Container의 color</p><p> - color : Badge font color</p><p> - border-radius : radius</p> |
-| listItems        | list             | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                  |
-| listItems.token  | string           | Y  | 클릭은 한 item 전체에서 가능                                                                                                                                                                 |
-| listItems.image  | ImageObject      | Y  | -                                                                                                                                                                                  |
-| listItems.icon   | ImageObject      | N  | 상태 아이콘                                                                                                                                                                             |
-| listItems.header | TextObject       | Y  | <p>본문 제목</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                 |
-| listItems.footer | TextObject       | N  | <p>보조설명</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                  |
+| Parameter        | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| ---------------- | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | string           | Y  | Display.ImageList2                                                                                                                                                                                                                                                      |
+| version          | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId    | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token            | string           | Y  | -                                                                                                                                                                                                                                                                       |
+| duration         | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title            | TitleObject      | Y  | -                                                                                                                                                                                                                                                                       |
+| background       | BackgroundObject | N  | -                                                                                                                                                                                                                                                                       |
+| badgeNumber      | bool             | N  | <p>사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)</p><p>default - false</p>                                                                                                                                                                 |
+| badgeNumberStyle | json             | N  | <p>아래와 같은 Json으로 badge style 정의</p><p><code>{"background": "#f0f", "color": "red", "border-radius": "10px"}</code></p><p>- background : Container의 color</p><p>- color : Badge font color</p><p>- border-radius : radius</p>                                            |
+| listItems        | list             | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
+| listItems.token  | string           | Y  | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
+| listItems.image  | ImageObject      | Y  | -                                                                                                                                                                                                                                                                       |
+| listItems.icon   | ImageObject      | N  | 상태 아이콘                                                                                                                                                                                                                                                                  |
+| listItems.header | TextObject       | Y  | <p>본문 제목</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                         |
+| listItems.footer | TextObject       | N  | <p>보조설명</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                          |
 
 #### Sample Code
 
@@ -1585,20 +1585,20 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 }
 ```
 
-| Parameter        | Type             | 필수 | Description                                                                                                                      |
-| ---------------- | ---------------- | -- | -------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y  | Display.ImageList3                                                                                                               |
-| version          | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                               |
-| playServiceId    | string           | Y  | 현재 template을 전송하는 play service id                                                                                                |
-| token            | string           | Y  |                                                                                                                                  |
-| duration         | string           | N  | <p>**SHORT(default)**, **MID**, **LONG**, **LONGEST**</p><p> - **SHORT** : 7sec</p><p> - **MID** : 15sec</p><p> - **LONG** : 30sec</p><p> - **LONGEST** : 10min</p> |
-| title            | TitleObject      | Y  |                                                                                                                                  |
-| background       | BackgroundObject | N  |                                                                                                                                  |
-| listItems        | list             | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                |
-| listItems.token  | string           | Y  | 클릭 시에 전달될 토                                                                                                                      |
-| listItems.header | TextObject       | Y  | <p>List 제목</p><p> - 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                              |
-| listItems.image  | ImageObject      | Y  | <p>List 이미지</p><p> - 리스트 제목 좌측에 위치하는 이미지</p>                                                                                                   |
-| listItems.icon   | TextObject       | N  | <p>icon 이미지</p><p> - 리스트 제목 우측에 위치하는 new 등의 배지</p>                                                                                             |
+| Parameter        | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
+| ---------------- | ---------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| type             | string           | Y  | Display.ImageList3                                                                                                                                                                                                                                                      |
+| version          | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
+| playServiceId    | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
+| token            | string           | Y  |                                                                                                                                                                                                                                                                         |
+| duration         | string           | N  | <p><strong>SHORT(default)</strong>, <strong>MID</strong>, <strong>LONG</strong>, <strong>LONGEST</strong></p><p>- <strong>SHORT</strong> : 7sec</p><p>- <strong>MID</strong> : 15sec</p><p>- <strong>LONG</strong> : 30sec</p><p>- <strong>LONGEST</strong> : 10min</p> |
+| title            | TitleObject      | Y  |                                                                                                                                                                                                                                                                         |
+| background       | BackgroundObject | N  |                                                                                                                                                                                                                                                                         |
+| listItems        | list             | Y  | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
+| listItems.token  | string           | Y  | 클릭 시에 전달될 토                                                                                                                                                                                                                                                             |
+| listItems.header | TextObject       | Y  | <p>List 제목</p><p>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)</p>                                                                                                                                                                                                                       |
+| listItems.image  | ImageObject      | Y  | <p>List 이미지</p><p>- 리스트 제목 좌측에 위치하는 이미지</p>                                                                                                                                                                                                                             |
+| listItems.icon   | TextObject       | N  | <p>icon 이미지</p><p>- 리스트 제목 우측에 위치하는 new 등의 배지</p>                                                                                                                                                                                                                       |
 
 #### Sample Code
 
