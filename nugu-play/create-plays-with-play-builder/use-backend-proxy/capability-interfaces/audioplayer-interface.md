@@ -29,11 +29,11 @@ Play는 스피커의 오디오 플레이어의 상태와 사용자의 발화에 
 
 | 상태(State) | 설명                                                                                                                                                          |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IDLE      | 최초 전원이 켜지면 IDLE 상태로 진입합니다. 이후 재생이 한번이라도 시작되면 전원이 꺼질 때까지 IDLE 상태가 될 수 없습니다.                                                                                  |
+| IDLE      | <p>최초 전원이 켜지면 IDLE 상태로 진입합니다.</p><p>이후 재생이 한번이라도 시작되면 전원이 꺼질 때까지 IDLE 상태가 될 수 없습니다.</p>                                                                                  |
 | PLAYING   | AudioPlayer에서 재생 중인 상태입니다.                                                                                                                                  |
 | STOPPED   | Stop Directive를 받아 중지된 상태입니다.                                                                                                                               |
-| PAUSED    | PAUSED 상태가 되는 경우는 다음 두 경우입니다. 1. Pause Directive를 받아 일시 정지 상태 2. 오디오 재생 중에 사용자 발화가 들어오면 자동으로 PAUSED상태가 되고, 해당 발화의 처리가 끝나고 오디오 재생이 이어지는 경우에는 PLAYING 상태로 돌아감 |
-| FINISHED  | 정상적으로 끝까지 재생을 마치면 FINISHED 상태가 됩니다. 만약, 다음 곡이 버퍼되어 있으면 FINISHED 상태가 되었다가 바로 PLAYING상태로 바뀝니다.                                                                |
+| PAUSED    | <p>PAUSED 상태가 되는 경우는 다음 두 경우입니다.</p><p>1. Pause Directive를 받아 일시 정지 상태</p><p>2. 오디오 재생 중에 사용자 발화가 들어오면 자동으로 PAUSED상태가 되고, 해당 발화의 처리가 끝나고 오디오 재생이 이어지는 경우에는 PLAYING 상태로 돌아감</p> |
+| FINISHED  | <p>정상적으로 끝까지 재생을 마치면 FINISHED 상태가 됩니다.</p><p>만약, 다음 곡이 버퍼되어 있으면 FINISHED 상태가 되었다가 바로 PLAYING상태로 바뀝니다.</p>                                                                |
 
 ## Built-in Intents
 
@@ -108,10 +108,10 @@ Play Builder에서 Action을 정의하지 않는 경우 Fallback Action에 등�
 | parameter                            | type   | mandatory | description                                                                                                                 |
 | ------------------------------------ | ------ | --------- | --------------------------------------------------------------------------------------------------------------------------- |
 | url                                  | string | Y         | 오디오 콘텐츠의 URL을 입력합니다.                                                                                                        |
-| offsetInMilliseconds                 | long   | Y         | 재생을 어느 offset(위치)에서 시작할지 설정합니다. 값이 '0'이면 처음부터 재생합니다.                                                                        |
+| offsetInMilliseconds                 | long   | Y         | <p>재생을 어느 offset(위치)에서 시작할지 설정합니다.</p><p>값이 '0'이면 처음부터 재생합니다.</p>                                                                        |
 | progressReportDelayInMilliseconds    | long   | N         | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed 이벤트가 발생합니다. (offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.) |
 | progressReportIntervalInMilliseconds | long   | N         | 재생을 시작해서 지정된 주기마다 progressReportIntervalElapsed 이벤트가 발생합니다. (offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.)   |
-| token                                | string | Y         | 현재 stream을 나타내는 token입니다. token은 재생할 오디오 콘텐츠 별로 고유해야 합니다.                                                                   |
+| token                                | string | Y         | <p>현재 stream을 나타내는 token입니다.</p><p>token은 재생할 오디오 콘텐츠 별로 고유해야 합니다.</p>                                                                   |
 | expectedPreviousToken                | string | N         | 이전 stream을 나타내는 token입니다.                                                                                                   |
 | metadata                             | object | N         | reserved                                                                                                                    |
 
@@ -221,11 +221,11 @@ Stop Directive는 전송하지 않아도 되지만, 재생 중인 경우는 다�
 | ----------------------------------------- | ------ | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | token                                     | string | Y         | 재생에 실패한 stream의 token입니다.                                                                                                                                                                                                                                        |
 | offsetInMilliseconds                      | long   | Y         | PlaybackFailed를 보낼 때 현재 재생 중인 stream의 offset 값입니다.                                                                                                                                                                                                               |
-| error.type                                | string | Y         | 에러 유형을 표시합니다. MEDIA\_ERROR\_UNKNOWN: 알 수 없는 오류 MEDIA\_ERROR\_INVALID\_REQUEST: 서버가 잘못된 요청으로 인식 MEDIA\_ERROR\_SERVICE\_UNAVAILABLE: 서비스에 연결할 수 없음 MEDIA\_ERROR\_INTERNAL\_SERVER\_ERROR: 서버가 요청을 수락했으나 처리할 수 없음 MEDIA\_ERROR\_INTERNAL\_DEVICE\_ERROR: 디바이스 내부 오류 |
+| error.type                                | string | Y         | <p>에러 유형을 표시합니다.</p><p>MEDIA\_ERROR\_UNKNOWN: 알 수 없는 오류</p><p>MEDIA\_ERROR\_INVALID\_REQUEST: 서버가 잘못된 요청으로 인식</p><p>MEDIA\_ERROR\_SERVICE\_UNAVAILABLE: 서비스에 연결할 수 없음</p><p>MEDIA\_ERROR\_INTERNAL\_SERVER\_ERROR: 서버가 요청을 수락했으나 처리할 수 없음</p><p>MEDIA\_ERROR\_INTERNAL\_DEVICE\_ERROR: 디바이스 내부 오류</p> |
 | error.message                             | string | Y         | 발생한 에러에 대해 자세히 설명합니다.                                                                                                                                                                                                                                            |
 | currentPlaybackState.token                | string | Y         | 현재 재생 중인 stream의 token으로 위에 있는 token과 다를 수 있습니다.                                                                                                                                                                                                                 |
 | currentPlaybackState.offsetInMilliseconds | long   | Y         | 에러가 발생했을 때 현재 재생 중인 stream의 offset 값입니다.                                                                                                                                                                                                                         |
-| currentPlaybackState.playActivity         | string | Y         | Player의 상태를 나타냅니다. PLAYING, PAUSED, FINISHED, BUFFER\_UNDERRUN, IDLE                                                                                                                                                                                             |
+| currentPlaybackState.playActivity         | string | Y         | <p>Player의 상태를 나타냅니다.</p><p>PLAYING, PAUSED, FINISHED, BUFFER\_UNDERRUN, IDLE</p>                                                                                                                                                                                             |
 
 #### ProgressReportDelayElapsed
 

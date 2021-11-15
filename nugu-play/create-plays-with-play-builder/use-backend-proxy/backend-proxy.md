@@ -20,8 +20,8 @@ Backend proxy API 규격은 다음과 같은 정보를 Backend proxy 서버로 �
 
 | 정보         | 설명                                                                                                                                                                                                                                                                             |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Action 이름  | Backend proxy에서 처리해야 하는 요청을 구분하는 데 사용됩니다. 어떠한 Action이 Backend proxy를 호출했는지 확인할 수 있습니다.                                                                                                                                                                                         |
-| Parameters | Play에서 정의된 Parameter들이 전달됩니다. Utterance Parameter에는 Play 사용자의 실제 발화에 담긴 Entity 혹은 그 Entity가 정규화된 값이 "value"로 전달됩니다. Backend Parameter는 "value"를 담아서 Play로 전달하게 될 Parameter이며 value는 "null"로 전달됩니다. Utterance/Backend Parameter를 구분할 수 없으므로, Play에서 어떻게 정의를 했는지 파악한 후 구현해야 합니다. |
+| Action 이름  | <p>Backend proxy에서 처리해야 하는 요청을 구분하는 데 사용됩니다.</p><p>어떠한 Action이 Backend proxy를 호출했는지 확인할 수 있습니다.</p>                                                                                                                                                                                         |
+| Parameters | <p>Play에서 정의된 Parameter들이 전달됩니다.</p><p>Utterance Parameter에는 Play 사용자의 실제 발화에 담긴 Entity 혹은 그 Entity가 정규화된 값이 "value"로 전달됩니다.</p><p>Backend Parameter는 "value"를 담아서 Play로 전달하게 될 Parameter이며 value는 "null"로 전달됩니다.</p><p>Utterance/Backend Parameter를 구분할 수 없으므로, Play에서 어떻게 정의를 했는지 파악한 후 구현해야 합니다.</p> |
 | Context 정보 | 사용자 식별 token, 디바이스 상태 정보 등이 전달됩니다.                                                                                                                                                                                                                                             |
 | Event 정보   | 디바이스에서 발생한 Event 정보                                                                                                                                                                                                                                                            |
 
@@ -51,9 +51,9 @@ NUGU 플랫폼에서 Play Builder에 설정된 정보로부터 action.parameters
 
 | 필드명   | 생성 규칙                                                                                                                                                                    |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| KEY   | Play Builder의 "응답에 필요한 정보 가져오기" 화면에서 다음의 두 위치에 설정된 모든 파라미터가 포함되어야 합니다. Utterance Parameter의 Parameter Name Backend Parameter의 Parameter Name                             |
-| type  | Utterance Parameter에만 적용되며, Play Builder의 Entity Mapping에 설정된 값 중 ":" 앞의 값만 전송합니다. Backend Parameter의 경우에는 Entity Mapping을 설정하지 않기 때문에 이 필드는 사용되지 않습니다.                  |
-| value | 실제 해당 파라미터에 할당된 값을 전송합니다. Utterance Parameter의 경우 필수가 체크되지 않은 파라미터는 값이 있을 수도 있고 없을 수도 있습니다. Backend Parameter의 경우에도 Backend proxy가 몇 번 호출되느냐에 따라 값이 있을 수도 있고 없을 수도 있습니다. |
+| KEY   | <p>Play Builder의 "응답에 필요한 정보 가져오기" 화면에서 다음의 두 위치에 설정된 모든 파라미터가 포함되어야 합니다.</p><p> Utterance Parameter의 Parameter Name</p><p> Backend Parameter의 Parameter Name</p>                             |
+| type  | <p>Utterance Parameter에만 적용되며, Play Builder의 Entity Mapping에 설정된 값 중 ":" 앞의 값만 전송합니다.</p><p>Backend Parameter의 경우에는 Entity Mapping을 설정하지 않기 때문에 이 필드는 사용되지 않습니다.</p>                  |
+| value | <p>실제 해당 파라미터에 할당된 값을 전송합니다.</p><p>Utterance Parameter의 경우 필수가 체크되지 않은 파라미터는 값이 있을 수도 있고 없을 수도 있습니다.</p><p>Backend Parameter의 경우에도 Backend proxy가 몇 번 호출되느냐에 따라 값이 있을 수도 있고 없을 수도 있습니다.</p> |
 
 예를 들어 설명하면 아래와 같습니다.
 

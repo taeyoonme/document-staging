@@ -66,7 +66,7 @@ Authorization: token TOKEN_STRING
 | version | string | Y | Backend proxy API 버전을 표시합니다. |
 | action | json |  |  |
 | action.actionName | string | Y | 현재 요청하는 Action의 이름입니다. |
-| action.parameters | string | Y | Action에서 설정된 파라미터로 Play Builder에서 설정한 내용을 포함합니다.  \(단, 값이 null인 경우 요청에서 제외됩니다.   요청에서 생략되었더라도 Backend parameter를 응답 값으로 포함해야 합니다.\)     KEY - Play Builder에서 Action 내에 정의한 parameter 이름    type - 사용자 발화에서 분석된 Entity인 경우 Play Builder에서 설정한 Entity의 타입  value - 파라미터의 값으로 string 타입 |
+| action.parameters | string | Y | <p>Action에서 설정된 파라미터로 Play Builder에서 설정한 내용을 포함합니다.</p><p> \(단, 값이 null인 경우 요청에서 제외됩니다. 요청에서 생략되었더라도 Backend parameter를 응답 값으로 포함해야 합니다.\)</p><p>     KEY - Play Builder에서 Action 내에 정의한 parameter 이름</p><p>    type - 사용자 발화에서 분석된 Entity인 경우 Play Builder에서 설정한 Entity의 타입</p><p>  value - 파라미터의 값으로 string 타입</p> |
 | event | json | Y |  |
 | event.type | string | Y | 디바이스에서 발생한 event의 종류를 나타내며, 이 값에 따라 event의 데이터가 달라집니다. \(Capability Interfaces 참조\) |
 | context | json | Y |  |
@@ -100,9 +100,9 @@ AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
 
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
-| playerActivity | string | Y | 스피커의 오디오 플레이어 상태값을 나타냅니다. **IDLE**, **PLAYING**, **PAUSED**, **STOPPED**, **FINISHED**, **BUFFER\_UNDERRUN** |
-| token | string | N | 현재 재생 중인 곡의 token 값입니다. AudioPlayer.Play Directive 전송 시 스트리밍 URL과 함께 전송되는 token 값 재생 중인 곡이 있는 경우에만 token이 존재 |
-| offsetInMilliseconds | long | Y | 현재 재생 중인 위치 \(msec\)를 나타냅니다. 재생 중인 곡이 없을 경우 기본 값은 0 |
+| playerActivity | string | Y | <p>스피커의 오디오 플레이어 상태값을 나타냅니다.</p><p>**IDLE**, **PLAYING**, **PAUSED**, **STOPPED**, **FINISHED**, **BUFFER\_UNDERRUN**</p> |
+| token | string | N | <p>현재 재생 중인 곡의 token 값입니다.</p><p>AudioPlayer.Play Directive 전송 시 스트리밍 URL과 함께 전송되는 token 값 재생 중인 곡이 있는 경우에만 token이 존재</p> |
+| offsetInMilliseconds | long | Y | <p>현재 재생 중인 위치 \(msec\)를 나타냅니다.</p><p>재생 중인 곡이 없을 경우 기본 값은 0</p> |
 
 ## Response Sample
 
@@ -142,9 +142,9 @@ AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
 | parameter | type | mandatory | description |
 | :--- | :--- | :--- | :--- |
 | version | string | Y | Backend proxy API 버전을 표시합니다. |
-| resultCode | string | Y | **OK** : 성공인 경우 사용하는 값으로 다른 값을 전송하면 성공이 아닌 것으로 처리하기 때문에 주의해야 합니다. 성공이 아닌 경우는 PlayBuider의 `General > 기본정보` 페이지의 예외 처리 또는 `Action > Custom Actions > 선택한 Action`의 예외 처리에서 설정된 Result Code\(Exception Code\)값 전송합니다. |
-| output | json | Y | Request에서 전송한 action.parameters의 KEY:VALUE를 처리한 결과를 전송합니다. Request의 모든 KEY:VALUE가 동일하게 나와야 합니다. VALUE는 Request의 값과 같거나 다를 수 있습니다. 변경되지 않은 VALUE들은 Request의 값을 그대로 써주어야 합니다.  - **KEY** : Request의 action.parameters에 정의된 KEY  - **VALUE** : backend proxy에서 처리한 결과 |
-| directives | json | N | 특정 Capability Interface를 지원하는 Play에서 Directive를 전송하는 경우에 이 필드를 통해 전송합니다. 각 Capability Interface의 Directive 포맷은 해당 Capability Interface 규격을 참조합니다. |
+| resultCode | string | Y | <p>**OK** : 성공인 경우 사용하는 값으로 다른 값을 전송하면 성공이 아닌 것으로 처리하기 때문에 주의해야 합니다.</p><p>성공이 아닌 경우는 PlayBuider의 `General > 기본정보` 페이지의 예외 처리 또는 `Action > Custom Actions > 선택한 Action`의 예외 처리에서 설정된 Result Code\(Exception Code\)값 전송합니다.</p> |
+| output | json | Y | <p>Request에서 전송한 action.parameters의 KEY:VALUE를 처리한 결과를 전송합니다.</p><p>Request의 모든 KEY:VALUE가 동일하게 나와야 합니다.</p><p>VALUE는 Request의 값과 같거나 다를 수 있습니다.</p><p>변경되지 않은 VALUE들은 Request의 값을 그대로 써주어야 합니다.</p><p>  - **KEY** : Request의 action.parameters에 정의된 KEY</p><p>  - **VALUE** : backend proxy에서 처리한 결과</p> |
+| directives | json | N | <p>특정 Capability Interface를 지원하는 Play에서 Directive를 전송하는 경우에 이 필드를 통해 전송합니다.</p><p>각 Capability Interface의 Directive 포맷은 해당 Capability Interface 규격을 참조합니다.</p> |
 
 ## Health check
 
