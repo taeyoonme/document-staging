@@ -37,7 +37,6 @@
       * [Response + Branch Action (멀티턴 대화)](nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions.md)
       * [예외 상황 관리](nugu-play/create-plays-with-play-builder/define-an-action/manage-exceptions.md)
       * [Common Action 사용하기](nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions.md)
-      * [Fallback 사용자 발화 처리하기](nugu-play/create-plays-with-play-builder/define-an-action/fallback.md)
     * [외부 연동 서버 (Backend proxy) 연결하기](nugu-play/create-plays-with-play-builder/create-a-play-using-backend-proxy.md)
     * [Response Filter 사용하기](nugu-play/create-plays-with-play-builder/define-response-filters.md)
     * [테스트하기](nugu-play/create-plays-with-play-builder/test-a-play.md)

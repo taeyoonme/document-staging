@@ -1,6 +1,6 @@
 # Prompt 사용하기
 
-## Prompt 사용하기 <a href="use-prompts" id="use-prompts"></a>
+## Prompt 사용하기 <a href="#use-prompts" id="use-prompts"></a>
 
 Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. Prompt를 작성할때 다음과 같은 구성 요소들을 사용할 수 있습니다.
 
@@ -14,7 +14,7 @@ Prompt는 사용자에게 응답으로 전달할 메시지를 의미합니다. P
 | 조사              | -              | <p>'을/를'과 같이 앞 음절에 따라 조사가 바뀌는 경우에 자동으로 변환하여 발화합니다.</p><p>조사 자동 변환은 Parameter와 함께 사용될 때만 동작합니다.</p><p>조사 처리에 대한 자세한 내용은 <a href="use-prompts.md#process-postpositions">조사 처리하기</a>를 참고하세요.</p> | `/`      |
 | SKML 태그         | -              | <p>TTS 엔진이 텍스트 혹은 Parameter의 값을 SKML 태그에 따라 발화합니다.</p><p>SKML 태그 사용 대한 자세한 내용은 <a href="use-prompts.md#use-utterance-options">발화 옵션 사용하기</a>를 참고하세요.</p>                                      | `<`      |
 
-#### Prompt의 유형 <a href="prompt-types" id="prompt-types"></a>
+#### Prompt의 유형 <a href="#prompt-types" id="prompt-types"></a>
 
 Play Builder의 Prompt에는 3가지 유형이 있습니다.
 
@@ -35,13 +35,13 @@ Prompt는 사용 위치에 따라 다음과 같이 구분됩니다.
 | Slot-filling Prompt        | -                             | <p>대기 Prompt와 종료 Prompt가 사용됩니다.</p><p>여러 Prompt가 입력된 경우, 위에서부터 순차적으로 발화됩니다.</p> |
 | 예외 상황 처리의 Exception Prompt | -                             | <p>대기 Prompt와 종료 Prompt가 사용됩니다.</p><p>여러 Prompt가 입력된 경우, 위에서부터 순차적으로 발화됩니다.</p> |
 
-#### Silent Prompt <a href="silent-prompt" id="silent-prompt"></a>
+#### Silent Prompt <a href="#silent-prompt" id="silent-prompt"></a>
 
 사용자에게 빈 응답을 전달하고 싶을 경우, Silent Prompt를 사용할 수 있습니다. Silent Prompt는 Prompt 입력 창 우측의 버튼을 눌러 설정 가능합니다. Silent Prompt를 응답으로 설정하면, 아무 발화 없이 대기 모드로 넘어가거나 세션이 종료되므로 꼭 필요한 경우에만 사용하는 것이 좋습니다. Silent Prompt는 모든 유형의 Prompt에서 사용할 수 있습니다.
 
 ![](../../../../.gitbook/assets/use-prompts-01.gif)
 
-## 조사 처리하기 <a href="process-postpositions" id="process-postpositions"></a>
+## 조사 처리하기 <a href="#process-postpositions" id="process-postpositions"></a>
 
 국어의 조사 '이/가, 을/를, 은/는, 과/와, 로/으로'는 같은 형태소지만 앞음절의 받침 유무에 따라 다르게 사용됩니다.
 
@@ -71,7 +71,7 @@ Parameter의 `}}` 기호 뒤에 / 입력하면 조사의 자동완성 창이 표
 * 괄호나 특수문자가 포함된다면 제거한 후 처리합니다.
 * 단위, 한글, 영문, 숫자에 해당하지 않는 경우는 변환하지 않습니다.
 
-## 발화 옵션 사용하기 <a href="use-utterance-options" id="use-utterance-options"></a>
+## 발화 옵션 사용하기 <a href="#use-utterance-options" id="use-utterance-options"></a>
 
 입력한 Response의 Prompt를 TTS 엔진이 음성으로 변환할 때 예상과는 다른 방식으로 읽을 수도 있고, 때로는 천천히 읽거나 또박또박 읽게 하고 싶을 수도 있습니다.
 
@@ -113,7 +113,7 @@ Play Builder는 입력한 Prompt를 음성으로 변환시킬 때 개별적으�
 
 ![](../../../../.gitbook/assets/use-prompts-07.png)
 
-### 문장 내 발화 옵션 태그 추가하기 <a href="skml-tag" id="skml-tag"></a>
+### 문장 내 발화 옵션 태그 추가하기 <a href="#skml-tag" id="skml-tag"></a>
 
 Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어를 읽는 방식을 조절하는 태그도 제공하고 있습니다.
 
@@ -178,6 +178,6 @@ Prompt 내에서 특정 구간에 끊어읽기를 추가하거나, 특정 단어
 Prompt 내에 사용하는 태그는 텍스트를 직접 입력하여 추가 또는 수정할 수 있습니다.
 {% endhint %}
 
-### 발화 옵션에서 UNIT 태그로 지원하는 단위 목록 <a href="list-of-unit-tags-supported-by-utterance-options" id="list-of-unit-tags-supported-by-utterance-options"></a>
+### 발화 옵션에서 UNIT 태그로 지원하는 단위 목록 <a href="#list-of-unit-tags-supported-by-utterance-options" id="list-of-unit-tags-supported-by-utterance-options"></a>
 
 문장 내 발화 옵션 태그 중 `텍스트 읽기` > `단위 읽기` 태그에서 지원하는 목록은 [단위 목록](../../../../reference/list-of-unit-tags-supported-by-utterance-options.md) 문서에서 확인할 수 있습니다.
