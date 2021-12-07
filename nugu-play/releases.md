@@ -4,13 +4,13 @@
 
 업데이트일 : 2021년 10월 21일
 
-### 1. 2021년 Developers 고도화 내용 현행화&#x20;
+### 1. 2021년 Developers 고도화 내용 현행화
 
 * NUGU biz kit 고도화에 의한 메뉴 위치, UI에 대한 내용 전체 현행화
 
-### 2. 스마트홈 Play 등록, 테스트 가이드 추가&#x20;
+### 2. 스마트홈 Play 등록, 테스트 가이드 추가
 
-* Play 정보 등록 (smarthome play) 내용 추가 : [자세히 알아보기 ](broken-reference)
+* Play 정보 등록 (smarthome play) 내용 추가 : [자세히 알아보기](broken-reference/)
 
 ## Version 2.0.0
 
@@ -26,7 +26,7 @@
 
 ### 1. 새로운 기능
 
-* Fallback 시, 사용자 발화를 Backend proxy에서 분석할 수 있도록 \_UNRESOLVED\_ Entity 제공 : [자세히 알아보기](create-plays-with-play-builder/define-an-action/fallback.md)
+* Fallback 시, 사용자 발화를 Backend proxy에서 분석할 수 있도록 \_UNRESOLVED\_ Entity 제공 : [자세히 알아보기](broken-reference)
 
 ### 2. 향상/변경된 기능
 

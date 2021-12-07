@@ -6,13 +6,6 @@ Play Builder의 사용자가 Play를 만들면서 생성한 Action을 Custom Act
 
 Built-in Action은 다음과 같습니다.
 
-| Action 이름            |                                                      |
-| -------------------- | ---------------------------------------------------- |
-| NUGU.ACTION.exit     | 사용자가 '그만', '종료' 등과 같이 말하여 Play의 세션이 종료될때 동작하는 action |
-| NUGU.ACTION.fallback | 이 Play가 처리할 수 없는 발화가 들어온 경우에 동작하는 action             |
-| NUGU.ACTION.rewind   | 사용자가 '다시', '다시 들려줘' 와 같이 말한 경우 동작하는 action           |
-| NUGU.ACTION.welcome  | Play에 최초로 진입했을 때 동작하는 action                         |
-
 이 Action들은 Play를 처음 만들 때 입력하는 3개의 응답을 통해 생성됩니다.
 
 ![](../../../.gitbook/assets/built-in-actions-01.png)
@@ -43,7 +36,7 @@ Built-in Action은 다음과 같습니다.
 
 ![](../../../.gitbook/assets/built-in-actions-05.png)
 
-### NUGU.ACTION.fallback <a href="fallback" id="fallback"></a>
+### NUGU.ACTION.fallback <a href="#fallback" id="fallback"></a>
 
 사용자가 Play 세션 내에서 발화를 했지만 처리할 Intent가 없는 경우에 동작합니다.
 
@@ -56,6 +49,12 @@ Built-in Action은 다음과 같습니다.
 즉, 마지막 발화부터 입력하는 스택(Stack) 구조이며, LIFO(Last In First Out; 후입선출)로 동작합니다.
 
 ![](../../../.gitbook/assets/built-in-actions-07.png)
+
+{% hint style="info" %}
+&#x20;prompt 대신 [Common Action](https://developers-doc.nugu.co.kr/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions)을 선하여, 적절한 Directive를 사용하거나, Backend Proxy와 연계한 액션으로 처리도 가능합니다.
+{% endhint %}
+
+
 
 ## NUGU.ACTION.rewind
 
