@@ -51,7 +51,7 @@ Built-in Action은 다음과 같습니다.
 ![](../../../.gitbook/assets/built-in-actions-07.png)
 
 {% hint style="info" %}
-&#x20;prompt 대신 [Common Action](https://developers-doc.nugu.co.kr/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions)을 선하여, 적절한 Directive를 사용하거나, Backend Proxy와 연계한 액션으로 처리도 가능합니다.
+&#x20;prompt 대신 [Common Action](use-common-actions.md)을 선하여, 적절한 Directive를 사용하거나, Backend Proxy와 연계한 액션으로 처리도 가능합니다.
 {% endhint %}
 
 
