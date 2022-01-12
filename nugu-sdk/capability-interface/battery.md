@@ -8,10 +8,10 @@ description: 디바이스 배터리 정보를 Play 로 전달하기 위한 규�
 
 최신 버전은 1.1 입니다.
 
-| Version | Date | Description |
-| :--- | :--- | :--- |
-| 1.0 | 2020.02.25 | 규격 추가 |
-| 1.1 | 2020.04.29 | Context 에 approximateLevel 필드 추가 |
+| Version | Date       | Description                      |
+| ------- | ---------- | -------------------------------- |
+| 1.0     | 2020.02.25 | 규격 추가                            |
+| 1.1     | 2020.04.29 | Context 에 approximateLevel 필드 추가 |
 
 ## SDK Interface
 
@@ -19,15 +19,11 @@ description: 디바이스 배터리 정보를 Play 로 전달하기 위한 규�
 
 Battery interface 규격에 따른 디바이스의 정보 전달은 BatteryAgent 가 처리합니다.
 
-{% hint style="warning" %}
-Linux 는 BatteryAgent 를 지원하지 않습니다.
-{% endhint %}
-
 {% tabs %}
 {% tab title="Android" %}
 NuguAndroidClient instance 를 통해 BatteryAgent instance 에 접근할 수 있습니다.
 
-```text
+```
 val batteryAgent = nuguAndroidClient.getAgent(DefaultBatteryAgent.NAMESPACE)
 ```
 
@@ -35,12 +31,25 @@ NuguAndroidClient 에 배터리 정보을 전달를 위한 기본 BatteryStatusP
 
 BatteryStatusProvider 을 직접 구현하려면 NuguAndroidClient 생성시 추가합니다.
 
-```text
+```
 class MyBatteryStatusProvider: BatteryStatusProvider {
     ...
 }
 NuguAndroidClient.Builder(...)
     .enableBattery(MyBatteryStatusProvider())
+```
+{% endtab %}
+
+{% tab title="Linux" %}
+CapabilityFactory::makeCapability 함수로 BatteryAgent 를 생성하고 NuguClient 에 추가해 주어야합니다.
+
+```
+auto battery_handler(std::shared_ptr<IBatteryHandler>(
+        CapabilityFactory::makeCapability<BatteryAgent, IBatteryHandler>()));
+
+nugu_client->getCapabilityBuilder()
+    ->add(battery_handler.get())
+    ->construct();
 ```
 {% endtab %}
 {% endtabs %}
@@ -53,7 +62,7 @@ NuguAndroidClient.Builder(...)
 {% tab title="Android" %}
 BatteryStatusProvider 를 구현합니다.
 
-```text
+```
 class MyBatteryStatusProvider: BatteryStatusProvider {
     override fun getBatteryLevel(): Int {
         ...
@@ -65,11 +74,28 @@ class MyBatteryStatusProvider: BatteryStatusProvider {
 }
 ```
 {% endtab %}
+
+{% tab title="Linux" %}
+IBatteryListener를 추가합니다.
+
+```
+class BatteryListener : public IBatteryListener {
+public:
+    ...
+
+    void requestContext(BatteryInfo& battery_info) override;
+    {
+        ...
+    }
+};
+auto battery_listener(std::make_shared<BatteryListener>());
+```
+{% endtab %}
 {% endtabs %}
 
 ## Context
 
-```text
+```
 {
   "Location": {
     "version": "1.1",
@@ -80,9 +106,8 @@ class MyBatteryStatusProvider: BatteryStatusProvider {
 }
 ```
 
-| parameter | type | mandatory | description |
-| :--- | :--- | :--- | :--- |
-| level | Long | Y | 배터리 잔량\(0 ~ 100\) |
-| charging | boolean | Y | 충전 여부 |
-| approximateLevel | boolean | N | 배터리 잔량의 근사치 여부 \( 일부 디바이스의 경우 정확한 배터리 잔량을 측정할 수 없음\) |
-
+| parameter        | type    | mandatory | description                                        |
+| ---------------- | ------- | --------- | -------------------------------------------------- |
+| level            | Long    | Y         | 배터리 잔량(0 \~ 100)                                   |
+| charging         | boolean | Y         | 충전 여부                                              |
+| approximateLevel | boolean | N         | 배터리 잔량의 근사치 여부 ( 일부 디바이스의 경우 정확한 배터리 잔량을 측정할 수 없음) |
