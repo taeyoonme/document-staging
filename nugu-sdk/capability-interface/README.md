@@ -72,7 +72,7 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
 
 ## Platform 에 따른 지원 현황
 
-2021-10-01 기준
+2022-01-12 기준
 
 | Capability interface | Description           | Android | iOS                           | Linux       |
 | -------------------- | --------------------- | ------- | ----------------------------- | ----------- |
