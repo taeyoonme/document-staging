@@ -381,7 +381,7 @@ body {
         }
 
         p {
-          line-height: 1.5em;
+          line-height: 1.7em;
         }
 
         code.highlighter-rouge {
@@ -560,20 +560,20 @@ body {
           width: 95%;
           display: block;
           margin: 1em auto;
-          overflow: auto;
 
           & > .code_title {
-            padding: 0.5em 1em;
-            background-color: lightgray;
-            font-weight: bold;
-
-            &:empty {
-              display: none;
-            }
-          }
-
-          & > .code_body {
             position: relative;
+            height: fit-content;
+
+            & > .label {
+              padding: 0.5em 1em;
+              background-color: lightgray;
+              font-weight: bold;
+
+              &:empty {
+                display: none;
+              }
+            }
 
             & > .copy {
               @include copy("darkgray");
@@ -581,7 +581,7 @@ body {
               width: 1.5em;
               height: 1.5em;
               position: absolute;
-              top: 0;
+              bottom: -1.9em;
               right: 0;
               margin-top: 0.4em;
               margin-right: 0.4em;
@@ -595,7 +595,7 @@ body {
 
             & > .copy_success {
               position: absolute;
-              top: 0;
+              bottom: -1.9em;
               right: 1.5em;
               margin-top: 0.4em;
               margin-right: 0.8em;
@@ -606,6 +606,10 @@ body {
                 visibility: visible;
               }
             }
+          }
+
+          & > .code_body {
+            overflow: auto;
           }
         }
 
@@ -864,6 +868,8 @@ body {
               }
 
               & > div.content {
+                overflow: auto;
+
                 & > p {
                   line-height: 1.2em;
                   margin: 0;
