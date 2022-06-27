@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 09:25:13 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-27 10:19:38 +0000">
 
 
 
@@ -2231,37 +2231,37 @@
 <p>NuguAndroidClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>val displayAgent = nuguAndroidClient.displayAgent
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>AudioPlayer interface 와 Display interface 를 병합해주는 DisplayAggregatorInterface 를 제공합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>val displayAggregator = nuguAndroidClient.getDisplay()
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2271,19 +2271,19 @@
 <p>NuguClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>let audioPlayerAgent = nuguClient.audioPlayerAgent
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2293,9 +2293,12 @@
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6">CapabilityFactory::makeCapability</a> 함수로 <a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IDisplayHandler.html">DisplayAgent</a> 를 생성하고 <a href="https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html">NuguClient</a> 에 추가해 주어야합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2312,10 +2315,7 @@ nugu_client-&gt;getCapabilityBuilder()
     -&gt;construct();
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2340,9 +2340,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p>DisplayAggregatorInterface.Controller 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2373,10 +2376,7 @@ nugu_client-&gt;getCapabilityBuilder()
 displayAggregator.displayCardRendered(templateId, controller)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2386,9 +2386,12 @@ displayAggregator.displayCardRendered(templateId, controller)
 <p>DisplayAgentDelegate 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2409,10 +2412,7 @@ displayAggregator.displayCardRendered(templateId, controller)
 displayAgent.delegate = MyDisplayAgentDelegate()
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2443,9 +2443,12 @@ displayAgent.delegate = MyDisplayAgentDelegate()
     
 <p>DisplayAggregatorInterface.Renderer 를 추가합니다.</p>
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2466,18 +2469,18 @@ displayAgent.delegate = MyDisplayAgentDelegate()
 displayAggregator.setRenderer(renderer)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>UI 를 제어하려면 DisplayAggregatorInterface.Controller 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2506,10 +2509,7 @@ displayAggregator.setRenderer(renderer)
 displayAggregator.displayCardRendered(templateId, controller)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2519,9 +2519,12 @@ displayAggregator.displayCardRendered(templateId, controller)
 <p>DisplayAgentDelegate 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2558,10 +2561,7 @@ displayAggregator.displayCardRendered(templateId, controller)
 displayAgent.delegate = MyDisplayAgentDelegate()
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2571,9 +2571,12 @@ displayAgent.delegate = MyDisplayAgentDelegate()
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IDisplayListener.html">IDisplayListener</a> 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2614,10 +2617,7 @@ auto display_listener(std::make_shared&lt;MyDisplayListener&gt;());
 CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_listener.get());
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2642,19 +2642,19 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
     <div id="tab-content-214" class="tab_content selected">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>displayAggregator.setElementSelected(templateId, token, postback)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2662,19 +2662,19 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <div id="tab-content-222" class="tab_content">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>displayAgent.elementDidSelect(templateId: displayTemplate.templateId, token: token, postback: postback)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2682,19 +2682,19 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <div id="tab-content-230" class="tab_content">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>display_handler-&gt;elementSelected(id, item_token, postback)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2717,19 +2717,19 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
     <div id="tab-content-242" class="tab_content selected">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>displayAggregator.notifyUserInteraction(templateId)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2737,19 +2737,19 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <div id="tab-content-250" class="tab_content">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>displayAgent.notifyUserInteraction()
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2757,19 +2757,19 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <div id="tab-content-258" class="tab_content">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>display_handler-&gt;refreshRenderingTimer(id)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2780,9 +2780,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <h2 id="context">Context</h2>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2809,10 +2812,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -2853,9 +2853,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <h3 id="imageobject">ImageObject</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2882,10 +2885,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -2971,9 +2971,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <h3 id="textobject">TextObject</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2988,10 +2991,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3029,9 +3029,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <h3 id="buttonobject">ButtonObject</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3072,10 +3075,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3185,9 +3185,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <h3 id="titleobject">TitleObject</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3206,10 +3209,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3258,9 +3258,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <h3 id="backgroundobject">BackgroundObject</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3273,10 +3276,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3364,9 +3364,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <p>GrammarGuide의 확장된 발화가이드 입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3385,10 +3388,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">]</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3427,9 +3427,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <p>Banner에 사용되는 image object 입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3442,10 +3445,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3477,9 +3477,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <h3 id="togglebuttonobject">ToggleButtonObject</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3494,10 +3497,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3565,9 +3565,12 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 <h3 id="badgeobject">BadgeObject</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3582,10 +3585,7 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>

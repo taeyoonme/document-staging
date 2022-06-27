@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 09:25:13 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-27 10:19:38 +0000">
 
 
 
@@ -2200,27 +2200,30 @@
 <p>NuguAndroidClient instance 를 통해 MicrophoneAgent instance 에 접근할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>val microphoneAgent = nuguAndroidClient.getAgent(DefaultMicrophoneAgent.NAMESPACE)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>NuguAndroidClient 생성시 Microphone 을 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2235,10 +2238,7 @@ NuguAndroidClient.Builder(...)
     .enableMicrophone(MyMicrophone())
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2248,9 +2248,12 @@ NuguAndroidClient.Builder(...)
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6">CapabilityFactory::makeCapability</a> 함수로 <a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMicHandler.html">MicAgent</a> 를 생성하고 <a href="https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html">NuguClient</a> 에 추가해 주어야합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2267,10 +2270,7 @@ nugu_client-&gt;getCapabilityBuilder()
     -&gt;construct();
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2293,9 +2293,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p>Microphone 을 구현합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2312,10 +2315,7 @@ nugu_client-&gt;getCapabilityBuilder()
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2340,9 +2340,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p>Microphone 을 구현합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2369,10 +2372,7 @@ nugu_client-&gt;getCapabilityBuilder()
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2382,9 +2382,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMicListener.html">IMicListener</a> 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2411,10 +2414,7 @@ auto mic_listener(std::make_shared&lt;MyMicListener&gt;());
 CapabilityFactory::makeCapability&lt;MicAgent, IMicHandler&gt;(mic_listener.get());
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2425,9 +2425,12 @@ CapabilityFactory::makeCapability&lt;MicAgent, IMicHandler&gt;(mic_listener.get(
 <h2 id="context">Context</h2>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2444,10 +2447,7 @@ CapabilityFactory::makeCapability&lt;MicAgent, IMicHandler&gt;(mic_listener.get(
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -2474,9 +2474,12 @@ CapabilityFactory::makeCapability&lt;MicAgent, IMicHandler&gt;(mic_listener.get(
 <h3 id="setmic">SetMic</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2507,10 +2510,7 @@ CapabilityFactory::makeCapability&lt;MicAgent, IMicHandler&gt;(mic_listener.get(
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>

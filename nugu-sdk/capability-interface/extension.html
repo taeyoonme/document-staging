@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 09:25:13 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-27 10:19:38 +0000">
 
 
 
@@ -2207,27 +2207,30 @@
 <p>NuguAndroidClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>val extensionAgent = nuguAndroidClient.extensionAgent
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>NuguAndroidClient 생성시 ExtensionAgentInterface.Client 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2242,10 +2245,7 @@ NuguAndroidClient.Builder(...)
     .enableExtension(MyExtensionAgentClient())
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2255,19 +2255,19 @@ NuguAndroidClient.Builder(...)
 <p>NuguClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>let extensionAgent = nuguClient.extensionAgent
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2277,9 +2277,12 @@ NuguAndroidClient.Builder(...)
 <p>CapabilityFactory::makeCapability 함수로 ExtensionAgent 를 생성하고 NuguClient 에 추가해 주어야합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2296,10 +2299,7 @@ nugu_client-&gt;getCapabilityBuilder()
     -&gt;construct();
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2328,9 +2328,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p>ExtensionAgentInterface.Client 를 구현합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2355,10 +2358,7 @@ nugu_client-&gt;getCapabilityBuilder()
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2368,9 +2368,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p>ExtensionAgentDelegate 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2395,10 +2398,7 @@ nugu_client-&gt;getCapabilityBuilder()
 extensionAgent.delegate = MyExtensionAgentDelegate()
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2408,9 +2408,12 @@ extensionAgent.delegate = MyExtensionAgentDelegate()
 <p>IExtensionListener를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2437,10 +2440,7 @@ auto extension_listener(std::make_shared&lt;ExtensionListener&gt;());
 CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(extension_listener.get());
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2465,19 +2465,19 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
     <div id="tab-content-142" class="tab_content selected">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>extensionAgent.issueCommand(playServiceId, data, callback)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2485,19 +2485,19 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 <div id="tab-content-150" class="tab_content">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>extentionAgent.requestCommand(data: data, playServiceId: playServiceId)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2518,9 +2518,12 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 <h2 id="context">Context</h2>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2537,10 +2540,7 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -2567,9 +2567,12 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 <h3 id="action">Action</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2600,10 +2603,7 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -2630,9 +2630,12 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 <h3 id="actionsucceeded">ActionSucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2661,18 +2664,18 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="actionfailed">ActionFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2701,18 +2704,18 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="commandissued">CommandIssued</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2743,10 +2746,7 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>

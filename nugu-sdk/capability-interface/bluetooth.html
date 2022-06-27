@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 09:25:13 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-27 10:19:38 +0000">
 
 
 
@@ -2205,27 +2205,30 @@
 <p>NuguAndroidClient instance 를 통해 BluetoothAgent instance 에 접근할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>val bluetoothAgent = nuguAndroidClient.bluetoothAgent
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>NuguAndroidClient 생성시 BluetoothProvider 을 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2240,10 +2243,7 @@ NuguAndroidClient.Builder(...)
     .enableBluetooth(MyBluetoothProvider())
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2253,9 +2253,12 @@ NuguAndroidClient.Builder(...)
 <p>CapabilityFactory::makeCapability 함수로 BluetoothAgent 를 생성하고 NuguClient 에 추가해 주어야합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2270,10 +2273,7 @@ nugu_client-&gt;getCapabilityBuilder()
     -&gt;add(bluetooth_handler.get())
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2300,9 +2300,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p>BluetoothProvider 를 구현합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2329,10 +2332,7 @@ nugu_client-&gt;getCapabilityBuilder()
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2342,9 +2342,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p>IBluetoothListener를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2369,10 +2372,7 @@ public:
 auto bluetooth_listener(std::make_shared&lt;BluetoothListener&gt;());
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2399,9 +2399,12 @@ auto bluetooth_listener(std::make_shared&lt;BluetoothListener&gt;());
 <p>제어 기능을 실행하려면 BluetoothAgentInterface.Listener 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2434,10 +2437,7 @@ auto bluetooth_listener(std::make_shared&lt;BluetoothListener&gt;());
 bluetoothAgent.setListener(listener)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2447,9 +2447,12 @@ bluetoothAgent.setListener(listener)
 <p>IBluetoothListener를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2486,10 +2489,7 @@ auto bluetooth_listener(std::make_shared&lt;BluetoothListener&gt;());
 CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluetooth_listener.get());
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2500,9 +2500,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <h2 id="context">Context</h2>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2547,10 +2550,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -2633,9 +2633,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <p>Discoverable mode 활성화 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2666,10 +2669,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -2696,9 +2696,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <p>Discoverable mode 비활성화 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2727,10 +2730,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="play">Play</h3>
@@ -2738,9 +2738,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <p>연결된 블루투스 기기의 음원 재생 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2769,10 +2772,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="stop">Stop</h3>
@@ -2780,9 +2780,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <p>연결된 블루투스 기기의 음원 재생 중지 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2811,10 +2814,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="pause">Pause</h3>
@@ -2822,9 +2822,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <p>연결된 블루투스 기기의 음원 일시정지 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2853,10 +2856,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="next">Next</h3>
@@ -2864,9 +2864,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <p>연결된 블루투스 기기의 다음 음원 재생 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2895,10 +2898,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="previous">Previous</h3>
@@ -2906,9 +2906,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <p>연결된 블루투스 기기의 이전 음원 재생 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2937,10 +2940,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h2 id="event">Event</h2>
@@ -2948,9 +2948,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <h3 id="startdiscoverablemodesucceeded">StartDiscoverableModeSucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2981,10 +2984,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3013,9 +3013,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3046,10 +3049,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3074,9 +3074,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 <h3 id="finishdiscoverablemodesucceeded">FinishDiscoverableModeSucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3105,18 +3108,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="finishdiscoverablemodefailed">FinishDiscoverableModeFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3145,10 +3148,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="connectsucceeded">ConnectSucceeded</h3>
@@ -3158,9 +3158,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3189,10 +3192,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="connectfailed">ConnectFailed</h3>
@@ -3202,9 +3202,12 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3233,18 +3236,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="disconnectsucceeded">DisconnectSucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3273,18 +3276,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="disconnectfailed">DisconnectFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3313,18 +3316,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolplaysucceeded">MediaControlPlaySucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3353,18 +3356,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolplayfailed">MediaControlPlayFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3393,18 +3396,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolstopsucceeded">MediaControlStopSucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3433,18 +3436,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolstopfailed">MediaControlStopFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3473,18 +3476,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolpausesucceeded">MediaControlPauseSucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3513,18 +3516,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolpausefailed">MediaControlPauseFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3553,18 +3556,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolnextsucceeded">MediaControlNextSucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3593,18 +3596,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolnextfailed">MediaControlNextFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3633,18 +3636,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolprevioussucceeded">MediaControlPreviousSucceeded</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3673,18 +3676,18 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="mediacontrolpreviousfailed">MediaControlPreviousFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3713,10 +3716,7 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
     </div>

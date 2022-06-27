@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 09:25:13 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-27 10:19:38 +0000">
 
 
 
@@ -2230,19 +2230,19 @@
 <p>NuguAndroidClient instance 를 통해 AudioPlayerAgent instance 에 접근할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>val audioPlayerAgent = nuguAndroidClient.audioPlayerAgent
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2252,19 +2252,19 @@
 <p>NuguClient instance 를 통해 AudioPlayerAgent instance 에 접근할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>let audioPlayerAgent = nuguClient.audioPlayerAgent
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2274,9 +2274,12 @@
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6">CapabilityFactory::makeCapability</a> 함수로 <a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerHandler.html">AudioPlayerAgent</a> 를 생성하고 <a href="https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html">NuguClient</a> 에 추가해 주어야합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2293,10 +2296,7 @@ nugu_client-&gt;getCapabilityBuilder()
     -&gt;construct();
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2323,9 +2323,12 @@ nugu_client-&gt;getCapabilityBuilder()
 <p>AudioPlayerAgentInterface.Listener 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2342,10 +2345,7 @@ nugu_client-&gt;getCapabilityBuilder()
 audioPlayerAgent.addListener(listener)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2355,9 +2355,12 @@ audioPlayerAgent.addListener(listener)
 <p>AudioPlayerAgentDelegate 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2376,10 +2379,7 @@ audioPlayerAgent.addListener(listener)
 audioPlayerAgent.add(delegate: MyAudioPlayerAgentDelegate())
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2389,9 +2389,12 @@ audioPlayerAgent.add(delegate: MyAudioPlayerAgentDelegate())
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html">IAudioPlayerListener</a> 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2422,10 +2425,7 @@ auto audio_player_listener(std::make_shared&lt;MyAudioPlayerListener&gt;());
 CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(audio_player_listener.get());
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2456,9 +2456,12 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
 <p>DisplayAggregatorInterface.Renderer 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2479,18 +2482,18 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
 nuguAndroidClient.setDisplayRenderer(renderer)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>UI 제어 요청을 처리하려면 LyricsPresenter 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2519,10 +2522,7 @@ nuguAndroidClient.setDisplayRenderer(renderer)
 audioPlayerAgent.setLyricsPresenter(presenter)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2532,9 +2532,12 @@ audioPlayerAgent.setLyricsPresenter(presenter)
 <p>AudioPlayerDisplayDelegate 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2573,10 +2576,7 @@ audioPlayerAgent.setLyricsPresenter(presenter)
 audioPlayerAgent.displayDelegate = MyAudioPlayerDisplayDelegate()
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2586,9 +2586,12 @@ audioPlayerAgent.displayDelegate = MyAudioPlayerDisplayDelegate()
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html">IAudioPlayerListener</a> 를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2639,10 +2642,7 @@ auto audio_player_listener(std::make_shared&lt;MyAudioPlayerListener&gt;());
 CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(audio_player_listener.get());
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2667,9 +2667,12 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
     <div id="tab-content-230" class="tab_content selected">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2694,10 +2697,7 @@ audioPlayerAgent.requestRepeatCommand(RepeatMode.NONE)
 audioPlayerAgent.requestShuffleCommand(false)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2705,9 +2705,12 @@ audioPlayerAgent.requestShuffleCommand(false)
 <div id="tab-content-247" class="tab_content">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2732,10 +2735,7 @@ audioPlayerAgent.requestRepeatCommand(.none)
 audioPlayerAgent.requestShuffleCommand(false)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2743,9 +2743,12 @@ audioPlayerAgent.requestShuffleCommand(false)
 <div id="tab-content-264" class="tab_content">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2770,10 +2773,7 @@ audio_player_handler-&gt;requestRepeatCommand(RepeatType.NONE)
 audio_player_handler-&gt;requestShuffleCommand(false)
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2784,9 +2784,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h2 id="context">Context</h2>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2813,10 +2816,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -2875,9 +2875,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>새로운 음원 또는 현재 음원 재생 요청입니다.(Play, Resume, Seek 요청이 포함되어 있습니다.)</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2940,10 +2943,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3028,9 +3028,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h4 id="audioitemmetadatatemplate---audioplayertemplate1">audioItem.metadata.template - AudioPlayer.Template1</h4>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3119,10 +3122,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3298,9 +3298,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h4 id="audioitemmetadatatemplate---audioplayertemplate2">audioItem.metadata.template - AudioPlayer.Template2</h4>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3367,10 +3370,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3505,9 +3505,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>음원 재생 중지 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3536,10 +3539,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="pause">Pause</h3>
@@ -3547,9 +3547,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>음원 일시정지 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3578,10 +3581,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="updatemetadata">UpdateMetadata</h3>
@@ -3589,9 +3589,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>음원의 Metadata UI 설정 정보를 갱신 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3642,10 +3645,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3684,9 +3684,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>가사화면 표시 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3715,10 +3718,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="hidelyrics">HideLyrics</h3>
@@ -3726,9 +3726,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>가사화면 닫기 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3757,10 +3760,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="controllyricspage">ControlLyricsPage</h3>
@@ -3768,9 +3768,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>가사화면 스크롤 위치 이동 요청입니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3801,10 +3804,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3833,9 +3833,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3860,10 +3863,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -3892,9 +3892,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3919,10 +3922,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="requestnextcommand">RequestNextCommand</h3>
@@ -3932,9 +3932,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3959,10 +3962,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="requestpreviouscommand">RequestPreviousCommand</h3>
@@ -3972,9 +3972,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -3999,10 +4002,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="requestpausecommand">RequestPauseCommand</h3>
@@ -4012,9 +4012,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4039,10 +4042,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="requeststopcommand">RequestStopCommand</h3>
@@ -4052,9 +4052,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4079,10 +4082,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h2 id="events">Events</h2>
@@ -4090,9 +4090,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h3 id="playbackstarted">PlaybackStarted</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4125,10 +4128,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4159,9 +4159,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h3 id="playbackpaused">PlaybackPaused</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4194,10 +4197,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4228,9 +4228,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h3 id="playbackresumed">PlaybackResumed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4263,10 +4266,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4297,9 +4297,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h3 id="playbackfinished">PlaybackFinished</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4332,10 +4335,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4366,9 +4366,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h3 id="playbackstopped">PlaybackStopped</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4403,10 +4406,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4443,9 +4443,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h3 id="playbackfailed">PlaybackFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4496,10 +4499,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4568,9 +4568,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4603,10 +4606,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4642,9 +4642,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4677,10 +4680,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4713,9 +4713,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>사용자가 다음 음원 재생을 요청하면 전송됩니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4748,10 +4751,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4784,9 +4784,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>사용자가 이전 음원 재생을 요청하면 전송됩니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4819,10 +4822,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4855,9 +4855,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>사용자가 현재 음원 즐겨찾기(좋아요 포함)를 요청하면 전송됩니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4888,10 +4891,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4918,9 +4918,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>사용자가 현재 음원 반복 재생을 요청하면 전송됩니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -4951,10 +4954,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -4981,9 +4981,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <p>사용자가 셔플 재생을 요청하면 전송됩니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5014,10 +5017,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5046,9 +5046,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5077,10 +5080,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="showlyricsfailed">ShowLyricsFailed</h3>
@@ -5090,9 +5090,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5121,10 +5124,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="hidelyricssucceeded">HideLyricsSucceeded</h3>
@@ -5134,9 +5134,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5165,10 +5168,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="hidelyricsfailed">HideLyricsFailed</h3>
@@ -5178,9 +5178,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5209,10 +5212,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="controllyricspagesucceeded">ControlLyricsPageSucceeded</h3>
@@ -5222,9 +5222,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5255,10 +5258,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5287,9 +5287,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5320,10 +5323,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5348,9 +5348,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h3 id="requestplaycommandissued">RequestPlayCommandIssued</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5375,10 +5378,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5407,9 +5407,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5442,10 +5445,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5480,9 +5480,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5515,10 +5518,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5553,9 +5553,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5588,10 +5591,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5626,9 +5626,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5661,10 +5664,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5699,9 +5699,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </ul>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5734,10 +5737,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>
@@ -5768,9 +5768,12 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 <h3 id="requestcommandfailed">RequestCommandFailed</h3>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -5805,10 +5808,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 }
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <table>

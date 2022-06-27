@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 09:25:13 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-27 10:19:38 +0000">
 
 
 
@@ -2175,9 +2175,12 @@
     <div id="tab-content-14" class="tab_content selected">
     
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2186,10 +2189,7 @@
 <span class="nb">sudo </span>apt-get update
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2199,9 +2199,12 @@
 <p>사용하고 있는 Debian 버전에 따라 NUGU SDK의 Bionic 또는 Xenial PPA 주소를 추가해야 합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2220,18 +2223,18 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu bionic main
 deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>이제 NUGU SDK PPA에 대한 인증키를 설치해야 합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2240,10 +2243,7 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <span class="nb">sudo </span>apt-get update
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 
@@ -2286,19 +2286,19 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <p>아래 명령을 통해 시스템에 설치할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre><span class="nb">sudo </span>apt-get <span class="nb">install </span>libnugu libnugu-plugins-default libnugu-dev libnugu-examples
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h2 id="step-3-프로젝트-설정하기">Step 3: 프로젝트 설정하기</h2>
@@ -2389,9 +2389,12 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <p>NUGU SDK for Linux는 event-driven 방식으로 어플리케이션을 개발할 수 있도록 <a href="https://wiki.gnome.org/Projects/GLib">glib</a>에서 제공하는 <a href="https://developer.gnome.org/glib/stable/glib-The-Main-Event-Loop.html">event loop</a>을 사용하고 있습니다. 따라서 <code class="language-plaintext highlighter-rouge">main()</code> 코드는 아래 구조로 작성되어야 합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2434,10 +2437,7 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="nugu-음성인식-사용하기">NUGU 음성인식 사용하기</h3>
@@ -2447,9 +2447,12 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <p>⁣1. 헤더 파일(nugu_client.hh, capability_factory.hh)을 include에 포함시키고, <code class="language-plaintext highlighter-rouge">NuguClientKit, NuguCapability</code> namespace를 사용하도록 설정합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2464,18 +2467,18 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">NuguCapability</span><span class="p">;</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>⁣2. <code class="language-plaintext highlighter-rouge">IASRHandler</code> 객체를 생성하고, 음성인식 모델 파일을 설정합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2488,18 +2491,18 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <span class="n">asr_handler</span><span class="o">-&gt;</span><span class="n">setAttribute</span><span class="p">(</span><span class="n">ASRAttribute</span> <span class="p">{</span> <span class="s">"/var/lib/nugu/model"</span><span class="p">,</span> <span class="s">"CLIENT"</span><span class="p">,</span> <span class="s">"PARTIAL"</span> <span class="p">});</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>⁣3. <code class="language-plaintext highlighter-rouge">NuguClient</code> 객체를 생성하고, <code class="language-plaintext highlighter-rouge">ASR Capability</code> 추가 후, SDK를 초기화 합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2514,18 +2517,18 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">initialize</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>⁣4. 음성인식 기능을 사용하기 위해 OAuth2 access-token 설정 후, NUGU 서비스 연결을 요청합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2536,10 +2539,7 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <span class="n">network_manager</span><span class="o">-&gt;</span><span class="n">connect</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>전체 코드는 Github의 아래 wiki에서 확인할 수 있습니다.</p>
@@ -2561,19 +2561,19 @@ deb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main
 <p>NUGU SDK for Linux는 빌드 설정을 쉽게 구성할 수 있도록 <code class="language-plaintext highlighter-rouge">pkg-config</code> 파일을 제공합니다. 따라서, 아래와 같이 <code class="language-plaintext highlighter-rouge">nugu.pc</code>를 사용해 빌드 명령을 수행할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre><span class="nv">$ </span>g++ <span class="nt">-std</span><span class="o">=</span>c++11 hello.cc <span class="sb">`</span>pkg-config <span class="nt">--cflags</span> <span class="nt">--libs</span> nugu<span class="sb">`</span> <span class="nt">-o</span> hello
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h2 id="더-알아보기">더 알아보기</h2>

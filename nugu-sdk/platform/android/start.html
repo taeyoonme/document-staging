@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 09:25:13 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-27 10:19:38 +0000">
 
 
 
@@ -2169,9 +2169,12 @@
 <p>프로젝트의 build.gradle에 레포지토리를 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2186,10 +2189,7 @@
 <span class="o">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="의존성-추가하기">의존성 추가하기</h3>
@@ -2198,9 +2198,12 @@
 (전체 라이브러리에 대한 의존성은 <a href="https://github.com/nugu-developers/nugu-android">여기</a>를 참조)</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2221,10 +2224,7 @@
 <span class="o">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h2 id="step-3-프로젝트-설정하기">Step 3: 프로젝트 설정하기</h2>
@@ -2264,9 +2264,12 @@ Redirect URI는 <code class="language-plaintext highlighter-rouge">nugu.user.{cl
 <p>strings.xml 파일에 <em>nugu_redirect_scheme</em>, _nugu_redirect_host_를 추가합니다. 예를들어 redirectUri가 <strong>“example://sample”</strong> 라면 아래와 같이 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2275,10 +2278,7 @@ Redirect URI는 <code class="language-plaintext highlighter-rouge">nugu.user.{cl
 <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"nugu_redirect_host"</span><span class="nt">&gt;</span>sample<span class="nt">&lt;/string&gt;</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="음성-인식-모델-파일-설정하기">음성 인식 모델 파일 설정하기</h3>
@@ -2307,9 +2307,12 @@ Redirect URI는 <code class="language-plaintext highlighter-rouge">nugu.user.{cl
 <p>다운로드 받은 파일을 Asset 폴더에 파일을 복사하고, ConfigurationStore을 초기화합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2318,10 +2321,7 @@ Redirect URI는 <code class="language-plaintext highlighter-rouge">nugu.user.{cl
                              <span class="n">filename</span> <span class="p">=</span> <span class="s">"nugu-config.json"</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="앱-권한-설정하기">앱 권한 설정하기</h3>
@@ -2329,9 +2329,12 @@ Redirect URI는 <code class="language-plaintext highlighter-rouge">nugu.user.{cl
 <p>AndroidManifest.xml에 아래 필수 권한을 추가합니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2340,10 +2343,7 @@ Redirect URI는 <code class="language-plaintext highlighter-rouge">nugu.user.{cl
 <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span><span class="nt">/&gt;</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <div class="alerts info">
@@ -2381,9 +2381,12 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 <p>기기별 고유식별자(<code class="language-plaintext highlighter-rouge">deviceUniqueId</code>)를 변경 가능합니다. (이미 NuguOAuth.create 에서 설정 되어있다면 생략)</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2396,10 +2399,7 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 <span class="nc">NuguOAuth</span><span class="p">.</span><span class="nf">getClient</span><span class="p">().</span><span class="nf">setOptions</span><span class="p">(</span><span class="n">newOptions</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h4 id="tid-로그인">Tid 로그인</h4>
@@ -2407,9 +2407,12 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 <p><code class="language-plaintext highlighter-rouge">loginWithTid()</code>를 호출 후에 <code class="language-plaintext highlighter-rouge">NuguOAuthInterface.OnLoginListener</code>를 통해 인증 결과를 받습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2432,10 +2435,7 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
         <span class="p">})</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h4 id="로그인-정보-갱신">로그인 정보 갱신</h4>
@@ -2443,9 +2443,12 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 <p>발급 받은 refresh-token이 이미 있다면, 이 후에는 인 앱 브라우저 없이 로그인 정보를 갱신할 수 있습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2468,10 +2471,7 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
         <span class="p">})</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h3 id="nugu-회원-미사용-방식으로-로그인">
@@ -2482,9 +2482,12 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 <p>기기별 고유식별자(<code class="language-plaintext highlighter-rouge">deviceUniqueId</code>)를 변경 가능합니다. (이미 NuguOAuth.create 에서 설정 되어있다면 생략)</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2497,10 +2500,7 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 <span class="nc">NuguOAuth</span><span class="p">.</span><span class="nf">getClient</span><span class="p">().</span><span class="nf">setOptions</span><span class="p">(</span><span class="n">newOptions</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h4 id="로그인">로그인</h4>
@@ -2508,9 +2508,12 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 <p><code class="language-plaintext highlighter-rouge">loginAnonymously()</code>를 호출 후에 <code class="language-plaintext highlighter-rouge">NuguOAuthInterface.OnLoginListener</code>를 통해 인증 결과를 받습니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2533,10 +2536,7 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
         <span class="p">})</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h2 id="step5-nugu-음성인식-사용하기">Step5. NUGU 음성인식 사용하기</h2>
@@ -2548,9 +2548,12 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 </ol>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2569,10 +2572,7 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
                <span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <ol>
@@ -2580,9 +2580,12 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 </ol>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2593,10 +2596,7 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
    <span class="kd">val</span> <span class="py">audioProvider</span> <span class="p">=</span> <span class="nc">AudioSourceManager</span><span class="p">(</span><span class="nc">AudioRecordSourceFactory</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <ol>
@@ -2604,19 +2604,19 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 </ol>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>   <span class="kd">val</span> <span class="py">endPointDetector</span> <span class="p">=</span> <span class="nc">EndPointDetector</span><span class="p">(</span><span class="nc">EPD_MODEL_FILE_PATH</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <ol>
@@ -2624,9 +2624,12 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
 </ol>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2649,10 +2652,7 @@ OAuth 2.0 API 는 <a href="/document/nugu-sdk/authentication" class="a_internal"
    <span class="n">client</span><span class="p">.</span><span class="n">asrAgent</span><span class="o">?.</span><span class="nf">startRecognition</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <h2 id="더-알아보기">더 알아보기</h2>

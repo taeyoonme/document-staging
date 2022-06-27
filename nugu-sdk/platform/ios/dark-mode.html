@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 09:25:13 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-27 10:19:38 +0000">
 
 
 
@@ -2157,9 +2157,12 @@
         <p>NUGU SDK 의 <code class="language-plaintext highlighter-rouge">NuguVoiceChrome</code>, <code class="language-plaintext highlighter-rouge">AudioDisplayView</code> 등과 같은 UI Component 들은 각자 theme 이라는 변수를 통해 Dark / Light 모드 테마를 지원하고 있습니다. theme 변수를 직접 변경해주면 해당 UI Component 의 테마는 동적으로 변경됩니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2182,18 +2185,18 @@
 <span class="n">ex</span><span class="o">&gt;</span> <span class="n">nuguVoiceChrome</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="o">.</span><span class="n">dark</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
 <p>고객의 편의를 위해 <code class="language-plaintext highlighter-rouge">NuguClientKit</code> 에서는 <code class="language-plaintext highlighter-rouge">NuguThemeController</code> 라는 컨트롤러 모델을 제공하고 있습니다. <code class="language-plaintext highlighter-rouge">NuguThemeController</code> 를 생성하여, <code class="language-plaintext highlighter-rouge">VoiceChromePresenter</code>, <code class="language-plaintext highlighter-rouge">DisplayWebViewPresenter</code>, <code class="language-plaintext highlighter-rouge">AudioDisplayViewPresenter</code> 의 생성자로 추가하면 해당 UI Component 들의 theme 가 <code class="language-plaintext highlighter-rouge">NuguThemeController</code> 와 연동됩니다.</p>
 
 <div class="code">
-    <div class="code_title"></div>
+    <div class="code_title">
+        <div class="label"></div>
+        <div class="copy"></div>
+        <div class="copy_success">복사성공!</div>
+    </div>
     <div class="code_body">
-        
 <div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -2238,10 +2241,7 @@
     <span class="n">ex</span><span class="o">&gt;</span> <span class="n">themeController</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="o">.</span><span class="n">dark</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
-
-        <div class="copy"></div>
-        <div class="copy_success">복사성공!</div>
-    </div>
+</div>
 </div>
 
     </div>
