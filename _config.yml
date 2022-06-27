@@ -54,3 +54,7 @@ jekyll-spaceship:
 
 jekyll-potion:
   title: Developers | Guide
+  icon: assets/icon/icon.png
+  favicon:
+    path: "_favicon/favicon.html"
+    assets: "/assets/favicon"
