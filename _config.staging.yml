@@ -1,0 +1,5 @@
+url: "https://nugudevelopers.github.io"
+baseurl: "/document"
+
+exclude:
+  - "CNAME"
