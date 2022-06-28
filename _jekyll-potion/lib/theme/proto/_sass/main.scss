@@ -41,6 +41,19 @@ body {
   font-family: "Nanum Gothic", sans-serif;
   font-size: 1em;
 
+  ::-webkit-scrollbar {
+    background-color: white;
+    width: 0.8em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+
   & > header {
     height: 3em;
     border-bottom: 1px solid darkgray;
@@ -116,19 +129,20 @@ body {
     width: calc(20% - 1px);
     height: calc(100vh - 3em);
     float: left;
-    overflow: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
     border-right: 1px solid darkgray;
     box-shadow: 1px 2px lightgrey;
 
     & > div.nav_container {
-      width: 95%;
+      width: 100%;
+      margin-top: 1em;
 
       ul.nav_menu {
         display: block;
-        margin-inline-start: 0;
-        margin-inline-end: 0;
+        margin-block: 0;
+        margin-inline: 0;
         padding-inline-start: 0;
-        width: 100%;
       }
 
       li {
@@ -157,10 +171,11 @@ body {
           & > span.nav_unfold {
             @include unfold("black");
 
+            width: 10%;
             flex: auto;
             display: none;
             color: inherit;
-            background-size: 80%;
+            background-size: 50%;
 
             &:hover {
               cursor: pointer;
@@ -170,10 +185,11 @@ body {
           & > span.nav_fold {
             @include fold("black");
 
+            width: 10%;
             flex: auto;
             display: none;
             color: inherit;
-            background-size: 80%;
+            background-size: 50%;
 
             &:hover {
               cursor: pointer;
@@ -383,6 +399,7 @@ body {
           font-size: large;
           font-weight: bold;
           margin-bottom: 0.3em;
+          margin-inline: 0.4em;
         }
 
         & > .block_description {
@@ -391,6 +408,7 @@ body {
           overflow: hidden;
           white-space: nowrap;
           font-weight: normal;
+          margin-inline: 0.4em;
         }
       }
     }
@@ -489,7 +507,6 @@ body {
         }
 
         blockquote {
-          display: flex;
           height: fit-content;
           margin-left: 2.5em;
           padding-left: 1em;
@@ -811,6 +828,19 @@ body {
         @extend %pagination;
 
         margin-top: 2em;
+
+        .block {
+          height: 4em;
+          padding-block: 0.8em;
+
+          & > .block_title {
+            margin-inline: 0.8em;
+          }
+
+          & > .block_description {
+            margin-inline: 0.8em;
+          }
+        }
       }
     }
   }
