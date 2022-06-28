@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-28 05:38:56 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 07:44:21 +0000">
 
 
 
@@ -2167,20 +2167,24 @@
 
 <div class="api">
     <div class="api_summary">인증 요청 (Authorize Endpoint)</div>
-    <div class="api_header">
-        <div class="api_method">get</div>
-        <div class="api_url">https://api.host.domain/v1/auth/oauth/authorize</div>
-    </div>
-    <div class="api_description">
+    <div class="api_content">
+        <div class="api_header">
+            <div class="api_method"><label>GET</label></div>
+            <div class="api_url">
+                <label class="api_base_url">https://api.host.domain</label>
+                <label class="api_path">/v1/auth/oauth/authorize</label>
+            </div>
+        </div>
+        <div class="api_description">
     
 NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
 
 </div>
-    <div class="api_parameter_title">Parameters</div>
-    
-        <div class="api_parameter_category_title">Query</div>
-        <div class="api_parameters">
-            <div class="api_parameter">
+        <div class="api_parameter_title">Parameters</div>
+        
+            <div class="api_parameter_category_title">Query</div>
+            <div class="api_parameters">
+                <div class="api_parameter">
     <div class="api_parameter_name">client:id</div>
     <div class="api_parameter_type">string</div>
     <div class="api_parameter_description">
@@ -2222,15 +2226,15 @@ code 만 사용 됩니다.
 CSRF를 위해 사용 되는 값입니다.
 </div>
 </div>
-        </div>
-    
-    
-    <div class="api_response_title">Responses</div>
-    <div class="api_responses">
-        <div class="api_response">
+            </div>
+        
+        
+        <div class="api_response_title">Responses</div>
+        <div class="api_responses">
+            <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">302</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>302</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2257,6 +2261,8 @@ Location: {redirect_uri}?code={code}&amp;state={state}
 
     </div>
 </div>
+
+        </div>
     </div>
 </div>
 
@@ -2271,21 +2277,25 @@ Location: {redirect_uri}?code={code}&amp;state={state}
 
 <div class="api">
     <div class="api_summary">토큰 요청 (Token Endpoint)</div>
-    <div class="api_header">
-        <div class="api_method">post</div>
-        <div class="api_url">https://api.host.domain/v1/auth/oauth/token</div>
-    </div>
-    <div class="api_description">
+    <div class="api_content">
+        <div class="api_header">
+            <div class="api_method"><label>POST</label></div>
+            <div class="api_url">
+                <label class="api_base_url">https://api.host.domain</label>
+                <label class="api_path">/v1/auth/oauth/token</label>
+            </div>
+        </div>
+        <div class="api_description">
     
 NUGU계정 미사용, 체험판 사용 시에는 code와 redirect_url 입력이 불필요합니다.
 
 </div>
-    <div class="api_parameter_title">Parameters</div>
-    
-    
-        <div class="api_parameter_category_title">Body</div>
-        <div class="api_parameters">
-            <div class="api_parameter">
+        <div class="api_parameter_title">Parameters</div>
+        
+        
+            <div class="api_parameter_category_title">Body</div>
+            <div class="api_parameters">
+                <div class="api_parameter">
     <div class="api_parameter_name">data</div>
     <div class="api_parameter_type">string</div>
     <div class="api_parameter_description">
@@ -2327,14 +2337,14 @@ authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험�
 발급 받은 ClientSecret을 사용합니다.
 </div>
 </div>
-        </div>
-    
-    <div class="api_response_title">Responses</div>
-    <div class="api_responses">
-        <div class="api_response">
+            </div>
+        
+        <div class="api_response_title">Responses</div>
+        <div class="api_responses">
+            <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">200</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>200</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2392,8 +2402,8 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">400</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>400</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2439,8 +2449,8 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">401</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>401</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2486,26 +2496,32 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
     </div>
 </div>
+
+        </div>
     </div>
 </div>
 
 <div class="api">
     <div class="api_summary">토큰 갱신 요청 (Token Endpoint)</div>
-    <div class="api_header">
-        <div class="api_method">post</div>
-        <div class="api_url">https://api.host.domain/v1/auth/oauth/token</div>
-    </div>
-    <div class="api_description">
+    <div class="api_content">
+        <div class="api_header">
+            <div class="api_method"><label>POST</label></div>
+            <div class="api_url">
+                <label class="api_base_url">https://api.host.domain</label>
+                <label class="api_path">/v1/auth/oauth/token</label>
+            </div>
+        </div>
+        <div class="api_description">
     
 NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
 
 </div>
-    <div class="api_parameter_title">Parameters</div>
-    
-    
-        <div class="api_parameter_category_title">Body</div>
-        <div class="api_parameters">
-            <div class="api_parameter">
+        <div class="api_parameter_title">Parameters</div>
+        
+        
+            <div class="api_parameter_category_title">Body</div>
+            <div class="api_parameters">
+                <div class="api_parameter">
     <div class="api_parameter_name">data</div>
     <div class="api_parameter_type">string</div>
     <div class="api_parameter_description">
@@ -2540,14 +2556,14 @@ refresh_token (갱신)
 
 </div>
 </div>
-        </div>
-    
-    <div class="api_response_title">Responses</div>
-    <div class="api_responses">
-        <div class="api_response">
+            </div>
+        
+        <div class="api_response_title">Responses</div>
+        <div class="api_responses">
+            <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">200</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>200</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2605,8 +2621,8 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">400</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>400</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2652,8 +2668,8 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">401</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>401</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2699,6 +2715,8 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
     </div>
 </div>
+
+        </div>
     </div>
 </div>
 
@@ -2707,21 +2725,25 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 <div class="api">
     <div class="api_summary">연결 해제 (Revoke Endpoint)</div>
-    <div class="api_header">
-        <div class="api_method">post</div>
-        <div class="api_url">/v1/auth/oauth/revoke</div>
-    </div>
-    <div class="api_description">
+    <div class="api_content">
+        <div class="api_header">
+            <div class="api_method"><label>POST</label></div>
+            <div class="api_url">
+                <label class="api_base_url"></label>
+                <label class="api_path">/v1/auth/oauth/revoke</label>
+            </div>
+        </div>
+        <div class="api_description">
     
 
 
 </div>
-    <div class="api_parameter_title">Parameters</div>
-    
-    
-        <div class="api_parameter_category_title">Body</div>
-        <div class="api_parameters">
-            <div class="api_parameter">
+        <div class="api_parameter_title">Parameters</div>
+        
+        
+            <div class="api_parameter_category_title">Body</div>
+            <div class="api_parameters">
+                <div class="api_parameter">
     <div class="api_parameter_name">data</div>
     <div class="api_parameter_type">string</div>
     <div class="api_parameter_description">
@@ -2749,14 +2771,14 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 </div>
 </div>
-        </div>
-    
-    <div class="api_response_title">Responses</div>
-    <div class="api_responses">
-        <div class="api_response">
+            </div>
+        
+        <div class="api_response_title">Responses</div>
+        <div class="api_responses">
+            <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">200</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>200</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2802,8 +2824,8 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">400</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>400</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2849,8 +2871,8 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">401</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>401</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2894,6 +2916,8 @@ Content-Type: application/json;charset=UTF-8
 
     </div>
 </div>
+
+        </div>
     </div>
 </div>
 
@@ -2902,21 +2926,25 @@ Content-Type: application/json;charset=UTF-8
 
 <div class="api">
     <div class="api_summary">연결 조회 (Introspect Endpoint)</div>
-    <div class="api_header">
-        <div class="api_method">post</div>
-        <div class="api_url">/v1/auth/oauth/introspect</div>
-    </div>
-    <div class="api_description">
+    <div class="api_content">
+        <div class="api_header">
+            <div class="api_method"><label>POST</label></div>
+            <div class="api_url">
+                <label class="api_base_url"></label>
+                <label class="api_path">/v1/auth/oauth/introspect</label>
+            </div>
+        </div>
+        <div class="api_description">
     
 
 
 </div>
-    <div class="api_parameter_title">Parameters</div>
-    
-    
-        <div class="api_parameter_category_title">Body</div>
-        <div class="api_parameters">
-            <div class="api_parameter">
+        <div class="api_parameter_title">Parameters</div>
+        
+        
+            <div class="api_parameter_category_title">Body</div>
+            <div class="api_parameters">
+                <div class="api_parameter">
     <div class="api_parameter_name">data</div>
     <div class="api_parameter_type">string</div>
     <div class="api_parameter_description">
@@ -2944,14 +2972,14 @@ Content-Type: application/json;charset=UTF-8
 
 </div>
 </div>
-        </div>
-    
-    <div class="api_response_title">Responses</div>
-    <div class="api_responses">
-        <div class="api_response">
+            </div>
+        
+        <div class="api_response_title">Responses</div>
+        <div class="api_responses">
+            <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">200</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>200</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -2997,8 +3025,8 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">400</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>400</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -3044,8 +3072,8 @@ Content-Type: application/json;charset=UTF-8
 </div>
 <div class="api_response">
     <div class="api_response_header">
-        <div class="api_response_status">401</div>
-        <div class="api_response_description"></div>
+        <div class="api_response_status"><label>401</label></div>
+        <div class="api_response_description"><label></label></div>
     </div>
     <div class="api_response_body">
         
@@ -3089,6 +3117,8 @@ Content-Type: application/json;charset=UTF-8
 
     </div>
 </div>
+
+        </div>
     </div>
 </div>
 
