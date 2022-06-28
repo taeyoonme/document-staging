@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">Play 에서 전달하는 음원을 재생하기 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.6 입니다.</p>
 
@@ -2205,13 +2206,16 @@
   </tbody>
 </table>
 
-<h2 id="state-diagram">State Diagram</h2>
+<h2 id="state-diagram">State Diagram<a href="#state-diagram" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#state-diagram"></div>
+</h2>
 
 <p><img src="/document/assets/images/audioplayer-01.png" alt="" class="img_internal"></p>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="audioplayeragent-사용">AudioPlayerAgent 사용</h3>
+<h3 id="audioplayeragent-사용">AudioPlayerAgent 사용<a href="#audioplayeragent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#audioplayeragent-사용"></div>
+</h3>
 
 <p>AudioPlayer interface 규격에 따른 디바이스의 동작 제어는 AudioPlayerAgent 가 처리합니다.</p>
 
@@ -2304,7 +2308,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="재생-상태-모니터링">재생 상태 모니터링</h3>
+<h3 id="재생-상태-모니터링">재생 상태 모니터링<a href="#%EC%9E%AC%EC%83%9D-%EC%83%81%ED%83%9C-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#재생-상태-모니터링"></div>
+</h3>
 
 <p><a href="/document/nugu-sdk/capability-interface/audioplayer#play" class="a_internal">Play</a> directive 로 전달된 음원에 대한 재생 상태를 모니터링 할 수 있습니다.</p>
 
@@ -2433,7 +2438,8 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
 
 </div>
 
-<h3 id="ui-구성-및-제어">UI 구성 및 제어</h3>
+<h3 id="ui-구성-및-제어">UI 구성 및 제어<a href="#ui-%EA%B5%AC%EC%84%B1-%EB%B0%8F-%EC%A0%9C%EC%96%B4" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#ui-구성-및-제어"></div>
+</h3>
 
 <p>AudioPlayer 로 음원을 재생할 때 화면을 구성하기 위해 필요한 데이터는 <a href="/document/nugu-sdk/capability-interface/audioplayer#play" class="a_internal">Play</a> directive 의 <code class="language-plaintext highlighter-rouge">audioItem.metadata.template</code> 에 포함되어 전달됩니다.</p>
 
@@ -2650,7 +2656,8 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
 
 </div>
 
-<h3 id="제어-명령">제어 명령</h3>
+<h3 id="제어-명령">제어 명령<a href="#%EC%A0%9C%EC%96%B4-%EB%AA%85%EB%A0%B9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#제어-명령"></div>
+</h3>
 
 <p>PUI, GUI 등으로 사용자가 <a href="/document/nugu-sdk/capability-interface/audioplayer#nextcommandissued" class="a_internal">다음</a>/<a href="/document/nugu-sdk/capability-interface/audioplayer#previouscommandissued" class="a_internal">이전</a>/<a href="/document/nugu-sdk/capability-interface/audioplayer#favoritecommandissued" class="a_internal">즐겨찾기</a>/<a href="/document/nugu-sdk/capability-interface/audioplayer#repeatcommandissued" class="a_internal">반복</a>/<a href="/document/nugu-sdk/capability-interface/audioplayer#shufflecommandissued" class="a_internal">셔플</a> 요청을 event 로 전달할 수 있습니다.</p>
 
@@ -2781,7 +2788,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2868,9 +2876,11 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h2 id="directives">Directives</h2>
+<h2 id="directives">Directives<a href="#directives" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directives"></div>
+</h2>
 
-<h3 id="play">Play</h3>
+<h3 id="play">Play<a href="#play" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#play"></div>
+</h3>
 
 <p>새로운 음원 또는 현재 음원 재생 요청입니다.(Play, Resume, Seek 요청이 포함되어 있습니다.)</p>
 
@@ -3025,7 +3035,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h4 id="audioitemmetadatatemplate---audioplayertemplate1">audioItem.metadata.template - AudioPlayer.Template1</h4>
+<h4 id="audioitemmetadatatemplate---audioplayertemplate1">audioItem.metadata.template - AudioPlayer.Template1<a href="#audioitemmetadatatemplate---audioplayertemplate1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#audioitemmetadatatemplate---audioplayertemplate1"></div>
+</h4>
 
 <div class="code">
     <div class="code_title">
@@ -3295,7 +3306,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h4 id="audioitemmetadatatemplate---audioplayertemplate2">audioItem.metadata.template - AudioPlayer.Template2</h4>
+<h4 id="audioitemmetadatatemplate---audioplayertemplate2">audioItem.metadata.template - AudioPlayer.Template2<a href="#audioitemmetadatatemplate---audioplayertemplate2" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#audioitemmetadatatemplate---audioplayertemplate2"></div>
+</h4>
 
 <div class="code">
     <div class="code_title">
@@ -3500,7 +3512,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="stop">Stop</h3>
+<h3 id="stop">Stop<a href="#stop" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stop"></div>
+</h3>
 
 <p>음원 재생 중지 요청입니다.</p>
 
@@ -3542,7 +3555,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="pause">Pause</h3>
+<h3 id="pause">Pause<a href="#pause" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#pause"></div>
+</h3>
 
 <p>음원 일시정지 요청입니다.</p>
 
@@ -3584,7 +3598,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="updatemetadata">UpdateMetadata</h3>
+<h3 id="updatemetadata">UpdateMetadata<a href="#updatemetadata" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#updatemetadata"></div>
+</h3>
 
 <p>음원의 Metadata UI 설정 정보를 갱신 요청입니다.</p>
 
@@ -3679,7 +3694,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="showlyrics">ShowLyrics</h3>
+<h3 id="showlyrics">ShowLyrics<a href="#showlyrics" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#showlyrics"></div>
+</h3>
 
 <p>가사화면 표시 요청입니다.</p>
 
@@ -3721,7 +3737,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="hidelyrics">HideLyrics</h3>
+<h3 id="hidelyrics">HideLyrics<a href="#hidelyrics" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#hidelyrics"></div>
+</h3>
 
 <p>가사화면 닫기 요청입니다.</p>
 
@@ -3763,7 +3780,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="controllyricspage">ControlLyricsPage</h3>
+<h3 id="controllyricspage">ControlLyricsPage<a href="#controllyricspage" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#controllyricspage"></div>
+</h3>
 
 <p>가사화면 스크롤 위치 이동 요청입니다.</p>
 
@@ -3826,7 +3844,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requestplaycommand">RequestPlayCommand</h3>
+<h3 id="requestplaycommand">RequestPlayCommand<a href="#requestplaycommand" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestplaycommand"></div>
+</h3>
 
 <ul>
   <li>Nugu mobile application 에서 새로운 곡 재생을 요청하기 위한 Directive.</li>
@@ -3885,7 +3904,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requestresumecommand">RequestResumeCommand</h3>
+<h3 id="requestresumecommand">RequestResumeCommand<a href="#requestresumecommand" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestresumecommand"></div>
+</h3>
 
 <ul>
   <li>Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.</li>
@@ -3925,7 +3945,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="requestnextcommand">RequestNextCommand</h3>
+<h3 id="requestnextcommand">RequestNextCommand<a href="#requestnextcommand" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestnextcommand"></div>
+</h3>
 
 <ul>
   <li>Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.</li>
@@ -3965,7 +3986,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="requestpreviouscommand">RequestPreviousCommand</h3>
+<h3 id="requestpreviouscommand">RequestPreviousCommand<a href="#requestpreviouscommand" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestpreviouscommand"></div>
+</h3>
 
 <ul>
   <li>Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.</li>
@@ -4005,7 +4027,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="requestpausecommand">RequestPauseCommand</h3>
+<h3 id="requestpausecommand">RequestPauseCommand<a href="#requestpausecommand" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestpausecommand"></div>
+</h3>
 
 <ul>
   <li>Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.</li>
@@ -4045,7 +4068,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="requeststopcommand">RequestStopCommand</h3>
+<h3 id="requeststopcommand">RequestStopCommand<a href="#requeststopcommand" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requeststopcommand"></div>
+</h3>
 
 <ul>
   <li>Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.</li>
@@ -4085,9 +4109,11 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h2 id="events">Events</h2>
+<h2 id="events">Events<a href="#events" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#events"></div>
+</h2>
 
-<h3 id="playbackstarted">PlaybackStarted</h3>
+<h3 id="playbackstarted">PlaybackStarted<a href="#playbackstarted" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playbackstarted"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4156,7 +4182,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="playbackpaused">PlaybackPaused</h3>
+<h3 id="playbackpaused">PlaybackPaused<a href="#playbackpaused" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playbackpaused"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4225,7 +4252,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="playbackresumed">PlaybackResumed</h3>
+<h3 id="playbackresumed">PlaybackResumed<a href="#playbackresumed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playbackresumed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4294,7 +4322,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="playbackfinished">PlaybackFinished</h3>
+<h3 id="playbackfinished">PlaybackFinished<a href="#playbackfinished" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playbackfinished"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4363,7 +4392,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="playbackstopped">PlaybackStopped</h3>
+<h3 id="playbackstopped">PlaybackStopped<a href="#playbackstopped" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playbackstopped"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4440,7 +4470,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="playbackfailed">PlaybackFailed</h3>
+<h3 id="playbackfailed">PlaybackFailed<a href="#playbackfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playbackfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4560,7 +4591,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="progressreportdelayelapsed">ProgressReportDelayElapsed</h3>
+<h3 id="progressreportdelayelapsed">ProgressReportDelayElapsed<a href="#progressreportdelayelapsed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#progressreportdelayelapsed"></div>
+</h3>
 
 <ul>
   <li>Play directive로 전달된 stream이 재생을 시작한 뒤 progressReportDelayInMilliseconds</li>
@@ -4634,7 +4666,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="progressreportintervalelapsed">ProgressReportIntervalElapsed</h3>
+<h3 id="progressreportintervalelapsed">ProgressReportIntervalElapsed<a href="#progressreportintervalelapsed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#progressreportintervalelapsed"></div>
+</h3>
 
 <ul>
   <li>Play directive로 전달된 stream이 재생을 시작한 뒤 progressIntervalDelayInMilliseconds 주기마다 Event 전달</li>
@@ -4708,7 +4741,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="nextcommandissued">NextCommandIssued</h3>
+<h3 id="nextcommandissued">NextCommandIssued<a href="#nextcommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#nextcommandissued"></div>
+</h3>
 
 <p>사용자가 다음 음원 재생을 요청하면 전송됩니다.</p>
 
@@ -4779,7 +4813,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="previouscommandissued">PreviousCommandIssued</h3>
+<h3 id="previouscommandissued">PreviousCommandIssued<a href="#previouscommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#previouscommandissued"></div>
+</h3>
 
 <p>사용자가 이전 음원 재생을 요청하면 전송됩니다.</p>
 
@@ -4850,7 +4885,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="favoritecommandissued">FavoriteCommandIssued</h3>
+<h3 id="favoritecommandissued">FavoriteCommandIssued<a href="#favoritecommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#favoritecommandissued"></div>
+</h3>
 
 <p>사용자가 현재 음원 즐겨찾기(좋아요 포함)를 요청하면 전송됩니다.</p>
 
@@ -4913,7 +4949,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="repeatcommandissued">RepeatCommandIssued</h3>
+<h3 id="repeatcommandissued">RepeatCommandIssued<a href="#repeatcommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#repeatcommandissued"></div>
+</h3>
 
 <p>사용자가 현재 음원 반복 재생을 요청하면 전송됩니다.</p>
 
@@ -4976,7 +5013,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="shufflecommandissued">ShuffleCommandIssued</h3>
+<h3 id="shufflecommandissued">ShuffleCommandIssued<a href="#shufflecommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#shufflecommandissued"></div>
+</h3>
 
 <p>사용자가 셔플 재생을 요청하면 전송됩니다.</p>
 
@@ -5039,7 +5077,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="showlyricssucceeded">ShowLyricsSucceeded</h3>
+<h3 id="showlyricssucceeded">ShowLyricsSucceeded<a href="#showlyricssucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#showlyricssucceeded"></div>
+</h3>
 
 <ul>
   <li>ShowLyrics Directive가 발생하여 가사화면을 성공적으로 띄운다음 발생되는 Event</li>
@@ -5083,7 +5122,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="showlyricsfailed">ShowLyricsFailed</h3>
+<h3 id="showlyricsfailed">ShowLyricsFailed<a href="#showlyricsfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#showlyricsfailed"></div>
+</h3>
 
 <ul>
   <li>ShowLyrics Directive가 발생하였는데 가사화면을 띄우지 못한 경우 발생되는 Event</li>
@@ -5127,7 +5167,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="hidelyricssucceeded">HideLyricsSucceeded</h3>
+<h3 id="hidelyricssucceeded">HideLyricsSucceeded<a href="#hidelyricssucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#hidelyricssucceeded"></div>
+</h3>
 
 <ul>
   <li>HideLyrics Directive가 발생하여 가사화면을 성공적으로 닫은 다음 발생되는 Event</li>
@@ -5171,7 +5212,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="hidelyricsfailed">HideLyricsFailed</h3>
+<h3 id="hidelyricsfailed">HideLyricsFailed<a href="#hidelyricsfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#hidelyricsfailed"></div>
+</h3>
 
 <ul>
   <li>HideLyrics Directive가 발생하였는데 가사화면을 닫지 못한 경우 발생되는 Event</li>
@@ -5215,7 +5257,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 </div>
 </div>
 
-<h3 id="controllyricspagesucceeded">ControlLyricsPageSucceeded</h3>
+<h3 id="controllyricspagesucceeded">ControlLyricsPageSucceeded<a href="#controllyricspagesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#controllyricspagesucceeded"></div>
+</h3>
 
 <ul>
   <li>ControlLyricsPage Directive가 발생하여 가사화면을 성공적으로 이동한 다음 발생되는 Event</li>
@@ -5280,7 +5323,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="controllyricspagefailed">ControlLyricsPageFailed</h3>
+<h3 id="controllyricspagefailed">ControlLyricsPageFailed<a href="#controllyricspagefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#controllyricspagefailed"></div>
+</h3>
 
 <ul>
   <li>ControlLyricsPage Directive가 발생하였는데 가사화면을 이동하지 못한 경우 발생되는 Event</li>
@@ -5345,7 +5389,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requestplaycommandissued">RequestPlayCommandIssued</h3>
+<h3 id="requestplaycommandissued">RequestPlayCommandIssued<a href="#requestplaycommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestplaycommandissued"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5400,7 +5445,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requestresumecommandissued">RequestResumeCommandIssued</h3>
+<h3 id="requestresumecommandissued">RequestResumeCommandIssued<a href="#requestresumecommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestresumecommandissued"></div>
+</h3>
 
 <ul>
   <li>RequestResumeCommand Directive 를 받은 디바이스가 발생시키는 Event.</li>
@@ -5473,7 +5519,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requestnextcommandissued">RequestNextCommandIssued</h3>
+<h3 id="requestnextcommandissued">RequestNextCommandIssued<a href="#requestnextcommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestnextcommandissued"></div>
+</h3>
 
 <ul>
   <li>RequestNextCommand Directive 를 받은 디바이스가 발생시키는 Event.</li>
@@ -5546,7 +5593,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requestpreviouscommandissued">RequestPreviousCommandIssued</h3>
+<h3 id="requestpreviouscommandissued">RequestPreviousCommandIssued<a href="#requestpreviouscommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestpreviouscommandissued"></div>
+</h3>
 
 <ul>
   <li>RequestPreviousCommand Directive 를 받은 디바이스가 발생시키는 Event.</li>
@@ -5619,7 +5667,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requestpausecommandissued">RequestPauseCommandIssued</h3>
+<h3 id="requestpausecommandissued">RequestPauseCommandIssued<a href="#requestpausecommandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestpausecommandissued"></div>
+</h3>
 
 <ul>
   <li>RequestPauseCommand Directive 를 받은 디바이스가 발생시키는 Event.</li>
@@ -5692,7 +5741,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requeststop-commandissued">RequestStop CommandIssued</h3>
+<h3 id="requeststop-commandissued">RequestStop CommandIssued<a href="#requeststop-commandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requeststop-commandissued"></div>
+</h3>
 
 <ul>
   <li>RequestStopCommand Directive 를 받은 디바이스가 발생시키는 Event.</li>
@@ -5765,7 +5815,8 @@ audio_player_handler-&gt;requestShuffleCommand(false)
   </tbody>
 </table>
 
-<h3 id="requestcommandfailed">RequestCommandFailed</h3>
+<h3 id="requestcommandfailed">RequestCommandFailed<a href="#requestcommandfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#requestcommandfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">

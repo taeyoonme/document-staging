@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2156,7 +2156,7 @@
 
 <div class="alerts info">
     
-<p>Play에서 Capability Interface를 활용하는 방법에 대한 자세한 내용은 <a href="/document/nugu-play/create-a-play-with-audioplayer" class="a_internal">AudioPlayer Interface 지원하는 Play 만들기</a>를 참고하세요.</p>
+<p>Play에서 Capability Interface를 활용하는 방법에 대한 자세한 내용은 <a href="/document/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer" class="a_internal">AudioPlayer Interface 지원하는 Play 만들기</a>를 참고하세요.</p>
 
 </div>
 
@@ -2180,7 +2180,8 @@
 
 <p><img src="/document/assets/images/capability-interfaces-01.png" alt="" class="img_internal"></p>
 
-<h2 id="built-in-intent">Built-in Intent</h2>
+<h2 id="built-in-intent">Built-in Intent<a href="#built-in-intent" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#built-in-intent"></div>
+</h2>
 
 <p>Built-in Intent는 해당 디바이스 기능을 사용자가 발화를 통해 제어하려고 할때 예상되는 발화를 미리 학습시켜둔 Intent입니다. Built-in Intent는 Capability Interface별로 다르며 Built-in Intent를 갖지 않는 Interface가 있을 수 있습니다.</p>
 
@@ -2192,7 +2193,8 @@
 
 </div>
 
-<h2 id="directive">Directive</h2>
+<h2 id="directive">Directive<a href="#directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#directive"></div>
+</h2>
 
 <p>Directive는 Action에 정의된 Response로 사용됩니다. Directive를 응답으로 정의한 Action이 Built-in Intent, Custom Intent 등 Trigger로 인해 활성화되면, Play는 Backend proxy에 정의된 Directive를 요청하게 됩니다.</p>
 
@@ -2214,11 +2216,13 @@
 
 <p><img src="/document/assets/images/capability-interfaces-03.png" alt="" class="img_internal"></p>
 
-<h2 id="event">Event</h2>
+<h2 id="event">Event<a href="#event" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#event"></div>
+</h2>
 
 <p>Event는 디바이스의 기능이 동작하면서 Play가 제어를 하기 위해 알아야 하는 상태 변화가 있을 때마다 전달됩니다.Directive를 사용하기 위해서는 Event에 대한 이해가 필수적이며, Capability Interface별로 전달되는 Event는 다르기 때문에 사용할 Interface별 Event 스펙을 확인해야 합니다.</p>
 
-<h2 id="capability-interface의-종류">Capability Interface의 종류</h2>
+<h2 id="capability-interface의-종류">Capability Interface의 종류<a href="#capability-interface%EC%9D%98-%EC%A2%85%EB%A5%98" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#capability-interface의-종류"></div>
+</h2>
 
 <p>Capability Interface 종류는 다음과 같습니다. 현재는 AudioPlayer Interface만 지원합니다.</p>
 

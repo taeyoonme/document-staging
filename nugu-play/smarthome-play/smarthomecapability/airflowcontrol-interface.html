@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2152,7 +2152,8 @@
     <div class="content">
         <p>NUGU 스마트홈 AirflowControl Capability Interface는 NUGU 스마트홈에 등록된 SmartHomeDevice의 풍량제어방식에 대한 설명입니다. 특정 풍량을 설정하거나 풍량 단계를 상향, 하향 조정하는 등의 Directive들로 구성되어 있으며 팬 및 풍량, 풍속을 제어할 수 있는 기능이 있는 모든 SmartHomeDevice를 지원합니다.</p>
 
-<h2 id="discovery">Discovery</h2>
+<h2 id="discovery">Discovery<a href="#discovery" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#discovery"></div>
+</h2>
 
 <p>NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스마트홈에 SmartHomeDevice를 등록해야 합니다. 사용자가 NUGU App을 통해 SmartHomeDevice 등록을 요청하면 SmartHome Play 제작 당시 입력한 SmartHomeBackendProxy URL로 NUGU스마트홈에 등록할 수 있는 SmartHomeDevice 목록에 대한 Discovery 요청이 전달됩니다. SmartHomeBackendProxy는 SmartHomeDevice 목록과 함께 각 SmartHomeDevice별로 지원하는 Capability와 그에 따른 부가적인 Parameter들을 응답해야 합니다.</p>
 
@@ -2269,11 +2270,13 @@
   </tbody>
 </table>
 
-<h2 id="directive">Directive</h2>
+<h2 id="directive">Directive<a href="#directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#directive"></div>
+</h2>
 
 <p>NUGU SmartHome AirflowControl Capability는 풍량을 조회하는 AskAirflow, 풍량을 제어하는 SetAirflow, IncreaseAirflow, DecreaseAirflow, SetAirflowMax, SetAirflowMin 등의 Directive를 지원합니다.</p>
 
-<h3 id="setairflow">SetAirflow</h3>
+<h3 id="setairflow">SetAirflow<a href="#setairflow" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#setairflow"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 풍량을 사용자가 발화한 특정 풍량으로 설정한다.<br>
@@ -2478,7 +2481,8 @@ Directive : SetAirflow</p>
   </tbody>
 </table>
 
-<h3 id="askairflow">AskAirflow</h3>
+<h3 id="askairflow">AskAirflow<a href="#askairflow" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#askairflow"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice에 설정된 풍량을 조회한다.<br>
@@ -2665,7 +2669,8 @@ Directive : AskAirflow</p>
   </tbody>
 </table>
 
-<h3 id="increaseairflow">IncreaseAirflow</h3>
+<h3 id="increaseairflow">IncreaseAirflow<a href="#increaseairflow" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#increaseairflow"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 설정 풍량을 증가시킨다.<br>
@@ -2869,7 +2874,8 @@ Directive : IncreaseAirflow</p>
   </tbody>
 </table>
 
-<h3 id="decreaseairflow">DecreaseAirflow</h3>
+<h3 id="decreaseairflow">DecreaseAirflow<a href="#decreaseairflow" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#decreaseairflow"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 설정 풍량을 감소시킨다.<br>
@@ -3041,7 +3047,8 @@ Directive : DecreaseAirflow</p>
   </tbody>
 </table>
 
-<h3 id="setairflowmax">SetAirflowMax</h3>
+<h3 id="setairflowmax">SetAirflowMax<a href="#setairflowmax" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#setairflowmax"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice을 최고 풍량으로 설정한다.<br>
@@ -3226,7 +3233,8 @@ Directive : SetAirflowMax</p>
   </tbody>
 </table>
 
-<h3 id="setairflowmin">SetAirflowMin</h3>
+<h3 id="setairflowmin">SetAirflowMin<a href="#setairflowmin" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#setairflowmin"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice을 최저 풍량으로 설정한다.<br>
@@ -3411,7 +3419,8 @@ Directive : SetAirflowMin</p>
   </tbody>
 </table>
 
-<h2 id="error--exception">Error &amp; Exception</h2>
+<h2 id="error--exception">Error &amp; Exception<a href="#error--exception" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#error--exception"></div>
+</h2>
 
 <p>해당 Capability/Directive에서 응답 시 사용할 수 있는 ErrorCode는 <a href="/document/nugu-play/smarthome-play/smarthomeerror" class="a_internal">SmartHomeError</a>를 참조해주시기 바랍니다.</p>
 

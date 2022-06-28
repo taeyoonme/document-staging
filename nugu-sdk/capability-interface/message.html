@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">문자 확인 및 전송 기능 제어를 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.4 입니다.</p>
 
@@ -2195,9 +2196,11 @@
   </tbody>
 </table>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="messageagent-사용">MessageAgent 사용</h3>
+<h3 id="messageagent-사용">MessageAgent 사용<a href="#messageagent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#messageagent-사용"></div>
+</h3>
 
 <p>MessageCall interface 규격에 따른 디바이스의 동작 제어는 MessageAgent 가 처리합니다.</p>
 
@@ -2292,7 +2295,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="context-구성">Context 구성</h3>
+<h3 id="context-구성">Context 구성<a href="#context-%EA%B5%AC%EC%84%B1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context-구성"></div>
+</h3>
 
 <p>문자 기능과 관련된 상태 정보를 <a href="#context" class="hash_internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
@@ -2339,7 +2343,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="문자-전송">문자 전송</h3>
+<h3 id="문자-전송">문자 전송<a href="#%EB%AC%B8%EC%9E%90-%EC%A0%84%EC%86%A1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#문자-전송"></div>
+</h3>
 
 <p>문자 전송이 <a href="#sendcandidates" class="hash_internal">SendCandidates</a>, <a href="#sendmessage" class="hash_internal">SendMessage</a> directive 로 요청될 수 있습니다.</p>
 
@@ -2456,7 +2461,8 @@ CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_l
 
 </div>
 
-<h3 id="문자-읽기">문자 읽기</h3>
+<h3 id="문자-읽기">문자 읽기<a href="#%EB%AC%B8%EC%9E%90-%EC%9D%BD%EA%B8%B0" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#문자-읽기"></div>
+</h3>
 
 <p>문자 읽기가 <a href="/document/nugu-sdk/capability-interface/message#getmessage" class="a_internal">GetMessage</a>, <a href="/document/nugu-sdk/capability-interface/message#readmessage" class="a_internal">ReadMessage</a> directive 로 요청될 수 있습니다.</p>
 
@@ -2552,7 +2558,8 @@ CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_l
 
 </div>
 
-<h3 id="재생-상태-모니터링">재생 상태 모니터링</h3>
+<h3 id="재생-상태-모니터링">재생 상태 모니터링<a href="#%EC%9E%AC%EC%83%9D-%EC%83%81%ED%83%9C-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#재생-상태-모니터링"></div>
+</h3>
 
 <p><a href="/document/nugu-sdk/capability-interface/message#readmessage" class="a_internal">ReadMessage</a> directive 로 전달된 문자에 대한 재생 상태를 모니터링 할 수 있습니다.</p>
 
@@ -2593,7 +2600,8 @@ messageAgent.addOnPlaybackListener(listener)
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2735,9 +2743,11 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h2 id="common-objects">Common Objects</h2>
+<h2 id="common-objects">Common Objects<a href="#common-objects" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#common-objects"></div>
+</h2>
 
-<h3 id="contact">Contact</h3>
+<h3 id="contact">Contact<a href="#contact" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#contact"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2871,9 +2881,11 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h2 id="directives">Directives</h2>
+<h2 id="directives">Directives<a href="#directives" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directives"></div>
+</h2>
 
-<h3 id="sendcandidates">SendCandidates</h3>
+<h3 id="sendcandidates">SendCandidates<a href="#sendcandidates" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sendcandidates"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3002,7 +3014,8 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h3 id="sendmessage">SendMessage</h3>
+<h3 id="sendmessage">SendMessage<a href="#sendmessage" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sendmessage"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3063,7 +3076,8 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h3 id="getmessage">GetMessage</h3>
+<h3 id="getmessage">GetMessage<a href="#getmessage" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#getmessage"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3151,7 +3165,8 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h3 id="readmessage">ReadMessage</h3>
+<h3 id="readmessage">ReadMessage<a href="#readmessage" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#readmessage"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3220,9 +3235,11 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h2 id="events">Events</h2>
+<h2 id="events">Events<a href="#events" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#events"></div>
+</h2>
 
-<h3 id="candidateslisted">CandidatesListed</h3>
+<h3 id="candidateslisted">CandidatesListed<a href="#candidateslisted" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#candidateslisted"></div>
+</h3>
 
 <ul>
   <li>검색 결과 리스트가 화면에 보여지는 경우 보내는 Event</li>
@@ -3267,7 +3284,8 @@ messageAgent.addOnPlaybackListener(listener)
 </div>
 </div>
 
-<h3 id="sendmessagesucceeded">SendMessageSucceeded</h3>
+<h3 id="sendmessagesucceeded">SendMessageSucceeded<a href="#sendmessagesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sendmessagesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3328,7 +3346,8 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h3 id="sendmessagefailed">SendMessageFailed</h3>
+<h3 id="sendmessagefailed">SendMessageFailed<a href="#sendmessagefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sendmessagefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3397,7 +3416,8 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h3 id="getmessagesucceeded">GetMessageSucceeded</h3>
+<h3 id="getmessagesucceeded">GetMessageSucceeded<a href="#getmessagesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#getmessagesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3458,7 +3478,8 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h3 id="getmessagefailed">GetMessageFailed</h3>
+<h3 id="getmessagefailed">GetMessageFailed<a href="#getmessagefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#getmessagefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3519,7 +3540,8 @@ messageAgent.addOnPlaybackListener(listener)
   </tbody>
 </table>
 
-<h3 id="readmessagefinished">ReadMessageFinished</h3>
+<h3 id="readmessagefinished">ReadMessageFinished<a href="#readmessagefinished" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#readmessagefinished"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">

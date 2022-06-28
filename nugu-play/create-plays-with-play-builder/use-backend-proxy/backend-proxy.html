@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2197,7 +2197,8 @@
 
 <p>Backend proxy 서버는 위의 정보를 바탕으로 특정 사용자가 전달한 요청에 대해 적절한 정보를 전달해야 합니다.</p>
 
-<h2 id="rest-api-url">REST API URL</h2>
+<h2 id="rest-api-url">REST API URL<a href="#rest-api-url" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#rest-api-url"></div>
+</h2>
 
 <p>REST API 호출은 Backend proxy를 사용하도록 지정한 Action에서만 이루어지며, 각 Action 별로 고유한 REST API URL이 결정됩니다.</p>
 
@@ -2217,7 +2218,8 @@
 
 <p><img src="/document/assets/images/backend-proxy-04.png" alt="" class="img_internal"></p>
 
-<h2 id="request-body">Request Body</h2>
+<h2 id="request-body">Request Body<a href="#request-body" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#request-body"></div>
+</h2>
 
 <p>Request의 Body로 전달되는 JSON 포맷의 데이터는 <a href="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference" class="a_internal">Backend proxy API Reference</a>를 참조합니다. 이 JSON 데이터는 임의의 필드가 추가 될 수 있으므로, 이에 대한 영향이 없도록 구현되어야 합니다. Request Body에 정의된 필드 중 Play Builder에 설정한 값들에 의해 결정되는 필드는 action.parameters 입니다.</p>
 
@@ -2298,7 +2300,8 @@
 </div>
 </div>
 
-<h2 id="response-body">Response Body</h2>
+<h2 id="response-body">Response Body<a href="#response-body" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#response-body"></div>
+</h2>
 
 <p>REST API 요청에 대한 응답으로 생성되는 Body는 Request Body의 action.parameters에 전달했던 모든 KEY를 동일하게 Response에 전달해주어야 합니다.</p>
 
@@ -2319,7 +2322,8 @@
 
 </div>
 
-<h3 id="resultcode">resultCode</h3>
+<h3 id="resultcode">resultCode<a href="#resultcode" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#resultcode"></div>
+</h3>
 
 <p><img src="/document/assets/images/backend-proxy-06.png" alt="" class="img_internal"></p>
 
@@ -2345,7 +2349,8 @@
   <li>이외의 모든 값 (“”, null 포함) - <code class="language-plaintext highlighter-rouge">Play Builder</code> &gt; <code class="language-plaintext highlighter-rouge">외부 서버 연결 정보</code> &gt; <code class="language-plaintext highlighter-rouge">연동 실패 시 Prompt</code> 영역에서 지정한 기본(Default) Prompt를 보내 줍니다.</li>
 </ul>
 
-<h3 id="directives">directives</h3>
+<h3 id="directives">directives<a href="#directives" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy#directives"></div>
+</h3>
 
 <p>directive에는 Play가 지원하는 Capability Interface에서 정의한 Directive가 올 수 있습니다. Play는 임의 개수의 Capability Interface를 지원하도록 설정할 수 있고, Play가 지원하는 Capability Interface의 모든 directive가 Response Body 내에 포함될 수 있습니다.</p>
 

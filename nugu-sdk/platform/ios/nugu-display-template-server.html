@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2152,7 +2152,8 @@
     <div class="content">
         <p>NUGU 서비스에서 UI Display 를 담당하는 <code class="language-plaintext highlighter-rouge">DisplayAgent</code> 는 Display 의 동작, life cycle 을 <code class="language-plaintext highlighter-rouge">DisplayAgentDelegate</code> 를 통해 전달하고 있습니다. 사용자는 <code class="language-plaintext highlighter-rouge">DisplayAgentDelegate</code> 를 받아, 직접 DisplayView 를 그려줄 수도 있으나, <code class="language-plaintext highlighter-rouge">NuguUIKit</code> 은 사용자의 편의성을 위해 간단히 생성, 설정, 노출 가능한 <code class="language-plaintext highlighter-rouge">NuguDisplayWebView</code> 를 제공하고 있습니다. Template server 에 접속하여 Display 웹뷰를 내려받아 노출하는 <code class="language-plaintext highlighter-rouge">NuguDisplayWebView</code> 를 사용하는 방법은 크게 두가지가 있습니다.</p>
 
-<h2 id="displaywebviewpresenter-를-사용하기">DisplayWebViewPresenter 를 사용하기</h2>
+<h2 id="displaywebviewpresenter-를-사용하기">DisplayWebViewPresenter 를 사용하기<a href="#displaywebviewpresenter-%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#displaywebviewpresenter-를-사용하기"></div>
+</h2>
 
 <p><code class="language-plaintext highlighter-rouge">NuguClientKit</code> 은 사용자가 더 쉽게, 편리하게 Display 를 노출하기 위해 <code class="language-plaintext highlighter-rouge">DisplayWebViewPresenter</code> 를 제공하고 있습니다. <code class="language-plaintext highlighter-rouge">DisplayWebViewPresenter</code> 는 사용자가 <code class="language-plaintext highlighter-rouge">DisplayAgentDelegate</code> 를 구현할 필요없이 내부적으로 <code class="language-plaintext highlighter-rouge">DisplayAgent</code> 동작 핸들링을 하고 있으며, 간단한 delegate 메소드만 사용자에게 제공합니다. <code class="language-plaintext highlighter-rouge">DisplayWebViewPresenter</code> 를 사용하기 위해선 제일 먼저 <code class="language-plaintext highlighter-rouge">NuguClientKit</code> 을 import 하도록 합니다.</p>
 
@@ -2239,7 +2240,8 @@
 </div>
 </div>
 
-<h2 id="nugudisplaywebview-를-직접-사용하기">NuguDisplayWebView 를 직접 사용하기</h2>
+<h2 id="nugudisplaywebview-를-직접-사용하기">NuguDisplayWebView 를 직접 사용하기<a href="#nugudisplaywebview-%EB%A5%BC-%EC%A7%81%EC%A0%91-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#nugudisplaywebview-를-직접-사용하기"></div>
+</h2>
 
 <p><code class="language-plaintext highlighter-rouge">DisplayWebViewPresenter</code> 의 도움없이, 직접 <code class="language-plaintext highlighter-rouge">NuguDisplayWebView</code> 를 생성하고 사용할 수 있습니다. <code class="language-plaintext highlighter-rouge">NuguDisplayWebView</code> 를 사용하기 위해, 먼저 <code class="language-plaintext highlighter-rouge">DisplayAgentDelegate</code> 를 구현하는 객체에 NuguUIKit 을 import합니다.</p>
 

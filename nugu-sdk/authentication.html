@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
 
 <p>플랫폼 인증을 위해서는 NUGU에서 별도로 발급하는 <code class="language-plaintext highlighter-rouge">Client Id, Client Secret</code>과 제휴사에서 등록한 <code class="language-plaintext highlighter-rouge">Redirect Uri</code> 정보가 필요합니다. 인증 정보는 체험판 신청으로 발급 받을 수 있으며, 정식판 제휴 시에는 PoC 관리 메뉴에서 발급 받은 정보를 확인 할 수 있습니다.</p>
 
-<h2 id="authorize-endpoint">Authorize Endpoint</h2>
+<h2 id="authorize-endpoint">Authorize Endpoint<a href="#authorize-endpoint" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk#authorize-endpoint"></div>
+</h2>
 
 <p><code class="language-plaintext highlighter-rouge">response_type=code</code> 만 사용 됩니다.</p>
 
@@ -2259,7 +2260,8 @@ Location: {redirect_uri}?code={code}&amp;state={state}
     </div>
 </div>
 
-<h2 id="token-endpoint">Token Endpoint</h2>
+<h2 id="token-endpoint">Token Endpoint<a href="#token-endpoint" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk#token-endpoint"></div>
+</h2>
 
 <p><code class="language-plaintext highlighter-rouge">grant_type=refresh_token</code>, <code class="language-plaintext highlighter-rouge">grant_type=authorization_code</code> , <code class="language-plaintext highlighter-rouge">grant_type=client_credentials</code> 가사용 됩니다.</p>
 
@@ -2700,7 +2702,8 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
     </div>
 </div>
 
-<h2 id="revoke-endpoint">Revoke Endpoint</h2>
+<h2 id="revoke-endpoint">Revoke Endpoint<a href="#revoke-endpoint" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk#revoke-endpoint"></div>
+</h2>
 
 <div class="api">
     <div class="api_summary">연결 해제 (Revoke Endpoint)</div>
@@ -2894,7 +2897,8 @@ Content-Type: application/json;charset=UTF-8
     </div>
 </div>
 
-<h2 id="introspect-endpoint">Introspect Endpoint</h2>
+<h2 id="introspect-endpoint">Introspect Endpoint<a href="#introspect-endpoint" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk#introspect-endpoint"></div>
+</h2>
 
 <div class="api">
     <div class="api_summary">연결 조회 (Introspect Endpoint)</div>

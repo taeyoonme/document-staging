@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2152,11 +2152,13 @@
     <div class="content">
         <p>NUGU스마트홈에서 지원하고 있는 Error와 Exception에 대한 내용입니다. ServiceProvider는 SmartHomeBackendProxy 구현 시 아래 리스트를 참조하여 SmartHomeDevice 제어 및 상태 조회 시 발생하는 오류 혹은 예외상황에 맞는 error code를 응답해야 합니다.</p>
 
-<h2 id="error-response-format">Error Response Format</h2>
+<h2 id="error-response-format">Error Response Format<a href="#error-response-format" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play#error-response-format"></div>
+</h2>
 
 <p>SmartHome의 Error는 SmartHomeBackendProxy에서 모든 처리가 불가한 Global-level error와 SmartHomeDevice 제어 시에 발생하는 다양한 원인의 Error인 Device-level error로 구분됩니다. 아래 Global-level error와 Device-level error의 예시 format을 참조해주세요.</p>
 
-<h3 id="global-level-error">Global-level error</h3>
+<h3 id="global-level-error">Global-level error<a href="#global-level-error" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play#global-level-error"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2238,7 +2240,8 @@
 </div>
 </div>
 
-<h3 id="device-level-error">Device-level error</h3>
+<h3 id="device-level-error">Device-level error<a href="#device-level-error" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play#device-level-error"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2292,7 +2295,8 @@
 </div>
 </div>
 
-<h2 id="error-list">Error List</h2>
+<h2 id="error-list">Error List<a href="#error-list" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play#error-list"></div>
+</h2>
 
 <p>Device-level error 발생 시에는 error 원인에 맞는 error code를 응답해야 합니다. 이 때 error code에 따라 함께 응답해야 하는 부가정보(error property)가 있는 경우도 있습니다. 아래 NUGU 스마트홈을 통해 제공할 수 있는 error case별 code와 error property를 참조하시기 바랍니다.</p>
 

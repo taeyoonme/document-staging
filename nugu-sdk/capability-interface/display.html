@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">Play 에서 전달하는 UI 요소를 화면에 구성하기 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.7 입니다.</p>
 
@@ -2210,9 +2211,11 @@
   </tbody>
 </table>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="displayagent-사용">DisplayAgent 사용</h3>
+<h3 id="displayagent-사용">DisplayAgent 사용<a href="#displayagent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#displayagent-사용"></div>
+</h3>
 
 <p>Display interface 규격에 따른 디바이스의 동작 제어는 DisplayAgent 가 처리합니다.</p>
 
@@ -2323,7 +2326,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="context-구성">Context 구성</h3>
+<h3 id="context-구성">Context 구성<a href="#context-%EA%B5%AC%EC%84%B1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context-구성"></div>
+</h3>
 
 <p><a href="#ui-1" class="hash_internal">UI 제어</a> 기능을 사용하기 위해서는 template 화면의 상태 정보를 <a href="#context" class="hash_internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
@@ -2420,7 +2424,8 @@ displayAgent.delegate = MyDisplayAgentDelegate()
 
 </div>
 
-<h3 id="ui-구성-및-제어-">UI 구성 및 제어 <a id="ui-1"></a>
+<h3 id="ui-구성-및-제어-">UI 구성 및 제어 <a id="ui-1" href="#ui-1" class="go_hash hash_internal"></a>
+<div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#ui-1"></div>
 </h3>
 
 <p>Display 로 화면을 구성하기 위해 필요한 데이터는 <a href="/document/nugu-sdk/capability-interface/display/display-directive#directive-template" class="a_internal">Template</a> directive 에 포함되어 전달됩니다.</p>
@@ -2625,7 +2630,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 
 </div>
 
-<h3 id="사용자-인터렉션-처리">사용자 인터렉션 처리</h3>
+<h3 id="사용자-인터렉션-처리">사용자 인터렉션 처리<a href="#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%EB%A0%89%EC%85%98-%EC%B2%98%EB%A6%AC" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#사용자-인터렉션-처리"></div>
+</h3>
 
 <p>Template 하위 항목 선택시 <a href="/document/nugu-sdk/capability-interface/display/display-event#elementselected" class="a_internal">ElementSelected</a> event 가 전달됩니다.</p>
 
@@ -2777,7 +2783,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2846,11 +2853,13 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h2 id="common-objects">Common Objects</h2>
+<h2 id="common-objects">Common Objects<a href="#common-objects" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#common-objects"></div>
+</h2>
 
 <p>Template 에 사용되는 공통 object 의 데이터 구조입니다.</p>
 
-<h3 id="imageobject">ImageObject</h3>
+<h3 id="imageobject">ImageObject<a href="#imageobject" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#imageobject"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2968,7 +2977,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="textobject">TextObject</h3>
+<h3 id="textobject">TextObject<a href="#textobject" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#textobject"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3026,7 +3036,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="buttonobject">ButtonObject</h3>
+<h3 id="buttonobject">ButtonObject<a href="#buttonobject" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#buttonobject"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3182,7 +3193,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="titleobject">TitleObject</h3>
+<h3 id="titleobject">TitleObject<a href="#titleobject" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#titleobject"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3255,7 +3267,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="backgroundobject">BackgroundObject</h3>
+<h3 id="backgroundobject">BackgroundObject<a href="#backgroundobject" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#backgroundobject"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3304,7 +3317,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="duration">Duration</h3>
+<h3 id="duration">Duration<a href="#duration" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#duration"></div>
+</h3>
 
 <p>TTS, 보이스 크롭 등이 종료된 후 template 이 화면에 남아 있어야 하는 시간입니다.</p>
 
@@ -3335,7 +3349,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="grammarguide">GrammarGuide</h3>
+<h3 id="grammarguide">GrammarGuide<a href="#grammarguide" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#grammarguide"></div>
+</h3>
 
 <p>발화가이드 입니다.</p>
 
@@ -3359,7 +3374,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="stylegrammarguide">StyleGrammarGuide</h3>
+<h3 id="stylegrammarguide">StyleGrammarGuide<a href="#stylegrammarguide" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stylegrammarguide"></div>
+</h3>
 
 <p>GrammarGuide의 확장된 발화가이드 입니다.</p>
 
@@ -3422,7 +3438,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="floatingbannerobject">FloatingBannerObject</h3>
+<h3 id="floatingbannerobject">FloatingBannerObject<a href="#floatingbannerobject" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#floatingbannerobject"></div>
+</h3>
 
 <p>Banner에 사용되는 image object 입니다.</p>
 
@@ -3474,7 +3491,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="togglebuttonobject">ToggleButtonObject</h3>
+<h3 id="togglebuttonobject">ToggleButtonObject<a href="#togglebuttonobject" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#togglebuttonobject"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3531,7 +3549,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="contextlayer">ContextLayer</h3>
+<h3 id="contextlayer">ContextLayer<a href="#contextlayer" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#contextlayer"></div>
+</h3>
 
 <p>Template 의 종류를 구분하기 위한 속성입니다.</p>
 
@@ -3562,7 +3581,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
   </tbody>
 </table>
 
-<h3 id="badgeobject">BadgeObject</h3>
+<h3 id="badgeobject">BadgeObject<a href="#badgeobject" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#badgeobject"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">

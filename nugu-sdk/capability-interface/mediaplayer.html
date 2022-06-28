@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">음악 앱을 제어하기 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.1 입니다.</p>
 
@@ -2180,9 +2181,11 @@
   </tbody>
 </table>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="mediaplayeragent-사용">MediaPlayerAgent 사용</h3>
+<h3 id="mediaplayeragent-사용">MediaPlayerAgent 사용<a href="#mediaplayeragent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediaplayeragent-사용"></div>
+</h3>
 
 <p>MediaPlayer interface 규격에 따른 디바이스의 동작 제어는 MediaAgent 가 처리합니다.</p>
 
@@ -2293,7 +2296,8 @@ NuguAndroidClient().Builder()
 
 </div>
 
-<h3 id="context-구성">Context 구성</h3>
+<h3 id="context-구성">Context 구성<a href="#context-%EA%B5%AC%EC%84%B1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context-구성"></div>
+</h3>
 
 <p>앱에서 재생중인 음원에 대한 정보를 <a href="/document/nugu-sdk/capability-interface/mediaplayer#context-1" class="a_internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
@@ -2378,7 +2382,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 
 </div>
 
-<h3 id="제어-명령">제어 명령</h3>
+<h3 id="제어-명령">제어 명령<a href="#%EC%A0%9C%EC%96%B4-%EB%AA%85%EB%A0%B9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#제어-명령"></div>
+</h3>
 
 <p><code class="language-plaintext highlighter-rouge">사용자 발화</code>에 의해 음악 <a href="/document/nugu-sdk/capability-interface/mediaplayer#search" class="a_internal">검색</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#play" class="a_internal">재생</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#stop" class="a_internal">중지</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#next" class="a_internal">다음</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#previous" class="a_internal">이전</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#move" class="a_internal">탐색</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#pause" class="a_internal">일시정지</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#resume" class="a_internal">계속재생</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#rewind" class="a_internal">다시재생</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#toggle" class="a_internal">반복</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#toggle" class="a_internal">즐겨찾기</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#toggle" class="a_internal">셔플</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#handleplaylist" class="a_internal">재생목록 보기</a>/<a href="/document/nugu-sdk/capability-interface/mediaplayer#handlelyrics" class="a_internal">가사 보기</a> 가 directive 로 요청될 수 있습니다.</p>
 
@@ -2639,7 +2644,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 
 </div>
 
-<h3 id="재생중인-곡-정보-요청">재생중인 곡 정보 요청</h3>
+<h3 id="재생중인-곡-정보-요청">재생중인 곡 정보 요청<a href="#%EC%9E%AC%EC%83%9D%EC%A4%91%EC%9D%B8-%EA%B3%A1-%EC%A0%95%EB%B3%B4-%EC%9A%94%EC%B2%AD" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#재생중인-곡-정보-요청"></div>
+</h3>
 
 <p>재생중인 곡 정보가 <a href="/document/nugu-sdk/capability-interface/mediaplayer#getinfo" class="a_internal">GetInfo</a> directive 로 요청될 수 있습니다.</p>
 
@@ -2724,7 +2730,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2906,9 +2913,11 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h2 id="common-objects">Common Objects</h2>
+<h2 id="common-objects">Common Objects<a href="#common-objects" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#common-objects"></div>
+</h2>
 
-<h3 id="song">Song</h3>
+<h3 id="song">Song<a href="#song" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#song"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3015,9 +3024,11 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h2 id="directives">Directives</h2>
+<h2 id="directives">Directives<a href="#directives" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directives"></div>
+</h2>
 
-<h3 id="play">Play</h3>
+<h3 id="play">Play<a href="#play" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#play"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3137,7 +3148,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="stop">Stop</h3>
+<h3 id="stop">Stop<a href="#stop" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stop"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3177,7 +3189,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 </div>
 </div>
 
-<h3 id="search">Search</h3>
+<h3 id="search">Search<a href="#search" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#search"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3254,7 +3267,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="previous">Previous</h3>
+<h3 id="previous">Previous<a href="#previous" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#previous"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3341,7 +3355,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="next">Next</h3>
+<h3 id="next">Next<a href="#next" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#next"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3428,7 +3443,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="move">Move</h3>
+<h3 id="move">Move<a href="#move" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#move"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3501,7 +3517,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="pause">Pause</h3>
+<h3 id="pause">Pause<a href="#pause" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#pause"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3562,7 +3579,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="resume">Resume</h3>
+<h3 id="resume">Resume<a href="#resume" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#resume"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3623,7 +3641,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="rewind">Rewind</h3>
+<h3 id="rewind">Rewind<a href="#rewind" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#rewind"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3684,7 +3703,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="toggle">Toggle</h3>
+<h3 id="toggle">Toggle<a href="#toggle" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#toggle"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3782,7 +3802,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="getinfo">GetInfo</h3>
+<h3 id="getinfo">GetInfo<a href="#getinfo" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#getinfo"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3843,7 +3864,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="handleplaylist">HandlePlaylist</h3>
+<h3 id="handleplaylist">HandlePlaylist<a href="#handleplaylist" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#handleplaylist"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3915,7 +3937,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="handlelyrics">HandleLyrics</h3>
+<h3 id="handlelyrics">HandleLyrics<a href="#handlelyrics" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#handlelyrics"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3978,9 +4001,11 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h2 id="events">Events</h2>
+<h2 id="events">Events<a href="#events" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#events"></div>
+</h2>
 
-<h3 id="playsucceeded">PlaySucceeded</h3>
+<h3 id="playsucceeded">PlaySucceeded<a href="#playsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4049,7 +4074,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="playsuspended">PlaySuspended</h3>
+<h3 id="playsuspended">PlaySuspended<a href="#playsuspended" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playsuspended"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4161,7 +4187,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="playfailed">PlayFailed</h3>
+<h3 id="playfailed">PlayFailed<a href="#playfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#playfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4231,7 +4258,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="stopsucceeded">StopSucceeded</h3>
+<h3 id="stopsucceeded">StopSucceeded<a href="#stopsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stopsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4292,7 +4320,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="stopfailed">StopFailed</h3>
+<h3 id="stopfailed">StopFailed<a href="#stopfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stopfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4362,7 +4391,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="searchsucceeded">SearchSucceeded</h3>
+<h3 id="searchsucceeded">SearchSucceeded<a href="#searchsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#searchsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4431,7 +4461,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="searchfailed">SearchFailed</h3>
+<h3 id="searchfailed">SearchFailed<a href="#searchfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#searchfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4501,7 +4532,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="previoussucceeded">PreviousSucceeded</h3>
+<h3 id="previoussucceeded">PreviousSucceeded<a href="#previoussucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#previoussucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4570,7 +4602,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="previoussuspended">PreviousSuspended</h3>
+<h3 id="previoussuspended">PreviousSuspended<a href="#previoussuspended" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#previoussuspended"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4682,7 +4715,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="previousfailed">PreviousFailed</h3>
+<h3 id="previousfailed">PreviousFailed<a href="#previousfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#previousfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4752,7 +4786,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="nextsucceeded">NextSucceeded</h3>
+<h3 id="nextsucceeded">NextSucceeded<a href="#nextsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#nextsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4821,7 +4856,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="nextsuspended">NextSuspended</h3>
+<h3 id="nextsuspended">NextSuspended<a href="#nextsuspended" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#nextsuspended"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -4933,7 +4969,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="nextfailed">NextFailed</h3>
+<h3 id="nextfailed">NextFailed<a href="#nextfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#nextfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5003,7 +5040,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="movesucceeded">MoveSucceeded</h3>
+<h3 id="movesucceeded">MoveSucceeded<a href="#movesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#movesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5072,7 +5110,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="movefailed">MoveFailed</h3>
+<h3 id="movefailed">MoveFailed<a href="#movefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#movefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5142,7 +5181,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="pausesucceeded">PauseSucceeded</h3>
+<h3 id="pausesucceeded">PauseSucceeded<a href="#pausesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#pausesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5211,7 +5251,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="pausefailed">PauseFailed</h3>
+<h3 id="pausefailed">PauseFailed<a href="#pausefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#pausefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5281,7 +5322,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="resumesucceeded">ResumeSucceeded</h3>
+<h3 id="resumesucceeded">ResumeSucceeded<a href="#resumesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#resumesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5350,7 +5392,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="resumefailed">ResumeFailed</h3>
+<h3 id="resumefailed">ResumeFailed<a href="#resumefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#resumefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5420,7 +5463,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="rewindsucceeded">RewindSucceeded</h3>
+<h3 id="rewindsucceeded">RewindSucceeded<a href="#rewindsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#rewindsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5489,7 +5533,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="rewindfailed">RewindFailed</h3>
+<h3 id="rewindfailed">RewindFailed<a href="#rewindfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#rewindfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5559,7 +5604,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="togglesucceeded">ToggleSucceeded</h3>
+<h3 id="togglesucceeded">ToggleSucceeded<a href="#togglesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#togglesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5628,7 +5674,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="togglefailed">ToggleFailed</h3>
+<h3 id="togglefailed">ToggleFailed<a href="#togglefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#togglefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5698,7 +5745,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="getinfosucceeded">GetInfoSucceeded</h3>
+<h3 id="getinfosucceeded">GetInfoSucceeded<a href="#getinfosucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#getinfosucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5777,7 +5825,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="getinfofailed">GetInfoFailed</h3>
+<h3 id="getinfofailed">GetInfoFailed<a href="#getinfofailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#getinfofailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5847,7 +5896,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="handleplaylistsucceeded">HandlePlaylistSucceeded</h3>
+<h3 id="handleplaylistsucceeded">HandlePlaylistSucceeded<a href="#handleplaylistsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#handleplaylistsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5887,7 +5937,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 </div>
 </div>
 
-<h3 id="handleplaylistfailed">HandlePlaylistFailed</h3>
+<h3 id="handleplaylistfailed">HandlePlaylistFailed<a href="#handleplaylistfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#handleplaylistfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5949,7 +6000,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   </tbody>
 </table>
 
-<h3 id="handlelyricssucceeded">HandleLyricsSucceeded</h3>
+<h3 id="handlelyricssucceeded">HandleLyricsSucceeded<a href="#handlelyricssucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#handlelyricssucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -5989,7 +6041,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 </div>
 </div>
 
-<h3 id="handlelyricsfailed">HandleLyricsFailed</h3>
+<h3 id="handlelyricsfailed">HandleLyricsFailed<a href="#handlelyricsfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#handlelyricsfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">

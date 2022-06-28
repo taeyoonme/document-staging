@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2160,7 +2160,8 @@
 
 </div>
 
-<h2 id="notificationcenter-사용">NotificationCenter 사용</h2>
+<h2 id="notificationcenter-사용">NotificationCenter 사용<a href="#notificationcenter-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#notificationcenter-사용"></div>
+</h2>
 
 <p>NUGU SDK 의 구성요소에 대한 변경사항을 전달하기 위해 <code class="language-plaintext highlighter-rouge">DelegateSet</code> 대신 <code class="language-plaintext highlighter-rouge">NotificationCenter</code> 를 사용합니다.</p>
 
@@ -2170,7 +2171,8 @@
 
 </div>
 
-<h3 id="asragent-변경사항-감지">ASRAgent 변경사항 감지</h3>
+<h3 id="asragent-변경사항-감지">ASRAgent 변경사항 감지<a href="#asragent-%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD-%EA%B0%90%EC%A7%80" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#asragent-변경사항-감지"></div>
+</h3>
 
 <div id="tabs-15" class="tabs">
     <ul class="tabs_title">
@@ -2238,7 +2240,8 @@
 
 </div>
 
-<h3 id="systemagent-변경사항-감지">SystemAgent 변경사항 감지</h3>
+<h3 id="systemagent-변경사항-감지">SystemAgent 변경사항 감지<a href="#systemagent-%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD-%EA%B0%90%EC%A7%80" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#systemagent-변경사항-감지"></div>
+</h3>
 
 <div id="tabs-41" class="tabs">
     <ul class="tabs_title">
@@ -2318,7 +2321,8 @@
 
 </div>
 
-<h3 id="dialogstateaggregator-변경사항-감지">DialogStateAggregator 변경사항 감지</h3>
+<h3 id="dialogstateaggregator-변경사항-감지">DialogStateAggregator 변경사항 감지<a href="#dialogstateaggregator-%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD-%EA%B0%90%EC%A7%80" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#dialogstateaggregator-변경사항-감지"></div>
+</h3>
 
 <div id="tabs-73" class="tabs">
     <ul class="tabs_title">
@@ -2386,7 +2390,8 @@
 
 </div>
 
-<h2 id="nuguclientbuilder-추가">NuguClient.Builder 추가</h2>
+<h2 id="nuguclientbuilder-추가">NuguClient.Builder 추가<a href="#nuguclientbuilder-%EC%B6%94%EA%B0%80" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#nuguclientbuilder-추가"></div>
+</h2>
 
 <p>NuguClient 의 필수/선택 요소를 보다 효율적으로 생성하기 위해 builder pattern 이 적용되었습니다.</p>
 
@@ -2490,7 +2495,8 @@
 
 </div>
 
-<h2 id="speechrecognizeraggregator-추가">SpeechRecognizerAggregator 추가</h2>
+<h2 id="speechrecognizeraggregator-추가">SpeechRecognizerAggregator 추가<a href="#speechrecognizeraggregator-%EC%B6%94%EA%B0%80" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#speechrecognizeraggregator-추가"></div>
+</h2>
 
 <p>NUGU SDK 의 <code class="language-plaintext highlighter-rouge">SpeechRecognizerAggregator</code> 가 <code class="language-plaintext highlighter-rouge">MicInputProvider</code>, <code class="language-plaintext highlighter-rouge">ASRAgent</code>, <code class="language-plaintext highlighter-rouge">KeywordDetector</code> 를 통합 관리합니다.</p>
 
@@ -2770,7 +2776,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">KeywordDetector</code>, <code class="language-plaintext highlighter-rouge">MicInputProvider</code> , <code class="language-plaintext highlighter-rouge">ASRAgent</code> 시작/종료와 관련된 코드를 모두 제거하고<code class="language-plaintext highlighter-rouge">SpeechRecognizerAggregator</code> 의 <code class="language-plaintext highlighter-rouge">startListening(initiator:)</code>, <code class="language-plaintext highlighter-rouge">startListeningWithTrigger</code>, <code class="language-plaintext highlighter-rouge">stopListening</code> 함수 호출로 대체합니다.</p>
 
-<h3 id="keyword-설정">Keyword 설정</h3>
+<h3 id="keyword-설정">Keyword 설정<a href="#keyword-%EC%84%A4%EC%A0%95" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#keyword-설정"></div>
+</h3>
 
 <div id="tabs-278" class="tabs">
     <ul class="tabs_title">
@@ -2858,7 +2865,8 @@
 
 <p>Keyword(e.g. “아리아”) 관련 설정을 <code class="language-plaintext highlighter-rouge">KeywordDetector</code> 대신 <code class="language-plaintext highlighter-rouge">SpeechRecognizerAggregator</code> 에 적용합니다.</p>
 
-<h2 id="sdk-에서-avaudiosessionmanager-를-관리">SDK 에서 AVAudioSessionManager 를 관리</h2>
+<h2 id="sdk-에서-avaudiosessionmanager-를-관리">SDK 에서 AVAudioSessionManager 를 관리<a href="#sdk-%EC%97%90%EC%84%9C-avaudiosessionmanager-%EB%A5%BC-%EA%B4%80%EB%A6%AC" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#sdk-에서-avaudiosessionmanager-를-관리"></div>
+</h2>
 
 <p>NUGU SDK 를 사용하기 위해서는 시스템, Application, NUGU SDK 의 복합적인 상황에 맞춰 AVAudioSession 의 <code class="language-plaintext highlighter-rouge">category</code>, <code class="language-plaintext highlighter-rouge">categoryOptions</code> 와 <code class="language-plaintext highlighter-rouge">AVAudioSession.interruptionNotification</code> , <code class="language-plaintext highlighter-rouge">AVAudioSession.routeChangeNotification</code> 등을 적절하게 처리해 주어야 합니다.</p>
 
@@ -2872,7 +2880,8 @@
 
 </div>
 
-<h3 id="sdk-의-audiosessionmanager-사용">SDK 의 AudioSessionManager 사용</h3>
+<h3 id="sdk-의-audiosessionmanager-사용">SDK 의 AudioSessionManager 사용<a href="#sdk-%EC%9D%98-audiosessionmanager-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#sdk-의-audiosessionmanager-사용"></div>
+</h3>
 
 <p>Application 의 <code class="language-plaintext highlighter-rouge">NuguAudioSessionManager.swift</code> 파일 및 관련 코드를 삭제합니다.</p>
 
@@ -2916,7 +2925,8 @@
 
 <p>NUGU SDK 를 사용하지 않을 때 호출하여 SDK 가 불필요한 동작을 수행하지 않도록합니다.</p>
 
-<h3 id="custom-audiosessionmanager-사용-">Custom AudioSessionManager 사용 <a id="custom-audiosessionmanager"></a>
+<h3 id="custom-audiosessionmanager-사용-">Custom AudioSessionManager 사용 <a id="custom-audiosessionmanager" href="#custom-audiosessionmanager" class="go_hash hash_internal"></a>
+<div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#custom-audiosessionmanager"></div>
 </h3>
 
 <p>NUGU SDK 의 <code class="language-plaintext highlighter-rouge">AudioSessionManager</code> 를 사용하지 않고 Application 에서 <code class="language-plaintext highlighter-rouge">AVAudioSession</code> 을 직접 처리할 수 있습니다.</p>
@@ -3019,9 +3029,11 @@
 
 <p>NUGU SDK iOS 0.x 의 <a href="https://github.com/nugu-developers/nugu-ios/blob/0.30.1/SampleApp/Sources/Manager/NuguAudioSessionManager.swift">NuguAudioSessionManager.swift</a> 를 참고하여 Application 에서 AudioSessionManager 를 직접 구현하고 <code class="language-plaintext highlighter-rouge">NuguClientDelegate</code> 의 일부 함수를 구현해 주어야 합니다.</p>
 
-<h2 id="voicechromepresenter-기능-추가">VoiceChromePresenter 기능 추가</h2>
+<h2 id="voicechromepresenter-기능-추가">VoiceChromePresenter 기능 추가<a href="#voicechromepresenter-%EA%B8%B0%EB%8A%A5-%EC%B6%94%EA%B0%80" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#voicechromepresenter-기능-추가"></div>
+</h2>
 
-<h3 id="uitapgesturerecognizer-구현-이동">UITapGestureRecognizer 구현 이동</h3>
+<h3 id="uitapgesturerecognizer-구현-이동">UITapGestureRecognizer 구현 이동<a href="#uitapgesturerecognizer-%EA%B5%AC%ED%98%84-%EC%9D%B4%EB%8F%99" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#uitapgesturerecognizer-구현-이동"></div>
+</h3>
 
 <div id="tabs-404" class="tabs">
     <ul class="tabs_title">
@@ -3096,7 +3108,8 @@
 
 <p><code class="language-plaintext highlighter-rouge">UITapGestureRecognizer</code> 관련 기능을 <code class="language-plaintext highlighter-rouge">VoiceChromePresenter</code> 에서 처리하기 때문에 Application 에서 관련 코드를 삭제합니다.</p>
 
-<h3 id="asrbeepplayer-구현-이동">ASRBeepPlayer 구현 이동</h3>
+<h3 id="asrbeepplayer-구현-이동">ASRBeepPlayer 구현 이동<a href="#asrbeepplayer-%EA%B5%AC%ED%98%84-%EC%9D%B4%EB%8F%99" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#asrbeepplayer-구현-이동"></div>
+</h3>
 
 <div id="tabs-439" class="tabs">
     <ul class="tabs_title">
@@ -3221,7 +3234,8 @@
 
 <p>Beep 음 재생과 관련된 기능을 <code class="language-plaintext highlighter-rouge">VoiceChromePresenter</code> 에서 처리하기 때문에 Application 의 <code class="language-plaintext highlighter-rouge">ASRBeepPlayer.swift</code> 파일 및 <code class="language-plaintext highlighter-rouge">asrBeepPlayer.beep(type:)</code> 호출 코드를 삭제합니다.</p>
 
-<h2 id="controlcentermanager-추가">ControlCenterManager 추가</h2>
+<h2 id="controlcentermanager-추가">ControlCenterManager 추가<a href="#controlcentermanager-%EC%B6%94%EA%B0%80" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/ios#controlcentermanager-추가"></div>
+</h2>
 
 <p>AudioPlayerAgent 를 사용하여 음악을 재생하는 경우 SDK 의 <code class="language-plaintext highlighter-rouge">ControlCenterManager</code> 에서 <code class="language-plaintext highlighter-rouge">MPNowPlayingInfoCenter</code> 를 통해 재생정보를 iOS platform 으로 전달합니다.</p>
 

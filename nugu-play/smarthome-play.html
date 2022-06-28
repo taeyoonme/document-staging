@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
 
 <p><img src="/document/assets/images/smarthome-play-01.png" alt="" class="img_internal"></p>
 
-<h2 id="smarthome-play-만들기">SmartHome Play 만들기</h2>
+<h2 id="smarthome-play-만들기">SmartHome Play 만들기<a href="#smarthome-play-%EB%A7%8C%EB%93%A4%EA%B8%B0" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play#smarthome-play-만들기"></div>
+</h2>
 
 <p>SmartHome Play는 스마트홈 관련 기능에 대해 사용자 발화 및 처리로직들이 사전에 정의되어 있는 Prebuilt 유형의 Play입니다. 따라서 SmartHome Play는 별도로 UtteranceModel 및 Action정의를 하실 필요가 없이 OAUTH 연동 및 SmartHomeBackendProxy 구현만으로 제작할 수 있습니다. SmartHome Play 역시 NUGU Developers 내 Play Builder를 활용해 만들 수 있으며 Play 생성 시 Play 유형을 SmartHome으로 선택해야 합니다. SmartHome Play를 만들기 위한 순서 및 자세한 내용을 아래를 참조하시기 바랍니다.UtteranceModel 및 Action정의를 하실 필요가 없이 OAUTH 연동 및 SmartHomeBackendProxy 구현만으로 제작할 수 있습니다. SmartHome Play 역시 NUGU Develpers 내 Play Builder를 활용해 만들 수 있으며 Play 생성 시 Play 유형을 SmartHome으로 선택해야 합니다. SmartHome Play를 만들기 위한 순서 및 자세한 내용을 아래를 참조하시기 바랍니다.</p>
 
@@ -2214,7 +2215,8 @@
 
 </div>
 
-<h2 id="discovery">Discovery</h2>
+<h2 id="discovery">Discovery<a href="#discovery" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play#discovery"></div>
+</h2>
 
 <p>SmartHome Play의 동작을 위해서는 SmartHomeServiceProvider의 SmartHomeDevice 정보를 NUGU스마트홈에 등록해야 합니다. 일반 사용자가 NUGU스마트홈에 SmartHomeDevice를 등록하려면 NUGU App의 스마트홈 메뉴에서 “신규 디바이스 등록하기” 기능을 사용해야 합니다. “신규 디바이스 등록하기”를 선택한 후 SmartHome Play를 선택하면 해당 SmartHome Play의 SmartHomeServiceProvider가 제공하는 계정연동(OAUTH 2.0) 웹페이지로 이동하고 계정 연동을 통해 SmartHomeServiceProvider에 등록된 SmartHomeDevice 정보를 불러오게 됩니다. 불러온 SmartHomeDevice 정보 중 사용자가 선택해 등록한 SmartHomeDevice는 NUGU스마트홈을 통해 제어할 수 있게 됩니다. 사용자가 NUGU App을 통해 SmartHome Play의 SmartHomeDevice를 등록하려고 하면 NUGU스마트홈은 SmartHomeServiceProvider에게 Discovey를 요청하고 SmartHomeServiceProvider는 아래 예시와 같이 NUGU스마트홈에 등록할 수 있는 모든 SmartHomeDevice 정보를 응답해야 합니다.</p>
 
@@ -2312,7 +2314,8 @@
 </div>
 </div>
 
-<h2 id="control">Control</h2>
+<h2 id="control">Control<a href="#control" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play#control"></div>
+</h2>
 
 <p>NUGU스마트홈에 등록된 SmartHomeDevice에 제어 요청이 올 경우 NUGU스마트홈은 내부 로에 따라 제어 대상 및 제어 명령을 확정 짓고 Discovery단계에서 등록된 정보를 활용해 SmartHomeServiceProvider에게 제어 명령을 전달합니다. 이때 제어 명령을 실제로 수신하는 것은 SmartHome Play를 제작할 당시에 입력한 SmartHomePlayBackendProxy입니다. 제어명령은 SmartHomeDeviceType과 SmartHomeCapability, SmartHomeDirective로 정리되어 요청되며, SmartHomeCapability, SmartHomeDirective에 따라 부가 정보가 포함되기도 합니다.</p>
 

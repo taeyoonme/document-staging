@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">디바이스의 블루투스를 제어하기 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.1 입니다.</p>
 
@@ -2180,9 +2181,11 @@
   </tbody>
 </table>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="bluetoothagent-사용">BluetoothAgent 사용</h3>
+<h3 id="bluetoothagent-사용">BluetoothAgent 사용<a href="#bluetoothagent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#bluetoothagent-사용"></div>
+</h3>
 
 <p>Bluetooth interface 규격에 따른 디바이스의 동작 제어는 BluetoothAgent 가 처리합니다.</p>
 
@@ -2281,7 +2284,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="context-구성">Context 구성</h3>
+<h3 id="context-구성">Context 구성<a href="#context-%EA%B5%AC%EC%84%B1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context-구성"></div>
+</h3>
 
 <p>디바이스의 블루투스 상태를 <a href="#context" class="hash_internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
@@ -2380,7 +2384,8 @@ auto bluetooth_listener(std::make_shared&lt;BluetoothListener&gt;());
 
 </div>
 
-<h3 id="블루투스-기기-제어">블루투스 기기 제어</h3>
+<h3 id="블루투스-기기-제어">블루투스 기기 제어<a href="#%EB%B8%94%EB%A3%A8%ED%88%AC%EC%8A%A4-%EA%B8%B0%EA%B8%B0-%EC%A0%9C%EC%96%B4" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#블루투스-기기-제어"></div>
+</h3>
 
 <p>디바이스의 블루투스 기기 제어가 <a href="/document/nugu-sdk/capability-interface/bluetooth#startdiscoverablemode" class="a_internal">StartDiscoverableMode</a>/<a href="/document/nugu-sdk/capability-interface/bluetooth#finishdiscoverablemode" class="a_internal">FinishDiscoverableMode</a> directive 로 요청될 수 있습니다.</p>
 
@@ -2497,7 +2502,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2626,9 +2632,11 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
   </tbody>
 </table>
 
-<h2 id="directive">Directive</h2>
+<h2 id="directive">Directive<a href="#directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directive"></div>
+</h2>
 
-<h3 id="startdiscoverablemode">StartDiscoverableMode</h3>
+<h3 id="startdiscoverablemode">StartDiscoverableMode<a href="#startdiscoverablemode" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#startdiscoverablemode"></div>
+</h3>
 
 <p>Discoverable mode 활성화 요청입니다.</p>
 
@@ -2691,7 +2699,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
   </tbody>
 </table>
 
-<h3 id="finishdiscoverablemode">FinishDiscoverableMode</h3>
+<h3 id="finishdiscoverablemode">FinishDiscoverableMode<a href="#finishdiscoverablemode" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#finishdiscoverablemode"></div>
+</h3>
 
 <p>Discoverable mode 비활성화 요청입니다.</p>
 
@@ -2733,7 +2742,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="play">Play</h3>
+<h3 id="play">Play<a href="#play" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#play"></div>
+</h3>
 
 <p>연결된 블루투스 기기의 음원 재생 요청입니다.</p>
 
@@ -2775,7 +2785,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="stop">Stop</h3>
+<h3 id="stop">Stop<a href="#stop" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stop"></div>
+</h3>
 
 <p>연결된 블루투스 기기의 음원 재생 중지 요청입니다.</p>
 
@@ -2817,7 +2828,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="pause">Pause</h3>
+<h3 id="pause">Pause<a href="#pause" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#pause"></div>
+</h3>
 
 <p>연결된 블루투스 기기의 음원 일시정지 요청입니다.</p>
 
@@ -2859,7 +2871,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="next">Next</h3>
+<h3 id="next">Next<a href="#next" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#next"></div>
+</h3>
 
 <p>연결된 블루투스 기기의 다음 음원 재생 요청입니다.</p>
 
@@ -2901,7 +2914,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="previous">Previous</h3>
+<h3 id="previous">Previous<a href="#previous" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#previous"></div>
+</h3>
 
 <p>연결된 블루투스 기기의 이전 음원 재생 요청입니다.</p>
 
@@ -2943,9 +2957,11 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h2 id="event">Event</h2>
+<h2 id="event">Event<a href="#event" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#event"></div>
+</h2>
 
-<h3 id="startdiscoverablemodesucceeded">StartDiscoverableModeSucceeded</h3>
+<h3 id="startdiscoverablemodesucceeded">StartDiscoverableModeSucceeded<a href="#startdiscoverablemodesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#startdiscoverablemodesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3006,7 +3022,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
   </tbody>
 </table>
 
-<h3 id="startdiscoverablemodefailed">StartDiscoverableModeFailed</h3>
+<h3 id="startdiscoverablemodefailed">StartDiscoverableModeFailed<a href="#startdiscoverablemodefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#startdiscoverablemodefailed"></div>
+</h3>
 
 <ul>
   <li>Discoverable mode 진입 실패</li>
@@ -3071,7 +3088,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
   </tbody>
 </table>
 
-<h3 id="finishdiscoverablemodesucceeded">FinishDiscoverableModeSucceeded</h3>
+<h3 id="finishdiscoverablemodesucceeded">FinishDiscoverableModeSucceeded<a href="#finishdiscoverablemodesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#finishdiscoverablemodesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3111,7 +3129,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="finishdiscoverablemodefailed">FinishDiscoverableModeFailed</h3>
+<h3 id="finishdiscoverablemodefailed">FinishDiscoverableModeFailed<a href="#finishdiscoverablemodefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#finishdiscoverablemodefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3151,7 +3170,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="connectsucceeded">ConnectSucceeded</h3>
+<h3 id="connectsucceeded">ConnectSucceeded<a href="#connectsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#connectsucceeded"></div>
+</h3>
 
 <ul>
   <li>paired 이력에서 디바이스 연결이 성공 했을 때 또는 source(스마트폰 등)에서 직접 연결 연결 성공 했을 때 발생</li>
@@ -3195,7 +3215,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="connectfailed">ConnectFailed</h3>
+<h3 id="connectfailed">ConnectFailed<a href="#connectfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#connectfailed"></div>
+</h3>
 
 <ul>
   <li>paired 이력에서 디바이스 연결이 실패 했을 때 발생</li>
@@ -3239,7 +3260,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="disconnectsucceeded">DisconnectSucceeded</h3>
+<h3 id="disconnectsucceeded">DisconnectSucceeded<a href="#disconnectsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#disconnectsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3279,7 +3301,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="disconnectfailed">DisconnectFailed</h3>
+<h3 id="disconnectfailed">DisconnectFailed<a href="#disconnectfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#disconnectfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3319,7 +3342,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolplaysucceeded">MediaControlPlaySucceeded</h3>
+<h3 id="mediacontrolplaysucceeded">MediaControlPlaySucceeded<a href="#mediacontrolplaysucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolplaysucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3359,7 +3383,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolplayfailed">MediaControlPlayFailed</h3>
+<h3 id="mediacontrolplayfailed">MediaControlPlayFailed<a href="#mediacontrolplayfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolplayfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3399,7 +3424,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolstopsucceeded">MediaControlStopSucceeded</h3>
+<h3 id="mediacontrolstopsucceeded">MediaControlStopSucceeded<a href="#mediacontrolstopsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolstopsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3439,7 +3465,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolstopfailed">MediaControlStopFailed</h3>
+<h3 id="mediacontrolstopfailed">MediaControlStopFailed<a href="#mediacontrolstopfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolstopfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3479,7 +3506,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolpausesucceeded">MediaControlPauseSucceeded</h3>
+<h3 id="mediacontrolpausesucceeded">MediaControlPauseSucceeded<a href="#mediacontrolpausesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolpausesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3519,7 +3547,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolpausefailed">MediaControlPauseFailed</h3>
+<h3 id="mediacontrolpausefailed">MediaControlPauseFailed<a href="#mediacontrolpausefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolpausefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3559,7 +3588,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolnextsucceeded">MediaControlNextSucceeded</h3>
+<h3 id="mediacontrolnextsucceeded">MediaControlNextSucceeded<a href="#mediacontrolnextsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolnextsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3599,7 +3629,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolnextfailed">MediaControlNextFailed</h3>
+<h3 id="mediacontrolnextfailed">MediaControlNextFailed<a href="#mediacontrolnextfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolnextfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3639,7 +3670,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolprevioussucceeded">MediaControlPreviousSucceeded</h3>
+<h3 id="mediacontrolprevioussucceeded">MediaControlPreviousSucceeded<a href="#mediacontrolprevioussucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolprevioussucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3679,7 +3711,8 @@ CapabilityFactory::makeCapability&lt;BluetoothAgent, IBluetoothHandler&gt;(bluet
 </div>
 </div>
 
-<h3 id="mediacontrolpreviousfailed">MediaControlPreviousFailed</h3>
+<h3 id="mediacontrolpreviousfailed">MediaControlPreviousFailed<a href="#mediacontrolpreviousfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#mediacontrolpreviousfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">

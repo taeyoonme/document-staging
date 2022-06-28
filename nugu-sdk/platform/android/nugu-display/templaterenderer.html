@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2160,7 +2160,8 @@
 
 <p>이런 기본 정책과 다른 자신만의 유지정책을 가지려면 <code class="language-plaintext highlighter-rouge">**DisplayAggregatorInterface.Renderer</code>를 직접 구현하여 <code class="language-plaintext highlighter-rouge">NuguAndroidClient</code> 객체에 <a href="/document/nugu-sdk/platform/android/nugu-display#templaterenderer-1" class="a_internal">displayRenderer로 등록</a>하면 됩니다.</p>
 
-<h2 id="renderer-구현">Renderer 구현</h2>
+<h2 id="renderer-구현">Renderer 구현<a href="#renderer-%EA%B5%AC%ED%98%84" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/android/nugu-display#renderer-구현"></div>
+</h2>
 
 <p>DisplayAggregatorInterface.Renderer 인터페이스를 직접 구현하여 Template의 노출과 제거를 컨트롤 할 수 있습니다.</p>
 
@@ -2204,7 +2205,8 @@
 
 </div>
 
-<h2 id="display-상태-전송">Display 상태 전송</h2>
+<h2 id="display-상태-전송">Display 상태 전송<a href="#display-%EC%83%81%ED%83%9C-%EC%A0%84%EC%86%A1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/android/nugu-display#display-상태-전송"></div>
+</h2>
 
 <p>DisplayAggregatorInterface.Renderer의 render(), clear() 가 처리되거나 사용자가 백키로 화면을 닫는 등 화면의 노출상태가 변화하면 이를 <code class="language-plaintext highlighter-rouge">DisplayInterface</code>를 통해 NUGU SDK로 알려야 합니다.<br>
 (DisplayInterface는 NuguAndroidClient.getDisplay()로 얻을 수 있습니다.)</p>

@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2152,7 +2152,8 @@
     <div class="content">
         <p>NUGU스마트홈 HumidityControl Capability Interface는 NUGU스마트홈에 등록된 SmartHomeDevice의 습도제어방식에 대한 설명입니다. 제어하고자 하는 습도는 해당 공간의 습도 비율로 %단위로 설정하며 습도를 제어하는 기능을 가진 SmartHomeDevice들을 지원합니다.</p>
 
-<h2 id="discovery">Discovery</h2>
+<h2 id="discovery">Discovery<a href="#discovery" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#discovery"></div>
+</h2>
 
 <p>NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스마트홈에 SmartHomeDevice를 등록해야 합니다. 사용자가 NUGU App을 통해 SmartHomeDevice 등록을 요청하면 SmartHome Play 제작 당시 입력한 SmartHomeBackendProxy URL로 NUGU스마트홈에 등록할 수 있는 SmartHomeDevice 목록에 대한 Discovery 요청이 전달됩니다. SmartHomeBackendProxy는 SmartHomeDevice 목록과 함께 각 SmartHomeDevice별로 지원하는 Capability와 그에 따른 부가적인 Parameter들을 응답해야 합니다.</p>
 
@@ -2267,11 +2268,13 @@
   </tbody>
 </table>
 
-<h2 id="directive">Directive</h2>
+<h2 id="directive">Directive<a href="#directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#directive"></div>
+</h2>
 
 <p>NUGU스마트홈 HumidityControl Capability는 설정습도 및 실제습도를 조회하는 AskHumidity, 설정 습도를 제어하는 SetHumidity, IncreaseHumidity, DecreaseHumidity, SetHumidityMax, SetHumidityMin 등의 Directive를 지원합니다.</p>
 
-<h3 id="askhumidity">AskHumidity</h3>
+<h3 id="askhumidity">AskHumidity<a href="#askhumidity" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#askhumidity"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice에서 측정한 실제습도와 SmartHomeDevice에 설정된 설정습도를 조회한다.<br>
@@ -2426,7 +2429,8 @@ Directive : AskHumidity</p>
   </tbody>
 </table>
 
-<h3 id="sethumidity">SetHumidity</h3>
+<h3 id="sethumidity">SetHumidity<a href="#sethumidity" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#sethumidity"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 설정습도를 사용자가 발화한 특정 습도로 설정한다.<br>
@@ -2606,7 +2610,8 @@ Directive : SetHumidity</p>
   </tbody>
 </table>
 
-<h3 id="increasehumidity">IncreaseHumidity</h3>
+<h3 id="increasehumidity">IncreaseHumidity<a href="#increasehumidity" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#increasehumidity"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 설정습도를 증가시킨다.<br>
@@ -2786,7 +2791,8 @@ Directive : IncreaseHumidity</p>
   </tbody>
 </table>
 
-<h3 id="decreasehumidity">DecreaseHumidity</h3>
+<h3 id="decreasehumidity">DecreaseHumidity<a href="#decreasehumidity" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#decreasehumidity"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 설정 습도를 감소시킨다.<br>
@@ -2966,7 +2972,8 @@ Directive : DecreaseHumidity</p>
   </tbody>
 </table>
 
-<h3 id="sethumiditymax">SetHumidityMax</h3>
+<h3 id="sethumiditymax">SetHumidityMax<a href="#sethumiditymax" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#sethumiditymax"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice를 최고 설정습도로 설정한다.<br>
@@ -3128,7 +3135,8 @@ Directive : SetHumidityMax</p>
   </tbody>
 </table>
 
-<h3 id="sethumiditymin">SetHumidityMin</h3>
+<h3 id="sethumiditymin">SetHumidityMin<a href="#sethumiditymin" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#sethumiditymin"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice를 최저 설정습도로 설정한다.<br>
@@ -3285,7 +3293,8 @@ Directive : SetHumidityMin</p>
   </tbody>
 </table>
 
-<h2 id="error--exception">Error &amp; Exception</h2>
+<h2 id="error--exception">Error &amp; Exception<a href="#error--exception" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#error--exception"></div>
+</h2>
 
 <p>해당 Capability/Directive에서 응답 시 사용할 수 있는 ErrorCode는 <a href="/document/nugu-play/smarthome-play/smarthomeerror" class="a_internal">SmartHomeError</a>를 참조해주시기 바랍니다.</p>
 

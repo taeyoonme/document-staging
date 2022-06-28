@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">전화 수/발신 기능 제어를 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.2 입니다.</p>
 
@@ -2185,13 +2186,16 @@
   </tbody>
 </table>
 
-<h2 id="state-diagram">State Diagram</h2>
+<h2 id="state-diagram">State Diagram<a href="#state-diagram" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#state-diagram"></div>
+</h2>
 
 <p><img src="/document/assets/images/phonecall-01.png" alt="" class="img_internal"></p>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="phonecallagent-사용">PhoneCallAgent 사용</h3>
+<h3 id="phonecallagent-사용">PhoneCallAgent 사용<a href="#phonecallagent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#phonecallagent-사용"></div>
+</h3>
 
 <p>PhoneCall interface 규격에 따른 디바이스의 동작 제어는 PhoneCallAgent 가 처리합니다.</p>
 
@@ -2334,7 +2338,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="context-구성">Context 구성</h3>
+<h3 id="context-구성">Context 구성<a href="#context-%EA%B5%AC%EC%84%B1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context-구성"></div>
+</h3>
 
 <p>통화 상태 정보를 <a href="#context" class="hash_internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
@@ -2419,7 +2424,8 @@ phoneCallAgent.delegate = self
 
 </div>
 
-<h3 id="발신">발신</h3>
+<h3 id="발신">발신<a href="#%EB%B0%9C%EC%8B%A0" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#발신"></div>
+</h3>
 
 <p>전화 발신이 <a href="#sendcandidates" class="hash_internal">SendCandidates</a>, <a href="#makecall" class="hash_internal">MakeCall</a> directive 로 요청될 수 있습니다.</p>
 
@@ -2584,7 +2590,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 
 </div>
 
-<h3 id="수신">수신</h3>
+<h3 id="수신">수신<a href="#%EC%88%98%EC%8B%A0" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#수신"></div>
+</h3>
 
 <p>수신 전화에 대한 수락이 <a href="/document/nugu-sdk/capability-interface/phonecall#acceptcall" class="a_internal">AcceptCall</a> directive 로 거절이 <a href="/document/nugu-sdk/capability-interface/phonecall#endcall" class="a_internal">EndCall</a> directive 로 요청될 수 있습니다.</p>
 
@@ -2695,7 +2702,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2858,9 +2866,11 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
   </tbody>
 </table>
 
-<h2 id="common-objects">Common Objects</h2>
+<h2 id="common-objects">Common Objects<a href="#common-objects" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#common-objects"></div>
+</h2>
 
-<h3 id="person">Person</h3>
+<h3 id="person">Person<a href="#person" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#person"></div>
+</h3>
 
 <ul>
   <li>하나의 연락처를 나타내는 포맷</li>
@@ -3066,7 +3076,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
   </tbody>
 </table>
 
-<h3 id="contact">Contact</h3>
+<h3 id="contact">Contact<a href="#contact" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#contact"></div>
+</h3>
 
 <ul>
   <li>하나의 연락처를 나타내는 포맷</li>
@@ -3120,9 +3131,11 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
   </tbody>
 </table>
 
-<h2 id="directives">Directives</h2>
+<h2 id="directives">Directives<a href="#directives" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directives"></div>
+</h2>
 
-<h3 id="sendcandidates">SendCandidates</h3>
+<h3 id="sendcandidates">SendCandidates<a href="#sendcandidates" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sendcandidates"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3237,7 +3250,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
   </tbody>
 </table>
 
-<h3 id="makecall">MakeCall</h3>
+<h3 id="makecall">MakeCall<a href="#makecall" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#makecall"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3307,7 +3321,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
   </tbody>
 </table>
 
-<h3 id="endcall">EndCall</h3>
+<h3 id="endcall">EndCall<a href="#endcall" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#endcall"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3347,7 +3362,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 </div>
 </div>
 
-<h3 id="acceptcall">AcceptCall</h3>
+<h3 id="acceptcall">AcceptCall<a href="#acceptcall" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#acceptcall"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3408,7 +3424,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
   </tbody>
 </table>
 
-<h3 id="blockincomingcall">BlockIncomingCall</h3>
+<h3 id="blockincomingcall">BlockIncomingCall<a href="#blockincomingcall" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#blockincomingcall"></div>
+</h3>
 
 <ul>
   <li>현재 수신 중인 전화 수신 차단 설정</li>
@@ -3452,9 +3469,11 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 </div>
 </div>
 
-<h2 id="events">Events</h2>
+<h2 id="events">Events<a href="#events" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#events"></div>
+</h2>
 
-<h3 id="candidateslisted">CandidatesListed</h3>
+<h3 id="candidateslisted">CandidatesListed<a href="#candidateslisted" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#candidateslisted"></div>
+</h3>
 
 <ul>
   <li>검색 결과 리스트가 화면에 보여지는 경우 보내는 Event</li>
@@ -3499,7 +3518,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 </div>
 </div>
 
-<h3 id="callarrived">CallArrived</h3>
+<h3 id="callarrived">CallArrived<a href="#callarrived" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#callarrived"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3594,7 +3614,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
   </tbody>
 </table>
 
-<h3 id="callended">CallEnded</h3>
+<h3 id="callended">CallEnded<a href="#callended" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#callended"></div>
+</h3>
 
 <ul>
   <li>EndCall로 명시적으로 전화를 끊은 경우</li>
@@ -3639,7 +3660,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 </div>
 </div>
 
-<h3 id="callestablished">CallEstablished</h3>
+<h3 id="callestablished">CallEstablished<a href="#callestablished" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#callestablished"></div>
+</h3>
 
 <ul>
   <li>상대방이 전화를 받은 경우</li>
@@ -3684,7 +3706,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 </div>
 </div>
 
-<h3 id="makecallfailed">MakeCallFailed</h3>
+<h3 id="makecallfailed">MakeCallFailed<a href="#makecallfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#makecallfailed"></div>
+</h3>
 
 <ul>
   <li>MakeCall이 실패하는 경우 → 기능 상의 이슈로 전화 연결 시도 자체가 실패하는 경우</li>
@@ -3759,7 +3782,8 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
   </tbody>
 </table>
 
-<h3 id="makecallsucceeded">MakeCallSucceeded</h3>
+<h3 id="makecallsucceeded">MakeCallSucceeded<a href="#makecallsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#makecallsucceeded"></div>
+</h3>
 
 <ul>
   <li>MakeCall이 성공하는 경우</li>

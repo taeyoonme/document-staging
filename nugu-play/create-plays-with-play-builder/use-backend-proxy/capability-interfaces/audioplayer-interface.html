@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
 
 <p>AudioPlayer Interface는 오디오 파일의 재생 외에 플레이어의 다양한 상태를 확인할 수 있는 이벤트와 동작을 제어하기 위한 Directive로 구성이 되어 있습니다. 또한 Built-in Intent들을 기본적으로 제공하기 때문에 오디오 파일 제어를 위한 언어 학습 모델을 별도로 만들 필요가 없습니다.</p>
 
-<h2 id="지원하는-스트리밍-포맷">지원하는 스트리밍 포맷</h2>
+<h2 id="지원하는-스트리밍-포맷">지원하는 스트리밍 포맷<a href="#%EC%A7%80%EC%9B%90%ED%95%98%EB%8A%94-%EC%8A%A4%ED%8A%B8%EB%A6%AC%EB%B0%8D-%ED%8F%AC%EB%A7%B7" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#지원하는-스트리밍-포맷"></div>
+</h2>
 
 <p>오디오 재생을 위해 NUGU 디바이스에서 지원하는 스트리밍 프로토콜과 오디오 코덱은 다음의 표에서 제공하는 규격을 지원해야 합니다. 다음은 NUGU 디바이스에서 지원하는 스트리밍 포맷입니다.</p>
 
@@ -2194,7 +2195,8 @@
 
 </div>
 
-<h2 id="state-diagram">State Diagram</h2>
+<h2 id="state-diagram">State Diagram<a href="#state-diagram" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#state-diagram"></div>
+</h2>
 
 <p>AudioPlayer Interface는 사용자의 발화와 스트리밍 상태의 변경에 따라 아래의 그림과 같은 상태를 가집니다.</p>
 
@@ -2233,7 +2235,8 @@
   </tbody>
 </table>
 
-<h2 id="built-in-intents">Built-in Intents</h2>
+<h2 id="built-in-intents">Built-in Intents<a href="#built-in-intents" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#built-in-intents"></div>
+</h2>
 
 <p>Built-in Intent는 Play Builder에 Intent를 정의하지 않아도 NUGU 플랫폼에서 기본으로 제공하는 Intent입니다. Built-in Intent는 Play 생성 시 추가되며, 모든 Play에서 공통(필수)으로 사용되는 Universal Intent와 Capability Interface(AudioPlayer Interface)를 사용함으로 선택했을 때 추가되는 Control Intent로 구분됩니다.</p>
 
@@ -2243,7 +2246,8 @@
 
 </div>
 
-<h3 id="공통필수-intent">공통(필수) Intent</h3>
+<h3 id="공통필수-intent">공통(필수) Intent<a href="#%EA%B3%B5%ED%86%B5%ED%95%84%EC%88%98-intent" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#공통필수-intent"></div>
+</h3>
 
 <table>
   <thead>
@@ -2279,7 +2283,8 @@
   </tbody>
 </table>
 
-<h3 id="control-intent">Control Intent</h3>
+<h3 id="control-intent">Control Intent<a href="#control-intent" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#control-intent"></div>
+</h3>
 
 <table>
   <thead>
@@ -2366,9 +2371,11 @@
 
 <p>예를 들어, 셔플 기능을 지원하지 않는 경우 Action을 생성하고 응답으로 “랜덤 재생은 지원하지 않습니다.”라고 명확히 안내해주는 것이 좋습니다.</p>
 
-<h2 id="directives">Directives</h2>
+<h2 id="directives">Directives<a href="#directives" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#directives"></div>
+</h2>
 
-<h4 id="play-directive">Play Directive</h4>
+<h4 id="play-directive">Play Directive<a href="#play-directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#play-directive"></div>
+</h4>
 
 <div class="code">
     <div class="code_title">
@@ -2475,7 +2482,8 @@
 
 <p><img src="/document/assets/images/audioplayer-interface-02.png" alt="" class="img_internal"></p>
 
-<h4 id="stop-directive">Stop Directive</h4>
+<h4 id="stop-directive">Stop Directive<a href="#stop-directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#stop-directive"></div>
+</h4>
 
 <p>오디오 재생을 멈춥니다.</p>
 
@@ -2499,7 +2507,8 @@
 </div>
 </div>
 
-<h4 id="pause-directive">Pause Directive</h4>
+<h4 id="pause-directive">Pause Directive<a href="#pause-directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#pause-directive"></div>
+</h4>
 
 <p>재생 중인 오디오를 일시 정지합니다.</p>
 
@@ -2523,9 +2532,11 @@
 </div>
 </div>
 
-<h2 id="events">Events</h2>
+<h2 id="events">Events<a href="#events" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#events"></div>
+</h2>
 
-<h4 id="playbackstarted">PlaybackStarted</h4>
+<h4 id="playbackstarted">PlaybackStarted<a href="#playbackstarted" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#playbackstarted"></div>
+</h4>
 
 <p>스트리밍 URL별로 재생이 시작될 때마다 발생합니다.</p>
 
@@ -2580,7 +2591,8 @@
   </tbody>
 </table>
 
-<h4 id="playbackfinished">PlaybackFinished</h4>
+<h4 id="playbackfinished">PlaybackFinished<a href="#playbackfinished" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#playbackfinished"></div>
+</h4>
 
 <p>특정 스트리밍 URL을 끝까지 재생하여 종료되는 경우 발생합니다.</p>
 
@@ -2619,7 +2631,8 @@
 
 <p>Stop Directive는 전송하지 않아도 되지만, 재생 중인 경우는 다음 곡 재생 여부를 명확히 전달하는 것이 좋습니다.</p>
 
-<h4 id="playbackstopped">PlaybackStopped</h4>
+<h4 id="playbackstopped">PlaybackStopped<a href="#playbackstopped" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#playbackstopped"></div>
+</h4>
 
 <p>다음의 경우에 PlaybackStopped 이벤트가 발생합니다.</p>
 
@@ -2654,7 +2667,8 @@
 </div>
 </div>
 
-<h4 id="playbackfailed">PlaybackFailed</h4>
+<h4 id="playbackfailed">PlaybackFailed<a href="#playbackfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#playbackfailed"></div>
+</h4>
 
 <p>오디오 재생 중 오류가 발생하면 해당 오류를 표시합니다.</p>
 
@@ -2757,7 +2771,8 @@
   </tbody>
 </table>
 
-<h4 id="progressreportdelayelapsed">ProgressReportDelayElapsed</h4>
+<h4 id="progressreportdelayelapsed">ProgressReportDelayElapsed<a href="#progressreportdelayelapsed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#progressreportdelayelapsed"></div>
+</h4>
 
 <p>Play Directive에서 progressReportDelayInMilliseconds를 보내고, 설정된 시간 위치(offset)에서 재생될 때 Event가 발생합니다. 재생을 시작한 후 특정 위치까지 재생했을 때 과금이나 인증 등의 추가 작업이 필요한 경우에 사용합니다.</p>
 
@@ -2787,7 +2802,8 @@
 </div>
 </div>
 
-<h4 id="progressreportintervalelapsed">ProgressReportIntervalElapsed</h4>
+<h4 id="progressreportintervalelapsed">ProgressReportIntervalElapsed<a href="#progressreportintervalelapsed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#progressreportintervalelapsed"></div>
+</h4>
 
 <p>Play 디렉티브에서 progressReportIntervalInMilliseconds를 보냈을 때 설정된 시간 간격마다 Event가 발생합니다. 재생을 시작한 후 특정 위치까지 재생했을 때 과금이나 인증 등의 추가 작업이 필요한 경우에 사용합니다.</p>
 
@@ -2817,7 +2833,8 @@
 </div>
 </div>
 
-<h4 id="playbackpaused">PlaybackPaused</h4>
+<h4 id="playbackpaused">PlaybackPaused<a href="#playbackpaused" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#playbackpaused"></div>
+</h4>
 
 <p>재생 중인 오디오를 일시 정지할 때 사용합니다.</p>
 
@@ -2847,7 +2864,8 @@
 </div>
 </div>
 
-<h4 id="playbackresumed">PlaybackResumed</h4>
+<h4 id="playbackresumed">PlaybackResumed<a href="#playbackresumed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#playbackresumed"></div>
+</h4>
 
 <p>일시 정지 중인 오디오를 다시 재생 시작할 때 사용합니다.</p>
 

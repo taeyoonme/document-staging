@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">디바이스의 볼륨을 제어하기 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.2 입니다.</p>
 
@@ -2185,9 +2186,11 @@
   </tbody>
 </table>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="speakeragent-사용">SpeakerAgent 사용</h3>
+<h3 id="speakeragent-사용">SpeakerAgent 사용<a href="#speakeragent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#speakeragent-사용"></div>
+</h3>
 
 <p>Speaker interface 규격에 따른 디바이스의 동작 제어는 SpeakerAgent 가 처리합니다.</p>
 
@@ -2322,7 +2325,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="context-구성">Context 구성</h3>
+<h3 id="context-구성">Context 구성<a href="#context-%EA%B5%AC%EC%84%B1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context-구성"></div>
+</h3>
 
 <p>Play 에서 디바이스의 볼륨을 제어하기 위해서는 디바이스의 볼륨 정보를 <a href="#context" class="hash_internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
@@ -2389,7 +2393,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="볼륨-제어">볼륨 제어</h3>
+<h3 id="볼륨-제어">볼륨 제어<a href="#%EB%B3%BC%EB%A5%A8-%EC%A0%9C%EC%96%B4" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#볼륨-제어"></div>
+</h3>
 
 <p>디바이스의 볼륨 제어가 <a href="#setvolume" class="hash_internal">SetVolume</a> directive 로 요청될 수 있습니다.</p>
 
@@ -2500,7 +2505,8 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2619,9 +2625,11 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
   </tbody>
 </table>
 
-<h2 id="directive">Directive</h2>
+<h2 id="directive">Directive<a href="#directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directive"></div>
+</h2>
 
-<h3 id="setvolume">SetVolume</h3>
+<h3 id="setvolume">SetVolume<a href="#setvolume" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#setvolume"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2706,7 +2714,8 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
   </tbody>
 </table>
 
-<h3 id="setmute">SetMute</h3>
+<h3 id="setmute">SetMute<a href="#setmute" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#setmute"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2785,9 +2794,11 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
   </tbody>
 </table>
 
-<h2 id="event">Event</h2>
+<h2 id="event">Event<a href="#event" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#event"></div>
+</h2>
 
-<h3 id="setvolumesucceeded">SetVolumeSucceeded</h3>
+<h3 id="setvolumesucceeded">SetVolumeSucceeded<a href="#setvolumesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#setvolumesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2827,7 +2838,8 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 </div>
 </div>
 
-<h3 id="setvolumefailed">SetVolumeFailed</h3>
+<h3 id="setvolumefailed">SetVolumeFailed<a href="#setvolumefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#setvolumefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2867,7 +2879,8 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 </div>
 </div>
 
-<h3 id="setmutesucceeded">SetMuteSucceeded</h3>
+<h3 id="setmutesucceeded">SetMuteSucceeded<a href="#setmutesucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#setmutesucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2907,7 +2920,8 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 </div>
 </div>
 
-<h3 id="setmutefailed">SetMuteFailed</h3>
+<h3 id="setmutefailed">SetMuteFailed<a href="#setmutefailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#setmutefailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">

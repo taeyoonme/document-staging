@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">정의되지 않은 기능을 수행하기 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.1 입니다.</p>
 
@@ -2180,15 +2181,18 @@
   </tbody>
 </table>
 
-<h2 id="precondition">Precondition</h2>
+<h2 id="precondition">Precondition<a href="#precondition" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#precondition"></div>
+</h2>
 
 <p>Extension interface 를 사용한 Play 를 제작하기 위해서는 제휴담당자에게 요청하여 권한을 획득해야 합니다.</p>
 
 <p>Play 개발자와 Application 개발자는 Context, Directive, Event 의 data 필드에 대한 데이터 구조를 협의해야 합니다.</p>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="extensionagent-사용">ExtensionAgent 사용</h3>
+<h3 id="extensionagent-사용">ExtensionAgent 사용<a href="#extensionagent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#extensionagent-사용"></div>
+</h3>
 
 <p>Extension interface 규격에 따른 디바이스의 동작 제어는 ExtensionAgent 가 처리합니다.</p>
 
@@ -2307,7 +2311,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="context-구성-및-기능-실행">Context 구성 및 기능 실행</h3>
+<h3 id="context-구성-및-기능-실행">Context 구성 및 기능 실행<a href="#context-%EA%B5%AC%EC%84%B1-%EB%B0%8F-%EA%B8%B0%EB%8A%A5-%EC%8B%A4%ED%96%89" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context-구성-및-기능-실행"></div>
+</h3>
 
 <p>Play 에서 알아야 하는 디바이스/Application 의 정보를 <a href="#context" class="hash_internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
@@ -2448,7 +2453,8 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 
 </div>
 
-<h3 id="기능-요청">기능 요청</h3>
+<h3 id="기능-요청">기능 요청<a href="#%EA%B8%B0%EB%8A%A5-%EC%9A%94%EC%B2%AD" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#기능-요청"></div>
+</h3>
 
 <p>특정 기능 실행을 <a href="#commandissued" class="hash_internal">CommandIssued</a> event 로 요청할 수 있습니다.</p>
 
@@ -2515,7 +2521,8 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2562,9 +2569,11 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
   </tbody>
 </table>
 
-<h2 id="directive">Directive</h2>
+<h2 id="directive">Directive<a href="#directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directive"></div>
+</h2>
 
-<h3 id="action">Action</h3>
+<h3 id="action">Action<a href="#action" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#action"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2625,9 +2634,11 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
   </tbody>
 </table>
 
-<h2 id="event">Event</h2>
+<h2 id="event">Event<a href="#event" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#event"></div>
+</h2>
 
-<h3 id="actionsucceeded">ActionSucceeded</h3>
+<h3 id="actionsucceeded">ActionSucceeded<a href="#actionsucceeded" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#actionsucceeded"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2667,7 +2678,8 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 </div>
 </div>
 
-<h3 id="actionfailed">ActionFailed</h3>
+<h3 id="actionfailed">ActionFailed<a href="#actionfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#actionfailed"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2707,7 +2719,8 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 </div>
 </div>
 
-<h3 id="commandissued">CommandIssued</h3>
+<h3 id="commandissued">CommandIssued<a href="#commandissued" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#commandissued"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">

@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2162,7 +2162,8 @@
 
 <p>특정 상호작용을 제한하거나 동작 변경이 필요하다면 SDK의 기본 Handler인 <code class="language-plaintext highlighter-rouge">BasicTemplateHandler</code>를 상속 후 필요한 메서드를 override 하여 커스텀 TemplateHandler를 작성하고, 이를 TemplateHandlerFactory에 의해 생성되도록 적용하면 됩니다.</p>
 
-<h2 id="templatehandler">TemplateHandler</h2>
+<h2 id="templatehandler">TemplateHandler<a href="#templatehandler" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/android/nugu-display#templatehandler"></div>
+</h2>
 
 <p>TemplateView (이하 View로 표기) 는 버튼이 클릭되거나, 보여지는 item list에 변화가 생길때 이를 응용레벨로 알려 처리되도록 합니다. 또한 Toast나 Activity의 노출을 요청할 수도 있습니다.<br>
 각 상황에 호출되는 메서드들은 아래와 같습니다.</p>
@@ -2221,7 +2222,8 @@
   </tbody>
 </table>
 
-<h2 id="templatehandlerclientlistener">TemplateHandler.ClientListener</h2>
+<h2 id="templatehandlerclientlistener">TemplateHandler.ClientListener<a href="#templatehandlerclientlistener" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/android/nugu-display#templatehandlerclientlistener"></div>
+</h2>
 
 <p>TemplateHandler가 View에서 응용레벨로의 메시지 전달 혹은 요청이라면, ClientListener는 응용레벨에서 View로의 메시지 전달과 요청이라고 할 수 있다.</p>
 
@@ -2263,7 +2265,8 @@
   </tbody>
 </table>
 
-<h2 id="templatehandler-적용">TemplateHandler 적용</h2>
+<h2 id="templatehandler-적용">TemplateHandler 적용<a href="#templatehandler-%EC%A0%81%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/platform/android/nugu-display#templatehandler-적용"></div>
+</h2>
 
 <p>작성한 커스텀 TemplateHandler를 리턴하는 TemplateHandlerFactory 를 TemplateRenderer에 적용하면 커스텀 TemplateHandler가 동작합니다.</p>
 

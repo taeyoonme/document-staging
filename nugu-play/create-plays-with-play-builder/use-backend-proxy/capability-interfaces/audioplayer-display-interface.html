@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2156,7 +2156,8 @@
 
 <p><img src="/document/assets/images/audioplayer-display-interface-01.jpg" alt="" class="img_internal"></p>
 
-<h4 id="지원-디바이스">지원 디바이스</h4>
+<h4 id="지원-디바이스">지원 디바이스<a href="#%EC%A7%80%EC%9B%90-%EB%94%94%EB%B0%94%EC%9D%B4%EC%8A%A4" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#지원-디바이스"></div>
+</h4>
 
 <p>현재 AudioPlayer용 Display Interface를 지원하는 디바이스는 다음과 같으며, 지원 디바이스는 확장될 예정입니다.</p>
 
@@ -2166,7 +2167,8 @@
   <li>NU300</li>
 </ul>
 
-<h2 id="audioplayer-interface를-위한-확장-template-">AudioPlayer Interface를 위한 확장 Template <a id="audioplayer-display-interface"></a>
+<h2 id="audioplayer-interface를-위한-확장-template-">AudioPlayer Interface를 위한 확장 Template <a id="audioplayer-display-interface" href="#audioplayer-display-interface" class="go_hash hash_internal"></a>
+<div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#audioplayer-display-interface"></div>
 </h2>
 
 <p>AudioPlayer를 지원하는 Play가 화면을 가진 디바이스에서 사용될 때 보여지는 Template으로 Play를 개발할 때 다음의 두 작업을 꼭 해야 합니다.</p>
@@ -2176,7 +2178,8 @@
   <li>Display Interface용 Event를 처리하는 Action 생성</li>
 </ol>
 
-<h3 id="1-play-directive의-metadata-필드에-template-정보-전달">1. Play Directive의 ‘metadata’ 필드에 Template 정보 전달</h3>
+<h3 id="1-play-directive의-metadata-필드에-template-정보-전달">1. Play Directive의 ‘metadata’ 필드에 Template 정보 전달<a href="#1-play-directive%EC%9D%98-metadata-%ED%95%84%EB%93%9C%EC%97%90-template-%EC%A0%95%EB%B3%B4-%EC%A0%84%EB%8B%AC" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#1-play-directive의-metadata-필드에-template-정보-전달"></div>
+</h3>
 
 <p>AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 따라 Play Directive의 metadata 필드에 담을 정보는 다음과 같습니다.</p>
 
@@ -2185,7 +2188,8 @@
   <li>AudioPlayer.Template2</li>
 </ul>
 
-<h4 id="audioplayertemplate1">AudioPlayer.Template1</h4>
+<h4 id="audioplayertemplate1">AudioPlayer.Template1<a href="#audioplayertemplate1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#audioplayertemplate1"></div>
+</h4>
 
 <p><img src="/document/assets/images/audioplayer-display-interface-02.png" alt="" class="img_internal"></p>
 
@@ -2300,7 +2304,8 @@
   </tbody>
 </table>
 
-<h4 id="audioplayertemplate2">AudioPlayer.Template2</h4>
+<h4 id="audioplayertemplate2">AudioPlayer.Template2<a href="#audioplayertemplate2" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#audioplayertemplate2"></div>
+</h4>
 
 <p><img src="/document/assets/images/audioplayer-display-interface-03.png" alt="" class="img_internal"></p>
 
@@ -2407,7 +2412,8 @@
   </tbody>
 </table>
 
-<h4 id="template-type을-지정하지-않은-경우-default-template">Template Type을 지정하지 않은 경우 (Default Template)</h4>
+<h4 id="template-type을-지정하지-않은-경우-default-template">Template Type을 지정하지 않은 경우 (Default Template)<a href="#template-type%EC%9D%84-%EC%A7%80%EC%A0%95%ED%95%98%EC%A7%80-%EC%95%8A%EC%9D%80-%EA%B2%BD%EC%9A%B0-default-template" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#template-type을-지정하지-않은-경우-default-template"></div>
+</h4>
 
 <p>‘metadata’ 필드에 Template 타입을 지정하지 않은 경우, Default Template으로 동작하게 되며, Play가 화면을 가진 디바이스에서 오디오 재생 시 Play 이름만 표시됩니다. AudioPlayer, Display Interface를 함께 사용하는 경우, Template1이나 Template2를 사용하기를 권장합니다.</p>
 
@@ -2421,9 +2427,11 @@
 
 </div>
 
-<h3 id="2-display-interface용-event를-처리하는-action-생성">2. Display Interface용 Event를 처리하는 Action 생성</h3>
+<h3 id="2-display-interface용-event를-처리하는-action-생성">2. Display Interface용 Event를 처리하는 Action 생성<a href="#2-display-interface%EC%9A%A9-event%EB%A5%BC-%EC%B2%98%EB%A6%AC%ED%95%98%EB%8A%94-action-%EC%83%9D%EC%84%B1" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#2-display-interface용-event를-처리하는-action-생성"></div>
+</h3>
 
-<h4 id="버튼-클릭-관련-event">버튼 클릭 관련 Event</h4>
+<h4 id="버튼-클릭-관련-event">버튼 클릭 관련 Event<a href="#%EB%B2%84%ED%8A%BC-%ED%81%B4%EB%A6%AD-%EA%B4%80%EB%A0%A8-event" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#버튼-클릭-관련-event"></div>
+</h4>
 
 <p>AudioPlayer를 위한 Template은 오디오 재생을 제어하는 버튼이 있으며, 이 버튼에 의해 총 다섯 개의 이벤트가 발생할 수 있습니다. AudioPlayer/Display Interface를 함께 사용하기 위해서는, 총 5개의 Event를 처리하는 5개의 Action을 반드시 정의해야 합니다.</p>
 
@@ -2494,7 +2502,8 @@
   </tbody>
 </table>
 
-<h4 id="playbackfinished-event">PlaybackFinished Event</h4>
+<h4 id="playbackfinished-event">PlaybackFinished Event<a href="#playbackfinished-event" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces#playbackfinished-event"></div>
+</h4>
 
 <p>하나의 음원 스트리밍 재생이 끝난 경우 발생하는 PlaybackFinished Event를 처리할 Action을 정의해야 합니다. 이 Action에서는 Play Directive 또는 Stop Directive 중 하나를 전송해야 합니다.</p>
 

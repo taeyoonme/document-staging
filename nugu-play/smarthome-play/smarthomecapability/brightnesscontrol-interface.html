@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2152,7 +2152,8 @@
     <div class="content">
         <p>NUGU 스마트홈 BrightnessControl Capability Interface는 NUGU 스마트홈에 등록된 SmartHomeDevice의 밝기제어방식에 대한 설명입니다. 스마트홈 기기의 밝기는 1부터 100단계로 제어할 수 있습니다.</p>
 
-<h2 id="discovery">Discovery</h2>
+<h2 id="discovery">Discovery<a href="#discovery" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#discovery"></div>
+</h2>
 
 <p>NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스마트홈에 SmartHomeDevice를 등록해야 합니다. 사용자가 NUGU App을 통해 SmartHomeDevice 등록을 요청하면 SmartHome Play 제작 당시 입력한 SmartHomeBackendProxy URL로 NUGU스마트홈에 등록할 수 있는 SmartHomeDevice 목록에 대한 Discovery 요청이 전달됩니다. SmartHomeBackendProxy는 SmartHomeDevice 목록과 함께 각 SmartHomeDevice별로 지원하는 Capability와 그에 따른 부가적인 Parameter들을 응답해야 합니다.</p>
 
@@ -2305,11 +2306,13 @@
   </tbody>
 </table>
 
-<h2 id="directive">Directive</h2>
+<h2 id="directive">Directive<a href="#directive" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#directive"></div>
+</h2>
 
 <p>NUGU SmartHome BrightnessControl Capability는 SmartHomeDevice의 밝기를 제어하는 SetBrightness, IncreaseBrightness, DecreaseBrightness, SetBrightnessMax, SetBrightnessMin 등의 Directive를 지원합니다.</p>
 
-<h3 id="setbrightness">SetBrightness</h3>
+<h3 id="setbrightness">SetBrightness<a href="#setbrightness" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#setbrightness"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 밝기를 사용자가 발화한 특정 밝기로 설정한다.<br>
@@ -2507,7 +2510,8 @@ Directive : SetBrightness</p>
   </tbody>
 </table>
 
-<h3 id="increasebrightness">IncreaseBrightness</h3>
+<h3 id="increasebrightness">IncreaseBrightness<a href="#increasebrightness" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#increasebrightness"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 밝기단계를 올린다.<br>
@@ -2711,7 +2715,8 @@ Directive : IncreaseBrightness</p>
   </tbody>
 </table>
 
-<h3 id="decreasebrightness">DecreaseBrightness</h3>
+<h3 id="decreasebrightness">DecreaseBrightness<a href="#decreasebrightness" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#decreasebrightness"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 밝기단계를 내린다.<br>
@@ -2913,7 +2918,8 @@ Directive : DecreaseBrightness</p>
   </tbody>
 </table>
 
-<h3 id="setbrightnessmax">SetBrightnessMax</h3>
+<h3 id="setbrightnessmax">SetBrightnessMax<a href="#setbrightnessmax" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#setbrightnessmax"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 밝기를 최고 단계로 설정한다.<br>
@@ -3090,7 +3096,8 @@ Directive : SetBrightnessMax</p>
   </tbody>
 </table>
 
-<h3 id="setbrightnessmin">SetBrightnessMin</h3>
+<h3 id="setbrightnessmin">SetBrightnessMin<a href="#setbrightnessmin" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#setbrightnessmin"></div>
+</h3>
 
 <p><strong>Directive 정보</strong><br>
 SmartHomeDevice의 밝기를 최저 단계로 설정한다.<br>
@@ -3267,7 +3274,8 @@ Directive : SetBrightnessMin</p>
   </tbody>
 </table>
 
-<h2 id="error--exception">Error &amp; Exception</h2>
+<h2 id="error--exception">Error &amp; Exception<a href="#error--exception" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/smarthome-play/smarthomecapability#error--exception"></div>
+</h2>
 
 <p>해당 Capability/Directive에서 응답 시 사용할 수 있는 ErrorCode는 <a href="/document/nugu-play/smarthome-play/smarthomeerror" class="a_internal">SmartHomeError</a>를 참조해주시기 바랍니다.</p>
 

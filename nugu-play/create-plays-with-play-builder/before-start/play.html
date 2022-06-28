@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2150,7 +2150,8 @@
         <div class="description"></div>
     </div>
     <div class="content">
-        <h2 id="play">Play</h2>
+        <h2 id="play">Play<a href="#play" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#play"></div>
+</h2>
 
 <p>Play는 NUGU 플랫폼의 엔진들과 통신해 서비스를 제공하는 단위로서, 사용자와 상호 작용하여 의도를 이해하고 그에 맞는 적절한 답변을 주거나 명령을 수행합니다.</p>
 
@@ -2158,11 +2159,13 @@
 
 <p><img src="/document/assets/images/nugu-play-01.png" alt="" class="img_internal"></p>
 
-<h2 id="play-타입">Play 타입</h2>
+<h2 id="play-타입">Play 타입<a href="#play-%ED%83%80%EC%9E%85" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#play-타입"></div>
+</h2>
 
 <p>NUGU play kit에서 만들 수 있는 Play는 사용 대상에 따라 다음 두 가지로 구분됩니다.</p>
 
-<h3 id="public-play">Public Play</h3>
+<h3 id="public-play">Public Play<a href="#public-play" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#public-play"></div>
+</h3>
 
 <ul>
   <li>NUGU 사용자 모두가 사용할 수 있는 Play입니다.</li>
@@ -2170,7 +2173,8 @@
   <li>스토어가 공개되기 전까지는 선택 과정 없이 바로 사용할 수 있습니다.</li>
 </ul>
 
-<h3 id="private-play">Private Play</h3>
+<h3 id="private-play">Private Play<a href="#private-play" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#private-play"></div>
+</h3>
 
 <ul>
   <li>등록된 디바이스 혹은 초대된 사용자만 사용할 수 있는 Play입니다.</li>
@@ -2178,7 +2182,8 @@
   <li>특정 디바이스를 등록하거나 제한된 사용자만 초대하는 것은 NUGU biz에서 설정할 수 있습니다.</li>
 </ul>
 
-<h2 id="play-호출-이름invocation-name">Play 호출 이름(Invocation name)</h2>
+<h2 id="play-호출-이름invocation-name">Play 호출 이름(Invocation name)<a href="#play-%ED%98%B8%EC%B6%9C-%EC%9D%B4%EB%A6%84invocation-name" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#play-호출-이름invocation-name"></div>
+</h2>
 
 <p>Play 호출 이름은 사용자가 Play를 호출하기 위해 발화하는 고유한 이름을 말합니다. 사용자가 Play 호출 이름을 발화하면 해당 Play의 세션으로 진입하여 해당 Play의 기능을 사용할 수 있게 됩니다. 호출 이름은 Play Builder를 통해 Play를 만든 후, NUGU play kit에서 심사요청서를 작성할 때 입력할 수 있으며, 심사 단계에서 호출이름을 검토합니다.</p>
 
@@ -2188,17 +2193,20 @@
 
 </div>
 
-<h2 id="play-시작">Play 시작</h2>
+<h2 id="play-시작">Play 시작<a href="#play-%EC%8B%9C%EC%9E%91" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#play-시작"></div>
+</h2>
 
 <p>다음의 두 가지 발화 방법으로 Play를 시작할 수 있습니다.</p>
 
-<h3 id="1-play-호출-이름--start시작--open열어줘">1) Play 호출 이름 + Start(시작) / Open(열어줘)</h3>
+<h3 id="1-play-호출-이름--start시작--open열어줘">1) Play 호출 이름 + Start(시작) / Open(열어줘)<a href="#1-play-%ED%98%B8%EC%B6%9C-%EC%9D%B4%EB%A6%84--start%EC%8B%9C%EC%9E%91--open%EC%97%B4%EC%96%B4%EC%A4%98" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#1-play-호출-이름--start시작--open열어줘"></div>
+</h3>
 
 <p>Built-in Intent인 ‘Open’ 또는 ‘Start’를 사용하여 특정한 기능 수행 요청 없이 Play를 호출할 수 있습니다. ‘Open’에 해당하는 발화 예시로 ‘열어’, ‘오픈’이 있으며, ‘Start’에는 ‘시작’, ‘스타트’, ‘실행’이 해당됩니다.</p>
 
 <p><img src="/document/assets/images/play-01.png" alt="" class="img_internal"></p>
 
-<h3 id="2-play-호출-이름--해당-play의-intent">2) Play 호출 이름 + 해당 Play의 Intent</h3>
+<h3 id="2-play-호출-이름--해당-play의-intent">2) Play 호출 이름 + 해당 Play의 Intent<a href="#2-play-%ED%98%B8%EC%B6%9C-%EC%9D%B4%EB%A6%84--%ED%95%B4%EB%8B%B9-play%EC%9D%98-intent" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#2-play-호출-이름--해당-play의-intent"></div>
+</h3>
 
 <p>실행하고자 하는 Play의 기능을 호출 이름에 이어서 발화하여 Play를 시작할 수 있습니다. Play가 시작되며 곧바로 해당 Play의 Intent가 수행됩니다. 호출 이름과 Intent 사이에 ‘에게/에서/한테/로’와 같은 조사를 넣어 발화하거나 Entity를 함께 발화할 수도 있습니다.</p>
 
@@ -2216,15 +2224,18 @@
 
 </div>
 
-<h2 id="play-종료">Play 종료</h2>
+<h2 id="play-종료">Play 종료<a href="#play-%EC%A2%85%EB%A3%8C" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#play-종료"></div>
+</h2>
 
 <p>다음의 네 가지 방법으로 Play를 종료할 수 있습니다.</p>
 
-<h3 id="1-play-호출이름--stop그만--close닫아줘">1) Play 호출이름 + Stop(그만) / Close(닫아줘)</h3>
+<h3 id="1-play-호출이름--stop그만--close닫아줘">1) Play 호출이름 + Stop(그만) / Close(닫아줘)<a href="#1-play-%ED%98%B8%EC%B6%9C%EC%9D%B4%EB%A6%84--stop%EA%B7%B8%EB%A7%8C--close%EB%8B%AB%EC%95%84%EC%A4%98" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#1-play-호출이름--stop그만--close닫아줘"></div>
+</h3>
 
 <p>Play 호출이름에 Built-in Intent인 ‘Stop’ 또는 ‘Close’를 사용하여 Play를 종료할 수 있습니다. ‘Stop’에 해당하는 발화 예시로는 ‘그만’, ‘정지’, ‘중지’, ‘종료’, ‘멈춰’, ‘스탑’, ‘끝’이 있으며, ‘Close’에 해당하는 예시에는 ‘닫기’, ‘닫아’가 있습니다.</p>
 
-<h3 id="2-세션-대기-상황에서-stop그만--close닫아줘">2) 세션 대기 상황에서 Stop(그만) / Close(닫아줘)</h3>
+<h3 id="2-세션-대기-상황에서-stop그만--close닫아줘">2) 세션 대기 상황에서 Stop(그만) / Close(닫아줘)<a href="#2-%EC%84%B8%EC%85%98-%EB%8C%80%EA%B8%B0-%EC%83%81%ED%99%A9%EC%97%90%EC%84%9C-stop%EA%B7%B8%EB%A7%8C--close%EB%8B%AB%EC%95%84%EC%A4%98" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#2-세션-대기-상황에서-stop그만--close닫아줘"></div>
+</h3>
 
 <p>세션 대기 상황에서 NUGU 에이전트가 Listening 상태인 경우, Play 호출이름을 포함하지 않아도 ‘Stop’ 또는 ‘Close’를 발화하여 Play를 종료할 수 있습니다.</p>
 
@@ -2234,7 +2245,8 @@
 
 </div>
 
-<h3 id="3-세션-대기-상황에서-미지원-발화fallback-연속-발생-시">3) 세션 대기 상황에서 미지원 발화(Fallback) 연속 발생 시</h3>
+<h3 id="3-세션-대기-상황에서-미지원-발화fallback-연속-발생-시">3) 세션 대기 상황에서 미지원 발화(Fallback) 연속 발생 시<a href="#3-%EC%84%B8%EC%85%98-%EB%8C%80%EA%B8%B0-%EC%83%81%ED%99%A9%EC%97%90%EC%84%9C-%EB%AF%B8%EC%A7%80%EC%9B%90-%EB%B0%9C%ED%99%94fallback-%EC%97%B0%EC%86%8D-%EB%B0%9C%EC%83%9D-%EC%8B%9C" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#3-세션-대기-상황에서-미지원-발화fallback-연속-발생-시"></div>
+</h3>
 
 <p>사용자 발화가 Play 내에 정의된 Intent가 아닌 경우 Fallback으로 처리되며, Fallback Action에서 정의한 수만큼 연속으로 Fallback이 발생하면 Play가 종료됩니다.</p>
 
@@ -2249,7 +2261,8 @@
 
 </div>
 
-<h3 id="4-세션-대기-상황에서-미발화silence-발생-시">4) 세션 대기 상황에서 미발화(Silence) 발생 시</h3>
+<h3 id="4-세션-대기-상황에서-미발화silence-발생-시">4) 세션 대기 상황에서 미발화(Silence) 발생 시<a href="#4-%EC%84%B8%EC%85%98-%EB%8C%80%EA%B8%B0-%EC%83%81%ED%99%A9%EC%97%90%EC%84%9C-%EB%AF%B8%EB%B0%9C%ED%99%94silence-%EB%B0%9C%EC%83%9D-%EC%8B%9C" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#4-세션-대기-상황에서-미발화silence-발생-시"></div>
+</h3>
 
 <p>미발화(Silence) 발생 시 Play가 종료됩니다.</p>
 
@@ -2267,7 +2280,8 @@
 
 </div>
 
-<h2 id="play-세션">Play 세션</h2>
+<h2 id="play-세션">Play 세션<a href="#play-%EC%84%B8%EC%85%98" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-play/create-plays-with-play-builder/before-start#play-세션"></div>
+</h2>
 
 <p>사용자가 특정 Play의 호출 이름을 발화하여 호출하면, 그 Play가 활성화되면서 해당 Play의 명령만 수행할 수 있는 Play 세션으로 진입합니다. 이 세션이 열려 있는 동안에는 해당 호출 이름을 발화하지 않아도 그 Play의 기능을 계속 사용할 수 있고, 세션이 닫히기 전까지는 다른 Play를 사용할 수 없습니다.</p>
 

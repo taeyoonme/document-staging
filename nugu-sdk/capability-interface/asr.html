@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">음성인식 결과를 Play 로 전달하기 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.6 입니다.</p>
 
@@ -2205,13 +2206,16 @@
   </tbody>
 </table>
 
-<h2 id="state-diagram">State Diagram</h2>
+<h2 id="state-diagram">State Diagram<a href="#state-diagram" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#state-diagram"></div>
+</h2>
 
 <p><img src="/document/assets/images/asr-01.png" alt="" class="img_internal"></p>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
-<h3 id="asragent-사용">ASRAgent 사용</h3>
+<h3 id="asragent-사용">ASRAgent 사용<a href="#asragent-%EC%82%AC%EC%9A%A9" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#asragent-사용"></div>
+</h3>
 
 <p>ASR interface 규격에 따른 디바이스의 동작 제어는 ASRAgent 가 처리합니다.</p>
 
@@ -2464,7 +2468,8 @@ nugu_client-&gt;getCapabilityBuilder()
 
 </div>
 
-<h3 id="음성-인식-요청">음성 인식 요청</h3>
+<h3 id="음성-인식-요청">음성 인식 요청<a href="#%EC%9D%8C%EC%84%B1-%EC%9D%B8%EC%8B%9D-%EC%9A%94%EC%B2%AD" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#음성-인식-요청"></div>
+</h3>
 
 <p><code class="language-plaintext highlighter-rouge">아리아</code> 발화 또는 NUGU Button 선택 시 <a href="#recognize" class="hash_internal">Recognize</a> event 를 전달하여 음성인식을 시작할 수 있습니다.</p>
 
@@ -2543,7 +2548,8 @@ asrAgent.startRecognition(initiator: .user)
 
 </div>
 
-<h3 id="음성인식-진행-상태-모니터링">음성인식 진행 상태 모니터링</h3>
+<h3 id="음성인식-진행-상태-모니터링">음성인식 진행 상태 모니터링<a href="#%EC%9D%8C%EC%84%B1%EC%9D%B8%EC%8B%9D-%EC%A7%84%ED%96%89-%EC%83%81%ED%83%9C-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#음성인식-진행-상태-모니터링"></div>
+</h3>
 
 <p>음성인식에 대한 진행 상태를 모니터링 할 수 있습니다.</p>
 
@@ -2750,7 +2756,8 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 
 </div>
 
-<h3 id="음성-인식-중단">음성 인식 중단</h3>
+<h3 id="음성-인식-중단">음성 인식 중단<a href="#%EC%9D%8C%EC%84%B1-%EC%9D%B8%EC%8B%9D-%EC%A4%91%EB%8B%A8" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#음성-인식-중단"></div>
+</h3>
 
 <p>사용자가 음성 인식 중단 요청을 <a href="#stoprecognize" class="hash_internal">StopRecognize</a> event 로 전달할 수 있습니다.</p>
 
@@ -2827,7 +2834,8 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 
 </div>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2890,9 +2898,11 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
   </tbody>
 </table>
 
-<h2 id="directives">Directives</h2>
+<h2 id="directives">Directives<a href="#directives" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directives"></div>
+</h2>
 
-<h3 id="expectspeech">ExpectSpeech</h3>
+<h3 id="expectspeech">ExpectSpeech<a href="#expectspeech" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#expectspeech"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3056,7 +3066,8 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
   </tbody>
 </table>
 
-<h3 id="notifyresult">NotifyResult</h3>
+<h3 id="notifyresult">NotifyResult<a href="#notifyresult" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#notifyresult"></div>
+</h3>
 
 <ul>
   <li>음성 인식 결과 전달</li>
@@ -3136,7 +3147,8 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
   </tbody>
 </table>
 
-<h3 id="cancelrecognize">CancelRecognize</h3>
+<h3 id="cancelrecognize">CancelRecognize<a href="#cancelrecognize" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#cancelrecognize"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3196,9 +3208,11 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
   </tbody>
 </table>
 
-<h2 id="events">Events</h2>
+<h2 id="events">Events<a href="#events" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#events"></div>
+</h2>
 
-<h3 id="recognize">Recognize</h3>
+<h3 id="recognize">Recognize<a href="#recognize" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#recognize"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -3471,7 +3485,8 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
   </tbody>
 </table>
 
-<h3 id="responsetimeout">ResponseTimeout</h3>
+<h3 id="responsetimeout">ResponseTimeout<a href="#responsetimeout" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#responsetimeout"></div>
+</h3>
 
 <ul>
   <li>Recognize Event가 전달되고 사용자 발화도 모두 전달이 완료된 이후 응답을 받지 못한 경우</li>
@@ -3534,7 +3549,8 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
   </tbody>
 </table>
 
-<h3 id="listentimeout">ListenTimeout</h3>
+<h3 id="listentimeout">ListenTimeout<a href="#listentimeout" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#listentimeout"></div>
+</h3>
 
 <ul>
   <li>Recognize event가 전달되고 사용자 발화가 발화하지 않은 경우</li>
@@ -3597,7 +3613,8 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
   </tbody>
 </table>
 
-<h3 id="stoprecognize">StopRecognize</h3>
+<h3 id="stoprecognize">StopRecognize<a href="#stoprecognize" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stoprecognize"></div>
+</h3>
 
 <ul>
   <li>Recognize event 취소</li>
@@ -3660,7 +3677,8 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
   </tbody>
 </table>
 
-<h3 id="listenfailed">ListenFailed</h3>
+<h3 id="listenfailed">ListenFailed<a href="#listenfailed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#listenfailed"></div>
+</h3>
 
 <ul>
   <li>Recognize event 이후 클라이언트에서 에러(마이크를 열지 못하는 등)가 발생한 경우</li>

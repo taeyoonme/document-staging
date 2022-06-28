@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2152,7 +2152,8 @@
     <div class="content">
         <p>NUGU를 탑재한 기기의 상태에 따른 동작, 제공하는 물리적 버튼, 조명, 소리에 대한 가이드는 다음과 같습니다.</p>
 
-<h2 id="기기-상태">기기 상태</h2>
+<h2 id="기기-상태">기기 상태<a href="#%EA%B8%B0%EA%B8%B0-%EC%83%81%ED%83%9C" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#기기-상태"></div>
+</h2>
 
 <p>NUGU를 탑재한 기기의 상태는 다음과 같습니다.</p>
 
@@ -2191,11 +2192,14 @@
   </tbody>
 </table>
 
-<h4 id="초기-기기-상태"><strong>초기 기기 상태</strong></h4>
+<h4 id="초기-기기-상태">
+<strong>초기 기기 상태</strong><a href="#%EC%B4%88%EA%B8%B0-%EA%B8%B0%EA%B8%B0-%EC%83%81%ED%83%9C" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#초기-기기-상태"></div>
+</h4>
 
 <p>NUGU 기기의 초기 상태는 다음과 같습니다. 마이크(Microphone) on / 와이파이 on / 블루투스 off / 볼륨 unmute / 무드등 off</p>
 
-<h2 id="버튼">버튼</h2>
+<h2 id="버튼">버튼<a href="#%EB%B2%84%ED%8A%BC" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#버튼"></div>
+</h2>
 
 <p>NUGU 기기에서 제공하는 물리적 버튼들은 다음과 같습니다. 기기에 따라 제공되지 않거나 추가적인 버튼이 제공될 수 있습니다.</p>
 
@@ -2237,7 +2241,8 @@
   <li>버튼을 길게 누르거나, 2개 이상의 버튼 조합으로 기능이 실행되도록 할 수 있습니다. 이렇게 동작하는 방식은 사용자가 인지하고 사용하기 어려우므로 자주 사용하지 않는 기능이나, 쉽게 실행되어서는 안 되는 기능을 제공할 때 사용하도록 합니다.</li>
 </ul>
 
-<h2 id="조명">조명</h2>
+<h2 id="조명">조명<a href="#%EC%A1%B0%EB%AA%85" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#조명"></div>
+</h2>
 
 <p>조명을 이용하여 현재의 상태 및 사용자 요청에 대한 결과를 피드백할 수 있습니다.</p>
 
@@ -2320,11 +2325,14 @@
   </tbody>
 </table>
 
-<h2 id="소리">소리</h2>
+<h2 id="소리">소리<a href="#%EC%86%8C%EB%A6%AC" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#소리"></div>
+</h2>
 
 <p>효과음은 음성이 아닌 비프음이나 사운드 등을 의미합니다. 상황 별 정해진 특징적인 효과음을를 제공함으로써 음성으로 설명하지 않고도 상태 및 동작에 대하여 사용자가 인식할 수 있도록 합니다. 효과음은 대 상태를 알리는 데에 사용되는 1) 기본 효과음과 특정 서비스 동작과 관련된 2)서비스 효과음로 나뉩니다.</p>
 
-<h3 id="1-기본-효과음basic-feedback-sound"><strong>1) 기본 효과음(Basic Feedback Sound)</strong></h3>
+<h3 id="1-기본-효과음basic-feedback-sound">
+<strong>1) 기본 효과음(Basic Feedback Sound)</strong><a href="#1-%EA%B8%B0%EB%B3%B8-%ED%9A%A8%EA%B3%BC%EC%9D%8Cbasic-feedback-sound" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#1-기본-효과음basic-feedback-sound"></div>
+</h3>
 
 <p><strong>전원 켜짐 완료 (Boot complete)</strong></p>
 
@@ -2395,7 +2403,9 @@
 
 <p><img src="/document/assets/images/nugu-device-04.png" alt="" class="img_internal"></p>
 
-<h4 id="응답-실패-response-fail"><strong>응답 실패 (Response fail)</strong></h4>
+<h4 id="응답-실패-response-fail">
+<strong>응답 실패 (Response fail)</strong><a href="#%EC%9D%91%EB%8B%B5-%EC%8B%A4%ED%8C%A8-response-fail" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#응답-실패-response-fail"></div>
+</h4>
 
 <p>사용자의 발화가 제대로 인식되지 않아 정상 동작을 할 수 없는 경우, 응답 실패 비프음을 재생합니다.</p>
 
@@ -2443,11 +2453,15 @@
 
 <p><img src="/document/assets/images/nugu-device-07.png" alt="" class="img_internal"></p>
 
-<h3 id="2-서비스-효과음service-feedback-sound"><strong>2) 서비스 효과음(Service Feedback Sound)</strong></h3>
+<h3 id="2-서비스-효과음service-feedback-sound">
+<strong>2) 서비스 효과음(Service Feedback Sound)</strong><a href="#2-%EC%84%9C%EB%B9%84%EC%8A%A4-%ED%9A%A8%EA%B3%BC%EC%9D%8Cservice-feedback-sound" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#2-서비스-효과음service-feedback-sound"></div>
+</h3>
 
 <p>서비스 효과음는 특정 서비스 내에서 동작을 사용자가 인지하기 쉽도록 하거나, 감성을 전달하고자 할 때 사용합니다. 서비스 소리가 재생될 때는 응답 효과(End listen)은 재생하지 않습니다. 다음은 NUGU 기기에 적용된 서비스 효과의 예시입니다.</p>
 
-<h4 id="무드등-제어-mood-light-onoff"><strong>무드등 제어 (Mood light on/off)</strong></h4>
+<h4 id="무드등-제어-mood-light-onoff">
+<strong>무드등 제어 (Mood light on/off)</strong><a href="#%EB%AC%B4%EB%93%9C%EB%93%B1-%EC%A0%9C%EC%96%B4-mood-light-onoff" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/sdk-design-guide#무드등-제어-mood-light-onoff"></div>
+</h4>
 
 <p>사용자 발화에 의해 무드등을 켜거나 끌 때 제공되는 효과입니다. 하드웨어 버튼으로 무드등을 켜고 끌 때에는 소리를 제공하지 않습니다.</p>
 

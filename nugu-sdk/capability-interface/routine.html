@@ -8,7 +8,7 @@
 
 
 
-<meta http-equiv="Last-Modified" content="2022-06-27 10:24:26 +0000">
+<meta http-equiv="Last-Modified" content="2022-06-28 03:44:52 +0000">
 
 
 
@@ -2154,7 +2154,8 @@
         <div class="description">루틴을 실행하기 위한 규격</div>
     </div>
     <div class="content">
-        <h2 id="version">Version</h2>
+        <h2 id="version">Version<a href="#version" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#version"></div>
+</h2>
 
 <p>최신 버전은 1.2 입니다.</p>
 
@@ -2185,15 +2186,18 @@
   </tbody>
 </table>
 
-<h2 id="state-diagram">State Diagram</h2>
+<h2 id="state-diagram">State Diagram<a href="#state-diagram" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#state-diagram"></div>
+</h2>
 
 <p><img src="/document/assets/images/routine-01.png" alt="" class="img_internal"></p>
 
-<h2 id="sdk-interface">SDK Interface</h2>
+<h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#sdk-interface"></div>
+</h2>
 
 <p>Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 Application 에서 처리할 별도의 interface 가 없습니다.</p>
 
-<h2 id="context">Context</h2>
+<h2 id="context">Context<a href="#context" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#context"></div>
+</h2>
 
 <div class="code">
     <div class="code_title">
@@ -2283,9 +2287,11 @@
   </tbody>
 </table>
 
-<h2 id="directives">Directives</h2>
+<h2 id="directives">Directives<a href="#directives" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#directives"></div>
+</h2>
 
-<h3 id="start">Start</h3>
+<h3 id="start">Start<a href="#start" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#start"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
@@ -2408,7 +2414,8 @@
   </tbody>
 </table>
 
-<h3 id="stop">Stop</h3>
+<h3 id="stop">Stop<a href="#stop" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stop"></div>
+</h3>
 
 <p>현재 실행 중인 루틴을 종료</p>
 
@@ -2471,7 +2478,8 @@
   </tbody>
 </table>
 
-<h3 id="continue">Continue</h3>
+<h3 id="continue">Continue<a href="#continue" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#continue"></div>
+</h3>
 
 <p>현재 실행 중인 루틴을 이어서 실행</p>
 
@@ -2536,9 +2544,11 @@
   </tbody>
 </table>
 
-<h2 id="events">Events</h2>
+<h2 id="events">Events<a href="#events" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#events"></div>
+</h2>
 
-<h3 id="started">Started</h3>
+<h3 id="started">Started<a href="#started" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#started"></div>
+</h3>
 
 <p>루틴의 첫번째 Action을 실행하기 전에 전달</p>
 
@@ -2580,7 +2590,8 @@
 </div>
 </div>
 
-<h3 id="failed">Failed</h3>
+<h3 id="failed">Failed<a href="#failed" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#failed"></div>
+</h3>
 
 <p>루틴 실행이 실패하는 경우</p>
 
@@ -2645,7 +2656,8 @@
   </tbody>
 </table>
 
-<h3 id="finished">Finished</h3>
+<h3 id="finished">Finished<a href="#finished" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#finished"></div>
+</h3>
 
 <p>마지막 Action까지 정상적으로 실행이 종료된 경우 발생</p>
 
@@ -2687,7 +2699,8 @@
 </div>
 </div>
 
-<h3 id="stopped">Stopped</h3>
+<h3 id="stopped">Stopped<a href="#stopped" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#stopped"></div>
+</h3>
 
 <p>모든 Action이 실행되기 전에 Routine.Stop Directive 또는 시스템 이슈로 종료된 경우</p>
 
@@ -2729,7 +2742,8 @@
 </div>
 </div>
 
-<h3 id="actiontriggered">ActionTriggered</h3>
+<h3 id="actiontriggered">ActionTriggered<a href="#actiontriggered" class="go_hash hash_internal"></a><div class="copy_link" data-copy-link="/document/nugu-sdk/capability-interface#actiontriggered"></div>
+</h3>
 
 <div class="code">
     <div class="code_title">
