@@ -52,7 +52,7 @@ $(function () {
             this.keyupEventHandlers.push({
                 "keyCode": 27,
                 "condition": () => !this.modal_image_area.parent().hasClass("hide"),
-                "accept": e => this.modal_image_area.parent().addClass("hide")
+                "accept": () => this.modal_image_area.parent().addClass("hide")
             });
 
             Page.on(this, $("#go_search"), "click", () => {
@@ -85,7 +85,7 @@ $(function () {
             this.keyupEventHandlers.push({
                 "keyCode": 27,
                 "condition": () => !this.modal_search_area.parent().hasClass("hide"),
-                "accept": e => this.modal_search_area.parent().addClass("hide")
+                "accept": () => this.modal_search_area.parent().addClass("hide")
             });
 
             this.updateSectionTabs();
@@ -94,7 +94,7 @@ $(function () {
             this.updateSectionCopy();
             this.updateSectionCodes();
 
-            Page.on(this, $(window), "popstate", e => {
+            Page.on(this, $(window), "popstate", () => {
                 this.loadPage($(location).attr("pathname") + $(location).attr("hash"));
             });
         }
@@ -188,7 +188,10 @@ $(function () {
         }
 
         loadPage(pathname, callback) {
-            this.section.load(pathname + " #container", html => {
+            this.section.load(pathname + " #container", (html, status) => {
+                if (status !== "success") {
+                    return;
+                }
                 this.section.scrollTop(0);
                 let title = html.match("<title>(.*?)</title>")[1];
                 document.title = title;
