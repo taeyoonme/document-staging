@@ -98,7 +98,7 @@ module Jekyll::Potion
         if tag.classes.include?("highlight")
           indexes << tag.css("td.rouge-code").text.strip unless tag.css("td.rouge-code").text.strip.empty?
         end
-      when "text", "hr"
+      when "text", "hr", "label"
         indexes << tag.text.strip unless tag.text.strip.empty?
       else
         logger.warn("undefined search type", tag.name)

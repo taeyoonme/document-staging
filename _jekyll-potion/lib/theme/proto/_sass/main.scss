@@ -57,7 +57,6 @@ body {
   & > header {
     height: 3em;
     border-bottom: 1px solid darkgray;
-    box-shadow: 1px 3px 3px lightgray;
     z-index: 500;
 
     & > div.header {
@@ -132,7 +131,6 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     border-right: 1px solid darkgray;
-    box-shadow: 1px 2px lightgrey;
 
     & > div.nav_container {
       width: 100%;
@@ -576,10 +574,10 @@ body {
 
         div.alerts {
           @extend %bordered_boxed;
-          margin: 1.2em 0.2em;
           width: calc(95% - (0.2em * 2) - 0.8em);
           display: block;
           margin: 1em auto;
+          border-left: none;
 
           position: relative;
           padding-top: 0.5em;
@@ -594,7 +592,7 @@ body {
             width: 0.4em;
             height: 100%;
             border-radius: 0.5em 0 0 0.5em;
-            z-index: -1;
+            z-index: 1000;
           }
 
           &.info::before {
@@ -620,7 +618,7 @@ body {
         }
 
         .code {
-          @extend %bordered_boxed;
+          @extend %boxed;
           width: 95%;
           display: block;
           margin: 1em auto;
@@ -633,6 +631,7 @@ body {
               padding: 0.5em 1em;
               background-color: lightgray;
               font-weight: bold;
+              border-radius: 0.5em 0.5em 0 0;
 
               &:empty {
                 display: none;
@@ -676,19 +675,160 @@ body {
 
           & > .code_body {
             overflow: auto;
+            border: 1px solid lightgray;
+            border-collapse: collapse;
           }
         }
 
         & > .api {
-          @extend %bordered_boxed;
-          margin-top: 3em;
+          @extend %boxed;
+          margin-block: 3em;
           display: block;
+
+          %label {
+            width: 10%;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+            & > label {
+              width: fit-content;
+              padding: 0.3em 0.7em;
+              background-color: royalblue;
+              font-weight: bold;
+              color: white;
+              border-radius: 0.4em;
+            }
+          }
 
           & > .api_summary {
             font-weight: bold;
             padding: 1em;
             background-color: lightgray;
             border-radius: 0.5em 0.5em 0 0;
+            width: fit-content;
+          }
+
+          & > .api_content {
+            border: 1px solid lightgray;
+            padding: 1em 0.5em;
+
+            & > .api_header {
+              display: flex;
+              padding-bottom: 1em;
+
+              & > .api_method {
+                @extend %label;
+              }
+
+              & > .api_url {
+                width: 90%;
+                justify-content: left;
+                display: inline-flex;
+                align-items: center;
+
+                & > .api_base_url {
+                  padding: 0.3em 0;
+                }
+
+                & > .api_path {
+                  padding: 0.3em 0;
+                  color: darkgray;
+                }
+              }
+            }
+
+            & > .api_description,
+            & > .api_parameter_title,
+            & > .api_parameter_category_title,
+            & > .api_response_title {
+              margin-left: 1em;
+              margin-bottom: 1em;
+            }
+
+            & > .api_parameter_title,
+            & > .api_response_title {
+              font-weight: bold;
+              font-size: large;
+            }
+
+            & > .api_parameter_category_title {
+              width: fit-content;
+              padding: 0.3em 1em;
+              background-color: darkgray;
+              color: white;
+              border-radius: 0.4em;
+              margin-bottom: 0;
+            }
+
+            & > .api_description {
+              color: darkgray;
+            }
+
+            & > .api_parameters {
+              padding: 0.5em 1em;
+              margin-bottom: 1em;
+
+              & > .api_parameter {
+                display: flex;
+                padding: 0.5em;
+                border-bottom: 1px solid lightgray;
+
+                &:hover {
+                  background-color: whitesmoke;
+                }
+
+                & > .api_parameter_name {
+                  flex: auto;
+                  max-width: 15%;
+                }
+
+                & > .api_parameter_type {
+                  flex: auto;
+                  max-width: 15%;
+                }
+
+                & > .api_parameter_description {
+                  flex: auto;
+                  max-width: 70%;
+                }
+              }
+            }
+
+            & > .api_responses {
+              width: 100%;
+
+              & > .api_response {
+                & > .api_response_header {
+                  display: flex;
+                  padding: 0.5em;
+
+                  & > .api_response_status {
+                    @extend %label;
+                  }
+
+                  & > .api_response_description {
+                    width: 90%;
+                    justify-content: left;
+                    display: inline-flex;
+                    align-items: center;
+
+                    & > label {
+                      padding: 0.3em 0;
+                      color: darkgray;
+                    }
+                  }
+                }
+
+                & > .api_response_body {
+                  padding: 0 1em;
+
+                  & > .code {
+                    width: 100%;
+                  }
+                }
+              }
+            }
           }
 
           & > .api_header {
@@ -719,63 +859,6 @@ body {
 
           & > .api_parameter_category_title {
             padding: 1em;
-          }
-
-          & > .api_parameters {
-            padding: 0.5em 1em;
-
-            & > .api_parameter {
-              display: flex;
-              padding: 0.5em;
-              border-bottom: 1px solid lightgray;
-
-              &:hover {
-                background-color: lightgray;
-                cursor: pointer;
-              }
-
-              & > .api_parameter_name {
-                flex: auto;
-                max-width: 15%;
-              }
-
-              & > .api_parameter_type {
-                flex: auto;
-                max-width: 15%;
-              }
-
-              & > .api_parameter_description {
-                flex: auto;
-                max-width: 70%;
-              }
-            }
-          }
-
-          & > .api_responses {
-            & > .api_response {
-              padding: 0.5em 1em;
-
-              & > .api_response_header {
-                display: flex;
-                padding: 0.5em;
-
-                & > .api_response_status {
-                  flex: auto;
-                  max-width: 15%;
-                }
-
-                & > .api_response_description {
-                  flex: auto;
-                  max-width: 85%;
-                }
-              }
-
-              & > .api_response_body {
-                & > .code {
-                  width: 100%;
-                }
-              }
-            }
           }
         }
 
