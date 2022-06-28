@@ -91,6 +91,7 @@ $(function () {
             this.updateSectionTabs();
             this.updateSectionImages();
             this.updateSectionLinks();
+            this.updateSectionCopy();
             this.updateSectionCodes();
 
             Page.on(this, $(window), "popstate", e => {
@@ -122,7 +123,7 @@ $(function () {
                 .filter((_, div) => $(div).parent().has(selected).length)
                 .removeClass("fold");
 
-            selected.parent().addClass("selected")[0].scrollIntoView();
+            selected.parent().addClass("selected");
         }
 
         updateSectionTabs() {
@@ -157,6 +158,18 @@ $(function () {
             Page.on(this, only_hash_links, "click", this.updateHash);
         }
 
+        updateSectionCopy() {
+            let copy_links = this.section.find("div.copy_link");
+
+            Page.on(this, copy_links, "click", e => {
+                let $copy_link = $(e.currentTarget);
+
+                let url = [$(location).attr("protocol"), $(location).attr("host"), $copy_link.attr("data-copy-link")].join("");
+
+                navigator.clipboard.writeText(url);
+            });
+        }
+
         updateSectionCodes() {
             let codeCopy = this.section.find("div.copy");
             Page.on(this, codeCopy, "click", e => {
@@ -187,6 +200,7 @@ $(function () {
                 this.updateSectionTabs();
                 this.updateSectionImages();
                 this.updateSectionLinks();
+                this.updateSectionCopy();
                 this.updateSectionCodes();
 
                 this.updateNavigationSelected(pathname);
@@ -347,8 +361,8 @@ $(function () {
         }
 
         static goHash(hash) {
-            let $hash = $(hash);
-            if ($hash) {
+            let $hash = $(decodeURI(hash));
+            if ($hash.length) {
                 $hash[0].scrollIntoView();
             }
         }

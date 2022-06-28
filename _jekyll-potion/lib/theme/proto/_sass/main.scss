@@ -226,6 +226,51 @@ body {
     overflow: auto;
     z-index: 300;
 
+    h1, h2, h3, h4, h5, h6 {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+
+        & > a.go_hash {
+          visibility: visible;
+        }
+
+        & > div.copy_link {
+          visibility: visible;
+        }
+      }
+
+      & > a.go_hash {
+        @include link("darkgray");
+
+        width: 1.5em;
+        height: 1.5em;
+        background-size: 50%;
+        visibility: hidden;
+
+        &:hover {
+          @include link("lightblue");
+          background-size: 50%;
+        }
+      }
+
+      & > div.copy_link {
+        @include copy("darkgray");
+
+        width: 1.5em;
+        height: 1.5em;
+        background-size: 50%;
+        visibility: hidden;
+
+        &:hover {
+          @include copy("lightblue");
+          background-size: 50%;
+        }
+      }
+    }
+
     %boxed {
       width: 100%;
       display: inline-block;
@@ -418,7 +463,7 @@ body {
         }
 
         ul:not(.tabs_title), ol {
-          line-height: 1.2em;
+          line-height: 1.7em;
 
           li {
             margin-block: 1em;
@@ -445,7 +490,7 @@ body {
 
         blockquote {
           display: flex;
-          height: 3.5em;
+          height: fit-content;
           margin-left: 2.5em;
           padding-left: 1em;
           border-left: 0.2em solid lightgray;
@@ -515,7 +560,9 @@ body {
         div.alerts {
           @extend %bordered_boxed;
           margin: 1.2em 0.2em;
-          width: calc(100% - (0.2em * 2) - 0.8em);
+          width: calc(95% - (0.2em * 2) - 0.8em);
+          display: block;
+          margin: 1em auto;
 
           position: relative;
           padding-top: 0.5em;
@@ -585,17 +632,19 @@ body {
               right: 0;
               margin-top: 0.4em;
               margin-right: 0.4em;
+              background-size: 70%;
 
               &:hover {
                 @include copy("lightblue");
 
                 cursor: pointer;
+                background-size: 70%;
               }
             }
 
             & > .copy_success {
               position: absolute;
-              bottom: -1.9em;
+              bottom: -1.7em;
               right: 1.5em;
               margin-top: 0.4em;
               margin-right: 0.8em;

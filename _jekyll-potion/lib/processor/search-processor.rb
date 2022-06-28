@@ -9,20 +9,18 @@ module Jekyll::Potion
     end
 
     def html_post_render(page, html)
-      if config.markdown_converter.matches(page.extname)
-        page_potion = config.page_potion(page)
+      page_potion = config.page_potion(page)
 
-        page_index = {
-          "url" => page_potion.url,
-          "hashes" => create_indexes(page, html.css("section").css("div.container").css("div.content")),
-          "order" => page_potion.order
-        }
-        @indexes << page_index
-        logger.trace(
-          "make search index",
-          "#{page.name}[#{page_index["hashes"].map { |hash| hash["indexes"].size }.inject(0) { |sum, x| sum + x }}]"
-        )
-      end
+      page_index = {
+        "url" => page_potion.url,
+        "hashes" => create_indexes(page, html.css("section").css("div.container").css("div.content")),
+        "order" => page_potion.order
+      }
+      @indexes << page_index
+      logger.trace(
+        "make search index",
+        "#{page.name}[#{page_index["hashes"].map { |hash| hash["indexes"].size }.inject(0) { |sum, x| sum + x }}]"
+      )
     end
 
     def site_post_render(site)
