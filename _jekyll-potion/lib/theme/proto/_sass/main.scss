@@ -134,7 +134,7 @@ html {
 }
 
 body {
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 
   width: 100vw;
   height: 100vh;
@@ -210,6 +210,8 @@ body {
 
     & .header.title {
       & > div > a.title_link {
+        @extend %center_middle;
+
         font-size: large;
         font-weight: bold;
         color: black;
@@ -279,6 +281,7 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     padding-block-start: 1em;
+    @include border(border-right);
 
     & > div.nav_container {
       width: 100%;
@@ -611,7 +614,7 @@ body {
         }
 
         code {
-          font-family: "Nanum Gothic", sans-serif;
+          font-family: "Noto Sans KR", sans-serif;
 
           &.highlighter-rouge {
             background-color: lightgray;
@@ -1051,7 +1054,7 @@ body {
               color: black;
 
               code {
-                font-family: "Nanum Gothic", sans-serif;
+                font-family: "Noto Sans KR", sans-serif;
                 color: royalblue;
                 font-weight: bold;
                 text-decoration: underline;
@@ -1110,7 +1113,7 @@ body {
         row-gap: 0.5em;
         column-gap: 0;
 
-        & > * {
+        & > div {
           flex: 0 0 100%;
         }
       }
@@ -1157,8 +1160,12 @@ body {
         row-gap: 0.5em;
         column-gap: 1em;
 
-        & > * {
+        & > div {
           flex: 0 0 calc(50% - 0.5em);
+        }
+
+        & > div:first-child:nth-last-child(1) {
+          flex: 0 0 100%;
         }
       }
     }
