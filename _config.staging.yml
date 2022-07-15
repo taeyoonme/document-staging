@@ -1,5 +1,8 @@
-url: "https://nugudevelopers.github.io"
-baseurl: "/document"
+url: "https://kiravspace.github.io"
+baseurl: "/jekyll-potion"
 
 exclude:
+  - "*.iml"
+  - ".idea/"
+  - ".github/"
   - "CNAME"

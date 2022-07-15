@@ -1,39 +1,38 @@
 module Jekyll::Potion
-  class RewriteAHrefProcessor < HTMLPageProcessor
+  class RewriteAHrefProcessor < Processor
     HTTP_SCHEME = %r!\Ahttp(s)?://!im.freeze
     ABSOLUTE_PATH = %r!\A/!im.freeze
     HASH_SCHEME = %r!\A#!im.freeze
 
-    SKIP_KEYWORD = "data-skip-href-to-absolute"
+    def page_post_render(page, html, modified)
+      if modified
+        href_count = 0
+        hash_count = 0
 
-    def html_post_render(page, html)
-      href_count = 0
-      hash_count = 0
+        html.css("a[href]").each { |a_tag|
+          href = a_tag["href"]
 
-      html.css("a[href]").each { |a_tag|
-        href = a_tag["href"]
+          next if href.strip.empty? && a_tag.has_attribute?(@config[:skip_keyword])
+          next if href =~ HTTP_SCHEME
 
-        next if href.strip.empty? && a_tag.has_attribute?(SKIP_KEYWORD)
+          if a_tag.has_attribute?(@config[:index_page_keyword])
+            a_tag["href"] = @site.index_url
+          elsif href =~ HASH_SCHEME
+            hash_count += 1
+            a_tag.add_class(@config[:hash_link_class])
+          elsif href !~ ABSOLUTE_PATH
+            a_tag["href"] = @site.base_absolute_url(File.dirname(page.path), href)
+          end
 
-        if href =~ HASH_SCHEME
-          hash_count += 1
-          a_tag.add_class("hash_internal")
-        elsif href !~ ABSOLUTE_PATH
-          absolute_href = Pathname.new(
-            File.join(config.baseurl, File.dirname(page.path), href)
-          ).cleanpath.to_s
+          href_count += 1
+          a_tag.add_class(@config[:internal_link_class])
+        }
 
-          a_tag["href"] = absolute_href
+        if href_count > 0 || hash_count > 0
+          @logger.trace("#{page.name} #{href_count} a tags replace absolute path") if href_count > 0
+          @logger.trace("#{page.name} #{hash_count} hashed a tags add class") if hash_count > 0
+          yield html
         end
-
-        href_count += 1
-        a_tag.add_class("a_internal")
-      }
-
-      if href_count > 0 || hash_count > 0
-        logger.trace("#{page.name} #{href_count} a tags replace absolute path") if href_count > 0
-        logger.trace("#{page.name} #{hash_count} hashed a tags add class") if hash_count > 0
-        yield html
       end
     end
   end

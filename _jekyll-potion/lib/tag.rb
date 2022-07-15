@@ -1,4 +1,36 @@
 module Jekyll::Potion
+  class TagsConfig
+    DEFAULT_TAGS_CONFIG = {
+      :alerts => {
+        :info => "info",
+        :warning => "warning",
+        :danger => "danger",
+        :success => "success"
+      },
+      :code => {
+        :code_class => "code",
+        :success_class => "copy-text",
+        :success_show_class => "show"
+      },
+      :tabs => {
+        :tabs_class => "tabs",
+        :active_class => "active"
+      },
+      :navigation => {
+        :active_class => "active",
+        :fold_class => "fold"
+      }
+    }.freeze
+
+    def initialize(config)
+      @config = Util.extract(DEFAULT_TAGS_CONFIG, config)
+    end
+
+    def [] (tag_name)
+      Util.string_key_hash(@config[tag_name])
+    end
+  end
+
   module PotionTag
     TEMPLATE_DELIMITER = "-"
     ATTRIBUTES_REGEX = /(\S*)="(.*?[^\\])"/
@@ -6,8 +38,9 @@ module Jekyll::Potion
 
     attr_accessor :id
     attr_accessor :template_name
-    attr_accessor :params
     attr_accessor :logger
+
+    @@registry = {}
 
     def initialize(tag_name, markup, options)
       super
@@ -41,21 +74,6 @@ module Jekyll::Potion
           raise SyntaxError, "#{@tag_name} required #{key} attribute"
         end
       }
-    end
-
-    def render_from_custom_context(page_context, customizer)
-      site = page_context.registers[:site]
-      page = page_context.registers[:page]
-      site_potion = site.data[Config::POTION_KEY]
-      context = {
-        "site" => site,
-        "page" => page,
-        "site_potion" => site_potion,
-        "page_potion" => page[Config::POTION_KEY]
-      }
-
-      customizer.call(context, site_potion.markdown_converter)
-      site_potion.load_tags_template(@template_name).render(context)
     end
   end
 
@@ -101,8 +119,6 @@ module Jekyll::Potion
     def blank?
       @elements.empty?
     end
-
-    @@registry = {}
 
     def self.registered_tag(tag_name)
       return nil unless @@registry.has_key?(tag_name)

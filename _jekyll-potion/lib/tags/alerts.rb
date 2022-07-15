@@ -8,13 +8,12 @@ module Jekyll::Potion
     end
 
     def render(page_context)
-      render_from_custom_context(
-        page_context,
-        ->(context, converter) do
-          context["style"] = params["style"]
-          context["body"] = converter.convert(super)
-        end
-      )
+      config = Potion[:tags][:alerts]
+
+      @params["style"] = config[@params["style"]] if config.has_key?(@params["style"])
+      @params["body"] = Potion[:site].markdown_convert(super)
+
+      Potion[:theme].render_template(@template_name, @params)
     end
   end
 end

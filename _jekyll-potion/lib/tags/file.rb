@@ -8,18 +8,10 @@ module Jekyll::Potion
     end
 
     def render(page_context)
-      render_from_custom_context(
-        page_context,
-        ->(context, _) do
-          context["file_src"] = File.join(context["site_potion"].baseurl, params["src"])
+      @params["src"] = Potion[:site].base_url(@params["src"])
+      @params["caption"] = @params["src"] unless @params.has_key?("caption")
 
-          if params.has_key?("caption")
-            context["file_caption"] = params["caption"]
-          else
-            context["file_caption"] = params["src"]
-          end
-        end
-      )
+      Potion[:theme].render_template(@template_name, @params)
     end
   end
 end

@@ -27,13 +27,10 @@ module Jekyll::Potion
     end
 
     def render(page_context)
-      render_from_custom_context(
-        page_context,
-        ->(context, converter) do
-          context["title"] = params["title"]
-          context["body"] = converter.convert(@body)
-        end
-      )
+      @params["body"] = Potion[:site].markdown_convert(@body)
+      @params.merge!(Potion[:tags][:code])
+
+      Potion[:theme].render_template(@template_name, @params)
     end
   end
 end

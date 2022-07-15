@@ -1,5 +1,10 @@
 module Jekyll::Potion
   class TabsTag < PotionBlock
+    DEFAULT_CONFIG = {
+      "tabs_class" => "tabs",
+      "active_class" => "active"
+    }
+
     def render_tab_content(page_context)
       output = []
       @elements.each { |e| output << e.render(page_context) }
@@ -7,24 +12,22 @@ module Jekyll::Potion
     end
 
     def render(page_context)
-      render_from_custom_context(
-        page_context,
-        ->(context, _) do
-          context["tabs_id"] = id
+      @params["id"] = id
 
-          tabs = []
-          @elements.each_index { |i|
-            @elements[i].first = i == 0;
-          }
+      tabs = []
+      @elements.each_index { |i|
+        @elements[i].first = i == 0;
+      }
 
-          @elements.each do |e|
-            tabs.push({ "title" => e.title, "tab_id" => e.id, "first" => e.first })
-          end
+      @elements.each do |e|
+        tabs.push({ "title" => e.title, "id" => e.id, "first" => e.first })
+      end
 
-          context["tabs"] = tabs
-          context["tab_contents"] = render_tab_content(page_context)
-        end
-      )
+      @params["tabs"] = tabs
+      @params["contents"] = render_tab_content(page_context)
+      @params.merge!(Potion[:tags][:tabs])
+
+      Potion[:theme].render_template(@template_name, @params)
     end
   end
 
@@ -38,18 +41,16 @@ module Jekyll::Potion
     end
 
     def title
-      params["title"]
+      @params["title"]
     end
 
     def render(page_context)
-      render_from_custom_context(
-        page_context,
-        ->(context, converter) do
-          context["tab_id"] = id
-          context["first"] = first
-          context["tab_body"] = converter.convert(@body.render(page_context))
-        end
-      )
+      @params["id"] = id
+      @params["first"] = first
+      @params["body"] = Potion[:site].markdown_convert(@body.render(page_context))
+      @params.merge!(Potion[:tags][:tabs])
+
+      Potion[:theme].render_template(@template_name, @params)
     end
   end
 end
