@@ -1,5 +1,5 @@
-url: "https://kiravspace.github.io"
-baseurl: "/jekyll-potion"
+url: "https://nugudevelopers.github.io"
+baseurl: "/document"
 
 exclude:
   - "*.iml"
