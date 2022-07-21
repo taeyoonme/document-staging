@@ -112,10 +112,12 @@ module Jekyll::Potion
         @@themes[default_theme.keys[0]] = Theme.new(default_theme.keys[0], site, default_theme.values[0])
       }
 
-      config.each { |theme|
-        raise SyntaxError, "theme config is not valid" unless theme.size == 1
-        @@themes[theme.keys[0]] = Theme.new(theme.keys[0], site, theme.values[0])
-      }
+      unless config.nil?
+        config.each { |theme|
+          raise SyntaxError, "theme config is not valid" unless theme.size == 1
+          @@themes[theme.keys[0]] = Theme.new(theme.keys[0], site, theme.values[0])
+        }
+      end
     end
 
     def self.themes

@@ -71,7 +71,7 @@ OAuth Scope는 Access Token으로 사용할 수 있는 리소스의 허용 범�
 
 ### 5단계: NUGU developers에서 OAuth 연동 정보 입력
 
-2단계부터 4단계에 걸쳐 확인한 정보를 `Developers` > `Play kit` > `Play 관` 메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
+2단계부터 4단계에 걸쳐 확인한 정보를 `Developers` > `Play kit` > `Play 관리` 메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
 
 ![](../../assets/images/link-oauth20-05.png)
 
@@ -125,7 +125,7 @@ OAuth 2.0 Serve는 인터넷의 기술 문서를 참고하여 구축할 수 있�
 ### Redirect URL (Callback URL) 설정하기
 
 * Parameter값: redirect url
-* 계정 승인을 완료한 후 사용자가 이동할 페이지 URL이며, [https://developers.nugu.co.kr/app/oauth/callback](https://developers.nugu.co.kr/app/oauth/callback)을 사용합니다.
+* 계정 승인을 완료한 후 사용자가 이동할 페이지 URL이며, `https://developers.nugu.co.kr/app/oauth/callback`을 사용합니다.
 
 {% alerts style="info" %}
 자세한 내용은 OAuth 2.0 문서의 [Authorization Request](https://tools.ietf.org/html/rfc6749#section-4.1.1)를 참고하세요.

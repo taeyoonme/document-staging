@@ -87,6 +87,10 @@ module Jekyll::Potion
       PotionPage.new(@site, base, dir, name, target)
     end
 
+    def page(base, dir, name)
+      Jekyll::Page.new(@site, base, dir, name)
+    end
+
     def static_to_page(static_page)
       base = static_page.instance_variable_get("@base")
       dir = static_page.instance_variable_get("@dir")

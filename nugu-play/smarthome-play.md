@@ -57,7 +57,7 @@ Key Terms
 3. SmartHomeBackendProxy - Discovery, Control 요청을 처리하는 서버.
 4. OAuth2 - OAuth2 인증에 필요한 정보 입력 필요.
 
-NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU developers Support 내에 [문의사항](https://developers.nugu.co.kr/#/customer/qna?d=1571031742426)/[제휴제안](https://developers.nugu.co.kr/#/customer/proposition?d=1571031708220)을 통해 등록해주세요.
+NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU developers Support 내에 문의사항 / 제휴제안을 통해 등록해주세요.
 {% endalerts %}
 
 ## Discovery

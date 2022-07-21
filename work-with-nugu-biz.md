@@ -11,8 +11,8 @@ NUGU biz kit은 NUGU 플랫폼과 연동된 디바이스를 비즈니스 환경�
 * [체험판 및 정식판](./work-with-nugu-biz/describebiz)
 * [Private Play](./work-with-nugu-biz/private-play)
 * [Biz 전용 디바이스 관리](./work-with-nugu-biz/manage-shared-device)
-* [Biz 사용자 관리](./work-with-nugu-bizgu-biz/manage-enrolled-user)
-* [Biz API](./work-with-nugu-bizgu-biz/biz-api)
+* [Biz 사용자 관리](./work-with-nugu-biz/manage-enrolled-user)
+* [Biz API](./work-with-nugu-biz/biz-api)
 
 ## Biz 전용 디바이스 관리(Shared Device)
 

@@ -1,0 +1,3 @@
+url: "https://{{your_github_username}}.github.io"
+baseurl: "/{{your_repository_name}}"
+

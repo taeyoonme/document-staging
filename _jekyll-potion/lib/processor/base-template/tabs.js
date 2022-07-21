@@ -5,7 +5,7 @@
     }
 
     init() {
-      let tabNavs = $('.tabs').find('[data-tabs-content-id]:not([data-potion-handled])')
+      let tabNavs = $('.{{ tabs_class }}').find('[data-tabs-content-id]:not([data-potion-handled])')
 
       tabNavs.attr('data-potion-handled', 'true')
         .on('click', e => {
@@ -15,13 +15,13 @@
 
           parent = $clicked.parents('.tabs')
           parent.find('[data-tabs-content-id]')
-            .removeClass('active')
+            .removeClass('{{ active_class}}')
             .each((_, nav) => {
-              parent.find('[id=\'' + $(nav).attr('data-tabs-content-id') + '\']').removeClass('active')
+              parent.find('[id=\'' + $(nav).attr('data-tabs-content-id') + '\']').removeClass('{{ active_class }}')
             })
 
-          $clicked.addClass('active')
-          $('#' + $clicked.attr('data-tabs-content-id')).addClass('active')
+          $clicked.addClass('{{ active_class }}')
+          $('#' + $clicked.attr('data-tabs-content-id')).addClass('{{ active_class }}')
         })
 
       return tabNavs

@@ -83,6 +83,7 @@
 // ## 초기화
 %reset-ul {
   @include padding-all(0);
+  @include margin-all(0);
 
   li {
     @include padding-all(0);
@@ -255,7 +256,7 @@ html {
               @extend %fold-icon;
 
               &:before {
-                @include margin-top(-5);
+                @include margin-top(-4);
                 transform: rotate(45deg);
               }
             }
@@ -264,7 +265,7 @@ html {
               @extend %fold-icon;
 
               &:before {
-                @include margin-top(-7);
+                @include margin-top(-6);
                 transform: rotate(135deg);
               }
             }
@@ -318,7 +319,7 @@ html {
 
                 a.nav-href {
                   @include padding-left(35);
-                  @include padding-bottom(10);
+                  @include padding-bottom(15);
                   @include font-size(14);
                   @include line-height(17);
                   font-weight: 500;
@@ -335,23 +336,21 @@ html {
                     a.nav-href {
                       @include padding-left(50);
                       @include padding-top(10);
+                      @include padding-bottom(10);
                       @include font-size(14);
                       @include line-height(17);
                       font-weight: 400;
                     }
 
-                    &.has-child {
-
-                      &:before {
-                        @extend %pseudo-selector;
-                        @include width(7);
-                        @include height(7);
-                        @include left(35);
-                        @include top(14);
-                        border-left: rem(1) solid $grey-40;
-                        border-bottom: rem(1) solid $grey-40;
-                        box-sizing: border-box;
-                      }
+                    &:before {
+                      @extend %pseudo-selector;
+                      @include width(7);
+                      @include height(7);
+                      @include left(35);
+                      @include top(14);
+                      border-left: rem(1) solid $grey-40;
+                      border-bottom: rem(1) solid $grey-40;
+                      box-sizing: border-box;
                     }
                   }
 
@@ -369,6 +368,10 @@ html {
                           @include line-height(16);
                           font-weight: 400;
                           color: $grey-65;
+                        }
+
+                        &:before {
+                          display: none;
                         }
                       }
                     }
@@ -391,6 +394,7 @@ html {
 
     .title {
       @include padding-top(55);
+      @include padding-bottom(40);
 
       > h1 {
         @include padding(20,0,20,0);
@@ -559,54 +563,81 @@ html {
 
   .go-hash {
     @extend %icon;
-    mask: url($img + "ico-attach.svg") center center no-repeat;
-    background-color: $grey-85;
+    background: url($img + "ico-attach.svg") center center no-repeat;
   }
 
   .copy-link {
     @extend %icon;
-    mask: url($img + "ico-copy.svg") center center no-repeat;
-    background-color: $grey-65;
+    background: url($img + "ico-copy.svg") center center no-repeat;
   }
 }
-
-h1 {
-  @extend %hover-icon;
-  @include margin-top(80);
-  @include padding-bottom(13);
+%h1-txt {
   @include font-size(22);
   @include line-height(26);
   font-weight: 700;
   color: $grey-85;
 }
-h2 {
-  @extend %hover-icon;
-  @include margin-top(60);
-  @include padding-bottom(13);
+
+%h2-txt {
   @include font-size(20);
   @include line-height(24);
   font-weight: 700;
   color: $grey-85;
 }
-h3 {
-  @extend %hover-icon;
-  @include margin-top(60);
-  @include padding-bottom(13);
+%h3-txt {
   @include font-size(18);
   @include line-height(22);
   font-weight: 600;
   color: $grey-85;
 }
-h4,
-h5,
-h6 {
-  @extend %hover-icon;
-  @include margin-top(40);
-  @include padding-bottom(7);
+%h456-txt {
   @include font-size(16);
   @include line-height(19);
   font-weight: 600;
   color: $grey-85;
+}
+
+h1 {
+  @extend %hover-icon;
+  @extend %h1-txt;
+  @include margin-top(80);
+  @include padding-bottom(13);
+
+  > strong {
+    @extend %h1-txt;
+  }
+}
+h2 {
+  @extend %hover-icon;
+  @extend %h2-txt;
+  @include margin-top(60);
+  @include padding-bottom(13);
+
+  > strong {
+    @extend %h2-txt;
+  }
+}
+h3 {
+  @extend %hover-icon;
+  @extend %h3-txt;
+  @include margin-top(60);
+  @include padding-bottom(13);
+
+  > strong {
+    @extend %h3-txt;
+  }
+}
+h4,
+h5,
+h6 {
+  @extend %hover-icon;
+  @extend %h456-txt;
+  @include margin-top(40);
+  @include padding-bottom(7);
+
+  > strong {
+    @extend %h456-txt;
+  }
 }
 img {
   @include max-width(800);
@@ -616,7 +647,9 @@ img {
 
   // ## 기본 이미지
   &.img-internal {
-    width: 100%;
+    width: auto;
+    @include margin-top(30);
+    @include margin-bottom(30);
   }
 
   // ## 인라인 이미지
@@ -631,8 +664,8 @@ img {
   // ## 기본 이미지
 }
 p {
-  @include padding-top(7);
-  @include padding-bottom(7);
+  @include margin-top(7);
+  @include margin-bottom(7);
   @include font-size(16);
   @include line-height(26);
   font-weight: 400;
@@ -645,6 +678,10 @@ p {
   > p {
     display: inline;
   }
+
+  > strong {
+    font-weight: 700;
+  }
 }
 a {
   @include padding-left(5);
@@ -656,6 +693,8 @@ a {
 }
 
 %list-shared {
+  @include margin-top(30);
+  @include margin-bottom(30);
   @include font-size(16);
   @include line-height(26);
   color: $grey-85;
@@ -679,7 +718,7 @@ ul {
       @include width(4);
       @include height(4);
       @include left(0);
-      @include top(10);
+      @include top(12);
       @include border-radius-all(4);
       background-color: $grey-85;
     }
@@ -690,7 +729,7 @@ ol {
   @include padding-left(20);
 
   > li {
-    font-weight: 700;
+    font-weight: 400;
     list-style-type: decimal;
     @include margin-top(20);
 
@@ -727,7 +766,8 @@ blockquote {
   }
 }
 table:not(.rouge-table) {
-  @include margin-top(10);
+  @include margin-top(20);
+  @include margin-bottom(50);
   border-top: rem(2) solid $grey-85;
 
   tr {
@@ -735,6 +775,7 @@ table:not(.rouge-table) {
     th, td {
       @include padding(20,8,20,8);
       @include font-size(14);
+      @include line-height(22);
       text-align: left;
       vertical-align: top;
       border-bottom: rem(1) solid $grey-15;
@@ -793,6 +834,8 @@ hr {
   @include max-height(450);
   display: block;
   margin-inline: auto;
+  @include margin-top(30);
+  @include margin-bottom(30);
 }
 
 // ## 코드블럭
@@ -872,7 +915,13 @@ hr {
   }
 }
 code.highlighter-rouge {
-  @include padding(2,10,2,10);
+  font-family: inherit;
+  @include font-size(14);
+  @include line-height(22);
+  font-weight: 400;
+  @include padding(2,5,2,5);
+  @include margin-left(5);
+  @include margin-right(5);
   background-color: $grey-5;
   border: rem(1) solid $grey-30;
   @include border-radius-all(4);
@@ -881,23 +930,56 @@ code.highlighter-rouge {
 // ## 힌트
 .alerts {
   @include padding(22,30,22,30);
-  @include margin-bottom(20);
+  @include margin-top(30);
+  @include margin-bottom(30);
   @include border-radius-all(14);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 
   i.icon {
     flex: none;
     @include width(18);
     @include height(18);
+    @include margin-right(15);
+    @include margin-top(2);
   }
 
   .text {
-    @include font-size(13);
-    @include line-height(22);
-    @include margin-left(16);
-    font-weight: 400;
-    color: $grey-60;
+
+    %common-txt {
+      @include font-size(13);
+      @include line-height(22);
+      @include margin-left(16);
+      font-weight: 400;
+      color: $grey-60;
+    }
+
+    p {
+      @extend %common-txt;
+      @include margin-all(0);
+    }
+
+    ul {
+      @include padding-left(0);
+
+      li {
+        @extend %common-txt;
+        @include margin-left(0);
+
+        &:before {
+          @include width(3);
+          @include height(3);
+          @include top(10);
+          background-color: $grey-60;
+        }
+      }
+    }
+  }
+
+  ul,
+  ol {
+    @include padding-all(0);
+    @include margin-all(0);
   }
 
   &--noti {
@@ -939,6 +1021,7 @@ code.highlighter-rouge {
   ul.tab-nav {
     display: flex;
     @include padding-left(0);
+    margin-bottom: 0;
 
     > li {
       @include height(50);
@@ -984,8 +1067,9 @@ code.highlighter-rouge {
     @include padding-all(20);
     border: rem(1) solid $grey-15;
     border-top: none;
+    display: none;
 
-    &.active {
+    &.selected {
       display: block;
     }
   }
@@ -1125,11 +1209,16 @@ code.highlighter-rouge {
             @extend %cont-txt;
             position: relative;
             width: 20%;
-            @include padding-left(15);
+            @include padding-left(20);
 
             &:before {
               @extend %pseudo-selector;
-
+              @include left(0);
+              @include top(7);
+              @include width(8);
+              @include height(8);
+              @include border-radius-all(8);
+              background-color: $grey-65;
             }
           }
 
@@ -1148,10 +1237,10 @@ code.highlighter-rouge {
           .api-item-header {
             position: relative;
             display: flex;
-            cursor: pointer;
+            //cursor: pointer;
 
             &:after {
-              @extend %arrow;
+              //@extend %arrow;
             }
           }
 
@@ -1250,7 +1339,7 @@ code.highlighter-rouge {
   grid-template-columns: repeat(2, minmax(49%, 49%));
   gap: rem(20) 1%;
   justify-content: space-between;
-  @include margin-top(20);
+  @include margin-top(70);
   @include margin-bottom(20);
 
   %href {
@@ -1601,6 +1690,7 @@ code.highlighter-rouge {
       @extend %item-text;
     }
     code {
+      font-family: inherit;
       font-weight: 700;
       color: $grey-85;
     }

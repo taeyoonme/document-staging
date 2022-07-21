@@ -52,18 +52,17 @@ Backend proxy에 대한 자세한 내용은 [외부 연동 서버(Backend proxy)
 
 1. Utterance Parameter 아래의 Backend proxy 사용여부 항목의 `OFF` 버튼을 클릭하여 ON(사용)으로 설정합니다. Backend Parameter를 정의하는 테이블이 생깁니다.
 
-![](../../../../assets/images/define-a-parameter-05.png)
+   ![](../../../../assets/images/define-a-parameter-05.png)
+2. Backend Parameter 입력 필드에 Parameter명을 입력하고 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
 
-1. Backend Parameter 입력 필드에 Parameter명을 입력하고 `Enter` 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.
+   ![](../../../../assets/images/define-a-parameter-06.png)
 
-![](../../../../assets/images/define-a-parameter-06.png)
-
-* 영자, 숫자, 특수문자인 언더바(`_`), 하이픈(`-`)만 사용하여 40자 이내로 작성할 수 있습니다.
-* Backend Parameter명을 "status"로 지정합니다.
-* Play Builder 우측 상단에 있는 `Play 저장`을 눌러 Play를 저장합니다.
+   * 영자, 숫자, 특수문자인 언더바(`_`), 하이픈(`-`)만 사용하여 40자 이내로 작성할 수 있습니다.
+   * Backend Parameter명을 "status"로 지정합니다.
+   * Play Builder 우측 상단에 있는 `Play 저장`을 눌러 Play를 저장합니다.
 
 Play의 Parameter 설정이 완료되면, 이제 Backend proxy에서 이 Parameter에 적절한 값을 전달해 주도록 Backend proxy 동작 환경을 설정해야 합니다.
 
-1. 이렇게 입력을 하고, Backend proxy가 기상 정보를 Backend Parameter에 담아주면 다음과 같은 상태가 됩니다.
+3. 이렇게 입력을 하고, Backend proxy가 기상 정보를 Backend Parameter에 담아주면 다음과 같은 상태가 됩니다.
 
-![](../../../../assets/images/define-a-parameter-07.png)
+   ![](../../../../assets/images/define-a-parameter-07.png)
