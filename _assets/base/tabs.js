@@ -15,13 +15,13 @@
 
           parent = $clicked.parents('.tabs')
           parent.find('[data-tabs-content-id]')
-            .removeClass('active')
+            .removeClass('selected')
             .each((_, nav) => {
-              parent.find('[id=\'' + $(nav).attr('data-tabs-content-id') + '\']').removeClass('active')
+              parent.find('[id=\'' + $(nav).attr('data-tabs-content-id') + '\']').removeClass('selected')
             })
 
-          $clicked.addClass('active')
-          $('#' + $clicked.attr('data-tabs-content-id')).addClass('active')
+          $clicked.addClass('selected')
+          $('#' + $clicked.attr('data-tabs-content-id')).addClass('selected')
         })
 
       return tabNavs

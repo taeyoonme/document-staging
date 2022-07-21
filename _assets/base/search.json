@@ -1755,7 +1755,7 @@
   "sentences": [
     "Biz 사용자 초대",
     "Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니다.",
-    "Biz Service 초대장 발송 시에는, Biz Kit 기본 정보 필수값이 미리 입력되어 있어야 합니다. Biz Kit 기본 정보 입력 참"
+    "Biz Service 초대장 발송 시에는, Biz Kit 기본 정보 필수값이 미리 입력되어 있어야 합니다. Biz Kit 기본 정보 입력 를 참고해주세요."
   ]
 },
     {
@@ -4083,36 +4083,6 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
-  "order": 16,
-  "indexes": [
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "Backend proxy",
-  "hash": "",
-  "sentences": [
-    "Backend proxy",
-    "사용자의 발화로부터 Intent와 Entity가 분석되면 대화 관리자가 적절한 Prompt를 생성하여 스피커로 전달합니다.",
-    "Prompt를 생성할 때 외부 서버로부터 필요한 정보를 가져와서 응답을 생성해야 하는 경우가 있습니다. 외부 서버를 호출하여 대화 관리자에게 정보를 전달하는 서버를 Backend proxy라고 합니다. Backend proxy는 외부 서버로부터 가져온 정보를 수정하거나 복잡한 로직을 통해 조건을 판단하는 기능도 수행할 수 있는데, 개발자가 직접 개발하여 NUGU 플랫폼과 연동할 수 있도록 준비해야 합니다.",
-    "다음 그림과 같이 사용자가 ‘명동 날씨 알려줘’라고 발화한 경우, ‘ask.weather’ Intent와 함께 ‘명동’을 Backend proxy로 전달합니다.",
-    "Backend proxy는 기상 정보를 제공하는 외부 서버를 호출하여 원하는 시간의 날씨 정보를 얻어와",
-    "{{status}}",
-    "로 결과를 반환하고, 대화 관리자",
-    "{{location}}",
-    "과",
-    "{{status}}",
-    "를 이용하여 날씨를 안내하는 응답을 스피커로 보내게 됩니다.",
-    "Backend proxy를 사용하는 경우는 다음과 같습니다.",
-    "외부 서버로부터 정보를 가져와야 하는 경우",
-    "사칙연산, 날짜/시간 계산 등 로직을 통해 정보를 가공하는 경우",
-    "오디오 재생을 위한 명령어(Play, Pause, Stop)를 생성해야 하는 경우 자세한 내용은 AudioPlayer Interface 지원하는 Play 만들기를 참고하세요.",
-    "시나리오 전체에 필요한 정보를 미리 가져와서 사용하는 경우",
-    "외부 서버를 연동하는 경우 여러 가지 예외 상황이 발생할 수 있습니다. 이러한 예외 상황을 Action에 정의하고, Backend proxy는 예외 상황이 발생했을 때 Action에서 정의한 상태값을 전달함으로써 다양한 예외 상황에 대처하는 응답을 만들 수 있습니다."
-  ]
-}
-  ]
-},
-  {
   "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy",
   "order": 45,
   "indexes": [
@@ -4218,26 +4188,31 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/background",
-  "order": 174,
+  "url": "/document/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
+  "order": 16,
   "indexes": [
     {
   "skip_keyword": "data-skip-search-index",
-  "title": "Background 동작 처리",
+  "title": "Backend proxy",
   "hash": "",
   "sentences": [
-    "Background 동작 처리",
-    "Connection-oriented 방식을 사용하는 PoC 의 경우 application 이 background 로 전활될 경우 필요하다면 연결을 끊어주어야 합니다.",
-    "NUGU 회원 연동 방식의 PoC 에서 OAuth token 발급 결과 scope 에 “device:S.I.D” 가 포함된 경우에만 connection-oriented 방식을 사용합니다."
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "Background 동작 처리 > Background 연결 종료",
-  "hash": "#background-연결-종료",
-  "sentences": [
-    "Background 연결 종료",
-    "NotificationCenter.default.addObserver(\n            self,\n            selector: #selector(willResignActive(_:)),\n            name: UIApplication.willResignActiveNotification,\n            object: nil\n        )\n\nNotificationCenter.default.addObserver(\n    self,\n    selector: #selector(didBecomeActive(_:)),\n    name: UIApplication.didBecomeActiveNotification,\n    object: nil\n)\n\nfunc willResignActive(_ notification: Notification) {\n    // 연결 종료\n    NuguCentralManager.shared.stopReceiveServerInitiatedDirective()\n}\n\nfunc didBecomeActive(_ notification: Notification) {\n    // 재연결\n    NuguCentralManager.shared.startReceiveServerInitiatedDirective()\n}"
+    "Backend proxy",
+    "사용자의 발화로부터 Intent와 Entity가 분석되면 대화 관리자가 적절한 Prompt를 생성하여 스피커로 전달합니다.",
+    "Prompt를 생성할 때 외부 서버로부터 필요한 정보를 가져와서 응답을 생성해야 하는 경우가 있습니다. 외부 서버를 호출하여 대화 관리자에게 정보를 전달하는 서버를 Backend proxy라고 합니다. Backend proxy는 외부 서버로부터 가져온 정보를 수정하거나 복잡한 로직을 통해 조건을 판단하는 기능도 수행할 수 있는데, 개발자가 직접 개발하여 NUGU 플랫폼과 연동할 수 있도록 준비해야 합니다.",
+    "다음 그림과 같이 사용자가 ‘명동 날씨 알려줘’라고 발화한 경우, ‘ask.weather’ Intent와 함께 ‘명동’을 Backend proxy로 전달합니다.",
+    "Backend proxy는 기상 정보를 제공하는 외부 서버를 호출하여 원하는 시간의 날씨 정보를 얻어와",
+    "{{status}}",
+    "로 결과를 반환하고, 대화 관리자",
+    "{{location}}",
+    "과",
+    "{{status}}",
+    "를 이용하여 날씨를 안내하는 응답을 스피커로 보내게 됩니다.",
+    "Backend proxy를 사용하는 경우는 다음과 같습니다.",
+    "외부 서버로부터 정보를 가져와야 하는 경우",
+    "사칙연산, 날짜/시간 계산 등 로직을 통해 정보를 가공하는 경우",
+    "오디오 재생을 위한 명령어(Play, Pause, Stop)를 생성해야 하는 경우 자세한 내용은 AudioPlayer Interface 지원하는 Play 만들기를 참고하세요.",
+    "시나리오 전체에 필요한 정보를 미리 가져와서 사용하는 경우",
+    "외부 서버를 연동하는 경우 여러 가지 예외 상황이 발생할 수 있습니다. 이러한 예외 상황을 Action에 정의하고, Backend proxy는 예외 상황이 발생했을 때 Action에서 정의한 상태값을 전달함으로써 다양한 예외 상황에 대처하는 응답을 만들 수 있습니다."
   ]
 }
   ]
@@ -4263,6 +4238,31 @@
   "sentences": [
     "Background 연결 종료",
     "class MyApplication : Application() {\n    override fun onCreate() {\n        super.onCreate()\n\n        ProcessLifecycleOwner.get().lifecycle\n            .addObserver(MyLifecycleObserver())\n    }\n}\n\nclass MyLifecycleObserver : LifecycleObserver {\n\n    @OnLifecycleEvent(Lifecycle.Event.ON_START)\n    fun onForeground() {\n        // 재연결\n        ClientManager.getClient().networkManager.startReceiveServerInitiatedDirective()\n    }\n\n    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)\n    fun onBackground() {\n        // 연결 종료\n        ClientManager.getClient().networkManager.stopReceiveServerInitiatedDirective()\n    }\n}"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document/nugu-sdk/platform/ios/background",
+  "order": 174,
+  "indexes": [
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "Background 동작 처리",
+  "hash": "",
+  "sentences": [
+    "Background 동작 처리",
+    "Connection-oriented 방식을 사용하는 PoC 의 경우 application 이 background 로 전활될 경우 필요하다면 연결을 끊어주어야 합니다.",
+    "NUGU 회원 연동 방식의 PoC 에서 OAuth token 발급 결과 scope 에 “device:S.I.D” 가 포함된 경우에만 connection-oriented 방식을 사용합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "Background 동작 처리 > Background 연결 종료",
+  "hash": "#background-연결-종료",
+  "sentences": [
+    "Background 연결 종료",
+    "NotificationCenter.default.addObserver(\n            self,\n            selector: #selector(willResignActive(_:)),\n            name: UIApplication.willResignActiveNotification,\n            object: nil\n        )\n\nNotificationCenter.default.addObserver(\n    self,\n    selector: #selector(didBecomeActive(_:)),\n    name: UIApplication.didBecomeActiveNotification,\n    object: nil\n)\n\nfunc willResignActive(_ notification: Notification) {\n    // 연결 종료\n    NuguCentralManager.shared.stopReceiveServerInitiatedDirective()\n}\n\nfunc didBecomeActive(_ notification: Notification) {\n    // 재연결\n    NuguCentralManager.shared.startReceiveServerInitiatedDirective()\n}"
   ]
 }
   ]
@@ -6418,41 +6418,6 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/dark-mode",
-  "order": 191,
-  "indexes": [
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "Dark Mode 지원",
-  "hash": "",
-  "sentences": [
-    "Dark Mode 지원",
-    "어두운 테마",
-    "NUGU의 UI component는 어두운 테마를 지원합니다.",
-    "아래 가이드를 따라 테마를 변경하면",
-    "Template",
-    ",",
-    "ChromeWindow",
-    "에 어두운 테마를 적용 수 있습니다."
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "Dark Mode 지원 > 테마 설정",
-  "hash": "#테마-설정",
-  "sentences": [
-    "테마 설정",
-    "ThemeManager 객체의 theme 변수에 원하는 테마를 설정합니다.",
-    "ThemeManager는 NuguAndroidClient에서 얻을 수 있습니다.",
-    "(NuguAndroidClient Object).themeManager.theme = ThemeManagerInterface.THEME.DARK",
-    "THEME.LIGHT (default)    - 밝은 테마로 표시",
-    "THEME.DARK                     - 어두운 테마로 표시",
-    "THEME.SYSTEM                - 시스템 설정 (설정 > 디스플레이 > 야간모드) on/off 에 따라 표시"
-  ]
-}
-  ]
-},
-  {
   "url": "/document/nugu-sdk/platform/ios/dark-mode",
   "order": 178,
   "indexes": [
@@ -6485,6 +6450,41 @@
     "NuguThemeController",
     "와 연동됩니다.",
     "lazy var themeController = NuguThemeController()\n    \n    private lazy var voiceChromePresenter = VoiceChromePresenter(\n        viewController: self,\n        nuguClient: NuguCentralManager.shared.client,\n        themeController: themeController\n    )\n    private lazy var displayWebViewPresenter = DisplayWebViewPresenter(\n        viewController: self,\n        nuguClient: NuguCentralManager.shared.client,\n        clientInfo: [\"buttonColor\": \"white\"],\n        themeController: themeController\n    )\n    private lazy var audioDisplayViewPresenter = AudioDisplayViewPresenter(\n        viewController: self,\n        nuguClient: NuguCentralManager.shared.client,\n        themeController: themeController\n    )\n    \n    ex> themeController.theme = .dark"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document/nugu-sdk/platform/android/dark-mode",
+  "order": 191,
+  "indexes": [
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "Dark Mode 지원",
+  "hash": "",
+  "sentences": [
+    "Dark Mode 지원",
+    "어두운 테마",
+    "NUGU의 UI component는 어두운 테마를 지원합니다.",
+    "아래 가이드를 따라 테마를 변경하면",
+    "Template",
+    ",",
+    "ChromeWindow",
+    "에 어두운 테마를 적용 수 있습니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "Dark Mode 지원 > 테마 설정",
+  "hash": "#테마-설정",
+  "sentences": [
+    "테마 설정",
+    "ThemeManager 객체의 theme 변수에 원하는 테마를 설정합니다.",
+    "ThemeManager는 NuguAndroidClient에서 얻을 수 있습니다.",
+    "(NuguAndroidClient Object).themeManager.theme = ThemeManagerInterface.THEME.DARK",
+    "THEME.LIGHT (default)    - 밝은 테마로 표시",
+    "THEME.DARK                     - 어두운 테마로 표시",
+    "THEME.SYSTEM                - 시스템 설정 (설정 > 디스플레이 > 야간모드) on/off 에 따라 표시"
   ]
 }
   ]
@@ -6539,7 +6539,7 @@
     "를 참고하세요.",
     "다음 순서로 Backend Parameter를 설정합니다.",
     "Utterance Parameter 아래의 Backend proxy 사용여부 항목의 OFF 버튼을 클릭하여 ON(사용)으로 설정합니다. Backend Parameter를 정의하는 테이블이 생깁니다.",
-    "Backend Parameter 입력 필드에 Parameter명을 입력하고 Enter 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.",
+    "Backend Parameter 입력 필드에 Parameter명을 입력하고 Enter 키를 누르거나 입력 필드 이외 영역에 마우스 왼쪽 버튼을 클릭합니다.\n\n    \n\n    \n      영자, 숫자, 특수문자인 언더바(_), 하이픈(-)만 사용하여 40자 이내로 작성할 수 있습니다.\n      Backend Parameter명을 “status”로 지정합니다.\n      Play Builder 우측 상단에 있는 Play 저장을 눌러 Play를 저장합니다.",
     "영자, 숫자, 특수문자인 언더바(_), 하이픈(-)만 사용하여 40자 이내로 작성할 수 있습니다.",
     "Backend Parameter명을 “status”로 지정합니다.",
     "Play Builder 우측 상단에 있는 Play 저장을 눌러 Play를 저장합니다.",
@@ -9847,7 +9847,7 @@
     "NUGU developers에서는 NUGU의 PoC에서 손쉽게 새로운 기능과 서비스를 Play로 제공할 수 있도록 지원하는 NUGU play kit과,  Play를 비지니스 목적으로 Private하게 사용하게 하고 Announcement 메세지를 보낼 수 있는 NUGU biz kit를 지원하며, 여러분의 다양한 디바이스 또는 어플리케이션 등에서 NUGU의 다양한 서비스를 직접 제공할 수 있도록 지원하는 NUGU SDK를 제공합니다.",
     "NUGU play kit은 대화 기반 인공지능 서비스를 개발할 수 있는 통합 개발 환경을 GUI 기반으로 제공함으로써, 사용자들은 쉽게 자신들의 서비스를 개발할 수 있습니다. NUGU play kit에서는 사용자 발화가 처리되는 과정에 필요한 요소 기술들을 제공하고 서비스를 개발할 수 있도록 하는 통합 개발 환경인 Play Builder가 제공됩니다. 개발된 서비스는 NUGU의 ‘심사’와 ‘배포’ 과정을 거친 후 스피커, T map, Btv, T전화 등의 PoC에서 사용자들에게 제공됩니다. 또한 특정 사용자 그룹이나 전용 디바이스에서만 해당 서비스를 제공하고자 할 경우에는 NUGU biz  kit기능을 통하여 이를 설정할 수 있습니다.",
     "NUGU SDK는 여러분의 다양한 디바이스와 어플리케이션 등에서 NUGU의 자연어 이해 기반의 다양한 기능이 직접 제공될 수 있도록 NUGU 플랫폼과의 연동 및 NUGU의 다양한 서비스 제공을 지원합니다. NUGU SDK는 Android OS, iOS, Linux OS를 지원하며, SDK 탑재를 위한 개발가이드 및 UX 가이드 등을 함께 제공합니다.",
-    "NUGU developers는 개발자가 아니어도 대화 기반 인공지능 서비스를 개발할 수 있는 플랫폼입니다. 또한 자체의 인공지능 플랫폼을 갖추지 못했더라도, 다양한 상품에 쉽고 빠르게 인공지능 기반의 기능을 제공할 수 있도록 지원합니다. NUGU 이용자들에게 좋은 서비스를 제공하길 희망하는 모든 분들과 빠르게 NUGU의 인공지능 기능을 다양한 디바이스와 어플리케이션에서 제공하고자 희망하시는 모든 분들께서 NUGU developers를 통해 그 희망을 실현할 수 있기를 바랍니다.\n123321"
+    "NUGU developers는 개발자가 아니어도 대화 기반 인공지능 서비스를 개발할 수 있는 플랫폼입니다. 또한 자체의 인공지능 플랫폼을 갖추지 못했더라도, 다양한 상품에 쉽고 빠르게 인공지능 기반의 기능을 제공할 수 있도록 지원합니다. NUGU 이용자들에게 좋은 서비스를 제공하길 희망하는 모든 분들과 빠르게 NUGU의 인공지능 기능을 다양한 디바이스와 어플리케이션에서 제공하고자 희망하시는 모든 분들께서 NUGU developers를 통해 그 희망을 실현할 수 있기를 바랍니다."
   ]
 }
   ]
@@ -10223,7 +10223,7 @@
     ">",
     "Play kit",
     ">",
-    "Play 관",
+    "Play 관리",
     "메뉴에서",
     "Play 등록하기",
     "버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다."
@@ -16293,11 +16293,7 @@
     "Control - SmartHomeBackendProxy 가 받게 되는 기기 제어 요청. 이 요청을 처리하기 위해서는 기기를 제어하기 위한 SmartHomeBackendProxy 서버를 개발해야 함.",
     "SmartHomeBackendProxy - Discovery, Control 요청을 처리하는 서버.",
     "OAuth2 - OAuth2 인증에 필요한 정보 입력 필요.",
-    "NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU developers Support 내에",
-    "문의사항",
-    "/",
-    "제휴제안",
-    "을 통해 등록해주세요."
+    "NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현재 NUGU SmartHome Platform 에 등록되지 않은 스마트홈 기기 유형 및 기능에 대한 문의 및 요청은 NUGU developers Support 내에 문의사항 / 제휴제안을 통해 등록해주세요."
   ]
 },
     {
@@ -17411,234 +17407,6 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/linux/start",
-  "order": 194,
-  "indexes": [
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기",
-  "hash": "",
-  "sentences": [
-    "시작하기"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 1: 최소 요구사항 확인하기",
-  "hash": "#step-1-최소-요구사항-확인하기",
-  "sentences": [
-    "Step 1: 최소 요구사항 확인하기",
-    "Ubuntu xenial(16.04)"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 2: NUGU SDK 설치하기",
-  "hash": "#step-2-nugu-sdk-설치하기",
-  "sentences": [
-    "Step 2: NUGU SDK 설치하기",
-    "NUGU SDK for Linux는 설치에 필요한 패키지(",
-    "*.deb",
-    ") 파일들을 쉽게 다운로드 받을 수 있도록 Ubuntu에서 제공하는",
-    "PPA",
-    "(",
-    "https://launchpad.net",
-    ")를 통해 배포하고 있습니다."
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 2: NUGU SDK 설치하기 > PPA 추가하기",
-  "hash": "#ppa-추가하기",
-  "sentences": [
-    "PPA 추가하기",
-    "아래 명령을 통해 시스템에 PPA를 추가할 수 있습니다.",
-    "Ubuntu",
-    "Debian",
-    "sudo add-apt-repository ppa:nugulinux/sdk\nsudo apt-get update",
-    "사용하고 있는 Debian 버전에 따라 NUGU SDK의 Bionic 또는 Xenial PPA 주소를 추가해야 합니다.",
-    "# Debian 버전이 Buster일 경우\n$ sudo vi /etc/apt/sources.list.d/nugu.list\ndeb http://ppa.launchpad.net/nugulinux/sdk/ubuntu bionic main\n\n# Debian 버전이 Stretch일 경우\n$ sudo vi /etc/apt/sources.list.d/nugu.list\ndeb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main",
-    "이제 NUGU SDK PPA에 대한 인증키를 설치해야 합니다.",
-    "sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 5DE933034EEA59C4\nsudo apt-get update"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 2: NUGU SDK 설치하기 > 패키지 설치하기",
-  "hash": "#패키지-설치하기",
-  "sentences": [
-    "패키지 설치하기",
-    "NUGU SDK for Linux는 아래의 패키지들로 구성되어 있습니다.",
-    "libnugu | NUGU SDK 동작에 필요한 패키지- shared library(*.so.{version} files)",
-    "libnugu-plugins-default | 기본 제공 플러그인 모음 패키지- gstreamer.so, opus.so, portaudio.so 등",
-    "libnugu-dev | 빌드에 필요한 패키지- header files, pkg-config(nugu.pc) 및 libnugu.so",
-    "libnugu-examples | 예제 프로그램 패키지- 콘솔 기반의 예제 프로그램, OAuth2 클라이언트 예제",
-    "아래 명령을 통해 시스템에 설치할 수 있습니다.",
-    "sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-examples"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 3: 프로젝트 설정하기",
-  "hash": "#step-3-프로젝트-설정하기",
-  "sentences": [
-    "Step 3: 프로젝트 설정하기"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 3: 프로젝트 설정하기 > PoC 정보 입력하기",
-  "hash": "#poc-정보-입력하기",
-  "sentences": [
-    "PoC 정보 입력하기",
-    "NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.",
-    "더 자세한 내용은",
-    "NUGU SDK 소개",
-    "에서 확인이 가능합니다.",
-    "체험판은 체험판 신청을 통해 발급 가능합니다.",
-    "발급받은 PoC 정보를 확인하기 위해서",
-    "NUGU SDK PoC목록",
-    "으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.",
-    "체험판은 체험판 신청 내역에서 확인 가능합니다.",
-    "체험판은 Redirect URI가 필요하지 않습니다."
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 3: 프로젝트 설정하기 > 음성인식 모델 파일 설정하기",
-  "hash": "#음성인식-모델-파일-설정하기",
-  "sentences": [
-    "음성인식 모델 파일 설정하기"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 3: 프로젝트 설정하기 > 음성인식 모델 파일 설정하기 > 다운로드 받기",
-  "hash": "#다운로드-받기",
-  "sentences": [
-    "다운로드 받기",
-    "NUGU SDK PoC목록",
-    "에서 음성인식 모델 파일을 다운로드 받습니다.",
-    "체험판은 체험판 신청 내역에서 음성인식 모델파일을 다운로드 받습니다."
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 3: 프로젝트 설정하기 > 음성인식 모델 파일 설정하기 > 설정하기",
-  "hash": "#설정하기",
-  "sentences": [
-    "설정하기",
-    "다운로드가 완료되면, Linux 디바이스에 임의의 디렉토리를 생성한 후, 아래와 같은 파일명으로 복사해 주시면 됩니다.",
-    "nugu_model_wakeup_net.raw  - keyword detection에 사용되는 model 파일 (1/2)",
-    "nugu_model_wakeup_search.raw  - keyword detection에 사용되는 model 파일 (2/2)",
-    "nugu_model_epd.raw - VAD(Voice Activity Detection) 에 사용되는 model 파일"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 3: 프로젝트 설정하기 > OAuth2 client 구현하기",
-  "hash": "#oauth2-client-구현하기",
-  "sentences": [
-    "OAuth2 client 구현하기",
-    "NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증을 위한 기능을 제공하고 있지 않습니다.",
-    "Linux 기반의 제품은 대부분 디스플레이가 없어 별도의 연동 어플리케이션을 통한 사용자 인증을 필요로 합니다.",
-    "다른 플랫폼과 달리 GUI framework이 다양하기 때문에 표준화된 인증 UI를 SDK에서 제공해 주기 어렵습니다.",
-    "하지만, 인증을 쉽게 테스트할 수 있도록 아래의 NUGU SDK for Linux Github에 Python으로 작성된 별도의 웹기반 OAuth2 client 예제를 제공하고 있습니다.",
-    "NUGU SDK for Linux OAuth2 client python sample",
-    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub.",
-    "NUGU SDK PoC목록",
-    "에서 nugu-config.json 파일을 다운로드 받은 후, Client ID, Client Secret 정보를 활용하여 위 OAuth2 client 예제를 통해 인증을 진행할 수 있습니다.",
-    "체험판은 체험판 신청 내역에서  nugu-config.json 파일을 다운로드 받습니다."
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 4: NUGU 사용하기",
-  "hash": "#step-4-nugu-사용하기",
-  "sentences": [
-    "Step 4: NUGU 사용하기"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 4: NUGU 사용하기 > GMainLoop 사용하기",
-  "hash": "#gmainloop-사용하기",
-  "sentences": [
-    "GMainLoop 사용하기",
-    "NUGU SDK for Linux는 event-driven 방식으로 어플리케이션을 개발할 수 있도록",
-    "glib",
-    "에서 제공하는",
-    "event loop",
-    "을 사용하고 있습니다. 따라서",
-    "main()",
-    "코드는 아래 구조로 작성되어야 합니다.",
-    "#include <glib.h>\n\nint main(int argc, char *argv[])\n{\n  GMainLoop *loop;\n\n  /* event loop 생성 */\n  loop = g_main_loop_new (NULL, FALSE);\n\n  /* 사용자의 초기화 코드 등록(nugu sdk 코드 등) */\n\n  /* event loop 시작 */\n  g_main_loop_run (loop);\n\n  /* event loop 해제 */\n  g_main_loop_unref (loop);\n\n  return 0;\n}"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 4: NUGU 사용하기 > NUGU 음성인식 사용하기",
-  "hash": "#nugu-음성인식-사용하기",
-  "sentences": [
-    "NUGU 음성인식 사용하기",
-    "음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.",
-    "⁣1. 헤더 파일(nugu_client.hh, capability_factory.hh)을 include에 포함시키고,",
-    "NuguClientKit, NuguCapability",
-    "namespace를 사용하도록 설정합니다.",
-    "#include <clientkit/nugu_client.hh>\n#include <capability/capability_factory.hh>\n\nusing namespace NuguClientKit;\nusing namespace NuguCapability;",
-    "⁣2.",
-    "IASRHandler",
-    "객체를 생성하고, 음성인식 모델 파일을 설정합니다.",
-    "auto my_asr_listener(std::make_shared<MyASR>());\nauto asr_handler(std::shared_ptr<IASRHandler>(\n   CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(my_asr_listener.get())));\nasr_handler->setAttribute(ASRAttribute { \"/var/lib/nugu/model\", \"CLIENT\", \"PARTIAL\" });",
-    "⁣3.",
-    "NuguClient",
-    "객체를 생성하고,",
-    "ASR Capability",
-    "추가 후, SDK를 초기화 합니다.",
-    "NuguClient* nugu_client = new NuguClient());\nnugu_client->getCapabilityBuilder()\n       ->add(CapabilityType::ASR, my_asr_listener.get())\n       ->construct();\nnugu_client->initialize();",
-    "⁣4. 음성인식 기능을 사용하기 위해 OAuth2 access-token 설정 후, NUGU 서비스 연결을 요청합니다.",
-    "auto network_manager(nugu_client->getNetworkManager());\nnetwork_manager->setToken(\"...\");\nnetwork_manager->connect();",
-    "전체 코드는 Github의 아래 wiki에서 확인할 수 있습니다.",
-    "NUGU SDK for Linux Wiki - Create your first application",
-    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub."
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > Step 4: NUGU 사용하기 > Build",
-  "hash": "#build",
-  "sentences": [
-    "Build",
-    "NUGU SDK for Linux는 빌드 설정을 쉽게 구성할 수 있도록",
-    "pkg-config",
-    "파일을 제공합니다. 따라서, 아래와 같이",
-    "nugu.pc",
-    "를 사용해 빌드 명령을 수행할 수 있습니다.",
-    "$ g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > 더 알아보기",
-  "hash": "#더-알아보기",
-  "sentences": [
-    "더 알아보기"
-  ]
-},
-    {
-  "skip_keyword": "data-skip-search-index",
-  "title": "시작하기 > 더 알아보기 > Download the SDK source code",
-  "hash": "#download-the-sdk-source-code",
-  "sentences": [
-    "Download the SDK source code",
-    "아래 Github 주소를 통해 NUGU SDK for Linux 전체 소스 코드를 다운로드 받을 수 있습니다.",
-    "NUGU SDK for Linux Github repository",
-    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub."
-  ]
-}
-  ]
-},
-  {
   "url": "/document/nugu-sdk/platform/android/start",
   "order": 182,
   "indexes": [
@@ -17925,6 +17693,234 @@
     "아래 Github 주소를 통해 NUGU SDK for Android 소스 코드를 다운로드 받을 수 있습니다.",
     "GitHub - nugu-developers/nugu-android: NUGU SDK for Android",
     "NUGU SDK for Android. Contribute to nugu-developers/nugu-android development by creating an account on GitHub."
+  ]
+}
+  ]
+},
+  {
+  "url": "/document/nugu-sdk/platform/linux/start",
+  "order": 194,
+  "indexes": [
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기",
+  "hash": "",
+  "sentences": [
+    "시작하기"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 1: 최소 요구사항 확인하기",
+  "hash": "#step-1-최소-요구사항-확인하기",
+  "sentences": [
+    "Step 1: 최소 요구사항 확인하기",
+    "Ubuntu xenial(16.04)"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 2: NUGU SDK 설치하기",
+  "hash": "#step-2-nugu-sdk-설치하기",
+  "sentences": [
+    "Step 2: NUGU SDK 설치하기",
+    "NUGU SDK for Linux는 설치에 필요한 패키지(",
+    "*.deb",
+    ") 파일들을 쉽게 다운로드 받을 수 있도록 Ubuntu에서 제공하는",
+    "PPA",
+    "(",
+    "https://launchpad.net",
+    ")를 통해 배포하고 있습니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 2: NUGU SDK 설치하기 > PPA 추가하기",
+  "hash": "#ppa-추가하기",
+  "sentences": [
+    "PPA 추가하기",
+    "아래 명령을 통해 시스템에 PPA를 추가할 수 있습니다.",
+    "Ubuntu",
+    "Debian",
+    "sudo add-apt-repository ppa:nugulinux/sdk\nsudo apt-get update",
+    "사용하고 있는 Debian 버전에 따라 NUGU SDK의 Bionic 또는 Xenial PPA 주소를 추가해야 합니다.",
+    "# Debian 버전이 Buster일 경우\n$ sudo vi /etc/apt/sources.list.d/nugu.list\ndeb http://ppa.launchpad.net/nugulinux/sdk/ubuntu bionic main\n\n# Debian 버전이 Stretch일 경우\n$ sudo vi /etc/apt/sources.list.d/nugu.list\ndeb http://ppa.launchpad.net/nugulinux/sdk/ubuntu xenial main",
+    "이제 NUGU SDK PPA에 대한 인증키를 설치해야 합니다.",
+    "sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key 5DE933034EEA59C4\nsudo apt-get update"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 2: NUGU SDK 설치하기 > 패키지 설치하기",
+  "hash": "#패키지-설치하기",
+  "sentences": [
+    "패키지 설치하기",
+    "NUGU SDK for Linux는 아래의 패키지들로 구성되어 있습니다.",
+    "libnugu | NUGU SDK 동작에 필요한 패키지- shared library(*.so.{version} files)",
+    "libnugu-plugins-default | 기본 제공 플러그인 모음 패키지- gstreamer.so, opus.so, portaudio.so 등",
+    "libnugu-dev | 빌드에 필요한 패키지- header files, pkg-config(nugu.pc) 및 libnugu.so",
+    "libnugu-examples | 예제 프로그램 패키지- 콘솔 기반의 예제 프로그램, OAuth2 클라이언트 예제",
+    "아래 명령을 통해 시스템에 설치할 수 있습니다.",
+    "sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-examples"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 3: 프로젝트 설정하기",
+  "hash": "#step-3-프로젝트-설정하기",
+  "sentences": [
+    "Step 3: 프로젝트 설정하기"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 3: 프로젝트 설정하기 > PoC 정보 입력하기",
+  "hash": "#poc-정보-입력하기",
+  "sentences": [
+    "PoC 정보 입력하기",
+    "NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.",
+    "더 자세한 내용은",
+    "NUGU SDK 소개",
+    "에서 확인이 가능합니다.",
+    "체험판은 체험판 신청을 통해 발급 가능합니다.",
+    "발급받은 PoC 정보를 확인하기 위해서",
+    "NUGU SDK PoC목록",
+    "으로 이동해서 Client ID, Client Secret, Redirect URI 정보를 확인하세요.",
+    "체험판은 체험판 신청 내역에서 확인 가능합니다.",
+    "체험판은 Redirect URI가 필요하지 않습니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 3: 프로젝트 설정하기 > 음성인식 모델 파일 설정하기",
+  "hash": "#음성인식-모델-파일-설정하기",
+  "sentences": [
+    "음성인식 모델 파일 설정하기"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 3: 프로젝트 설정하기 > 음성인식 모델 파일 설정하기 > 다운로드 받기",
+  "hash": "#다운로드-받기",
+  "sentences": [
+    "다운로드 받기",
+    "NUGU SDK PoC목록",
+    "에서 음성인식 모델 파일을 다운로드 받습니다.",
+    "체험판은 체험판 신청 내역에서 음성인식 모델파일을 다운로드 받습니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 3: 프로젝트 설정하기 > 음성인식 모델 파일 설정하기 > 설정하기",
+  "hash": "#설정하기",
+  "sentences": [
+    "설정하기",
+    "다운로드가 완료되면, Linux 디바이스에 임의의 디렉토리를 생성한 후, 아래와 같은 파일명으로 복사해 주시면 됩니다.",
+    "nugu_model_wakeup_net.raw  - keyword detection에 사용되는 model 파일 (1/2)",
+    "nugu_model_wakeup_search.raw  - keyword detection에 사용되는 model 파일 (2/2)",
+    "nugu_model_epd.raw - VAD(Voice Activity Detection) 에 사용되는 model 파일"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 3: 프로젝트 설정하기 > OAuth2 client 구현하기",
+  "hash": "#oauth2-client-구현하기",
+  "sentences": [
+    "OAuth2 client 구현하기",
+    "NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증을 위한 기능을 제공하고 있지 않습니다.",
+    "Linux 기반의 제품은 대부분 디스플레이가 없어 별도의 연동 어플리케이션을 통한 사용자 인증을 필요로 합니다.",
+    "다른 플랫폼과 달리 GUI framework이 다양하기 때문에 표준화된 인증 UI를 SDK에서 제공해 주기 어렵습니다.",
+    "하지만, 인증을 쉽게 테스트할 수 있도록 아래의 NUGU SDK for Linux Github에 Python으로 작성된 별도의 웹기반 OAuth2 client 예제를 제공하고 있습니다.",
+    "NUGU SDK for Linux OAuth2 client python sample",
+    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub.",
+    "NUGU SDK PoC목록",
+    "에서 nugu-config.json 파일을 다운로드 받은 후, Client ID, Client Secret 정보를 활용하여 위 OAuth2 client 예제를 통해 인증을 진행할 수 있습니다.",
+    "체험판은 체험판 신청 내역에서  nugu-config.json 파일을 다운로드 받습니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 4: NUGU 사용하기",
+  "hash": "#step-4-nugu-사용하기",
+  "sentences": [
+    "Step 4: NUGU 사용하기"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 4: NUGU 사용하기 > GMainLoop 사용하기",
+  "hash": "#gmainloop-사용하기",
+  "sentences": [
+    "GMainLoop 사용하기",
+    "NUGU SDK for Linux는 event-driven 방식으로 어플리케이션을 개발할 수 있도록",
+    "glib",
+    "에서 제공하는",
+    "event loop",
+    "을 사용하고 있습니다. 따라서",
+    "main()",
+    "코드는 아래 구조로 작성되어야 합니다.",
+    "#include <glib.h>\n\nint main(int argc, char *argv[])\n{\n  GMainLoop *loop;\n\n  /* event loop 생성 */\n  loop = g_main_loop_new (NULL, FALSE);\n\n  /* 사용자의 초기화 코드 등록(nugu sdk 코드 등) */\n\n  /* event loop 시작 */\n  g_main_loop_run (loop);\n\n  /* event loop 해제 */\n  g_main_loop_unref (loop);\n\n  return 0;\n}"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 4: NUGU 사용하기 > NUGU 음성인식 사용하기",
+  "hash": "#nugu-음성인식-사용하기",
+  "sentences": [
+    "NUGU 음성인식 사용하기",
+    "음성인식을 요청하기 위해서는 아래와 같은 코드를 작성해야 합니다.",
+    "⁣1. 헤더 파일(nugu_client.hh, capability_factory.hh)을 include에 포함시키고,",
+    "NuguClientKit, NuguCapability",
+    "namespace를 사용하도록 설정합니다.",
+    "#include <clientkit/nugu_client.hh>\n#include <capability/capability_factory.hh>\n\nusing namespace NuguClientKit;\nusing namespace NuguCapability;",
+    "⁣2.",
+    "IASRHandler",
+    "객체를 생성하고, 음성인식 모델 파일을 설정합니다.",
+    "auto my_asr_listener(std::make_shared<MyASR>());\nauto asr_handler(std::shared_ptr<IASRHandler>(\n   CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(my_asr_listener.get())));\nasr_handler->setAttribute(ASRAttribute { \"/var/lib/nugu/model\", \"CLIENT\", \"PARTIAL\" });",
+    "⁣3.",
+    "NuguClient",
+    "객체를 생성하고,",
+    "ASR Capability",
+    "추가 후, SDK를 초기화 합니다.",
+    "NuguClient* nugu_client = new NuguClient());\nnugu_client->getCapabilityBuilder()\n       ->add(CapabilityType::ASR, my_asr_listener.get())\n       ->construct();\nnugu_client->initialize();",
+    "⁣4. 음성인식 기능을 사용하기 위해 OAuth2 access-token 설정 후, NUGU 서비스 연결을 요청합니다.",
+    "auto network_manager(nugu_client->getNetworkManager());\nnetwork_manager->setToken(\"...\");\nnetwork_manager->connect();",
+    "전체 코드는 Github의 아래 wiki에서 확인할 수 있습니다.",
+    "NUGU SDK for Linux Wiki - Create your first application",
+    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > Step 4: NUGU 사용하기 > Build",
+  "hash": "#build",
+  "sentences": [
+    "Build",
+    "NUGU SDK for Linux는 빌드 설정을 쉽게 구성할 수 있도록",
+    "pkg-config",
+    "파일을 제공합니다. 따라서, 아래와 같이",
+    "nugu.pc",
+    "를 사용해 빌드 명령을 수행할 수 있습니다.",
+    "$ g++ -std=c++11 hello.cc `pkg-config --cflags --libs nugu` -o hello"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > 더 알아보기",
+  "hash": "#더-알아보기",
+  "sentences": [
+    "더 알아보기"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "시작하기 > 더 알아보기 > Download the SDK source code",
+  "hash": "#download-the-sdk-source-code",
+  "sentences": [
+    "Download the SDK source code",
+    "아래 Github 주소를 통해 NUGU SDK for Linux 전체 소스 코드를 다운로드 받을 수 있습니다.",
+    "NUGU SDK for Linux Github repository",
+    "NUGU SDK for Linux. Contribute to nugu-developers/nugu-linux development by creating an account on GitHub."
   ]
 }
   ]
