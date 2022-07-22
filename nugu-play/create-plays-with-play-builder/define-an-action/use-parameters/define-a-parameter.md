@@ -61,7 +61,7 @@ Backend proxy에 대한 자세한 내용은 [외부 연동 서버(Backend proxy)
    * Backend Parameter명을 "status"로 지정합니다.
    * Play Builder 우측 상단에 있는 `Play 저장`을 눌러 Play를 저장합니다.
 
-Play의 Parameter 설정이 완료되면, 이제 Backend proxy에서 이 Parameter에 적절한 값을 전달해 주도록 Backend proxy 동작 환경을 설정해야 합니다.
+   Play의 Parameter 설정이 완료되면, 이제 Backend proxy에서 이 Parameter에 적절한 값을 전달해 주도록 Backend proxy 동작 환경을 설정해야 합니다.
 3. 이렇게 입력을 하고, Backend proxy가 기상 정보를 Backend Parameter에 담아주면 다음과 같은 상태가 됩니다.
 
    ![](../../../../assets/images/define-a-parameter-07.png)
