@@ -56,8 +56,8 @@ OAuth를 이용해 사용자 정보에 접근할 수 있고, 이를 통해 Play�
 
 깃허브(Github) 가이드 페이지 [Authorizing OAuth Apps](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#web-application-flow)에서도 OAuth 연동에 필요한 URL 관련 내용을 확인할 수 있습니다.
 
-* 로그인 URL : [https://github.com/login/oauth/authorize](https://github.com/login/oauth/authorize)
-* Access token URL : [https://github.com/login/oauth/access_token](https://github.com/login/oauth/access_token)
+* 로그인 : [1. Request a user's GitHub identity](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps#1-request-a-users-github-identity)
+* Access token : [2. Users are redirected back to your site by GitHub](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps#2-users-are-redirected-back-to-your-site-by-github)
 
 {% alerts style="info" %}
 Github에서는 Access token 재발급이 필요없습니다. 하지만 다른 소셜 계정에서는 Access Token 재발급이 필요할 수 있습니다. 이 경우 소셜 계정의 OAuth 개발 가이드에서 OAuth token 재발급 URL을 확인하면 됩니다.
