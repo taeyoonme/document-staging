@@ -109,7 +109,7 @@ OAuth 2.0 Serve는 인터넷의 기술 문서를 참고하여 구축할 수 있�
 
 ### Play의 OAuth 연동 정보 작성
 
-`Developers` > `Play kit` > `Play 관`  메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
+`Developers` > `Play kit` > `Play 관리`  메뉴에서 `Play 등록하기` 버튼을 클릭해 OAuth 계정 연동 정보를 입력합니다.
 
 *(별표) 표시는 필수 제공해야 하는 내용입니다.
 

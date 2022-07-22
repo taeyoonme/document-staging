@@ -33,7 +33,7 @@ Intent를 만들고 수정하는 것은 좌측 메뉴의 `User Utterance Model` 
 * Entity로 지정할 단어도 섞어가면서 예상 발화를 작성합니다.
 
 {% alerts style="info" %}
-예상 발화 작성에 대한 자세한 내용은 [예상 발화 작성 가이드라인](./define-user-utterance-model/built-in-intents) 및 [예상 발화 작성 가이드](./define-user-utterance-model/how-to-write-customer-utterances)를 참고하세요.
+예상 발화 작성에 대한 자세한 내용은 [예상 발화 작성 가이드라인](./define-user-utterance-model/how-to-write-customer-utterances) 및 [예상 발화 작성 가이드](./define-user-utterance-model/how-to-write-customer-utterances)를 참고하세요.
 {% endalerts %}
 
 ![](../../assets/images/define-user-utterance-model-03.png)
