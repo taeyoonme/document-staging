@@ -2589,13 +2589,13 @@
   "sentences": [
     "각 Branch Action의 응답 정의",
     "응답에 필요한 정보 가져오기에서 Backend proxy 사용 여부 항목이 ON으로 설정되어 있는지 확인합니다.",
-    "Output 영역에서 각 Branch Action별로 응답을 정의합니다. resumeWhilePause Branch Action은 Response 유형을 Directive로 선택합니다. \n    \n      resumeWhilePause Branch Action의 응답은 이전의 일시 정지(PAUSED) 시점의 시간을 AudioPlayer.Play Directive를 통해 전송하면 됩니다.\n      AudioPlayer.Play Directive를 Backend proxy에서 만들어서 전송하면 해당 Directive는 스피커까지 전송되어 ‘이어서 재생’을 시작합니다.\n      AudioPlayer.Play Directive의 offsetInMilliseconds 값은 일시 정지된 시간을 넣어주어야 이어서 재생이 가능합니다.",
+    "Output 영역에서 각 Branch Action별로 응답을 정의합니다. resumeWhilePause Branch Action은 Response 유형을 Directive로 선택합니다.\n\n    \n\n    \n      resumeWhilePause Branch Action의 응답은 이전의 일시 정지(PAUSED) 시점의 시간을 AudioPlayer.Play Directive를 통해 전송하면 됩니다.\n      AudioPlayer.Play Directive를 Backend proxy에서 만들어서 전송하면 해당 Directive는 스피커까지 전송되어 ‘이어서 재생’을 시작합니다.\n      AudioPlayer.Play Directive의 offsetInMilliseconds 값은 일시 정지된 시간을 넣어주어야 이어서 재생이 가능합니다.",
     "resumeWhilePause Branch Action의 응답은 이전의 일시 정지(PAUSED) 시점의 시간을 AudioPlayer.Play Directive를 통해 전송하면 됩니다.",
     "AudioPlayer.Play Directive를 Backend proxy에서 만들어서 전송하면 해당 Directive는 스피커까지 전송되어 ‘이어서 재생’을 시작합니다.",
     "AudioPlayer.Play Directive의 offsetInMilliseconds 값은 일시 정지된 시간을 넣어주어야 이어서 재생이 가능합니다.",
-    "resumeWhilePlaying Branch Action은 Prompt에 “이미 재생 중입니다.” 등의 응답 메시지를 입력합니다. \n    \n      오디오가 이미 재생 중이기 때문에 Directive를 전송할 필요가 없으므로 응답 Prompt만을 보내고 계속 이어서 재생합니다.",
+    "resumeWhilePlaying Branch Action은 Prompt에 “이미 재생 중입니다.” 등의 응답 메시지를 입력합니다.\n\n    \n\n    \n      오디오가 이미 재생 중이기 때문에 Directive를 전송할 필요가 없으므로 응답 Prompt만을 보내고 계속 이어서 재생합니다.",
     "오디오가 이미 재생 중이기 때문에 Directive를 전송할 필요가 없으므로 응답 Prompt만을 보내고 계속 이어서 재생합니다.",
-    "resumeWhileStopped Branch Action은 Response 유형을 Prompt + Directive로 선택하고, Prompt에 ‘음악을 들려드릴게요.’ 등의 응답 메시지를 입력합니다. \n    \n      오디오를 이어서 재생하는 것은 아니지만 해당 Action을 처음부터 재생 시작하도록 정의했으므로, 응답 Prompt로 음악 재생이 시작됨을 알려줌과 동시에 AudioPlayer.Play Directive를 전송해야 합니다.\n      이 경우 Backend proxy는 offsetInMilliseconds 값을 0으로 하여 처음부터 재생하도록 AudioPlayer.Play Directive를 전송해야 합니다.",
+    "resumeWhileStopped Branch Action은 Response 유형을 Prompt + Directive로 선택하고, Prompt에 ‘음악을 들려드릴게요.’ 등의 응답 메시지를 입력합니다.\n\n    \n    \n      오디오를 이어서 재생하는 것은 아니지만 해당 Action을 처음부터 재생 시작하도록 정의했으므로, 응답 Prompt로 음악 재생이 시작됨을 알려줌과 동시에 AudioPlayer.Play Directive를 전송해야 합니다.\n      이 경우 Backend proxy는 offsetInMilliseconds 값을 0으로 하여 처음부터 재생하도록 AudioPlayer.Play Directive를 전송해야 합니다.",
     "오디오를 이어서 재생하는 것은 아니지만 해당 Action을 처음부터 재생 시작하도록 정의했으므로, 응답 Prompt로 음악 재생이 시작됨을 알려줌과 동시에 AudioPlayer.Play Directive를 전송해야 합니다.",
     "이 경우 Backend proxy는 offsetInMilliseconds 값을 0으로 하여 처음부터 재생하도록 AudioPlayer.Play Directive를 전송해야 합니다.",
     "각 Branch Action별로 설정을 완료할 때마다 Play 저장 버튼을 클릭하여 Play에 적용합니다."
