@@ -1123,9 +1123,9 @@ code.highlighter-rouge {
       }
     }
 
-    &:after {
-      @extend %arrow;
-    }
+    //&:after {
+    //  @extend %arrow;
+    //}
   }
 
   .api-summary {
