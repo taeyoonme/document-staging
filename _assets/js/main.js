@@ -105,7 +105,7 @@ $(function () {
       this.updateMainLinks()
 
       if ($(location).attr('hash')) {
-        Page.goHash($(location).attr('hash'))
+        this.goHash($(location).attr('hash'))
       }
     }
 
@@ -141,7 +141,7 @@ $(function () {
         document.title = title
 
         if (Page.hasHash(pathname)) {
-          Page.goHash(Page.getHash(pathname))
+          this.goHash(Page.getHash(pathname))
         }
 
         this.header.init()
@@ -184,7 +184,7 @@ $(function () {
 
       let hash = $(e.currentTarget).attr('href')
 
-      Page.goHash(hash)
+      this.goHash(hash)
 
       if (typeof (history.pushState) !== 'undefined') {
         history.pushState(null, document.title, $(location).attr('pathname') + hash)
@@ -201,6 +201,13 @@ $(function () {
       }
     }
 
+    goHash(hash) {
+      let $hash = $(decodeURI(hash))
+      if ($hash.length) {
+        this.main_wrapper.scrollTop($$hash.offset().top - this.main_wrapper.position().top + this.main_wrapper.scrollTop())
+      }
+    }
+
     static matchPath(path, requestPath) {
       return new RegExp(path + '(/|/?#([^/]*))?$').test(requestPath)
     }
@@ -211,13 +218,6 @@ $(function () {
 
     static getHash(path) {
       return path.replace(Page.HASH_REGEX, '#$2')
-    }
-
-    static goHash(hash) {
-      let $hash = $(decodeURI(hash))
-      if ($hash.length) {
-        $hash[0].scrollIntoView()
-      }
     }
 
     static on(context, selector, eventType, func) {
