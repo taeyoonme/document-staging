@@ -204,7 +204,7 @@ $(function () {
     goHash(hash) {
       let $hash = $(decodeURI(hash))
       if ($hash.length) {
-        this.main_wrapper.scrollTop($$hash.offset().top - this.main_wrapper.position().top + this.main_wrapper.scrollTop())
+        this.main_wrapper.scrollTop($hash.offset().top - this.main_wrapper.position().top + this.main_wrapper.scrollTop())
       }
     }
 
