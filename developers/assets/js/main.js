@@ -204,7 +204,8 @@ $(function () {
     goHash(hash) {
       let $hash = $(decodeURI(hash))
       if ($hash.length) {
-        this.main_wrapper.scrollTop($hash.offset().top - this.main_wrapper.position().top + this.main_wrapper.scrollTop())
+        let hash_top = ($hash.prop('tagName') === 'A') ? $hash.parent().offset().top : $hash.offset().top
+        this.main_wrapper.scrollTop(hash_top - this.main_wrapper.position().top + this.main_wrapper.scrollTop())
       }
     }
 
