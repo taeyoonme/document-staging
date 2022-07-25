@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Speaker">
 <meta http-equiv="Description" content="디바이스의 볼륨을 제어하기 위한 규격">
 <title>Developers | Guide - Speaker</title>
@@ -2435,10 +2435,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val speakerAgent = nuguAndroidClient.getAgent(DefaultSpeakerAgent.NAMESPACE)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">speakerAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">getAgent</span><span class="p">(</span><span class="nc">DefaultSpeakerAgent</span><span class="p">.</span><span class="nc">NAMESPACE</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2455,7 +2455,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2478,27 +2478,27 @@
 20
 21
 </pre></td>
-<td class="rouge-code"><pre>class MySpeaker: Speaker {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .speakerFactory(object : SpeakerFactory {
-        override fun createNuguSpeaker(): Speaker? = MySpeaker()
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MySpeaker</span><span class="p">:</span> <span class="nc">Speaker</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="nc">NuguAndroidClient</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+    <span class="p">.</span><span class="nf">speakerFactory</span><span class="p">(</span><span class="kd">object</span> <span class="err">: </span><span class="nc">SpeakerFactory</span> <span class="p">{</span>
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">createNuguSpeaker</span><span class="p">():</span> <span class="nc">Speaker</span><span class="p">?</span> <span class="p">=</span> <span class="nc">MySpeaker</span><span class="p">()</span>
 
-        override fun createAlarmSpeaker(): Speaker? = MySpeaker()
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">createAlarmSpeaker</span><span class="p">():</span> <span class="nc">Speaker</span><span class="p">?</span> <span class="p">=</span> <span class="nc">MySpeaker</span><span class="p">()</span>
 
-        override fun createCallSpeaker(): Speaker? = MySpeaker()
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">createCallSpeaker</span><span class="p">():</span> <span class="nc">Speaker</span><span class="p">?</span> <span class="p">=</span> <span class="nc">MySpeaker</span><span class="p">()</span>
 
-        override fun createExternalSpeaker(): Speaker? = MySpeaker()
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">createExternalSpeaker</span><span class="p">():</span> <span class="nc">Speaker</span><span class="p">?</span> <span class="p">=</span> <span class="nc">MySpeaker</span><span class="p">()</span>
 
-        override fun createSpeaker(type: Speaker.Type): Speaker? {
-            return when (type) {
-                Speaker.Type.NUGU -&gt; MySpeaker()
-                Speaker.Type.ALARM -&gt; MySpeaker()
-                else -&gt; MySpeaker()
-            }
-        }
-    })
+        <span class="k">override</span> <span class="k">fun</span> <span class="nf">createSpeaker</span><span class="p">(</span><span class="n">type</span><span class="p">:</span> <span class="nc">Speaker</span><span class="p">.</span><span class="nc">Type</span><span class="p">):</span> <span class="nc">Speaker</span><span class="p">?</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">when</span> <span class="p">(</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nc">Speaker</span><span class="p">.</span><span class="nc">Type</span><span class="p">.</span><span class="nc">NUGU</span> <span class="p">-&gt;</span> <span class="nc">MySpeaker</span><span class="p">()</span>
+                <span class="nc">Speaker</span><span class="p">.</span><span class="nc">Type</span><span class="p">.</span><span class="nc">ALARM</span> <span class="p">-&gt;</span> <span class="nc">MySpeaker</span><span class="p">()</span>
+                <span class="k">else</span> <span class="p">-&gt;</span> <span class="nc">MySpeaker</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2517,7 +2517,7 @@ NuguAndroidClient.Builder(...)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2525,12 +2525,12 @@ NuguAndroidClient.Builder(...)
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto speaker_handler(std::shared_ptr&lt;ISpeakerHandler&gt;(
-        CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">speaker_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ISpeakerHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">SpeakerAgent</span><span class="p">,</span> <span class="n">ISpeakerHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(speaker_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">speaker_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2565,18 +2565,18 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>class MySpeaker: Speaker {
-    override fun getSpeakerSettings(): Speaker.SpeakerSettings? {
-        ...
-    }
-}
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MySpeaker</span><span class="p">:</span> <span class="nc">Speaker</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getSpeakerSettings</span><span class="p">():</span> <span class="nc">Speaker</span><span class="p">.</span><span class="nc">SpeakerSettings</span><span class="p">?</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2595,10 +2595,10 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>speaker_handler-&gt;setSpeakerInfo(speakers)
+<td class="rouge-code"><pre><span class="n">speaker_handler</span><span class="o">-&gt;</span><span class="n">setSpeakerInfo</span><span class="p">(</span><span class="n">speakers</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2635,7 +2635,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2648,17 +2648,17 @@ nugu_client-&gt;getCapabilityBuilder()
 10
 11
 </pre></td>
-<td class="rouge-code"><pre>class MySpeaker: Speaker {
-    override fun setVolume(volume: Int, rate: Rate = Rate.FAST): Boolean {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MySpeaker</span><span class="p">:</span> <span class="nc">Speaker</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">setVolume</span><span class="p">(</span><span class="n">volume</span><span class="p">:</span> <span class="nc">Int</span><span class="p">,</span> <span class="n">rate</span><span class="p">:</span> <span class="nc">Rate</span> <span class="p">=</span> <span class="nc">Rate</span><span class="p">.</span><span class="nc">FAST</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun setMute(mute: Boolean): Boolean {
-        ...
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">setMute</span><span class="p">(</span><span class="n">mute</span><span class="p">:</span> <span class="nc">Boolean</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2677,7 +2677,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2695,22 +2695,22 @@ nugu_client-&gt;getCapabilityBuilder()
 15
 16
 </pre></td>
-<td class="rouge-code"><pre>class MySpeakerListener : public ISpeakerListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MySpeakerListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ISpeakerListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void requestSetMute(const std::string &amp;ps_id, SpeakerType type, bool mute) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">requestSetMute</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">ps_id</span><span class="p">,</span> <span class="n">SpeakerType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">mute</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    void requestSetVolume(const std::string &amp;ps_id, SpeakerType type, int volume, bool linear) override
-    {
-        ...
-    }
-};
-auto speaker_listener(std::make_shared&lt;MySpeakerListener&gt;());
-CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_listener.get());
+    <span class="kt">void</span> <span class="n">requestSetVolume</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">ps_id</span><span class="p">,</span> <span class="n">SpeakerType</span> <span class="n">type</span><span class="p">,</span> <span class="kt">int</span> <span class="n">volume</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">linear</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">speaker_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MySpeakerListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">SpeakerAgent</span><span class="p">,</span> <span class="n">ISpeakerHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">speaker_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2731,7 +2731,7 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2750,24 +2750,24 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 16
 17
 </pre></td>
-<td class="rouge-code"><pre>{
-  "Speaker": {
-    "version": "1.0",
-    "volumes": [
-      {
-        "name": "{{STRING}}",
-        "group": "{{STRING}}",
-        "volume": {{LONG}},
-        "minVolume": {{LONG}},
-        "maxVolume": {{LONG}},
-        "defaultVolumeStep": {{LONG}},
-        "defaultVolumeLevel": {{LONG}},
-        "muted": {{BOOLEAN}}
-      }
-    ]
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"Speaker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volumes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"minVolume"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"maxVolume"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"defaultVolumeStep"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"defaultVolumeLevel"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"muted"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2854,7 +2854,7 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2875,26 +2875,26 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 18
 19
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Speaker",
-    "name": "SetVolume",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "rate": "{{STRING}}",
-    "volumes": [
-      {
-        "name": "{{STRING}}",
-        "volume": {{LONG}}
-      }
-    ]
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speaker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetVolume"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volumes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2940,7 +2940,7 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2961,26 +2961,26 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 18
 19
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Speaker",
-    "name": "SetVolume",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "rate": "{{STRING}}",
-    "volumes": [
-      {
-        "name": "{{STRING}}",
-        "mute": {{BOOLEAN}}
-      }
-    ]
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speaker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetVolume"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volumes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mute"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3023,7 +3023,7 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3037,19 +3037,19 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Speaker",
-    "name": "SetVolumeSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speaker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetVolumeSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3064,7 +3064,7 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3078,19 +3078,19 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Speaker",
-    "name": "SetVolumeFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speaker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetVolumeFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3105,7 +3105,7 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3119,19 +3119,19 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Speaker",
-    "name": "SetMuteSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speaker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetMuteSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3146,7 +3146,7 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3160,19 +3160,19 @@ CapabilityFactory::makeCapability&lt;SpeakerAgent, ISpeakerHandler&gt;(speaker_l
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Speaker",
-    "name": "SetMuteFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Speaker"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetMuteFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

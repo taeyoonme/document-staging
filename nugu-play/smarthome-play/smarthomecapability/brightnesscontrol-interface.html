@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - BrightnessControl Interface">
 <title>Developers | Guide - BrightnessControl Interface</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface">
@@ -2374,24 +2374,22 @@
 
 <article class="code">
     
+        <header>(POST, /nugu/v1/devices)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4
-5
 </pre></td>
-<td class="rouge-code"><pre><span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/devices</span><span class="p">)</span>
-
-<span class="err">{</span>
-    <span class="s">"token"</span><span class="nv">:</span> <span class="s">"7KOdwPQdJPZf4KYsjtHdqz3e8fKd"</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7KOdwPQdJPZf4KYsjtHdqz3e8fKd"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2466,32 +2464,32 @@
       </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
         </span><span class="nl">"colorControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"supportedColorTypes"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="s2">"BLUE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"GREEN"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CYAN"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"MINT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SKYBLUE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"PURPLE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"LAVENDER"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"COOL_WHITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SALMON"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"GOLD"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"RED"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"MAGENTA"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"CRIMSON"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WARM_WHITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"ORANGE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"SOFTWHITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"PINK"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"WHITE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"DAY_LIGHT"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"YELLOW"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"TURQUOISE"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"LIGHT_PURPLE"</span><span class="w">
-                </span><span class="p">]</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">지원</span><span class="w"> </span><span class="err">가능한</span><span class="w"> </span><span class="err">ColorType</span><span class="w"> </span><span class="err">타입</span><span class="w"> </span><span class="err">참고.</span><span class="w">
-              </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"brightnessControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">BrightnessControl</span><span class="w"> </span><span class="err">을</span><span class="w"> </span><span class="err">지원하려면</span><span class="w"> </span><span class="err">이</span><span class="w"> </span><span class="err">속성이</span><span class="w"> </span><span class="err">supportedCapabilities</span><span class="w"> </span><span class="err">에</span><span class="w"> </span><span class="err">포함되어</span><span class="w"> </span><span class="err">있어야</span><span class="w"> </span><span class="err">합니다.</span><span class="w">
+          </span><span class="nl">"supportedColorTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"BLUE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"GREEN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"CYAN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"MINT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"SKYBLUE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"PURPLE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"LAVENDER"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"COOL_WHITE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"SALMON"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"GOLD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"RED"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"MAGENTA"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"CRIMSON"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"WARM_WHITE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ORANGE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"SOFTWHITE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"PINK"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"WHITE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"DAY_LIGHT"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"YELLOW"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"TURQUOISE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"LIGHT_PURPLE"</span><span class="w">
+          </span><span class="p">]</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">지원</span><span class="w"> </span><span class="err">가능한</span><span class="w"> </span><span class="err">ColorType</span><span class="w"> </span><span class="err">타입</span><span class="w"> </span><span class="err">참고.</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"brightnessControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">BrightnessControl</span><span class="w"> </span><span class="err">을</span><span class="w"> </span><span class="err">지원하려면</span><span class="w"> </span><span class="err">이</span><span class="w"> </span><span class="err">속성이</span><span class="w"> </span><span class="err">supportedCapabilities</span><span class="w"> </span><span class="err">에</span><span class="w"> </span><span class="err">포함되어</span><span class="w"> </span><span class="err">있어야</span><span class="w"> </span><span class="err">합니다.</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
@@ -2541,12 +2539,14 @@ Directive : SetBrightness</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightness)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2581,48 +2581,42 @@ Directive : SetBrightness</p>
 32
 33
 34
-35
-36
-37
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/BrightnessControl/directives/SetBrightness</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"201909301991140f5a1e97441fa76a699284bc6035"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"BrightnessControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"SetBrightness"</span><span class="o">,</span>
-      <span class="s">"brightnessLevel"</span><span class="nv">:</span> <span class="mi">30</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"123456"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"LIGHT"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"조명"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example_device_model_name"</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"powerControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"colorControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"brightnessControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"201909301991140f5a1e97441fa76a699284bc6035"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BrightnessControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetBrightness"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"brightnessLevel"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_device_model_name"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"colorControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"brightnessControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2690,7 +2684,7 @@ Directive : SetBrightness</p>
         </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2740,12 +2734,14 @@ Directive : IncreaseBrightness</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/IncreaseBrightness)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2783,51 +2779,45 @@ Directive : IncreaseBrightness</p>
 35
 36
 37
-38
-39
-40
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/BrightnessControl/directives/IncreaseBrightness</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"2019093019f78107f1a36147688c699703f5373a56"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"BrightnessControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"IncreaseBrightness"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="err">{</span>
-        <span class="s">"brightnessDelta"</span><span class="nv">:</span> <span class="mi">3</span>
-      <span class="err">}</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"123456"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"LIGHT"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"조명"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example_model_name"</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-            <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"powerControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"colorControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"brightnessControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span><span class="o">,</span>
-      <span class="s">"userIdentifier"</span><span class="nv">:</span> <span class="s">"example_"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019093019f78107f1a36147688c699703f5373a56"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BrightnessControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IncreaseBrightness"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"brightnessDelta"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_model_name"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"colorControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"brightnessControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"userIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2895,7 +2885,7 @@ Directive : IncreaseBrightness</p>
         </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -2945,12 +2935,14 @@ Directive : DecreaseBrightness</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/DecreaseBrightness)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2987,50 +2979,44 @@ Directive : DecreaseBrightness</p>
 34
 35
 36
-37
-38
-39
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/BrightnessControl/directives/DecreaseBrightness</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"2019093019f78107f1a36147688c699703f5373a56"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"BrightnessControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"DecreaseBrightness"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="err">{</span>
-        <span class="s">"brightnessDelta"</span><span class="nv">:</span> <span class="mi">3</span>
-      <span class="err">}</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"123456"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"LIGHT"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"조명"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example_model_name"</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-            <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"powerControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"colorControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"brightnessControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019093019f78107f1a36147688c699703f5373a56"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BrightnessControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DecreaseBrightness"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"brightnessDelta"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_model_name"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"colorControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"brightnessControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3098,7 +3084,7 @@ Directive : DecreaseBrightness</p>
         </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3148,12 +3134,14 @@ Directive : SetBrightnessMax</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMax)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3187,47 +3175,41 @@ Directive : SetBrightnessMax</p>
 31
 32
 33
-34
-35
-36
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMax</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"2019093019f78107f1a36147688c699703f5373a56"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"BrightnessControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"SetBrightnessMax"</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"123456"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"LIGHT"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"조명"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example_model_name"</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-            <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"powerControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"colorControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"brightnessControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019093019f78107f1a36147688c699703f5373a56"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BrightnessControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetBrightnessMax"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_model_name"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"colorControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"brightnessControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3276,7 +3258,7 @@ Directive : SetBrightnessMax</p>
         </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3326,12 +3308,14 @@ Directive : SetBrightnessMin</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMin)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3365,47 +3349,41 @@ Directive : SetBrightnessMin</p>
 31
 32
 33
-34
-35
-36
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMin</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"2019093019f78107f1a36147688c699703f5373a56"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"BrightnessControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"SetBrightnessMin"</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"123456"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"LIGHT"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"조명"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example_model_name"</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-            <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"powerControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"colorControl"</span><span class="nv">:</span> <span class="err">{}</span><span class="o">,</span>
-          <span class="s">"brightnessControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019093019f78107f1a36147688c699703f5373a56"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BrightnessControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetBrightnessMin"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_model_name"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"colorControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+          </span><span class="nl">"brightnessControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3454,7 +3432,7 @@ Directive : SetBrightnessMin</p>
         </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"조명"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">},</span><span class="w">
       </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">

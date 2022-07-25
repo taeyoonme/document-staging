@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Text">
 <meta http-equiv="Description" content="텍스트 명령을 Play 로 전달하기 위한 규격">
 <title>Developers | Guide - Text</title>
@@ -2445,10 +2445,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val textAgent = nuguAndroidClient.textAgent
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">textAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="n">textAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2467,10 +2467,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let textAgent = nuguClient.textAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">textAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">textAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2489,7 +2489,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2497,12 +2497,12 @@
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto text_handler(std::shared_ptr&lt;ITextHandler&gt;(
-        CapabilityFactory::makeCapability&lt;TextAgent, ITextHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">text_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ITextHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">TextAgent</span><span class="p">,</span> <span class="n">ITextHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(text_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">text_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2537,10 +2537,10 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>textAgent.requestTextInput(text)
+<td class="rouge-code"><pre><span class="n">textAgent</span><span class="p">.</span><span class="nf">requestTextInput</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2557,10 +2557,10 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>textAgent.requestTextInput(text: textInput, requestType: .normal)
+<td class="rouge-code"><pre><span class="n">textAgent</span><span class="o">.</span><span class="nf">requestTextInput</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="n">textInput</span><span class="p">,</span> <span class="nv">requestType</span><span class="p">:</span> <span class="o">.</span><span class="n">normal</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2577,10 +2577,10 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>text_handler-&gt;requestTextInput(text)
+<td class="rouge-code"><pre><span class="n">text_handler</span><span class="o">-&gt;</span><span class="n">requestTextInput</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>

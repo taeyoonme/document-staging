@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - NUGU 사용자 인터페이스">
 <meta http-equiv="Description" content="User Interface">
 <title>Developers | Guide - NUGU 사용자 인터페이스</title>
@@ -2394,10 +2394,10 @@
 3
 4
 </pre></td>
-<td class="rouge-code"><pre>   <span class="nt">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout</span>
-           <span class="na">android:id=</span><span class="s">"@+id/coordinator"</span>
-           <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-           <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
+<td class="rouge-code"><pre><span class="nt">&lt;androidx.coordinatorlayout.widget.CoordinatorLayout</span>
+       <span class="na">android:id=</span><span class="s">"@+id/coordinator"</span>
+       <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+       <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2417,7 +2417,7 @@
 <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>   <span class="kd">val</span> <span class="py">chromeWindow</span> <span class="p">=</span> <span class="nc">ChromeWindow</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">CoordinatorLayout</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">coordinator</span><span class="p">))</span>
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">chromeWindow</span> <span class="p">=</span> <span class="nc">ChromeWindow</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">findViewById</span><span class="p">&lt;</span><span class="nc">CoordinatorLayout</span><span class="p">&gt;(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">coordinator</span><span class="p">))</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2449,19 +2449,19 @@
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>   <span class="n">chromeWindow</span><span class="p">.</span><span class="nf">setOnChromeWindowCallback</span><span class="p">(</span><span class="kd">object</span> <span class="err">: </span><span class="nc">ChromeWindow</span><span class="p">.</span><span class="nc">OnChromeWindowCallback</span> <span class="p">{</span>
-       <span class="k">override</span> <span class="k">fun</span> <span class="nf">onExpandStarted</span><span class="p">()</span> <span class="p">{</span>
-         <span class="c1">// ChromeWindow 시작 </span>
-       <span class="p">}</span>
+<td class="rouge-code"><pre><span class="n">chromeWindow</span><span class="p">.</span><span class="nf">setOnChromeWindowCallback</span><span class="p">(</span><span class="kd">object</span> <span class="err">: </span><span class="nc">ChromeWindow</span><span class="p">.</span><span class="nc">OnChromeWindowCallback</span> <span class="p">{</span>
+   <span class="k">override</span> <span class="k">fun</span> <span class="nf">onExpandStarted</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// ChromeWindow 시작 </span>
+   <span class="p">}</span>
 
-       <span class="k">override</span> <span class="k">fun</span> <span class="nf">onHiddenFinished</span><span class="p">()</span> <span class="p">{</span>
-         <span class="c1">// ChromeWindow 종료</span>
-       <span class="p">}</span>
+   <span class="k">override</span> <span class="k">fun</span> <span class="nf">onHiddenFinished</span><span class="p">()</span> <span class="p">{</span>
+     <span class="c1">// ChromeWindow 종료</span>
+   <span class="p">}</span>
 
-       <span class="k">override</span> <span class="k">fun</span> <span class="nf">onChipsClicked</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="nc">NuguChipsView</span><span class="p">.</span><span class="nc">Item</span><span class="p">)</span> <span class="p">{</span>
-         <span class="c1">// Chips 아이템이 클릭</span>
-       <span class="p">}</span>
-   <span class="p">})</span>
+   <span class="k">override</span> <span class="k">fun</span> <span class="nf">onChipsClicked</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="nc">NuguChipsView</span><span class="p">.</span><span class="nc">Item</span><span class="p">)</span> <span class="p">{</span>
+     <span class="c1">// Chips 아이템이 클릭</span>
+   <span class="p">}</span>
+<span class="p">})</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2484,10 +2484,10 @@
 3
 4
 </pre></td>
-<td class="rouge-code"><pre>   <span class="n">chromeWindow</span><span class="p">.</span><span class="nf">apply</span> <span class="p">{</span>
-       <span class="nc">ClientManager</span><span class="p">.</span><span class="nf">getClient</span><span class="p">().</span><span class="nf">addDialogUXStateListener</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-       <span class="nc">ClientManager</span><span class="p">.</span><span class="nf">getClient</span><span class="p">().</span><span class="nf">addASRResultListener</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-   <span class="p">}</span>
+<td class="rouge-code"><pre><span class="n">chromeWindow</span><span class="p">.</span><span class="nf">apply</span> <span class="p">{</span>
+   <span class="nc">ClientManager</span><span class="p">.</span><span class="nf">getClient</span><span class="p">().</span><span class="nf">addDialogUXStateListener</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+   <span class="nc">ClientManager</span><span class="p">.</span><span class="nf">getClient</span><span class="p">().</span><span class="nf">addASRResultListener</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2547,16 +2547,16 @@
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>   <span class="nt">&lt;com.skt.nugu.sdk.platform.android.ux.widget.NuguButton</span>
-       <span class="na">android:id=</span><span class="s">"@+id/fab"</span>
-       <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
-       <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
-       <span class="na">android:layout_gravity=</span><span class="s">"bottom|end"</span>
-       <span class="na">android:layout_marginEnd=</span><span class="s">"14dp"</span>
-       <span class="na">android:layout_marginBottom=</span><span class="s">"10dp"</span>
-       <span class="na">android:contentDescription=</span><span class="s">"@string/button_fab_description"</span>
-       <span class="na">app:colors=</span><span class="s">"blue"</span>
-       <span class="na">app:types=</span><span class="s">"fab"</span> <span class="nt">/&gt;</span>
+<td class="rouge-code"><pre><span class="nt">&lt;com.skt.nugu.sdk.platform.android.ux.widget.NuguButton</span>
+   <span class="na">android:id=</span><span class="s">"@+id/fab"</span>
+   <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+   <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+   <span class="na">android:layout_gravity=</span><span class="s">"bottom|end"</span>
+   <span class="na">android:layout_marginEnd=</span><span class="s">"14dp"</span>
+   <span class="na">android:layout_marginBottom=</span><span class="s">"10dp"</span>
+   <span class="na">android:contentDescription=</span><span class="s">"@string/button_fab_description"</span>
+   <span class="na">app:colors=</span><span class="s">"blue"</span>
+   <span class="na">app:types=</span><span class="s">"fab"</span> <span class="nt">/&gt;</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2622,11 +2622,11 @@ ex) TemplateView.nuguButtonColor = NuguButtonColor.WHITE</p>
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>   <span class="nc">NuguToast</span><span class="p">.</span><span class="nf">with</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
-           <span class="p">.</span><span class="nf">message</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">string</span><span class="p">.</span><span class="n">volume_mute</span><span class="p">)</span>
-           <span class="p">.</span><span class="nf">duration</span><span class="p">(</span><span class="nc">NuguToast</span><span class="p">.</span><span class="nc">LENGTH_SHORT</span><span class="p">)</span>
-           <span class="p">.</span><span class="nf">yOffset</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
-           <span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+<td class="rouge-code"><pre><span class="nc">NuguToast</span><span class="p">.</span><span class="nf">with</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">message</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">string</span><span class="p">.</span><span class="n">volume_mute</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">duration</span><span class="p">(</span><span class="nc">NuguToast</span><span class="p">.</span><span class="nc">LENGTH_SHORT</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">yOffset</span><span class="p">(</span><span class="n">height</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2665,10 +2665,10 @@ ex) TemplateView.nuguButtonColor = NuguButtonColor.WHITE</p>
 3
 4
 </pre></td>
-<td class="rouge-code"><pre>   <span class="nc">NuguSnackbar</span><span class="p">.</span><span class="nf">with</span><span class="p">(</span><span class="nf">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">drawer_layout</span><span class="p">))</span>   
-           <span class="p">.</span><span class="nf">message</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">string</span><span class="p">.</span><span class="n">device_gw_error_002</span><span class="p">)</span>
-           <span class="p">.</span><span class="nf">duration</span><span class="p">(</span><span class="nc">NuguSnackbar</span><span class="p">.</span><span class="nc">LENGTH_LONG</span><span class="p">)</span>
-           <span class="p">.</span><span class="nf">show</span><span class="p">()</span>
+<td class="rouge-code"><pre><span class="nc">NuguSnackbar</span><span class="p">.</span><span class="nf">with</span><span class="p">(</span><span class="nf">findViewById</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">id</span><span class="p">.</span><span class="n">drawer_layout</span><span class="p">))</span>   
+       <span class="p">.</span><span class="nf">message</span><span class="p">(</span><span class="nc">R</span><span class="p">.</span><span class="n">string</span><span class="p">.</span><span class="n">device_gw_error_002</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">duration</span><span class="p">(</span><span class="nc">NuguSnackbar</span><span class="p">.</span><span class="nc">LENGTH_LONG</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">show</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>

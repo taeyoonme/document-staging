@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Message">
 <meta http-equiv="Description" content="문자 확인 및 전송 기능 제어를 위한 규격">
 <title>Developers | Guide - Message</title>
@@ -2438,10 +2438,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val messageAgent = nuguAndroidClient.getAgent(MessageAgent.NAMESPACE)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">messageAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">getAgent</span><span class="p">(</span><span class="nc">MessageAgent</span><span class="p">.</span><span class="nc">NAMESPACE</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2456,18 +2456,18 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>class MyMessageClient: MessageClient {
-    ...
-}
-NuguAndroidClient().Builder()
-    .enableMessage(MyMessageClient())
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyMessageClient</span><span class="p">:</span> <span class="nc">MessageClient</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="nc">NuguAndroidClient</span><span class="p">().</span><span class="nc">Builder</span><span class="p">()</span>
+    <span class="p">.</span><span class="nf">enableMessage</span><span class="p">(</span><span class="nc">MyMessageClient</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2486,7 +2486,7 @@ NuguAndroidClient().Builder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2494,12 +2494,12 @@ NuguAndroidClient().Builder()
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto message_handler(std::shared_ptr&lt;IMessageHandler&gt;(
-        CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">message_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IMessageHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">MessageAgent</span><span class="p">,</span> <span class="n">IMessageHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(message_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">message_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2532,7 +2532,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2541,13 +2541,13 @@ nugu_client-&gt;getCapabilityBuilder()
 6
 7
 </pre></td>
-<td class="rouge-code"><pre>class MyMessageClient: MessageClient {
-    override fun getContext(): Context {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyMessageClient</span><span class="p">:</span> <span class="nc">MessageClient</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getContext</span><span class="p">():</span> <span class="nc">Context</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2582,7 +2582,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2597,19 +2597,19 @@ nugu_client-&gt;getCapabilityBuilder()
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>class MyMessageClient: MessageClient {
-    override fun sendCandidates(payload: SendCandidatesPayload, callback: Callback) {
-        // 연락처 검색 기능을 구현
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyMessageClient</span><span class="p">:</span> <span class="nc">MessageClient</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">sendCandidates</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="nc">SendCandidatesPayload</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="nc">Callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 연락처 검색 기능을 구현</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun sendMessage(payload: SendMessagePayload, callback: EventCallback) {
-        // 문자 전송 기능을 구현
-        ...
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">sendMessage</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="nc">SendMessagePayload</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="nc">EventCallback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 문자 전송 기능을 구현</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2628,7 +2628,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2648,24 +2648,24 @@ nugu_client-&gt;getCapabilityBuilder()
 17
 18
 </pre></td>
-<td class="rouge-code"><pre>class MyMessageListener : public IMessageListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MyMessageListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IMessageListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void processSendCandidates(const std::string&amp; payload) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">processSendCandidates</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">payload</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
     
-    void processSendMessage(const std::string&amp; payload) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">processSendMessage</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">payload</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto message_listener(std::make_shared&lt;MyMessageListener&gt;());
-CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">message_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MyMessageListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">MessageAgent</span><span class="p">,</span> <span class="n">IMessageHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">message_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2700,7 +2700,7 @@ CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2709,13 +2709,13 @@ CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_l
 6
 7
 </pre></td>
-<td class="rouge-code"><pre>class MyMessageClient: MessageClient {
-    override fun getMessageList(payload: GetMessagePayload, callback: Callback) {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyMessageClient</span><span class="p">:</span> <span class="nc">MessageClient</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getMessageList</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="nc">GetMessagePayload</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="nc">Callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2735,7 +2735,7 @@ CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2750,19 +2750,19 @@ CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_l
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>class MyMessageListener : public IMessageListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MyMessageListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IMessageListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void processGetMessage(const std::string&amp; payload) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">processGetMessage</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">payload</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto message_listener(std::make_shared&lt;MyMessageListener&gt;());
-CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">message_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MyMessageListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">MessageAgent</span><span class="p">,</span> <span class="n">IMessageHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">message_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2795,16 +2795,16 @@ CapabilityFactory::makeCapability&lt;MessageAgent, IMessageHandler&gt;(message_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: MessageAgentInterface.OnPlaybackListener {
-    ...
-}
-messageAgent.addOnPlaybackListener(listener)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">MessageAgentInterface</span><span class="p">.</span><span class="nc">OnPlaybackListener</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="n">messageAgent</span><span class="p">.</span><span class="nf">addOnPlaybackListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2825,7 +2825,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2847,27 +2847,27 @@ messageAgent.addOnPlaybackListener(listener)
 19
 20
 </pre></td>
-<td class="rouge-code"><pre>{
-  "Message": {
-    "version": "1.2",
-    "readActivity": "{{STRING}}",
-    "token": "{{STRING}}",
-    "template": {
-      "info": "{{STRING}}",
-      "recipientIntended": {
-        "name": "{{STRING}}",
-        "label": "{{STRING}}"
-      },
-      "searchScene": "{{STRING}}",
-      "candidates": [array of Contact],
-      "messageToSend": {
-        "text": "{{STRING}}",
-        "type": "{{STRING}}"
-      }
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"Message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"readActivity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"recipientIntended"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"searchScene"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"candidates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Contact</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"messageToSend"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2971,7 +2971,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2988,22 +2988,22 @@ messageAgent.addOnPlaybackListener(listener)
 14
 15
 </pre></td>
-<td class="rouge-code"><pre>{
-  "name": "{{STRING}}",
-  "type": "{{STRING}}",
-  "number": "{{STRING}}",
-  "label": "{{STRING}}",
-  "profileImgUrl": "{{STRING}}",
-  "message": {
-    "text": "{{STRING}}",
-    "type": "{{STRING}}"
-  },
-  "time": "{{STRING}}",
-  "numInMessageHistory": "{{STRING}}",
-  "token": "{{STRING}}",
-  "score": "{{STRING}}"
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"profileImgUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"numInMessageHistory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3109,7 +3109,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3133,29 +3133,29 @@ messageAgent.addOnPlaybackListener(listener)
 21
 22
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "SendCandidates",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "recipientIntended": {
-      "name": "{{STRING}}",
-      "label": "{{STRING}}"
-    },
-    "searchScene": "{{STRING}}",
-    "candidates": [array of Contact],
-    "messageToSend": {
-      "text": "{{STRING}}",
-      "type": "{{STRING}}"
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SendCandidates"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipientIntended"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"searchScene"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"candidates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Contact</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"messageToSend"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3239,7 +3239,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3254,20 +3254,20 @@ messageAgent.addOnPlaybackListener(listener)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "SendMessage",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "recipient": Contact
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SendMessage"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="err">Contact</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3301,7 +3301,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3320,24 +3320,24 @@ messageAgent.addOnPlaybackListener(listener)
 16
 17
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "GetMessage",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "recipientIntended": {
-      "name": "{{STRING}}",
-      "label": "{{STRING}}"
-    },
-    "candidates": [array of Contact]
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetMessage"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipientIntended"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"candidates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Contact</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3390,7 +3390,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3406,21 +3406,21 @@ messageAgent.addOnPlaybackListener(listener)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "ReadMessage",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "receivedTime": "{{STRING}}",
-    "token": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ReadMessage"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"receivedTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3468,7 +3468,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3482,19 +3482,19 @@ messageAgent.addOnPlaybackListener(listener)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "CandidatesListed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CandidatesListed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3509,7 +3509,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3524,20 +3524,20 @@ messageAgent.addOnPlaybackListener(listener)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "SendMessageSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "recipient": Contact
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SendMessageSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="err">Contact</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3571,7 +3571,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3587,21 +3587,21 @@ messageAgent.addOnPlaybackListener(listener)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "SendMessageFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "recipient": Contact,
-    "errorCode": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SendMessageFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="err">Contact</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3641,7 +3641,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3656,20 +3656,20 @@ messageAgent.addOnPlaybackListener(listener)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "GetMessageSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "candidates": [array of Contact]
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetMessageSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"candidates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Contact</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3703,7 +3703,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3718,20 +3718,20 @@ messageAgent.addOnPlaybackListener(listener)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "GetMessageFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "errorCode": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetMessageFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3765,7 +3765,7 @@ messageAgent.addOnPlaybackListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3780,20 +3780,20 @@ messageAgent.addOnPlaybackListener(listener)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Message",
-    "name": "ReadMessageFinished",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Message"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ReadMessageFinished"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

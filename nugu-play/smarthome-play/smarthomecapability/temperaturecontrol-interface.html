@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - TemperatureControl Interface">
 <title>Developers | Guide - TemperatureControl Interface</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface">
@@ -2374,24 +2374,22 @@
 
 <article class="code">
     
+        <header>(POST, /nugu/v1/devices)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4
-5
 </pre></td>
-<td class="rouge-code"><pre><span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/devices</span><span class="p">)</span>
-
-<span class="err">{</span>
-    <span class="s">"token"</span><span class="nv">:</span> <span class="s">"7KOdwPQdJPZf4KYsjtHdqz3e8fKd"</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7KOdwPQdJPZf4KYsjtHdqz3e8fKd"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2429,29 +2427,33 @@
 21
 22
 23
+24
+25
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AIR_CONDITIONER"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"에어컨"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example air_conditioner"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"friendlyNameSuggestion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example manufacturer"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"temperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"deviceTemperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                  </span><span class="nl">"minTemperature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"maxTemperature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29"</span><span class="p">,</span><span class="w">
-                  </span><span class="nl">"temperatureStep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="s2">"온도 25도로 설정해줘"</span><span class="w"> </span><span class="err">등</span><span class="w"> </span><span class="err">TemperatureControl</span><span class="w"> </span><span class="err">을</span><span class="w"> </span><span class="err">지원하기</span><span class="w"> </span><span class="err">위해서는</span><span class="w"> </span><span class="err">이</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">를</span><span class="w"> </span><span class="err">supportedCapabilities</span><span class="w"> </span><span class="err">에</span><span class="w"> </span><span class="err">포함해야</span><span class="w"> </span><span class="err">합니다.</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">}]</span><span class="w">
+  </span><span class="nl">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AIR_CONDITIONER"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"에어컨"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example air_conditioner"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"friendlyNameSuggestion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example manufacturer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"deviceTemperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"minTemperature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"maxTemperature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"temperatureStep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="s2">"온도 25도로 설정해줘"</span><span class="w"> </span><span class="err">등</span><span class="w"> </span><span class="err">TemperatureControl</span><span class="w"> </span><span class="err">을</span><span class="w"> </span><span class="err">지원하기</span><span class="w"> </span><span class="err">위해서는</span><span class="w"> </span><span class="err">이</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">를</span><span class="w"> </span><span class="err">supportedCapabilities</span><span class="w"> </span><span class="err">에</span><span class="w"> </span><span class="err">포함해야</span><span class="w"> </span><span class="err">합니다.</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -2509,12 +2511,14 @@ Directive : AskTemperature</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/AskTemperature)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2549,48 +2553,42 @@ Directive : AskTemperature</p>
 32
 33
 34
-35
-36
-37
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/TemperatureControl/directives/AskTemperature</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"TemperatureControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"AskTemperature"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="nv">null</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"1234567"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"AIR_CONDITIONER"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"에어컨"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example air_conditioner"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"manufacturer"</span><span class="nv">:</span> <span class="s">"example manufacturer"</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"connectionStatus"</span><span class="nv">:</span> <span class="nv">true</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TemperatureControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AskTemperature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AIR_CONDITIONER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"에어컨"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example air_conditioner"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example manufacturer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"temperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2620,17 +2618,17 @@ Directive : AskTemperature</p>
 13
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"currentTemperature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
-                </span><span class="nl">"temperatureLevel"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"currentTemperature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"25"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
+        </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -2678,12 +2676,14 @@ Directive : SetTemperature</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2720,50 +2720,44 @@ Directive : SetTemperature</p>
 34
 35
 36
-37
-38
-39
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/TemperatureControl/directives/SetTemperature</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"TemperatureControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"SetTemperature"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureLevel"</span><span class="nv">:</span> <span class="s">"20"</span>
-      <span class="err">}</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"1234567"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"AIR_CONDITIONER"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"에어컨"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example air_conditioner"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"manufacturer"</span><span class="nv">:</span> <span class="s">"example manufacturer"</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"connectionStatus"</span><span class="nv">:</span> <span class="nv">true</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TemperatureControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetTemperature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AIR_CONDITIONER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"에어컨"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example air_conditioner"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example manufacturer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"temperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2811,16 +2805,16 @@ Directive : SetTemperature</p>
 12
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -2863,12 +2857,14 @@ Directive : IncreaseTemperature</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2905,50 +2901,44 @@ Directive : IncreaseTemperature</p>
 34
 35
 36
-37
-38
-39
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"TemperatureControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"IncreaseTemperature"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureDelta"</span><span class="nv">:</span> <span class="s">"3"</span>
-      <span class="err">}</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"1234567"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"AIR_CONDITIONER"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"에어컨"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example air_conditioner"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"manufacturer"</span><span class="nv">:</span> <span class="s">"example manufacturer"</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"connectionStatus"</span><span class="nv">:</span> <span class="nv">true</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TemperatureControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IncreaseTemperature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureDelta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AIR_CONDITIONER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"에어컨"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example air_conditioner"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example manufacturer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"temperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2996,16 +2986,16 @@ Directive : IncreaseTemperature</p>
 12
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -3048,12 +3038,14 @@ Directive : DecreaseTemperature</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/DecreaseTemperature)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3090,50 +3082,44 @@ Directive : DecreaseTemperature</p>
 34
 35
 36
-37
-38
-39
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/TemperatureControl/directives/DecreaseTemperature</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"TemperatureControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"DecreaseTemperature"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureDelta"</span><span class="nv">:</span> <span class="s">"3"</span>
-      <span class="err">}</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"1234567"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"AIR_CONDITIONER"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"에어컨"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example air_conditioner"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"manufacturer"</span><span class="nv">:</span> <span class="s">"example manufacturer"</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"connectionStatus"</span><span class="nv">:</span> <span class="nv">true</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TemperatureControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DecreaseTemperature"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureDelta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AIR_CONDITIONER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"에어컨"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example air_conditioner"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example manufacturer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"temperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3181,16 +3167,16 @@ Directive : DecreaseTemperature</p>
 12
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -3233,12 +3219,14 @@ Directive : SetTemperatureMax</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMax)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3273,48 +3261,42 @@ Directive : SetTemperatureMax</p>
 32
 33
 34
-35
-36
-37
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMax</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"TemperatureControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"SetTemperatureMax"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="nv">null</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"1234567"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"AIR_CONDITIONER"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"에어컨"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example air_conditioner"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"manufacturer"</span><span class="nv">:</span> <span class="s">"example manufacturer"</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"connectionStatus"</span><span class="nv">:</span> <span class="nv">true</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TemperatureControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetTemperatureMax"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AIR_CONDITIONER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"에어컨"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example air_conditioner"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example manufacturer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"temperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3343,16 +3325,16 @@ Directive : SetTemperatureMax</p>
 12
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -3395,12 +3377,14 @@ Directive : SetTemperatureMin</p>
 
 <article class="code">
     
+        <header>Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMin)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3435,48 +3419,42 @@ Directive : SetTemperatureMin</p>
 32
 33
 34
-35
-36
-37
 </pre></td>
-<td class="rouge-code"><pre><span class="nv">Control</span> <span class="nv">Request</span> <span class="err">예시</span> <span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMin</span><span class="p">)</span>
-
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"TemperatureControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"SetTemperatureMin"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="nv">null</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"1234567"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"AIR_CONDITIONER"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"에어컨"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example air_conditioner"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"거실"</span><span class="o">,</span>
-        <span class="s">"manufacturer"</span><span class="nv">:</span> <span class="s">"example manufacturer"</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"temperatureControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"connectionStatus"</span><span class="nv">:</span> <span class="nv">true</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TemperatureControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SetTemperatureMin"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AIR_CONDITIONER"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"에어컨"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example air_conditioner"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"거실"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example manufacturer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"temperatureControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3490,7 +3468,7 @@ Directive : SetTemperatureMin</p>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3504,19 +3482,19 @@ Directive : SetTemperatureMin</p>
 11
 12
 </pre></td>
-<td class="rouge-code"><pre><span class="err">{</span>
-    <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span> <span class="nv">&lt;--</span> <span class="nv">request</span><span class="err">로</span> <span class="err">받은</span> <span class="err">값을</span> <span class="err">그대로</span> <span class="err">응답</span>
-    <span class="s">"data"</span><span class="nv">:</span><span class="p">[</span>
-        <span class="err">{</span>
-            <span class="s">"resultCode"</span><span class="nv">:</span> <span class="s">"OK"</span> <span class="nv">&lt;--</span> <span class="err">에러일</span> <span class="err">경우</span> <span class="err">에러코드</span> <span class="err">응답</span>
-            <span class="s">"smartHomeDevice"</span><span class="nv">:</span> <span class="err">{}</span> <span class="nv">&lt;--</span> <span class="nv">request</span><span class="err">로</span> <span class="err">받은</span> <span class="err">값을</span> <span class="err">그대로</span> <span class="err">응답</span>
-            <span class="s">"properties"</span><span class="nv">:</span> <span class="err">{</span>
-                <span class="s">"temperatureLevel"</span><span class="nv">:</span> <span class="s">"18"</span> <span class="nv">&lt;--</span> <span class="nv">directive</span> <span class="err">마다</span> <span class="err">필요한</span> <span class="nv">property</span> <span class="err">채워서</span> <span class="err">응답</span><span class="o">.</span>
-            <span class="err">}</span>
-        <span class="err">}</span>
-    <span class="p">]</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"temperatureLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"18"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답.</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

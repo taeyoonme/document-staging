@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - 전용디바이스 그룹별 Announcement 전송">
 <title>Developers | Guide - 전용디바이스 그룹별 Announcement 전송</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice">
@@ -2376,7 +2376,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
 <td class="rouge-code"><pre>[POST] https://biz-api.sktnugu.com/api/v1/sharedDevice/group/{groupApiToken}/announcement?callBack={callBackUrl}
@@ -2421,24 +2421,30 @@
 16
 17
 18
+19
+20
+21
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"tts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"발송 내용"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"speed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pause1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"pause2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nl">"display"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imageText2"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"타이틀"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"헤더"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"본문"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"footer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"부가설명"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://imageUrl"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"grammarGuide"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"발화문1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"발화문2"</span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"발송 내용"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"speed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pause1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pause2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"display"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"imageText2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"타이틀"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"헤더"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"본문"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"footer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"부가설명"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://imageUrl"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"grammarGuide"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"발화문1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"발화문2"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -2698,13 +2704,13 @@
 9
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"uniqueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"uniqueName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XXX"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>

@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Session">
 <meta http-equiv="Description" content="Play 와 Client 간의 세션을 유지하기 위한 규격">
 <title>Developers | Guide - Session</title>
@@ -2420,10 +2420,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val sessionAgent = nuguAndroidClient.getAgent(SessionAgent.NAMESPACE)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">sessionAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">getAgent</span><span class="p">(</span><span class="nc">SessionAgent</span><span class="p">.</span><span class="nc">NAMESPACE</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2443,10 +2443,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let sessionAgent = nuguClient.sessionAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">sessionAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">sessionAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2463,10 +2463,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let dialogStateAggregator = nuguClient.dialogStateAggregator
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">dialogStateAggregator</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">dialogStateAggregator</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2485,7 +2485,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2493,12 +2493,12 @@
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto session_handler(std::shared_ptr&lt;ISessionHandler&gt;(
-        CapabilityFactory::makeCapability&lt;SessionAgent, ISessionHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">session_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ISessionHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">SessionAgent</span><span class="p">,</span> <span class="n">ISessionHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(session_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">session_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2535,7 +2535,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2543,12 +2543,12 @@ nugu_client-&gt;getCapabilityBuilder()
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: DialogUXStateAggregatorInterface.Listener {
-    override fun onDialogUXStateChanged(newState: DialogUXState, dialogMode: Boolean, chips: RenderDirective.Payload?, sessionActivated: Boolean) {
-        ...
-    }
-}
-nuguAndroidClient.addDialogUXStateListener(listener)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">DialogUXStateAggregatorInterface</span><span class="p">.</span><span class="nc">Listener</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onDialogUXStateChanged</span><span class="p">(</span><span class="n">newState</span><span class="p">:</span> <span class="nc">DialogUXState</span><span class="p">,</span> <span class="n">dialogMode</span><span class="p">:</span> <span class="nc">Boolean</span><span class="p">,</span> <span class="n">chips</span><span class="p">:</span> <span class="nc">RenderDirective</span><span class="p">.</span><span class="nc">Payload</span><span class="p">?,</span> <span class="n">sessionActivated</span><span class="p">:</span> <span class="nc">Boolean</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">addDialogUXStateListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2567,7 +2567,7 @@ nuguAndroidClient.addDialogUXStateListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2575,12 +2575,12 @@ nuguAndroidClient.addDialogUXStateListener(listener)
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>class MyDialogStateDelegate: DialogStateDelegate {
-    func dialogStateDidChange(_ state: DialogState, isMultiturn: Bool, chips: [ChipsAgentItem.Chip]?, sessionActivated: Bool) {
-        ...
-    }
-}
-dialogStateAggregator.add(delegate: MyDialogStateDelegate())
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyDialogStateDelegate</span><span class="p">:</span> <span class="kt">DialogStateDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">dialogStateDidChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">DialogState</span><span class="p">,</span> <span class="nv">isMultiturn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">chips</span><span class="p">:</span> <span class="p">[</span><span class="kt">ChipsAgentItem</span><span class="o">.</span><span class="kt">Chip</span><span class="p">]?,</span> <span class="nv">sessionActivated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">dialogStateAggregator</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt">MyDialogStateDelegate</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2599,7 +2599,7 @@ dialogStateAggregator.add(delegate: MyDialogStateDelegate())
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2614,19 +2614,19 @@ dialogStateAggregator.add(delegate: MyDialogStateDelegate())
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>class MySessionListener : public ISessionListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MySessionListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ISessionListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void onState(SessionState state, const std::string&amp; dialog_id) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">onState</span><span class="p">(</span><span class="n">SessionState</span> <span class="n">state</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto session_listener(std::make_shared&lt;MySessionListener&gt;());
-CapabilityFactory::makeCapability&lt;SessionAgent, ISessionHandler&gt;(session_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">session_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MySessionListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">SessionAgent</span><span class="p">,</span> <span class="n">ISessionHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">session_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2647,7 +2647,7 @@ CapabilityFactory::makeCapability&lt;SessionAgent, ISessionHandler&gt;(session_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2660,18 +2660,18 @@ CapabilityFactory::makeCapability&lt;SessionAgent, ISessionHandler&gt;(session_l
 10
 11
 </pre></td>
-<td class="rouge-code"><pre>{
-  "Session": {
-    "version": "1.1",
-    "list": [
-      {
-        "sessionId": "{{STRING}}",
-        "playServiceId": "{{STRING}}"
-      }
-    ]
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"Session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2720,7 +2720,7 @@ CapabilityFactory::makeCapability&lt;SessionAgent, ISessionHandler&gt;(session_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2735,20 +2735,20 @@ CapabilityFactory::makeCapability&lt;SessionAgent, ISessionHandler&gt;(session_l
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "Session": {
-    "namespace": "Session",
-    "name": "Set",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "sessionId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"Session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Session"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Set"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sessionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

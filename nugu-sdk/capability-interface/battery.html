@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Battery">
 <meta http-equiv="Description" content="디바이스 배터리 정보를 Play 로 전달하기 위한 규격">
 <title>Developers | Guide - Battery</title>
@@ -2428,10 +2428,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val batteryAgent = nuguAndroidClient.getAgent(DefaultBatteryAgent.NAMESPACE)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">batteryAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">getAgent</span><span class="p">(</span><span class="nc">DefaultBatteryAgent</span><span class="p">.</span><span class="nc">NAMESPACE</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2448,18 +2448,18 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>class MyBatteryStatusProvider: BatteryStatusProvider {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .enableBattery(MyBatteryStatusProvider())
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyBatteryStatusProvider</span><span class="p">:</span> <span class="nc">BatteryStatusProvider</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="nc">NuguAndroidClient</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+    <span class="p">.</span><span class="nf">enableBattery</span><span class="p">(</span><span class="nc">MyBatteryStatusProvider</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2492,7 +2492,7 @@ NuguAndroidClient.Builder(...)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2503,15 +2503,15 @@ NuguAndroidClient.Builder(...)
 8
 9
 </pre></td>
-<td class="rouge-code"><pre>class MyBatteryStatusProvider: BatteryStatusProvider {
-    override fun getBatteryLevel(): Int {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyBatteryStatusProvider</span><span class="p">:</span> <span class="nc">BatteryStatusProvider</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getBatteryLevel</span><span class="p">():</span> <span class="nc">Int</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun isCharging(): Boolean? {
-        ...
-    }
-}
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">isCharging</span><span class="p">():</span> <span class="nc">Boolean</span><span class="p">?</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>

@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Location">
 <meta http-equiv="Description" content="디바이스 위치 정보를 Play 로 전달하기 위한 규격">
 <title>Developers | Guide - Location</title>
@@ -2425,10 +2425,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val locationAgent = nuguAndroidClient.getAgent(LocationAgent.NAMESPACE)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">locationAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">getAgent</span><span class="p">(</span><span class="nc">LocationAgent</span><span class="p">.</span><span class="nc">NAMESPACE</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2447,10 +2447,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let locationAgent = nuguClient.locationAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">locationAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">locationAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2485,7 +2485,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2494,13 +2494,13 @@
 6
 7
 </pre></td>
-<td class="rouge-code"><pre>val provider = object: LocationProvider {
-    override fun getLocation(): Location? {
-        ...
-    }
-}
-NuguAndroidClient.Builder(...)
-    .enableLocation(provider)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">provider</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">LocationProvider</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getLocation</span><span class="p">():</span> <span class="nc">Location</span><span class="p">?</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nc">NuguAndroidClient</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+    <span class="p">.</span><span class="nf">enableLocation</span><span class="p">(</span><span class="n">provider</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2519,7 +2519,7 @@ NuguAndroidClient.Builder(...)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2527,12 +2527,12 @@ NuguAndroidClient.Builder(...)
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>class MyLocationAgentDelegate: LocationAgentDelegate {
-    func locationAgentRequestLocationInfo() -&gt; LocationInfo? {
-        ...
-    }
-}
-locationAgent.delegate = MyLocationAgentDelegate()
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyLocationAgentDelegate</span><span class="p">:</span> <span class="kt">LocationAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">locationAgentRequestLocationInfo</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">LocationInfo</span><span class="p">?</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">locationAgent</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">MyLocationAgentDelegate</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2553,7 +2553,7 @@ locationAgent.delegate = MyLocationAgentDelegate()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2564,16 +2564,16 @@ locationAgent.delegate = MyLocationAgentDelegate()
 8
 9
 </pre></td>
-<td class="rouge-code"><pre>{
-  "Location": {
-    "version": "1.0",
-    "current": {
-      "latitude": "{{STRING}}",
-      "longitude": "{{STRING}}"
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"Location"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"current"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

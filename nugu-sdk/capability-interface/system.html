@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - System">
 <meta http-equiv="Description" content="디바이스의 전원 및 네트워크 연결 상태를 관리하기 위한 규격">
 <title>Developers | Guide - System</title>
@@ -2435,10 +2435,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val systemAgent = nuguAndroidClient.systemAgent
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">systemAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="n">systemAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2457,10 +2457,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let systemAgent = nuguClient.systemAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">systemAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">systemAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2479,7 +2479,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2487,12 +2487,12 @@
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto system_handler(std::shared_ptr&lt;ISystemHandler&gt;(
-            CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">system_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">ISystemHandler</span><span class="o">&gt;</span><span class="p">(</span>
+            <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">SystemAgent</span><span class="p">,</span> <span class="n">ISystemHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(system_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">system_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2534,7 +2534,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2542,12 +2542,12 @@ nugu_client-&gt;getCapabilityBuilder()
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: SystemAgentInterface.Listener {
-    override fun onTurnOff() {
-        ...
-    }
-}
-systemAgent.addListener(listener)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">SystemAgentInterface</span><span class="p">.</span><span class="nc">Listener</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onTurnOff</span><span class="p">()</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">systemAgent</span><span class="p">.</span><span class="nf">addListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2566,7 +2566,7 @@ systemAgent.addListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2581,19 +2581,19 @@ systemAgent.addListener(listener)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>class MySystemListener : public ISystemListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MySystemListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ISystemListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void onTurnOff() override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">onTurnOff</span><span class="p">()</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto system_listener(std::make_shared&lt;MySystemListener&gt;());
-CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">system_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MySystemListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">SystemAgent</span><span class="p">,</span> <span class="n">ISystemHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">system_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2632,7 +2632,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2640,12 +2640,12 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: SystemAgentInterface.Listener {
-    override fun onException(code: ExceptionCode, description: String?) {
-        ...
-    }
-}
-systemAgent.addListener(listener)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">SystemAgentInterface</span><span class="p">.</span><span class="nc">Listener</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onException</span><span class="p">(</span><span class="n">code</span><span class="p">:</span> <span class="nc">ExceptionCode</span><span class="p">,</span> <span class="n">description</span><span class="p">:</span> <span class="nc">String</span><span class="p">?)</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">systemAgent</span><span class="p">.</span><span class="nf">addListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2664,7 +2664,7 @@ systemAgent.addListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2674,14 +2674,14 @@ systemAgent.addListener(listener)
 7
 8
 </pre></td>
-<td class="rouge-code"><pre>class MySystemAgentDelegate: SystemAgentDelegate {
-    func systemAgentDidReceiveExceptionFail(code: SystemAgentExceptionCode.Fail, dialogRequestId: String) {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MySystemAgentDelegate</span><span class="p">:</span> <span class="kt">SystemAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">systemAgentDidReceiveExceptionFail</span><span class="p">(</span><span class="nv">code</span><span class="p">:</span> <span class="kt">SystemAgentExceptionCode</span><span class="o">.</span><span class="kt">Fail</span><span class="p">,</span> <span class="nv">dialogRequestId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    ...
-}
-systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
+    <span class="o">...</span>
+<span class="p">}</span>
+<span class="n">systemAgent</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">systemAgentDelegate</span><span class="p">:</span> <span class="kt">MySystemAgentDelegate</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2700,7 +2700,7 @@ systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2715,19 +2715,19 @@ systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>class MySystemListener : public ISystemListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MySystemListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ISystemListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void onException(SystemException exception, const std::string &amp;dialog_id) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">onException</span><span class="p">(</span><span class="n">SystemException</span> <span class="n">exception</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto system_listener(std::make_shared&lt;MySystemListener&gt;());
-CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">system_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MySystemListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">SystemAgent</span><span class="p">,</span> <span class="n">ISystemHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">system_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2766,7 +2766,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2774,12 +2774,12 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: SystemAgentInterface.Listener {
-    override fun onRevoke(reason: RevokeReason) {
-        ...
-    }
-}
-systemAgent.addListener(listener)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">SystemAgentInterface</span><span class="p">.</span><span class="nc">Listener</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onRevoke</span><span class="p">(</span><span class="n">reason</span><span class="p">:</span> <span class="nc">RevokeReason</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">systemAgent</span><span class="p">.</span><span class="nf">addListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2798,7 +2798,7 @@ systemAgent.addListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2808,14 +2808,14 @@ systemAgent.addListener(listener)
 7
 8
 </pre></td>
-<td class="rouge-code"><pre>class MySystemAgentDelegate: SystemAgentDelegate {
-    func systemAgentDidReceiveRevokeDevice(reason: SystemAgentRevokeReason, dialogRequestId: String) {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MySystemAgentDelegate</span><span class="p">:</span> <span class="kt">SystemAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">systemAgentDidReceiveRevokeDevice</span><span class="p">(</span><span class="nv">reason</span><span class="p">:</span> <span class="kt">SystemAgentRevokeReason</span><span class="p">,</span> <span class="nv">dialogRequestId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    ...
-}
-systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
+    <span class="o">...</span>
+<span class="p">}</span>
+<span class="n">systemAgent</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">systemAgentDelegate</span><span class="p">:</span> <span class="kt">MySystemAgentDelegate</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2834,7 +2834,7 @@ systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2849,19 +2849,19 @@ systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>class MySystemListener : public ISystemListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MySystemListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ISystemListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    onRevoke(RevokeReason reason) override
-    {
-        ...
-    }
+    <span class="n">onRevoke</span><span class="p">(</span><span class="n">RevokeReason</span> <span class="n">reason</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto system_listener(std::make_shared&lt;MySystemListener&gt;());
-CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">system_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MySystemListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">SystemAgent</span><span class="p">,</span> <span class="n">ISystemHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">system_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2882,19 +2882,19 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>{
-  "System": {
-    "version": "1.3"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"System"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.3"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2924,7 +2924,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2936,17 +2936,17 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "ResetUserInactivity",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ResetUserInactivity"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2974,7 +2974,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2993,24 +2993,24 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 16
 17
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "HandoffConnection",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "protocol": "{{STRING}}",
-    "hostName": "{{STRING}}",
-    "port": {{LONG}},
-    "retryCountLimit": {{LONG}},
-    "connectionTimeout": {{LONG}},
-    "charge": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HandoffConnection"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"hostName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"port"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"retryCountLimit"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"connectionTimeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"charge"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3084,7 +3084,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3096,17 +3096,17 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "TurnOff",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TurnOff"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3125,7 +3125,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3137,17 +3137,17 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "UpdateState",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UpdateState"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3164,7 +3164,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3179,20 +3179,20 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "Exception",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "code": "{{STRING}}",
-    "description": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Exception"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3267,7 +3267,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3279,17 +3279,17 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "NoDirectives",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NoDirectives"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3306,7 +3306,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3320,19 +3320,19 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "Revoke",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "reson": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Revoke"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"reson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3386,7 +3386,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3398,17 +3398,17 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "Noop",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Noop"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3434,7 +3434,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3448,19 +3448,19 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "ResetConnection",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-      "description": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ResetConnection"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3501,7 +3501,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3513,17 +3513,17 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "SynchronizeState",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SynchronizeState"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3549,7 +3549,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3563,19 +3563,19 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "UserInactivityReport",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "inactiveTimeInSeconds": {{LONG}}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UserInactivityReport"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"inactiveTimeInSeconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3621,7 +3621,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3633,17 +3633,17 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "SynchronizeState",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SynchronizeState"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3669,7 +3669,7 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3681,17 +3681,17 @@ CapabilityFactory::makeCapability&lt;SystemAgent, ISystemHandler&gt;(system_list
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "System",
-    "name": "SynchronizeState",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"System"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SynchronizeState"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

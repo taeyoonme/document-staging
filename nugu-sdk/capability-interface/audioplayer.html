@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - AudioPlayer">
 <meta http-equiv="Description" content="Play 에서 전달하는 음원을 재생하기 위한 규격">
 <title>Developers | Guide - AudioPlayer</title>
@@ -2455,10 +2455,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val audioPlayerAgent = nuguAndroidClient.audioPlayerAgent
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">audioPlayerAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="n">audioPlayerAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2477,10 +2477,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let audioPlayerAgent = nuguClient.audioPlayerAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">audioPlayerAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">audioPlayerAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2499,7 +2499,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2507,12 +2507,12 @@
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto audio_player_handler(std::shared_ptr&lt;IAudioPlayerHandler&gt;(
-        CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;()));
+<td class="rouge-code"><pre><span class="n">auto</span> <span class="nf">audio_player_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="p">&lt;</span><span class="nc">IAudioPlayerHandler</span><span class="p">&gt;(</span>
+        <span class="nc">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="p">&lt;</span><span class="nc">AudioPlayerAgent</span><span class="p">,</span> <span class="nc">IAudioPlayerHandler</span><span class="p">&gt;()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(audio_player_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client-</span><span class="p">&gt;</span><span class="nf">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="p">-&gt;</span><span class="nf">add</span><span class="p">(</span><span class="n">audio_player_handler</span><span class="p">.</span><span class="k">get</span><span class="p">())</span>
+    <span class="p">-&gt;</span><span class="nf">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2549,7 +2549,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2557,12 +2557,12 @@ nugu_client-&gt;getCapabilityBuilder()
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: AudioPlayerAgentInterface.Listener {
-    override fun onStateChanged(activity: State, context: Context) {
-        ...
-    }
-}
-audioPlayerAgent.addListener(listener)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">AudioPlayerAgentInterface</span><span class="p">.</span><span class="nc">Listener</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onStateChanged</span><span class="p">(</span><span class="n">activity</span><span class="p">:</span> <span class="nc">State</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nc">Context</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">audioPlayerAgent</span><span class="p">.</span><span class="nf">addListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2581,7 +2581,7 @@ audioPlayerAgent.addListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2590,13 +2590,13 @@ audioPlayerAgent.addListener(listener)
 6
 7
 </pre></td>
-<td class="rouge-code"><pre>class MyAudioPlayerAgentDelegate: AudioPlayerAgentDelegate {
-    func audioPlayerAgentDidChange(state: AudioPlayerState, dialogRequestId: String) {
-        ...
-    }
-}
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyAudioPlayerAgentDelegate</span><span class="p">:</span> <span class="kt">AudioPlayerAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">audioPlayerAgentDidChange</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">AudioPlayerState</span><span class="p">,</span> <span class="nv">dialogRequestId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-audioPlayerAgent.add(delegate: MyAudioPlayerAgentDelegate())
+<span class="n">audioPlayerAgent</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt">MyAudioPlayerAgentDelegate</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2615,7 +2615,7 @@ audioPlayerAgent.add(delegate: MyAudioPlayerAgentDelegate())
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2630,19 +2630,19 @@ audioPlayerAgent.add(delegate: MyAudioPlayerAgentDelegate())
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>class MyAudioPlayerListener : public IAudioPlayerListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MyAudioPlayerListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IAudioPlayerListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void mediaStateChanged (AudioPlayerState state, const std::string &amp;dialog_id) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">mediaStateChanged</span> <span class="p">(</span><span class="n">AudioPlayerState</span> <span class="n">state</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto audio_player_listener(std::make_shared&lt;MyAudioPlayerListener&gt;());
-CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(audio_player_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">audio_player_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MyAudioPlayerListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">AudioPlayerAgent</span><span class="p">,</span> <span class="n">IAudioPlayerHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">audio_player_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2683,7 +2683,7 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2693,14 +2693,14 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
 7
 8
 </pre></td>
-<td class="rouge-code"><pre>val renderer = object: DisplayAggregatorInterface.Renderer {
-    override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">renderer</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">DisplayAggregatorInterface</span><span class="p">.</span><span class="nc">Renderer</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">render</span><span class="p">(</span><span class="n">templateId</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">templateType</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">templateContent</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">dialogRequestId</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">displayType</span><span class="p">:</span> <span class="nc">Type</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
-nuguAndroidClient.setDisplayRenderer(renderer)
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">setDisplayRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2715,7 +2715,7 @@ nuguAndroidClient.setDisplayRenderer(renderer)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2729,18 +2729,18 @@ nuguAndroidClient.setDisplayRenderer(renderer)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>val presenter = object: LyricsPresenter {
-    override fun show(): Boolean {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">presenter</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">LyricsPresenter</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">show</span><span class="p">():</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun hide(): Boolean {
-        ...
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">hide</span><span class="p">():</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
-audioPlayerAgent.setLyricsPresenter(presenter)
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="n">audioPlayerAgent</span><span class="p">.</span><span class="nf">setLyricsPresenter</span><span class="p">(</span><span class="n">presenter</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2759,7 +2759,7 @@ audioPlayerAgent.setLyricsPresenter(presenter)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2778,23 +2778,23 @@ audioPlayerAgent.setLyricsPresenter(presenter)
 16
 17
 </pre></td>
-<td class="rouge-code"><pre>class MyAudioPlayerDisplayDelegate: AudioPlayerDisplayDelegate {
-    func audioPlayerDisplayShouldRender(template: AudioPlayerDisplayTemplate, completion: @escaping (AnyObject?) -&gt; Void) {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyAudioPlayerDisplayDelegate</span><span class="p">:</span> <span class="kt">AudioPlayerDisplayDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">audioPlayerDisplayShouldRender</span><span class="p">(</span><span class="nv">template</span><span class="p">:</span> <span class="kt">AudioPlayerDisplayTemplate</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    func audioPlayerDisplayShouldShowLyrics(completion: @escaping (Bool) -&gt; Void) {
-        ...
-    }
+    <span class="kd">func</span> <span class="nf">audioPlayerDisplayShouldShowLyrics</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    func audioPlayerDisplayShouldHideLyrics(completion: @escaping (Bool) -&gt; Void) {
-        ...
-    }
+    <span class="kd">func</span> <span class="nf">audioPlayerDisplayShouldHideLyrics</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    ...
-}
+    <span class="o">...</span>
+<span class="p">}</span>
 
-audioPlayerAgent.displayDelegate = MyAudioPlayerDisplayDelegate()
+<span class="n">audioPlayerAgent</span><span class="o">.</span><span class="n">displayDelegate</span> <span class="o">=</span> <span class="kt">MyAudioPlayerDisplayDelegate</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2813,7 +2813,7 @@ audioPlayerAgent.displayDelegate = MyAudioPlayerDisplayDelegate()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2838,29 +2838,29 @@ audioPlayerAgent.displayDelegate = MyAudioPlayerDisplayDelegate()
 22
 23
 </pre></td>
-<td class="rouge-code"><pre>class MyAudioPlayerListener : public IAudioPlayerListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MyAudioPlayerListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IAudioPlayerListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void renderDisplay(const std::string&amp; id, const std::string&amp; type, const std::string&amp; json_payload, const std::string&amp; dialog_id) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">renderDisplay</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">type</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">json_payload</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    bool showLyrics(const std::string&amp; id) override
-    {
-        ...
-    }
+    <span class="kt">bool</span> <span class="n">showLyrics</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    bool hideLyrics(const std::string&amp; id) override
-    {
-        ...
-    }
+    <span class="kt">bool</span> <span class="n">hideLyrics</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto audio_player_listener(std::make_shared&lt;MyAudioPlayerListener&gt;());
-CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(audio_player_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">audio_player_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MyAudioPlayerListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">AudioPlayerAgent</span><span class="p">,</span> <span class="n">IAudioPlayerHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">audio_player_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2895,7 +2895,7 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2907,16 +2907,16 @@ CapabilityFactory::makeCapability&lt;AudioPlayerAgent, IAudioPlayerHandler&gt;(a
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>// 다음
-audioPlayerAgent.next()
-// 이전
-audioPlayerAgent.prev()
-// 즐겨찾기
-audioPlayerAgent.requestFavoriteCommand(false)
-// 반복
-audioPlayerAgent.requestRepeatCommand(RepeatMode.NONE)
-// 셔플
-audioPlayerAgent.requestShuffleCommand(false)
+<td class="rouge-code"><pre><span class="c1">// 다음</span>
+<span class="n">audioPlayerAgent</span><span class="p">.</span><span class="nf">next</span><span class="p">()</span>
+<span class="c1">// 이전</span>
+<span class="n">audioPlayerAgent</span><span class="p">.</span><span class="nf">prev</span><span class="p">()</span>
+<span class="c1">// 즐겨찾기</span>
+<span class="n">audioPlayerAgent</span><span class="p">.</span><span class="nf">requestFavoriteCommand</span><span class="p">(</span><span class="k">false</span><span class="p">)</span>
+<span class="c1">// 반복</span>
+<span class="n">audioPlayerAgent</span><span class="p">.</span><span class="nf">requestRepeatCommand</span><span class="p">(</span><span class="nc">RepeatMode</span><span class="p">.</span><span class="nc">NONE</span><span class="p">)</span>
+<span class="c1">// 셔플</span>
+<span class="n">audioPlayerAgent</span><span class="p">.</span><span class="nf">requestShuffleCommand</span><span class="p">(</span><span class="k">false</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2933,7 +2933,7 @@ audioPlayerAgent.requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2945,16 +2945,16 @@ audioPlayerAgent.requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>// 다음 
-audioPlayerAgent.next()
-// 이전
-audioPlayerAgent.prev()
-// 즐겨찾기
-audioPlayerAgent.requestFavoriteCommand(false)
-// 반복
-audioPlayerAgent.requestRepeatCommand(.none)
-// 셔플
-audioPlayerAgent.requestShuffleCommand(false)
+<td class="rouge-code"><pre><span class="c1">// 다음 </span>
+<span class="n">audioPlayerAgent</span><span class="o">.</span><span class="nf">next</span><span class="p">()</span>
+<span class="c1">// 이전</span>
+<span class="n">audioPlayerAgent</span><span class="o">.</span><span class="nf">prev</span><span class="p">()</span>
+<span class="c1">// 즐겨찾기</span>
+<span class="n">audioPlayerAgent</span><span class="o">.</span><span class="nf">requestFavoriteCommand</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="c1">// 반복</span>
+<span class="n">audioPlayerAgent</span><span class="o">.</span><span class="nf">requestRepeatCommand</span><span class="p">(</span><span class="o">.</span><span class="k">none</span><span class="p">)</span>
+<span class="c1">// 셔플</span>
+<span class="n">audioPlayerAgent</span><span class="o">.</span><span class="nf">requestShuffleCommand</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2971,7 +2971,7 @@ audioPlayerAgent.requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2983,16 +2983,16 @@ audioPlayerAgent.requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>// 다음
-audio_player_handler-&gt;next()
-// 이전
-audio_player_handler-&gt;prev()
-// 즐겨찾기
-audio_player_handler-&gt;requestFavoriteCommand(false)
-// 반복
-audio_player_handler-&gt;requestRepeatCommand(RepeatType.NONE)
-// 셔플
-audio_player_handler-&gt;requestShuffleCommand(false)
+<td class="rouge-code"><pre><span class="c1">// 다음</span>
+<span class="n">audio_player_handler</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">()</span>
+<span class="c1">// 이전</span>
+<span class="n">audio_player_handler</span><span class="o">-&gt;</span><span class="n">prev</span><span class="p">()</span>
+<span class="c1">// 즐겨찾기</span>
+<span class="n">audio_player_handler</span><span class="o">-&gt;</span><span class="n">requestFavoriteCommand</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
+<span class="c1">// 반복</span>
+<span class="n">audio_player_handler</span><span class="o">-&gt;</span><span class="n">requestRepeatCommand</span><span class="p">(</span><span class="n">RepeatType</span><span class="p">.</span><span class="n">NONE</span><span class="p">)</span>
+<span class="c1">// 셔플</span>
+<span class="n">audio_player_handler</span><span class="o">-&gt;</span><span class="n">requestShuffleCommand</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3013,7 +3013,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3026,18 +3026,18 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 10
 11
 </pre></td>
-<td class="rouge-code"><pre>{
-  "AudioPlayer": {
-    "version": "1.4",
-    "playServiceId":{{STRING}}",
-    "playerActivity":{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "durationInMilliseconds": {{LONG}},
-    "lyricsVisible": {{BOOLEAN}}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"AudioPlayer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:{{</span><span class="err">STRING</span><span class="p">}}</span><span class="s2">",
+    "</span><span class="err">playerActivity</span><span class="s2">":{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"durationInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"lyricsVisible"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3106,7 +3106,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3137,36 +3137,36 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 28
 29
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "Play",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "sourceType": "{{STRING}}",
-    "cacheKey": "{{STRING}}",
-    "audioItem": {
-      "stream": {
-        "url": "{{STRING}}",
-        "offsetInMilliseconds": {{LONG}},
-        "progressReport": {
-          "progressReportDelayInMilliseconds": {{LONG}},
-          "progressReportIntervalInMilliseconds": {{LONG}}
-        },
-        "token": "{{STRING}}",
-        "expectedPreviousToken": "{{STRING}}"
-      },
-      "metadata": {
-        "template": {}
-      }
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Play"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cacheKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"audioItem"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"stream"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"progressReport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"progressReportDelayInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+          </span><span class="nl">"progressReportIntervalInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expectedPreviousToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3260,7 +3260,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3304,49 +3304,49 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 41
 42
 </pre></td>
-<td class="rouge-code"><pre>{
-  "metadata": {
-    "disableTemplate": {{BOOLEAN}},
-    "template": {
-      "type": "AudioPlayer.Template1",
-      "title": {
-        "iconUrl": "{{STRING}}",
-        "text": "{{STRING}}"
-      },
-      "grammarGuide": ["{{STRING}}"],
-      "content": {
-        "title": "{{STRING}}",
-        "subtitle1": "{{STRING}}",
-        "subtitle2": "{{STRING}}",
-        "imageUrl": "{{STRING}}",
-        "durationSec": "{{STRING}}",
-        "backgroundImageUrl": "{{STRING}}",
-        "backgroundColor": "{{STRING}}",
-        "badgeImageUrl": "{{String}}",
-        "badgeMessage": "{{String}}",
-        "lyrics": {
-          "title": "{{String}}",
-          "lyricsType": "{{String}}",
-          "lyricsInfoList": [
-            {
-              "time": {{Integer}},
-              "text": "{{String}}"
-            }
-          ],
-          "showButton": {
-            "text": "{{String}}"
-          }
-        },
-        "settings": {
-          "favorite": {{BOOLEAN}},
-          "repeat": "{{String}}",
-          "shuffle": {{BOOLEAN}}
-        }
-      }
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"disableTemplate"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer.Template1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"grammarGuide"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{{STRING}}"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtitle1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtitle2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"durationSec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"backgroundImageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"backgroundColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"badgeImageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"badgeMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lyrics"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lyricsType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lyricsInfoList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">Integer</span><span class="p">}},</span><span class="w">
+              </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"showButton"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}},</span><span class="w">
+          </span><span class="nl">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"shuffle"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3531,7 +3531,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3564,38 +3564,38 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 30
 31
 </pre></td>
-<td class="rouge-code"><pre>{
-  "metadata": {
-    "disableTemplate": {{BOOLEAN}},
-    "template": {
-      "type": "AudioPlayer.Template2",
-      "title": {
-        "iconUrl": "{{STRING}}",
-        "text": "{{STRING}}"
-      },
-      "grammarGuide": ["{{STRING}}"],
-      "content": {
-        "title": "{{STRING}}",
-        "subtitle": "{{STRING}}",
-        "subtitle1": "{{STRING}}",
-        "imageUrl": "{{STRING}}",
-        "durationSec": "{{STRING}}",
-        "backgroundColor": "{{STRING}}",
-        "lyrics" : {
-          "title" : "{{String}}",
-          "lyricsType" : "{{String}}",
-          "lyricsInfoList" : [
-            {"time":"{{Integer}}","text": "{{String}}"}
-          ],
-          "showButton": {
-            "text": "{{String}}"
-          }
-        }
-      }
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"disableTemplate"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer.Template2"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"grammarGuide"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{{STRING}}"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtitle"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtitle1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"durationSec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"backgroundColor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lyrics"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"title"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lyricsType"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"lyricsInfoList"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="nl">"time"</span><span class="p">:</span><span class="s2">"{{Integer}}"</span><span class="p">,</span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nl">"showButton"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{String}}"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3739,7 +3739,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3753,19 +3753,19 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "Stop",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stop"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3782,7 +3782,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3796,19 +3796,19 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "Pause",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pause"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3825,7 +3825,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3850,30 +3850,30 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 22
 23
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "UpdateMetadata",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "metadata": {
-      "template": {
-        "content": {
-          "settings": {
-            "favorite": {{BOOLEAN}},
-            "repeat": "{{STRING}}",
-            "shuffle": {{BOOLEAN}}
-          }
-        }
-      }
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UpdateMetadata"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}},</span><span class="w">
+            </span><span class="nl">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shuffle"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3921,7 +3921,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3935,19 +3935,19 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ShowLyrics",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShowLyrics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3964,7 +3964,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3978,19 +3978,19 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "HideLyrics",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HideLyrics"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4007,7 +4007,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4022,20 +4022,20 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ControlLyricsPage",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "direction": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ControlLyricsPage"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4073,7 +4073,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4085,17 +4085,17 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestPlayCommand",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPlayCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4133,7 +4133,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4145,17 +4145,17 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestResumeCommand",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestResumeCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4174,7 +4174,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4186,17 +4186,17 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestNextCommand",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestNextCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4215,7 +4215,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4227,17 +4227,17 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestPreviousCommand",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPreviousCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4256,7 +4256,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4268,17 +4268,17 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestPauseCommand",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPauseCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4297,7 +4297,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4309,17 +4309,17 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestStopCommand",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestStopCommand"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4337,7 +4337,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4353,21 +4353,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "PlaybackStarted",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackStarted"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4407,7 +4407,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4423,21 +4423,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "PlaybackPaused",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackPaused"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4477,7 +4477,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4493,21 +4493,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "PlaybackResumed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackResumed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4547,7 +4547,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4563,21 +4563,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "PlaybackFinished",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackFinished"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4617,7 +4617,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4634,22 +4634,22 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 14
 15
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "PlaybackStopped",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}",
-    "reason": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackStopped"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4695,7 +4695,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4720,30 +4720,30 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 22
 23
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "PlaybackFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "error": {
-      "type": "{{STRING}}",
-      "message": "{{STRING}}"
-    },
-    "currentPlaybackState": {
-      "token": "{{STRING}}",
-      "offsetInMilliseconds": {{LONG}},
-      "playerActivity": "{{STRING}}"
-    },
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PlaybackFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"currentPlaybackState"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+      </span><span class="nl">"playerActivity"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4821,7 +4821,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4837,21 +4837,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ProgressReportDelayElapsed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProgressReportDelayElapsed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4896,7 +4896,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4912,21 +4912,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ProgressReportIntervalElapsed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProgressReportIntervalElapsed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4968,7 +4968,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4984,21 +4984,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "NextCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NextCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5040,7 +5040,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5056,21 +5056,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "PreviousCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PreviousCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5112,7 +5112,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5127,20 +5127,20 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "FavoriteCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "favorite": {{BOOLEAN}}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FavoriteCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"favorite"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5176,7 +5176,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5191,20 +5191,20 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RepeatCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "repeat": {{BOOLEAN}}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RepeatCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"repeat"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5240,7 +5240,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5255,20 +5255,20 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ShuffleCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "shuffle": {{BOOLEAN}}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShuffleCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shuffle"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5306,7 +5306,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5320,19 +5320,19 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ShowLyricsSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShowLyricsSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5351,7 +5351,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5365,19 +5365,19 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ShowLyricsFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShowLyricsFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5396,7 +5396,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5410,19 +5410,19 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "HideLyricsSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HideLyricsSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5441,7 +5441,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5455,19 +5455,19 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "HideLyricsFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HideLyricsFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5486,7 +5486,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5501,20 +5501,20 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ControlLyricsPageSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "direction": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ControlLyricsPageSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5552,7 +5552,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5567,20 +5567,20 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "ControlLyricsPageFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "direction": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ControlLyricsPageFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5614,7 +5614,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5626,17 +5626,17 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestPlayCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {}
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPlayCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5674,7 +5674,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5690,21 +5690,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestResumeCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestResumeCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5748,7 +5748,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5764,21 +5764,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestNextCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestNextCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5822,7 +5822,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5838,21 +5838,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestPreviousCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPreviousCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5896,7 +5896,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5912,21 +5912,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestPauseCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestPauseCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -5970,7 +5970,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -5986,21 +5986,21 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestStopCommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}},
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestStopCommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -6040,7 +6040,7 @@ audio_player_handler-&gt;requestShuffleCommand(false)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -6057,22 +6057,22 @@ audio_player_handler-&gt;requestShuffleCommand(false)
 14
 15
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "AudioPlayer",
-    "name": "RequestCommandFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.4"
-  },
-  "payload": {
-    "error": {
-      "type": "{{STRING}}",
-      "message": "{{STRING}}"
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RequestCommandFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.4"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

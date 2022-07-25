@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - PhoneCall">
 <meta http-equiv="Description" content="전화 수/발신 기능 제어를 위한 규격">
 <title>Developers | Guide - PhoneCall</title>
@@ -2435,7 +2435,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2454,23 +2454,23 @@
 16
 17
 </pre></td>
-<td class="rouge-code"><pre>class MyPhoneCallClient: PhoneCallClient {
-    ...
-}
-NuguAndroidClient().Builder()
-            .addAgentFactory(PhoneCallAgent.NAMESPACE, object : AgentFactory&lt;PhoneCallAgent&gt; {
-                override fun create(container: SdkContainer): PhoneCallAgent = with(container) {
-                    PhoneCallAgent(
-                        MyPhoneCallClient(),
-                        getContextManager(),
-                        getMessageSender(),
-                        getAudioSeamlessFocusManager(),
-                        DefaultFocusChannel.COMMUNICATIONS_CHANNEL_NAME,
-                        getDirectiveSequencer(),
-                        getInteractionControlManager()
-                    )
-                }
-            })
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyPhoneCallClient</span><span class="p">:</span> <span class="nc">PhoneCallClient</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="nc">NuguAndroidClient</span><span class="p">().</span><span class="nc">Builder</span><span class="p">()</span>
+            <span class="p">.</span><span class="nf">addAgentFactory</span><span class="p">(</span><span class="nc">PhoneCallAgent</span><span class="p">.</span><span class="nc">NAMESPACE</span><span class="p">,</span> <span class="kd">object</span> <span class="err">: </span><span class="nc">AgentFactory</span><span class="p">&lt;</span><span class="nc">PhoneCallAgent</span><span class="p">&gt;</span> <span class="p">{</span>
+                <span class="k">override</span> <span class="k">fun</span> <span class="nf">create</span><span class="p">(</span><span class="n">container</span><span class="p">:</span> <span class="nc">SdkContainer</span><span class="p">):</span> <span class="nc">PhoneCallAgent</span> <span class="p">=</span> <span class="nf">with</span><span class="p">(</span><span class="n">container</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nc">PhoneCallAgent</span><span class="p">(</span>
+                        <span class="nc">MyPhoneCallClient</span><span class="p">(),</span>
+                        <span class="nf">getContextManager</span><span class="p">(),</span>
+                        <span class="nf">getMessageSender</span><span class="p">(),</span>
+                        <span class="nf">getAudioSeamlessFocusManager</span><span class="p">(),</span>
+                        <span class="nc">DefaultFocusChannel</span><span class="p">.</span><span class="nc">COMMUNICATIONS_CHANNEL_NAME</span><span class="p">,</span>
+                        <span class="nf">getDirectiveSequencer</span><span class="p">(),</span>
+                        <span class="nf">getInteractionControlManager</span><span class="p">()</span>
+                    <span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2485,10 +2485,10 @@ NuguAndroidClient().Builder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val phoneCallAgent = nuguAndroidClient.getAgent(PhoneCallAgent.NAMESPACE)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">phoneCallAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">getAgent</span><span class="p">(</span><span class="nc">PhoneCallAgent</span><span class="p">.</span><span class="nc">NAMESPACE</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2507,10 +2507,10 @@ NuguAndroidClient().Builder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let phoneCallAgent = nuguClient.phoneCallAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">phoneCallAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">phoneCallAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2529,7 +2529,7 @@ NuguAndroidClient().Builder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2537,12 +2537,12 @@ NuguAndroidClient().Builder()
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto phonecall_handler(std::shared_ptr&lt;IPhoneCallHandler&gt;(
-        CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">phonecall_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IPhoneCallHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">PhoneCallAgent</span><span class="p">,</span> <span class="n">IPhoneCallHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(phonecall_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">phonecall_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2577,7 +2577,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2586,13 +2586,13 @@ nugu_client-&gt;getCapabilityBuilder()
 6
 7
 </pre></td>
-<td class="rouge-code"><pre>class MyPhoneCallClient: PhoneCallClient {
-    override fun getContext(): Context {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyPhoneCallClient</span><span class="p">:</span> <span class="nc">PhoneCallClient</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getContext</span><span class="p">():</span> <span class="nc">Context</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2611,7 +2611,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2621,14 +2621,14 @@ nugu_client-&gt;getCapabilityBuilder()
 7
 8
 </pre></td>
-<td class="rouge-code"><pre>class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
-    func phoneCallAgentRequestContext() -&gt; PhoneCallContext {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyPhoneCallAgentDelegate</span><span class="p">:</span> <span class="kt">PhoneCallAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">phoneCallAgentRequestContext</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">PhoneCallContext</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    ...
-}
-phoneCallAgent.delegate = self
+    <span class="o">...</span>
+<span class="p">}</span>
+<span class="n">phoneCallAgent</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2665,7 +2665,7 @@ phoneCallAgent.delegate = self
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2679,18 +2679,18 @@ phoneCallAgent.delegate = self
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>class MyPhoneCallClient: PhoneCallClient {
-    override fun sendCandidates(payload: SendCandidatesPayload, callback: Callback) {
-        // 연락처 검색 기능을 구현
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyPhoneCallClient</span><span class="p">:</span> <span class="nc">PhoneCallClient</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">sendCandidates</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="nc">SendCandidatesPayload</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="nc">Callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 연락처 검색 기능을 구현</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun makeCall(payload: MakeCallPayload, callback: Callback) {
-        // 전화 발신 기능을 구현
-        ...
-    }
-    ...
-}
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">makeCall</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="nc">MakeCallPayload</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="nc">Callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 전화 발신 기능을 구현</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2709,7 +2709,7 @@ phoneCallAgent.delegate = self
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2725,20 +2725,20 @@ phoneCallAgent.delegate = self
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
-    func phoneCallAgentDidReceiveSendCandidates(item: PhoneCallCandidatesItem, dialogRequestId: String) {
-        // 연락처 검색 기능을 구현
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyPhoneCallAgentDelegate</span><span class="p">:</span> <span class="kt">PhoneCallAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">phoneCallAgentDidReceiveSendCandidates</span><span class="p">(</span><span class="nv">item</span><span class="p">:</span> <span class="kt">PhoneCallCandidatesItem</span><span class="p">,</span> <span class="nv">dialogRequestId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 연락처 검색 기능을 구현</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    func phoneCallAgentDidReceiveMakeCall(callType: PhoneCallType, recipient: PhoneCallPerson, dialogRequestId: String) -&gt; PhoneCallErrorCode? {
-        // 전화 발신 기능을 구현
-        ...
-    }
+    <span class="kd">func</span> <span class="nf">phoneCallAgentDidReceiveMakeCall</span><span class="p">(</span><span class="nv">callType</span><span class="p">:</span> <span class="kt">PhoneCallType</span><span class="p">,</span> <span class="nv">recipient</span><span class="p">:</span> <span class="kt">PhoneCallPerson</span><span class="p">,</span> <span class="nv">dialogRequestId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">PhoneCallErrorCode</span><span class="p">?</span> <span class="p">{</span>
+        <span class="c1">// 전화 발신 기능을 구현</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    ...
-}
-phoneCallAgent.delegate = self
+    <span class="o">...</span>
+<span class="p">}</span>
+<span class="n">phoneCallAgent</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="k">self</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2757,7 +2757,7 @@ phoneCallAgent.delegate = self
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2777,24 +2777,24 @@ phoneCallAgent.delegate = self
 17
 18
 </pre></td>
-<td class="rouge-code"><pre>class MyPhoneCallListener : public IPhoneCallListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MyPhoneCallListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IPhoneCallListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void processSendCandidates(const std::string&amp; payload) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">processSendCandidates</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">payload</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
     
-    void processMakeCall(const std::string&amp; payload) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">processMakeCall</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">payload</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto phonecall_listener(std::make_shared&lt;MyPhoneCallListener&gt;());
-CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phonecall_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">phonecall_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MyPhoneCallListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">PhoneCallAgent</span><span class="p">,</span> <span class="n">IPhoneCallHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">phonecall_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2836,7 +2836,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2850,18 +2850,18 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>class MyPhoneCallClient: PhoneCallClient {
-    override fun acceptCall(payload: AcceptCallPayload) {
-        // 수신 수락 기능을 구현
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyPhoneCallClient</span><span class="p">:</span> <span class="nc">PhoneCallClient</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">acceptCall</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="nc">AcceptCallPayload</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 수신 수락 기능을 구현</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun makeCall(payload: MakeCallPayload, callback: Callback) {
-        // 수신 거절 기능을 구현
-        ...
-    }
-    ...
-}
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">makeCall</span><span class="p">(</span><span class="n">payload</span><span class="p">:</span> <span class="nc">MakeCallPayload</span><span class="p">,</span> <span class="n">callback</span><span class="p">:</span> <span class="nc">Callback</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 수신 거절 기능을 구현</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2880,7 +2880,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2895,19 +2895,19 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>class MyPhoneCallListener : public IPhoneCallListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MyPhoneCallListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IPhoneCallListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void processAcceptCall(const std::string&amp; payload)
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">processAcceptCall</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">payload</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
     
-    ...
-};
-auto phonecall_listener(std::make_shared&lt;MyPhoneCallListener&gt;());
-CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phonecall_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">phonecall_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MyPhoneCallListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">PhoneCallAgent</span><span class="p">,</span> <span class="n">IPhoneCallHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">phonecall_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2928,7 +2928,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2952,29 +2952,29 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 21
 22
 </pre></td>
-<td class="rouge-code"><pre>{
-  "PhoneCall": {
-    "version": "1.1",
-    "state": "{{STRING}}",
-    "template": {
-      "intent": "{{STRING}}",
-      "callType": "{{STRING}}",
-      "recipientIntended": {
-        "name": "{{STRING}}",
-        "label": "{{STRING}}"
-      },
-      "searchScene": "{{STRING}}",
-      "candidates": [Person]
-    },
-    "recipient": {
-            "name": "{{STRING}}",
-            "token": "{{STRING}}",
-            "isMobile": "{{STRING}}",
-            "isRecentMissed": "{{STRING}}"
-        }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"PhoneCall"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"intent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"callType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"recipientIntended"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"searchScene"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"candidates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">Person</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isMobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isRecentMissed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3099,7 +3099,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3125,31 +3125,31 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 23
 24
 </pre></td>
-<td class="rouge-code"><pre>{
-  "name": "{{STRING}}",
-  "type": "{{STRING}}",
-  "profileImgUrl": "{{STRING}}",
-  "category": "{{STRING}}",
-  "address": {
-    "road": "{{STRING}}",
-    "jibun": "{{STRING}}"
-  },
-  "businessHours": {
-    "open": "{{STRING}}",
-    "close": "{{STRING}}",
-    "info": "{{STRING}}"
-  },
-  "history": {
-    "time": "{{STRING}}",
-    "type": "{{STRING}}",
-    "callType": "{{STRING}}"
-  },
-  "numInCallHistory": "{{STRING}}",
-  "token": "{{STRING}}",
-  "score": "{{STRING}}",
-  "contacts": [Contact]
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"profileImgUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"road"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jibun"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"businessHours"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"history"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"callType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"numInCallHistory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"score"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"contacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">Contact</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3306,17 +3306,17 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 </pre></td>
-<td class="rouge-code"><pre>{
-  "label": "{{STRING}}",
-  "number": "{{STRING}}"
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3360,7 +3360,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3382,27 +3382,27 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 19
 20
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "SendCandidates",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "intent": "{{STRING}}",
-    "recipientIntended": {
-      "name": "{{STRING}}",
-      "label": "{{STRING}}"
-    },
-    "callType": "{{STRING}}",
-    "searchScene": "{{STRING}}",
-    "candidates": [array of Person]
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SendCandidates"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"intent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipientIntended"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"callType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"searchScene"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"candidates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Person</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3476,7 +3476,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3492,21 +3492,21 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "MakeCall",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "recipient": Person,
-    "callType": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MakeCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="err">Person</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"callType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3547,7 +3547,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3561,19 +3561,19 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "EndCall",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EndCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3588,7 +3588,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3603,20 +3603,20 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "AcceptCall",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "speakerPhone": {{BOOLEAN}}"
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AcceptCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"speakerPhone"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="s2">"
   }
 }
-</pre></td>
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3654,7 +3654,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3668,19 +3668,19 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "BlockIncomingCall",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BlockIncomingCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3703,7 +3703,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3717,19 +3717,19 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "CandidatesListed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CandidatesListed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3744,7 +3744,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3764,25 +3764,25 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 17
 18
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "CallArrived",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "caller": {
-      "name": "{{STRING}}",
-      "token": "{{STRING}}",
-      "isMobile": "{{STRING}}",
-      "isRecentMisssed": "{{STRING}}"
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CallArrived"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"caller"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isMobile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isRecentMisssed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3845,7 +3845,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3859,19 +3859,19 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "CallEnded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CallEnded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3891,7 +3891,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3905,19 +3905,19 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "CallEstablished",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CallEstablished"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3936,7 +3936,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3952,21 +3952,21 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "MakeCallFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "errorCode": "{{STRING}}",
-    "callType": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MakeCallFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"errorCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"callType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -4012,7 +4012,7 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -4027,20 +4027,20 @@ CapabilityFactory::makeCapability&lt;PhoneCallAgent, IPhoneCallHandler&gt;(phone
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "PhoneCall",
-    "name": "MakeCallSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "recipient": Person
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PhoneCall"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MakeCallSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="err">Person</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

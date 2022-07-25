@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Extension">
 <meta http-equiv="Description" content="정의되지 않은 기능을 수행하기 위한 규격">
 <title>Developers | Guide - Extension</title>
@@ -2432,10 +2432,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val extensionAgent = nuguAndroidClient.extensionAgent
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">extensionAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="n">extensionAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2450,18 +2450,18 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>class MyExtensionAgentClient: ExtensionAgentInterface.Client {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .enableExtension(MyExtensionAgentClient())
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyExtensionAgentClient</span><span class="p">:</span> <span class="nc">ExtensionAgentInterface</span><span class="p">.</span><span class="nc">Client</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="nc">NuguAndroidClient</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+    <span class="p">.</span><span class="nf">enableExtension</span><span class="p">(</span><span class="nc">MyExtensionAgentClient</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2480,10 +2480,10 @@ NuguAndroidClient.Builder(...)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let extensionAgent = nuguClient.extensionAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">extensionAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">extensionAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2502,7 +2502,7 @@ NuguAndroidClient.Builder(...)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2510,12 +2510,12 @@ NuguAndroidClient.Builder(...)
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto extension_handler(std::shared_ptr&lt;IExtensionHandler&gt;(
-        CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">extension_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IExtensionHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">ExtensionAgent</span><span class="p">,</span> <span class="n">IExtensionHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(extension_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">extension_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2554,7 +2554,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2566,16 +2566,16 @@ nugu_client-&gt;getCapabilityBuilder()
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>class MyExtensionAgentClient : ExtensionAgentInterface.Client {
-    override fun getData(): String? {
-        // json string
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyExtensionAgentClient</span> <span class="p">:</span> <span class="nc">ExtensionAgentInterface</span><span class="p">.</span><span class="nc">Client</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getData</span><span class="p">():</span> <span class="nc">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="c1">// json string</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun action(data: String, playServiceId: String): Boolean {
-        ...
-    }
-}
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">action</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">playServiceId</span><span class="p">:</span> <span class="nc">String</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2594,7 +2594,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2606,16 +2606,16 @@ nugu_client-&gt;getCapabilityBuilder()
 9
 10
 </pre></td>
-<td class="rouge-code"><pre>class MyExtensionAgentDelegate: ExtensionAgentDelegate {
-    func extensionAgentRequestContext() -&gt; [String: AnyHashable]? {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyExtensionAgentDelegate</span><span class="p">:</span> <span class="kt">ExtensionAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">extensionAgentRequestContext</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyHashable</span><span class="p">]?</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    func extensionAgentDidReceiveAction(data: [String: AnyHashable], playServiceId: String, dialogRequestId: String, completion: @escaping (Bool) -&gt; Void) {
-        ...
-    }
-}
-extensionAgent.delegate = MyExtensionAgentDelegate()
+    <span class="kd">func</span> <span class="nf">extensionAgentDidReceiveAction</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">AnyHashable</span><span class="p">],</span> <span class="nv">playServiceId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">dialogRequestId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">extensionAgent</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">MyExtensionAgentDelegate</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2634,7 +2634,7 @@ extensionAgent.delegate = MyExtensionAgentDelegate()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2647,17 +2647,17 @@ extensionAgent.delegate = MyExtensionAgentDelegate()
 10
 11
 </pre></td>
-<td class="rouge-code"><pre>class ExtensionListener : public IExtensionListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">ExtensionListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IExtensionListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void receiveAction(const std::string&amp; data, const std::string&amp; ps_id, const std::string&amp; dialog_id) override
-    {
-        ...
-    }
-};
-auto extension_listener(std::make_shared&lt;ExtensionListener&gt;());
-CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(extension_listener.get());
+    <span class="kt">void</span> <span class="n">receiveAction</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">data</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">ps_id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">extension_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">ExtensionListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">ExtensionAgent</span><span class="p">,</span> <span class="n">IExtensionHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">extension_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2692,10 +2692,10 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>extensionAgent.issueCommand(playServiceId, data, callback)
+<td class="rouge-code"><pre><span class="n">extensionAgent</span><span class="p">.</span><span class="nf">issueCommand</span><span class="p">(</span><span class="n">playServiceId</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2712,10 +2712,10 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>extentionAgent.requestCommand(data: data, playServiceId: playServiceId)
+<td class="rouge-code"><pre><span class="n">extentionAgent</span><span class="o">.</span><span class="nf">requestCommand</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="n">data</span><span class="p">,</span> <span class="nv">playServiceId</span><span class="p">:</span> <span class="n">playServiceId</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2725,10 +2725,10 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 </div>
 <div id="tab-content-158" class="tab-cont">
     
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>extension_handler-&gt;commandIssued(play_service_id, data)
+<td class="rouge-code"><pre><span class="n">extension_handler</span><span class="o">-&gt;</span><span class="n">commandIssued</span><span class="p">(</span><span class="n">play_service_id</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 
@@ -2746,7 +2746,7 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2754,13 +2754,13 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>{
-  "Extension": {
-    "version": "1.1",
-    "data": {}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"Extension"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2797,7 +2797,7 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2812,20 +2812,20 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Extension",
-    "name": "Action",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "data": {}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extension"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Action"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2862,7 +2862,7 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2876,19 +2876,19 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Extension",
-    "name": "ActionSucceeded",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extension"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ActionSucceeded"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2903,7 +2903,7 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2917,19 +2917,19 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Extension",
-    "name": "ActionFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.0"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extension"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ActionFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2944,7 +2944,7 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2959,20 +2959,20 @@ CapabilityFactory::makeCapability&lt;ExtensionAgent, IExtensionHandler&gt;(exten
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Extension",
-    "name": "CommandIssued",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.1"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "data": {}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extension"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CommandIssued"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

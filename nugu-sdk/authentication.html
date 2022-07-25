@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Authentication">
 <title>Developers | Guide - Authentication</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-sdk/authentication">
@@ -2466,14 +2466,14 @@ CSRF를 위해 사용 되는 값입니다.
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 302 
-Date: Mon, 14 Oct 2019 02:24:58 GMT
-Location: {redirect_uri}?code={code}&amp;state={state}
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">302</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">02</span><span class="nv">:24:58</span> <span class="nv">GMT</span>
+<span class="nv">Location:</span> <span class="err">{</span><span class="nv">redirect_uri</span><span class="err">}</span><span class="nv">?code=</span><span class="err">{</span><span class="nv">code</span><span class="err">}</span><span class="nv">&amp;state=</span><span class="err">{</span><span class="nv">state</span><span class="err">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2586,14 +2586,14 @@ authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험�
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 200 
-Date: Mon, 14 Oct 2019 02:24:59 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">200</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">02</span><span class="nv">:24:59</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2649,14 +2649,14 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 400 
-Date: Mon, 14 Oct 2019 04:22:45 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">400</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">04</span><span class="nv">:22:45</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2674,8 +2674,14 @@ Content-Type: application/json;charset=UTF-8
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"error"</span><span class="p">:</span><span class="s2">"invalid_grant"</span><span class="p">,</span><span class="nl">"error_description"</span><span class="p">:</span><span class="s2">"Invalid authorization code: 0rrbEjnOfqxIv6uNic6C"</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_grant"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid authorization code: 0rrbEjnOfqxIv6uNic6C"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2700,16 +2706,16 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 401 
-Date: Mon, 14 Oct 2019 04:22:45 GMT
-Content-Type: application/json;charset=UTF-8
-WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="Bad client credentials"
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">401</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">04</span><span class="nv">:22:45</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
+<span class="nv">WWW-Authenticate:</span> <span class="nv">Form</span> <span class="nv">realm=</span><span class="s">"NUGU"</span><span class="o">,</span> <span class="nv">error=</span><span class="s">"invalid_client"</span><span class="o">,</span> <span class="nv">error_description=</span><span class="s">"Bad client credentials"</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2727,8 +2733,14 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"error"</span><span class="p">:</span><span class="s2">"invalid_client"</span><span class="p">,</span><span class="nl">"error_description"</span><span class="p">:</span><span class="s2">"Bad client credentials"</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_client"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad client credentials"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2825,14 +2837,14 @@ refresh_token (갱신)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 200 
-Date: Mon, 14 Oct 2019 03:01:27 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">200</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">03</span><span class="nv">:01:27</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2888,14 +2900,14 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 400 
-Date: Mon, 14 Oct 2019 04:22:45 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">400</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">04</span><span class="nv">:22:45</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2913,8 +2925,14 @@ Content-Type: application/json;charset=UTF-8
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"error"</span><span class="p">:</span><span class="s2">"invalid_grant"</span><span class="p">,</span><span class="nl">"error_description"</span><span class="p">:</span><span class="s2">""</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_grant"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2939,16 +2957,16 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 401 
-Date: Mon, 14 Oct 2019 04:22:45 GMT
-Content-Type: application/json;charset=UTF-8
-WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="Bad client credentials"
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">401</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">04</span><span class="nv">:22:45</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
+<span class="nv">WWW-Authenticate:</span> <span class="nv">Form</span> <span class="nv">realm=</span><span class="s">"NUGU"</span><span class="o">,</span> <span class="nv">error=</span><span class="s">"invalid_client"</span><span class="o">,</span> <span class="nv">error_description=</span><span class="s">"Bad client credentials"</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2966,8 +2984,14 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"error"</span><span class="p">:</span><span class="s2">"invalid_client"</span><span class="p">,</span><span class="nl">"error_description"</span><span class="p">:</span><span class="s2">"Bad client credentials"</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_client"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bad client credentials"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3060,14 +3084,14 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 200 
-Date: Mon, 14 Oct 2019 03:01:27 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">200</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">03</span><span class="nv">:01:27</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3111,14 +3135,14 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 400 
-Date: Mon, 14 Oct 2019 04:22:45 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">400</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">04</span><span class="nv">:22:45</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3136,8 +3160,14 @@ Content-Type: application/json;charset=UTF-8
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"error"</span><span class="p">:</span><span class="s2">"invalid_token"</span><span class="p">,</span><span class="nl">"error_description"</span><span class="p">:</span><span class="s2">""</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3162,14 +3192,14 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 401 
-Date: Mon, 14 Oct 2019 04:22:45 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">401</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">04</span><span class="nv">:22:45</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3187,8 +3217,14 @@ Content-Type: application/json;charset=UTF-8
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"error"</span><span class="p">:</span><span class="s2">"invalid_client"</span><span class="p">,</span><span class="nl">"error_description"</span><span class="p">:</span><span class="s2">""</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_client"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3281,14 +3317,14 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 200 
-Date: Mon, 14 Oct 2019 03:01:27 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">200</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">03</span><span class="nv">:01:27</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3306,8 +3342,12 @@ Content-Type: application/json;charset=UTF-8
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"active"</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3332,14 +3372,14 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 400 
-Date: Mon, 14 Oct 2019 04:22:45 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">400</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">04</span><span class="nv">:22:45</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3357,8 +3397,14 @@ Content-Type: application/json;charset=UTF-8
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"error"</span><span class="p">:</span><span class="s2">"invalid_token"</span><span class="p">,</span><span class="nl">"error_description"</span><span class="p">:</span><span class="s2">""</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_token"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3383,14 +3429,14 @@ Content-Type: application/json;charset=UTF-8
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 </pre></td>
-<td class="rouge-code"><pre>HTTP/1.1 401 
-Date: Mon, 14 Oct 2019 04:22:45 GMT
-Content-Type: application/json;charset=UTF-8
+<td class="rouge-code"><pre><span class="nv">HTTP/1</span><span class="o">.</span><span class="mi">1</span> <span class="mi">401</span> 
+<span class="nv">Date:</span> <span class="nv">Mon,</span> <span class="mi">14</span> <span class="nv">Oct</span> <span class="mi">2019</span> <span class="mi">04</span><span class="nv">:22:45</span> <span class="nv">GMT</span>
+<span class="nv">Content-Type:</span> <span class="nv">application/json</span><span class="c1">;charset=UTF-8</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3408,8 +3454,14 @@ Content-Type: application/json;charset=UTF-8
     <div class="body">
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
 </pre></td>
-<td class="rouge-code"><pre><span class="p">{</span><span class="nl">"error"</span><span class="p">:</span><span class="s2">"invalid_client"</span><span class="p">,</span><span class="nl">"error_description"</span><span class="p">:</span><span class="s2">""</span><span class="p">}</span><span class="w">
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"invalid_client"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"error_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>

@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Display">
 <meta http-equiv="Description" content="Play 에서 전달하는 UI 요소를 화면에 구성하기 규격">
 <title>Developers | Guide - Display</title>
@@ -2455,10 +2455,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val displayAgent = nuguAndroidClient.displayAgent
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">displayAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="n">displayAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2473,10 +2473,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val displayAggregator = nuguAndroidClient.getDisplay()
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">displayAggregator</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">getDisplay</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2495,10 +2495,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let audioPlayerAgent = nuguClient.audioPlayerAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">audioPlayerAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">audioPlayerAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2517,7 +2517,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2525,12 +2525,12 @@
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto display_handler(std::shared_ptr&lt;IDisplayHandler&gt;(
-        CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">display_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IDisplayHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">DisplayAgent</span><span class="p">,</span> <span class="n">IDisplayHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(display_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">display_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2565,7 +2565,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2580,19 +2580,19 @@ nugu_client-&gt;getCapabilityBuilder()
 12
 13
 </pre></td>
-<td class="rouge-code"><pre>val controller = object: DisplayAggregatorInterface.Controller {
-    override fun getFocusedItemToken(): String? {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">controller</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">DisplayAggregatorInterface</span><span class="p">.</span><span class="nc">Controller</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getFocusedItemToken</span><span class="p">():</span> <span class="nc">String</span><span class="p">?</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun getVisibleTokenList(): List&lt;String&gt;? {
-        ...
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">getVisibleTokenList</span><span class="p">():</span> <span class="nc">List</span><span class="p">&lt;</span><span class="nc">String</span><span class="p">&gt;?</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 
-displayAggregator.displayCardRendered(templateId, controller)
+<span class="n">displayAggregator</span><span class="p">.</span><span class="nf">displayCardRendered</span><span class="p">(</span><span class="n">templateId</span><span class="p">,</span> <span class="n">controller</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2611,7 +2611,7 @@ displayAggregator.displayCardRendered(templateId, controller)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2621,14 +2621,14 @@ displayAggregator.displayCardRendered(templateId, controller)
 7
 8
 </pre></td>
-<td class="rouge-code"><pre>class MyDisplayAgentDelegate: DisplayAgentDelegate {
-    func displayAgentRequestContext(templateId: String, completion: @escaping (DisplayContext?) -&gt; Void) {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyDisplayAgentDelegate</span><span class="p">:</span> <span class="kt">DisplayAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">displayAgentRequestContext</span><span class="p">(</span><span class="nv">templateId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">DisplayContext</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    ...
-}
-displayAgent.delegate = MyDisplayAgentDelegate()
+    <span class="o">...</span>
+<span class="p">}</span>
+<span class="n">displayAgent</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">MyDisplayAgentDelegate</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2669,7 +2669,7 @@ displayAgent.delegate = MyDisplayAgentDelegate()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2679,14 +2679,14 @@ displayAgent.delegate = MyDisplayAgentDelegate()
 7
 8
 </pre></td>
-<td class="rouge-code"><pre>val renderer = object: DisplayAggregatorInterface.Renderer {
-    override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">renderer</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">DisplayAggregatorInterface</span><span class="p">.</span><span class="nc">Renderer</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">render</span><span class="p">(</span><span class="n">templateId</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">templateType</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">templateContent</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">dialogRequestId</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">displayType</span><span class="p">:</span> <span class="nc">Type</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
-displayAggregator.setRenderer(renderer)
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="n">displayAggregator</span><span class="p">.</span><span class="nf">setRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2701,7 +2701,7 @@ displayAggregator.setRenderer(renderer)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2715,18 +2715,18 @@ displayAggregator.setRenderer(renderer)
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>val controller = object: DisplayAggregatorInterface.Controller {
-    override fun controlFocus(direction: Direction): Boolean {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">controller</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">DisplayAggregatorInterface</span><span class="p">.</span><span class="nc">Controller</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">controlFocus</span><span class="p">(</span><span class="n">direction</span><span class="p">:</span> <span class="nc">Direction</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun controlScroll(direction: Direction): Boolean {
-        ...
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">controlScroll</span><span class="p">(</span><span class="n">direction</span><span class="p">:</span> <span class="nc">Direction</span><span class="p">):</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
-displayAggregator.displayCardRendered(templateId, controller)
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="n">displayAggregator</span><span class="p">.</span><span class="nf">displayCardRendered</span><span class="p">(</span><span class="n">templateId</span><span class="p">,</span> <span class="n">controller</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2745,7 +2745,7 @@ displayAggregator.displayCardRendered(templateId, controller)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2763,22 +2763,22 @@ displayAggregator.displayCardRendered(templateId, controller)
 15
 16
 </pre></td>
-<td class="rouge-code"><pre>class MyDisplayAgentDelegate: DisplayAgentDelegate {
-    func displayAgentShouldRender(template: DisplayTemplate, completion: @escaping (AnyObject?) -&gt; Void) {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyDisplayAgentDelegate</span><span class="p">:</span> <span class="kt">DisplayAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">displayAgentShouldRender</span><span class="p">(</span><span class="nv">template</span><span class="p">:</span> <span class="kt">DisplayTemplate</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">AnyObject</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    func displayAgentShouldMoveFocus(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -&gt; Void) {
-        ...
-    }
+    <span class="kd">func</span> <span class="nf">displayAgentShouldMoveFocus</span><span class="p">(</span><span class="nv">templateId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt">DisplayControlPayload</span><span class="o">.</span><span class="kt">Direction</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    func displayAgentShouldScroll(templateId: String, direction: DisplayControlPayload.Direction, completion: @escaping (Bool) -&gt; Void) {
-        ...
-    }
+    <span class="kd">func</span> <span class="nf">displayAgentShouldScroll</span><span class="p">(</span><span class="nv">templateId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt">DisplayControlPayload</span><span class="o">.</span><span class="kt">Direction</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    ...
-}
-displayAgent.delegate = MyDisplayAgentDelegate()
+    <span class="o">...</span>
+<span class="p">}</span>
+<span class="n">displayAgent</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="kt">MyDisplayAgentDelegate</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2797,7 +2797,7 @@ displayAgent.delegate = MyDisplayAgentDelegate()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2817,24 +2817,24 @@ displayAgent.delegate = MyDisplayAgentDelegate()
 17
 18
 </pre></td>
-<td class="rouge-code"><pre>class MyDisplayListener : public IDisplayListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MyDisplayListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IDisplayListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void renderDisplay(const std::string&amp; id, const std::string&amp; type, const std::string&amp; json, const std::string&amp; dialog_id) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">renderDisplay</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">type</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">json</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
     
-    bool clearDisplay(const std::string&amp; id, bool unconditionally, bool has_next) override
-    {
-        ...
-    }
+    <span class="kt">bool</span> <span class="n">clearDisplay</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">unconditionally</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">has_next</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto display_listener(std::make_shared&lt;MyDisplayListener&gt;());
-CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">display_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MyDisplayListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">DisplayAgent</span><span class="p">,</span> <span class="n">IDisplayHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">display_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2869,10 +2869,10 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>displayAggregator.setElementSelected(templateId, token, postback)
+<td class="rouge-code"><pre><span class="n">displayAggregator</span><span class="p">.</span><span class="nf">setElementSelected</span><span class="p">(</span><span class="n">templateId</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">postback</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2889,10 +2889,10 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>displayAgent.elementDidSelect(templateId: displayTemplate.templateId, token: token, postback: postback)
+<td class="rouge-code"><pre><span class="n">displayAgent</span><span class="o">.</span><span class="nf">elementDidSelect</span><span class="p">(</span><span class="nv">templateId</span><span class="p">:</span> <span class="n">displayTemplate</span><span class="o">.</span><span class="n">templateId</span><span class="p">,</span> <span class="nv">token</span><span class="p">:</span> <span class="n">token</span><span class="p">,</span> <span class="nv">postback</span><span class="p">:</span> <span class="n">postback</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2909,10 +2909,10 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>display_handler-&gt;elementSelected(id, item_token, postback)
+<td class="rouge-code"><pre><span class="n">display_handler</span><span class="o">-&gt;</span><span class="n">elementSelected</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">item_token</span><span class="p">,</span> <span class="n">postback</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2944,10 +2944,10 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>displayAggregator.notifyUserInteraction(templateId)
+<td class="rouge-code"><pre><span class="n">displayAggregator</span><span class="p">.</span><span class="nf">notifyUserInteraction</span><span class="p">(</span><span class="n">templateId</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2964,10 +2964,10 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>displayAgent.notifyUserInteraction()
+<td class="rouge-code"><pre><span class="n">displayAgent</span><span class="o">.</span><span class="nf">notifyUserInteraction</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2984,10 +2984,10 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>display_handler-&gt;refreshRenderingTimer(id)
+<td class="rouge-code"><pre><span class="n">display_handler</span><span class="o">-&gt;</span><span class="n">refreshRenderingTimer</span><span class="p">(</span><span class="n">id</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3611,11 +3611,11 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 7
 </pre></td>
 <td class="rouge-code"><pre><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-        </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -3672,8 +3672,8 @@ CapabilityFactory::makeCapability&lt;DisplayAgent, IDisplayHandler&gt;(display_l
 4
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">ImageObject</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="err">Object</span><span class="w">
+  </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">ImageObject</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"style"</span><span class="p">:</span><span class="w"> </span><span class="err">Object</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>

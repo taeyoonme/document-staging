@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Chips">
 <meta http-equiv="Description" content="보이스 크롬에 노출되는 발화 가이드를 제공하기 위한 규격">
 <title>Developers | Guide - Chips</title>
@@ -2430,10 +2430,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val chipsAgent = nuguAndroidClient.getAgent(ChipsAgent.NAMESPACE)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">chipsAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">getAgent</span><span class="p">(</span><span class="nc">ChipsAgent</span><span class="p">.</span><span class="nc">NAMESPACE</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2453,10 +2453,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let chipsAgent = nuguClient.chipsAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">chipsAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">chipsAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2473,10 +2473,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let dialogStateAggregator = nuguClient.dialogStateAggregator
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">dialogStateAggregator</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">dialogStateAggregator</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2495,7 +2495,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2503,12 +2503,12 @@
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto chips_handler(std::shared_ptr&lt;IChipsHandler&gt;(
-        CapabilityFactory::makeCapability&lt;ChipsAgent, IChipsHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">chips_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IChipsHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">ChipsAgent</span><span class="p">,</span> <span class="n">IChipsHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(chips_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">chips_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2545,7 +2545,7 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2553,12 +2553,12 @@ nugu_client-&gt;getCapabilityBuilder()
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: DialogUXStateAggregatorInterface.Listener {
-    override fun onDialogUXStateChanged(newState: DialogUXState, dialogMode: Boolean, chips: RenderDirective.Payload?, sessionActivated: Boolean) {
-        ...
-    }
-}
-nuguAndroidClient.addDialogUXStateListener(listener)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">DialogUXStateAggregatorInterface</span><span class="p">.</span><span class="nc">Listener</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onDialogUXStateChanged</span><span class="p">(</span><span class="n">newState</span><span class="p">:</span> <span class="nc">DialogUXState</span><span class="p">,</span> <span class="n">dialogMode</span><span class="p">:</span> <span class="nc">Boolean</span><span class="p">,</span> <span class="n">chips</span><span class="p">:</span> <span class="nc">RenderDirective</span><span class="p">.</span><span class="nc">Payload</span><span class="p">?,</span> <span class="n">sessionActivated</span><span class="p">:</span> <span class="nc">Boolean</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">nuguAndroidClient</span><span class="p">.</span><span class="nf">addDialogUXStateListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2577,7 +2577,7 @@ nuguAndroidClient.addDialogUXStateListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2585,12 +2585,12 @@ nuguAndroidClient.addDialogUXStateListener(listener)
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>class MyDialogStateDelegate: DialogStateDelegate {
-    func dialogStateDidChange(_ state: DialogState, isMultiturn: Bool, chips: [ChipsAgentItem.Chip]?, sessionActivated: Bool) {
-        ...
-    }
-}
-dialogStateAggregator.add(delegate: MyDialogStateDelegate())
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyDialogStateDelegate</span><span class="p">:</span> <span class="kt">DialogStateDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">dialogStateDidChange</span><span class="p">(</span><span class="n">_</span> <span class="nv">state</span><span class="p">:</span> <span class="kt">DialogState</span><span class="p">,</span> <span class="nv">isMultiturn</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">chips</span><span class="p">:</span> <span class="p">[</span><span class="kt">ChipsAgentItem</span><span class="o">.</span><span class="kt">Chip</span><span class="p">]?,</span> <span class="nv">sessionActivated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">dialogStateAggregator</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt">MyDialogStateDelegate</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2609,7 +2609,7 @@ dialogStateAggregator.add(delegate: MyDialogStateDelegate())
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2622,17 +2622,17 @@ dialogStateAggregator.add(delegate: MyDialogStateDelegate())
 10
 11
 </pre></td>
-<td class="rouge-code"><pre>class ChipsListener : public IChipsListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">ChipsListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IChipsListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void onReceiveRender(ChipsInfo&amp;&amp; chips_info) override
-    {
-        ...
-    }
-};
-auto chips_listener(std::make_shared&lt;IChipsListener&gt;());
-CapabilityFactory::makeCapability&lt;ChipsAgent, IChipsHandler&gt;(chips_listener.get());
+    <span class="kt">void</span> <span class="n">onReceiveRender</span><span class="p">(</span><span class="n">ChipsInfo</span><span class="o">&amp;&amp;</span> <span class="n">chips_info</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">chips_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">IChipsListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">ChipsAgent</span><span class="p">,</span> <span class="n">IChipsHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">chips_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2653,19 +2653,19 @@ CapabilityFactory::makeCapability&lt;ChipsAgent, IChipsHandler&gt;(chips_listene
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>{
-  "Chips": {
-    "version": "1.2"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"Chips"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2683,7 +2683,7 @@ CapabilityFactory::makeCapability&lt;ChipsAgent, IChipsHandler&gt;(chips_listene
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2705,27 +2705,27 @@ CapabilityFactory::makeCapability&lt;ChipsAgent, IChipsHandler&gt;(chips_listene
 19
 20
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "Chips",
-    "name": "Render",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.2"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "target": "{{STRING}}",
-    "chips": [
-      {
-        "type": "{{STRING}}",
-        "text": "{{STRING}}",
-        "token": "{{STRING}}"
-      }
-    ]
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chips"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Render"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"chips"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>

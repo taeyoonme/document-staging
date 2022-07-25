@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Bluetooth">
 <meta http-equiv="Description" content="디바이스의 블루투스를 제어하기 위한 규격">
 <title>Developers | Guide - Bluetooth</title>
@@ -2428,10 +2428,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val bluetoothAgent = nuguAndroidClient.bluetoothAgent
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">bluetoothAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="n">bluetoothAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2446,18 +2446,18 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>class MyBluetoothProvider: BluetoothProvider {
-    ...
-}
-NuguAndroidClient.Builder(...)
-    .enableBluetooth(MyBluetoothProvider())
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyBluetoothProvider</span><span class="p">:</span> <span class="nc">BluetoothProvider</span> <span class="p">{</span>
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="nc">NuguAndroidClient</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
+    <span class="p">.</span><span class="nf">enableBluetooth</span><span class="p">(</span><span class="nc">MyBluetoothProvider</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2492,7 +2492,7 @@ NuguAndroidClient.Builder(...)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2505,17 +2505,17 @@ NuguAndroidClient.Builder(...)
 10
 11
 </pre></td>
-<td class="rouge-code"><pre>class MyBluetoothProvider: BluetoothProvider {
-    override fun device() : BluetoothHost? {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="nc">MyBluetoothProvider</span><span class="p">:</span> <span class="nc">BluetoothProvider</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">device</span><span class="p">()</span> <span class="p">:</span> <span class="nc">BluetoothHost</span><span class="p">?</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    override fun activeDevice() : BluetoothDevice? {
-        ...
-    }
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">activeDevice</span><span class="p">()</span> <span class="p">:</span> <span class="nc">BluetoothDevice</span><span class="p">?</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2550,7 +2550,7 @@ NuguAndroidClient.Builder(...)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2566,20 +2566,20 @@ NuguAndroidClient.Builder(...)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: BluetoothAgentInterface.Listener {
-    fun onDiscoverableStart(durationInSeconds: Long = 0) : DiscoverableStartResult {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">BluetoothAgentInterface</span><span class="p">.</span><span class="nc">Listener</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">onDiscoverableStart</span><span class="p">(</span><span class="n">durationInSeconds</span><span class="p">:</span> <span class="nc">Long</span> <span class="p">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">:</span> <span class="nc">DiscoverableStartResult</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    fun onDiscoverableFinish() : Boolean {
-        ...
-    }
+    <span class="k">fun</span> <span class="nf">onDiscoverableFinish</span><span class="p">()</span> <span class="p">:</span> <span class="nc">Boolean</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    fun onAVRCPCommand(command: AVRCPCommand) {
-        ...
-    }
-}
-bluetoothAgent.setListener(listener)
+    <span class="k">fun</span> <span class="nf">onAVRCPCommand</span><span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="nc">AVRCPCommand</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">bluetoothAgent</span><span class="p">.</span><span class="nf">setListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>

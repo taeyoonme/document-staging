@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - 테스트 환경 설정">
 <title>Developers | Guide - 테스트 환경 설정</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-sdk/platform/android/testing_sdk_integration">
@@ -2383,18 +2383,18 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre>val transport = GrpcTransportFactory(
-   NuguServerInfo.Builder()
-       .deviceGW("review-dggprc.sktnugu.com")
-       .build()
-)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">transport</span> <span class="p">=</span> <span class="nc">GrpcTransportFactory</span><span class="p">(</span>
+   <span class="nc">NuguServerInfo</span><span class="p">.</span><span class="nc">Builder</span><span class="p">()</span>
+       <span class="p">.</span><span class="nf">deviceGW</span><span class="p">(</span><span class="s">"review-dggprc.sktnugu.com"</span><span class="p">)</span>
+       <span class="p">.</span><span class="nf">build</span><span class="p">()</span>
+<span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>

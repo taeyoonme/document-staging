@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - PowerControl Interface">
 <title>Developers | Guide - PowerControl Interface</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface">
@@ -2374,24 +2374,22 @@
 
 <article class="code">
     
+        <header>(POST, /nugu/v1/devices)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
-4
-5
 </pre></td>
-<td class="rouge-code"><pre><span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/devices</span><span class="p">)</span>
-
-<span class="err">{</span>
-    <span class="s">"token"</span><span class="nv">:</span> <span class="s">"7KOdwPQdJPZf4KYsjtHdqz3e8fKd"</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7KOdwPQdJPZf4KYsjtHdqz3e8fKd"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2426,28 +2424,26 @@
 18
 19
 20
-21
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-   </span><span class="nl">"devices"</span><span class="p">:[</span><span class="w">
-      </span><span class="p">{</span><span class="w">
-         </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="s2">"example_device_type"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="s2">"example_model_name"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"friendlyNameSuggestion"</span><span class="p">:</span><span class="s2">"안방"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="s2">"example_manufacturer"</span><span class="p">,</span><span class="w">
-         </span><span class="nl">"supportedCapabilities"</span><span class="p">:{</span><span class="w">
-            </span><span class="nl">"powerControl"</span><span class="p">:{</span><span class="w">
-
-            </span><span class="p">}</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="nl">"customData"</span><span class="p">:{</span><span class="w">
-            </span><span class="nl">"foo"</span><span class="p">:</span><span class="s2">"bar"</span><span class="w">
-         </span><span class="p">},</span><span class="w">
-         </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="kc">true</span><span class="w">
-      </span><span class="p">}</span><span class="w">
-   </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"devices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_device_type"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_model_name"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"friendlyNameSuggestion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"안방"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_manufacturer"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -2476,12 +2472,14 @@ Directive : TurnOn</p>
 
 <article class="code">
     
+        <header>(POST, /nugu/v1/capabilities/PowerControl/directives/TurnOn)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2516,46 +2514,42 @@ Directive : TurnOn</p>
 32
 33
 34
-35
-36
 </pre></td>
-<td class="rouge-code"><pre><span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/PowerControl/directives/TurnOn</span><span class="p">)</span>
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"PowerControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"TurnOn"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="nv">null</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"1234567"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"LIGHT"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"example_device_type"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example_model_name"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"안방"</span><span class="o">,</span>
-        <span class="s">"manufacturer"</span><span class="nv">:</span> <span class="s">"example_manufacturer"</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"powerControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"connectionStatus"</span><span class="nv">:</span> <span class="nv">true</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PowerControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TurnOn"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_device_type"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_model_name"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"안방"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_manufacturer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2582,14 +2576,14 @@ Directive : TurnOn</p>
 10
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -2613,12 +2607,14 @@ Directive : TurnOff</p>
 
 <article class="code">
     
+        <header>(POST, /nugu/v1/capabilities/PowerControl/directives/TurnOff)</header>
+    
     <div class="copy">
         <span class="copy-text" data-skip-search-index="">복사성공!</span>
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-scheme highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2653,46 +2649,42 @@ Directive : TurnOff</p>
 32
 33
 34
-35
-36
 </pre></td>
-<td class="rouge-code"><pre><span class="p">(</span><span class="nf">POST,</span> <span class="nv">/nugu/v1/capabilities/PowerControl/directives/TurnOff</span><span class="p">)</span>
-
-<span class="err">{</span>
-  <span class="s">"version"</span><span class="nv">:</span> <span class="mi">1</span><span class="o">,</span>
-  <span class="s">"requestId"</span><span class="nv">:</span> <span class="s">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="o">,</span>
-  <span class="s">"action"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"command"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"smartHomeCapability"</span><span class="nv">:</span> <span class="s">"PowerControl"</span><span class="o">,</span>
-      <span class="s">"smartHomeDirective"</span><span class="nv">:</span> <span class="s">"TurnOff"</span><span class="o">,</span>
-      <span class="s">"parameters"</span><span class="nv">:</span> <span class="nv">null</span>
-    <span class="err">}</span><span class="o">,</span>
-    <span class="s">"smartHomeDevices"</span><span class="nv">:</span> <span class="p">[</span>
-      <span class="err">{</span>
-        <span class="s">"id"</span><span class="nv">:</span> <span class="s">"1234567"</span><span class="o">,</span>
-        <span class="s">"deviceTypeCode"</span><span class="nv">:</span> <span class="s">"LIGHT"</span><span class="o">,</span>
-        <span class="s">"deviceTypeName"</span><span class="nv">:</span> <span class="s">"example_device_type"</span><span class="o">,</span>
-        <span class="s">"deviceModelName"</span><span class="nv">:</span> <span class="s">"example_model_name"</span><span class="o">,</span>
-        <span class="s">"friendlyName"</span><span class="nv">:</span> <span class="s">"안방"</span><span class="o">,</span>
-        <span class="s">"manufacturer"</span><span class="nv">:</span> <span class="s">"example_manufacturer"</span><span class="o">,</span>
-        <span class="s">"supportedCapabilities"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"powerControl"</span><span class="nv">:</span> <span class="err">{}</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"customData"</span><span class="nv">:</span> <span class="err">{</span>
-          <span class="s">"foo"</span><span class="nv">:</span> <span class="s">"bar"</span>
-        <span class="err">}</span><span class="o">,</span>
-        <span class="s">"connectionStatus"</span><span class="nv">:</span> <span class="nv">true</span>
-      <span class="err">}</span>
-    <span class="p">]</span>
-  <span class="err">}</span><span class="o">,</span>
-  <span class="s">"context"</span><span class="nv">:</span> <span class="err">{</span>
-    <span class="s">"session"</span><span class="nv">:</span> <span class="err">{</span>
-      <span class="s">"id"</span><span class="nv">:</span> <span class="s">"example_session_id"</span><span class="o">,</span>
-      <span class="s">"accessToken"</span><span class="nv">:</span> <span class="s">"example_access_token"</span>
-    <span class="err">}</span>
-  <span class="err">}</span>
-<span class="err">}</span>
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"command"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"smartHomeCapability"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PowerControl"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"smartHomeDirective"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TurnOff"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"smartHomeDevices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234567"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LIGHT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_device_type"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deviceModelName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_model_name"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"friendlyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"안방"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"manufacturer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_manufacturer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"supportedCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"powerControl"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"customData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"connectionStatus"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_session_id"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"accessToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"example_access_token"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -2719,14 +2711,14 @@ Directive : TurnOff</p>
 10
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-    </span><span class="nl">"data"</span><span class="p">:[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
-            </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">&lt;--</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+  </span><span class="nl">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20190916109ad8219c251742859c56f6ec3c4700bb"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"resultCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">에러일</span><span class="w"> </span><span class="err">경우</span><span class="w"> </span><span class="err">에러코드</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"smartHomeDevice"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">request로</span><span class="w"> </span><span class="err">받은</span><span class="w"> </span><span class="err">값을</span><span class="w"> </span><span class="err">그대로</span><span class="w"> </span><span class="err">응답</span><span class="w">
+      </span><span class="nl">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">directive</span><span class="w"> </span><span class="err">마다</span><span class="w"> </span><span class="err">필요한</span><span class="w"> </span><span class="err">property</span><span class="w"> </span><span class="err">채워서</span><span class="w"> </span><span class="err">응답</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>

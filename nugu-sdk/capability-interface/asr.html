@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 04:22:53 +0000">
 <meta http-equiv="Title" content="Developers | Guide - ASR">
 <meta http-equiv="Description" content="음성인식 결과를 Play 로 전달하기 위한 규격">
 <title>Developers | Guide - ASR</title>
@@ -2455,10 +2455,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val asrAgent = nuguAndroidClient.asrAgent
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">asrAgent</span> <span class="p">=</span> <span class="n">nuguAndroidClient</span><span class="p">.</span><span class="n">asrAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2473,10 +2473,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>val audioSourceManager = AudioSourceManager(AudioRecordSourceFactory())
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">audioSourceManager</span> <span class="p">=</span> <span class="nc">AudioSourceManager</span><span class="p">(</span><span class="nc">AudioRecordSourceFactory</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2491,7 +2491,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2505,18 +2505,18 @@
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>NuguAndroidClient.Builder(
-    context,
-    NuguOAuth.create(context),
-    audioSourceManager
-).endPointDetector(
-    EndPointDetector(
-        context.getDir(
-            "skt_nugu_assets",
-            Context.MODE_PRIVATE
-        ).absolutePath + File.separator + "skt_epd_model.raw"
-    )
-)
+<td class="rouge-code"><pre><span class="nc">NuguAndroidClient</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span>
+    <span class="n">context</span><span class="p">,</span>
+    <span class="nc">NuguOAuth</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+    <span class="n">audioSourceManager</span>
+<span class="p">).</span><span class="nf">endPointDetector</span><span class="p">(</span>
+    <span class="nc">EndPointDetector</span><span class="p">(</span>
+        <span class="n">context</span><span class="p">.</span><span class="nf">getDir</span><span class="p">(</span>
+            <span class="s">"skt_nugu_assets"</span><span class="p">,</span>
+            <span class="nc">Context</span><span class="p">.</span><span class="nc">MODE_PRIVATE</span>
+        <span class="p">).</span><span class="n">absolutePath</span> <span class="p">+</span> <span class="nc">File</span><span class="p">.</span><span class="n">separator</span> <span class="p">+</span> <span class="s">"skt_epd_model.raw"</span>
+    <span class="p">)</span>
+<span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2531,7 +2531,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2539,12 +2539,12 @@
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>speechRecognizerAggregator = SpeechRecognizerAggregator(
-    null,
-    SpeechProcessorDelegate(asrAgent),
-    audioSourceManager,
-    Handler(Looper.getMainLooper())
-)
+<td class="rouge-code"><pre><span class="n">speechRecognizerAggregator</span> <span class="p">=</span> <span class="nc">SpeechRecognizerAggregator</span><span class="p">(</span>
+    <span class="k">null</span><span class="p">,</span>
+    <span class="nc">SpeechProcessorDelegate</span><span class="p">(</span><span class="n">asrAgent</span><span class="p">),</span>
+    <span class="n">audioSourceManager</span><span class="p">,</span>
+    <span class="nc">Handler</span><span class="p">(</span><span class="nc">Looper</span><span class="p">.</span><span class="nf">getMainLooper</span><span class="p">())</span>
+<span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2563,10 +2563,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let asrAgent = nuguClient.asrAgent
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">asrAgent</span> <span class="o">=</span> <span class="n">nuguClient</span><span class="o">.</span><span class="n">asrAgent</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2581,10 +2581,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>let micInputProvider = MicInputProvider()
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">micInputProvider</span> <span class="o">=</span> <span class="kt">MicInputProvider</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2599,10 +2599,10 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>micInputProvider.delegate = nuguClient
+<td class="rouge-code"><pre><span class="n">micInputProvider</span><span class="o">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">nuguClient</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2617,12 +2617,12 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td>
-<td class="rouge-code"><pre>let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw")!
-nuguClient.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
+<td class="rouge-code"><pre><span class="k">let</span> <span class="nv">epdFile</span> <span class="o">=</span> <span class="kt">Bundle</span><span class="o">.</span><span class="n">main</span><span class="o">.</span><span class="nf">url</span><span class="p">(</span><span class="nv">forResource</span><span class="p">:</span> <span class="s">"skt_epd_model"</span><span class="p">,</span> <span class="nv">withExtension</span><span class="p">:</span> <span class="s">"raw"</span><span class="p">)</span><span class="o">!</span>
+<span class="n">nuguClient</span><span class="o">.</span><span class="n">asrAgent</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="kt">ASROptions</span><span class="p">(</span><span class="nv">endPointing</span><span class="p">:</span> <span class="o">.</span><span class="nf">client</span><span class="p">(</span><span class="nv">epdFile</span><span class="p">:</span> <span class="n">epdFile</span><span class="p">))</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2641,7 +2641,7 @@ nuguClient.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2649,12 +2649,12 @@ nuguClient.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>auto asr_handler(std::shared_ptr&lt;IASRHandler&gt;(
-        CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;()));
+<td class="rouge-code"><pre><span class="k">auto</span> <span class="nf">asr_handler</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">IASRHandler</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">ASRAgent</span><span class="p">,</span> <span class="n">IASRHandler</span><span class="o">&gt;</span><span class="p">()));</span>
 
-nugu_client-&gt;getCapabilityBuilder()
-    -&gt;add(asr_handler.get())
-    -&gt;construct();
+<span class="n">nugu_client</span><span class="o">-&gt;</span><span class="n">getCapabilityBuilder</span><span class="p">()</span>
+    <span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">asr_handler</span><span class="p">.</span><span class="n">get</span><span class="p">())</span>
+    <span class="o">-&gt;</span><span class="n">construct</span><span class="p">();</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2669,10 +2669,10 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre> asr_handler-&gt;setAttribute(ASRAttribute { "/var/lib/nugu/model", "CLIENT", "PARTIAL" });
+<td class="rouge-code"><pre> <span class="n">asr_handler</span><span class="o">-&gt;</span><span class="n">setAttribute</span><span class="p">(</span><span class="n">ASRAttribute</span> <span class="p">{</span> <span class="s">"/var/lib/nugu/model"</span><span class="p">,</span> <span class="s">"CLIENT"</span><span class="p">,</span> <span class="s">"PARTIAL"</span> <span class="p">});</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2707,10 +2707,10 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>speechRecognizerAggregator.startListening(initiator = TAP)
+<td class="rouge-code"><pre><span class="n">speechRecognizerAggregator</span><span class="p">.</span><span class="nf">startListening</span><span class="p">(</span><span class="n">initiator</span> <span class="p">=</span> <span class="nc">TAP</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2727,12 +2727,12 @@ nugu_client-&gt;getCapabilityBuilder()
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 </pre></td>
-<td class="rouge-code"><pre>try micInputProvider.start()
-asrAgent.startRecognition(initiator: .user)
+<td class="rouge-code"><pre><span class="k">try</span> <span class="n">micInputProvider</span><span class="o">.</span><span class="nf">start</span><span class="p">()</span>
+<span class="n">asrAgent</span><span class="o">.</span><span class="nf">startRecognition</span><span class="p">(</span><span class="nv">initiator</span><span class="p">:</span> <span class="o">.</span><span class="n">user</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2749,10 +2749,10 @@ asrAgent.startRecognition(initiator: .user)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>asr_handler-&gt;startRecognition()
+<td class="rouge-code"><pre><span class="n">asr_handler</span><span class="o">-&gt;</span><span class="n">startRecognition</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2791,7 +2791,7 @@ asrAgent.startRecognition(initiator: .user)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2799,12 +2799,12 @@ asrAgent.startRecognition(initiator: .user)
 5
 6
 </pre></td>
-<td class="rouge-code"><pre>val listener = object: SpeechRecognizerAggregatorInterface.OnStateChangeListener {
-    override fun onStateChanged(state: State) {
-        ...
-    }
-}
-speechRecognizerAggregator.addListener(listener)
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">listener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">SpeechRecognizerAggregatorInterface</span><span class="p">.</span><span class="nc">OnStateChangeListener</span> <span class="p">{</span>
+    <span class="k">override</span> <span class="k">fun</span> <span class="nf">onStateChanged</span><span class="p">(</span><span class="n">state</span><span class="p">:</span> <span class="nc">State</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">speechRecognizerAggregator</span><span class="p">.</span><span class="nf">addListener</span><span class="p">(</span><span class="n">listener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2819,7 +2819,7 @@ speechRecognizerAggregator.addListener(listener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2835,20 +2835,20 @@ speechRecognizerAggregator.addListener(listener)
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>val resultListener = object: ASRAgentInterface.OnResultListener {
-    fun onPartialResult(result: String, dialogRequestId: String) {
-        // STT 중간 결과
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">val</span> <span class="py">resultListener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="nc">ASRAgentInterface</span><span class="p">.</span><span class="nc">OnResultListener</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">onPartialResult</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">dialogRequestId</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// STT 중간 결과</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    fun onCompleteResult(result: String, dialogRequestId: String) {
-        // STT 최종 결과
-        ...
-    }
+    <span class="k">fun</span> <span class="nf">onCompleteResult</span><span class="p">(</span><span class="n">result</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">dialogRequestId</span><span class="p">:</span> <span class="nc">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// STT 최종 결과</span>
+        <span class="o">..</span><span class="p">.</span>
+    <span class="p">}</span>
 
-    ...
-}
-asrAgent.addOnResultListener(resultListener)
+    <span class="o">..</span><span class="p">.</span>
+<span class="p">}</span>
+<span class="n">asrAgent</span><span class="p">.</span><span class="nf">addOnResultListener</span><span class="p">(</span><span class="n">resultListener</span><span class="p">)</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2867,7 +2867,7 @@ asrAgent.addOnResultListener(resultListener)
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2880,17 +2880,17 @@ asrAgent.addOnResultListener(resultListener)
 10
 11
 </pre></td>
-<td class="rouge-code"><pre>class MyASRAgentDelegate: ASRAgentDelegate {
-    func asrAgentDidChange(state: ASRState) {
-        ...
-    }
+<td class="rouge-code"><pre><span class="kd">class</span> <span class="kt">MyASRAgentDelegate</span><span class="p">:</span> <span class="kt">ASRAgentDelegate</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">asrAgentDidChange</span><span class="p">(</span><span class="nv">state</span><span class="p">:</span> <span class="kt">ASRState</span><span class="p">)</span> <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    func asrAgentDidReceive(result: ASRResult, dialogRequestId: String) {
-        // NotifyResult 결과 확인
-        ...
-    }
-}
-asrAgent.add(delegate: MyASRAgentDelegate())
+    <span class="kd">func</span> <span class="nf">asrAgentDidReceive</span><span class="p">(</span><span class="nv">result</span><span class="p">:</span> <span class="kt">ASRResult</span><span class="p">,</span> <span class="nv">dialogRequestId</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// NotifyResult 결과 확인</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">asrAgent</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">delegate</span><span class="p">:</span> <span class="kt">MyASRAgentDelegate</span><span class="p">())</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2909,7 +2909,7 @@ asrAgent.add(delegate: MyASRAgentDelegate())
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2936,31 +2936,31 @@ asrAgent.add(delegate: MyASRAgentDelegate())
 24
 25
 </pre></td>
-<td class="rouge-code"><pre>class MyASRListener : public IASRListener {
-public:
-    ...
+<td class="rouge-code"><pre><span class="k">class</span> <span class="nc">MyASRListener</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IASRListener</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="p">...</span>
 
-    void onState(ASRState state, const std::string &amp;dialog_id) override
-    {
-        ...
-    }
+    <span class="kt">void</span> <span class="n">onState</span><span class="p">(</span><span class="n">ASRState</span> <span class="n">state</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    void onPartial(const std::string &amp;text, const std::string &amp;dialog_id) override
-    {
-        // STT 중간 결과
-        ...
-    }
+    <span class="kt">void</span> <span class="n">onPartial</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">text</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// STT 중간 결과</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    void onComplete(const std::string &amp;text, const std::string &amp;dialog_id) override
-    {
-        // STT 최종 결과
-        ...
-    }
+    <span class="kt">void</span> <span class="n">onComplete</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">text</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">dialog_id</span><span class="p">)</span> <span class="k">override</span>
+    <span class="p">{</span>
+        <span class="c1">// STT 최종 결과</span>
+        <span class="p">...</span>
+    <span class="p">}</span>
 
-    ...
-};
-auto asr_listener(std::make_shared&lt;MyASRListener&gt;());
-CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get());
+    <span class="p">...</span>
+<span class="p">};</span>
+<span class="k">auto</span> <span class="nf">asr_listener</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MyASRListener</span><span class="o">&gt;</span><span class="p">());</span>
+<span class="n">CapabilityFactory</span><span class="o">::</span><span class="n">makeCapability</span><span class="o">&lt;</span><span class="n">ASRAgent</span><span class="p">,</span> <span class="n">IASRHandler</span><span class="o">&gt;</span><span class="p">(</span><span class="n">asr_listener</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -2995,10 +2995,10 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>speechRecognizerAggregator.stopListening()
+<td class="rouge-code"><pre><span class="n">speechRecognizerAggregator</span><span class="p">.</span><span class="nf">stopListening</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3015,10 +3015,10 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>asrAgent.stopRecognition()
+<td class="rouge-code"><pre><span class="n">asrAgent</span><span class="o">.</span><span class="nf">stopRecognition</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3035,10 +3035,10 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td>
-<td class="rouge-code"><pre>asr_handler-&gt;stopRecognition()
+<td class="rouge-code"><pre><span class="n">asr_handler</span><span class="o">-&gt;</span><span class="n">stopRecognition</span><span class="p">()</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
@@ -3059,7 +3059,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3069,15 +3069,15 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 7
 8
 </pre></td>
-<td class="rouge-code"><pre>{
-  "ASR": {
-    "version": "1.6",
-    "engine": "{{STRING}}",
-    "state": "{{STRING}}",
-    "initiator": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"ASR"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"engine"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"initiator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3126,7 +3126,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3155,34 +3155,34 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 26
 27
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "ASR",
-    "name": "ExpectSpeech",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.6"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}",
-    "domainTypes": ["{{STRING}}"],
-    "asrContext": {
-      "task": "{{STRING}}",
-      "sceneId": "{{STRING}}",
-      "sceneText": [
-        "{{STRING}}"
-      ],
-      "playServiceId" : "playServiceId"
-    },
-    "epd": {
-      "timeoutMilliseconds": {{LONG}},
-      "silenceIntervalInMilliseconds": {{LONG}},
-      "maxSpeechDurationMilliseconds": {{LONG}}
-    },
-    "listenTimeoutFailBeep": {{BOOLEAN}}
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ExpectSpeech"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domainTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{{STRING}}"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"asrContext"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sceneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sceneText"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"playServiceId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"playServiceId"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"epd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"timeoutMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+      </span><span class="nl">"silenceIntervalInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+      </span><span class="nl">"maxSpeechDurationMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"listenTimeoutFailBeep"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3295,7 +3295,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3311,21 +3311,21 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 13
 14
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "ASR",
-    "name": "NotifyResult",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.6"
-  },
-  "payload": {
-    "token": "{{STRING}}",
-    "result": "{{STRING}}",
-    "state": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NotifyResult"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3372,7 +3372,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3386,19 +3386,19 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "ASR",
-    "name": "CancelRecognize",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.6"
-  },
-  "payload": {
-    "cause": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CancelRecognize"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"cause"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3436,7 +3436,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3480,49 +3480,49 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 41
 42
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "ASR",
-    "name": "Recognize",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.6"
-  },
-  "payload": {
-    "codec": "{{STRING}}",
-    "playServiceId": "{{STRING}}",
-    "domainTypes": ["{{STRING}}"],
-    "language": "{{STRING}}",
-    "endpointing": "{{STRING}}",
-    "encoding": "{{STRING}}",
-    "wakeup": {
-      "word": "{{STRING}}",
-      "boundary": {
-        "start": {{LONG}},
-        "end": {{LONG}},
-        "detection": {{LONG}}
-      },
-      "power": {
-        "noise": {{LONG}},
-        "speech": {{LONG}}
-      }
-    },
-    "asrContext": {
-      "task": "{{STRING}}",
-      "sceneId": "{{STRING}}",
-      "sceneText": [
-        "{{STRING}}"
-      ],
-      "playServiceId" : "playServiceId"
-    },
-    "timeout": {
-      "listen": {{LONG}},
-      "maxSpeech": {{LONG}},
-      "response": {{LONG}}
-    }
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Recognize"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"codec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"domainTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"{{STRING}}"</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endpointing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"encoding"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"wakeup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"word"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"boundary"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"start"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"end"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"detection"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"power"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"noise"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+        </span><span class="nl">"speech"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"asrContext"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"task"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sceneId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sceneText"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"{{STRING}}"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"playServiceId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"playServiceId"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"listen"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+      </span><span class="nl">"maxSpeech"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
+      </span><span class="nl">"response"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3714,7 +3714,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3728,19 +3728,19 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "ASR",
-    "name": "ResponseTimeout",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.6"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ResponseTimeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3778,7 +3778,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3792,19 +3792,19 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "ASR",
-    "name": "ListenTimeout",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.6"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ListenTimeout"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3842,7 +3842,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3856,19 +3856,19 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "ASR",
-    "name": "StopRecognize",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.6"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"StopRecognize"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
@@ -3906,7 +3906,7 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -3920,19 +3920,19 @@ CapabilityFactory::makeCapability&lt;ASRAgent, IASRHandler&gt;(asr_listener.get(
 11
 12
 </pre></td>
-<td class="rouge-code"><pre>{
-  "header": {
-    "namespace": "ASR",
-    "name": "ListenFailed",
-    "messageId": "{{STRING}}",
-    "dialogRequestId": "{{STRING}}",
-    "version": "1.6"
-  },
-  "payload": {
-    "playServiceId": "{{STRING}}"
-  }
-}
-</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASR"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ListenFailed"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.6"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>
 </article>
