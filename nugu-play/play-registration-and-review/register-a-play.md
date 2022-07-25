@@ -9,6 +9,7 @@ depth_order: 1
 \1. `Play 등록하기` 버튼을 클릭하세요. Play Builder에서 개발한 Play 리스트 팝업이 표시됩니다.
 
    ![](../../assets/images/register-a-play-01.png)
+
 \2. 등록할 Play의 타입을 결정하고 `다음` 버튼을 클릭하여 Play의 Snapshot 버전을 선택하는 화면으로 이동합니다. 일반적인 Play는 Custom 타입이며, Play Builder에 smarthome play 타입으로 만들어진 Play는 Pre-Built-in입니다.
 
    ![](../../assets/images/register-a-play-02.png)
@@ -16,9 +17,11 @@ depth_order: 1
 {% alerts style="info" %}
 Smarthome 타입의 경우 [Pre-built Play Builder로 스마트홈 Play 만들기](../smarthome-play)를 참고하세요.
 {% endalerts %}
+
 \3. 등록할 Snapshot 버전을 선택하고 확인 버튼을 클릭하여, Play 이름/ID 생성 화면으로 이동합니다.
 
    ![](../../assets/images/register-a-play-03.png)
+
 \4. 사용자에게 노출될 Play 서비스명과, 고유한 Play ID를 생성합니다.
 
 Play 서비스명은 Play Builder에서의 Play Name과 다르게 Developers에서 지정하는 이름이며, NUGU APP을 포함한 서비스 화면 노출 용도로 활용됩니다.
@@ -109,7 +112,7 @@ Play 호출 이름은 위 조건을 기준으로 사용 승인 심사를 진행�
 
 ![](../../assets/images/register-a-play-07.png)
 
-** 계정 연동 여부(OAuth 연동 여부)**
+**계정 연동 여부(OAuth 연동 여부)**
 
 제공하려는 Play의 사용자 계정과 NUGU 사용자 계정의 연결이 필요할 경우, 계정 연동에서 \[사용]을 선택하고, 다음 정보를 등록합니다. 계정 연동에 대한 자세한 내용은 [\[계정 연동 가이드 보기\]](../create-plays-with-play-builder/link-oauth20#link-oauth20)를 참고하세요.
 
