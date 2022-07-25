@@ -18,40 +18,41 @@ Authorization: token TOKEN_STRING
 {% endcode %}
 
 {% code %}
+
 ```json
 {
-    "version": "2.0",
-    "action": {
-        "actionName": "{{string}}",
-        "parameters": {
-            KEY: {
-                "type": "{{string}}",
-                "value": VALUE
-            }
-        }
-    },
-    "event": {
-        "type": "{{string}}"
-    },  
-    "context": {
-        "session": {
-            "accessToken": "{{string}}"
-        },
-        "device": {
-            "type": "{{string}}",
-            "state": {
-                KEY: VALUE
-            }
-        },
-        "supportedInterfaces": {
-            "AudioPlayer": {
-                "playerActivity": "PLAYING",
-                "token": "string value",
-                "offsetInMilliseconds": 100000
-            }  
-        },
-        "privatePlay" : { } # reserved
+  "version": "2.0",
+  "action": {
+    "actionName": "{{string}}",
+    "parameters": {
+      KEY: {
+        "type": "{{string}}",
+        "value": VALUE
+      }
     }
+  },
+  "event": {
+    "type": "{{string}}"
+  },
+  "context": {
+    "session": {
+      "accessToken": "{{string}}"
+    },
+    "device": {
+      "type": "{{string}}",
+      "state": {
+        KEY: VALUE
+      }
+    },
+    "supportedInterfaces": {
+      "AudioPlayer": {
+        "playerActivity": "PLAYING",
+        "token": "string value",
+        "offsetInMilliseconds": 100000
+      }
+    },
+    "privatePlay": {} // reserved
+  }
 }
 ```
 {% endcode %}
@@ -140,7 +141,7 @@ AudioPlayer Interface를 사용하도록 설정된 Play에만 전송됩니다.
             "token": "{{STRING}}",
             "expectedPreviousToken": "{{STRING}}"
           },
-          "metadata": { } # reserved
+          "metadata": { } // reserved
       }
     }
   ]

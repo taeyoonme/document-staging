@@ -39,22 +39,22 @@ AudioPlayer를 위한 확장 Template의 타입은 두 가지이며, 타입에 �
 {% code %}
 ```json
 {
-    "metadata": {    
-        "template": {
-            "type": "AudioPlayer.Template1",
-            "title": {
-                "iconUrl": "https://nugu.sk.com/music_icon.png",
-                "text": "FLO Music"
-            },
-            "content": {
-                "title": "NONO",
-                "subtitle1": "Loopy",
-                "subtitle2": "Prod. Code Kunst",
-                "imageUrl": "https://nugu.sk.com/flo.jpg",
-                "durationSec": "329"
-            }
-        }
+  "metadata": {
+    "template": {
+      "type": "AudioPlayer.Template1",
+      "title": {
+        "iconUrl": "https://nugu.sk.com/music_icon.png",
+        "text": "FLO Music"
+      },
+      "content": {
+        "title": "NONO",
+        "subtitle1": "Loopy",
+        "subtitle2": "Prod. Code Kunst",
+        "imageUrl": "https://nugu.sk.com/flo.jpg",
+        "durationSec": "329"
+      }
     }
+  }
 }
 ```
 {% endcode %}
@@ -131,9 +131,9 @@ AudioPlayer를 위한 Template은 오디오 재생을 제어하는 버튼이 있
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.NextCommandIssued",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
+  "type": "AudioPlayer.NextCommandIssued",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
 }
 ```
 {% endcode %}

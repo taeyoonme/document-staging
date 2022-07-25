@@ -93,20 +93,21 @@ Play Builder에서 Action을 정의하지 않는 경우 Fallback Action에 등�
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.Play",
-    "audioItem": {        
-        "stream": {
-            "url": "{{STRING}}",
-            "offsetInMilliseconds": {{LONG}},
-            "progressReport": {
-                "progressReportDelayInMilliseconds": {{LONG}},
-                "progressReportIntervalInMilliseconds": {{LONG}}
-            },
-            "token": "{{STRING}}",
-            "expectedPreviousToken": "{{STRING}}"
-        },
-        "metadata": { } # reserved
-    }
+  "type": "AudioPlayer.Play",
+  "audioItem": {
+    "stream": {
+      "url": "{{STRING}}",
+      "offsetInMilliseconds": {{LONG}},
+      "progressReport": {
+        "progressReportDelayInMilliseconds": {{LONG}},
+        "progressReportIntervalInMilliseconds": {{LONG}}
+      },
+      "token": "{{STRING}}",
+      "expectedPreviousToken": "{{STRING}}"
+    },
+    "metadata": {}
+    // reserved
+  }
 }
 ```
 {% endcode %}
@@ -132,7 +133,7 @@ audioItem.stream.progressReport는 오디오의 시작 시간을 기준으로 �
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.Stop"
+  "type": "AudioPlayer.Stop"
 }
 ```
 {% endcode %}
@@ -144,7 +145,7 @@ audioItem.stream.progressReport는 오디오의 시작 시간을 기준으로 �
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.Pause"
+  "type": "AudioPlayer.Pause"
 }
 ```
 {% endcode %}
@@ -158,10 +159,10 @@ audioItem.stream.progressReport는 오디오의 시작 시간을 기준으로 �
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.PlaybackStarted",
-    "requestId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
+  "type": "AudioPlayer.PlaybackStarted",
+  "requestId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
 }
 ```
 {% endcode %}
@@ -178,10 +179,10 @@ audioItem.stream.progressReport는 오디오의 시작 시간을 기준으로 �
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.PlaybackFinished",
-    "requestId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
+  "type": "AudioPlayer.PlaybackFinished",
+  "requestId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
 }
 ```
 {% endcode %}
@@ -203,10 +204,10 @@ Stop Directive는 전송하지 않아도 되지만, 재생 중인 경우는 다�
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.PlaybackStopped",
-    "requestId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
+  "type": "AudioPlayer.PlaybackStopped",
+  "requestId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
 }
 ```
 {% endcode %}
@@ -218,19 +219,19 @@ Stop Directive는 전송하지 않아도 되지만, 재생 중인 경우는 다�
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.PlaybackStarted",
-    "requestId": "{{STRING}}",
+  "type": "AudioPlayer.PlaybackStarted",
+  "requestId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
+  "error": {
+    "type": "{{STRING}}",
+    "message": "{{STRING}}"
+  },
+  "currentPlaybackState": {
     "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
-    "error": {
-        "type": "{{STRING}}",
-        "message": "{{STRING}}"
-    },
-    "currentPlaybackState": {
-        "token": "{{STRING}}",
-        "offsetInMilliseconds": {{LONG}},
-        "playerActivity": "{{STRING}}"
-    }
+    "offsetInMilliseconds": {{LONG}},
+    "playerActivity": "{{STRING}}"
+  }
 }
 ```
 {% endcode %}
@@ -252,10 +253,10 @@ Play Directive에서 progressReportDelayInMilliseconds를 보내고, 설정된 �
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.ProgressReportDelayElapsed",
-    "requestId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
+  "type": "AudioPlayer.ProgressReportDelayElapsed",
+  "requestId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
 }
 ```
 {% endcode %}
@@ -267,10 +268,10 @@ Play 디렉티브에서 progressReportIntervalInMilliseconds를 보냈을 때 �
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.ProgressReportIntervalElapsed",
-    "requestId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
+  "type": "AudioPlayer.ProgressReportIntervalElapsed",
+  "requestId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
 }
 ```
 {% endcode %}
@@ -282,10 +283,10 @@ Play 디렉티브에서 progressReportIntervalInMilliseconds를 보냈을 때 �
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.PlaybackPaused",
-    "requestId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
+  "type": "AudioPlayer.PlaybackPaused",
+  "requestId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
 }
 ```
 {% endcode %}
@@ -297,10 +298,10 @@ Play 디렉티브에서 progressReportIntervalInMilliseconds를 보냈을 때 �
 {% code %}
 ```json
 {
-    "type": "AudioPlayer.PlaybackResumed",
-    "requestId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "offsetInMilliseconds": {{LONG}}
+  "type": "AudioPlayer.PlaybackResumed",
+  "requestId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "offsetInMilliseconds": {{LONG}}
 }
 ```
 {% endcode %}

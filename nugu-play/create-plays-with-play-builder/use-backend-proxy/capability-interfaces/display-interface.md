@@ -50,11 +50,11 @@ Display Interface는 AudioPlayer를 위한 Display와 중첩하여 사용하지 
 {% code %}
 ```json
 {
-    "Display": {
-        "version": "1.0",
-        "playServiceId": "{{STRING}}",
-        "token": "{{STRING}}"
-    }
+  "Display": {
+    "version": "1.0",
+    "playServiceId": "{{STRING}}",
+    "token": "{{STRING}}"
+  }
 }
 ```
 {% endcode %}
@@ -119,103 +119,103 @@ String type의 필드에 "`{% raw %}{{TTS}}{% endraw %}`"라고 입력하면, Pl
 {% code %}
 ```json
 {
-    "logo": ImageObject,
-    "text": TextObject,
-    "subtext": TextObject,
-    "subicon": ImageObject,
-    "button": TextObject
+  "logo": ImageObject,
+  "text": TextObject,
+  "subtext": TextObject,
+  "subicon": ImageObject,
+  "button": TextObject
 }
 ```
 {% endcode %}
 
-| Parameter | Type        | 필수  | Description                    | NU300                            | Btv                              |
-| --------- | ----------- |-----| ------------------------------ | -------------------------------- | -------------------------------- |
-| logo      | ImageObject | Y   | 투명 배경의 이미지로 제공해야 함(PNG)        | 50x50 가로 Size Flexible           | STB2부터 적용 예정 사이즈 미정              |
-| text      | TextObject  | Y   | 제목                             | 42sp, #FFFFFF                    | 36sp, #1A1A1A                    |
-| subtext   | TextObject  | N   | 부제목                            | 공백 포함 20자                        | -                                |
+| Parameter | Type        | 필수  | Description                    | NU300                                 | Btv                                   |
+|-----------|-------------|-----|--------------------------------|---------------------------------------|---------------------------------------|
+| logo      | ImageObject | Y   | 투명 배경의 이미지로 제공해야 함(PNG)        | 50x50 가로 Size Flexible                | STB2부터 적용 예정 사이즈 미정                   |
+| text      | TextObject  | Y   | 제목                             | 42sp, #FFFFFF                         | 36sp, #1A1A1A                         |
+| subtext   | TextObject  | N   | 부제목                            | 공백 포함 20자                             | -                                     |
 | subicon   | ImageObject | N   | subText 왼쪽에 노출될 서브아이콘          | 위치 : subText 왼쪽 <br/>size : 36 x 36dp | 위치 : subText 왼쪽 <br/>size : 30 x 30dp |
-| button    | TextObject  | N   | 우측에 위치하는 버튼 (버튼 안의 Text만 정의가능) | -                                | -                                |
+| button    | TextObject  | N   | 우측에 위치하는 버튼 (버튼 안의 Text만 정의가능) | -                                     | -                                     |
 
 ### ImageObject
 
 {% code %}
 ```json
 {
-    "contentDescription": "{{STRING}}",
-    "sources": [
-        {
-            "url": "{{STRING}}",
-            "size": "{{STRING}}",
-            "widthPixels": 1920,
-            "heightPixels": 1080
-        },
-        {
-            "url": "{{STRING}}",
-            "size": "{{STRING}}",
-            "widthPixels": 480,
-            "heightPixels": 320
-        },
-        {...}
-    ]
+  "contentDescription": "{{STRING}}",
+  "sources": [
+    {
+      "url": "{{STRING}}",
+      "size": "{{STRING}}",
+      "widthPixels": 1920,
+      "heightPixels": 1080
+    },
+    {
+      "url": "{{STRING}}",
+      "size": "{{STRING}}",
+      "widthPixels": 480,
+      "heightPixels": 320
+    },
+    {...}
+  ]
 }
 ```
 {% endcode %}
 
-| Parameter          | Type   | 필수  | Description                                                                              |
-| ------------------ | ------ |-----| ---------------------------------------------------------------------------------------- |
-| contentDescription | string | N   | -                                                                                        |
-| heightPixels       | long   | N   | -                                                                                        |
+| Parameter          | Type   | 필수  | Description                                                                     |
+|--------------------|--------|-----|---------------------------------------------------------------------------------|
+| contentDescription | string | N   | -                                                                               |
+| heightPixels       | long   | N   | -                                                                               |
 | size               | string | N   | X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE<br/>화면 크기별 최적화를 위해 size 정보를 넣는 것을 권장합니다. |
-| sources            | list   | Y   | -                                                                                        |
-| url                | string | Y   | -                                                                                        |
-| widthPixels        | long   | N   | -                                                                                        |
-| heightPixels       | long   | N   | -                                                                                        |
+| sources            | list   | Y   | -                                                                               |
+| url                | string | Y   | -                                                                               |
+| widthPixels        | long   | N   | -                                                                               |
+| heightPixels       | long   | N   | -                                                                               |
 
 Size 별 권장 사이즈는 아래의 표를 참고하세요.
 
 | Size Value | Recommended Size (in pixels) |
-| :--------: | :--------------------------: |
-|  X_SMALL  |           480 x 320          |
-|    SMALL   |           720 x 480          |
-|   MEDIUM   |           960 x 640          |
-|    LARGE   |          1280 x 800          |
-|  X_LARGE  |          1920 x 1080         |
+|:----------:|:----------------------------:|
+|  X_SMALL   |          480 x 320           |
+|   SMALL    |          720 x 480           |
+|   MEDIUM   |          960 x 640           |
+|   LARGE    |          1280 x 800          |
+|  X_LARGE   |         1920 x 1080          |
 
 ### BackgroundObject
 
 {% code %}
 ```json
 {
-    "image": ImageObject,
-    "color": "{{STRING}}"
+  "image": ImageObject,
+  "color": "{{STRING}}"
 }
 ```
 {% endcode %}
 
 image와 color가 동시에 존재하면 image의 우선순위가 높습니다.
 
-| parameter | type        | mandatory | description                                   |
-|-----------|-------------|-----------|-----------------------------------------------|
-| image     | ImageObject | N         | -                                             |
-| color     | string      | N         | hex color code<br/>default : #000000                                |
-| opacity   | number      | N         | NU300에만 유효<br/>default : 0.7         |
+| parameter | type        | 필수  | description                          |
+|-----------|-------------|-----|--------------------------------------|
+| image     | ImageObject | N   | -                                    |
+| color     | string      | N   | hex color code<br/>default : #000000 |
+| opacity   | number      | N   | NU300에만 유효<br/>default : 0.7         |
 
 ### TextObject
 
 {% code %}
 ```json
 {
-    "text": "{{STRING}}",
-    "color": "{{STRING}}"
+  "text": "{{STRING}}",
+  "color": "{{STRING}}"
 }
 ```
 {% endcode %}
 
-| Parameter | type   | 필수  | Description                                                                                                                                                                                                                                                                                                                                                  |
-| --------- | ------ |-----| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| color     | string | N   | hex color code                                                                                                                                                                                                                                                                                                                                               |
-| style     | json   | N   | 기본적으로는 상위 스타일(directive 등)을 따르며, FullText1, 2의 body text에만 적용 가능.<br/>CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br/>`text-align` : left, center, right<br/>`opacity` : 0 ~ 1<br/>`display` : block, inline, none<br/>`margin` : 10px<br/>예) `{ "text-align":"center", "display": "block"}` |
-| text      | string | Y   | -                                                                                                                                                                                                                                                                                                                                                            |
+| Parameter | type   | 필수   | Description                                                                                                                                                                                                                                                                        |
+|-----------|--------|------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| color     | string | N    | hex color code                                                                                                                                                                                                                                                                     |
+| style     | json   | N    | 기본적으로는 상위 스타일(directive 등)을 따르며, FullText1, 2의 body text에만 적용 가능.<br/>CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br/>`text-align` : left, center, right<br/>`opacity` : 0 ~ 1<br/>`display` : block, inline, none<br/>`margin` : 10px<br/>예) `{ "text-align":"center", "display": "block"}` |
+| text      | string | Y    | -                                                                                                                                                                                                                                                                                  |
 
 TextObject는 Scrollable이 명시된 경우만 스크롤이 가능합니다.
 
@@ -224,16 +224,16 @@ TextObject는 Scrollable이 명시된 경우만 스크롤이 가능합니다.
 {% code %}
 ```json
 {
-    "text": "{{STRING}}",
-    "token": "{{STRING}}"
+  "text": "{{STRING}}",
+  "token": "{{STRING}}"
 }
 ```
 {% endcode %}
 
-| Parameter | type   | 필수  | Description   |
-| --------- | ------ |-----| ------------- |
-| text      | string | Y   | 버튼 텍스트        |
-| token     | string | Y   | 클릭 시 전달될 토큰 값 |
+| Parameter | type   | 필수   | Description   |
+|-----------|--------|------|---------------|
+| text      | string | Y    | 버튼 텍스트        |
+| token     | string | Y    | 클릭 시 전달될 토큰 값 |
 
 ## Template 별 directive
 
@@ -251,34 +251,34 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.FullText1",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "content": {
-        "header": TextObject, 
-        "body": TextObject,     
-        "footer": TextObject
-    }
+  "type": "Display.FullText1",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "content": {
+    "header": TextObject,
+    "body": TextObject,
+    "footer": TextObject
+  }
 }
 ```
 {% endcode %}
 
-| Parameter      | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| -------------- | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type           | string           | Y   | Display.FullText1                                                                                                                                                                                                                                                       |
-| version        | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId  | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token          | string           | Y   | -                                                                                                                                                                                                                                                                       |
-| duration       | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title          | TitleObject      | Y   | -                                                                                                                                                                                                                                                                       |
-| background     | BackgroundObject | N   | -                                                                                                                                                                                                                                                                       |
-| content.header | TextObject       | N   | 본문 제목<br/>- 줄바꿈 가능 ('\n')                                                                                                                                                                                                                                      |
-| content.body   | TextObject       | Y   | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)                                                                                                                                                                           |
-| content.footer | TextObject       | N   | 보조 설명                                                                                                                                                                                                                                                                   |
+| Parameter      | Type             | 필수   | Description                                                                                                                                      |
+|----------------|------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | string           | Y    | Display.FullText1                                                                                                                                |
+| version        | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId  | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token          | string           | Y    | -                                                                                                                                                |
+| duration       | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title          | TitleObject      | Y    | -                                                                                                                                                |
+| background     | BackgroundObject | N    | -                                                                                                                                                |
+| content.header | TextObject       | N    | 본문 제목<br/>- 줄바꿈 가능 ('\n')                                                                                                                        |
+| content.body   | TextObject       | Y    | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)                                                               |
+| content.footer | TextObject       | N    | 보조 설명                                                                                                                                            |
 
 #### Sample Code
 
@@ -289,29 +289,29 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
   "version": "1.0",
   "playServiceId": "{{playServiceId}}",
   "token": "{{token}}",
-  "title" : {
+  "title": {
     "logo": {
       "contentDescription": "{{contentDescription}}",
       "sources": [
-          {
-              "url": "http://someurl.com/name.png"
-          }
+        {
+          "url": "http://someurl.com/name.png"
+        }
       ]
     },
     "text": {
-        "text": "NUGU 백과"
+      "text": "NUGU 백과"
     }
   },
   "background": {
     "image": {
       "contentDescription": "{{STRING}}",
       "sources": [
-          {
-              "url": "http://someurl.com/name.png",
-              "size": "LARGE"
-          }
-        ]
-      },
+        {
+          "url": "http://someurl.com/name.png",
+          "size": "LARGE"
+        }
+      ]
+    },
     "color": ""
   },
   "content": {
@@ -320,9 +320,9 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
     },
     "body": {
       "text": "‘독도’는 동해의 남서부인 울릉도와 오키 제도 사이에 있는 섬으로, 동도와 서도를 포함하고 총 91개의 섬들로 이루어져 있습니다."
-    },    
+    },
     "footer": {
-        "text": "출처 : 위키피디아"
+      "text": "출처 : 위키피디아"
     }
   }
 }
@@ -340,60 +340,66 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.FullText2",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title": TitleObject,
-    "background": BackgroundObject,
-    "content": {
-        "body": TextObject,     
-        "footer": TextObject
-    }
+  "type": "Display.FullText2",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "content": {
+    "body": TextObject,
+    "footer": TextObject
+  }
 }
 ```
 {% endcode %}
 
-| Parameter      | Type             | 필수 | Description                                                                                                                                                                                                                                                             |
-| -------------- | ---------------- |----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type           | string           | Y  | Display.FullText2                                                                                                                                                                                                                                                       |
-| version        | string           | Y  | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId  | string           | Y  | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token          | string           | Y  | -                                                                                                                                                                                                                                                                       |
-| duration       | string           | N  | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title          | TitleObject      | Y  | -                                                                                                                                                                                                                                                                       |
-| background     | BackgroundObject | N  | -                                                                                                                                                                                                                                                                       |
-| content.body   | TextObject       | Y  | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 4줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                   |
-| content.footer | TextObject       | N  | 보조 설명                                                                                                                                                                                                                                                                   |
+| Parameter      | Type             | 필수  | Description                                                                                                                                      |
+|----------------|------------------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | string           | Y   | Display.FullText2                                                                                                                                |
+| version        | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId  | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                |
+| token          | string           | Y   | -                                                                                                                                                |
+| duration       | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title          | TitleObject      | Y   | -                                                                                                                                                |
+| background     | BackgroundObject | N   | -                                                                                                                                                |
+| content.body   | TextObject       | Y   | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 4줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
+| content.footer | TextObject       | N   | 보조 설명                                                                                                                                            |
 
 #### Sample Code
 
 {% code %}
 ```json
 {
-    "type": "Display.FullText2",
-    "version": "1.0",
-    "playServiceId": "{{playServiceId}}",
-    "token": "{{token}}",
-    "title": {
-      "logo": {
-        "contentDescription": "{{contentDescription}}",
-        "sources": [
-          {
-              "url": "http://someurl.com/name.png"
-          }
-        ]
-      },
-      "text": {"text": "날짜/시간"}
+  "type": "Display.FullText2",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
+        }
+      ]
     },
-    "background": {"color": "#465865"},
-    "content": {
-      "body": {
-        "text": "오늘은 12월 24일 수요일입니다.\n오늘 미세먼지는 매우나쁨이네요.\n그냥 집에만 있어야겠어요."
-      },
-      "footer": {"text": "오후 6:03"}
+    "text": {
+      "text": "날짜/시간"
     }
+  },
+  "background": {
+    "color": "#465865"
+  },
+  "content": {
+    "body": {
+      "text": "오늘은 12월 24일 수요일입니다.\n오늘 미세먼지는 매우나쁨이네요.\n그냥 집에만 있어야겠어요."
+    },
+    "footer": {
+      "text": "오후 6:03"
+    }
+  }
 }
 ```
 {% endcode %}
@@ -407,91 +413,91 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.ImageText1",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "content": {
-        "image": ImageObject,
-        "imageAlign": "{{STRING}}",
-        "header": TextObject,
-        "body": TextObject,    
-        "footer": TextObject
-    }
+  "type": "Display.ImageText1",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "content": {
+    "image": ImageObject,
+    "imageAlign": "{{STRING}}",
+    "header": TextObject,
+    "body": TextObject,
+    "footer": TextObject
+  }
 }
 ```
 {% endcode %}
 
-| parameter          | type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| ------------------ | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type               | string           | Y   | Display.ImageText1                                                                                                                                                                                                                                                      |
-| version            | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId      | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token              | string           | Y   |                                                                                                                                                                                                                                                                         |
-| duration           | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title              | TitleObject      | Y   |                                                                                                                                                                                                                                                                         |
-| background         | BackgroundObject | N   |                                                                                                                                                                                                                                                                         |
-| content.image      | ImageObject      | Y   |                                                                                                                                                                                                                                                                         |
-| content.imageAlign | string           | Y   | LEFT, RIGHT                                                                                                                                                                                                                                                             |
-| content.header     | TextObject       | Y   | 본문 제목<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 3줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                   |
-| content.body       | TextObject       | N   | 본문 내용                                                                                                                                                                                                                                                                   |
-| content.footer     | TextObject       | N   | 보조 설명<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 2줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                   |
+| parameter          | type             | 필수   | Description                                                                                                                                      |
+|--------------------|------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type               | string           | Y    | Display.ImageText1                                                                                                                               |
+| version            | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId      | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token              | string           | Y    |                                                                                                                                                  |
+| duration           | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title              | TitleObject      | Y    |                                                                                                                                                  |
+| background         | BackgroundObject | N    |                                                                                                                                                  |
+| content.image      | ImageObject      | Y    |                                                                                                                                                  |
+| content.imageAlign | string           | Y    | LEFT, RIGHT                                                                                                                                      |
+| content.header     | TextObject       | Y    | 본문 제목<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 3줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
+| content.body       | TextObject       | N    | 본문 내용                                                                                                                                            |
+| content.footer     | TextObject       | N    | 보조 설명<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 2줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
 
 #### Sample Code
 
 {% code %}
 ```json
 {
-      "type": "Display.ImageText1",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "추천 영화"
+  "type": "Display.ImageText1",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
-      },
-      "background": {
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png",
-                  "size": "LARGE"
-              }
-            ]
-          }
-      },
-      "content":{
-        "header": {
-          "text": "알라딘"
-        },
-        "body":{
-          "text": "모험, 가족, 판타지"
-        },
-        "footer": {
-          "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법..."
-        },
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        }
+      ]
+    },
+    "text": {
+      "text": "추천 영화"
     }
+  },
+  "background": {
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png",
+          "size": "LARGE"
+        }
+      ]
+    }
+  },
+  "content": {
+    "header": {
+      "text": "알라딘"
+    },
+    "body": {
+      "text": "모험, 가족, 판타지"
+    },
+    "footer": {
+      "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법..."
+    },
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
+        }
+      ]
+    }
+  }
 }
 ```
 {% endcode %}
@@ -505,90 +511,90 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.ImageText2",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "content": {
-        "image": ImageObject,
-        "imageAlign": "{{STRING}}",
-        "header": TextObject,     
-        "body": TextObject
-    }
+  "type": "Display.ImageText2",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "content": {
+    "image": ImageObject,
+    "imageAlign": "{{STRING}}",
+    "header": TextObject,
+    "body": TextObject
+  }
 }
 ```
 {% endcode %}
 
-| Parameter          | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| ------------------ | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type               | string           | Y   | Display.ImageText2                                                                                                                                                                                                                                                      |
-| version            | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId      | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token              | string           | Y   |                                                                                                                                                                                                                                                                         |
-| duration           | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title              | TitleObject      | Y   |                                                                                                                                                                                                                                                                         |
-| background         | BackgroundObject | N   |                                                                                                                                                                                                                                                                         |
-| content.image      | ImageObject      | Y   |                                                                                                                                                                                                                                                                         |
-| content.imageAlign | string           | Y   | LEFT, RIGHT                                                                                                                                                                                                                                                             |
-| content.header     | TextObject       | N   | 본문 제목 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                                        |
-| content.body       | TextObject       | Y   | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 6줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                   |
-| content.footer     | TextObject       | N   | 보조 설명<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 2줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                   |
+| Parameter          | Type             | 필수   | Description                                                                                                                                      |
+|--------------------|------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type               | string           | Y    | Display.ImageText2                                                                                                                               |
+| version            | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId      | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token              | string           | Y    |                                                                                                                                                  |
+| duration           | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title              | TitleObject      | Y    |                                                                                                                                                  |
+| background         | BackgroundObject | N    |                                                                                                                                                  |
+| content.image      | ImageObject      | Y    |                                                                                                                                                  |
+| content.imageAlign | string           | Y    | LEFT, RIGHT                                                                                                                                      |
+| content.header     | TextObject       | N    | 본문 제목 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                 |
+| content.body       | TextObject       | Y    | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 6줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
+| content.footer     | TextObject       | N    | 보조 설명<br/>- 줄바꿈 가능 ('\n')<br/>- 최대 2줄까지 표현 (넘는 문자는 ... 처리)                                                                                       |
 
 #### Sample Code
 
 {% code %}
 ```json
 {
-      "type": "Display.ImageText2",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "추천 영화"
+  "type": "Display.ImageText2",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
-      },
-      "background": {
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png",
-                  "size": "LARGE"
-              }
-            ]
-          }
-      },
-      "content":{
-        "header": {
-          "text": "알라딘"
-        },
-        "body":{
-          "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고..."
-        },
-        "footer": {
-          "text": "모험, 가족, 판타지"
-        },
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        }
+      ]
+    },
+    "text": {
+      "text": "추천 영화"
     }
+  },
+  "background": {
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png",
+          "size": "LARGE"
+        }
+      ]
+    }
+  },
+  "content": {
+    "header": {
+      "text": "알라딘"
+    },
+    "body": {
+      "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고..."
+    },
+    "footer": {
+      "text": "모험, 가족, 판타지"
+    },
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
+        }
+      ]
+    }
+  }
 }
 ```
 {% endcode %}
@@ -602,81 +608,81 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.ImageText3",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "content": {
-        "image": ImageObject,
-        "header": TextObject,     
-        "body": TextObject,
-        "footer": TextObject
-    }
+  "type": "Display.ImageText3",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "content": {
+    "image": ImageObject,
+    "header": TextObject,
+    "body": TextObject,
+    "footer": TextObject
+  }
 }
 ```
 {% endcode %}
 
-| Parameter      | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| -------------- | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type           | string           | Y   | Display.ImageText3                                                                                                                                                                                                                                                      |
-| version        | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId  | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token          | string           | Y   |                                                                                                                                                                                                                                                                         |
-| duration       | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title          | TitleObject      | Y   |                                                                                                                                                                                                                                                                         |
-| background     | BackgroundObject | N   |                                                                                                                                                                                                                                                                         |
-| content.image  | ImageObject      | Y   |                                                                                                                                                                                                                                                                         |
-| content.header | TextObject       | Y   | 본문 제목 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                                        |
-| content.body   | TextObject       | N   | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)                                                                                                                                                                           |
-| content.footer | TextObject       | N   | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                          |
+| Parameter      | Type             | 필수   | Description                                                                                                                                      |
+|----------------|------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | string           | Y    | Display.ImageText3                                                                                                                               |
+| version        | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId  | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token          | string           | Y    |                                                                                                                                                  |
+| duration       | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title          | TitleObject      | Y    |                                                                                                                                                  |
+| background     | BackgroundObject | N    |                                                                                                                                                  |
+| content.image  | ImageObject      | Y    |                                                                                                                                                  |
+| content.header | TextObject       | Y    | 본문 제목 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                 |
+| content.body   | TextObject       | N    | 본문 내용<br/>- 줄바꿈 가능 ('\n')<br/>- Scrollable (스크롤이 불가능한 디바이스[일부 Btv]에서는 최대 4줄까지만 표현)                                                               |
+| content.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 
 #### Sample Code
 
 {% code %}
 ```json
 {
-      "type": "Display.ImageText3",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "추천 영화"
+  "type": "Display.ImageText3",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
-      },
-      "background": {
-        "color": "#0F336C"
-      },
-      "content":{
-        "header": {
-          "text": "알라딘"
-        },
-        "body":{
-          "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고..."
-        },
-        "footer": {
-          "text": "모험, 가족, 판타지"
-        },
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        }
+      ]
+    },
+    "text": {
+      "text": "추천 영화"
     }
+  },
+  "background": {
+    "color": "#0F336C"
+  },
+  "content": {
+    "header": {
+      "text": "알라딘"
+    },
+    "body": {
+      "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고..."
+    },
+    "footer": {
+      "text": "모험, 가족, 판타지"
+    },
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
+        }
+      ]
+    }
+  }
 }
 ```
 {% endcode %}
@@ -690,81 +696,81 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.ImageText4",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "content": {
-        "image": ImageObject,
-        "header": TextObject,     
-        "body": TextObject,
-        "footer": TextObject
-    }
+  "type": "Display.ImageText4",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "content": {
+    "image": ImageObject,
+    "header": TextObject,
+    "body": TextObject,
+    "footer": TextObject
+  }
 }
 ```
 {% endcode %}
 
-| Parameter      | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| -------------- | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type           | string           | Y   | Display.ImageText4                                                                                                                                                                                                                                                      |
-| version        | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId  | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token          | string           | Y   |                                                                                                                                                                                                                                                                         |
-| duration       | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title          | TitleObject      | Y   |                                                                                                                                                                                                                                                                         |
-| background     | BackgroundObject | N   |                                                                                                                                                                                                                                                                         |
-| content.image  | ImageObject      | Y   |                                                                                                                                                                                                                                                                         |
-| content.header | TextObject       | Y   | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| content.body   | TextObject       | Y   | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| content.footer | TextObject       | N   | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                          |
+| Parameter      | Type             | 필수   | Description                                                                                                                                      |
+|----------------|------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type           | string           | Y    | Display.ImageText4                                                                                                                               |
+| version        | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId  | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token          | string           | Y    |                                                                                                                                                  |
+| duration       | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title          | TitleObject      | Y    |                                                                                                                                                  |
+| background     | BackgroundObject | N    |                                                                                                                                                  |
+| content.image  | ImageObject      | Y    |                                                                                                                                                  |
+| content.header | TextObject       | Y    | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
+| content.body   | TextObject       | Y    | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
+| content.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 
 #### Sample Code
 
 {% code %}
 ```json
 {
-      "type": "Display.ImageText4",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "추천 영화"
+  "type": "Display.ImageText4",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
-      },
-      "background": {
-        "color": "#0F336C"
-      },
-      "content":{
-        "header": {
-          "text": "알라딘"
-        },
-        "body":{
-          "text": "2019.12.24 개봉"
-        },
-        "footer": {
-          "text": "모험, 가족, 판타지"
-        },
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        }
+      ]
+    },
+    "text": {
+      "text": "추천 영화"
     }
+  },
+  "background": {
+    "color": "#0F336C"
+  },
+  "content": {
+    "header": {
+      "text": "알라딘"
+    },
+    "body": {
+      "text": "2019.12.24 개봉"
+    },
+    "footer": {
+      "text": "모험, 가족, 판타지"
+    },
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
+        }
+      ]
+    }
+  }
 }
 ```
 {% endcode %}
@@ -778,131 +784,131 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.TextList1",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "badgeNumber": true,
-    "listItems": [
-        {
-            "token": "{{STRING}}",
-            "header": TextObject,
-            "body": TextObject,
-            "footer": TextObject
-        },
-        {
-            "token": "{{STRING}}",
-            "header": TextObject,
-            "body": TextObject,
-            "footer": TextObject
-        }
-    ]
+  "type": "Display.TextList1",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "badgeNumber": true,
+  "listItems": [
+    {
+      "token": "{{STRING}}",
+      "header": TextObject,
+      "body": TextObject,
+      "footer": TextObject
+    },
+    {
+      "token": "{{STRING}}",
+      "header": TextObject,
+      "body": TextObject,
+      "footer": TextObject
+    }
+  ]
 }
 ```
 {% endcode %}
 
-| Parameter        | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| ---------------- | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y   | Display.TextList1                                                                                                                                                                                                                                                       |
-| version          | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId    | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token            | string           | Y   |                                                                                                                                                                                                                                                                         |
-| duration         | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title            | TitleObject      | Y   | -                                                                                                                                                                                                                                                                       |
-| background       | BackgroundObject | N   | -                                                                                                                                                                                                                                                                       |
-| badgeNumber      | bool             | N   | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                                                                                                                                 |
-| listItems        | list             | Y   | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
-| listItems.token  | string           | Y   | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
-| listItems.header | TextObject       | Y   | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| listItems.body   | TextObject       | Y   | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| listItems.footer | TextObject       | N   | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                          |
+| Parameter        | Type             | 필수   | Description                                                                                                                                      |
+|------------------|------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y    | Display.TextList1                                                                                                                                |
+| version          | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId    | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token            | string           | Y    |                                                                                                                                                  |
+| duration         | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title            | TitleObject      | Y    | -                                                                                                                                                |
+| background       | BackgroundObject | N    | -                                                                                                                                                |
+| badgeNumber      | bool             | N    | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                   |
+| listItems        | list             | Y    | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                |
+| listItems.token  | string           | Y    | 클릭은 한 item 전체에서 가능                                                                                                                               |
+| listItems.header | TextObject       | Y    | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
+| listItems.body   | TextObject       | Y    | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
+| listItems.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 
 #### Sample Code
 
 {% code %}
 ```json
 {
-      "type": "Display.TextList1",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "발라드 차트"
+  "type": "Display.TextList1",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
-      },
-      "background": {
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png",
-                  "size": "LARGE"
-              }
-            ]
-          }
-      },
-      "listItems": [
+      ]
+    },
+    "text": {
+      "text": "발라드 차트"
+    }
+  },
+  "background": {
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
         {
-          "token": "{{111}}",
-          "header": {
-            "text": "1위"
-          },
-          "body": {
-            "text": "오늘도 빛나는 너에게"
-          },
-          "footer": {
-            "text": "마크툽(Maktub)"
-          }
-        },
-        {
-          "token": "{{222}}",
-          "header": {
-            "text": "2위"
-          },
-          "body": {
-            "text": "2002"
-          },
-          "footer": {
-            "text": "Anne-Marie"
-          }
-        },
-        {
-          "token": "{{333}}",
-          "header": {
-            "text": "3위"
-          },
-          "body": {
-            "text": "사계 (Four Seasons)"
-          },
-          "footer": {
-            "text": "태연(TAEYEON)"
-          }
-        },
-        {
-          "token": "{{444}}",
-          "header": {
-            "text": "4위"
-          },
-          "body": {
-            "text": "워커홀릭"
-          },
-          "footer": {
-            "text": "볼빨간 사춘기"
-          }
+          "url": "http://someurl.com/name.png",
+          "size": "LARGE"
         }
-    ]
+      ]
+    }
+  },
+  "listItems": [
+    {
+      "token": "{{111}}",
+      "header": {
+        "text": "1위"
+      },
+      "body": {
+        "text": "오늘도 빛나는 너에게"
+      },
+      "footer": {
+        "text": "마크툽(Maktub)"
+      }
+    },
+    {
+      "token": "{{222}}",
+      "header": {
+        "text": "2위"
+      },
+      "body": {
+        "text": "2002"
+      },
+      "footer": {
+        "text": "Anne-Marie"
+      }
+    },
+    {
+      "token": "{{333}}",
+      "header": {
+        "text": "3위"
+      },
+      "body": {
+        "text": "사계 (Four Seasons)"
+      },
+      "footer": {
+        "text": "태연(TAEYEON)"
+      }
+    },
+    {
+      "token": "{{444}}",
+      "header": {
+        "text": "4위"
+      },
+      "body": {
+        "text": "워커홀릭"
+      },
+      "footer": {
+        "text": "볼빨간 사춘기"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -914,161 +920,161 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.TextList2",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "badgeNumber": true,
-    "listItems": [
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "header": TextObject,
-            "body": TextObject,
-            "footer": TextObject
-        },
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "header": TextObject,
-            "body": TextObject,
-            "footer": TextObject
-        }
-    ]
+  "type": "Display.TextList2",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "badgeNumber": true,
+  "listItems": [
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "header": TextObject,
+      "body": TextObject,
+      "footer": TextObject
+    },
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "header": TextObject,
+      "body": TextObject,
+      "footer": TextObject
+    }
+  ]
 }
 ```
 {% endcode %}
 
-| Parameter        | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| ---------------- | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y   | Display.TextList2                                                                                                                                                                                                                                                       |
-| version          | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId    | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token            | string           | Y   | -                                                                                                                                                                                                                                                                       |
-| duration         | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title            | TitleObject      | Y   |                                                                                                                                                                                                                                                                         |
-| background       | BackgroundObject | N   | -                                                                                                                                                                                                                                                                       |
-| badgeNumber      | bool             | N   | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                                                                                                                                 |
-| listItems        | list             | Y   | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
-| listItems.token  | string           | Y   | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
-| listItems.image  | ImageObject      | Y   | -                                                                                                                                                                                                                                                                       |
-| listItems.header | TextObject       | Y   | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| listItems.body   | TextObject       | Y   | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| listItems.footer | TextObject       | N   | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                          |
+| Parameter        | Type             | 필수   | Description                                                                                                                                      |
+|------------------|------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y    | Display.TextList2                                                                                                                                |
+| version          | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId    | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token            | string           | Y    | -                                                                                                                                                |
+| duration         | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title            | TitleObject      | Y    |                                                                                                                                                  |
+| background       | BackgroundObject | N    | -                                                                                                                                                |
+| badgeNumber      | bool             | N    | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                   |
+| listItems        | list             | Y    | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                |
+| listItems.token  | string           | Y    | 클릭은 한 item 전체에서 가능                                                                                                                               |
+| listItems.image  | ImageObject      | Y    | -                                                                                                                                                |
+| listItems.header | TextObject       | Y    | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
+| listItems.body   | TextObject       | Y    | 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
+| listItems.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
 
 #### Sample Code
 
 {% code %}
 ```json
 {
-      "type": "Display.TextList2",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "발라드 차트"
+  "type": "Display.TextList2",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
+      ]
+    },
+    "text": {
+      "text": "발라드 차트"
+    }
+  },
+  "background": {
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png",
+          "size": "LARGE"
+        }
+      ]
+    }
+  },
+  "listItems": [
+    {
+      "token": "{{111}}",
+      "header": {
+        "text": "1"
       },
-      "background": {
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png",
-                  "size": "LARGE"
-              }
-            ]
-        }
+      "body": {
+        "text": "오늘도 빛나는 너에게"
       },
-      "listItems": [
-        {
-          "token": "{{111}}",
-          "header": {
-            "text": "1"
-          },
-          "body": {
-            "text": "오늘도 빛나는 너에게"
-          },
-          "footer": {
-            "text": "마크툽(Maktub)"
-          },
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-              ]
+      "footer": {
+        "text": "마크툽(Maktub)"
+      },
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
           }
-        },
-        {
-          "token": "{{222}}",
-          "header": {
-            "text": "2"
-          },
-          "body": {
-            "text": "2002"
-          },
-          "footer": {
-            "text": "Anne-Marie"
-          },
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-              ]
+        ]
+      }
+    },
+    {
+      "token": "{{222}}",
+      "header": {
+        "text": "2"
+      },
+      "body": {
+        "text": "2002"
+      },
+      "footer": {
+        "text": "Anne-Marie"
+      },
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
           }
-        },
-        {
-          "token": "{{333}}",
-          "header": {
-            "text": "3"
-          },
-          "body": {
-            "text": "사계 (Four Seasons)"
-          },
-          "footer": {
-            "text": "태연(TAEYEON)"
-          },
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-              ]
+        ]
+      }
+    },
+    {
+      "token": "{{333}}",
+      "header": {
+        "text": "3"
+      },
+      "body": {
+        "text": "사계 (Four Seasons)"
+      },
+      "footer": {
+        "text": "태연(TAEYEON)"
+      },
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
           }
-        },
-        {
-          "token": "{{444}}",
-          "header": {
-            "text": "4"
-          },
-          "body": {
-            "text": "워커홀릭"
-          },
-          "footer": {
-            "text": "볼빨간 사춘기"
-          }
-        }
-    ]
+        ]
+      }
+    },
+    {
+      "token": "{{444}}",
+      "header": {
+        "text": "4"
+      },
+      "body": {
+        "text": "워커홀릭"
+      },
+      "footer": {
+        "text": "볼빨간 사춘기"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -1082,120 +1088,134 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 {% code %}
 ```json
 {
-    "type": "Display.TextList3",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "badgeNumber": true,
-    "listItems": [
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "header": TextObject,
-            "body": [ TextObjects ] ,
-            "footer": TextObject
-        },
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "header": TextObject,
-            "body": [ TextObjects ],
-            "footer": TextObject
-        }
-    ],
-    "caption": TextObject
+  "type": "Display.TextList3",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "badgeNumber": true,
+  "listItems": [
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "header": TextObject,
+      "body": [
+        TextObjects
+      ],
+      "footer": TextObject
+    },
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "header": TextObject,
+      "body": [
+        TextObjects
+      ],
+      "footer": TextObject
+    }
+  ],
+  "caption": TextObject
 }
 ```
 {% endcode %}
 
-| Parameter        | Type                | 필수  | Description                                                                                                                                                                                                                                                             |
-| ---------------- | ------------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string              | Y   | Display.TextList3                                                                                                                                                                                                                                                       |
-| version          | string              | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId    | string              | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token            | string              | Y   |                                                                                                                                                                                                                                                                         |
-| duration         | string              | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title            | TitleObject         | Y   |                                                                                                                                                                                                                                                                         |
-| background       | BackgroundObject    | N   |                                                                                                                                                                                                                                                                         |
-| badgeNumber      | bool                | N   | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                                                                                                                                 |
-| listItems        | list                | Y   | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
-| listItems.token  | string              | Y   | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
-| listItems.image  | ImageObject         | N   |                                                                                                                                                                                                                                                                         |
-| listItems.header | TextObject          | Y   | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| listItems.body   | array of TextObject | Y   | 본문 내용<br/>- 줄바꿈 허용 / 최대 4줄 - footer 정의 시 3줄 제한 (footer객체는 빈객체({})로도 정의가 되어 있으면 3줄로 제한됨)                                                                                                                                                                        |
-| listItems.footer | TextObject          | N   | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                          |
-| caption          | TextObject          | N   | 전체 리스트 아이템들에 대한 보조설명<br/>- 텍스트 길이 : 최대 2줄(단말에 따라 1줄)                                                                                                                                                                                                           |
+| Parameter        | Type                | 필수   | Description                                                                                                                                      |
+|------------------|---------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string              | Y    | Display.TextList3                                                                                                                                |
+| version          | string              | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId    | string              | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token            | string              | Y    |                                                                                                                                                  |
+| duration         | string              | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title            | TitleObject         | Y    |                                                                                                                                                  |
+| background       | BackgroundObject    | N    |                                                                                                                                                  |
+| badgeNumber      | bool                | N    | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                   |
+| listItems        | list                | Y    | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                |
+| listItems.token  | string              | Y    | 클릭은 한 item 전체에서 가능                                                                                                                               |
+| listItems.image  | ImageObject         | N    |                                                                                                                                                  |
+| listItems.header | TextObject          | Y    | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
+| listItems.body   | array of TextObject | Y    | 본문 내용<br/>- 줄바꿈 허용 / 최대 4줄 - footer 정의 시 3줄 제한 (footer객체는 빈객체({})로도 정의가 되어 있으면 3줄로 제한됨)                                                          |
+| listItems.footer | TextObject          | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                            |
+| caption          | TextObject          | N    | 전체 리스트 아이템들에 대한 보조설명<br/>- 텍스트 길이 : 최대 2줄(단말에 따라 1줄)                                                                                             |
 
 #### Sample Code
 
 {% code %}
-```yaml
+```json
 {
-      "type": "Display.TextList3",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "추천 영화"
-        }
-      },
-      "background": {
-        "color": "#0F336C"
-      },
-      "badgeNumber": true,
-      "listItems": [
+  "type": "Display.TextList3",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
         {
-          "token": "{{111}}",
-          "header": {
-            "text": "알라딘"
-          },
-          "body": [
-            {"text": "감독 : 가이 리치"},
-            {"text": "출연 : 윌 스미스, 메나 마수드, 나오미 누구지?"},
-            {"text": "개봉일자 : 2019.5.23"},
-            {"text": "전체 관람가"}
-          ],
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-              ]
-          }
+          "url": "http://someurl.com/name.png"
+        }
+      ]
+    },
+    "text": {
+      "text": "추천 영화"
+    }
+  },
+  "background": {
+    "color": "#0F336C"
+  },
+  "badgeNumber": true,
+  "listItems": [
+    {
+      "token": "{{111}}",
+      "header": {
+        "text": "알라딘"
+      },
+      "body": [
+        {
+          "text": "감독 : 가이 리치"
         },
         {
-          "token": "{{222}}",
-          "header": {
-            "text": "어벤저스 엔드게임"
-          },
-          "body": [{
-            "text": "감독: 안소니 루소, 조 루소"
-          }],
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-              ]
-          }
+          "text": "출연 : 윌 스미스, 메나 마수드, 나오미 누구지?"
+        },
+        {
+          "text": "개봉일자 : 2019.5.23"
+        },
+        {
+          "text": "전체 관람가"
         }
-    ]
+      ],
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
+          }
+        ]
+      }
+    },
+    {
+      "token": "{{222}}",
+      "header": {
+        "text": "어벤저스 엔드게임"
+      },
+      "body": [
+        {
+          "text": "감독: 안소니 루소, 조 루소"
+        }
+      ],
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -1207,108 +1227,122 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 #### 형식
 
 {% code %}
-```yaml
+```json
 {
-    "type": "Display.TextList4",
-    "version": "1.0",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "listItems": [
-        {
-            "header": TextObject,
-            "body": [ TextObjects ],
-            "button": ButtonObject
-        }
-    ]
+  "type": "Display.TextList4",
+  "version": "1.0",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "listItems": [
+    {
+      "header": TextObject,
+      "body": [
+        TextObjects
+      ],
+      "button": ButtonObject
+    }
+  ]
 }
 ```
 {% endcode %}
 
-| parameter        | type                | mandatory | description                                                                                                                                                                                                                                                             |
-| ---------------- | ------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string              | Y         | Display.TextList4                                                                                                                                                                                                                                                       |
-| version          | string              | Y         | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId    | string              | Y         | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token            | string              | Y         | -                                                                                                                                                                                                                                                                       |
-| duration         | string              | N         | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title            | TitleObject         | Y         | -                                                                                                                                                                                                                                                                       |
-| background       | BackgroundObject    | N         | -                                                                                                                                                                                                                                                                       |
-| listItems        | list                | Y         | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
-| listItems.header | TextObject          | Y         | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| listItems.body   | array of TextObject | Y         | List 아이템의 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                               |
-| listItems.button | ButtonObject        | N         | List 아이템의 버튼<br/>- body가 2줄인 경우에 최적화 되어 있음                                                                                                                                                                                                                     |
+| parameter        | type                | 필수  | description                                                                                                                                      |
+|------------------|---------------------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string              | Y   | Display.TextList4                                                                                                                                |
+| version          | string              | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId    | string              | Y   | 현재 template을 전송하는 play service id                                                                                                                |
+| token            | string              | Y   | -                                                                                                                                                |
+| duration         | string              | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title            | TitleObject         | Y   | -                                                                                                                                                |
+| background       | BackgroundObject    | N   | -                                                                                                                                                |
+| listItems        | list                | Y   | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                |
+| listItems.header | TextObject          | Y   | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                           |
+| listItems.body   | array of TextObject | Y   | List 아이템의 본문 내용<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                 |
+| listItems.button | ButtonObject        | N   | List 아이템의 버튼<br/>- body가 2줄인 경우에 최적화 되어 있음                                                                                                       |
 
 #### Sample Code
 
 {% code %}
-```yaml
+```json
 {
-      "type": "Display.TextList4",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "추천 영화"
+  "type": "Display.TextList4",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
+      ]
+    },
+    "text": {
+      "text": "추천 영화"
+    }
+  },
+  "background": {
+    "color": "#0F336C"
+  },
+  "listItems": [
+    {
+      "token": "{{111}}",
+      "header": {
+        "text": "알라딘"
       },
-      "background": {
-        "color": "#0F336C"
-      },
-      "listItems": [
+      "body": [
         {
-          "token": "{{111}}",
-          "header": {
-            "text": "알라딘"
-          },
-          "body": [
-            {"text": "머나먼 사막 속 신비의 아그라바 왕국의 시대."},
-            {"text": "좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~"}
-          ],
-          "button": {
-            "text": "상세보기",
-            "token": "{{button1}}"
-          }
+          "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대."
         },
         {
-          "token": "{{222}}",
-          "header": {
-            "text": "알라딘"
-          },
-          "body": [
-            {"text": "머나먼 사막 속 신비의 아그라바 왕국의 시대."},
-            {"text": "좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~"}
-          ],
-          "button": {
-            "text": "상세보기",
-            "token": "{{button1}}"
-          }
-        },
-        {
-          "token": "{{333}}",
-          "header": {
-            "text": "알라딘"
-          },
-          "body": [
-            {"text": "머나먼 사막 속 신비의 아그라바 왕국의 시대."},
-            {"text": "좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~"}
-          ],
-          "button": {
-            "text": "상세보기",
-            "token": "{{button1}}"
-          }
+          "text": "좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~"
         }
-    ]
+      ],
+      "button": {
+        "text": "상세보기",
+        "token": "{{button1}}"
+      }
+    },
+    {
+      "token": "{{222}}",
+      "header": {
+        "text": "알라딘"
+      },
+      "body": [
+        {
+          "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대."
+        },
+        {
+          "text": "좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~"
+        }
+      ],
+      "button": {
+        "text": "상세보기",
+        "token": "{{button1}}"
+      }
+    },
+    {
+      "token": "{{333}}",
+      "header": {
+        "text": "알라딘"
+      },
+      "body": [
+        {
+          "text": "머나먼 사막 속 신비의 아그라바 왕국의 시대."
+        },
+        {
+          "text": "좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~"
+        }
+      ],
+      "button": {
+        "text": "상세보기",
+        "token": "{{button1}}"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -1320,139 +1354,139 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 #### 형식
 
 {% code %}
-```yaml
+```json
 {
-    "type": "Display.ImageList1",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "badgeNumber": true,
-    "listItems": [
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "header": TextObject,
-            "footer": TextObject
-        },
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "header": TextObject,
-            "footer": TextObject
-        }
-    ]
+  "type": "Display.ImageList1",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "badgeNumber": true,
+  "listItems": [
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "header": TextObject,
+      "footer": TextObject
+    },
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "header": TextObject,
+      "footer": TextObject
+    }
+  ]
 }
 ```
 {% endcode %}
 
-| Parameter        | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| ---------------- | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y   | Display.ImageList1                                                                                                                                                                                                                                                      |
-| version          | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId    | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token            | string           | Y   | -                                                                                                                                                                                                                                                                       |
-| duration         | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title            | TitleObject      | Y   | -                                                                                                                                                                                                                                                                       |
-| background       | BackgroundObject | N   | -                                                                                                                                                                                                                                                                       |
-| badgeNumber      | bool             | N   | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                                                                                                                                 |
-| badgeNumberStyle | json             | N   | 아래와 같은 Json으로 badge style 정의<br/>`{"background": "#f0f", "color": "red", "border-radius": "10px"}`<br/>- background : Container의 color<br/>- color : Badge font color<br/>- border-radius : radius                                            |
-| listItems        | list             | Y   | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
-| listItems.token  | string           | Y   | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
-| listItems.image  | ImageObject      | Y   | -                                                                                                                                                                                                                                                                       |
-| listItems.header | TextObject       | Y   | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| listItems.footer | TextObject       | N   | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                          |
+| Parameter        | Type             | 필수   | Description                                                                                                                                                                                        |
+|------------------|------------------|------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y    | Display.ImageList1                                                                                                                                                                                 |
+| version          | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                 |
+| playServiceId    | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                                                                  |
+| token            | string           | Y    | -                                                                                                                                                                                                  |
+| duration         | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min                                                   |
+| title            | TitleObject      | Y    | -                                                                                                                                                                                                  |
+| background       | BackgroundObject | N    | -                                                                                                                                                                                                  |
+| badgeNumber      | bool             | N    | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                                                                     |
+| badgeNumberStyle | json             | N    | 아래와 같은 Json으로 badge style 정의<br/>`{"background": "#f0f", "color": "red", "border-radius": "10px"}`<br/>- background : Container의 color<br/>- color : Badge font color<br/>- border-radius : radius |
+| listItems        | list             | Y    | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                  |
+| listItems.token  | string           | Y    | 클릭은 한 item 전체에서 가능                                                                                                                                                                                 |
+| listItems.image  | ImageObject      | Y    | -                                                                                                                                                                                                  |
+| listItems.header | TextObject       | Y    | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                             |
+| listItems.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                              |
 
 #### Sample Code
 
 {% code %}
-```yaml
+```json
 {
-      "type": "Display.ImageList1",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "내 플레이리스트"
+  "type": "Display.ImageList1",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
-      },
-      "background": {
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png",
-                  "size": "LARGE"
-              }
-            ]
-          }
-      },
-      "badgeNumber": true,
-      "listItems": [
+      ]
+    },
+    "text": {
+      "text": "내 플레이리스트"
+    }
+  },
+  "background": {
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
         {
-          "token": "{{111}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-            ]
-          },
-          "header": {
-            "text": "감성 리메이크"
-          },
-          "footer": {
-            "text": "19곡"
-          }
-        },
-        {
-          "token": "{{222}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "Deep Plow"
-          },
-          "footer": {
-            "text": "29곡"
-          }
-        },
-        {
-          "token": "{{333}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
-          },
-          "footer": {
-            "text": "9곡"
-          }
+          "url": "http://someurl.com/name.png",
+          "size": "LARGE"
         }
-    ]
+      ]
+    }
+  },
+  "badgeNumber": true,
+  "listItems": [
+    {
+      "token": "{{111}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
+          }
+        ]
+      },
+      "header": {
+        "text": "감성 리메이크"
+      },
+      "footer": {
+        "text": "19곡"
+      }
+    },
+    {
+      "token": "{{222}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "Deep Plow"
+      },
+      "footer": {
+        "text": "29곡"
+      }
+    },
+    {
+      "token": "{{333}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
+      },
+      "footer": {
+        "text": "9곡"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -1464,162 +1498,162 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 #### 형식
 
 {% code %}
-```yaml
+```json
 {
-    "type": "Display.ImageList1",
-    "version": "1.0",
-    "playServiceId": "{{STRING}}",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "badgeNumber": true,
-    "badgeNumberStyle": {
-      "background": "#f0f",
-      "color": "red",
-      "border-radius": "10px"
+  "type": "Display.ImageList1",
+  "version": "1.0",
+  "playServiceId": "{{STRING}}",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "badgeNumber": true,
+  "badgeNumberStyle": {
+    "background": "#f0f",
+    "color": "red",
+    "border-radius": "10px"
+  },
+  "listItems": [
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "icon": ImageObject,
+      "header": TextObject,
+      "footer": TextObject
     },
-    "listItems": [
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "icon": ImageObject,
-            "header": TextObject,
-            "footer": TextObject
-        },
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "icon": ImageObject,
-            "header": TextObject,
-            "footer": TextObject
-        }
-    ]
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "icon": ImageObject,
+      "header": TextObject,
+      "footer": TextObject
+    }
+  ]
 }
 ```
 {% endcode %}
 
-| Parameter        | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| ---------------- | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y   | Display.ImageList2                                                                                                                                                                                                                                                      |
-| version          | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId    | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token            | string           | Y   | -                                                                                                                                                                                                                                                                       |
-| duration         | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title            | TitleObject      | Y   | -                                                                                                                                                                                                                                                                       |
-| background       | BackgroundObject | N   | -                                                                                                                                                                                                                                                                       |
-| badgeNumber      | bool             | N   | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                                                                                                                                 |
-| badgeNumberStyle | json             | N   | 아래와 같은 Json으로 badge style 정의<br/>`{"background": "#f0f", "color": "red", "border-radius": "10px"}`<br/>- background : Container의 color<br/>- color : Badge font color<br/>- border-radius : radius                                            |
-| listItems        | list             | Y   | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
-| listItems.token  | string           | Y   | 클릭은 한 item 전체에서 가능                                                                                                                                                                                                                                                      |
-| listItems.image  | ImageObject      | Y   | -                                                                                                                                                                                                                                                                       |
-| listItems.icon   | ImageObject      | N   | 상태 아이콘                                                                                                                                                                                                                                                                  |
-| listItems.header | TextObject       | Y   | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                         |
-| listItems.footer | TextObject       | N   | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                          |
+| Parameter        | Type             | 필수   | Description                                                                                                                                                                                        |
+|------------------|------------------|------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y    | Display.ImageList2                                                                                                                                                                                 |
+| version          | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                 |
+| playServiceId    | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                                                                  |
+| token            | string           | Y    | -                                                                                                                                                                                                  |
+| duration         | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min                                                   |
+| title            | TitleObject      | Y    | -                                                                                                                                                                                                  |
+| background       | BackgroundObject | N    | -                                                                                                                                                                                                  |
+| badgeNumber      | bool             | N    | 사용자가 숫자(순서)를 발화하여 item을 선택하도록 badge를 표시할지 여부 (true - 표시함, false - 표시하지 않음)<br/>default - false                                                                                                     |
+| badgeNumberStyle | json             | N    | 아래와 같은 Json으로 badge style 정의<br/>`{"background": "#f0f", "color": "red", "border-radius": "10px"}`<br/>- background : Container의 color<br/>- color : Badge font color<br/>- border-radius : radius |
+| listItems        | list             | Y    | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                  |
+| listItems.token  | string           | Y    | 클릭은 한 item 전체에서 가능                                                                                                                                                                                 |
+| listItems.image  | ImageObject      | Y    | -                                                                                                                                                                                                  |
+| listItems.icon   | ImageObject      | N    | 상태 아이콘                                                                                                                                                                                             |
+| listItems.header | TextObject       | Y    | 본문 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                             |
+| listItems.footer | TextObject       | N    | 보조설명<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                              |
 
 #### Sample Code
 
 {% code %}
-```yaml
+```json
 {
-      "type": "Display.ImageList2",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "내 플레이리스트"
+  "type": "Display.ImageList2",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
-      },
-      "background": {
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png",
-                  "size": "LARGE"
-              }
-            ]
-          }
-      },
-      "listItems": [
+      ]
+    },
+    "text": {
+      "text": "내 플레이리스트"
+    }
+  },
+  "background": {
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
         {
-          "token": "{{111}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-            ]
-          },
-          "header": {
-            "text": "감성 리메이크"
-          },
-          "footer": {
-            "text": "19곡"
-          },
-          "icon": {
-            "sources": [
-              {
-                "url": "http://someurl.com/name.png",
-                "size": "SMALL"
-              }
-            ]
-          }
-        },
-        {
-          "token": "{{222}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "Deep Plow"
-          },
-          "footer": {
-            "text": "1분 34초"
-          },
-          "icon": {
-            "sources": [
-              {
-                "url": "http://someurl.com/name.png",
-                "size": "SMALL"
-              }
-            ]
-          }
-        },
-        {
-          "token": "{{333}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
-          },
-          "footer": {
-            "text": "9곡"
-          }
+          "url": "http://someurl.com/name.png",
+          "size": "LARGE"
         }
-    ]
+      ]
+    }
+  },
+  "listItems": [
+    {
+      "token": "{{111}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
+          }
+        ]
+      },
+      "header": {
+        "text": "감성 리메이크"
+      },
+      "footer": {
+        "text": "19곡"
+      },
+      "icon": {
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "SMALL"
+          }
+        ]
+      }
+    },
+    {
+      "token": "{{222}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "Deep Plow"
+      },
+      "footer": {
+        "text": "1분 34초"
+      },
+      "icon": {
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "SMALL"
+          }
+        ]
+      }
+    },
+    {
+      "token": "{{333}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
+      },
+      "footer": {
+        "text": "9곡"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -1631,214 +1665,214 @@ Display Interface에서는 크게 4종류의 Template을 제공하며, 화면을
 #### 형식
 
 {% code %}
-```yaml
+```json
 {
-    "type": "Display.ImageList3",
-    "version": "1.0",
-    "token": "{{STRING}}",
-    "duration": "{{STRING}}",
-    "title" : TitleObject,
-    "background": BackgroundObject,
-    "listItems": [
-        {
-            "token": "{{STRING}}",
-            "image": ImageObject,
-            "header": TextObject,
-            "icon": ImageObject
-        }
-    ]
+  "type": "Display.ImageList3",
+  "version": "1.0",
+  "token": "{{STRING}}",
+  "duration": "{{STRING}}",
+  "title": TitleObject,
+  "background": BackgroundObject,
+  "listItems": [
+    {
+      "token": "{{STRING}}",
+      "image": ImageObject,
+      "header": TextObject,
+      "icon": ImageObject
+    }
+  ]
 }
 ```
 {% endcode %}
 
-| Parameter        | Type             | 필수  | Description                                                                                                                                                                                                                                                             |
-| ---------------- | ---------------- |-----| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type             | string           | Y   | Display.ImageList3                                                                                                                                                                                                                                                      |
-| version          | string           | Y   | 인터페이스 버전, 기본값은 1.0                                                                                                                                                                                                                                                      |
-| playServiceId    | string           | Y   | 현재 template을 전송하는 play service id                                                                                                                                                                                                                                       |
-| token            | string           | Y   |                                                                                                                                                                                                                                                                         |
-| duration         | string           | N   | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
-| title            | TitleObject      | Y   |                                                                                                                                                                                                                                                                         |
-| background       | BackgroundObject | N   |                                                                                                                                                                                                                                                                         |
-| listItems        | list             | Y   | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                                                                                                                                       |
-| listItems.token  | string           | Y   | 클릭 시에 전달될 토                                                                                                                                                                                                                                                             |
-| listItems.header | TextObject       | Y   | List 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                                                                                                                                       |
-| listItems.image  | ImageObject      | Y   | List 이미지<br/>- 리스트 제목 좌측에 위치하는 이미지                                                                                                                                                                                                                             |
-| listItems.icon   | TextObject       | N   | icon 이미지<br/>- 리스트 제목 우측에 위치하는 new 등의 배지                                                                                                                                                                                                                       |
+| Parameter        | Type             | 필수   | Description                                                                                                                                      |
+|------------------|------------------|------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| type             | string           | Y    | Display.ImageList3                                                                                                                               |
+| version          | string           | Y    | 인터페이스 버전, 기본값은 1.0                                                                                                                               |
+| playServiceId    | string           | Y    | 현재 template을 전송하는 play service id                                                                                                                |
+| token            | string           | Y    |                                                                                                                                                  |
+| duration         | string           | N    | **SHORT(default)**, **MID**, **LONG**, **LONGEST**<br/>- **SHORT** : 7sec<br/>- **MID** : 15sec<br/>- **LONG** : 30sec<br/>- **LONGEST** : 10min |
+| title            | TitleObject      | Y    |                                                                                                                                                  |
+| background       | BackgroundObject | N    |                                                                                                                                                  |
+| listItems        | list             | Y    | Scrollable (스크롤이 불가능한 디바이스에서는 짤림)                                                                                                                |
+| listItems.token  | string           | Y    | 클릭 시에 전달될 토                                                                                                                                      |
+| listItems.header | TextObject       | Y    | List 제목<br/>- 최대 1줄까지 표현 (넘는 문자는 ... 처리)                                                                                                         |
+| listItems.image  | ImageObject      | Y    | List 이미지<br/>- 리스트 제목 좌측에 위치하는 이미지                                                                                                               |
+| listItems.icon   | TextObject       | N    | icon 이미지<br/>- 리스트 제목 우측에 위치하는 new 등의 배지                                                                                                         |
 
 #### Sample Code
 
 {% code %}
-```yaml
+```json
 {
-      "type": "Display.ImageList3",
-      "version": "1.0",
-      "playServiceId": "{{playServiceId}}",
-      "token": "{{token}}",
-      "title" : {
-        "logo": {
-          "contentDescription": "{{contentDescription}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png"
-              }
-          ]
-        },
-        "text": {
-            "text": "내 플레이리스트"
+  "type": "Display.ImageList3",
+  "version": "1.0",
+  "playServiceId": "{{playServiceId}}",
+  "token": "{{token}}",
+  "title": {
+    "logo": {
+      "contentDescription": "{{contentDescription}}",
+      "sources": [
+        {
+          "url": "http://someurl.com/name.png"
         }
-      },
-      "background": {
-        "image": {
-          "contentDescription": "{{STRING}}",
-          "sources": [
-              {
-                  "url": "http://someurl.com/name.png",
-                  "size": "LARGE"
-              }
-            ]
-          }
-      },
-      "listItems": [
+      ]
+    },
+    "text": {
+      "text": "내 플레이리스트"
+    }
+  },
+  "background": {
+    "image": {
+      "contentDescription": "{{STRING}}",
+      "sources": [
         {
-          "token": "{{111}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-            ]
-          },
-          "header": {
-            "text": "감성 리메이크"
-          },
-          "icon": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "X_SMALL"
-                }
-            ]
-          }
-        },
-        {
-          "token": "{{222}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "Deep Plow"
-          }
-        },
-        {
-          "token": "{{333}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
-          }
-        },
-        {
-          "token": "{{111}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-            ]
-          },
-          "header": {
-            "text": "감성 리메이크"
-          }
-        },
-        {
-          "token": "{{222}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "Deep Plow"
-          }
-        },
-        {
-          "token": "{{333}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
-          }
-        },
-        {
-          "token": "{{111}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png",
-                    "size": "LARGE"
-                }
-            ]
-          },
-          "header": {
-            "text": "감성 리메이크"
-          }
-        },
-        {
-          "token": "{{222}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "Deep Plow"
-          }
-        },
-        {
-          "token": "{{333}}",
-          "image": {
-            "contentDescription": "{{STRING}}",
-            "sources": [
-                {
-                    "url": "http://someurl.com/name.png"
-                }
-            ]
-          },
-          "header": {
-            "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
-          }
+          "url": "http://someurl.com/name.png",
+          "size": "LARGE"
         }
-    ]
+      ]
+    }
+  },
+  "listItems": [
+    {
+      "token": "{{111}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
+          }
+        ]
+      },
+      "header": {
+        "text": "감성 리메이크"
+      },
+      "icon": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "X_SMALL"
+          }
+        ]
+      }
+    },
+    {
+      "token": "{{222}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "Deep Plow"
+      }
+    },
+    {
+      "token": "{{333}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
+      }
+    },
+    {
+      "token": "{{111}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
+          }
+        ]
+      },
+      "header": {
+        "text": "감성 리메이크"
+      }
+    },
+    {
+      "token": "{{222}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "Deep Plow"
+      }
+    },
+    {
+      "token": "{{333}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
+      }
+    },
+    {
+      "token": "{{111}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png",
+            "size": "LARGE"
+          }
+        ]
+      },
+      "header": {
+        "text": "감성 리메이크"
+      }
+    },
+    {
+      "token": "{{222}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "Deep Plow"
+      }
+    },
+    {
+      "token": "{{333}}",
+      "image": {
+        "contentDescription": "{{STRING}}",
+        "sources": [
+          {
+            "url": "http://someurl.com/name.png"
+          }
+        ]
+      },
+      "header": {
+        "text": "운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}

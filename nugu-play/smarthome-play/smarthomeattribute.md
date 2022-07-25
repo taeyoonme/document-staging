@@ -52,53 +52,50 @@ IoT ServiceProvider 및 제품에 따라 지원하는 Attribute 값이 상이할
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-SetAirflow Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-
-
+{% code title="SetAirflow Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
+```json
 {
-   "version":1,
-   "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
-   "action":{
-      "command":{
-         "smartHomeCapability":"AirflowControl",
-         "smartHomeDirective":"SetAirflow",
-         "parameters":{
-            "airflowType":"LOW",
-            "rawAirflowType":"약풍"
-         }
-      },
-      "smartHomeDevices":[
-         {
-            "id":"1234567",
-            "deviceTypeCode":"AIR_CONDITIONER",
-            "deviceTypeName":"에어컨",
-            "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
-            "manufacturer":"example manufacturer",
-            "supportedCapabilities":{
-               "airflowControl":{
-                  "supportedAirflowTypes":[
-                     "HIGH",
-                     "MIDDLE",
-                     "LOW",
-                     "AUTO"
-                  ]
-               }
-            },
-            "customData":{
-               "foo":"bar"
-            }
-         }
-      ]
-   },
-   "context":{
-      "session":{
-         "id":"example_session_id",
-         "accessToken":"example_access_token"
+  "version": 1,
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
+  "action": {
+    "command": {
+      "smartHomeCapability": "AirflowControl",
+      "smartHomeDirective": "SetAirflow",
+      "parameters": {
+        "airflowType": "LOW",
+        "rawAirflowType": "약풍"
       }
-   }
+    },
+    "smartHomeDevices": [
+      {
+        "id": "1234567",
+        "deviceTypeCode": "AIR_CONDITIONER",
+        "deviceTypeName": "에어컨",
+        "deviceModelName": "example air_conditioner",
+        "friendlyNameSuggestion": "거실",
+        "manufacturer": "example manufacturer",
+        "supportedCapabilities": {
+          "airflowControl": {
+            "supportedAirflowTypes": [
+              "HIGH",
+              "MIDDLE",
+              "LOW",
+              "AUTO"
+            ]
+          }
+        },
+        "customData": {
+          "foo": "bar"
+        }
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
 }
 ```
 {% endcode %}
@@ -116,49 +113,46 @@ Airflow를 몇 단계 조절할지에 대한 Attribute value입니다. 해당 At
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-IncreaseAirflow Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-
-
+{% code title="IncreaseAirflow Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
+```json
 {
-   "version":1,
-   "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
-   "action":{
-      "command":{
-         "smartHomeCapability":"AirflowControl",
-         "smartHomeDirective":"IncreaseAirflow"
-      },
-      "smartHomeDevices":[
-         {
-            "id":"1234567",
-            "deviceTypeCode":"AIR_CONDITIONER",
-            "deviceTypeName":"에어컨",
-            "deviceModelName":"example air_conditioner",
-            "friendlyNameSuggestion":"거실",
-            "manufacturer":"example manufacturer",
-            "supportedCapabilities":{
-               "airflowControl":{
-                  "supportedAirflowTypes":[
-                     "HIGH",
-                     "MIDDLE",
-                     "LOW",
-                     "AUTO"
-                  ]
-               }
-            },
-            "customData":{
-               "foo":"bar"
-            }
-         }
-      ]
-   },
-   "context":{
-      "session":{
-         "id":"example_session_id",
-         "accessToken":"example_access_token"
+  "version": 1,
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
+  "action": {
+    "command": {
+      "smartHomeCapability": "AirflowControl",
+      "smartHomeDirective": "IncreaseAirflow"
+    },
+    "smartHomeDevices": [
+      {
+        "id": "1234567",
+        "deviceTypeCode": "AIR_CONDITIONER",
+        "deviceTypeName": "에어컨",
+        "deviceModelName": "example air_conditioner",
+        "friendlyNameSuggestion": "거실",
+        "manufacturer": "example manufacturer",
+        "supportedCapabilities": {
+          "airflowControl": {
+            "supportedAirflowTypes": [
+              "HIGH",
+              "MIDDLE",
+              "LOW",
+              "AUTO"
+            ]
+          }
+        },
+        "customData": {
+          "foo": "bar"
+        }
       }
-   }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
 }
 ```
 {% endcode %}
