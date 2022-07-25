@@ -106,6 +106,8 @@ $(function () {
 
       if ($(location).attr('hash')) {
         this.goHash($(location).attr('hash'))
+      } else {
+        this.main_wrapper.scrollTop(0)
       }
     }
 
@@ -142,6 +144,8 @@ $(function () {
 
         if (Page.hasHash(pathname)) {
           this.goHash(Page.getHash(pathname))
+        } else {
+          this.main_wrapper.scrollTop(0)
         }
 
         this.header.init()
