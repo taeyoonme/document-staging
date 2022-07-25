@@ -31,7 +31,7 @@ Extension interface 규격에 따른 디바이스의 동작 제어는 ExtensionA
 NuguAndroidClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val extensionAgent = nuguAndroidClient.extensionAgent
 ```
 {% endcode %}
@@ -39,7 +39,7 @@ val extensionAgent = nuguAndroidClient.extensionAgent
 NuguAndroidClient 생성시 ExtensionAgentInterface.Client 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 class MyExtensionAgentClient: ExtensionAgentInterface.Client {
     ...
 }
@@ -53,7 +53,7 @@ NuguAndroidClient.Builder(...)
 NuguClient instance 를 통해 ExtensionAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let extensionAgent = nuguClient.extensionAgent
 ```
 {% endcode %}
@@ -63,7 +63,7 @@ let extensionAgent = nuguClient.extensionAgent
 CapabilityFactory::makeCapability 함수로 ExtensionAgent 를 생성하고 NuguClient 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto extension_handler(std::shared_ptr<IExtensionHandler>(
         CapabilityFactory::makeCapability<ExtensionAgent, IExtensionHandler>()));
 
@@ -86,7 +86,7 @@ Play 에서 알아야 하는 디바이스/Application 의 정보를 [Context](#c
 ExtensionAgentInterface.Client 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyExtensionAgentClient : ExtensionAgentInterface.Client {
     override fun getData(): String? {
         // json string
@@ -105,7 +105,7 @@ class MyExtensionAgentClient : ExtensionAgentInterface.Client {
 ExtensionAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyExtensionAgentDelegate: ExtensionAgentDelegate {
     func extensionAgentRequestContext() -> [String: AnyHashable]? {
         ...
@@ -124,7 +124,7 @@ extensionAgent.delegate = MyExtensionAgentDelegate()
 IExtensionListener를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class ExtensionListener : public IExtensionListener {
 public:
     ...
@@ -148,7 +148,7 @@ CapabilityFactory::makeCapability<ExtensionAgent, IExtensionHandler>(extension_l
 {% tabs %}
 {% tabs::content title="Android" %}
 {% code %}
-```text
+```kotlin
 extensionAgent.issueCommand(playServiceId, data, callback)
 ```
 {% endcode %}
@@ -156,14 +156,14 @@ extensionAgent.issueCommand(playServiceId, data, callback)
 
 {% tabs::content title="iOS" %}
 {% code %}
-```text
+```swift
 extentionAgent.requestCommand(data: data, playServiceId: playServiceId)
 ```
 {% endcode %}
 {% endtabs::content %}
 
 {% tabs::content title="Linux" %}
-```text
+```cpp
 extension_handler->commandIssued(play_service_id, data)
 ```
 {% endtabs::content %}
@@ -172,7 +172,7 @@ extension_handler->commandIssued(play_service_id, data)
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Extension": {
     "version": "1.1",
@@ -191,7 +191,7 @@ extension_handler->commandIssued(play_service_id, data)
 ### Action
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Extension",
@@ -217,7 +217,7 @@ extension_handler->commandIssued(play_service_id, data)
 ### ActionSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Extension",
@@ -236,7 +236,7 @@ extension_handler->commandIssued(play_service_id, data)
 ### ActionFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Extension",
@@ -255,7 +255,7 @@ extension_handler->commandIssued(play_service_id, data)
 ### CommandIssued
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Extension",

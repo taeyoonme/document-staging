@@ -16,7 +16,7 @@ ThemeManager 객체의 theme 변수에 원하는 테마를 설정합니다.
 ThemeManager는 NuguAndroidClient에서 얻을 수 있습니다.
 
 {% code %}
-```java
+```kotlin
 (NuguAndroidClient Object).themeManager.theme = ThemeManagerInterface.THEME.DARK
 ```
 {% endcode %}

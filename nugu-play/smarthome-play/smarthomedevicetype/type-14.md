@@ -12,12 +12,10 @@ NUGU스마트홈에 에어워셔(AIR_WASHER)를 등록하고자 할 때 Discover
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -25,51 +23,52 @@ Discovery Request 예시
 Discovery Response 예시
 
 {% code %}
+
 ```json
 {
-   "devices":[
-      {
-         "id":"1234567",
-         "deviceTypeCode":"AIR_WASEHR",
-         "deviceTypeName":"example_device_type",
-         "deviceModelName":"example_model_name",
-         "friendlyName":"부엌",
-         "manufacturer":"example_manufacturer",
-         "supportedCapabilities": {
-            "airflowControl": {
-               "supportedAirflowTypes": [
-                "HIGH",
-                "MIDDLE",
-                "LOW",
-                "SPEED1",
-                "SPEED2",
-                "SPEED3",
-                "TURBO"
-                ] // 지원 가능한 Airflow 타입 참고.
-            },
-            "airQualityCheck": {},
-            "setTimeControl": {},
-            "modeControl": {
-              "supportedModes": [
-                 "DEHUMIDITY",
-                 "COMFORT",
-                 "AIR_BLAST",
-                 "ENERGY_SAVING"
-                ]  // 지원 가능한 Mode 타입 참고.
-            },
-            "powerControl": {},
-            "humidityControl": {
-              "minHumidity" : "30",
-              "maxHumidity" : "70",
-              "humidityStep" : "5"
-            }
-         },
-         "customData":{
-            "foo":"bar"
-         },
-         "connectionStatus":true
-      }
-   ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "AIR_WASEHR",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyName": "부엌",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "airflowControl": {
+          "supportedAirflowTypes": [
+            "HIGH",
+            "MIDDLE",
+            "LOW",
+            "SPEED1",
+            "SPEED2",
+            "SPEED3",
+            "TURBO"
+          ] // 지원 가능한 Airflow 타입 참고.
+        },
+        "airQualityCheck": {},
+        "setTimeControl": {},
+        "modeControl": {
+          "supportedModes": [
+            "DEHUMIDITY",
+            "COMFORT",
+            "AIR_BLAST",
+            "ENERGY_SAVING"
+          ] // 지원 가능한 Mode 타입 참고.
+        },
+        "powerControl": {},
+        "humidityControl": {
+          "minHumidity": "30",
+          "maxHumidity": "70",
+          "humidityStep": "5"
+        }
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

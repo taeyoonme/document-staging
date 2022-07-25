@@ -12,12 +12,10 @@ NUGU스마트홈에 열림감지센서(OPEN_SENSOR)를 등록하고자 할 때 D
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,23 +25,23 @@ Discovery Response 예시
 {% code %}
 ```json
 {
-   "devices":[
-      {
-         "id":"1234567",
-         "deviceTypeCode":"OPEN_SENSOR",
-         "deviceTypeName":"example_device_type",
-         "deviceModelName":"example_model_name",
-         "friendlyName":"현관",
-         "manufacturer":"example_manufacturer",
-         "supportedCapabilities": {
-            "stateCheck": {},
-         },
-         "customData":{
-            "foo":"bar"
-         },
-         "connectionStatus":true
-      }
-   ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "OPEN_SENSOR",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyName": "현관",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "stateCheck": {}
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

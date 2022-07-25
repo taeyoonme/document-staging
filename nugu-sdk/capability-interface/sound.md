@@ -24,7 +24,7 @@ Sound interface 규격에 따른 디바이스의 동작 제어는 SoundAgent 가
 NuguAndroidClient instance 를 통해 SoundAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val soundAgent = nuguAndroidClient.getAgent(DefaultSoundAgent.NAMESPACE)
 ```
 {% endcode %}
@@ -32,7 +32,7 @@ val soundAgent = nuguAndroidClient.getAgent(DefaultSoundAgent.NAMESPACE)
 NuguAndroidClient 생성시 SoundProvider 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 class MySoundProvider: SoundProvider {
     ...
 }
@@ -46,7 +46,7 @@ NuguAndroidClient.Builder(...)
 NuguClient instance 를 통해 SoundAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let soundAgent = nuguClient.soundAgent
 ```
 {% endcode %}
@@ -56,7 +56,7 @@ let soundAgent = nuguClient.soundAgent
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [SoundAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISoundHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto sound_handler(std::shared_ptr<ISoundHandler>(
         CapabilityFactory::makeCapability<SoundAgent, ISoundHandler>()));
 
@@ -77,7 +77,7 @@ nugu_client->getCapabilityBuilder()
 SoundProvider 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MySoundProvider: SoundProvider {
     override fun getContentUri(name: SoundProvider.BeepName): URI {
         return URI.create(
@@ -94,7 +94,7 @@ class MySoundProvider: SoundProvider {
 SoundAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MySoundAgentDelegate: SoundAgentDelegate {
     func soundAgentDidChange(state: SoundState, dialogRequestId: String) {
         ...
@@ -109,7 +109,7 @@ soundAgent.delegate = MySoundAgentDelegate()
 [ISoundListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISoundListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MySoundListener : public ISoundListener {
 public:
     ...
@@ -129,7 +129,7 @@ CapabilityFactory::makeCapability<SoundAgent, ISoundHandler>(sound_listener.get(
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Sound": {
     "version": "1.0"
@@ -145,7 +145,7 @@ CapabilityFactory::makeCapability<SoundAgent, ISoundHandler>(sound_listener.get(
 Beep 유형의 음원 재생 요청입니다.
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Sound",
@@ -171,7 +171,7 @@ Beep 유형의 음원 재생 요청입니다.
 ### BeepSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Sound",
@@ -190,7 +190,7 @@ Beep 유형의 음원 재생 요청입니다.
 ### BeepFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Sound",

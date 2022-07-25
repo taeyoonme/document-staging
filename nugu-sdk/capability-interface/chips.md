@@ -26,7 +26,7 @@ Chips interface 규격에 따른 디바이스의 동작 제어는 ChipsAgent 가
 NuguAndroidClient instance 를 통해 ChipsAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val chipsAgent = nuguAndroidClient.getAgent(ChipsAgent.NAMESPACE)
 ```
 {% endcode %}
@@ -38,7 +38,7 @@ val chipsAgent = nuguAndroidClient.getAgent(ChipsAgent.NAMESPACE)
 NuguClient instance 를 통해 ChipsAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let chipsAgent = nuguClient.chipsAgent
 ```
 {% endcode %}
@@ -48,7 +48,7 @@ let chipsAgent = nuguClient.chipsAgent
 NuguClient instance 를 통해 DialogStateAggregator instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let dialogStateAggregator = nuguClient.dialogStateAggregator
 ```
 {% endcode %}
@@ -58,7 +58,7 @@ let dialogStateAggregator = nuguClient.dialogStateAggregator
 CapabilityFactory::makeCapability 함수로 ChipsAgent 를 생성하고 NuguClient 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto chips_handler(std::shared_ptr<IChipsHandler>(
         CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>()));
 
@@ -79,7 +79,7 @@ nugu_client->getCapabilityBuilder()
 DialogUXStateAggregatorInterface.Listener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val listener = object: DialogUXStateAggregatorInterface.Listener {
     override fun onDialogUXStateChanged(newState: DialogUXState, dialogMode: Boolean, chips: RenderDirective.Payload?, sessionActivated: Boolean) {
         ...
@@ -94,7 +94,7 @@ nuguAndroidClient.addDialogUXStateListener(listener)
 DialogStateDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyDialogStateDelegate: DialogStateDelegate {
     func dialogStateDidChange(_ state: DialogState, isMultiturn: Bool, chips: [ChipsAgentItem.Chip]?, sessionActivated: Bool) {
         ...
@@ -109,7 +109,7 @@ dialogStateAggregator.add(delegate: MyDialogStateDelegate())
 IChipsListener를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class ChipsListener : public IChipsListener {
 public:
     ...
@@ -129,7 +129,7 @@ CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get(
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Chips": {
     "version": "1.2"
@@ -143,7 +143,7 @@ CapabilityFactory::makeCapability<ChipsAgent, IChipsHandler>(chips_listener.get(
 ### Render
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Chips",

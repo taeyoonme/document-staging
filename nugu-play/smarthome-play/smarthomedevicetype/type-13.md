@@ -12,12 +12,10 @@ NUGU스마트홈에 에너지미터(ENERGY_METER)를 등록하고자 할 때 Dis
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,23 +25,23 @@ Discovery Response 예시
 {% code %}
 ```json
 {
-   "devices":[
-      {
-         "id":"1234567",
-         "deviceTypeCode":"ENERGY_METER",
-         "deviceTypeName":"example_device_type",
-         "deviceModelName":"example_model_name",
-         "friendlyName":"거실",
-         "manufacturer":"example_manufacturer",
-         "supportedCapabilities": {
-            "powerCheck": {},
-         },
-         "customData":{
-            "foo":"bar"
-         },
-         "connectionStatus":true
-      }
-   ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "ENERGY_METER",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyName": "거실",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "powerCheck": {}
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

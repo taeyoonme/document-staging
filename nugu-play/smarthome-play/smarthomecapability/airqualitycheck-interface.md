@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,7 +25,8 @@ Discovery Sample Response
 {% code %}
 ```json
 {
-  "devices": [{
+  "devices": [
+    {
       "id": "1234567",
       "deviceTypeCode": "AIR_CLEANER",
       "deviceTypeName": "공기청정기",
@@ -35,13 +34,14 @@ Discovery Sample Response
       "friendlyNameSuggestion": "거실",
       "manufacturer": "example manufacturer",
       "supportedCapabilities": {
-          "airQualityCheck": {} <-- 별도의 파라미터는 없으나 예시와 같이 빈 객체를 응답해야 함.
+        "airQualityCheck": {} // 별도의 파라미터는 없으나 예시와 같이 빈 객체를 응답해야 함.
       },
       "customData": {
-          "foo": "bar"
+        "foo": "bar"
       },
       "connectionStatus": true
-  }]
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -54,8 +54,8 @@ AirQualityCheck Capability 의 경우 Capability에 속한 파라미터가 없�
 
 SmartHomeDevice Attribute parameters
 
-| Attribute        | Description                                                                                                                          |
-|:-----------------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| Attribute        | Description                                                                                                                              |
+|:-----------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
 | customData       | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다.<br/>customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 | connectionStatus | 디바이스 연결상태.<br/>현재 제어가 불가능한 상태의 디바이스인 경우 false 로 응답해야 합니다.                                                                                |
 
@@ -77,11 +77,8 @@ Directive : AskAirQuality
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/AirQualityCheck/directives/AskAirQuality)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/AirQualityCheck/directives/AskAirQuality)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -148,8 +145,8 @@ Sample Response
 
 AskAirQuality Directive Response parameter details
 
-| parameter name | description                                                                         | type  |
-|:---------------|:------------------------------------------------------------------------------------|:------|
+| parameter name | description                                                                             | type  |
+|:---------------|:----------------------------------------------------------------------------------------|:------|
 | airQuality     | SmartHomeDevice에서 측정한 주변 공기상태정보입니다.<br/>1부터 10까지의 단계로 응답할 수 있으며 숫자가 작을수록 공기질이 좋은 상태입니다. | 1~10  |
 
 ## Error & Exception
@@ -161,21 +158,21 @@ Sample Error Response
 {% code %}
 ```json
 {
-  "requestId":"20190916109ad8219c251742859c56f6ec3c4700bb",
-  "data":[
-     {
-        "resultCode":"DeviceTurnedOff",
-        "smartHomeDevice":{
-           "id":"D68856420232",
-           "deviceTypeCode":"AIR_CONDITIONER",
-           "deviceModelName":"삼성전자 스마트 에어컨",
-           "friendlyName":"거실",
-           "deviceTypeName":"에어컨",
-           "customData":{
-              "foo": "bar"
-           }
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
+  "data": [
+    {
+      "resultCode": "DeviceTurnedOff",
+      "smartHomeDevice": {
+        "id": "D68856420232",
+        "deviceTypeCode": "AIR_CONDITIONER",
+        "deviceModelName": "삼성전자 스마트 에어컨",
+        "friendlyName": "거실",
+        "deviceTypeName": "에어컨",
+        "customData": {
+          "foo": "bar"
         }
-     }
+      }
+    }
   ]
 }
 ```

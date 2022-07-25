@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -81,11 +79,8 @@ Directive : SetMode
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -134,8 +129,8 @@ Control Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMo
 
 SetMode Directive Request parameter details
 
-| parameter name | description                                                                                        | type   |
-|:---------------|:---------------------------------------------------------------------------------------------------|:-------|
+| parameter name | description                                                                                            | type   |
+|:---------------|:-------------------------------------------------------------------------------------------------------|:-------|
 | mode           | 설정하고자 하는 mode의 사용자 발화 정보.<br/>해당 parameter의 value는 Device Discovery 당시 응답한 supportedModes 중 하나로 요청됩니다. | string |
 
 Sample Response
@@ -143,16 +138,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "mode": "COLD" <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "mode": "COLD" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -181,11 +176,8 @@ Directive : CancelMode
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/CancelMode)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/CancelMode)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -243,16 +235,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "mode": "WINDLESS" <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "mode": "WINDLESS" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}

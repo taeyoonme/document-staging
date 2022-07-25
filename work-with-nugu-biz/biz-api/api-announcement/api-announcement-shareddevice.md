@@ -9,7 +9,7 @@ depth_order: 1
 ## 1. URL <a id="id-announcement-v1-1url"></a>
 
 {% code %}
-```
+```text
 [POST] https://biz-api.sktnugu.com/api/v1/sharedDevice/group/{groupApiToken}/announcement?callBack={callBackUrl}
 ```
 {% endcode %}
@@ -23,22 +23,25 @@ depth_order: 1
 {% code %}
 ```json
 {
-    "playServiceId": "XXX",
-    "tts": {
-        "text": "발송 내용",
-        "speed": "100",
-        "pause1": "600",
-        "pause2": "300"
-    },
-    "display" : {
-        "type": "imageText2",
-        "title": "타이틀",
-        "header": "헤더",
-        "body": "본문",
-        "footer": "부가설명",
-        "image": "http://imageUrl",
-        "grammarGuide": ["발화문1", "발화문2"]
-    }
+  "playServiceId": "XXX",
+  "tts": {
+    "text": "발송 내용",
+    "speed": "100",
+    "pause1": "600",
+    "pause2": "300"
+  },
+  "display": {
+    "type": "imageText2",
+    "title": "타이틀",
+    "header": "헤더",
+    "body": "본문",
+    "footer": "부가설명",
+    "image": "http://imageUrl",
+    "grammarGuide": [
+      "발화문1",
+      "발화문2"
+    ]
+  }
 }
 ```
 {% endcode %}
@@ -93,13 +96,13 @@ depth_order: 1
 {% code %}
 ```json
 {
-    "devices": [
-        {
-            "uniqueName": "XXX",
-            "token": "XXX",
-            "resultCode": "XXX"
-        }
-    ]
+  "devices": [
+    {
+      "uniqueName": "XXX",
+      "token": "XXX",
+      "resultCode": "XXX"
+    }
+  ]
 }
 ```
 {% endcode %}

@@ -63,8 +63,8 @@ Biz 사용자를 대상으로 Announcement 등 API를 발송할 때, 제휴사 �
 {% code %}
 ```json
 {
-    "userApiToken": "XXX",
-    "resultCode": "OK"
+  "userApiToken": "XXX",
+  "resultCode": "OK"
 }
 ```
 {% endcode %}

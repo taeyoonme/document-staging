@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,21 +25,23 @@ Discovery Sample Response
 {% code %}
 ```json
 {
-    "devices": [{
-        "id": "1234567",
-        "deviceTypeCode": "AIR_CONDITIONER",
-        "deviceTypeName": "example_device_type",
-        "deviceModelName": "example_model_name",
-        "friendlyNameSuggestion": "거실",
-        "manufacturer": "example_manufacturer",
-        "supportedCapabilities": {
-          "setTimeControl": {} <-- 이 속성이 존재해야 setTimeControl Capability 사용 가능.
-        },
-        "customData": {
-          "foo": "bar"
-        },
-        "connectionStatus": true
-      ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "AIR_CONDITIONER",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyNameSuggestion": "거실",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "setTimeControl": {} // 이 속성이 존재해야 setTimeControl Capability 사용 가능.
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -70,11 +70,8 @@ Directive : SetEndTime
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/SetTimeControl/directives/SetEndtime)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/SetTimeControl/directives/SetEndtime)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -125,16 +122,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "dateTime": "2019-10-01T15:50"
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "dateTime": "2019-10-01T15:50"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -153,11 +150,8 @@ Directive : CancelEndTime
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/SetTimeControl/directives/CancelEndtime)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/SetTimeControl/directives/CancelEndtime)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -200,15 +194,15 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+      }
+    }
+  ]
 }
 ```
 {% endcode %}

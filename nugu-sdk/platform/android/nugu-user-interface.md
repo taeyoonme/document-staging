@@ -15,51 +15,51 @@ ChromeWindow은 사용자의 음성 입력 수신, NUGU 음성 출력 등 NUGU �
 1. CoordinatorLayout에 android:id 태그를 설정합니다.
 
 {% code %}
-   ```xml
-   <androidx.coordinatorlayout.widget.CoordinatorLayout
-           android:id="@+id/coordinator"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
-   ```
+```xml
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+       android:id="@+id/coordinator"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+```
 {% endcode %}
 
 2. ChromeWindow 객체 생성시 CoordinatorLayout을 연결합니다.
 
 {% code %}
-   ```kotlin
-   val chromeWindow = ChromeWindow(this, findViewById<CoordinatorLayout>(R.id.coordinator))
-   ```
+```kotlin
+val chromeWindow = ChromeWindow(this, findViewById<CoordinatorLayout>(R.id.coordinator))
+```
 {% endcode %}
 
 3. ChromeWindow 작업을 추가하려면 ChromeWindow.OnChromeWindowCallback 인터페이스를 구현하는 Callback 객체를 정의해야 합니다.
 
 {% code %}
-   ```kotlin
-   chromeWindow.setOnChromeWindowCallback(object : ChromeWindow.OnChromeWindowCallback {
-       override fun onExpandStarted() {
-         // ChromeWindow 시작 
-       }
+```kotlin
+chromeWindow.setOnChromeWindowCallback(object : ChromeWindow.OnChromeWindowCallback {
+   override fun onExpandStarted() {
+     // ChromeWindow 시작 
+   }
 
-       override fun onHiddenFinished() {
-         // ChromeWindow 종료
-       }
+   override fun onHiddenFinished() {
+     // ChromeWindow 종료
+   }
 
-       override fun onChipsClicked(item: NuguChipsView.Item) {
-         // Chips 아이템이 클릭
-       }
-   })
-   ```
+   override fun onChipsClicked(item: NuguChipsView.Item) {
+     // Chips 아이템이 클릭
+   }
+})
+```
 {% endcode %}
 
 4. 추가적으로 DialogUXStateAggregatorInterface.Listener, ASRAgentInterface.OnResultListener 리스너를 연결해야 합니다.
 
 {% code %}
-   ```kotlin
-   chromeWindow.apply {
-       ClientManager.getClient().addDialogUXStateListener(this)
-       ClientManager.getClient().addASRResultListener(this)
-   }
-   ```
+```kotlin
+chromeWindow.apply {
+   ClientManager.getClient().addDialogUXStateListener(this)
+   ClientManager.getClient().addASRResultListener(this)
+}
+```
 {% endcode %}
 
 | Methods                                                                                                              |
@@ -76,18 +76,18 @@ NUGU Voice Button은 음성 입력이 가능한 대기 상태를 나타내는 �
 1. layout file에 NuguButton을 정의 합니다.
 
 {% code %}
-   ```xml
-   <com.skt.nugu.sdk.platform.android.ux.widget.NuguButton
-       android:id="@+id/fab"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_gravity="bottom|end"
-       android:layout_marginEnd="14dp"
-       android:layout_marginBottom="10dp"
-       android:contentDescription="@string/button_fab_description"
-       app:colors="blue"
-       app:types="fab" />
-   ```
+```xml
+<com.skt.nugu.sdk.platform.android.ux.widget.NuguButton
+   android:id="@+id/fab"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_gravity="bottom|end"
+   android:layout_marginEnd="14dp"
+   android:layout_marginBottom="10dp"
+   android:contentDescription="@string/button_fab_description"
+   app:colors="blue"
+   app:types="fab" />
+```
 {% endcode %}
 
    attributes 수정하여 버튼 타입 및 색생등 설정할수 있습니다.
@@ -111,13 +111,13 @@ NUGU 토스트 메시지는 작은 팝업으로 작업에 관한 간단한 피�
 1. Toast 메시지 빌드 및 표시
 
 {% code %}
-   ```kotlin
-   NuguToast.with(this)
-           .message(R.string.volume_mute)
-           .duration(NuguToast.LENGTH_SHORT)
-           .yOffset(height)
-           .show()
-   ```
+```kotlin
+NuguToast.with(this)
+       .message(R.string.volume_mute)
+       .duration(NuguToast.LENGTH_SHORT)
+       .yOffset(height)
+       .show()
+```
 {% endcode %}
 
    * **message** : 알림메시지를 설정 
@@ -132,12 +132,12 @@ NUGU 스택바는 사용자에게 간단한 팝업 메시지를 제공합니다.
 1. Snackbar 메시지 빌드 및 표시
 
 {% code %}
-   ```kotlin
-   NuguSnackbar.with(findViewById(R.id.drawer_layout))   
-           .message(R.string.device_gw_error_002)
-           .duration(NuguSnackbar.LENGTH_LONG)
-           .show()
-   ```
+```kotlin
+NuguSnackbar.with(findViewById(R.id.drawer_layout))   
+       .message(R.string.device_gw_error_002)
+       .duration(NuguSnackbar.LENGTH_LONG)
+       .show()
+```
 {% endcode %}
 
    * **message** : 알림메시지를 설정

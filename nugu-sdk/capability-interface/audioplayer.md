@@ -34,7 +34,7 @@ AudioPlayer interface 규격에 따른 디바이스의 동작 제어는 AudioPla
 NuguAndroidClient instance 를 통해 AudioPlayerAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```
+```kotlin
 val audioPlayerAgent = nuguAndroidClient.audioPlayerAgent
 ```
 {% endcode %}
@@ -44,7 +44,7 @@ val audioPlayerAgent = nuguAndroidClient.audioPlayerAgent
 NuguClient instance 를 통해 AudioPlayerAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```
+```swift
 let audioPlayerAgent = nuguClient.audioPlayerAgent
 ```
 {% endcode %}
@@ -54,7 +54,7 @@ let audioPlayerAgent = nuguClient.audioPlayerAgent
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [AudioPlayerAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```
+```kotlin
 auto audio_player_handler(std::shared_ptr<IAudioPlayerHandler>(
         CapabilityFactory::makeCapability<AudioPlayerAgent, IAudioPlayerHandler>()));
 
@@ -75,7 +75,7 @@ nugu_client->getCapabilityBuilder()
 AudioPlayerAgentInterface.Listener 를 추가합니다.
 
 {% code %}
-```
+```kotlin
 val listener = object: AudioPlayerAgentInterface.Listener {
     override fun onStateChanged(activity: State, context: Context) {
         ...
@@ -90,7 +90,7 @@ audioPlayerAgent.addListener(listener)
 AudioPlayerAgentDelegate 를 추가합니다.
 
 {% code %}
-```
+```swift
 class MyAudioPlayerAgentDelegate: AudioPlayerAgentDelegate {
     func audioPlayerAgentDidChange(state: AudioPlayerState, dialogRequestId: String) {
         ...
@@ -106,7 +106,7 @@ audioPlayerAgent.add(delegate: MyAudioPlayerAgentDelegate())
 [IAudioPlayerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
 
 {% code %}
-```
+```cpp
 class MyAudioPlayerListener : public IAudioPlayerListener {
 public:
     ...
@@ -138,7 +138,7 @@ AudioPlayer 로 음원을 재생할 때 화면을 구성하기 위해 필요한 
 DisplayAggregatorInterface.Renderer 를 추가합니다.
 
 {% code %}
-```
+```kotlin
 val renderer = object: DisplayAggregatorInterface.Renderer {
     override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
         ...
@@ -153,7 +153,7 @@ nuguAndroidClient.setDisplayRenderer(renderer)
 UI 제어 요청을 처리하려면 LyricsPresenter 를 추가합니다.
 
 {% code %}
-```
+```kotlin
 val presenter = object: LyricsPresenter {
     override fun show(): Boolean {
         ...
@@ -174,7 +174,7 @@ audioPlayerAgent.setLyricsPresenter(presenter)
 AudioPlayerDisplayDelegate 를 추가합니다.
 
 {% code %}
-```
+```swift
 class MyAudioPlayerDisplayDelegate: AudioPlayerDisplayDelegate {
     func audioPlayerDisplayShouldRender(template: AudioPlayerDisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
         ...
@@ -200,7 +200,7 @@ audioPlayerAgent.displayDelegate = MyAudioPlayerDisplayDelegate()
 [IAudioPlayerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
 
 {% code %}
-```
+```cpp
 class MyAudioPlayerListener : public IAudioPlayerListener {
 public:
     ...
@@ -236,7 +236,7 @@ PUI, GUI 등으로 사용자가 [다음](#nextcommandissued)/[이전](#previousc
 {% tabs %}
 {% tabs::content title="Android" %}
 {% code %}
-```
+```kotlin
 // 다음
 audioPlayerAgent.next()
 // 이전
@@ -253,7 +253,7 @@ audioPlayerAgent.requestShuffleCommand(false)
 
 {% tabs::content title="iOS" %}
 {% code %}
-```
+```swift
 // 다음 
 audioPlayerAgent.next()
 // 이전
@@ -270,7 +270,7 @@ audioPlayerAgent.requestShuffleCommand(false)
 
 {% tabs::content title="Linux" %}
 {% code %}
-```
+```cpp
 // 다음
 audio_player_handler->next()
 // 이전
@@ -289,7 +289,7 @@ audio_player_handler->requestShuffleCommand(false)
 ## Context
 
 {% code %}
-```
+```json
 {
   "AudioPlayer": {
     "version": "1.4",
@@ -320,7 +320,7 @@ audio_player_handler->requestShuffleCommand(false)
 새로운 음원 또는 현재 음원 재생 요청입니다.(Play, Resume, Seek 요청이 포함되어 있습니다.)
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -370,7 +370,7 @@ audio_player_handler->requestShuffleCommand(false)
 #### audioItem.metadata.template - AudioPlayer.Template1
 
 {% code %}
-```
+```json
 {
   "metadata": {
     "disableTemplate": {{BOOLEAN}},
@@ -448,7 +448,7 @@ audio_player_handler->requestShuffleCommand(false)
 #### audioItem.metadata.template - AudioPlayer.Template2
 
 {% code %}
-```
+```json
 {
   "metadata": {
     "disableTemplate": {{BOOLEAN}},
@@ -510,7 +510,7 @@ audio_player_handler->requestShuffleCommand(false)
 음원 재생 중지 요청입니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -531,7 +531,7 @@ audio_player_handler->requestShuffleCommand(false)
 음원 일시정지 요청입니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -552,7 +552,7 @@ audio_player_handler->requestShuffleCommand(false)
 음원의 Metadata UI 설정 정보를 갱신 요청입니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -590,7 +590,7 @@ audio_player_handler->requestShuffleCommand(false)
 가사화면 표시 요청입니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -611,7 +611,7 @@ audio_player_handler->requestShuffleCommand(false)
 가사화면 닫기 요청입니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -632,7 +632,7 @@ audio_player_handler->requestShuffleCommand(false)
 가사화면 스크롤 위치 이동 요청입니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -658,7 +658,7 @@ audio_player_handler->requestShuffleCommand(false)
 * Nugu mobile application 에서 새로운 곡 재생을 요청하기 위한 Directive.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -681,7 +681,7 @@ audio_player_handler->requestShuffleCommand(false)
 * Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -700,7 +700,7 @@ audio_player_handler->requestShuffleCommand(false)
 * Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -719,7 +719,7 @@ audio_player_handler->requestShuffleCommand(false)
 * Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -738,7 +738,7 @@ audio_player_handler->requestShuffleCommand(false)
 * Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -757,7 +757,7 @@ audio_player_handler->requestShuffleCommand(false)
 * Nugu mobile application 에서 현재 재생중인 play 에 대한 제어를 위한 Directive.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -776,7 +776,7 @@ audio_player_handler->requestShuffleCommand(false)
 ### PlaybackStarted
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -802,7 +802,7 @@ audio_player_handler->requestShuffleCommand(false)
 ### PlaybackPaused
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -828,7 +828,7 @@ audio_player_handler->requestShuffleCommand(false)
 ### PlaybackResumed
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -854,7 +854,7 @@ audio_player_handler->requestShuffleCommand(false)
 ### PlaybackFinished
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -880,7 +880,7 @@ audio_player_handler->requestShuffleCommand(false)
 ### PlaybackStopped
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -908,7 +908,7 @@ audio_player_handler->requestShuffleCommand(false)
 ### PlaybackFailed
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -951,7 +951,7 @@ audio_player_handler->requestShuffleCommand(false)
 * **offsetInMilliseconds는 stream의 시작을 기준으로 offset을 의미 (컨텐츠 재생 시간 0부터 절대값을 의미)**
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -980,7 +980,7 @@ audio_player_handler->requestShuffleCommand(false)
 * **offsetInMilliseconds는 stream의 시작을 기준으로 offset을 의미 (컨텐츠 재생 시간 0부터 절대값을 의미)**
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1008,7 +1008,7 @@ audio_player_handler->requestShuffleCommand(false)
 사용자가 다음 음원 재생을 요청하면 전송됩니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1036,7 +1036,7 @@ audio_player_handler->requestShuffleCommand(false)
 사용자가 이전 음원 재생을 요청하면 전송됩니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1064,7 +1064,7 @@ audio_player_handler->requestShuffleCommand(false)
 사용자가 현재 음원 즐겨찾기(좋아요 포함)를 요청하면 전송됩니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1090,7 +1090,7 @@ audio_player_handler->requestShuffleCommand(false)
 사용자가 현재 음원 반복 재생을 요청하면 전송됩니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1116,7 +1116,7 @@ audio_player_handler->requestShuffleCommand(false)
 사용자가 셔플 재생을 요청하면 전송됩니다.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1142,7 +1142,7 @@ audio_player_handler->requestShuffleCommand(false)
 * ShowLyrics Directive가 발생하여 가사화면을 성공적으로 띄운다음 발생되는 Event
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1163,7 +1163,7 @@ audio_player_handler->requestShuffleCommand(false)
 * ShowLyrics Directive가 발생하였는데 가사화면을 띄우지 못한 경우 발생되는 Event
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1184,7 +1184,7 @@ audio_player_handler->requestShuffleCommand(false)
 * HideLyrics Directive가 발생하여 가사화면을 성공적으로 닫은 다음 발생되는 Event
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1205,7 +1205,7 @@ audio_player_handler->requestShuffleCommand(false)
 * HideLyrics Directive가 발생하였는데 가사화면을 닫지 못한 경우 발생되는 Event
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1226,7 +1226,7 @@ audio_player_handler->requestShuffleCommand(false)
 * ControlLyricsPage Directive가 발생하여 가사화면을 성공적으로 이동한 다음 발생되는 Event
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1252,7 +1252,7 @@ audio_player_handler->requestShuffleCommand(false)
 * ControlLyricsPage Directive가 발생하였는데 가사화면을 이동하지 못한 경우 발생되는 Event
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1276,7 +1276,7 @@ audio_player_handler->requestShuffleCommand(false)
 ### RequestPlayCommandIssued
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1299,7 +1299,7 @@ audio_player_handler->requestShuffleCommand(false)
 * RequestResumeCommand Directive 를 받은 디바이스가 발생시키는 Event.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1327,7 +1327,7 @@ audio_player_handler->requestShuffleCommand(false)
 * RequestNextCommand Directive 를 받은 디바이스가 발생시키는 Event.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1355,7 +1355,7 @@ audio_player_handler->requestShuffleCommand(false)
 * RequestPreviousCommand Directive 를 받은 디바이스가 발생시키는 Event.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1383,7 +1383,7 @@ audio_player_handler->requestShuffleCommand(false)
 * RequestPauseCommand Directive 를 받은 디바이스가 발생시키는 Event.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1411,7 +1411,7 @@ audio_player_handler->requestShuffleCommand(false)
 * RequestStopCommand Directive 를 받은 디바이스가 발생시키는 Event.
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",
@@ -1437,7 +1437,7 @@ audio_player_handler->requestShuffleCommand(false)
 ### RequestCommandFailed
 
 {% code %}
-```
+```json
 {
   "header": {
     "namespace": "AudioPlayer",

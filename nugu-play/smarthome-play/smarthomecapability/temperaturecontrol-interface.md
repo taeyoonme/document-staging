@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,27 +25,29 @@ Discovery Sample Response
 {% code %}
 ```json
 {
-    "devices": [{
-        "id": "1234567",
-        "deviceTypeCode": "AIR_CONDITIONER",
-        "deviceTypeName": "에어컨",
-        "deviceModelName": "example air_conditioner",
-        "friendlyNameSuggestion": "거실",
-        "manufacturer": "example manufacturer",
-        "supportedCapabilities": {
-            "temperatureControl": {
-                "deviceTemperatureControl": {
-                  "minTemperature": "18",
-                  "maxTemperature": "29",
-                  "temperatureStep": "1"
-                }
-            } <-- "온도 25도로 설정해줘" 등 TemperatureControl 을 지원하기 위해서는 이 property 를 supportedCapabilities 에 포함해야 합니다.
-        },
-        "customData": {
-            "foo": "bar"
-        },
-        "connectionStatus": true
-    }]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "AIR_CONDITIONER",
+      "deviceTypeName": "에어컨",
+      "deviceModelName": "example air_conditioner",
+      "friendlyNameSuggestion": "거실",
+      "manufacturer": "example manufacturer",
+      "supportedCapabilities": {
+        "temperatureControl": {
+          "deviceTemperatureControl": {
+            "minTemperature": "18",
+            "maxTemperature": "29",
+            "temperatureStep": "1"
+          }
+        } // "온도 25도로 설정해줘" 등 TemperatureControl 을 지원하기 위해서는 이 property 를 supportedCapabilities 에 포함해야 합니다.
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -79,11 +79,8 @@ Directive : AskTemperature
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/AskTemperature)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/AskTemperature)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -126,17 +123,17 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "currentTemperature": "25", <-- directive 마다 필요한 property 채워서 응답.
-                "temperatureLevel" : "20"
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "currentTemperature": "25", // directive 마다 필요한 property 채워서 응답.
+        "temperatureLevel": "20"
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -162,11 +159,8 @@ Directive : SetTemperature
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -175,7 +169,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directive
       "smartHomeCapability": "TemperatureControl",
       "smartHomeDirective": "SetTemperature",
       "parameters": {
-          "temperatureLevel": "20"
+        "temperatureLevel": "20"
       }
     },
     "smartHomeDevices": [
@@ -217,16 +211,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "temperatureLevel": "20", <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "temperatureLevel": "20" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -251,11 +245,8 @@ Directive : IncreaseTemperature
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -264,7 +255,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directive
       "smartHomeCapability": "TemperatureControl",
       "smartHomeDirective": "IncreaseTemperature",
       "parameters": {
-          "temperatureDelta": "3"
+        "temperatureDelta": "3"
       }
     },
     "smartHomeDevices": [
@@ -297,8 +288,8 @@ Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directive
 
 IncreaseTemperature Directive request parameter details
 
-| parameter name   | description                                                            | type   |
-|:-----------------|:-----------------------------------------------------------------------|:-------|
+| parameter name   | description                                                              | type   |
+|:-----------------|:-------------------------------------------------------------------------|:-------|
 | temperatureDelta | 설정온도를 몇 도(섭씨) 올릴지에 대한 사용자 발화 정보입니다.<br/>해당 정보가 없을 경우에는 1도 만큼 올리도록 설정합니다. | double |
 
 Sample Response
@@ -306,16 +297,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "temperatureLevel": "23" <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "temperatureLevel": "23" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -340,11 +331,8 @@ Directive : DecreaseTemperature
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/DecreaseTemperature)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/DecreaseTemperature)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -353,7 +341,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directive
       "smartHomeCapability": "TemperatureControl",
       "smartHomeDirective": "DecreaseTemperature",
       "parameters": {
-          "temperatureDelta": "3"
+        "temperatureDelta": "3"
       }
     },
     "smartHomeDevices": [
@@ -386,8 +374,8 @@ Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directive
 
 DecreaseTemperature Directive request parameter details
 
-| parameter name   | description                                                          | type   |
-|:-----------------|:---------------------------------------------------------------------|:-------|
+| parameter name   | description                                                              | type   |
+|:-----------------|:-------------------------------------------------------------------------|:-------|
 | temperatureDelta | 설정온도를 몇 도(섭씨) 내릴지에 대한 사용자 발화 정보입니다.<br/>해당 정보가 없을 경우에는 1도 만큼 내리도록 설정합니다. | double |
 
 Sample Response
@@ -395,16 +383,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "temperatureLevel": "23" <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "temperatureLevel": "23" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -429,11 +417,8 @@ Directive : SetTemperatureMax
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMax)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMax)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -476,16 +461,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "temperatureLevel": "30" <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "temperatureLevel": "30" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -510,11 +495,8 @@ Directive : SetTemperatureMin
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMin)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperatureMin)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -555,18 +537,18 @@ Control Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directive
 Sample Response
 
 {% code %}
-```scheme
+```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "temperatureLevel": "18" <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "temperatureLevel": "18" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}

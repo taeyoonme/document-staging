@@ -28,7 +28,7 @@ iOS 는 MicAgent 를 지원하지 않습니다.
 NuguAndroidClient instance 를 통해 MicrophoneAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val microphoneAgent = nuguAndroidClient.getAgent(DefaultMicrophoneAgent.NAMESPACE)
 ```
 {% endcode %}
@@ -36,7 +36,7 @@ val microphoneAgent = nuguAndroidClient.getAgent(DefaultMicrophoneAgent.NAMESPAC
 NuguAndroidClient 생성시 Microphone 을 추가합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMicrophone: Microphone {
     ...
 }
@@ -50,7 +50,7 @@ NuguAndroidClient.Builder(...)
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [MicAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMicHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto mic_handler(std::shared_ptr<IMicHandler>(
         CapabilityFactory::makeCapability<MicAgent, IMicHandler>()));
 
@@ -71,7 +71,7 @@ nugu_client->getCapabilityBuilder()
 Microphone 을 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMicrophone: Microphone {
     override fun getSettings(): Settings {
         ...
@@ -92,7 +92,7 @@ class MyMicrophone: Microphone {
 Microphone 을 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMicrophone: Microphone {
     override fun on(): Boolean {
         ...
@@ -112,7 +112,7 @@ class MyMicrophone: Microphone {
 [IMicListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMicListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MyMicListener : public IMicListener {
 public:
     ...
@@ -132,7 +132,7 @@ CapabilityFactory::makeCapability<MicAgent, IMicHandler>(mic_listener.get());
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Mic": {
     "version": "1.0",
@@ -151,7 +151,7 @@ CapabilityFactory::makeCapability<MicAgent, IMicHandler>(mic_listener.get());
 ### SetMic
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Mic",

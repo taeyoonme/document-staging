@@ -12,12 +12,10 @@ NUGU스마트홈에 의류관리기(CLOTHING_CARE_MACHINE)를 등록하고자 �
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -25,26 +23,27 @@ Discovery Request 예시
 Discovery Response 예시
 
 {% code %}
+
 ```json
 {
-   "devices":[
-      {
-         "id":"1234567",
-         "deviceTypeCode":"CLOTHING_CARE_MACHINE",
-         "deviceTypeName":"example_device_type",
-         "deviceModelName":"example_model_name",
-         "friendlyName":"안방",
-         "manufacturer":"example_manufacturer",
-         "supportedCapabilities": {
-            "powerControl": {},
-            "stateCheck": {},
-         },
-         "customData":{
-            "foo":"bar"
-         },
-         "connectionStatus":true
-      }
-   ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "CLOTHING_CARE_MACHINE",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyName": "안방",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "powerControl": {},
+        "stateCheck": {}
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

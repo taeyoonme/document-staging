@@ -27,7 +27,7 @@ TTS interface 규격에 따른 디바이스의 동작 제어는 TTSAgent 가 처
 NuguAndroidClient instance 를 통해 TTSAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val ttsAgent = nuguAndroidClient.ttsAgent
 ```
 {% endcode %}
@@ -37,7 +37,7 @@ val ttsAgent = nuguAndroidClient.ttsAgent
 NuguClient instance 를 통해 TTSAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let ttsAgent = nuguClient.ttsAgent
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ let ttsAgent = nuguClient.ttsAgent
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TTSAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto tts_handler(std::shared_ptr<ITTSHandler>(
         CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>()));
 
@@ -68,7 +68,7 @@ nugu_client->getCapabilityBuilder()
 TTSAgentInterface.Listener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val listener = object: TTSAgentInterface.Listener {
     override fun onStateChanged(state: State, dialogRequestId: String) {
         ...
@@ -85,7 +85,7 @@ ttsAgent.addListener(listener)
 TTSAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyTTSAgentDelegate: TTSAgentDelegate {
     func ttsAgentDidChange(state: TTSState, dialogRequestId: String) {
         ...
@@ -102,7 +102,7 @@ ttsAgent.add(delegate: MyTTSAgentDelegate())
 [ITTSListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITTSListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MyTTSListener : public ITTSListener {
 public:
     ...
@@ -124,7 +124,7 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 ## Context
 
 {% code %}
-```text
+```json
 {
   "TTS": {
     "version": "1.2",
@@ -149,7 +149,7 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 새로운 TTS 재생 요청입니다.
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "TTS",
@@ -181,7 +181,7 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 현재 TTS 중지 요청입니다.
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "TTS",
@@ -202,7 +202,7 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 ### SpeechStarted
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "TTS",
@@ -226,7 +226,7 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 ### SpeechFinished
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "TTS",
@@ -250,7 +250,7 @@ CapabilityFactory::makeCapability<TTSAgent, ITTSHandler>(tts_listener.get());
 ### SpeechStopped
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "TTS",

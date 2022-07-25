@@ -29,7 +29,7 @@ iOS/Linux 는 BluetoothAgent 를 지원하지 않습니다.
 NuguAndroidClient instance 를 통해 BluetoothAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```
+```kotlin
 val bluetoothAgent = nuguAndroidClient.bluetoothAgent
 ```
 {% endcode %}
@@ -37,7 +37,7 @@ val bluetoothAgent = nuguAndroidClient.bluetoothAgent
 NuguAndroidClient 생성시 BluetoothProvider 을 추가합니다.
 
 {% code %}
-```
+```kotlin
 class MyBluetoothProvider: BluetoothProvider {
     ...
 }
@@ -59,7 +59,7 @@ NuguAndroidClient.Builder(...)
 BluetoothProvider 를 구현합니다.
 
 {% code %}
-```
+```kotlin
 class MyBluetoothProvider: BluetoothProvider {
     override fun device() : BluetoothHost? {
         ...
@@ -87,7 +87,7 @@ class MyBluetoothProvider: BluetoothProvider {
 제어 기능을 실행하려면 BluetoothAgentInterface.Listener 를 추가합니다.
 
 {% code %}
-```
+```kotlin
 val listener = object: BluetoothAgentInterface.Listener {
     fun onDiscoverableStart(durationInSeconds: Long = 0) : DiscoverableStartResult {
         ...

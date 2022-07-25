@@ -165,11 +165,8 @@ Related to [AirflowControl Interface](./smarthomecapability/airflowcontrol-inter
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-SetBrightness Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-
-
+{% code title="SetBrightness Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
+```json
 {
   "version": 1,
   "requestId": "201909301991140f5a1e97441fa76a699284bc6035",
@@ -215,11 +212,8 @@ Related to [BrightnessControl Interface](./smarthomecapability/brightnesscontrol
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-IncreaseBrightness Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-
-
+{% code title="IncreaseBrightness Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
+```json
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -239,7 +233,7 @@ IncreaseBrightness Directive Control Request 예시 (POST, /nugu/v1/capabilities
         "deviceTypeName": "조명",
         "deviceModelName": "example_model_name",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         },
         "supportedCapabilities": {
           "powerControl": {},
@@ -293,72 +287,69 @@ Related to [BrightnessControl Interface](./smarthomecapability/brightnesscontrol
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-ChangeColor Directive Request 예시 (POST, /nugu/v1/capabilities/ColorControl/directives/ChangeColor)
-
-
+{% code title="ChangeColor Directive Request 예시 (POST, /nugu/v1/capabilities/ColorControl/directives/ChangeColor)"%}
+```json
 {
-   "version":1,
-   "requestId":"20190930213631c172b5214d4abfdbeb5804d8d80d",
-   "action":{
-      "command":{
-         "smartHomeCapability":"ColorControl",
-         "smartHomeDirective":"ChangeColor",
-         "parameters":{
-            "colorType":"#ffff00"
-         }
-      },
-      "smartHomeDevices":[
-         {
-            "id":"12345",
-            "deviceTypeCode":"LIGHT",
-            "friendlyName":"거실",
-            "deviceTypeName":"조명",
-            "deviceModelName":"example_device_model_name",
-            "customData":{
-               "foo":"bar"
-            },
-            "supportedCapabilities":{
-               "powerControl":{},
-               "colorControl":{},
-               "colorControl": {
-                   "supportedColorTypes" : [
-                       "BLUE",
-                       "GREEN",
-                       "CYAN",
-                       "MINT",
-                       "SKYBLUE",
-                       "PURPLE",
-                       "LAVENDER",
-                       "COOL_WHITE",
-                       "SALMON",
-                       "GOLD",
-                       "RED",
-                       "MAGENTA",
-                       "CRIMSON",
-                       "WARM_WHITE",
-                       "ORANGE",
-                       "SOFTWHITE",
-                       "PINK",
-                       "WHITE",
-                       "DAY_LIGHT",
-                       "YELLOW",
-                       "TURQUOISE",
-                       "LIGHT_PURPLE"
-                       ]  // 지원 가능한 ColorType 타입 참고.
-                  },
-               "brightnessControl":{}
-            }
-         }
-      ]
-   },
-   "context":{
-      "session":{
-         "id":"example_session_id",
-         "accessToken":"example_access_token"
+  "version": 1,
+  "requestId": "20190930213631c172b5214d4abfdbeb5804d8d80d",
+  "action": {
+    "command": {
+      "smartHomeCapability": "ColorControl",
+      "smartHomeDirective": "ChangeColor",
+      "parameters": {
+        "colorType": "#ffff00"
       }
-   }
+    },
+    "smartHomeDevices": [
+      {
+        "id": "12345",
+        "deviceTypeCode": "LIGHT",
+        "friendlyName": "거실",
+        "deviceTypeName": "조명",
+        "deviceModelName": "example_device_model_name",
+        "customData": {
+          "foo": "bar"
+        },
+        "supportedCapabilities": {
+          "powerControl": {},
+          "colorControl": {},
+          "colorControl": {
+            "supportedColorTypes": [
+              "BLUE",
+              "GREEN",
+              "CYAN",
+              "MINT",
+              "SKYBLUE",
+              "PURPLE",
+              "LAVENDER",
+              "COOL_WHITE",
+              "SALMON",
+              "GOLD",
+              "RED",
+              "MAGENTA",
+              "CRIMSON",
+              "WARM_WHITE",
+              "ORANGE",
+              "SOFTWHITE",
+              "PINK",
+              "WHITE",
+              "DAY_LIGHT",
+              "YELLOW",
+              "TURQUOISE",
+              "LIGHT_PURPLE"
+            ] // 지원 가능한 ColorType 타입 참고.
+          },
+          "brightnessControl": {}
+        }
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
 }
 ```
 {% endcode %}
@@ -371,40 +362,38 @@ Related to [ColorControl Interface](./smarthomecapability/colorcontrol-interface
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-SetDeviceTemperatureLevel Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-
-
+{% code title="SetDeviceTemperatureLevel Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
+```json
 {
-    "version": 1,
-    "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
-    "action": {
-        "command": {
-          "smartHomeCapability": "DeviceTemperatureControl",
-          "smartHomeDirective": "SetDeviceTemperature",
-          "parameters":{
-              "temperatureLevel": "120.0"
-          }
-        },
-        "smartHomeDevices": [
-          {
-           "id":"12345678",
-           "deviceTypeCode":"OVEN",
-           "deviceModelName":"example oven",
-           "friendlyName":"조리실",
-           "deviceTypeName":"오븐",
-           "customData":{
-              "foo": "bar"
-           }
-        ]
+  "version": 1,
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
+  "action": {
+    "command": {
+      "smartHomeCapability": "DeviceTemperatureControl",
+      "smartHomeDirective": "SetDeviceTemperature",
+      "parameters": {
+        "temperatureLevel": "120.0"
+      }
     },
-    "context": {
-        "session": {
-            "id": "example_session_id",
-            "accessToken": "example_access_token"
+    "smartHomeDevices": [
+      {
+        "id": "12345678",
+        "deviceTypeCode": "OVEN",
+        "deviceModelName": "example oven",
+        "friendlyName": "조리실",
+        "deviceTypeName": "오븐",
+        "customData": {
+          "foo": "bar"
         }
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
     }
+  }
 }
 ```
 {% endcode %}
@@ -417,11 +406,8 @@ Related to [DeviceTemperatureControl Interface](./smarthomecapability/devicetemp
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-SetHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidity)
-
-
+{% code title="SetHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidity)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -467,11 +453,8 @@ Related to [HumidityControl Interface](./smarthomecapability/humiditycontrol-int
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-IncreaseHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/IncreaseHumidity)
-
-
+{% code title="IncreaseHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/IncreaseHumidity)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -576,11 +559,8 @@ Related to [HumidityControl Interface](./smarthomecapability/humiditycontrol-int
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-SetMode Directive Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)
-
-
+{% code title="SetMode Directive Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -635,11 +615,8 @@ Related to [ModeControl Interface](./smarthomecapability/modecontrol-interface)
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-SetTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)
-
-
+{% code title="SetTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -648,7 +625,7 @@ SetTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/Temperature
       "smartHomeCapability": "TemperatureControl",
       "smartHomeDirective": "SetTemperature",
       "parameters": {
-          "temperatureLevel": "20"
+        "temperatureLevel": "20"
       }
     },
     "smartHomeDevices": [
@@ -687,11 +664,8 @@ Related to [TemperatureControl Interface](./smarthomecapability/temperaturecontr
 
 Attribute 사용 예시
 
-{% code %}
-```scheme
-IncreaseTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)
-
-
+{% code title="IncreaseTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -700,7 +674,7 @@ IncreaseTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/Temper
       "smartHomeCapability": "TemperatureControl",
       "smartHomeDirective": "IncreaseTemperature",
       "parameters": {
-          "temperatureDelta": "3"
+        "temperatureDelta": "3"
       }
     },
     "smartHomeDevices": [

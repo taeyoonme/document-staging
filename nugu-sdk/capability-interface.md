@@ -42,7 +42,7 @@ Capability Agent 의 현재 상태를 의미하는 데이터로 Event 와 함께
 ### 구조
 
 {% code %}
-```
+```json
 {
   "supportedInterfaces": {
     "{{STRING}}": {}

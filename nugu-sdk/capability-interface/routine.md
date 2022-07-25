@@ -26,7 +26,7 @@ Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 A
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Routine": {
     "version": "1.0",
@@ -60,7 +60,7 @@ Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 A
 ### Start
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Routine",
@@ -103,7 +103,7 @@ Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 A
 현재 실행 중인 루틴을 종료
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Routine",
@@ -131,7 +131,7 @@ Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 A
 실행 중인 Action은 멈추고 다음 Action부터 실행됨
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Routine",
@@ -159,7 +159,7 @@ Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 A
 루틴의 첫번째 Action을 실행하기 전에 전달
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Routine",
@@ -182,7 +182,7 @@ Routine 은 정해진 Action 을 SDK 내부에서 순차적으로 실행하며 A
 Routine.Play, Routine.Continue Directive의 응답으로 전송 가능
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Routine",
@@ -208,7 +208,7 @@ Routine.Play, Routine.Continue Directive의 응답으로 전송 가능
 마지막 Action까지 정상적으로 실행이 종료된 경우 발생
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Routine",
@@ -229,7 +229,7 @@ Routine.Play, Routine.Continue Directive의 응답으로 전송 가능
 모든 Action이 실행되기 전에 Routine.Stop Directive 또는 시스템 이슈로 종료된 경우
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Routine",
@@ -248,7 +248,7 @@ Routine.Play, Routine.Continue Directive의 응답으로 전송 가능
 ### ActionTriggered
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Routine",

@@ -12,12 +12,10 @@ NUGU스마트홈에 정수기(WATER_PURIFIER)를 등록하고자 할 때 Discove
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -25,25 +23,26 @@ Discovery Request 예시
 Discovery Response 예시
 
 {% code %}
+
 ```json
 {
-   "devices":[
-      {
-         "id":"1234567",
-         "deviceTypeCode":"WATER_PURIFIER",
-         "deviceTypeName":"example_device_type",
-         "deviceModelName":"example_model_name",
-         "friendlyName":"부엌",
-         "manufacturer":"example_manufacturer",
-         "supportedCapabilities": {
-            "stateCheck": {}
-         },
-         "customData":{
-            "foo":"bar"
-         },
-         "connectionStatus":true
-      }
-   ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "WATER_PURIFIER",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyName": "부엌",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "stateCheck": {}
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

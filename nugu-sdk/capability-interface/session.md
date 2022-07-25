@@ -24,7 +24,7 @@ Session interface 규격에 따른 디바이스의 동작 제어는 SessionAgent
 NuguAndroidClient instance 를 통해 SessionAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val sessionAgent = nuguAndroidClient.getAgent(SessionAgent.NAMESPACE)
 ```
 {% endcode %}
@@ -36,7 +36,7 @@ val sessionAgent = nuguAndroidClient.getAgent(SessionAgent.NAMESPACE)
 NuguClient instance 를 통해 SessionAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let sessionAgent = nuguClient.sessionAgent
 ```
 {% endcode %}
@@ -46,7 +46,7 @@ let sessionAgent = nuguClient.sessionAgent
 NuguClient instance 를 통해 DialogStateAggregator instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let dialogStateAggregator = nuguClient.dialogStateAggregator
 ```
 {% endcode %}
@@ -56,7 +56,7 @@ let dialogStateAggregator = nuguClient.dialogStateAggregator
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [SessionAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto session_handler(std::shared_ptr<ISessionHandler>(
         CapabilityFactory::makeCapability<SessionAgent, ISessionHandler>()));
 
@@ -77,7 +77,7 @@ nugu_client->getCapabilityBuilder()
 DialogUXStateAggregatorInterface.Listener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val listener = object: DialogUXStateAggregatorInterface.Listener {
     override fun onDialogUXStateChanged(newState: DialogUXState, dialogMode: Boolean, chips: RenderDirective.Payload?, sessionActivated: Boolean) {
         ...
@@ -92,7 +92,7 @@ nuguAndroidClient.addDialogUXStateListener(listener)
 DialogStateDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyDialogStateDelegate: DialogStateDelegate {
     func dialogStateDidChange(_ state: DialogState, isMultiturn: Bool, chips: [ChipsAgentItem.Chip]?, sessionActivated: Bool) {
         ...
@@ -107,7 +107,7 @@ dialogStateAggregator.add(delegate: MyDialogStateDelegate())
 [ISessionListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IAudioPlayerListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MySessionListener : public ISessionListener {
 public:
     ...
@@ -129,7 +129,7 @@ CapabilityFactory::makeCapability<SessionAgent, ISessionHandler>(session_listene
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Session": {
     "version": "1.1",
@@ -155,7 +155,7 @@ CapabilityFactory::makeCapability<SessionAgent, ISessionHandler>(session_listene
 ### Set
 
 {% code %}
-```text
+```json
 {
   "Session": {
     "namespace": "Session",

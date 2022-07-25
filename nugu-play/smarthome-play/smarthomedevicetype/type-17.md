@@ -12,12 +12,10 @@ NUGU스마트홈에 오븐(OVEN)을 등록하고자 할 때 Discovery Request/Re
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,25 +25,25 @@ Discovery Response 예시
 {% code %}
 ```json
 {
-   "devices":[
-      {
-         "id":"1234567",
-         "deviceTypeCode":"OVEN",
-         "deviceTypeName":"example_device_type",
-         "deviceModelName":"example_model_name",
-         "friendlyName":"부엌",
-         "manufacturer":"example_manufacturer",
-         "supportedCapabilities": {
-            "powerControl": {},
-            "stateCheck": {},
-            "deviceTemperatureControl": {}
-         },
-         "customData":{
-            "foo":"bar"
-         },
-         "connectionStatus":true
-      }
-   ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "OVEN",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyName": "부엌",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "powerControl": {},
+        "stateCheck": {},
+        "deviceTemperatureControl": {}
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

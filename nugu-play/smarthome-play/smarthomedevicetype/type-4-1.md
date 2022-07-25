@@ -12,12 +12,10 @@ NUGU스마트홈에 공기청정기(AIR_CLEANER)를 등록하고자 할 때 Disc
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,40 +25,42 @@ Discovery Response 예시
 {% code %}
 ```json
 {
-    "devices": [
-       {
-        "id":"1234567",
-        "deviceTypeCode":"AIR_CLEANER",
-        "deviceTypeName":"example_device_type",
-        "deviceModelName":"example_model_name",
-        "friendlyName":"부엌",
-        "manufacturer":"example_manufacturer",
-        "supportedCapabilities": {
-            "airflowControl": {
-              "supportedAirflowTypes": [
-                  "HIGH", 
-                  "MIDDLE", 
-                  "LOW",
-                  "AUTO"
-                  ] // 지원 가능한 Airflow 타입 참고.
-            },
-            "airQualityCheck": {},
-            "setTimeControl": {},
-            "modeControl": {
-                "supportedModes": [
-                    "DEHUMIDITY",
-                    "COMFORT",
-                    "AIR_BLAST",
-                    "ENERGY_SAVING"
-                   ]  // 지원 가능한 Mode 타입 참고.
-            },
-            "powerControl": {}
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "AIR_CLEANER",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyName": "부엌",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "airflowControl": {
+          "supportedAirflowTypes": [
+            "HIGH",
+            "MIDDLE",
+            "LOW",
+            "AUTO"
+          ]
+          // 지원 가능한 Airflow 타입 참고.
         },
-         "customData":{
-            "foo":"bar"
+        "airQualityCheck": {},
+        "setTimeControl": {},
+        "modeControl": {
+          "supportedModes": [
+            "DEHUMIDITY",
+            "COMFORT",
+            "AIR_BLAST",
+            "ENERGY_SAVING"
+          ] // 지원 가능한 Mode 타입 참고.
         },
-        "connectionStatus": true
-    }]
+        "powerControl": {}
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

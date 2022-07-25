@@ -28,7 +28,7 @@ MessageCall interface 규격에 따른 디바이스의 동작 제어는 MessageA
 NuguAndroidClient instance 를 통해 MessageAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val messageAgent = nuguAndroidClient.getAgent(MessageAgent.NAMESPACE)
 ```
 {% endcode %}
@@ -36,7 +36,7 @@ val messageAgent = nuguAndroidClient.getAgent(MessageAgent.NAMESPACE)
 NuguAndroidClient 생성시 MessageClient 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMessageClient: MessageClient {
     ...
 }
@@ -50,7 +50,7 @@ NuguAndroidClient().Builder()
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [MessageAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto message_handler(std::shared_ptr<IMessageHandler>(
         CapabilityFactory::makeCapability<MessageAgent, IMessageHandler>()));
 
@@ -71,7 +71,7 @@ nugu_client->getCapabilityBuilder()
 MessageClient 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMessageClient: MessageClient {
     override fun getContext(): Context {
         ...
@@ -93,7 +93,7 @@ class MyMessageClient: MessageClient {
 MessageClient 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMessageClient: MessageClient {
     override fun sendCandidates(payload: SendCandidatesPayload, callback: Callback) {
         // 연락처 검색 기능을 구현
@@ -115,7 +115,7 @@ class MyMessageClient: MessageClient {
 [IMessageListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MyMessageListener : public IMessageListener {
 public:
     ...
@@ -148,7 +148,7 @@ CapabilityFactory::makeCapability<MessageAgent, IMessageHandler>(message_listene
 MessageClient 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMessageClient: MessageClient {
     override fun getMessageList(payload: GetMessagePayload, callback: Callback) {
         ...
@@ -166,7 +166,7 @@ class MyMessageClient: MessageClient {
 [IMessageListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MyMessageListener : public IMessageListener {
 public:
     ...
@@ -194,7 +194,7 @@ CapabilityFactory::makeCapability<MessageAgent, IMessageHandler>(message_listene
 MessageAgentInterface.OnPlaybackListener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val listener = object: MessageAgentInterface.OnPlaybackListener {
     ...
 }
@@ -207,7 +207,7 @@ messageAgent.addOnPlaybackListener(listener)
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Message": {
     "version": "1.2",
@@ -251,7 +251,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### Contact
 
 {% code %}
-```text
+```json
 {
   "name": "{{STRING}}",
   "type": "{{STRING}}",
@@ -290,7 +290,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### SendCandidates
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -331,7 +331,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### SendMessage
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -355,7 +355,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### GetMessage
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -386,7 +386,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### ReadMessage
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -417,7 +417,7 @@ messageAgent.addOnPlaybackListener(listener)
 * list는 context로 전송됨
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -436,7 +436,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### SendMessageSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -460,7 +460,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### SendMessageFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -486,7 +486,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### GetMessageSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -510,7 +510,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### GetMessageFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",
@@ -534,7 +534,7 @@ messageAgent.addOnPlaybackListener(listener)
 ### ReadMessageFinished
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Message",

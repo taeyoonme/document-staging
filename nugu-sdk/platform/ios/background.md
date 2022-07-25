@@ -13,7 +13,7 @@ NUGU 회원 연동 방식의 PoC 에서 OAuth token 발급 결과 scope 에 "dev
 ## Background 연결 종료
 
 {% code %}
-```
+```swift
 NotificationCenter.default.addObserver(
             self,
             selector: #selector(willResignActive(_:)),

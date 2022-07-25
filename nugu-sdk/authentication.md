@@ -47,7 +47,7 @@ CSRF를 위해 사용 되는 값입니다.
 
 {% api::response status="302" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 302 
 Date: Mon, 14 Oct 2019 02:24:58 GMT
 Location: {redirect_uri}?code={code}&state={state}
@@ -95,7 +95,7 @@ authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험�
 
 {% api::response status="200" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 02:24:59 GMT
 Content-Type: application/json;charset=UTF-8
@@ -117,7 +117,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% api::response status="400" description="" %}
 {% code title="Header"%}
-```
+```scheme
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -126,14 +126,17 @@ Content-Type: application/json;charset=UTF-8
 
 {% code title="Body" %}
 ```json
-{"error":"invalid_grant","error_description":"Invalid authorization code: 0rrbEjnOfqxIv6uNic6C"}
+{
+  "error": "invalid_grant",
+  "error_description": "Invalid authorization code: 0rrbEjnOfqxIv6uNic6C"
+}
 ```
 {% endcode %}
 {% endapi::response %}
 
 {% api::response status="401" description="" %}
 {% code title="Header"%}
-```
+```scheme
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -143,7 +146,10 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {% code title="Body" %}
 ```json
-{"error":"invalid_client","error_description":"Bad client credentials"}
+{
+  "error": "invalid_client",
+  "error_description": "Bad client credentials"
+}
 ```
 {% endcode %}
 {% endapi::response %}
@@ -176,7 +182,7 @@ refresh_token (갱신)
 
 {% api::response status="200" description="" %}
 {% code title="Header"%}
-```
+```scheme
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
@@ -198,7 +204,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% api::response status="400" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -207,14 +213,17 @@ Content-Type: application/json;charset=UTF-8
 
 {% code title="Body" %}
 ```json
-{"error":"invalid_grant","error_description":""}
+{
+  "error": "invalid_grant",
+  "error_description": ""
+}
 ```
 {% endcode %}
 {% endapi::response %}
 
 {% api::response status="401" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -224,7 +233,10 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {% code title="Body" %}
 ```json
-{"error":"invalid_client","error_description":"Bad client credentials"}
+{
+  "error": "invalid_client",
+  "error_description": "Bad client credentials"
+}
 ```
 {% endcode %}
 {% endapi::response %}
@@ -255,7 +267,7 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {% api::response status="200" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
@@ -271,7 +283,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% api::response status="400" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -280,14 +292,17 @@ Content-Type: application/json;charset=UTF-8
 
 {% code title="Body" %}
 ```json
-{"error":"invalid_token","error_description":""}
+{
+  "error": "invalid_token",
+  "error_description": ""
+}
 ```
 {% endcode %}
 {% endapi::response %}
 
 {% api::response status="401" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -296,7 +311,10 @@ Content-Type: application/json;charset=UTF-8
 
 {% code title="Body" %}
 ```json
-{"error":"invalid_client","error_description":""}
+{
+  "error": "invalid_client",
+  "error_description": ""
+}
 ```
 {% endcode %}
 {% endapi::response %}
@@ -327,7 +345,7 @@ Content-Type: application/json;charset=UTF-8
 
 {% api::response status="200" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 200 
 Date: Mon, 14 Oct 2019 03:01:27 GMT
 Content-Type: application/json;charset=UTF-8
@@ -336,14 +354,16 @@ Content-Type: application/json;charset=UTF-8
 
 {% code title="Body" %}
 ```json
-{"active":true}
+{
+  "active": true
+}
 ```
 {% endcode %}
 {% endapi::response %}
 
 {% api::response status="400" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 400 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -352,14 +372,17 @@ Content-Type: application/json;charset=UTF-8
 
 {% code title="Body" %}
 ```json
-{"error":"invalid_token","error_description":""}
+{
+  "error": "invalid_token",
+  "error_description": ""
+}
 ```
 {% endcode %}
 {% endapi::response %}
 
 {% api::response status="401" description="" %}
 {% code title="Header" %}
-```
+```scheme
 HTTP/1.1 401 
 Date: Mon, 14 Oct 2019 04:22:45 GMT
 Content-Type: application/json;charset=UTF-8
@@ -368,7 +391,10 @@ Content-Type: application/json;charset=UTF-8
 
 {% code title="Body" %}
 ```json
-{"error":"invalid_client","error_description":""}
+{
+  "error": "invalid_client",
+  "error_description": ""
+}
 ```
 {% endcode %}
 {% endapi::response %}

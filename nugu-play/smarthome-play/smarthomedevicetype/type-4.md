@@ -12,12 +12,10 @@ NUGU스마트홈에 공기센서(AIR_SENSOR)를 등록하고자 할 때 Discover
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code titls="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,25 +25,24 @@ Discovery Response 예시
 {% code %}
 ```json
 {
-   "devices":[
-      {
-         "id":"1234567",
-         "deviceTypeCode":"AIR_SENSOR",
-         "deviceTypeName":"example_device_type",
-         "deviceModelName":"example_model_name",
-         "friendlyName":"거실",
-         "manufacturer":"example_manufacturer",
-         "supportedCapabilities":{
-            "airQualityCheck":{
-
-            }
-         },
-         "customData":{
-            "foo":"bar"
-         },
-         "connectionStatus":true
-      }
-   ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "AIR_SENSOR",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyName": "거실",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "airQualityCheck": {
+        }
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

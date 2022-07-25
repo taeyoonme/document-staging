@@ -23,9 +23,9 @@ depth_order: 2
 {% code %}
 ```json
 {
-    "name": "XXX",
-    "alias": "XXX",
-    "targetGroupId": "XXX"
+  "name": "XXX",
+  "alias": "XXX",
+  "targetGroupId": "XXX"
 }
 ```
 {% endcode %}
@@ -61,11 +61,11 @@ depth_order: 2
 {% code %}
 ```json
 {
-    "id": "XXX",
-    "email": "XXX",
-    "name": "XXX",
-    "alias": "XXX",
-    "targetGroupId": "XXX"
+  "id": "XXX",
+  "email": "XXX",
+  "name": "XXX",
+  "alias": "XXX",
+  "targetGroupId": "XXX"
 }
 ```
 {% endcode %}

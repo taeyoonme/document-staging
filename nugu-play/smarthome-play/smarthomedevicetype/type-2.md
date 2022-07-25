@@ -12,12 +12,10 @@ NUGU스마트홈에 가습기(HUMIDIFICATION)를 등록하고자 할 때 Discove
 
 Discovery Request 예시
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,40 +25,42 @@ Discovery Response 예시
 {% code %}
 ```json
 {
-    "devices": [{
-        "id": "1234567",
-        "deviceTypeCode": "HUMIDIFICATION",
-        "deviceTypeName": "가습기",
-        "deviceModelName": "example humidification",
-        "friendlyName": "거실",
-        "manufacturer": "example manufacturer",
-        "supportedCapabilities": {
-            "powerControl": {
-            },
-            "airflowControl": {
-              "supportedAirflowTypes": [
-                  "HIGH",
-                  "MIDDLE",
-                  "LOW",
-                  "AUTO" 
-                  ] // 지원 가능한 Airflow 타입 참고.
-            },
-            "modeControl": {
-                "supportedModes": [
-                    "DEHUMIDITY",
-                    "COMFORT",
-                    "AIR_BLAST",
-                    "ENERGY_SAVING"
-                    ]  // 지원 가능한 Mode 타입 참고.
-                },
-            "setTimeControl": {
-            },
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "HUMIDIFICATION",
+      "deviceTypeName": "가습기",
+      "deviceModelName": "example humidification",
+      "friendlyName": "거실",
+      "manufacturer": "example manufacturer",
+      "supportedCapabilities": {
+        "powerControl": {
         },
-        "customData": {
-            "foo": "bar"
+        "airflowControl": {
+          "supportedAirflowTypes": [
+            "HIGH",
+            "MIDDLE",
+            "LOW",
+            "AUTO"
+          ] // 지원 가능한 Airflow 타입 참고.
         },
-        "connectionStatus": true
-    }]
+        "modeControl": {
+          "supportedModes": [
+            "DEHUMIDITY",
+            "COMFORT",
+            "AIR_BLAST",
+            "ENERGY_SAVING"
+          ] // 지원 가능한 Mode 타입 참고.
+        },
+        "setTimeControl": {
+        },
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}

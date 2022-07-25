@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,24 +25,26 @@ Discovery Sample Response
 {% code %}
 ```json
 {
-    "devices": [{
-        "id": "D1234567",
-        "type": "DEHUMIDIFICATION",
-        "modelName": "example dehumidification",
-        "friendlyNameSuggestion": "거실",
-        "manufacturer": "example manufacturer",
-        "supportedCapabilities": {
-            "humidityControl": {
-                  "minHumidity": "10",
-                  "maxHumidity": "70",
-                  "humidityStep": "5",
-            }<-- "습도 올려줘" 등 HumidityControl Capability 를 사용하기 위해서는 이 프로퍼티를 supportedCapabilities 에 포함해야 함.
-        },
-        "customData": {
-            "foo": "bar"
-        },
-        "connectionStatus": true
-    }]
+  "devices": [
+    {
+      "id": "D1234567",
+      "type": "DEHUMIDIFICATION",
+      "modelName": "example dehumidification",
+      "friendlyNameSuggestion": "거실",
+      "manufacturer": "example manufacturer",
+      "supportedCapabilities": {
+        "humidityControl": {
+          "minHumidity": "10",
+          "maxHumidity": "70",
+          "humidityStep": "5"
+        } // "습도 올려줘" 등 HumidityControl Capability 를 사용하기 위해서는 이 프로퍼티를 supportedCapabilities 에 포함해야 함.
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -76,11 +76,8 @@ Directive : AskHumidity
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/AskHumidity)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/AskHumidity)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -97,10 +94,10 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/A
         "friendlyName": "거실",
         "manufacturer": "example manufacturer",
         "supportedCapabilities": {
-            "humidityControl": {}
+          "humidityControl": {}
         },
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         }
       }
     ]
@@ -120,16 +117,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "currentHumidity": "55" <-- directive 마다 필요한 property 채워서 응답
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "currentHumidity": "55" // directive 마다 필요한 property 채워서 응답
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -154,11 +151,8 @@ Directive : SetHumidity
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidity)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidity)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -198,8 +192,8 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/S
 
 SetHumidity Directive Request parameter details
 
-| parameter name | description                                          | type   |
-|:---------------|:-----------------------------------------------------|:-------|
+| parameter name | description                                              | type   |
+|:---------------|:---------------------------------------------------------|:-------|
 | humidityLevel  | 사용자가 SmartHomeDevice에 설정하고자 하는 습도의 발화 정보입니다.<br/>%단위입니다. | double |
 
 Sample Response
@@ -207,16 +201,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "humidityLevel": "50", <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "humidityLevel": "50" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -241,11 +235,8 @@ Directive : IncreaseHumidity
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/IncreaseHumidity)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/IncreaseHumidity)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -285,8 +276,8 @@ Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/I
 
 IncreaseHumidity Directive request parameter details
 
-| parameter name | description                                                                           | type   |
-|:---------------|:--------------------------------------------------------------------------------------|:-------|
+| parameter name | description                                                                             | type   |
+|:---------------|:----------------------------------------------------------------------------------------|:-------|
 | humidityDelta  | 설정습도를 몇 % 올릴지에 대한 사용자 발화 정보입니다.<br/>해당 정보가 없을 경우 ("parameters": null) 5% 만큼 올리도록 설정합니다. | double |
 
 Sample Response
@@ -294,16 +285,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "humidityLevel": "50", <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "humidityLevel": "50" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -328,11 +319,8 @@ Directive : DecreaseHumidity
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/DecreaseHumidity)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/DecreaseHumidity)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -381,16 +369,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "humidityLevel": "40", <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "humidityLevel": "40" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -415,11 +403,8 @@ Directive : SetHumidityMax
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidityMax)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidityMax)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -460,16 +445,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "humidityLevel": "70", <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "humidityLevel": "70" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -495,11 +480,8 @@ Directive : SetHumidityMin
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidityMin)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidityMin)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -540,16 +522,16 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "2019071712638a4378649347bdb21643127a0f6d83", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "humidityLevel": "30", <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "humidityLevel": "30" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}

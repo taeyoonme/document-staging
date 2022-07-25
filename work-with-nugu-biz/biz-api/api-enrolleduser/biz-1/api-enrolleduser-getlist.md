@@ -36,27 +36,26 @@ depth_order: 4
 {% code %}
 ```json
 {
-    "totalPages": 10,
-    "totalElements": 100,
-    "users": [
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "email": "XXX",
-            "alias": "XXX",
-            "phone": "XXX",
-            "group": {
-                "id": "XXX"
-                "name": "XXX"
-            },
-            "serviceType": "SERVICE",
-            "apiAgreeType": "AGREE",
-            "authType": "ALL",
-            "acceptedDateTime": "2021-0804T16:34:30.388"
-        }
-    ]
+  "totalPages": 10,
+  "totalElements": 100,
+  "users": [
+    {
+      "id": "XXX",
+      "name": "XXX",
+      "email": "XXX",
+      "alias": "XXX",
+      "phone": "XXX",
+      "group": {
+        "id": "XXX",
+        "name": "XXX"
+      },
+      "serviceType": "SERVICE",
+      "apiAgreeType": "AGREE",
+      "authType": "ALL",
+      "acceptedDateTime": "2021-0804T16:34:30.388"
+    }
+  ]
 }
-# 퍼블리셔가 보유한 Biz 사용자 정보를 조회
 ```
 {% endcode %}
 

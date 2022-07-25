@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,56 +25,56 @@ Discovery Sample Response
 {% code %}
 ```json
 {
-   "devices":[
-      {
-         "id":"12345",
-         "deviceTypeCode":"LIGHT",
-         "friendlyNameSuggestion":"거실",
-         "deviceTypeName":"조명",
-         "deviceModelName":"example_device_model_name",
-         "customData":{
-            "foo":"bar"
-         },
-         "supportedCapabilities":{
-            "powerControl":{},
-            "colorControl": {
-                "supportedColorTypes" : [
-                    "BLUE",
-                    "GREEN",
-                    "CYAN",
-                    "MINT",
-                    "SKYBLUE",
-                    "PURPLE",
-                    "LAVENDER",
-                    "COOL_WHITE",
-                    "SALMON",
-                    "GOLD",
-                    "RED",
-                    "MAGENTA",
-                    "CRIMSON",
-                    "WARM_WHITE",
-                    "ORANGE",
-                    "SOFTWHITE",
-                    "PINK",
-                    "WHITE",
-                    "DAY_LIGHT",
-                    "YELLOW",
-                    "TURQUOISE",
-                    "LIGHT_PURPLE"
-                   ]  // 지원 가능한 ColorType 타입 참고.
-                  },<-- 이 property 를 포함하고 있어야 "조명 노란색으로 설정해줘" 와 같은 발화를 지원할 수 있습니다.
-            "brightnessControl":{}
-         }
+  "devices": [
+    {
+      "id": "12345",
+      "deviceTypeCode": "LIGHT",
+      "friendlyNameSuggestion": "거실",
+      "deviceTypeName": "조명",
+      "deviceModelName": "example_device_model_name",
+      "customData": {
+        "foo": "bar"
+      },
+      "supportedCapabilities": {
+        "powerControl": {},
+        "colorControl": {
+          "supportedColorTypes": [
+            "BLUE",
+            "GREEN",
+            "CYAN",
+            "MINT",
+            "SKYBLUE",
+            "PURPLE",
+            "LAVENDER",
+            "COOL_WHITE",
+            "SALMON",
+            "GOLD",
+            "RED",
+            "MAGENTA",
+            "CRIMSON",
+            "WARM_WHITE",
+            "ORANGE",
+            "SOFTWHITE",
+            "PINK",
+            "WHITE",
+            "DAY_LIGHT",
+            "YELLOW",
+            "TURQUOISE",
+            "LIGHT_PURPLE"
+          ] // 지원 가능한 ColorType 타입 참고.
+        }, // 이 property 를 포함하고 있어야 "조명 노란색으로 설정해줘" 와 같은 발화를 지원할 수 있습니다.
+        "brightnessControl": {}
       }
-   ]
+    }
+  ]
 }
 ```
 {% endcode %}
 
 SmartHomeDevice Attribute Parameters
 
-| Attribute           | Description                                                                                                                                    |
-|:--------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
+| Attribute           | Description                                                                                                                                        |
+|:--------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------|
 | supportedColorTypes | 해당 SmartHomeDevice가 지원하는 ColorType의 명칭입니다.<br/>Discovery시의 ColorType은 지원한는 Color의 영문명을 사용하고, 지원하는 ColorTypes는 각 Device별로 Array 형태로 복수개 전달할 수 있습니다. |
 | customData          | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다.<br/>customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다.           |
 
@@ -98,54 +96,51 @@ Directive : ChangeColor
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/ColorControl/directives/ChangeColor)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ColorControl/directives/ChangeColor)"%}
+```json
 {
-   "version":1,
-   "requestId":"20190930213631c172b5214d4abfdbeb5804d8d80d",
-   "action":{
-      "command":{
-         "smartHomeCapability":"ColorControl",
-         "smartHomeDirective":"ChangeColor",
-         "parameters":{
-            "colorType":"#ffff00"
-         }
-      },
-      "smartHomeDevices":[
-         {
-            "id":"12345",
-            "deviceTypeCode":"LIGHT",
-            "friendlyName":"거실",
-            "deviceTypeName":"조명",
-            "deviceModelName":"example_device_model_name",
-            "customData":{
-               "foo":"bar"
-            },
-            "supportedCapabilities":{
-               "powerControl":{},
-               "colorControl":{},
-               "brightnessControl":{}
-            }
-         }
-      ]
-   },
-   "context":{
-      "session":{
-         "id":"example_session_id",
-         "accessToken":"example_access_token"
+  "version": 1,
+  "requestId": "20190930213631c172b5214d4abfdbeb5804d8d80d",
+  "action": {
+    "command": {
+      "smartHomeCapability": "ColorControl",
+      "smartHomeDirective": "ChangeColor",
+      "parameters": {
+        "colorType": "#ffff00"
       }
-   }
+    },
+    "smartHomeDevices": [
+      {
+        "id": "12345",
+        "deviceTypeCode": "LIGHT",
+        "friendlyName": "거실",
+        "deviceTypeName": "조명",
+        "deviceModelName": "example_device_model_name",
+        "customData": {
+          "foo": "bar"
+        },
+        "supportedCapabilities": {
+          "powerControl": {},
+          "colorControl": {},
+          "brightnessControl": {}
+        }
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
 }
 ```
 {% endcode %}
 
 ChangeColor Directive Request parameter details
 
-| parameter name | description                                                                | type   |
-|:---------------|:---------------------------------------------------------------------------|:-------|
+| parameter name | description                                                                  | type   |
+|:---------------|:-----------------------------------------------------------------------------|:-------|
 | colorType      | 사용자가 SmartHomeDevice에 설정하고자 하는 색상 정보입니다.<br/>RGB값으로 구성됩니다. e.g) 노란색: #ffff00 | string |
 
 Sample Response
@@ -153,25 +148,25 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190930213631c172b5214d4abfdbeb5804d8d80d", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "colorType": "#ff0000", <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "20190930213631c172b5214d4abfdbeb5804d8d80d", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "colorType": "#ff0000" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
 
 ChangeColor Directive Response parameter details
 
-| parameter name | description | type |
-| :--- | :--- | :--- |
-| colorType | SmartHomeDevice를 설정한 이후의 색상정보입니다. 제어를 마친 이후의 색상을 기준으로 응답해야 합니다. | string |
+| parameter name | description                                                     | type   |
+|:---------------|:----------------------------------------------------------------|:-------|
+| colorType      | SmartHomeDevice를 설정한 이후의 색상정보입니다. 제어를 마친 이후의 색상을 기준으로 응답해야 합니다. | string |
 
 ## Error & Exception
 

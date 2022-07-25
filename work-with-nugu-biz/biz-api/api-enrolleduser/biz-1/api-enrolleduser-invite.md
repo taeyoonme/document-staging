@@ -25,17 +25,20 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 {% code %}
 ```json
 {
-    "reason": "서비스 사용을 위한 초대",
-    "targetPlayServiceIds": ["aaa.bbb.ccc", "ddd.eee.fff"],
-    "targetGroupId": "XXX",
-    "users": [
-        {
-            "email": "XXX",
-            "name": "XXX",
-            "phone": "XXX",
-            "alias": "XXX"
-        }
-    ]
+  "reason": "서비스 사용을 위한 초대",
+  "targetPlayServiceIds": [
+    "aaa.bbb.ccc",
+    "ddd.eee.fff"
+  ],
+  "targetGroupId": "XXX",
+  "users": [
+    {
+      "email": "XXX",
+      "name": "XXX",
+      "phone": "XXX",
+      "alias": "XXX"
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -81,7 +84,7 @@ Biz 사용자를 등록하기 위해, 초대 메일을 발송하는 기능입니
 {% code %}
 ```json
 {
-    "id": 333
+  "id": 333
 }
 ```
 {% endcode %}

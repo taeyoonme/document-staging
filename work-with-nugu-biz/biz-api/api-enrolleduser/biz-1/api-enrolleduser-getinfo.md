@@ -36,31 +36,31 @@ depth_order: 5
 {% code %}
 ```json
 {
+  "id": "XXX",
+  "name": "XXX",
+  "token": "XXX",
+  "email": "XXX",
+  "alias": "XXX",
+  "phone": "XXX",
+  "group": {
     "id": "XXX",
-    "name": "XXX",
-    "token": "XXX",
-    "email": "XXX",
-    "alias": "XXX",
-    "phone": "XXX",
-    "group": {
-        "id": "XXX",
-        "name": "XXX"
-    },
-    "serviceType": "SERVICE",
-    "serviceAgreeYn": "Y",
-    "serviceApiAgreeYn": "Y",
-    "serviceApiAllowedDeviceCount": 3,
-    "serviceAcceptedDateTime": "2021-0804T16:34:30.388",
-    "plays": [
-        {
-            "playServiceId": "a.b.c",
-            "token": "XXX",
-            "agreeYn": "Y"
-            "apiAgreeYn": "Y",
-            "apiAllowedDeviceCount": 3,
-            "acceptedDateTime": "2021-0804T16:34:30.388",
-        }
-    ]
+    "name": "XXX"
+  },
+  "serviceType": "SERVICE",
+  "serviceAgreeYn": "Y",
+  "serviceApiAgreeYn": "Y",
+  "serviceApiAllowedDeviceCount": 3,
+  "serviceAcceptedDateTime": "2021-0804T16:34:30.388",
+  "plays": [
+    {
+      "playServiceId": "a.b.c",
+      "token": "XXX",
+      "agreeYn": "Y"
+      "apiAgreeYn": "Y",
+      "apiAllowedDeviceCount": 3,
+      "acceptedDateTime": "2021-0804T16:34:30.388"
+    }
+  ]
 }
 ```
 {% endcode %}

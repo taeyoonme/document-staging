@@ -27,7 +27,7 @@ System interface 규격에 따른 디바이스의 동작 제어는 SystemAgent �
 NuguAndroidClient instance 를 통해 SystemAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val systemAgent = nuguAndroidClient.systemAgent
 ```
 {% endcode %}
@@ -37,7 +37,7 @@ val systemAgent = nuguAndroidClient.systemAgent
 NuguClient instance 를 통해 SystemAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let systemAgent = nuguClient.systemAgent
 ```
 {% endcode %}
@@ -47,7 +47,7 @@ let systemAgent = nuguClient.systemAgent
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [SystemAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISystemHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto system_handler(std::shared_ptr<ISystemHandler>(
             CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>()));
 
@@ -72,7 +72,7 @@ iOS 는 지원하지 않습니다
 SystemAgentInterface.Listener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val listener = object: SystemAgentInterface.Listener {
     override fun onTurnOff() {
         ...
@@ -87,7 +87,7 @@ systemAgent.addListener(listener)
 [ISystemListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISystemListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MySystemListener : public ISystemListener {
 public:
     ...
@@ -117,7 +117,7 @@ NUGU 서버에서 에러가 발생할 경우 [Exception](#exception) directive �
 SystemAgentInterface.Listener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val listener = object: SystemAgentInterface.Listener {
     override fun onException(code: ExceptionCode, description: String?) {
         ...
@@ -132,7 +132,7 @@ systemAgent.addListener(listener)
 SystemAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MySystemAgentDelegate: SystemAgentDelegate {
     func systemAgentDidReceiveExceptionFail(code: SystemAgentExceptionCode.Fail, dialogRequestId: String) {
         ...
@@ -149,7 +149,7 @@ systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
 [ISystemListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISystemListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MySystemListener : public ISystemListener {
 public:
     ...
@@ -179,7 +179,7 @@ Application 의 상황에 따라 NUGU 로그인 화면으로 이동하거나 NUG
 SystemAgentInterface.Listener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val listener = object: SystemAgentInterface.Listener {
     override fun onRevoke(reason: RevokeReason) {
         ...
@@ -194,7 +194,7 @@ systemAgent.addListener(listener)
 SystemAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MySystemAgentDelegate: SystemAgentDelegate {
     func systemAgentDidReceiveRevokeDevice(reason: SystemAgentRevokeReason, dialogRequestId: String) {
         ...
@@ -211,7 +211,7 @@ systemAgent.add(systemAgentDelegate: MySystemAgentDelegate())
 [ISystemListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISystemListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MySystemListener : public ISystemListener {
 public:
     ...
@@ -233,7 +233,7 @@ CapabilityFactory::makeCapability<SystemAgent, ISystemHandler>(system_listener.g
 ## Context
 
 {% code %}
-```text
+```json
 {
   "System": {
     "version": "1.3"
@@ -254,7 +254,7 @@ Connection-oriented 디바이스에서만 사용
 * 사용자 인터렉션은 없지만 서비스를 사용하는 경우에 보내야 함
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -279,7 +279,7 @@ Connection-oriented 디바이스에서만 사용
 * NUGU Platform은 UserInactivityReport에서 inactivity 시간을 보고 장시간 사용하지 않은 디바이스를 대상으로 RevokeConnection 디렉티브를 전송할 수 있음
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -315,7 +315,7 @@ Connection-oriented 디바이스에서만 사용
 * 디바이스 전원 끄기 요청입니다.
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -334,7 +334,7 @@ Connection-oriented 디바이스에서만 사용
 * 디바이스의 모든 상태 정보 전달 요청
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -353,7 +353,7 @@ Connection-oriented 디바이스에서만 사용
 누구 서버에서 에러가 발생하면 전달됩니다.
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -388,7 +388,7 @@ Connection-oriented 디바이스에서만 사용
 * Event에 대한 play router 처리 결과과 없는 경우 발생
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -407,7 +407,7 @@ Connection-oriented 디바이스에서만 사용
 NUGU 서버에서 디바이스가 등록 해제되면 전달됩니다.
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -437,7 +437,7 @@ NUGU 서버에서 디바이스가 등록 해제되면 전달됩니다.
 * 클라이언트에서는 Noop은 무시하고 아무런 처리를 하지 않음
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -460,7 +460,7 @@ Connection-oriented 디바이스에서만 사용
 * 이 요청을 받으면 클라이언트는 registry에 다시 접속해서 주소를 받아서 접속한다. 
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -487,7 +487,7 @@ Connection-oriented 디바이스에서만 사용
 * System.UpdateState 에 대한 응답
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -510,7 +510,7 @@ Connection-oriented 디바이스에서만 사용
 * 1시간동안 사용자 인터렉션이 없는 경우 보내야 함
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -540,7 +540,7 @@ Connection-oriented 디바이스에서만 사용
 * 디바이스 종료 등 이슈로 연결을 끊는 경우
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",
@@ -563,7 +563,7 @@ Connection-oriented 디바이스에서만 사용
 * device-gateway와 연결 상테를 테스트하기 위한 event
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "System",

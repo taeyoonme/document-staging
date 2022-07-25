@@ -32,25 +32,29 @@ depth_order: 6
 ### 3.2 Body
 
 {% code %}
+
 ```json
 {
-    "invitations": [
+  "invitations": [
+    {
+      "id": 333,
+      "cause": "서비스 사용을 위한 초대",
+      "createdDate": "2017-11-06T06:00:00.000Z",
+      "targetPlayServiceIds": [
+        "aaa.bbb.ccc",
+        "ddd.eee.fff"
+      ],
+      "targetGroupId": "XXX",
+      "users": [
         {
-            "id": 333,
-            "cause": "서비스 사용을 위한 초대",
-            "createdDate": "2017-11-06T06:00:00.000Z",
-            "targetPlayServiceIds": ["aaa.bbb.ccc", "ddd.eee.fff"],
-            "targetGroupId": "XXX",
-            "users": [
-                {
-                    "email": "XXX",
-                    "name": "XXX"
-                    "alias": "XXX",
-                    "status": "ENABLE"
-                }
-            ]
+          "email": "XXX",
+          "name": "XXX",
+          "alias": "XXX",
+          "status": "ENABLE"
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 {% endcode %}

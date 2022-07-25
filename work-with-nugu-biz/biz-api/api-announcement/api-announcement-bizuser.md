@@ -9,7 +9,7 @@ depth_order: 2
 ## 1. URL <a id="biz-announcement-v1-1url"></a>
 
 {% code %}
-```
+```text
 [POST] https://biz-api.sktnugu.com/api/v1/enrolledUser/user/{userApiToken}/announcement
 ```
 {% endcode %}
@@ -23,22 +23,25 @@ depth_order: 2
 {% code %}
 ```json
 {
-    "playServiceId": "XXX",
-    "tts": {
-        "text": "발송 내용",
-        "speed": "100",
-        "pause1": "600",
-        "pause2": "300"
-    },
-    "display" : {
-        "type": "imageText2",
-        "title": "타이틀",
-        "header": "헤더",
-        "body": "본문",
-        "footer": "부가설명",
-        "image": "http://imageUrl",
-        "grammarGuide": ["발화문1", "발화문2"]
-    }
+  "playServiceId": "XXX",
+  "tts": {
+    "text": "발송 내용",
+    "speed": "100",
+    "pause1": "600",
+    "pause2": "300"
+  },
+  "display": {
+    "type": "imageText2",
+    "title": "타이틀",
+    "header": "헤더",
+    "body": "본문",
+    "footer": "부가설명",
+    "image": "http://imageUrl",
+    "grammarGuide": [
+      "발화문1",
+      "발화문2"
+    ]
+  }
 }
 ```
 {% endcode %}
@@ -91,13 +94,15 @@ depth_order: 2
 {% code %}
 ```json
 {
-    "id": "XXX",
-    "name": "XXX",
-    "email": "XXX",
-    "resultCode": "OK",
-    "deviceResults": [
-        {"code": "XXX"}
-    ]
+  "id": "XXX",
+  "name": "XXX",
+  "email": "XXX",
+  "resultCode": "OK",
+  "deviceResults": [
+    {
+      "code": "XXX"
+    }
+  ]
 }
 ```
 {% endcode %}

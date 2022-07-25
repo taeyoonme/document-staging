@@ -13,7 +13,7 @@ depth_order: 8
    * 테스트용 : `test-dggprc.sktnugu.com`
 
 {% code %}
-```
+```kotlin
 val transport = GrpcTransportFactory(
    NuguServerInfo.Builder()
        .deviceGW("review-dggprc.sktnugu.com")

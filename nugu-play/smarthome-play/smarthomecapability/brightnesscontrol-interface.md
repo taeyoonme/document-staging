@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -40,32 +38,32 @@ Discovery Sample Response
       "supportedCapabilities": {
         "powerControl": {},
         "colorControl": {
-            "supportedColorTypes" : [
-                "BLUE",
-                "GREEN",
-                "CYAN",
-                "MINT",
-                "SKYBLUE",
-                "PURPLE",
-                "LAVENDER",
-                "COOL_WHITE",
-                "SALMON",
-                "GOLD",
-                "RED",
-                "MAGENTA",
-                "CRIMSON",
-                "WARM_WHITE",
-                "ORANGE",
-                "SOFTWHITE",
-                "PINK",
-                "WHITE",
-                "DAY_LIGHT",
-                "YELLOW",
-                "TURQUOISE",
-                "LIGHT_PURPLE"
-                ]  // 지원 가능한 ColorType 타입 참고.
-              },
-        "brightnessControl": {} <-- BrightnessControl 을 지원하려면 이 속성이 supportedCapabilities 에 포함되어 있어야 합니다.
+          "supportedColorTypes": [
+            "BLUE",
+            "GREEN",
+            "CYAN",
+            "MINT",
+            "SKYBLUE",
+            "PURPLE",
+            "LAVENDER",
+            "COOL_WHITE",
+            "SALMON",
+            "GOLD",
+            "RED",
+            "MAGENTA",
+            "CRIMSON",
+            "WARM_WHITE",
+            "ORANGE",
+            "SOFTWHITE",
+            "PINK",
+            "WHITE",
+            "DAY_LIGHT",
+            "YELLOW",
+            "TURQUOISE",
+            "LIGHT_PURPLE"
+          ] // 지원 가능한 ColorType 타입 참고.
+        },
+        "brightnessControl": {} // BrightnessControl 을 지원하려면 이 속성이 supportedCapabilities 에 포함되어 있어야 합니다.
       },
       "connectionStatus": true
     }
@@ -76,8 +74,8 @@ Discovery Sample Response
 
 SmarHomeDevice Attribute Parameters
 
-| Attribute  | Description                                                                                                                          |
-|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| Attribute  | Description                                                                                                                              |
+|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------|
 | customData | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다.<br/>customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 
 ## Directive
@@ -98,11 +96,8 @@ Directive : SetBrightness
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightness)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightness)"%}
+```json
 {
   "version": 1,
   "requestId": "201909301991140f5a1e97441fa76a699284bc6035",
@@ -142,8 +137,8 @@ Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives
 
 SetBrightness Directive Request parameter details
 
-| parameter name  | description                                                        | type             |
-|:----------------|:-------------------------------------------------------------------|:-----------------|
+| parameter name  | description                                                            | type           |
+|:----------------|:-----------------------------------------------------------------------|:---------------|
 | brightnessLevel | 사용자가 SmartHomeDevice에 설정하고자 하는 밝기의 발화 정보입니다.<br/>1부터 100까지 설정할 수 있습니다. | integer(1~100) |
 
 Sample Response
@@ -162,7 +157,7 @@ Sample Response
         "friendlyName": "거실",
         "deviceTypeName": "조명",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         }
       },
       "properties": {
@@ -176,8 +171,8 @@ Sample Response
 
 SetBrightness Directive Response parameter details
 
-| parameter name  | description                                                     | type           |
-|:----------------|:----------------------------------------------------------------|:---------------|
+| parameter name  | description                                                         | type           |
+|:----------------|:--------------------------------------------------------------------|:---------------|
 | brightnessLevel | SmartHomeDevice를 설정한 이후의 밝기정보입니다.<br/>제어를 마친 이후의 밝기를 기준으로 응답해야 합니다. | integer(1~100) |
 
 ### IncreaseBrightness
@@ -194,11 +189,8 @@ Directive : IncreaseBrightness
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/IncreaseBrightness)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/IncreaseBrightness)"%}
+```json
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -218,7 +210,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives
         "deviceTypeName": "조명",
         "deviceModelName": "example_model_name",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         },
         "supportedCapabilities": {
           "powerControl": {},
@@ -241,8 +233,8 @@ Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives
 
 IncreaseTemperature Directive request parameter details
 
-| parameter name  | description                                                     | type           |
-|:----------------|:----------------------------------------------------------------|:---------------|
+| parameter name  | description                                                         | type           |
+|:----------------|:--------------------------------------------------------------------|:---------------|
 | brightnessDelta | 설정 밝기를 몇 단계 올릴지에 대한 사용자 발화 정보입니다.<br/>해당 정보가 없을 경우 1단계를 올리도록 설정합니다. | integer(1~100) |
 
 Sample Response
@@ -261,7 +253,7 @@ Sample Response
         "friendlyName": "거실",
         "deviceTypeName": "조명",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         }
       },
       "properties": {
@@ -275,8 +267,8 @@ Sample Response
 
 IncreaseBrightness Directive response parameter details
 
-| parameter name  | description                                                          | type           |
-|:----------------|:---------------------------------------------------------------------|:---------------|
+| parameter name  | description                                                              | type           |
+|:----------------|:-------------------------------------------------------------------------|:---------------|
 | brightnessLevel | SmartHomeDevice의 밝기를 조절한 이후의 설정 밝기입니다.<br/>제어를 마친 이후의 밝기를 기준으로 응답해야 합니다. | integer(1~100) |
 
 ### DecreaseBrightness
@@ -293,11 +285,8 @@ Directive : DecreaseBrightness
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/DecreaseBrightness)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/DecreaseBrightness)"%}
+```json
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -317,7 +306,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives
         "deviceTypeName": "조명",
         "deviceModelName": "example_model_name",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         },
         "supportedCapabilities": {
           "powerControl": {},
@@ -339,8 +328,8 @@ Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives
 
 DecreseBrightness Directive request parameter details
 
-| parameter name  | description                                                     | type           |
-|:----------------|:----------------------------------------------------------------|:---------------|
+| parameter name  | description                                                         | type           |
+|:----------------|:--------------------------------------------------------------------|:---------------|
 | brightnessDelta | 설정 밝기를 몇 단계 내릴지에 대한 사용자 발화 정보입니다.<br/>해당 정보가 없을 경우 1단계를 내리도록 설정합니다. | integer(1~100) |
 
 Sample Response
@@ -359,7 +348,7 @@ Sample Response
         "friendlyName": "거실",
         "deviceTypeName": "조명",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         }
       },
       "properties": {
@@ -373,8 +362,8 @@ Sample Response
 
 DecreaseBrightness Directive response parameter details
 
-| parameter name  | description                                                          | type           |
-|:----------------|:---------------------------------------------------------------------|:---------------|
+| parameter name  | description                                                              | type           |
+|:----------------|:-------------------------------------------------------------------------|:---------------|
 | brightnessLevel | SmartHomeDevice의 밝기를 조절한 이후의 설정 밝기입니다.<br/>제어를 마친 이후의 밝기를 기준으로 응답해야 합니다. | integer(1~100) |
 
 ### SetBrightnessMax
@@ -391,11 +380,8 @@ Directive : SetBrightnessMax
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMax)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMax)"%}
+```json
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -412,7 +398,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives
         "deviceTypeName": "조명",
         "deviceModelName": "example_model_name",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         },
         "supportedCapabilities": {
           "powerControl": {},
@@ -448,7 +434,7 @@ Sample Response
         "friendlyName": "거실",
         "deviceTypeName": "조명",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         }
       },
       "properties": {
@@ -462,8 +448,8 @@ Sample Response
 
 SetBrightnessMax Directive Response parameter details
 
-| parameter name  | description                                                          | type         |
-|:----------------|:---------------------------------------------------------------------|:-------------|
+| parameter name  | description                                                              | type         |
+|:----------------|:-------------------------------------------------------------------------|:-------------|
 | brightnessLevel | SmartHomeDevice의 밝기를 조절한 이후의 설정 밝기입니다.<br/>제어를 마친 이후의 밝기를 기준으로 응답해야 합니다. | integer(100) |
 
 ### SetBrightnessMin
@@ -480,11 +466,8 @@ Directive : SetBrightnessMin
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMin)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMin)"%}
+```json
 {
   "version": 1,
   "requestId": "2019093019f78107f1a36147688c699703f5373a56",
@@ -501,7 +484,7 @@ Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives
         "deviceTypeName": "조명",
         "deviceModelName": "example_model_name",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         },
         "supportedCapabilities": {
           "powerControl": {},
@@ -537,7 +520,7 @@ Sample Response
         "friendlyName": "거실",
         "deviceTypeName": "조명",
         "customData": {
-            "foo": "bar"
+          "foo": "bar"
         }
       },
       "properties": {
@@ -551,8 +534,8 @@ Sample Response
 
 SetBrightnessMin Directive Response parameter details
 
-| parameter name  | description                                                          | type    |
-|:----------------|:---------------------------------------------------------------------|:--------|
+| parameter name  | description                                                              | type    |
+|:----------------|:-------------------------------------------------------------------------|:--------|
 | brightnessLevel | SmartHomeDevice의 밝기를 조절한 이후의 설정 밝기입니다.<br/>제어를 마친 이후의 밝기를 기준으로 응답해야 합니다. | integer |
 
 ## Error & Exception

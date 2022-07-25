@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,18 +25,18 @@ Discovery Sample Response
 {% code %}
 ```json
 {
-   "id":"12345",
-   "deviceTypeCode":"ROBOT_CLEANER",
-   "friendlyNameSuggestion":"거실",
-   "deviceTypeName":"로봇청소기",
-   "deviceModelName":"example_model_name",
-   "customData":{
-      "foo":"bar"
-   },
-   "supportedCapabilities":{
-      "powerControl":{},
-      "chargeControl":{} <-- 이 프로퍼티가 있어야 "충전시작" 등 ChargeControl 을 사용하는 발화 지원가능.
-   }
+  "id": "12345",
+  "deviceTypeCode": "ROBOT_CLEANER",
+  "friendlyNameSuggestion": "거실",
+  "deviceTypeName": "로봇청소기",
+  "deviceModelName": "example_model_name",
+  "customData": {
+    "foo": "bar"
+  },
+  "supportedCapabilities": {
+    "powerControl": {},
+    "chargeControl": {} // 이 프로퍼티가 있어야 "충전시작" 등 ChargeControl 을 사용하는 발화 지원가능.
+  }
 }
 ```
 {% endcode %}
@@ -71,42 +69,39 @@ Directive : StartCharging
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/StartCharging)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/StartCharging)"%}
+```json
 {
-   "version":1,
-   "requestId":"2019093020a1e59d2c95f74908a06c7473f6676783",
-   "action":{
-      "command":{
-         "smartHomeCapability":"ChargeControl",
-         "smartHomeDirective":"StartCharging"
-      },
-      "smartHomeDevices":[
-         {
-            "id":"12345",
-            "deviceTypeCode":"ROBOT_CLEANER",
-            "friendlyName":"거실",
-            "deviceTypeName":"로봇청소기",
-            "deviceModelName":"example_model_name",
-            "customData":{
-               "foo":"bar"
-            },
-            "supportedCapabilities":{
-               "powerControl":{},
-               "chargeControl":{}
-            }
-         }
-      ]
-   },
-   "context":{
-      "session":{
-         "id":"example_session_id",
-         "accessToken":"example_access_token"
+  "version": 1,
+  "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783",
+  "action": {
+    "command": {
+      "smartHomeCapability": "ChargeControl",
+      "smartHomeDirective": "StartCharging"
+    },
+    "smartHomeDevices": [
+      {
+        "id": "12345",
+        "deviceTypeCode": "ROBOT_CLEANER",
+        "friendlyName": "거실",
+        "deviceTypeName": "로봇청소기",
+        "deviceModelName": "example_model_name",
+        "customData": {
+          "foo": "bar"
+        },
+        "supportedCapabilities": {
+          "powerControl": {},
+          "chargeControl": {}
+        }
       }
-   }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
 }
 ```
 {% endcode %}
@@ -116,15 +111,15 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-            }
-        }
-    ]
+  "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -143,42 +138,39 @@ Directive : StopCharging
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/StopCharging)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/StopCharging)"%}
+```json
 {
-   "version":1,
-   "requestId":"2019093020a1e59d2c95f74908a06c7473f6676783",
-   "action":{
-      "command":{
-         "smartHomeCapability":"ChargeControl",
-         "smartHomeDirective":"StartCharging"
-      },
-      "smartHomeDevices":[
-         {
-            "id":"12345",
-            "deviceTypeCode":"ROBOT_CLEANER",
-            "friendlyName":"거실",
-            "deviceTypeName":"로봇청소기",
-            "deviceModelName":"example_model_name",
-            "customData":{
-               "foo":"bar"
-            },
-            "supportedCapabilities":{
-               "powerControl":{},
-               "chargeControl":{}
-            }
-         }
-      ]
-   },
-   "context":{
-      "session":{
-         "id":"example_session_id",
-         "accessToken":"example_access_token"
+  "version": 1,
+  "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783",
+  "action": {
+    "command": {
+      "smartHomeCapability": "ChargeControl",
+      "smartHomeDirective": "StartCharging"
+    },
+    "smartHomeDevices": [
+      {
+        "id": "12345",
+        "deviceTypeCode": "ROBOT_CLEANER",
+        "friendlyName": "거실",
+        "deviceTypeName": "로봇청소기",
+        "deviceModelName": "example_model_name",
+        "customData": {
+          "foo": "bar"
+        },
+        "supportedCapabilities": {
+          "powerControl": {},
+          "chargeControl": {}
+        }
       }
-   }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
 }
 ```
 {% endcode %}
@@ -188,15 +180,15 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-            }
-        }
-    ]
+  "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -215,42 +207,39 @@ Directive : CheckRemainingBattery
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/CheckRemainingBattery)
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/CheckRemainingBattery)"%}
+```json
 {
-   "version":1,
-   "requestId":"2019093020a1e59d2c95f74908a06c7473f6676783",
-   "action":{
-      "command":{
-         "smartHomeCapability":"ChargeControl",
-         "smartHomeDirective":"CheckRemainingBattery"
-      },
-      "smartHomeDevices":[
-         {
-            "id":"12345",
-            "deviceTypeCode":"ROBOT_CLEANER",
-            "friendlyName":"거실",
-            "deviceTypeName":"로봇청소기",
-            "deviceModelName":"example_model_name",
-            "customData":{
-               "foo":"bar"
-            },
-            "supportedCapabilities":{
-               "powerControl":{},
-               "chargeControl":{}
-            }
-         }
-      ]
-   },
-   "context":{
-      "session":{
-         "id":"example_session_id",
-         "accessToken":"example_access_token"
+  "version": 1,
+  "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783",
+  "action": {
+    "command": {
+      "smartHomeCapability": "ChargeControl",
+      "smartHomeDirective": "CheckRemainingBattery"
+    },
+    "smartHomeDevices": [
+      {
+        "id": "12345",
+        "deviceTypeCode": "ROBOT_CLEANER",
+        "friendlyName": "거실",
+        "deviceTypeName": "로봇청소기",
+        "deviceModelName": "example_model_name",
+        "customData": {
+          "foo": "bar"
+        },
+        "supportedCapabilities": {
+          "powerControl": {},
+          "chargeControl": {}
+        }
       }
-   }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
+    }
+  }
 }
 ```
 {% endcode %}
@@ -260,24 +249,24 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "remainingBattery": "80" <-- 잔여 배터리 량 (단위: 퍼센트(%), 단위 기호 생략.)
-            }
-        }
-    ]
+  "requestId": "2019093020a1e59d2c95f74908a06c7473f6676783", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "remainingBattery": "80" // 잔여 배터리 량 (단위: 퍼센트(%), 단위 기호 생략.)
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
 
 CheckRemainingBattery Directive Response parameter details
 
-| parameter name   | description                                 | type    |
-|:-----------------|:--------------------------------------------|:--------|
+| parameter name   | description                                     | type    |
+|:-----------------|:------------------------------------------------|:--------|
 | remainingBattery | SmartHomdeDevice의 잔여배터리량.<br/>%를 기준으로 응답해야 합니다. | integer |
 
 ## Error & Exception

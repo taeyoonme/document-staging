@@ -34,26 +34,30 @@ Biz 사용자 그룹 정보를 상세 확인 할 수 있는 기능입니다.
 ### 3.2 Body
 
 {% code %}
+
 ```json
 {
-    "id": "XXX",
-    "name": "XXX",
-    "token": "XXX",
-    "alias": "XXX",
-    "playServiceIds": ["aaa.bbb.ccc", "a1.b1.c1"],
-    "users": [
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "email": "XXX",
-            "phone": "XXX",
-            "alias": "XXX",
-            "serviceType": "SERVICE",
-            "apiAgreeType": "ALL",
-            "authType": "ALL",
-            "acceptedDateTime": "2021-0804T16:34:30.388"
-        }
-    ]
+  "id": "XXX",
+  "name": "XXX",
+  "token": "XXX",
+  "alias": "XXX",
+  "playServiceIds": [
+    "aaa.bbb.ccc",
+    "a1.b1.c1"
+  ],
+  "users": [
+    {
+      "id": "XXX",
+      "name": "XXX",
+      "email": "XXX",
+      "phone": "XXX",
+      "alias": "XXX",
+      "serviceType": "SERVICE",
+      "apiAgreeType": "ALL",
+      "authType": "ALL",
+      "acceptedDateTime": "2021-0804T16:34:30.388"
+    }
+  ]
 }
 ```
 {% endcode %}

@@ -28,7 +28,7 @@ iOS/Linux 는 ScreenAgent 를 지원하지 않습니다.
 NuguAndroidClient instance 를 통해 ScreenAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val screenAgent = nuguAndroidClient.getAgent(DefaultScreenAgent.NAMESPACE)
 ```
 {% endcode %}
@@ -36,7 +36,7 @@ val screenAgent = nuguAndroidClient.getAgent(DefaultScreenAgent.NAMESPACE)
 NuguAndroidClient 생성시 Screen 을 추가합니다.
 
 {% code %}
-```text
+```kotlin
 class MyScreen: Screen {
     ...
 }
@@ -56,7 +56,7 @@ NuguAndroidClient.Builder(...)
 Screen 을 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyScreen: Screen {
     override fun getSettings(): Settings {
         ...
@@ -76,7 +76,7 @@ class MyScreen: Screen {
 {% tabs::content title="Android" %}
 Screen 을 구현합니다.
 {% code %}
-```text
+```kotlin
 class MyScreen: Screen {
     override fun turnOn(brightness: Long): Boolean {
         ...
@@ -100,7 +100,7 @@ class MyScreen: Screen {
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Screen": {
     "version": "1.0",
@@ -121,7 +121,7 @@ class MyScreen: Screen {
 ### TurnOn
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Screen",
@@ -145,7 +145,7 @@ class MyScreen: Screen {
 ### TurnOff
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Screen",
@@ -164,7 +164,7 @@ class MyScreen: Screen {
 ### SetBrightness
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Screen",

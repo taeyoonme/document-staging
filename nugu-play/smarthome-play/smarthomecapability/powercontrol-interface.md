@@ -12,12 +12,10 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -27,25 +25,24 @@ Discovery Sample Response
 {% code %}
 ```json
 {
-   "devices":[
-      {
-         "id":"1234567",
-         "deviceTypeCode":"LIGHT",
-         "deviceTypeName":"example_device_type",
-         "deviceModelName":"example_model_name",
-         "friendlyNameSuggestion":"안방",
-         "manufacturer":"example_manufacturer",
-         "supportedCapabilities":{
-            "powerControl":{
-
-            }
-         },
-         "customData":{
-            "foo":"bar"
-         },
-         "connectionStatus":true
-      }
-   ]
+  "devices": [
+    {
+      "id": "1234567",
+      "deviceTypeCode": "LIGHT",
+      "deviceTypeName": "example_device_type",
+      "deviceModelName": "example_model_name",
+      "friendlyNameSuggestion": "안방",
+      "manufacturer": "example_manufacturer",
+      "supportedCapabilities": {
+        "powerControl": {
+        }
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -68,10 +65,8 @@ Directive : TurnOn
 
 Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/capabilities/PowerControl/directives/TurnOn)
-
+{% code title="(POST, /nugu/v1/capabilities/PowerControl/directives/TurnOn)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -114,14 +109,14 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {} <-- directive 마다 필요한 property 채워서 응답
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {} // directive 마다 필요한 property 채워서 응답
+    }
+  ]
 }
 ```
 {% endcode %}
@@ -140,10 +135,8 @@ Directive : TurnOff
 
 Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/capabilities/PowerControl/directives/TurnOff)
-
+{% code title="(POST, /nugu/v1/capabilities/PowerControl/directives/TurnOff)"%}
+```json
 {
   "version": 1,
   "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb",
@@ -186,14 +179,14 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {} <-- directive 마다 필요한 property 채워서 응답
-        }
-    ]
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {} // directive 마다 필요한 property 채워서 응답
+    }
+  ]
 }
 ```
 {% endcode %}

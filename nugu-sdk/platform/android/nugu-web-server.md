@@ -40,7 +40,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 * `onCloseWindow` : `Activity` 종료 요청. `reason` 이 `WITHDRAWN_USER` 인 경우 회원탈퇴 요청으로 인한 종료이기 때문에, 인증정보 등을 파기해야 합니다.
 
 {% code title="SettingsServiceActivity.kt" %}
-```swift
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
@@ -62,7 +62,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 * `Const.AGREEMENT_URL`: NUGU 이용약관 웹 사이트
 
 {% code title="SettingsServiceActivity.kt" %}
-```swift
+```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
@@ -97,7 +97,7 @@ NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 `redirectUr
 * `Activity` 에서 `Intent`  받으면 `WebView` 를 갱신합니다.
 
 {% code title="SettingsServiceActivity.kt" %}
-```swift
+```kotlin
 override fun onNewIntent(intent: Intent?) {
     super.onNewIntent(intent)
     webView.onNewIntent(intent)

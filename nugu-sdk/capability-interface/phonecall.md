@@ -30,7 +30,7 @@ PhoneCall interface 규격에 따른 디바이스의 동작 제어는 PhoneCallA
 NuguAndroidClient 생성시 PhoneCallAgent 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 class MyPhoneCallClient: PhoneCallClient {
     ...
 }
@@ -54,7 +54,7 @@ NuguAndroidClient().Builder()
 NuguAndroidClient instance 를 통해 PhoneCallAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val phoneCallAgent = nuguAndroidClient.getAgent(PhoneCallAgent.NAMESPACE)
 ```
 {% endcode %}
@@ -64,7 +64,7 @@ val phoneCallAgent = nuguAndroidClient.getAgent(PhoneCallAgent.NAMESPACE)
 NuguClient instance 를 통해 PhoneCallAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let phoneCallAgent = nuguClient.phoneCallAgent
 ```
 {% endcode %}
@@ -74,7 +74,7 @@ let phoneCallAgent = nuguClient.phoneCallAgent
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [PhoneCallAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IPhoneCallHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto phonecall_handler(std::shared_ptr<IPhoneCallHandler>(
         CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>()));
 
@@ -95,7 +95,7 @@ nugu_client->getCapabilityBuilder()
 PhoneCallClient 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyPhoneCallClient: PhoneCallClient {
     override fun getContext(): Context {
         ...
@@ -111,7 +111,7 @@ class MyPhoneCallClient: PhoneCallClient {
 PhoneCallAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
     func phoneCallAgentRequestContext() -> PhoneCallContext {
         ...
@@ -134,7 +134,7 @@ phoneCallAgent.delegate = self
 PhoneCallClient 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyPhoneCallClient: PhoneCallClient {
     override fun sendCandidates(payload: SendCandidatesPayload, callback: Callback) {
         // 연락처 검색 기능을 구현
@@ -155,7 +155,7 @@ class MyPhoneCallClient: PhoneCallClient {
 PhoneCallAgentDelegate 를 추가합니다
 
 {% code %}
-```text
+```swift
 class MyPhoneCallAgentDelegate: PhoneCallAgentDelegate {
     func phoneCallAgentDidReceiveSendCandidates(item: PhoneCallCandidatesItem, dialogRequestId: String) {
         // 연락처 검색 기능을 구현
@@ -178,7 +178,7 @@ phoneCallAgent.delegate = self
 [IPhoneCallListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IPhoneCallListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MyPhoneCallListener : public IPhoneCallListener {
 public:
     ...
@@ -215,7 +215,7 @@ iOS 는 수신 수락/거절 기능을 제공하지 않습니다.
 PhoneCallClient 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyPhoneCallClient: PhoneCallClient {
     override fun acceptCall(payload: AcceptCallPayload) {
         // 수신 수락 기능을 구현
@@ -236,7 +236,7 @@ class MyPhoneCallClient: PhoneCallClient {
 [IPhoneCallListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IPhoneCallListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MyPhoneCallListener : public IPhoneCallListener {
 public:
     ...
@@ -258,7 +258,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 ## Context
 
 {% code %}
-```text
+```json
 {
   "PhoneCall": {
     "version": "1.1",
@@ -308,7 +308,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 * 하나의 연락처를 나타내는 포맷
 
 {% code %}
-```text
+```json
 {
   "name": "{{STRING}}",
   "type": "{{STRING}}",
@@ -363,7 +363,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 * 하나의 연락처를 나타내는 포맷
 
 {% code %}
-```text
+```json
 {
   "label": "{{STRING}}",
   "number": "{{STRING}}"
@@ -381,7 +381,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 ### SendCandidates
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -418,7 +418,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 ### MakeCall
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -444,7 +444,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 ### EndCall
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -463,7 +463,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 ### AcceptCall
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -489,7 +489,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 * 현재 수신 중인 전화 수신 차단 설정
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -513,7 +513,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 * Parameter 들은 [Context](#context) 를 통해 전송되며, 검색 결과가 없는 경우에도 empty 로 전송해야 함.
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -532,7 +532,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 ### CallArrived
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -568,7 +568,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 * ONGOING인 경우는 상대방이 거절하거나 통화중, 전화를 안받는 경우 등 연결이 안되는 모든 상태
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -590,7 +590,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 * AcceptCall이 성공해서 연결된 경우
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -611,7 +611,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 * MakeCall이 실패하는 경우 → 기능 상의 이슈로 전화 연결 시도 자체가 실패하는 경우
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",
@@ -639,7 +639,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 * MakeCall이 성공하는 경우 
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PhoneCall",

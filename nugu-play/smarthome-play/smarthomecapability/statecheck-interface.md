@@ -114,15 +114,15 @@ Sample Response
 {% code %}
 ```json
 {
-  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", <-- request로 받은 값을 그대로 응답
+  "requestId": "20190916109ad8219c251742859c56f6ec3c4700bb", // request로 받은 값을 그대로 응답
   "data":[
     {
-      "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-      "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
       "properties": {
-        "temperatureLevel": "200", <-- directive 마다 필요한 property 채워서 응답.
-        "hour" : "1",  <-- directive 마다 필요한 property 채워서 응답.
-        "minute" : "29"  <-- directive 마다 필요한 property 채워서 응답.
+        "temperatureLevel": "200", // directive 마다 필요한 property 채워서 응답.
+        "hour" : "1", // directive 마다 필요한 property 채워서 응답.
+        "minute" : "29" // directive 마다 필요한 property 채워서 응답.
       }
     }
   ]
@@ -194,13 +194,13 @@ Sample Response
 {% code %}
 ```json
 {
-  "requestId": "2019071712638a4378649347bdb21643127a0f6d83", <-- request로 받은 값을 그대로 응답
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83", // request로 받은 값을 그대로 응답
   "data":[
     {
-      "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-      "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
       "properties": {
-        "openState": "open", <-- directive 마다 필요한 property 채워서 응답.
+        "openState": "open" // directive 마다 필요한 property 채워서 응답.
       }
     }
   ]

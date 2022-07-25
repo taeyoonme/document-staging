@@ -37,7 +37,7 @@ Biz API는 제휴를 통한 정식판 권한 사용자에게 제공되며, API�
 {% code %}
 ```json
 {
-    "errorCode": "XXX"
+  "errorCode": "XXX"
 }
 ```
 {% endcode %}

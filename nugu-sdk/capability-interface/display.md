@@ -31,7 +31,7 @@ Display interface 규격에 따른 디바이스의 동작 제어는 DisplayAgent
 NuguAndroidClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val displayAgent = nuguAndroidClient.displayAgent
 ```
 {% endcode %}
@@ -39,7 +39,7 @@ val displayAgent = nuguAndroidClient.displayAgent
 AudioPlayer interface 와 Display interface 를 병합해주는 DisplayAggregatorInterface 를 제공합니다.
 
 {% code %}
-```text
+```kotlin
 val displayAggregator = nuguAndroidClient.getDisplay()
 ```
 {% endcode %}
@@ -49,7 +49,7 @@ val displayAggregator = nuguAndroidClient.getDisplay()
 NuguClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let audioPlayerAgent = nuguClient.audioPlayerAgent
 ```
 {% endcode %}
@@ -59,7 +59,7 @@ let audioPlayerAgent = nuguClient.audioPlayerAgent
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [DisplayAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IDisplayHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto display_handler(std::shared_ptr<IDisplayHandler>(
         CapabilityFactory::makeCapability<DisplayAgent, IDisplayHandler>()));
 
@@ -80,7 +80,7 @@ nugu_client->getCapabilityBuilder()
 DisplayAggregatorInterface.Controller 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val controller = object: DisplayAggregatorInterface.Controller {
     override fun getFocusedItemToken(): String? {
         ...
@@ -102,7 +102,7 @@ displayAggregator.displayCardRendered(templateId, controller)
 DisplayAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyDisplayAgentDelegate: DisplayAgentDelegate {
     func displayAgentRequestContext(templateId: String, completion: @escaping (DisplayContext?) -> Void) {
         ...
@@ -128,7 +128,7 @@ Template 의 focus 와 scroll 은 `사용자 발화` 에 따라 [ControlFocus](.
 {% tabs::content title="Android" %}
 DisplayAggregatorInterface.Renderer 를 추가합니다.
 {% code %}
-```text
+```kotlin
 val renderer = object: DisplayAggregatorInterface.Renderer {
     override fun render(templateId: String, templateType: String, templateContent: String, dialogRequestId: String, displayType: Type): Boolean {
         ...
@@ -143,7 +143,7 @@ displayAggregator.setRenderer(renderer)
 UI 를 제어하려면 DisplayAggregatorInterface.Controller 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val controller = object: DisplayAggregatorInterface.Controller {
     override fun controlFocus(direction: Direction): Boolean {
         ...
@@ -164,7 +164,7 @@ displayAggregator.displayCardRendered(templateId, controller)
 DisplayAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyDisplayAgentDelegate: DisplayAgentDelegate {
     func displayAgentShouldRender(template: DisplayTemplate, completion: @escaping (AnyObject?) -> Void) {
         ...
@@ -189,7 +189,7 @@ displayAgent.delegate = MyDisplayAgentDelegate()
 [IDisplayListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IDisplayListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MyDisplayListener : public IDisplayListener {
 public:
     ...
@@ -220,7 +220,7 @@ Template 하위 항목 선택시 [ElementSelected](./display/display-event#eleme
 {% tabs %}
 {% tabs::content title="Android" %}
 {% code %}
-```text
+```kotlin
 displayAggregator.setElementSelected(templateId, token, postback)
 ```
 {% endcode %}
@@ -228,7 +228,7 @@ displayAggregator.setElementSelected(templateId, token, postback)
 
 {% tabs::content title="iOS" %}
 {% code %}
-```text
+```swift
 displayAgent.elementDidSelect(templateId: displayTemplate.templateId, token: token, postback: postback)
 ```
 {% endcode %}
@@ -236,7 +236,7 @@ displayAgent.elementDidSelect(templateId: displayTemplate.templateId, token: tok
 
 {% tabs::content title="Linux" %}
 {% code %}
-```
+```cpp
 display_handler->elementSelected(id, item_token, postback)
 ```
 {% endcode %}
@@ -248,7 +248,7 @@ Template 에 화면에 대한 사용자 interaction 발생시 SDK 로 notify 해
 {% tabs %}
 {% tabs::content title="Android" %}
 {% code %}
-```text
+```kotlin
 displayAggregator.notifyUserInteraction(templateId)
 ```
 {% endcode %}
@@ -256,7 +256,7 @@ displayAggregator.notifyUserInteraction(templateId)
 
 {% tabs::content title="iOS" %}
 {% code %}
-```text
+```swift
 displayAgent.notifyUserInteraction()
 ```
 {% endcode %}
@@ -264,7 +264,7 @@ displayAgent.notifyUserInteraction()
 
 {% tabs::content title="Linux" %}
 {% code %}
-```
+```cpp
 display_handler->refreshRenderingTimer(id)
 ```
 {% endcode %}
@@ -459,11 +459,11 @@ GrammarGuide의 확장된 발화가이드 입니다.
 {% code %}
 ```json
 [
-    {
-        "text": "{{STRING}}",
-        "type": "{{STRING}}",
-        "style": {}
-    }
+  {
+    "text": "{{STRING}}",
+    "type": "{{STRING}}",
+    "style": {}
+  }
 ]
 ```
 {% endcode %}
@@ -481,8 +481,8 @@ Banner에 사용되는 image object 입니다.
 {% code %}
 ```json
 {
-    "image": ImageObject,
-    "style": Object
+  "image": ImageObject,
+  "style": Object
 }
 ```
 {% endcode %}

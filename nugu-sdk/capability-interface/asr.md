@@ -34,7 +34,7 @@ ASR interface 규격에 따른 디바이스의 동작 제어는 ASRAgent 가 처
 NuguAndroidClient instance 를 통해 ASRAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val asrAgent = nuguAndroidClient.asrAgent
 ```
 {% endcode %}
@@ -42,7 +42,7 @@ val asrAgent = nuguAndroidClient.asrAgent
 Microphone 으로 부터 음성 데이터를 가져오기 위한 AudioSourceManager 를 생성합니다.
 
 {% code %}
-```text
+```kotlin
 val audioSourceManager = AudioSourceManager(AudioRecordSourceFactory())
 ```
 {% endcode %}
@@ -50,7 +50,7 @@ val audioSourceManager = AudioSourceManager(AudioRecordSourceFactory())
 음성인식에 필요한 학습 모델을 설정합니다.
 
 {% code %}
-```text
+```kotlin
 NuguAndroidClient.Builder(
     context,
     NuguOAuth.create(context),
@@ -69,7 +69,7 @@ NuguAndroidClient.Builder(
 AudioSourceManager, ASRAgent 를 연결해주기 위한 SpeechRecognizerAggregator 를 생성합니다.
 
 {% code %}
-```text
+```kotlin
 speechRecognizerAggregator = SpeechRecognizerAggregator(
     null,
     SpeechProcessorDelegate(asrAgent),
@@ -84,7 +84,7 @@ speechRecognizerAggregator = SpeechRecognizerAggregator(
 NuguClient instance 를 통해 ASRAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let asrAgent = nuguClient.asrAgent
 ```
 {% endcode %}
@@ -92,7 +92,7 @@ let asrAgent = nuguClient.asrAgent
 Microphone 으로 부터 음성 데이터를 가져오기 위한 MicInputProvider 를 생성합니다.
 
 {% code %}
-```text
+```swift
 let micInputProvider = MicInputProvider()
 ```
 {% endcode %}
@@ -100,7 +100,7 @@ let micInputProvider = MicInputProvider()
 Microphone 으로 부터 가져온 음성 데이터가 NuguClient 로 전달될 수 있도록 합니다.
 
 {% code %}
-```text
+```swift
 micInputProvider.delegate = nuguClient
 ```
 {% endcode %}
@@ -108,7 +108,7 @@ micInputProvider.delegate = nuguClient
 음성인식에 필요한 학습 모델을 설정합니다.
 
 {% code %}
-```text
+```swift
 let epdFile = Bundle.main.url(forResource: "skt_epd_model", withExtension: "raw")!
 nuguClient.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
 ```
@@ -119,7 +119,7 @@ nuguClient.asrAgent.options = ASROptions(endPointing: .client(epdFile: epdFile))
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [ASRAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto asr_handler(std::shared_ptr<IASRHandler>(
         CapabilityFactory::makeCapability<ASRAgent, IASRHandler>()));
 
@@ -132,7 +132,7 @@ nugu_client->getCapabilityBuilder()
 음성인식에 필요한 학습 모델을 설정합니다.
 
 {% code %}
-```text
+```cpp
  asr_handler->setAttribute(ASRAttribute { "/var/lib/nugu/model", "CLIENT", "PARTIAL" });
 ```
 {% endcode %}
@@ -146,7 +146,7 @@ nugu_client->getCapabilityBuilder()
 {% tabs %}
 {% tabs::content title="Android" %}
 {% code %}
-```text
+```kotlin
 speechRecognizerAggregator.startListening(initiator = TAP)
 ```
 {% endcode %}
@@ -154,7 +154,7 @@ speechRecognizerAggregator.startListening(initiator = TAP)
 
 {% tabs::content title="iOS" %}
 {% code %}
-```text
+```swift
 try micInputProvider.start()
 asrAgent.startRecognition(initiator: .user)
 ```
@@ -163,7 +163,7 @@ asrAgent.startRecognition(initiator: .user)
 
 {% tabs::content title="Linux" %}
 {% code %}
-```text
+```cpp
 asr_handler->startRecognition()
 ```
 {% endcode %}
@@ -181,7 +181,7 @@ asr_handler->startRecognition()
 SpeechRecognizerAggregatorInterface.OnStateChangeListener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val listener = object: SpeechRecognizerAggregatorInterface.OnStateChangeListener {
     override fun onStateChanged(state: State) {
         ...
@@ -194,7 +194,7 @@ speechRecognizerAggregator.addListener(listener)
 ASRAgentInterface.OnResultListener 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 val resultListener = object: ASRAgentInterface.OnResultListener {
     fun onPartialResult(result: String, dialogRequestId: String) {
         // STT 중간 결과
@@ -217,7 +217,7 @@ asrAgent.addOnResultListener(resultListener)
 ASRAgentDelegate 를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyASRAgentDelegate: ASRAgentDelegate {
     func asrAgentDidChange(state: ASRState) {
         ...
@@ -237,7 +237,7 @@ asrAgent.add(delegate: MyASRAgentDelegate())
 음성인식 진행 상태를 모니터링 하려면 [IASRListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MyASRListener : public IASRListener {
 public:
     ...
@@ -275,7 +275,7 @@ CapabilityFactory::makeCapability<ASRAgent, IASRHandler>(asr_listener.get());
 {% tabs %}
 {% tabs::content title="Android" %}
 {% code %}
-```text
+```kotlin
 speechRecognizerAggregator.stopListening()
 ```
 {% endcode %}
@@ -283,7 +283,7 @@ speechRecognizerAggregator.stopListening()
 
 {% tabs::content title="iOS" %}
 {% code %}
-```text
+```swift
 asrAgent.stopRecognition()
 ```
 {% endcode %}
@@ -291,7 +291,7 @@ asrAgent.stopRecognition()
 
 {% tabs::content title="Linux" %}
 {% code %}
-```text
+```cpp
 asr_handler->stopRecognition()
 ```
 {% endcode %}
@@ -301,7 +301,7 @@ asr_handler->stopRecognition()
 ## Context
 
 {% code %}
-```text
+```json
 {
   "ASR": {
     "version": "1.6",
@@ -324,7 +324,7 @@ asr_handler->stopRecognition()
 ### ExpectSpeech
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "ASR",
@@ -376,7 +376,7 @@ asr_handler->stopRecognition()
 * 음성 인식 결과 전달
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "ASR",
@@ -403,7 +403,7 @@ asr_handler->stopRecognition()
 ### CancelRecognize
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "ASR",
@@ -428,7 +428,7 @@ asr_handler->stopRecognition()
 ### Recognize
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "ASR",
@@ -508,7 +508,7 @@ asr_handler->stopRecognition()
 * Recognize Event가 전달되고 사용자 발화도 모두 전달이 완료된 이후 응답을 받지 못한 경우
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "ASR",
@@ -533,7 +533,7 @@ asr_handler->stopRecognition()
 * Recognize event가 전달되고 사용자 발화가 발화하지 않은 경우
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "ASR",
@@ -558,7 +558,7 @@ asr_handler->stopRecognition()
 * Recognize event 취소
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "ASR",
@@ -583,7 +583,7 @@ asr_handler->stopRecognition()
 * Recognize event 이후 클라이언트에서 에러(마이크를 열지 못하는 등)가 발생한 경우
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "ASR",

@@ -29,7 +29,7 @@ Text interface 규격에 따른 디바이스의 동작 제어는 TextAgent 가 �
 NuguAndroidClient instance 를 통해 TextAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val textAgent = nuguAndroidClient.textAgent
 ```
 {% endcode %}
@@ -39,7 +39,7 @@ val textAgent = nuguAndroidClient.textAgent
 NuguClient instance 를 통해 TextAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let textAgent = nuguClient.textAgent
 ```
 {% endcode %}
@@ -49,7 +49,7 @@ let textAgent = nuguClient.textAgent
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [TextAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ITextHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto text_handler(std::shared_ptr<ITextHandler>(
         CapabilityFactory::makeCapability<TextAgent, ITextHandler>()));
 
@@ -68,7 +68,7 @@ nugu_client->getCapabilityBuilder()
 {% tabs %}
 {% tabs::content title="Android" %}
 {% code %}
-```text
+```kotlin
 textAgent.requestTextInput(text)
 ```
 {% endcode %}
@@ -76,7 +76,7 @@ textAgent.requestTextInput(text)
 
 {% tabs::content title="iOS" %}
 {% code %}
-```text
+```swift
 textAgent.requestTextInput(text: textInput, requestType: .normal)
 ```
 {% endcode %}
@@ -84,7 +84,7 @@ textAgent.requestTextInput(text: textInput, requestType: .normal)
 
 {% tabs::content title="Linux" %}
 {% code %}
-```text
+```cpp
 text_handler->requestTextInput(text)
 ```
 {% endcode %}

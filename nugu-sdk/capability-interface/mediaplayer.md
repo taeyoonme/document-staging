@@ -29,7 +29,7 @@ Linux 는 MediaPlayerAgent 를 지원하지 않습니다.
 NuguAndroidClient 생성시 MediaPlayerAgent 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMediaPlayer: MediaPlayer {
     ...
 }
@@ -51,7 +51,7 @@ NuguAndroidClient().Builder()
 NuguAndroidClient instance 를 통해 MediaPlayerAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val mediaPlayerAgent = nuguAndroidClient.mediaPlayerAgent
 ```
 {% endcode %}
@@ -61,7 +61,7 @@ val mediaPlayerAgent = nuguAndroidClient.mediaPlayerAgent
 NuguClient instance 를 통해 MediaPlayerAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```swift
 let mediaPlayerAgent = nuguClient.mediaPlayerAgent
 ```
 {% endcode %}
@@ -77,7 +77,7 @@ let mediaPlayerAgent = nuguClient.mediaPlayerAgent
 MediaPlayer 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMediaPlayer: MediaPlayer {
     override fun getContext(): Context {
         ...
@@ -93,7 +93,7 @@ class MyMediaPlayer: MediaPlayer {
 MediaPlayerAgentDelegate를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
     func func mediaPlayerAgentRequestContext() -> MediaPlayerAgentContext? {
         ...
@@ -116,7 +116,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 MediaPlayer 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMediaPlayer: MediaPlayer {
     override fun search(payload: SearchPayload, callback: EventCallback) {
         ...
@@ -176,7 +176,7 @@ class MyMediaPlayer: MediaPlayer {
 MediaPlayerAgentDelegate를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
     func mediaPlayerAgentReceiveSearch(payload: MediaPlayerAgentDirectivePayload.Search, header: Downstream.Header, completion: @escaping ((MediaPlayerAgentProcessResult.Search) -> Void)) {
         ...
@@ -243,7 +243,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 MediaPlayer 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MyMediaPlayer: MediaPlayer {
     override fun getInfo(payload: Payload, callback: GetInfoCallback) {
         ...
@@ -259,7 +259,7 @@ class MyMediaPlayer: MediaPlayer {
 MediaPlayerAgentDelegate를 추가합니다.
 
 {% code %}
-```text
+```swift
 class MyMediaPlayerAgentDelegate: MediaPlayerAgentDelegate {
     func func mediaPlayerAgentReceiveGetInfo(playServiceId: String, token: String, dialogRequestId: String, completion: @escaping ((MediaPlayerAgentProcessResult.GetInfo) -> Void)) {
         ...
@@ -276,7 +276,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ## Context
 
 {% code %}
-```text
+```json
 {
   "MediaPlayer": {
     "version": "1.0",
@@ -325,7 +325,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Song
 
 {% code %}
-```text
+```json
 {
   "category": "{{STRING}}",
   "theme": "{{STRING}}",
@@ -357,7 +357,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Play
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -396,7 +396,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Stop
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -415,7 +415,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Search
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -443,7 +443,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Previous
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -473,7 +473,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Next
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -503,7 +503,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Move
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -530,7 +530,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Pause
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -554,7 +554,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Resume
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -578,7 +578,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Rewind
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -602,7 +602,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### Toggle
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -634,7 +634,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### GetInfo
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -658,7 +658,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### HandlePlaylist
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -684,7 +684,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### HandleLyrics
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -710,7 +710,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### PlaySucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -736,7 +736,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### PlaySuspended
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -773,7 +773,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### PlayFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -799,7 +799,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### StopSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -823,7 +823,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### StopFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -849,7 +849,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### SearchSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -875,7 +875,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### SearchFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -901,7 +901,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### PreviousSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -927,7 +927,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### PreviousSuspended
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -964,7 +964,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### PreviousFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "PreviousFailed",
@@ -990,7 +990,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### NextSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1016,7 +1016,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### NextSuspended
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1053,7 +1053,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### NextFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "NextFailed",
@@ -1079,7 +1079,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### MoveSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1105,7 +1105,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### MoveFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1131,7 +1131,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### PauseSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1157,7 +1157,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### PauseFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1183,7 +1183,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### ResumeSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1209,7 +1209,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### ResumeFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1235,7 +1235,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### RewindSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1261,7 +1261,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### RewindFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1287,7 +1287,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### ToggleSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1313,7 +1313,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### ToggleFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1339,7 +1339,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### GetInfoSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1370,7 +1370,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### GetInfoFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1396,7 +1396,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### HandlePlaylistSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1415,7 +1415,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### HandlePlaylistFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1439,7 +1439,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### HandleLyricsSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",
@@ -1458,7 +1458,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 ### HandleLyricsFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "MediaPlayer",

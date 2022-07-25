@@ -12,13 +12,11 @@ NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스�
 
 Discovery Sample Request
 
-{% code %}
-```scheme
-(POST, /nugu/v1/devices)
-
+{% code title="(POST, /nugu/v1/devices)"%}
+```json
 {
-    "userIdentifier": "t6Pv9PLAEmYZilNiloUUnZbVDjXgvUCzwpWY1tPq" (optional, e.g. hue whitelist identifier),
-    "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
+  "userIdentifier": "t6Pv9PLAEmYZilNiloUUnZbVDjXgvUCzwpWY1tPq", // (optional, e.g. hue whitelist identifier),
+  "token": "7KOdwPQdJPZf4KYsjtHdqz3e8fKd"
 }
 ```
 {% endcode %}
@@ -28,33 +26,35 @@ Discovery Sample Response
 {% code %}
 ```json
 {
-    "devices": [{
-        "id": "12345",
-        "type": "OVEN",
-        "modelName": "example oven",
-        "friendlyNameSuggestion": "조리실",
-        "manufacturer": "example manufacturer",
-        "supportedCapabilities": {
-            "deviceTemperatureControl": {
-              "minTemperature": "100",
-              "maxTemperature": "300"
-            },
-        },
-        "customData": {
-            "foo": "bar"
-        },
-        "connectionStatus": true
-    }]
+  "devices": [
+    {
+      "id": "12345",
+      "type": "OVEN",
+      "modelName": "example oven",
+      "friendlyNameSuggestion": "조리실",
+      "manufacturer": "example manufacturer",
+      "supportedCapabilities": {
+        "deviceTemperatureControl": {
+          "minTemperature": "100",
+          "maxTemperature": "300"
+        }
+      },
+      "customData": {
+        "foo": "bar"
+      },
+      "connectionStatus": true
+    }
+  ]
 }
 ```
 {% endcode %}
 
 SmartHomeDevice Attribute Parameters
 
-| Attribute      | Description                                                                                                                          |
-|:---------------|:-------------------------------------------------------------------------------------------------------------------------------------|
-| minTemperature | 해당 SmartHomeDevice가 지원하는 최저 자체 설정 온도입니다.                                                                                             |
-| maxTemperature | 해당 SmartHomeDevice가 지원하는 최고 자체 설정 온도입니다.                                                                                             |
+| Attribute      | Description                                                                                                                              |
+|:---------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
+| minTemperature | 해당 SmartHomeDevice가 지원하는 최저 자체 설정 온도입니다.                                                                                                 |
+| maxTemperature | 해당 SmartHomeDevice가 지원하는 최고 자체 설정 온도입니다.                                                                                                 |
 | customData     | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다.<br/>customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 
 ## Directive
@@ -75,37 +75,35 @@ Directive : AskDeviceTemperature
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})
-
-
+{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
+```json
 {
-    "version": 1,
-    "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
-    "action": {
-        "command": {
-          "smartHomeCapability": "DeviceTemperatureControl",
-          "smartHomeDirective": "AskDeviceTemperature"
-        },
-        "smartHomeDevices": [
-          {
-           "id":"12345678",
-           "deviceTypeCode":"OVEN",
-           "deviceModelName":"example oven",
-           "friendlyName":"조리실",
-           "deviceTypeName":"오븐",
-           "customData":{
-              "foo": "bar"
-           }
-        ]
+  "version": 1,
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
+  "action": {
+    "command": {
+      "smartHomeCapability": "DeviceTemperatureControl",
+      "smartHomeDirective": "AskDeviceTemperature"
     },
-    "context": {
-        "session": {
-            "id": "example_session_id",
-            "accessToken": "example_access_token"
+    "smartHomeDevices": [
+      {
+        "id": "12345678",
+        "deviceTypeCode": "OVEN",
+        "deviceModelName": "example oven",
+        "friendlyName": "조리실",
+        "deviceTypeName": "오븐",
+        "customData": {
+          "foo": "bar"
         }
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
     }
+  }
 }
 ```
 {% endcode %}
@@ -115,24 +113,24 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "2019071712638a4378649347bdb21643127a0f6d83", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "temperatureLevel": 120.0 <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "temperatureLevel": 120.0 // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
 
 AskDeviceTemperature Directive Response parameter details
 
-| parameter name   | description                                        | type   |
-|:-----------------|:---------------------------------------------------|:-------|
+| parameter name   | description                                            | type   |
+|:-----------------|:-------------------------------------------------------|:-------|
 | temperatureLevel | SmartHomeDevice에 설정된 자체설정온도입니다.<br/>사용자에게 설정온도로 안내됩니다. | double |
 
 ### SetDeviceTemperature
@@ -149,40 +147,38 @@ Directive : SetDeviceTemperature
 
 Sample Request
 
-{% code %}
-```scheme
-Control Request 예시 (POST, /nugu/v1/capabilities/DeviceTemperatureControl/directives/SetDeviceTemperature)
-
-
+{% code titls="Control Request 예시 (POST, /nugu/v1/capabilities/DeviceTemperatureControl/directives/SetDeviceTemperature)"%}
+```json
 {
-    "version": 1,
-    "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
-    "action": {
-        "command": {
-          "smartHomeCapability": "DeviceTemperatureControl",
-          "smartHomeDirective": "SetDeviceTemperature",
-          "parameters":{
-              "temperatureLevel": "120.0"
-          }
-        },
-        "smartHomeDevices": [
-          {
-           "id":"12345678",
-           "deviceTypeCode":"OVEN",
-           "deviceModelName":"example oven",
-           "friendlyName":"조리실",
-           "deviceTypeName":"오븐",
-           "customData":{
-              "foo": "bar"
-           }
-        ]
+  "version": 1,
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83",
+  "action": {
+    "command": {
+      "smartHomeCapability": "DeviceTemperatureControl",
+      "smartHomeDirective": "SetDeviceTemperature",
+      "parameters": {
+        "temperatureLevel": "120.0"
+      }
     },
-    "context": {
-        "session": {
-            "id": "example_session_id",
-            "accessToken": "example_access_token"
+    "smartHomeDevices": [
+      {
+        "id": "12345678",
+        "deviceTypeCode": "OVEN",
+        "deviceModelName": "example oven",
+        "friendlyName": "조리실",
+        "deviceTypeName": "오븐",
+        "customData": {
+          "foo": "bar"
         }
+      }
+    ]
+  },
+  "context": {
+    "session": {
+      "id": "example_session_id",
+      "accessToken": "example_access_token"
     }
+  }
 }
 ```
 {% endcode %}
@@ -198,24 +194,24 @@ Sample Response
 {% code %}
 ```json
 {
-    "requestId": "2019071712638a4378649347bdb21643127a0f6d83", <-- request로 받은 값을 그대로 응답
-    "data":[
-        {
-            "resultCode": "OK" <-- 에러일 경우 에러코드 응답
-            "smartHomeDevice": {} <-- request로 받은 값을 그대로 응답
-            "properties": {
-                "temperatureLevel": "120.0", <-- directive 마다 필요한 property 채워서 응답.
-            }
-        }
-    ]
+  "requestId": "2019071712638a4378649347bdb21643127a0f6d83", // request로 받은 값을 그대로 응답
+  "data": [
+    {
+      "resultCode": "OK", // 에러일 경우 에러코드 응답
+      "smartHomeDevice": {}, // request로 받은 값을 그대로 응답
+      "properties": {
+        "temperatureLevel": "120.0" // directive 마다 필요한 property 채워서 응답.
+      }
+    }
+  ]
 }
 ```
 {% endcode %}
 
 SetDeviceTemperature Directive Response parameter details
 
-| parameter name   | description                                                  | type   |
-|:-----------------|:-------------------------------------------------------------|:-------|
+| parameter name   | description                                                      | type   |
+|:-----------------|:-----------------------------------------------------------------|:-------|
 | temperatureLevel | SmartHomeDevice를 설정한 이후의 자체설정온도입니다.<br/>제어를 마친 이후의 온도로 응답해야 합니다. | double |
 
 ## Error & Exception

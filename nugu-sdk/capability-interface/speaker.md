@@ -30,7 +30,7 @@ iOS 는 SpeakerAgent 를 지원하지 않습니다.
 NuguAndroidClient instance 를 통해 SpeakerAgent instance 에 접근할 수 있습니다.
 
 {% code %}
-```text
+```kotlin
 val speakerAgent = nuguAndroidClient.getAgent(DefaultSpeakerAgent.NAMESPACE)
 ```
 {% endcode %}
@@ -40,7 +40,7 @@ NuguAndroidClient 에 볼륨 제어를 위한 기본 Speaker 구현이 포함되
 Speaker 을 직접 구현하려면 NuguAndroidClient 생성시 SpeakerFactory 를 추가합니다.
 
 {% code %}
-```text
+```kotlin
 class MySpeaker: Speaker {
     ...
 }
@@ -70,7 +70,7 @@ NuguAndroidClient.Builder(...)
 [CapabilityFactory::makeCapability](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6) 함수로 [SpeakerAgent](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISpeakerHandler.html) 를 생성하고 [NuguClient](https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html) 에 추가해 주어야합니다.
 
 {% code %}
-```text
+```cpp
 auto speaker_handler(std::shared_ptr<ISpeakerHandler>(
         CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>()));
 
@@ -91,7 +91,7 @@ Play 에서 디바이스의 볼륨을 제어하기 위해서는 디바이스의 
 각 Speaker.Type 의 Speaker 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MySpeaker: Speaker {
     override fun getSpeakerSettings(): Speaker.SpeakerSettings? {
         ...
@@ -105,7 +105,7 @@ class MySpeaker: Speaker {
 [SpeakerType](https://nugu-developers.github.io/nugu-linux/group__SpeakerInterface.html#ga8601f6be80368c9d1a7c7b346c99a698) 의 [SpeakerInfo](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1SpeakerInfo.html) 를 설정합니다.
 
 {% code %}
-```text
+```cpp
 speaker_handler->setSpeakerInfo(speakers)
 ```
 {% endcode %}
@@ -123,7 +123,7 @@ speaker_handler->setSpeakerInfo(speakers)
 Speaker 를 구현합니다.
 
 {% code %}
-```text
+```kotlin
 class MySpeaker: Speaker {
     override fun setVolume(volume: Int, rate: Rate = Rate.FAST): Boolean {
         ...
@@ -143,7 +143,7 @@ class MySpeaker: Speaker {
 [ISpeakerListener](https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1ISpeakerListener.html) 를 추가합니다.
 
 {% code %}
-```text
+```cpp
 class MySpeakerListener : public ISpeakerListener {
 public:
     ...
@@ -168,7 +168,7 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 ## Context
 
 {% code %}
-```text
+```json
 {
   "Speaker": {
     "version": "1.0",
@@ -206,7 +206,7 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 ### SetVolume
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Speaker",
@@ -238,7 +238,7 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 ### SetMute
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Speaker",
@@ -271,7 +271,7 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 ### SetVolumeSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Speaker",
@@ -290,7 +290,7 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 ### SetVolumeFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Speaker",
@@ -309,7 +309,7 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 ### SetMuteSucceeded
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Speaker",
@@ -328,7 +328,7 @@ CapabilityFactory::makeCapability<SpeakerAgent, ISpeakerHandler>(speaker_listene
 ### SetMuteFailed
 
 {% code %}
-```text
+```json
 {
   "header": {
     "namespace": "Speaker",

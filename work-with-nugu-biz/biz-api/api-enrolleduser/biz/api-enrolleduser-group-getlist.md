@@ -36,20 +36,20 @@ depth_order: 4
 {% code %}
 ```json
 {
-    "totalPages": 10,
-    "totalElements": 100,
-    "unmappedUserCount": 3,
-    "groups": [
-        {
-            "id": "XXX",
-            "name": "XXX",
-            "token": "XXX",
-            "alias": "XXX",
-            "playCount": 3,
-            "userCount": 3,
-            "createdDateTime": "2021-0804T16:34:30.388"
-        }
-    ]
+  "totalPages": 10,
+  "totalElements": 100,
+  "unmappedUserCount": 3,
+  "groups": [
+    {
+      "id": "XXX",
+      "name": "XXX",
+      "token": "XXX",
+      "alias": "XXX",
+      "playCount": 3,
+      "userCount": 3,
+      "createdDateTime": "2021-0804T16:34:30.388"
+    }
+  ]
 }
 ```
 {% endcode %}

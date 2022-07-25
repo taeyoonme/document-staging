@@ -23,9 +23,12 @@ Biz 사용자 그룹의 정보를 수정하는 기능입니다.
 {% code %}
 ```json
 {
-    "name": "XXX",
-    "alias": "XXX",
-    "playServiceIds": ["aaa.bbb.ccc", "ddd.eee.fff"]
+  "name": "XXX",
+  "alias": "XXX",
+  "playServiceIds": [
+    "aaa.bbb.ccc",
+    "ddd.eee.fff"
+  ]
 }
 ```
 {% endcode %}
@@ -61,11 +64,14 @@ Biz 사용자 그룹의 정보를 수정하는 기능입니다.
 {% code %}
 ```json
 {
-    "id": "XXX",
-    "name": "XXX",
-    "token": "XXX",
-    "alias": "XXX",
-    "playServiceIds": ["aaa.bbb.ccc", "ddd.eee.fff"]
+  "id": "XXX",
+  "name": "XXX",
+  "token": "XXX",
+  "alias": "XXX",
+  "playServiceIds": [
+    "aaa.bbb.ccc",
+    "ddd.eee.fff"
+  ]
 }
 ```
 {% endcode %}
