@@ -2085,7 +2085,8 @@
   "sentences": [
     "API References",
     "NUGU SDK iOS",
-    "https://nugu-developers.github.io/nugu-android/index.html",
+    "NUGU SDK for Android | nugu-android",
+    "NUGU SDK for Android",
     "NUGU SDK Linux: NUGU SDK Documentation"
   ]
 }
@@ -2716,7 +2717,7 @@
   "hash": "#audioplayertemplate1",
   "sentences": [
     "AudioPlayer.Template1",
-    "{\n    \"metadata\": {    \n        \"template\": {\n            \"type\": \"AudioPlayer.Template1\",\n            \"title\": {\n                \"iconUrl\": \"https://nugu.sk.com/music_icon.png\",\n                \"text\": \"FLO Music\"\n            },\n            \"content\": {\n                \"title\": \"NONO\",\n                \"subtitle1\": \"Loopy\",\n                \"subtitle2\": \"Prod. Code Kunst\",\n                \"imageUrl\": \"https://nugu.sk.com/flo.jpg\",\n                \"durationSec\": \"329\"\n            }\n        }\n    }\n}",
+    "{\n  \"metadata\": {\n    \"template\": {\n      \"type\": \"AudioPlayer.Template1\",\n      \"title\": {\n        \"iconUrl\": \"https://nugu.sk.com/music_icon.png\",\n        \"text\": \"FLO Music\"\n      },\n      \"content\": {\n        \"title\": \"NONO\",\n        \"subtitle1\": \"Loopy\",\n        \"subtitle2\": \"Prod. Code Kunst\",\n        \"imageUrl\": \"https://nugu.sk.com/flo.jpg\",\n        \"durationSec\": \"329\"\n      }\n    }\n  }\n}",
     "type | string | Y | AudioPlayer template type1) AudioPlayer.Template12) AudioPlayer.Template2",
     "title.iconUrl | string | N | icon image url",
     "title.text | string | Y | title text",
@@ -2769,7 +2770,7 @@
     "버튼 클릭 관련 Event",
     "AudioPlayer를 위한 Template은 오디오 재생을 제어하는 버튼이 있으며, 이 버튼에 의해 총 다섯 개의 이벤트가 발생할 수 있습니다. AudioPlayer/Display Interface를 함께 사용하기 위해서는, 총 5개의 Event를 처리하는 5개의 Action을 반드시 정의해야 합니다.",
     "5개의 Event가 Trigger인 5개의 Custom Action을 만들어야 합니다.",
-    "{\n    \"type\": \"AudioPlayer.NextCommandIssued\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n}",
+    "{\n  \"type\": \"AudioPlayer.NextCommandIssued\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n}",
     "NextCommandIssued | next 버튼을 눌렀을 때 발생하는 이벤트 | NextCommandIssued 이벤트가 trigger인 Action을 정의해야 합니다.",
     "PreviousCommandIssued | previous 버튼을 눌렸을 때 발생하는 이벤트 | PreviousCommandIssued 이벤트가 trigger인 Action을 정의해야 합니다.",
     "PlayCommandIssued | play 버튼을 눌렀을 때 발생하는 이벤트 | PlayCommandIssued 이벤트가 trigger인 Root Action 하위에 2개의 Branch Action을 만들어, AudioPlayer_playerActivity가 PAUSED인 Branch와 STOPPED/FINISHED 인 경우를 구분해주어야 합니다.",
@@ -2899,7 +2900,7 @@
   "hash": "#play-directive",
   "sentences": [
     "Play Directive",
-    "{\n    \"type\": \"AudioPlayer.Play\",\n    \"audioItem\": {        \n        \"stream\": {\n            \"url\": \"{{STRING}}\",\n            \"offsetInMilliseconds\": {{LONG}},\n            \"progressReport\": {\n                \"progressReportDelayInMilliseconds\": {{LONG}},\n                \"progressReportIntervalInMilliseconds\": {{LONG}}\n            },\n            \"token\": \"{{STRING}}\",\n            \"expectedPreviousToken\": \"{{STRING}}\"\n        },\n        \"metadata\": { } # reserved\n    }\n}",
+    "{\n  \"type\": \"AudioPlayer.Play\",\n  \"audioItem\": {\n    \"stream\": {\n      \"url\": \"{{STRING}}\",\n      \"offsetInMilliseconds\": {{LONG}},\n      \"progressReport\": {\n        \"progressReportDelayInMilliseconds\": {{LONG}},\n        \"progressReportIntervalInMilliseconds\": {{LONG}}\n      },\n      \"token\": \"{{STRING}}\",\n      \"expectedPreviousToken\": \"{{STRING}}\"\n    },\n    \"metadata\": {}\n    // reserved\n  }\n}",
     "url | string | Y | 오디오 콘텐츠의 URL을 입력합니다.",
     "offsetInMilliseconds | long | Y | 재생을 어느 offset(위치)에서 시작할지 설정합니다.값이 ‘0’이면 처음부터 재생합니다.",
     "progressReportDelayInMilliseconds | long | N | 재생을 시작해서 지정된 시간 뒤에 한 번 progressReportDelayElapsed 이벤트가 발생합니다.(offsetInMilliseconds 값과는 상관없이 콘텐츠 시작 시간을 기준으로 한 절대값을 의미합니다.)",
@@ -2917,7 +2918,7 @@
   "sentences": [
     "Stop Directive",
     "오디오 재생을 멈춥니다.",
-    "{\n    \"type\": \"AudioPlayer.Stop\"\n}"
+    "{\n  \"type\": \"AudioPlayer.Stop\"\n}"
   ]
 },
     {
@@ -2927,7 +2928,7 @@
   "sentences": [
     "Pause Directive",
     "재생 중인 오디오를 일시 정지합니다.",
-    "{\n    \"type\": \"AudioPlayer.Pause\"\n}"
+    "{\n  \"type\": \"AudioPlayer.Pause\"\n}"
   ]
 },
     {
@@ -2945,7 +2946,7 @@
   "sentences": [
     "PlaybackStarted",
     "스트리밍 URL별로 재생이 시작될 때마다 발생합니다.",
-    "{\n    \"type\": \"AudioPlayer.PlaybackStarted\",\n    \"requestId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n}",
+    "{\n  \"type\": \"AudioPlayer.PlaybackStarted\",\n  \"requestId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n}",
     "token | string | Y | 현재 재생 중인 stream의 token입니다.",
     "offsetInMilliseconds | long | Y | PlaybackStarted를 보낼 때 현재 재생 중인 stream의 offset 값입니다."
   ]
@@ -2957,7 +2958,7 @@
   "sentences": [
     "PlaybackFinished",
     "특정 스트리밍 URL을 끝까지 재생하여 종료되는 경우 발생합니다.",
-    "{\n    \"type\": \"AudioPlayer.PlaybackFinished\",\n    \"requestId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n}",
+    "{\n  \"type\": \"AudioPlayer.PlaybackFinished\",\n  \"requestId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n}",
     "Play가 PlaybackFinished 이벤트를 수신하는 경우에는 다음과 같이 처리할 수 있습니다.",
     "Play List를 재생 중이고 다음 곡이 있는 경우 Play Directive를 전송",
     "한 곡만 재생하는 중이거나, Play List의 마지막 곡을 재생 중이면서 전체 반복을 다시 하지 않는 경우 Stop Directive를 전송",
@@ -2973,7 +2974,7 @@
     "다음의 경우에 PlaybackStopped 이벤트가 발생합니다.",
     "Stop Directive를 수신하는 경우",
     "재생 중에 Play Directive를 수신하여 기존에 재생 중인 곡을 Stop하는 경우 (이후 Play에 전달된 다음 곡을 재생)",
-    "{\n    \"type\": \"AudioPlayer.PlaybackStopped\",\n    \"requestId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n}"
+    "{\n  \"type\": \"AudioPlayer.PlaybackStopped\",\n  \"requestId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n}"
   ]
 },
     {
@@ -2983,7 +2984,7 @@
   "sentences": [
     "PlaybackFailed",
     "오디오 재생 중 오류가 발생하면 해당 오류를 표시합니다.",
-    "{\n    \"type\": \"AudioPlayer.PlaybackStarted\",\n    \"requestId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n    \"error\": {\n        \"type\": \"{{STRING}}\",\n        \"message\": \"{{STRING}}\"\n    },\n    \"currentPlaybackState\": {\n        \"token\": \"{{STRING}}\",\n        \"offsetInMilliseconds\": {{LONG}},\n        \"playerActivity\": \"{{STRING}}\"\n    }\n}",
+    "{\n  \"type\": \"AudioPlayer.PlaybackStarted\",\n  \"requestId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n  \"error\": {\n    \"type\": \"{{STRING}}\",\n    \"message\": \"{{STRING}}\"\n  },\n  \"currentPlaybackState\": {\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}},\n    \"playerActivity\": \"{{STRING}}\"\n  }\n}",
     "token | string | Y | 재생에 실패한 stream의 token입니다.",
     "offsetInMilliseconds | long | Y | PlaybackFailed를 보낼 때 현재 재생 중인 stream의 offset 값입니다.",
     "error.type | string | Y | 에러 유형을 표시합니다.MEDIA_ERROR_UNKNOWN: 알 수 없는 오류MEDIA_ERROR_INVALID_REQUEST: 서버가 잘못된 요청으로 인식MEDIA_ERROR_SERVICE_UNAVAILABLE: 서비스에 연결할 수 없음MEDIA_ERROR_INTERNAL_SERVER_ERROR: 서버가 요청을 수락했으나 처리할 수 없음MEDIA_ERROR_INTERNAL_DEVICE_ERROR: 디바이스 내부 오류",
@@ -3000,7 +3001,7 @@
   "sentences": [
     "ProgressReportDelayElapsed",
     "Play Directive에서 progressReportDelayInMilliseconds를 보내고, 설정된 시간 위치(offset)에서 재생될 때 Event가 발생합니다. 재생을 시작한 후 특정 위치까지 재생했을 때 과금이나 인증 등의 추가 작업이 필요한 경우에 사용합니다.",
-    "{\n    \"type\": \"AudioPlayer.ProgressReportDelayElapsed\",\n    \"requestId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n}"
+    "{\n  \"type\": \"AudioPlayer.ProgressReportDelayElapsed\",\n  \"requestId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n}"
   ]
 },
     {
@@ -3010,7 +3011,7 @@
   "sentences": [
     "ProgressReportIntervalElapsed",
     "Play 디렉티브에서 progressReportIntervalInMilliseconds를 보냈을 때 설정된 시간 간격마다 Event가 발생합니다. 재생을 시작한 후 특정 위치까지 재생했을 때 과금이나 인증 등의 추가 작업이 필요한 경우에 사용합니다.",
-    "{\n    \"type\": \"AudioPlayer.ProgressReportIntervalElapsed\",\n    \"requestId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n}"
+    "{\n  \"type\": \"AudioPlayer.ProgressReportIntervalElapsed\",\n  \"requestId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n}"
   ]
 },
     {
@@ -3020,7 +3021,7 @@
   "sentences": [
     "PlaybackPaused",
     "재생 중인 오디오를 일시 정지할 때 사용합니다.",
-    "{\n    \"type\": \"AudioPlayer.PlaybackPaused\",\n    \"requestId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n}"
+    "{\n  \"type\": \"AudioPlayer.PlaybackPaused\",\n  \"requestId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n}"
   ]
 },
     {
@@ -3030,7 +3031,7 @@
   "sentences": [
     "PlaybackResumed",
     "일시 정지 중인 오디오를 다시 재생 시작할 때 사용합니다.",
-    "{\n    \"type\": \"AudioPlayer.PlaybackResumed\",\n    \"requestId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"offsetInMilliseconds\": {{LONG}}\n}"
+    "{\n  \"type\": \"AudioPlayer.PlaybackResumed\",\n  \"requestId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"offsetInMilliseconds\": {{LONG}}\n}"
   ]
 }
   ]
@@ -3981,7 +3982,7 @@
   "sentences": [
     "Request sample",
     "POST /action_name HTTP/1.1\nAccept: application/json, */*\nContent-Length: 400\nContent-Type: application/json\nHost: builder.open.co.kr\nAuthorization: token TOKEN_STRING",
-    "{\n    \"version\": \"2.0\",\n    \"action\": {\n        \"actionName\": \"{{string}}\",\n        \"parameters\": {\n            KEY: {\n                \"type\": \"{{string}}\",\n                \"value\": VALUE\n            }\n        }\n    },\n    \"event\": {\n        \"type\": \"{{string}}\"\n    },  \n    \"context\": {\n        \"session\": {\n            \"accessToken\": \"{{string}}\"\n        },\n        \"device\": {\n            \"type\": \"{{string}}\",\n            \"state\": {\n                KEY: VALUE\n            }\n        },\n        \"supportedInterfaces\": {\n            \"AudioPlayer\": {\n                \"playerActivity\": \"PLAYING\",\n                \"token\": \"string value\",\n                \"offsetInMilliseconds\": 100000\n            }  \n        },\n        \"privatePlay\" : { } # reserved\n    }\n}"
+    "{\n  \"version\": \"2.0\",\n  \"action\": {\n    \"actionName\": \"{{string}}\",\n    \"parameters\": {\n      KEY: {\n        \"type\": \"{{string}}\",\n        \"value\": VALUE\n      }\n    }\n  },\n  \"event\": {\n    \"type\": \"{{string}}\"\n  },\n  \"context\": {\n    \"session\": {\n      \"accessToken\": \"{{string}}\"\n    },\n    \"device\": {\n      \"type\": \"{{string}}\",\n      \"state\": {\n        KEY: VALUE\n      }\n    },\n    \"supportedInterfaces\": {\n      \"AudioPlayer\": {\n        \"playerActivity\": \"PLAYING\",\n        \"token\": \"string value\",\n        \"offsetInMilliseconds\": 100000\n      }\n    },\n    \"privatePlay\": {} // reserved\n  }\n}"
   ]
 },
     {
@@ -4053,7 +4054,7 @@
   "hash": "#response-sample",
   "sentences": [
     "Response Sample",
-    "{\n  \"version\": \"2.0\",\n  \"resultCode\": \"OK\",\n  \"output\": {\n    \"datetime\": \"오늘\",\n    KEY1: VALUE1,\n    KEY2: VALUE2,\n    ...\n  },\n  \"directives\": [\n    {\n      \"type\": \"AudioPlayer.Play\",\n      \"audioItem\": {     \n          \"stream\": {\n            \"url\": \"{{STRING}}\",\n            \"offsetInMilliseconds\": {{LONG}},\n            \"progressReport\": {\n              \"progressReportDelayInMilliseconds\": {{LONG}},\n              \"progressReportIntervalInMilliseconds\": {{LONG}}\n            },\n            \"token\": \"{{STRING}}\",\n            \"expectedPreviousToken\": \"{{STRING}}\"\n          },\n          \"metadata\": { } # reserved\n      }\n    }\n  ]\n}"
+    "{\n  \"version\": \"2.0\",\n  \"resultCode\": \"OK\",\n  \"output\": {\n    \"datetime\": \"오늘\",\n    KEY1: VALUE1,\n    KEY2: VALUE2,\n    ...\n  },\n  \"directives\": [\n    {\n      \"type\": \"AudioPlayer.Play\",\n      \"audioItem\": {     \n          \"stream\": {\n            \"url\": \"{{STRING}}\",\n            \"offsetInMilliseconds\": {{LONG}},\n            \"progressReport\": {\n              \"progressReportDelayInMilliseconds\": {{LONG}},\n              \"progressReportIntervalInMilliseconds\": {{LONG}}\n            },\n            \"token\": \"{{STRING}}\",\n            \"expectedPreviousToken\": \"{{STRING}}\"\n          },\n          \"metadata\": { } // reserved\n      }\n    }\n  ]\n}"
   ]
 },
     {
@@ -7976,7 +7977,7 @@
   "sentences": [
     "Context",
     "화면이 나타나는 동안 해당 화면의 token 값을 전달됩니다. Event가 발생하는 경우는 template display되는 상황이기 때문에 context는 함께 전달됩니다.",
-    "{\n    \"Display\": {\n        \"version\": \"1.0\",\n        \"playServiceId\": \"{{STRING}}\",\n        \"token\": \"{{STRING}}\"\n    }\n}",
+    "{\n  \"Display\": {\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\"\n  }\n}",
     "version | string | Y | 인터페이스 버전",
     "playServiceId | string | N | template을 전송한 Play의 play service id",
     "token | string | N | 클릭하는 template을 식별하기 위한 unique identifier"
@@ -8010,7 +8011,7 @@
   "sentences": [
     "TitleObject",
     "화면 상단의 타이틀 영역에 들어갈 요소입니다. NU300 화면 상단 왼쪽의 홈 버튼은 기본으로 제공되는 버튼으로 TitleObject와는 무관합니다.",
-    "{\n    \"logo\": ImageObject,\n    \"text\": TextObject,\n    \"subtext\": TextObject,\n    \"subicon\": ImageObject,\n    \"button\": TextObject\n}",
+    "{\n  \"logo\": ImageObject,\n  \"text\": TextObject,\n  \"subtext\": TextObject,\n  \"subicon\": ImageObject,\n  \"button\": TextObject\n}",
     "logo | ImageObject | Y | 투명 배경의 이미지로 제공해야 함(PNG) | 50x50 가로 Size Flexible | STB2부터 적용 예정 사이즈 미정",
     "text | TextObject | Y | 제목 | 42sp, #FFFFFF | 36sp, #1A1A1A",
     "subtext | TextObject | N | 부제목 | 공백 포함 20자 | -",
@@ -8024,7 +8025,7 @@
   "hash": "#imageobject",
   "sentences": [
     "ImageObject",
-    "{\n    \"contentDescription\": \"{{STRING}}\",\n    \"sources\": [\n        {\n            \"url\": \"{{STRING}}\",\n            \"size\": \"{{STRING}}\",\n            \"widthPixels\": 1920,\n            \"heightPixels\": 1080\n        },\n        {\n            \"url\": \"{{STRING}}\",\n            \"size\": \"{{STRING}}\",\n            \"widthPixels\": 480,\n            \"heightPixels\": 320\n        },\n        {...}\n    ]\n}",
+    "{\n  \"contentDescription\": \"{{STRING}}\",\n  \"sources\": [\n    {\n      \"url\": \"{{STRING}}\",\n      \"size\": \"{{STRING}}\",\n      \"widthPixels\": 1920,\n      \"heightPixels\": 1080\n    },\n    {\n      \"url\": \"{{STRING}}\",\n      \"size\": \"{{STRING}}\",\n      \"widthPixels\": 480,\n      \"heightPixels\": 320\n    },\n    {...}\n  ]\n}",
     "contentDescription | string | N | -",
     "heightPixels | long | N | -",
     "size | string | N | X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE화면 크기별 최적화를 위해 size 정보를 넣는 것을 권장합니다.",
@@ -8046,7 +8047,7 @@
   "hash": "#backgroundobject",
   "sentences": [
     "BackgroundObject",
-    "{\n    \"image\": ImageObject,\n    \"color\": \"{{STRING}}\"\n}",
+    "{\n  \"image\": ImageObject,\n  \"color\": \"{{STRING}}\"\n}",
     "image와 color가 동시에 존재하면 image의 우선순위가 높습니다.",
     "image | ImageObject | N | -",
     "color | string | N | hex color codedefault : #000000",
@@ -8059,7 +8060,7 @@
   "hash": "#textobject",
   "sentences": [
     "TextObject",
-    "{\n    \"text\": \"{{STRING}}\",\n    \"color\": \"{{STRING}}\"\n}",
+    "{\n  \"text\": \"{{STRING}}\",\n  \"color\": \"{{STRING}}\"\n}",
     "color | string | N | hex color code",
     "style | json | N | 기본적으로는 상위 스타일(directive 등)을 따르며, FullText1, 2의 body text에만 적용 가능.CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.text-align : left, center, rightopacity : 0 ~ 1display : block, inline, nonemargin : 10px예) { \"text-align\":\"center\", \"display\": \"block\"}",
     "text | string | Y | -",
@@ -8072,7 +8073,7 @@
   "hash": "#buttonobject",
   "sentences": [
     "ButtonObject",
-    "{\n    \"text\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\"\n}",
+    "{\n  \"text\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\"\n}",
     "text | string | Y | 버튼 텍스트",
     "token | string | Y | 클릭 시 전달될 토큰 값"
   ]
@@ -8104,7 +8105,7 @@
   "hash": "#형식",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.FullText1\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"content\": {\n        \"header\": TextObject, \n        \"body\": TextObject,     \n        \"footer\": TextObject\n    }\n}",
+    "{\n  \"type\": \"Display.FullText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"header\": TextObject,\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.FullText1",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8123,7 +8124,7 @@
   "hash": "#sample-code",
   "sentences": [
     "Sample Code",
-    "{\n  \"type\": \"Display.FullText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\" : {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n          {\n              \"url\": \"http://someurl.com/name.png\"\n          }\n      ]\n    },\n    \"text\": {\n        \"text\": \"NUGU 백과\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n          {\n              \"url\": \"http://someurl.com/name.png\",\n              \"size\": \"LARGE\"\n          }\n        ]\n      },\n    \"color\": \"\"\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"독도\"\n    },\n    \"body\": {\n      \"text\": \"‘독도’는 동해의 남서부인 울릉도와 오키 제도 사이에 있는 섬으로, 동도와 서도를 포함하고 총 91개의 섬들로 이루어져 있습니다.\"\n    },    \n    \"footer\": {\n        \"text\": \"출처 : 위키피디아\"\n    }\n  }\n}"
+    "{\n  \"type\": \"Display.FullText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"NUGU 백과\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    },\n    \"color\": \"\"\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"독도\"\n    },\n    \"body\": {\n      \"text\": \"‘독도’는 동해의 남서부인 울릉도와 오키 제도 사이에 있는 섬으로, 동도와 서도를 포함하고 총 91개의 섬들로 이루어져 있습니다.\"\n    },\n    \"footer\": {\n      \"text\": \"출처 : 위키피디아\"\n    }\n  }\n}"
   ]
 },
     {
@@ -8148,7 +8149,7 @@
   "hash": "#형식-1",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.FullText2\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\": TitleObject,\n    \"background\": BackgroundObject,\n    \"content\": {\n        \"body\": TextObject,     \n        \"footer\": TextObject\n    }\n}",
+    "{\n  \"type\": \"Display.FullText2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.FullText2",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8166,7 +8167,7 @@
   "hash": "#sample-code-1",
   "sentences": [
     "Sample Code",
-    "{\n    \"type\": \"Display.FullText2\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{playServiceId}}\",\n    \"token\": \"{{token}}\",\n    \"title\": {\n      \"logo\": {\n        \"contentDescription\": \"{{contentDescription}}\",\n        \"sources\": [\n          {\n              \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"text\": {\"text\": \"날짜/시간\"}\n    },\n    \"background\": {\"color\": \"#465865\"},\n    \"content\": {\n      \"body\": {\n        \"text\": \"오늘은 12월 24일 수요일입니다.\\n오늘 미세먼지는 매우나쁨이네요.\\n그냥 집에만 있어야겠어요.\"\n      },\n      \"footer\": {\"text\": \"오후 6:03\"}\n    }\n}"
+    "{\n  \"type\": \"Display.FullText2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"날짜/시간\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#465865\"\n  },\n  \"content\": {\n    \"body\": {\n      \"text\": \"오늘은 12월 24일 수요일입니다.\\n오늘 미세먼지는 매우나쁨이네요.\\n그냥 집에만 있어야겠어요.\"\n    },\n    \"footer\": {\n      \"text\": \"오후 6:03\"\n    }\n  }\n}"
   ]
 },
     {
@@ -8183,7 +8184,7 @@
   "hash": "#형식-2",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.ImageText1\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"content\": {\n        \"image\": ImageObject,\n        \"imageAlign\": \"{{STRING}}\",\n        \"header\": TextObject,\n        \"body\": TextObject,    \n        \"footer\": TextObject\n    }\n}",
+    "{\n  \"type\": \"Display.ImageText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"image\": ImageObject,\n    \"imageAlign\": \"{{STRING}}\",\n    \"header\": TextObject,\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.ImageText1",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8204,7 +8205,7 @@
   "hash": "#sample-code-2",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.ImageText1\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"추천 영화\"\n        }\n      },\n      \"background\": {\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\",\n                  \"size\": \"LARGE\"\n              }\n            ]\n          }\n      },\n      \"content\":{\n        \"header\": {\n          \"text\": \"알라딘\"\n        },\n        \"body\":{\n          \"text\": \"모험, 가족, 판타지\"\n        },\n        \"footer\": {\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법...\"\n        },\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        }\n    }\n}"
+    "{\n  \"type\": \"Display.ImageText1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"알라딘\"\n    },\n    \"body\": {\n      \"text\": \"모험, 가족, 판타지\"\n    },\n    \"footer\": {\n      \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법...\"\n    },\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    }\n  }\n}"
   ]
 },
     {
@@ -8221,7 +8222,7 @@
   "hash": "#형식-3",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.ImageText2\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"content\": {\n        \"image\": ImageObject,\n        \"imageAlign\": \"{{STRING}}\",\n        \"header\": TextObject,     \n        \"body\": TextObject\n    }\n}",
+    "{\n  \"type\": \"Display.ImageText2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"image\": ImageObject,\n    \"imageAlign\": \"{{STRING}}\",\n    \"header\": TextObject,\n    \"body\": TextObject\n  }\n}",
     "type | string | Y | Display.ImageText2",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8242,7 +8243,7 @@
   "hash": "#sample-code-3",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.ImageText2\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"추천 영화\"\n        }\n      },\n      \"background\": {\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\",\n                  \"size\": \"LARGE\"\n              }\n            ]\n          }\n      },\n      \"content\":{\n        \"header\": {\n          \"text\": \"알라딘\"\n        },\n        \"body\":{\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고...\"\n        },\n        \"footer\": {\n          \"text\": \"모험, 가족, 판타지\"\n        },\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        }\n    }\n}"
+    "{\n  \"type\": \"Display.ImageText2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"알라딘\"\n    },\n    \"body\": {\n      \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고...\"\n    },\n    \"footer\": {\n      \"text\": \"모험, 가족, 판타지\"\n    },\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    }\n  }\n}"
   ]
 },
     {
@@ -8259,7 +8260,7 @@
   "hash": "#형식-4",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.ImageText3\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"content\": {\n        \"image\": ImageObject,\n        \"header\": TextObject,     \n        \"body\": TextObject,\n        \"footer\": TextObject\n    }\n}",
+    "{\n  \"type\": \"Display.ImageText3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"image\": ImageObject,\n    \"header\": TextObject,\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.ImageText3",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8279,7 +8280,7 @@
   "hash": "#sample-code-4",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.ImageText3\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"추천 영화\"\n        }\n      },\n      \"background\": {\n        \"color\": \"#0F336C\"\n      },\n      \"content\":{\n        \"header\": {\n          \"text\": \"알라딘\"\n        },\n        \"body\":{\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고...\"\n        },\n        \"footer\": {\n          \"text\": \"모험, 가족, 판타지\"\n        },\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        }\n    }\n}"
+    "{\n  \"type\": \"Display.ImageText3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#0F336C\"\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"알라딘\"\n    },\n    \"body\": {\n      \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대. 좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 주인에게 세 가지 소원을 들어주는 지니를 만나게 되고...\"\n    },\n    \"footer\": {\n      \"text\": \"모험, 가족, 판타지\"\n    },\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    }\n  }\n}"
   ]
 },
     {
@@ -8296,7 +8297,7 @@
   "hash": "#형식-5",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.ImageText4\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"content\": {\n        \"image\": ImageObject,\n        \"header\": TextObject,     \n        \"body\": TextObject,\n        \"footer\": TextObject\n    }\n}",
+    "{\n  \"type\": \"Display.ImageText4\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"content\": {\n    \"image\": ImageObject,\n    \"header\": TextObject,\n    \"body\": TextObject,\n    \"footer\": TextObject\n  }\n}",
     "type | string | Y | Display.ImageText4",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8316,7 +8317,7 @@
   "hash": "#sample-code-5",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.ImageText4\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"추천 영화\"\n        }\n      },\n      \"background\": {\n        \"color\": \"#0F336C\"\n      },\n      \"content\":{\n        \"header\": {\n          \"text\": \"알라딘\"\n        },\n        \"body\":{\n          \"text\": \"2019.12.24 개봉\"\n        },\n        \"footer\": {\n          \"text\": \"모험, 가족, 판타지\"\n        },\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        }\n    }\n}"
+    "{\n  \"type\": \"Display.ImageText4\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#0F336C\"\n  },\n  \"content\": {\n    \"header\": {\n      \"text\": \"알라딘\"\n    },\n    \"body\": {\n      \"text\": \"2019.12.24 개봉\"\n    },\n    \"footer\": {\n      \"text\": \"모험, 가족, 판타지\"\n    },\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    }\n  }\n}"
   ]
 },
     {
@@ -8333,7 +8334,7 @@
   "hash": "#형식-6",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.TextList1\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"badgeNumber\": true,\n    \"listItems\": [\n        {\n            \"token\": \"{{STRING}}\",\n            \"header\": TextObject,\n            \"body\": TextObject,\n            \"footer\": TextObject\n        },\n        {\n            \"token\": \"{{STRING}}\",\n            \"header\": TextObject,\n            \"body\": TextObject,\n            \"footer\": TextObject\n        }\n    ]\n}",
+    "{\n  \"type\": \"Display.TextList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"header\": TextObject,\n      \"body\": TextObject,\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"header\": TextObject,\n      \"body\": TextObject,\n      \"footer\": TextObject\n    }\n  ]\n}",
     "type | string | Y | Display.TextList1",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8355,7 +8356,7 @@
   "hash": "#sample-code-6",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.TextList1\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"발라드 차트\"\n        }\n      },\n      \"background\": {\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\",\n                  \"size\": \"LARGE\"\n              }\n            ]\n          }\n      },\n      \"listItems\": [\n        {\n          \"token\": \"{{111}}\",\n          \"header\": {\n            \"text\": \"1위\"\n          },\n          \"body\": {\n            \"text\": \"오늘도 빛나는 너에게\"\n          },\n          \"footer\": {\n            \"text\": \"마크툽(Maktub)\"\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"header\": {\n            \"text\": \"2위\"\n          },\n          \"body\": {\n            \"text\": \"2002\"\n          },\n          \"footer\": {\n            \"text\": \"Anne-Marie\"\n          }\n        },\n        {\n          \"token\": \"{{333}}\",\n          \"header\": {\n            \"text\": \"3위\"\n          },\n          \"body\": {\n            \"text\": \"사계 (Four Seasons)\"\n          },\n          \"footer\": {\n            \"text\": \"태연(TAEYEON)\"\n          }\n        },\n        {\n          \"token\": \"{{444}}\",\n          \"header\": {\n            \"text\": \"4위\"\n          },\n          \"body\": {\n            \"text\": \"워커홀릭\"\n          },\n          \"footer\": {\n            \"text\": \"볼빨간 사춘기\"\n          }\n        }\n    ]\n}"
+    "{\n  \"type\": \"Display.TextList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"발라드 차트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"header\": {\n        \"text\": \"1위\"\n      },\n      \"body\": {\n        \"text\": \"오늘도 빛나는 너에게\"\n      },\n      \"footer\": {\n        \"text\": \"마크툽(Maktub)\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"header\": {\n        \"text\": \"2위\"\n      },\n      \"body\": {\n        \"text\": \"2002\"\n      },\n      \"footer\": {\n        \"text\": \"Anne-Marie\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"header\": {\n        \"text\": \"3위\"\n      },\n      \"body\": {\n        \"text\": \"사계 (Four Seasons)\"\n      },\n      \"footer\": {\n        \"text\": \"태연(TAEYEON)\"\n      }\n    },\n    {\n      \"token\": \"{{444}}\",\n      \"header\": {\n        \"text\": \"4위\"\n      },\n      \"body\": {\n        \"text\": \"워커홀릭\"\n      },\n      \"footer\": {\n        \"text\": \"볼빨간 사춘기\"\n      }\n    }\n  ]\n}"
   ]
 },
     {
@@ -8372,7 +8373,7 @@
   "hash": "#형식-7",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.TextList2\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"badgeNumber\": true,\n    \"listItems\": [\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"header\": TextObject,\n            \"body\": TextObject,\n            \"footer\": TextObject\n        },\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"header\": TextObject,\n            \"body\": TextObject,\n            \"footer\": TextObject\n        }\n    ]\n}",
+    "{\n  \"type\": \"Display.TextList2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"body\": TextObject,\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"body\": TextObject,\n      \"footer\": TextObject\n    }\n  ]\n}",
     "type | string | Y | Display.TextList2",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8395,7 +8396,7 @@
   "hash": "#sample-code-7",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.TextList2\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"발라드 차트\"\n        }\n      },\n      \"background\": {\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\",\n                  \"size\": \"LARGE\"\n              }\n            ]\n        }\n      },\n      \"listItems\": [\n        {\n          \"token\": \"{{111}}\",\n          \"header\": {\n            \"text\": \"1\"\n          },\n          \"body\": {\n            \"text\": \"오늘도 빛나는 너에게\"\n          },\n          \"footer\": {\n            \"text\": \"마크툽(Maktub)\"\n          },\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n              ]\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"header\": {\n            \"text\": \"2\"\n          },\n          \"body\": {\n            \"text\": \"2002\"\n          },\n          \"footer\": {\n            \"text\": \"Anne-Marie\"\n          },\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n              ]\n          }\n        },\n        {\n          \"token\": \"{{333}}\",\n          \"header\": {\n            \"text\": \"3\"\n          },\n          \"body\": {\n            \"text\": \"사계 (Four Seasons)\"\n          },\n          \"footer\": {\n            \"text\": \"태연(TAEYEON)\"\n          },\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n              ]\n          }\n        },\n        {\n          \"token\": \"{{444}}\",\n          \"header\": {\n            \"text\": \"4\"\n          },\n          \"body\": {\n            \"text\": \"워커홀릭\"\n          },\n          \"footer\": {\n            \"text\": \"볼빨간 사춘기\"\n          }\n        }\n    ]\n}"
+    "{\n  \"type\": \"Display.TextList2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"발라드 차트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"header\": {\n        \"text\": \"1\"\n      },\n      \"body\": {\n        \"text\": \"오늘도 빛나는 너에게\"\n      },\n      \"footer\": {\n        \"text\": \"마크툽(Maktub)\"\n      },\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"header\": {\n        \"text\": \"2\"\n      },\n      \"body\": {\n        \"text\": \"2002\"\n      },\n      \"footer\": {\n        \"text\": \"Anne-Marie\"\n      },\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"header\": {\n        \"text\": \"3\"\n      },\n      \"body\": {\n        \"text\": \"사계 (Four Seasons)\"\n      },\n      \"footer\": {\n        \"text\": \"태연(TAEYEON)\"\n      },\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{444}}\",\n      \"header\": {\n        \"text\": \"4\"\n      },\n      \"body\": {\n        \"text\": \"워커홀릭\"\n      },\n      \"footer\": {\n        \"text\": \"볼빨간 사춘기\"\n      }\n    }\n  ]\n}"
   ]
 },
     {
@@ -8412,7 +8413,7 @@
   "hash": "#형식-8",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.TextList3\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"badgeNumber\": true,\n    \"listItems\": [\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"header\": TextObject,\n            \"body\": [ TextObjects ] ,\n            \"footer\": TextObject\n        },\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"header\": TextObject,\n            \"body\": [ TextObjects ],\n            \"footer\": TextObject\n        }\n    ],\n    \"caption\": TextObject\n}",
+    "{\n  \"type\": \"Display.TextList3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"body\": [\n        TextObjects\n      ],\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"body\": [\n        TextObjects\n      ],\n      \"footer\": TextObject\n    }\n  ],\n  \"caption\": TextObject\n}",
     "type | string | Y | Display.TextList3",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8436,7 +8437,7 @@
   "hash": "#sample-code-8",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.TextList3\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"추천 영화\"\n        }\n      },\n      \"background\": {\n        \"color\": \"#0F336C\"\n      },\n      \"badgeNumber\": true,\n      \"listItems\": [\n        {\n          \"token\": \"{{111}}\",\n          \"header\": {\n            \"text\": \"알라딘\"\n          },\n          \"body\": [\n            {\"text\": \"감독 : 가이 리치\"},\n            {\"text\": \"출연 : 윌 스미스, 메나 마수드, 나오미 누구지?\"},\n            {\"text\": \"개봉일자 : 2019.5.23\"},\n            {\"text\": \"전체 관람가\"}\n          ],\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n              ]\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"header\": {\n            \"text\": \"어벤저스 엔드게임\"\n          },\n          \"body\": [{\n            \"text\": \"감독: 안소니 루소, 조 루소\"\n          }],\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n              ]\n          }\n        }\n    ]\n}"
+    "{\n  \"type\": \"Display.TextList3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#0F336C\"\n  },\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"header\": {\n        \"text\": \"알라딘\"\n      },\n      \"body\": [\n        {\n          \"text\": \"감독 : 가이 리치\"\n        },\n        {\n          \"text\": \"출연 : 윌 스미스, 메나 마수드, 나오미 누구지?\"\n        },\n        {\n          \"text\": \"개봉일자 : 2019.5.23\"\n        },\n        {\n          \"text\": \"전체 관람가\"\n        }\n      ],\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"header\": {\n        \"text\": \"어벤저스 엔드게임\"\n      },\n      \"body\": [\n        {\n          \"text\": \"감독: 안소니 루소, 조 루소\"\n        }\n      ],\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      }\n    }\n  ]\n}"
   ]
 },
     {
@@ -8453,7 +8454,7 @@
   "hash": "#형식-9",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.TextList4\",\n    \"version\": \"1.0\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"listItems\": [\n        {\n            \"header\": TextObject,\n            \"body\": [ TextObjects ],\n            \"button\": ButtonObject\n        }\n    ]\n}",
+    "{\n  \"type\": \"Display.TextList4\",\n  \"version\": \"1.0\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"listItems\": [\n    {\n      \"header\": TextObject,\n      \"body\": [\n        TextObjects\n      ],\n      \"button\": ButtonObject\n    }\n  ]\n}",
     "type | string | Y | Display.TextList4",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8473,7 +8474,7 @@
   "hash": "#sample-code-9",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.TextList4\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"추천 영화\"\n        }\n      },\n      \"background\": {\n        \"color\": \"#0F336C\"\n      },\n      \"listItems\": [\n        {\n          \"token\": \"{{111}}\",\n          \"header\": {\n            \"text\": \"알라딘\"\n          },\n          \"body\": [\n            {\"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"},\n            {\"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"}\n          ],\n          \"button\": {\n            \"text\": \"상세보기\",\n            \"token\": \"{{button1}}\"\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"header\": {\n            \"text\": \"알라딘\"\n          },\n          \"body\": [\n            {\"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"},\n            {\"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"}\n          ],\n          \"button\": {\n            \"text\": \"상세보기\",\n            \"token\": \"{{button1}}\"\n          }\n        },\n        {\n          \"token\": \"{{333}}\",\n          \"header\": {\n            \"text\": \"알라딘\"\n          },\n          \"body\": [\n            {\"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"},\n            {\"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"}\n          ],\n          \"button\": {\n            \"text\": \"상세보기\",\n            \"token\": \"{{button1}}\"\n          }\n        }\n    ]\n}"
+    "{\n  \"type\": \"Display.TextList4\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"추천 영화\"\n    }\n  },\n  \"background\": {\n    \"color\": \"#0F336C\"\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"header\": {\n        \"text\": \"알라딘\"\n      },\n      \"body\": [\n        {\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"\n        },\n        {\n          \"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"\n        }\n      ],\n      \"button\": {\n        \"text\": \"상세보기\",\n        \"token\": \"{{button1}}\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"header\": {\n        \"text\": \"알라딘\"\n      },\n      \"body\": [\n        {\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"\n        },\n        {\n          \"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"\n        }\n      ],\n      \"button\": {\n        \"text\": \"상세보기\",\n        \"token\": \"{{button1}}\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"header\": {\n        \"text\": \"알라딘\"\n      },\n      \"body\": [\n        {\n          \"text\": \"머나먼 사막 속 신비의 아그라바 왕국의 시대.\"\n        },\n        {\n          \"text\": \"좀도둑 ‘알라딘’은 마법사 ‘자파’의 의뢰로 마법 램프를 찾아 나섰다가 말았다가~\"\n        }\n      ],\n      \"button\": {\n        \"text\": \"상세보기\",\n        \"token\": \"{{button1}}\"\n      }\n    }\n  ]\n}"
   ]
 },
     {
@@ -8490,7 +8491,7 @@
   "hash": "#형식-10",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.ImageList1\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"badgeNumber\": true,\n    \"listItems\": [\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"header\": TextObject,\n            \"footer\": TextObject\n        },\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"header\": TextObject,\n            \"footer\": TextObject\n        }\n    ]\n}",
+    "{\n  \"type\": \"Display.ImageList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"footer\": TextObject\n    }\n  ]\n}",
     "type | string | Y | Display.ImageList1",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8513,7 +8514,7 @@
   "hash": "#sample-code-10",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.ImageList1\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"내 플레이리스트\"\n        }\n      },\n      \"background\": {\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\",\n                  \"size\": \"LARGE\"\n              }\n            ]\n          }\n      },\n      \"badgeNumber\": true,\n      \"listItems\": [\n        {\n          \"token\": \"{{111}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"감성 리메이크\"\n          },\n          \"footer\": {\n            \"text\": \"19곡\"\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"Deep Plow\"\n          },\n          \"footer\": {\n            \"text\": \"29곡\"\n          }\n        },\n        {\n          \"token\": \"{{333}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n          },\n          \"footer\": {\n            \"text\": \"9곡\"\n          }\n        }\n    ]\n}"
+    "{\n  \"type\": \"Display.ImageList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"내 플레이리스트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"badgeNumber\": true,\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      },\n      \"footer\": {\n        \"text\": \"19곡\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      },\n      \"footer\": {\n        \"text\": \"29곡\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      },\n      \"footer\": {\n        \"text\": \"9곡\"\n      }\n    }\n  ]\n}"
   ]
 },
     {
@@ -8530,7 +8531,7 @@
   "hash": "#형식-11",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.ImageList1\",\n    \"version\": \"1.0\",\n    \"playServiceId\": \"{{STRING}}\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"badgeNumber\": true,\n    \"badgeNumberStyle\": {\n      \"background\": \"#f0f\",\n      \"color\": \"red\",\n      \"border-radius\": \"10px\"\n    },\n    \"listItems\": [\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"icon\": ImageObject,\n            \"header\": TextObject,\n            \"footer\": TextObject\n        },\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"icon\": ImageObject,\n            \"header\": TextObject,\n            \"footer\": TextObject\n        }\n    ]\n}",
+    "{\n  \"type\": \"Display.ImageList1\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{STRING}}\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"badgeNumber\": true,\n  \"badgeNumberStyle\": {\n    \"background\": \"#f0f\",\n    \"color\": \"red\",\n    \"border-radius\": \"10px\"\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"icon\": ImageObject,\n      \"header\": TextObject,\n      \"footer\": TextObject\n    },\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"icon\": ImageObject,\n      \"header\": TextObject,\n      \"footer\": TextObject\n    }\n  ]\n}",
     "type | string | Y | Display.ImageList2",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8554,7 +8555,7 @@
   "hash": "#sample-code-11",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.ImageList2\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"내 플레이리스트\"\n        }\n      },\n      \"background\": {\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\",\n                  \"size\": \"LARGE\"\n              }\n            ]\n          }\n      },\n      \"listItems\": [\n        {\n          \"token\": \"{{111}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"감성 리메이크\"\n          },\n          \"footer\": {\n            \"text\": \"19곡\"\n          },\n          \"icon\": {\n            \"sources\": [\n              {\n                \"url\": \"http://someurl.com/name.png\",\n                \"size\": \"SMALL\"\n              }\n            ]\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"Deep Plow\"\n          },\n          \"footer\": {\n            \"text\": \"1분 34초\"\n          },\n          \"icon\": {\n            \"sources\": [\n              {\n                \"url\": \"http://someurl.com/name.png\",\n                \"size\": \"SMALL\"\n              }\n            ]\n          }\n        },\n        {\n          \"token\": \"{{333}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n          },\n          \"footer\": {\n            \"text\": \"9곡\"\n          }\n        }\n    ]\n}"
+    "{\n  \"type\": \"Display.ImageList2\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"내 플레이리스트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      },\n      \"footer\": {\n        \"text\": \"19곡\"\n      },\n      \"icon\": {\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"SMALL\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      },\n      \"footer\": {\n        \"text\": \"1분 34초\"\n      },\n      \"icon\": {\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"SMALL\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      },\n      \"footer\": {\n        \"text\": \"9곡\"\n      }\n    }\n  ]\n}"
   ]
 },
     {
@@ -8571,7 +8572,7 @@
   "hash": "#형식-12",
   "sentences": [
     "형식",
-    "{\n    \"type\": \"Display.ImageList3\",\n    \"version\": \"1.0\",\n    \"token\": \"{{STRING}}\",\n    \"duration\": \"{{STRING}}\",\n    \"title\" : TitleObject,\n    \"background\": BackgroundObject,\n    \"listItems\": [\n        {\n            \"token\": \"{{STRING}}\",\n            \"image\": ImageObject,\n            \"header\": TextObject,\n            \"icon\": ImageObject\n        }\n    ]\n}",
+    "{\n  \"type\": \"Display.ImageList3\",\n  \"version\": \"1.0\",\n  \"token\": \"{{STRING}}\",\n  \"duration\": \"{{STRING}}\",\n  \"title\": TitleObject,\n  \"background\": BackgroundObject,\n  \"listItems\": [\n    {\n      \"token\": \"{{STRING}}\",\n      \"image\": ImageObject,\n      \"header\": TextObject,\n      \"icon\": ImageObject\n    }\n  ]\n}",
     "type | string | Y | Display.ImageList3",
     "version | string | Y | 인터페이스 버전, 기본값은 1.0",
     "playServiceId | string | Y | 현재 template을 전송하는 play service id",
@@ -8592,7 +8593,7 @@
   "hash": "#sample-code-12",
   "sentences": [
     "Sample Code",
-    "{\n      \"type\": \"Display.ImageList3\",\n      \"version\": \"1.0\",\n      \"playServiceId\": \"{{playServiceId}}\",\n      \"token\": \"{{token}}\",\n      \"title\" : {\n        \"logo\": {\n          \"contentDescription\": \"{{contentDescription}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\"\n              }\n          ]\n        },\n        \"text\": {\n            \"text\": \"내 플레이리스트\"\n        }\n      },\n      \"background\": {\n        \"image\": {\n          \"contentDescription\": \"{{STRING}}\",\n          \"sources\": [\n              {\n                  \"url\": \"http://someurl.com/name.png\",\n                  \"size\": \"LARGE\"\n              }\n            ]\n          }\n      },\n      \"listItems\": [\n        {\n          \"token\": \"{{111}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"감성 리메이크\"\n          },\n          \"icon\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"X_SMALL\"\n                }\n            ]\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"Deep Plow\"\n          }\n        },\n        {\n          \"token\": \"{{333}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n          }\n        },\n        {\n          \"token\": \"{{111}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"감성 리메이크\"\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"Deep Plow\"\n          }\n        },\n        {\n          \"token\": \"{{333}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n          }\n        },\n        {\n          \"token\": \"{{111}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\",\n                    \"size\": \"LARGE\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"감성 리메이크\"\n          }\n        },\n        {\n          \"token\": \"{{222}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"Deep Plow\"\n          }\n        },\n        {\n          \"token\": \"{{333}}\",\n          \"image\": {\n            \"contentDescription\": \"{{STRING}}\",\n            \"sources\": [\n                {\n                    \"url\": \"http://someurl.com/name.png\"\n                }\n            ]\n          },\n          \"header\": {\n            \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n          }\n        }\n    ]\n}"
+    "{\n  \"type\": \"Display.ImageList3\",\n  \"version\": \"1.0\",\n  \"playServiceId\": \"{{playServiceId}}\",\n  \"token\": \"{{token}}\",\n  \"title\": {\n    \"logo\": {\n      \"contentDescription\": \"{{contentDescription}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\"\n        }\n      ]\n    },\n    \"text\": {\n      \"text\": \"내 플레이리스트\"\n    }\n  },\n  \"background\": {\n    \"image\": {\n      \"contentDescription\": \"{{STRING}}\",\n      \"sources\": [\n        {\n          \"url\": \"http://someurl.com/name.png\",\n          \"size\": \"LARGE\"\n        }\n      ]\n    }\n  },\n  \"listItems\": [\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      },\n      \"icon\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"X_SMALL\"\n          }\n        ]\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      }\n    },\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      }\n    },\n    {\n      \"token\": \"{{111}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\",\n            \"size\": \"LARGE\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"감성 리메이크\"\n      }\n    },\n    {\n      \"token\": \"{{222}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"Deep Plow\"\n      }\n    },\n    {\n      \"token\": \"{{333}}\",\n      \"image\": {\n        \"contentDescription\": \"{{STRING}}\",\n        \"sources\": [\n          {\n            \"url\": \"http://someurl.com/name.png\"\n          }\n        ]\n      },\n      \"header\": {\n        \"text\": \"운동 할 때 무한 반복해도 절대 질리지 않는 트랙들!\"\n      }\n    }\n  ]\n}"
   ]
 }
   ]
@@ -16392,7 +16393,8 @@
     "4단(계) | SPEED4",
     "5단(계) | SPEED5",
     "Attribute 사용 예시",
-    "SetAirflow Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})\n\n\n{\n   \"version\":1,\n   \"requestId\":\"20190916109ad8219c251742859c56f6ec3c4700bb\",\n   \"action\":{\n      \"command\":{\n         \"smartHomeCapability\":\"AirflowControl\",\n         \"smartHomeDirective\":\"SetAirflow\",\n         \"parameters\":{\n            \"airflowType\":\"LOW\",\n            \"rawAirflowType\":\"약풍\"\n         }\n      },\n      \"smartHomeDevices\":[\n         {\n            \"id\":\"1234567\",\n            \"deviceTypeCode\":\"AIR_CONDITIONER\",\n            \"deviceTypeName\":\"에어컨\",\n            \"deviceModelName\":\"example air_conditioner\",\n            \"friendlyNameSuggestion\":\"거실\",\n            \"manufacturer\":\"example manufacturer\",\n            \"supportedCapabilities\":{\n               \"airflowControl\":{\n                  \"supportedAirflowTypes\":[\n                     \"HIGH\",\n                     \"MIDDLE\",\n                     \"LOW\",\n                     \"AUTO\"\n                  ]\n               }\n            },\n            \"customData\":{\n               \"foo\":\"bar\"\n            }\n         }\n      ]\n   },\n   \"context\":{\n      \"session\":{\n         \"id\":\"example_session_id\",\n         \"accessToken\":\"example_access_token\"\n      }\n   }\n}",
+    "SetAirflow Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
+    "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"AirflowControl\",\n      \"smartHomeDirective\": \"SetAirflow\",\n      \"parameters\": {\n        \"airflowType\": \"LOW\",\n        \"rawAirflowType\": \"약풍\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"1234567\",\n        \"deviceTypeCode\": \"AIR_CONDITIONER\",\n        \"deviceTypeName\": \"에어컨\",\n        \"deviceModelName\": \"example air_conditioner\",\n        \"friendlyNameSuggestion\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"airflowControl\": {\n            \"supportedAirflowTypes\": [\n              \"HIGH\",\n              \"MIDDLE\",\n              \"LOW\",\n              \"AUTO\"\n            ]\n          }\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
     "Related to",
     "AirflowControl Interface"
   ]
@@ -16407,7 +16409,8 @@
     "Increase / Decrease를 위한 AirflowType의 세기 단위",
     "미풍 < 약풍 < 중풍 < 강풍 < 터보, 1단 < 2단 < 3단 < 4단 < 5단 순으로 조정되며 이외에는 세기 단위에 포함되지 않은 특수풍으로 구분합니다.",
     "Attribute 사용 예시",
-    "IncreaseAirflow Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})\n\n\n{\n   \"version\":1,\n   \"requestId\":\"20190916109ad8219c251742859c56f6ec3c4700bb\",\n   \"action\":{\n      \"command\":{\n         \"smartHomeCapability\":\"AirflowControl\",\n         \"smartHomeDirective\":\"IncreaseAirflow\"\n      },\n      \"smartHomeDevices\":[\n         {\n            \"id\":\"1234567\",\n            \"deviceTypeCode\":\"AIR_CONDITIONER\",\n            \"deviceTypeName\":\"에어컨\",\n            \"deviceModelName\":\"example air_conditioner\",\n            \"friendlyNameSuggestion\":\"거실\",\n            \"manufacturer\":\"example manufacturer\",\n            \"supportedCapabilities\":{\n               \"airflowControl\":{\n                  \"supportedAirflowTypes\":[\n                     \"HIGH\",\n                     \"MIDDLE\",\n                     \"LOW\",\n                     \"AUTO\"\n                  ]\n               }\n            },\n            \"customData\":{\n               \"foo\":\"bar\"\n            }\n         }\n      ]\n   },\n   \"context\":{\n      \"session\":{\n         \"id\":\"example_session_id\",\n         \"accessToken\":\"example_access_token\"\n      }\n   }\n}",
+    "IncreaseAirflow Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
+    "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"AirflowControl\",\n      \"smartHomeDirective\": \"IncreaseAirflow\"\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"1234567\",\n        \"deviceTypeCode\": \"AIR_CONDITIONER\",\n        \"deviceTypeName\": \"에어컨\",\n        \"deviceModelName\": \"example air_conditioner\",\n        \"friendlyNameSuggestion\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"airflowControl\": {\n            \"supportedAirflowTypes\": [\n              \"HIGH\",\n              \"MIDDLE\",\n              \"LOW\",\n              \"AUTO\"\n            ]\n          }\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
     "Related to",
     "AirflowControl Interface"
   ]

@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 02:10:45 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-25 02:39:15 +0000">
 <meta http-equiv="Title" content="Developers | Guide - AudioPlayer를 위한 Display Interface">
 <title>Developers | Guide - AudioPlayer를 위한 Display Interface</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface">
@@ -2434,22 +2434,22 @@
 18
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">    
-        </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer.Template1"</span><span class="p">,</span><span class="w">
-            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://nugu.sk.com/music_icon.png"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FLO Music"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONO"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"subtitle1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loopy"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"subtitle2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prod. Code Kunst"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://nugu.sk.com/flo.jpg"</span><span class="p">,</span><span class="w">
-                </span><span class="nl">"durationSec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"329"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+  </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer.Template1"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"iconUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://nugu.sk.com/music_icon.png"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FLO Music"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nl">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NONO"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtitle1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loopy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"subtitle2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prod. Code Kunst"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"imageUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://nugu.sk.com/flo.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"durationSec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"329"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -2671,9 +2671,9 @@
 5
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
-    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer.NextCommandIssued"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AudioPlayer.NextCommandIssued"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"offsetInMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></pre></td>
 </tr></tbody></table></code></pre></div></div>
