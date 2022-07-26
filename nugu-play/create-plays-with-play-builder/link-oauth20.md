@@ -76,7 +76,7 @@ OAuth Scope는 Access Token으로 사용할 수 있는 리소스의 허용 범�
 ![](../../assets/images/link-oauth20-05.png)
 
 #### ① 로그인 URL
-3단계에서 확인한 URL을 입력합니다. ([https://github.com/login/oauth/authorize](https://github.com/login/oauth/authorize))
+3단계에서 확인한 URL을 입력합니다. (`https://github.com/login/oauth/authorize`)
 
 #### ② 클라이언트 ID
 2단계에서 확인한 Client ID를 입력합니다. (ex: 3978bf6158e32d7ea05b)
@@ -85,7 +85,7 @@ OAuth Scope는 Access Token으로 사용할 수 있는 리소스의 허용 범�
 repo와 gist를 추가합니다.(최대 5개)
 
 #### ④ Access token URL
-3단계에서 확인한 URL을 입력합니다.([https://github.com/login/oauth/access_token](https://github.com/login/oauth/access_token))
+3단계에서 확인한 URL을 입력합니다.(`https://github.com/login/oauth/access_token`)
 
 #### ⑤ 클라이언트 secret
 2단계에서 확인한 클라이언트 Secret을 입력합니다. 예) 12bf7a85698496fd87e6cb6703914617fb693ce0)

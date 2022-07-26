@@ -12,7 +12,8 @@ module Jekyll::Potion
         html.css("a[href]").each { |a_tag|
           href = a_tag["href"]
 
-          next if href.strip.empty? && a_tag.has_attribute?(@config[:skip_keyword])
+          next if a_tag.has_attribute?(@config[:skip_keyword])
+          next if href.strip.empty?
           next if href =~ HTTP_SCHEME
 
           if a_tag.has_attribute?(@config[:index_page_keyword])

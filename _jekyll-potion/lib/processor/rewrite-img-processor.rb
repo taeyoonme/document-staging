@@ -13,7 +13,8 @@ module Jekyll::Potion
         html.css("img[src]").each { |img_tag|
           src = img_tag["src"]
 
-          next if src.strip.empty? && img_tag.has_attribute?(@config[:skip_keyword])
+          next img_tag.has_attribute?(@config[:skip_keyword])
+          next if src.strip.empty?
 
           unless img_tag.parent.text.strip.empty?
             inline_count += 1
