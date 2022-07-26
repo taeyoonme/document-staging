@@ -156,7 +156,7 @@ Control Response Sample
 {
   "resultCode": "OK", // 에러일 경우 에러코드 응답
   "requestId": "2019071712638a4378649347bdb21643127a0f6d83", // request로 받은 값을 그대로 응답
-  "parameters": {} <-- directive 마다 필요한 property 채워서 응답.
+  "parameters": {} // directive 마다 필요한 property 채워서 응답.
 }
 ```
 {% endcode %}
