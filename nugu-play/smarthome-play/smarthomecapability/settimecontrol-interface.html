@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-26 01:41:52 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-26 01:59:00 +0000">
 <meta http-equiv="Title" content="Developers | Guide - SetTimeControl Interface">
 <title>Developers | Guide - SetTimeControl Interface</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface">
@@ -2370,7 +2370,8 @@
 
 <p>NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스마트홈에 SmartHomeDevice를 등록해야 합니다. 사용자가 NUGU App을 통해 SmartHomeDevice 등록을 요청하면 SmartHome Play 제작 당시 입력한 SmartHomeBackendProxy URL로 NUGU스마트홈에 등록할 수 있는 SmartHomeDevice 목록에 대한 Discovery 요청이 전달됩니다. SmartHomeBackendProxy는 SmartHomeDevice 목록과 함께 각 SmartHomeDevice별로 지원하는 Capability와 그에 따른 부가적인 Parameter들을 응답해야 합니다.</p>
 
-<p>Discovery Sample Request</p>
+<h3 id="discovery-request-예시">Discovery Request 예시<a href="#discovery-request-%EC%98%88%EC%8B%9C" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface#discovery-request-예시"></div>
+</h3>
 
 <article class="code">
     
@@ -2394,7 +2395,8 @@
 </div>
 </article>
 
-<p>Discovery Sample Response</p>
+<h3 id="discovery-response-예시">Discovery Response 예시<a href="#discovery-response-%EC%98%88%EC%8B%9C" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface#discovery-response-예시"></div>
+</h3>
 
 <article class="code">
     
@@ -2483,7 +2485,8 @@ Directive : SetEndTime</p>
 아리아, {FriendlyName} {DeviceType} 3시로 종료예약해줘.<br>
 아리아, {DeviceType} 1시간 30분 후 종료예약 설정.</p>
 
-<p>Sample Request</p>
+<h4 id="sample-request">Sample Request<a href="#sample-request" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface#sample-request"></div>
+</h4>
 
 <article class="code">
     
@@ -2592,7 +2595,8 @@ Directive : SetEndTime</p>
   </tbody>
 </table>
 
-<p>Sample Response</p>
+<h4 id="sample-response">Sample Response<a href="#sample-response" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface#sample-response"></div>
+</h4>
 
 <article class="code">
     
@@ -2645,7 +2649,8 @@ Directive : CancelEndTime</p>
 아리아, {FriendlyName} {DeviceType} 꺼짐예약 삭제해줘.<br>
 아리아, {DeviceType} 종료예약 취소.</p>
 
-<p>Sample Request</p>
+<h4 id="sample-request-1">Sample Request<a href="#sample-request-1" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface#sample-request-1"></div>
+</h4>
 
 <article class="code">
     
@@ -2731,7 +2736,8 @@ Directive : CancelEndTime</p>
 </div>
 </article>
 
-<p>Sample Response</p>
+<h4 id="sample-response-1">Sample Response<a href="#sample-response-1" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface#sample-response-1"></div>
+</h4>
 
 <article class="code">
     
