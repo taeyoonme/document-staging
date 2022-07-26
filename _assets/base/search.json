@@ -16337,12 +16337,25 @@
   "hash": "#discovery",
   "sentences": [
     "Discovery",
-    "SmartHome Play의 동작을 위해서는 SmartHomeServiceProvider의 SmartHomeDevice 정보를 NUGU스마트홈에 등록해야 합니다. 일반 사용자가 NUGU스마트홈에 SmartHomeDevice를 등록하려면 NUGU App의 스마트홈 메뉴에서 “신규 디바이스 등록하기” 기능을 사용해야 합니다. “신규 디바이스 등록하기”를 선택한 후 SmartHome Play를 선택하면 해당 SmartHome Play의 SmartHomeServiceProvider가 제공하는 계정연동(OAUTH 2.0) 웹페이지로 이동하고 계정 연동을 통해 SmartHomeServiceProvider에 등록된 SmartHomeDevice 정보를 불러오게 됩니다. 불러온 SmartHomeDevice 정보 중 사용자가 선택해 등록한 SmartHomeDevice는 NUGU스마트홈을 통해 제어할 수 있게 됩니다. 사용자가 NUGU App을 통해 SmartHome Play의 SmartHomeDevice를 등록하려고 하면 NUGU스마트홈은 SmartHomeServiceProvider에게 Discovey를 요청하고 SmartHomeServiceProvider는 아래 예시와 같이 NUGU스마트홈에 등록할 수 있는 모든 SmartHomeDevice 정보를 응답해야 합니다.",
-    "Discovery Request Sample",
-    "Discovery Request 예시 (POST, /nugu/v1/devices)",
-    "{\n  \"userIdentifier\": \"t6Pv9PLAEmYZilNiloUUnZbVDjXgvUCzwpWY1tPq (optional, e.g. hue whitelist identifier)\",\n  \"token\": \"7KOdwPQdJPZf4KYsjtHdqz3e8fKd\"\n}",
+    "SmartHome Play의 동작을 위해서는 SmartHomeServiceProvider의 SmartHomeDevice 정보를 NUGU스마트홈에 등록해야 합니다. 일반 사용자가 NUGU스마트홈에 SmartHomeDevice를 등록하려면 NUGU App의 스마트홈 메뉴에서 “신규 디바이스 등록하기” 기능을 사용해야 합니다. “신규 디바이스 등록하기”를 선택한 후 SmartHome Play를 선택하면 해당 SmartHome Play의 SmartHomeServiceProvider가 제공하는 계정연동(OAUTH 2.0) 웹페이지로 이동하고 계정 연동을 통해 SmartHomeServiceProvider에 등록된 SmartHomeDevice 정보를 불러오게 됩니다. 불러온 SmartHomeDevice 정보 중 사용자가 선택해 등록한 SmartHomeDevice는 NUGU스마트홈을 통해 제어할 수 있게 됩니다. 사용자가 NUGU App을 통해 SmartHome Play의 SmartHomeDevice를 등록하려고 하면 NUGU스마트홈은 SmartHomeServiceProvider에게 Discovey를 요청하고 SmartHomeServiceProvider는 아래 예시와 같이 NUGU스마트홈에 등록할 수 있는 모든 SmartHomeDevice 정보를 응답해야 합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Discovery > Discovery Request 예시",
+  "hash": "#discovery-request-예시",
+  "sentences": [
+    "Discovery Request 예시",
+    "(POST, /nugu/v1/devices)",
+    "{\n  \"userIdentifier\": \"t6Pv9PLAEmYZilNiloUUnZbVDjXgvUCzwpWY1tPq (optional, e.g. hue whitelist identifier)\",\n  \"token\": \"7KOdwPQdJPZf4KYsjtHdqz3e8fKd\"\n}"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Discovery > Discovery Response Sample",
+  "hash": "#discovery-response-sample",
+  "sentences": [
     "Discovery Response Sample",
-    "Discovery Response 예시",
     "{\n  \"devices\": [\n    {\n      \"id\": \"D1234567\",\n      \"type\": \"AIR_CONDITIONER\",\n      \"modelName\": \"example model name\",\n      \"friendlyNameSuggestion\": \"거실\",\n      \"manufacturer\": \"example manufacturer\",\n      \"supportedCapabilities\": {\n        \"airflowControl\": {\n          \"supportedAirflowTypes\": [\"강\", \"강풍\", \"미풍\", \"수면\", \"약\", \"약풍\", \"자동\", \"자동풍\"]\n        },\n        \"airQualityCheck\": {},\n        \"endTimeControl\": {},\n        \"modeControl\": {\n          \"supportedModes\": [\"무풍모드\", \"냉방모드\", \"수면모드\"]\n        },\n        \"powerControl\": {},\n        \"temperatureControl\": {}\n      },\n      \"customData\": {\n        ...\n      },\n      \"connectionStatus\": true\n    }\n  ]\n}"
   ]
 },
@@ -16352,11 +16365,24 @@
   "hash": "#control",
   "sentences": [
     "Control",
-    "NUGU스마트홈에 등록된 SmartHomeDevice에 제어 요청이 올 경우 NUGU스마트홈은 내부 로에 따라 제어 대상 및 제어 명령을 확정 짓고 Discovery단계에서 등록된 정보를 활용해 SmartHomeServiceProvider에게 제어 명령을 전달합니다. 이때 제어 명령을 실제로 수신하는 것은 SmartHome Play를 제작할 당시에 입력한 SmartHomePlayBackendProxy입니다. 제어명령은 SmartHomeDeviceType과 SmartHomeCapability, SmartHomeDirective로 정리되어 요청되며, SmartHomeCapability, SmartHomeDirective에 따라 부가 정보가 포함되기도 합니다.",
-    "Control Request Sample",
-    "Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
-    "{\n  \"version\": 1,\n  \"requestId\": \"2019071712638a4378649347bdb21643127a0f6d83\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"TemperatureControl\",\n      \"smartHomeDirective\": \"SetTemperature\",\n      \"parameters\": {\n        \"temperatureLevel\": 22\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"D83077224431\",\n        \"type\": \"에어컨\",\n        \"model\": null,\n        \"friendlyName\": \"거실\",\n        \"customData\": {}\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"a5a250af-48f7-4ceb-b099-ea6753afa570\",\n      \"accessToken\": \"DUMMY_ACCESS_TOKEN\",\n      \"userIdentifier\": \"SERVICE_PROVIDER_USER_ID (optional, e.g. Hue whitelist Identifier)\"\n    }\n  }\n}",
-    "Control Response Sample",
+    "NUGU스마트홈에 등록된 SmartHomeDevice에 제어 요청이 올 경우 NUGU스마트홈은 내부 로에 따라 제어 대상 및 제어 명령을 확정 짓고 Discovery단계에서 등록된 정보를 활용해 SmartHomeServiceProvider에게 제어 명령을 전달합니다. 이때 제어 명령을 실제로 수신하는 것은 SmartHome Play를 제작할 당시에 입력한 SmartHomePlayBackendProxy입니다. 제어명령은 SmartHomeDeviceType과 SmartHomeCapability, SmartHomeDirective로 정리되어 요청되며, SmartHomeCapability, SmartHomeDirective에 따라 부가 정보가 포함되기도 합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Control > Control Request 예시",
+  "hash": "#control-request-예시",
+  "sentences": [
+    "Control Request 예시",
+    "(POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
+    "{\n  \"version\": 1,\n  \"requestId\": \"2019071712638a4378649347bdb21643127a0f6d83\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"TemperatureControl\",\n      \"smartHomeDirective\": \"SetTemperature\",\n      \"parameters\": {\n        \"temperatureLevel\": 22\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"D83077224431\",\n        \"type\": \"에어컨\",\n        \"model\": null,\n        \"friendlyName\": \"거실\",\n        \"customData\": {}\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"a5a250af-48f7-4ceb-b099-ea6753afa570\",\n      \"accessToken\": \"DUMMY_ACCESS_TOKEN\",\n      \"userIdentifier\": \"SERVICE_PROVIDER_USER_ID (optional, e.g. Hue whitelist Identifier)\"\n    }\n  }\n}"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Control > Control Response 예시",
+  "hash": "#control-response-예시",
+  "sentences": [
     "Control Response 예시",
     "{\n  \"resultCode\": \"OK\", // 에러일 경우 에러코드 응답\n  \"requestId\": \"2019071712638a4378649347bdb21643127a0f6d83\", // request로 받은 값을 그대로 응답\n  \"parameters\": {} // directive 마다 필요한 property 채워서 응답.\n}"
   ]
@@ -16426,7 +16452,14 @@
     "2단(계) | SPEED2",
     "3단(계) | SPEED3",
     "4단(계) | SPEED4",
-    "5단(계) | SPEED5",
+    "5단(계) | SPEED5"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > airflowType > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시",
+  "sentences": [
     "Attribute 사용 예시",
     "SetAirflow Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
     "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"AirflowControl\",\n      \"smartHomeDirective\": \"SetAirflow\",\n      \"parameters\": {\n        \"airflowType\": \"LOW\",\n        \"rawAirflowType\": \"약풍\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"1234567\",\n        \"deviceTypeCode\": \"AIR_CONDITIONER\",\n        \"deviceTypeName\": \"에어컨\",\n        \"deviceModelName\": \"example air_conditioner\",\n        \"friendlyNameSuggestion\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"airflowControl\": {\n            \"supportedAirflowTypes\": [\n              \"HIGH\",\n              \"MIDDLE\",\n              \"LOW\",\n              \"AUTO\"\n            ]\n          }\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16442,7 +16475,14 @@
     "airflowDelta",
     "Airflow를 몇 단계 조절할지에 대한 Attribute value입니다. 해당 Attribute가 없을 경우에는 1단계를 조절하도록 설정해야 합니다.",
     "Increase / Decrease를 위한 AirflowType의 세기 단위",
-    "미풍 < 약풍 < 중풍 < 강풍 < 터보, 1단 < 2단 < 3단 < 4단 < 5단 순으로 조정되며 이외에는 세기 단위에 포함되지 않은 특수풍으로 구분합니다.",
+    "미풍 < 약풍 < 중풍 < 강풍 < 터보, 1단 < 2단 < 3단 < 4단 < 5단 순으로 조정되며 이외에는 세기 단위에 포함되지 않은 특수풍으로 구분합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > airflowDelta > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-1",
+  "sentences": [
     "Attribute 사용 예시",
     "IncreaseAirflow Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
     "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"AirflowControl\",\n      \"smartHomeDirective\": \"IncreaseAirflow\"\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"1234567\",\n        \"deviceTypeCode\": \"AIR_CONDITIONER\",\n        \"deviceTypeName\": \"에어컨\",\n        \"deviceModelName\": \"example air_conditioner\",\n        \"friendlyNameSuggestion\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"airflowControl\": {\n            \"supportedAirflowTypes\": [\n              \"HIGH\",\n              \"MIDDLE\",\n              \"LOW\",\n              \"AUTO\"\n            ]\n          }\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16456,7 +16496,14 @@
   "hash": "#brightnesslevel",
   "sentences": [
     "brightnessLevel",
-    "설정하고자 하는 스마트홈 기기의 밝기 정보입니다. 1부터 100 단계 백분율 정보로 설정할 수 있습니다.",
+    "설정하고자 하는 스마트홈 기기의 밝기 정보입니다. 1부터 100 단계 백분율 정보로 설정할 수 있습니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > brightnessLevel > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-2",
+  "sentences": [
     "Attribute 사용 예시",
     "SetBrightness Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
     "{\n  \"version\": 1,\n  \"requestId\": \"201909301991140f5a1e97441fa76a699284bc6035\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"BrightnessControl\",\n      \"smartHomeDirective\": \"SetBrightness\",\n      \"brightnessLevel\": 30\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"123456\",\n        \"deviceTypeCode\": \"LIGHT\",\n        \"friendlyName\": \"거실\",\n        \"deviceTypeName\": \"조명\",\n        \"deviceModelName\": \"example_device_model_name\",\n        \"customData\": {\n          \"foo\": \"bar\"\n        },\n        \"supportedCapabilities\": {\n          \"powerControl\": {},\n          \"colorControl\": {},\n          \"brightnessControl\": {}\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16470,7 +16517,14 @@
   "hash": "#brightnessdelta",
   "sentences": [
     "brightnessDelta",
-    "스마트홈 기기에 설정된 밝기를 몇 단계 조절할지에 대한 정보입니다. 해당 정보가 없을 경우 1단계를 조절합니다.",
+    "스마트홈 기기에 설정된 밝기를 몇 단계 조절할지에 대한 정보입니다. 해당 정보가 없을 경우 1단계를 조절합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > brightnessDelta > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-3",
+  "sentences": [
     "Attribute 사용 예시",
     "IncreaseBrightness Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
     "{\n  \"version\": 1,\n  \"requestId\": \"2019093019f78107f1a36147688c699703f5373a56\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"BrightnessControl\",\n      \"smartHomeDirective\": \"IncreaseBrightness\",\n      \"parameters\": {\n        \"brightnessDelta\": 3\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"123456\",\n        \"deviceTypeCode\": \"LIGHT\",\n        \"friendlyName\": \"거실\",\n        \"deviceTypeName\": \"조명\",\n        \"deviceModelName\": \"example_model_name\",\n        \"customData\": {\n          \"foo\": \"bar\"\n        },\n        \"supportedCapabilities\": {\n          \"powerControl\": {},\n          \"colorControl\": {},\n          \"brightnessControl\": {}\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\",\n      \"userIdentifier\": \"example_\"\n    }\n  }\n}",
@@ -16506,7 +16560,14 @@
     "주광색 | DAY_LIGHT | #ffecde",
     "노란색 | YELLOW | #ffff00",
     "터키색 | TURQUOISE | #4affef",
-    "연보라 | LIGHT_PURPLE | #eaebfe",
+    "연보라 | LIGHT_PURPLE | #eaebfe"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > colorType > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-4",
+  "sentences": [
     "Attribute 사용 예시",
     "ChangeColor Directive Request 예시 (POST, /nugu/v1/capabilities/ColorControl/directives/ChangeColor)",
     "{\n  \"version\": 1,\n  \"requestId\": \"20190930213631c172b5214d4abfdbeb5804d8d80d\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"ColorControl\",\n      \"smartHomeDirective\": \"ChangeColor\",\n      \"parameters\": {\n        \"colorType\": \"#ffff00\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"12345\",\n        \"deviceTypeCode\": \"LIGHT\",\n        \"friendlyName\": \"거실\",\n        \"deviceTypeName\": \"조명\",\n        \"deviceModelName\": \"example_device_model_name\",\n        \"customData\": {\n          \"foo\": \"bar\"\n        },\n        \"supportedCapabilities\": {\n          \"powerControl\": {},\n          \"colorControl\": {},\n          \"colorControl\": {\n            \"supportedColorTypes\": [\n              \"BLUE\",\n              \"GREEN\",\n              \"CYAN\",\n              \"MINT\",\n              \"SKYBLUE\",\n              \"PURPLE\",\n              \"LAVENDER\",\n              \"COOL_WHITE\",\n              \"SALMON\",\n              \"GOLD\",\n              \"RED\",\n              \"MAGENTA\",\n              \"CRIMSON\",\n              \"WARM_WHITE\",\n              \"ORANGE\",\n              \"SOFTWHITE\",\n              \"PINK\",\n              \"WHITE\",\n              \"DAY_LIGHT\",\n              \"YELLOW\",\n              \"TURQUOISE\",\n              \"LIGHT_PURPLE\"\n            ] // 지원 가능한 ColorType 타입 참고.\n          },\n          \"brightnessControl\": {}\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16520,7 +16581,14 @@
   "hash": "#devicetemperaturelevel",
   "sentences": [
     "deviceTemperatureLevel",
-    "스마트홈 기기 자체에 설정하고자 하는 온도 정보입니다. 냉장고, 오븐 등과 같이 스마트홈 기기가 자체 온도를 가질 경우를 지원합니다.",
+    "스마트홈 기기 자체에 설정하고자 하는 온도 정보입니다. 냉장고, 오븐 등과 같이 스마트홈 기기가 자체 온도를 가질 경우를 지원합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > deviceTemperatureLevel > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-5",
+  "sentences": [
     "Attribute 사용 예시",
     "SetDeviceTemperatureLevel Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})",
     "{\n  \"version\": 1,\n  \"requestId\": \"2019071712638a4378649347bdb21643127a0f6d83\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"DeviceTemperatureControl\",\n      \"smartHomeDirective\": \"SetDeviceTemperature\",\n      \"parameters\": {\n        \"temperatureLevel\": \"120.0\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"12345678\",\n        \"deviceTypeCode\": \"OVEN\",\n        \"deviceModelName\": \"example oven\",\n        \"friendlyName\": \"조리실\",\n        \"deviceTypeName\": \"오븐\",\n        \"customData\": {\n          \"foo\": \"bar\"\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16534,7 +16602,14 @@
   "hash": "#humiditylevel",
   "sentences": [
     "humidityLevel",
-    "스마트홈 기기에 설정하고자 하는 습도 정보입니다. 백분율 단위로 표현합니다.",
+    "스마트홈 기기에 설정하고자 하는 습도 정보입니다. 백분율 단위로 표현합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > humidityLevel > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-6",
+  "sentences": [
     "Attribute 사용 예시",
     "SetHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidity)",
     "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"HumidityControl\",\n      \"smartHomeDirective\": \"SetHumidity\",\n      \"parameters\": {\n        \"humidityLevel\": \"40\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"D1234567\",\n        \"type\": \"DEHUMIDIFICATION\",\n        \"modelName\": \"example dehumidification\",\n        \"friendlyNameSuggestion\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"humidityControl\": {}\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16548,7 +16623,14 @@
   "hash": "#humiditydelta",
   "sentences": [
     "humidityDelta",
-    "스마트홈 기기에 설정된 습도를 몇 % 조절할지에 대한 정보입니다. 백분율 단위로 표현합니다.",
+    "스마트홈 기기에 설정된 습도를 몇 % 조절할지에 대한 정보입니다. 백분율 단위로 표현합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > humidityDelta > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-7",
+  "sentences": [
     "Attribute 사용 예시",
     "IncreaseHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/IncreaseHumidity)",
     "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"HumidityControl\",\n      \"smartHomeDirective\": \"IncreaseHumidity\",\n      \"parameters\": {\n        \"humidityDelta\": \"10\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"D1234567\",\n        \"type\": \"DEHUMIDIFICATION\",\n        \"modelName\": \"example dehumidification\",\n        \"friendlyNameSuggestion\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"humidityControl\": {}\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16618,7 +16700,14 @@
     "24시간 예약난방모드 | 24_PREHEATING",
     "냉방PMV모드 | COOLING_PMV",
     "쾌속모드 | FAST",
-    "스마트 모드 | SMART",
+    "스마트 모드 | SMART"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > mode > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-8",
+  "sentences": [
     "Attribute 사용 예시",
     "SetMode Directive Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)",
     "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"ModeControl\",\n      \"smartHomeDirective\": \"SetMode\",\n      \"parameters\": {\n        \"mode\": \"COLD\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"1234567\",\n        \"deviceTypeCode\": \"AIR_CONDITIONER\",\n        \"deviceTypeName\": \"에어컨\",\n        \"deviceModelName\": \"example air_conditioner\",\n        \"friendlyName\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"modeControl\": {\n            \"supportedModes\": [\n              \"COLD\",\n              \"DEHUMIDITY\",\n              \"COMFORT\",\n              \"AIR_BLAST\",\n              \"ENERGY_SAVING\"\n            ]\n          }\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        }\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16632,7 +16721,14 @@
   "hash": "#temperaturelevel",
   "sentences": [
     "temperatureLevel",
-    "스마트홈 기기에 설정하고자 하는 주변 온도 정보입니다. 섭씨 온도 단위를 지원합니다.",
+    "스마트홈 기기에 설정하고자 하는 주변 온도 정보입니다. 섭씨 온도 단위를 지원합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > temperatureLevel > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-9",
+  "sentences": [
     "Attribute 사용 예시",
     "SetTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)",
     "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"TemperatureControl\",\n      \"smartHomeDirective\": \"SetTemperature\",\n      \"parameters\": {\n        \"temperatureLevel\": \"20\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"1234567\",\n        \"deviceTypeCode\": \"AIR_CONDITIONER\",\n        \"deviceTypeName\": \"에어컨\",\n        \"deviceModelName\": \"example air_conditioner\",\n        \"friendlyName\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"temperatureControl\": {}\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        },\n        \"connectionStatus\": true\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -16646,7 +16742,14 @@
   "hash": "#temperaturedelta",
   "sentences": [
     "temperatureDelta",
-    "스마트홈 기기의 설정된 온도를 조절하기 위한 단위 표현입니다. 섭씨 온도 단위를 지원합니다.",
+    "스마트홈 기기의 설정된 온도를 조절하기 위한 단위 표현입니다. 섭씨 온도 단위를 지원합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "SmartHomeAttribute > Attribute Details > temperatureDelta > Attribute 사용 예시",
+  "hash": "#attribute-사용-예시-10",
+  "sentences": [
     "Attribute 사용 예시",
     "IncreaseTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)",
     "{\n  \"version\": 1,\n  \"requestId\": \"20190916109ad8219c251742859c56f6ec3c4700bb\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"TemperatureControl\",\n      \"smartHomeDirective\": \"IncreaseTemperature\",\n      \"parameters\": {\n        \"temperatureDelta\": \"3\"\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"1234567\",\n        \"deviceTypeCode\": \"AIR_CONDITIONER\",\n        \"deviceTypeName\": \"에어컨\",\n        \"deviceModelName\": \"example air_conditioner\",\n        \"friendlyName\": \"거실\",\n        \"manufacturer\": \"example manufacturer\",\n        \"supportedCapabilities\": {\n          \"temperatureControl\": {}\n        },\n        \"customData\": {\n          \"foo\": \"bar\"\n        },\n        \"connectionStatus\": true\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"example_session_id\",\n      \"accessToken\": \"example_access_token\"\n    }\n  }\n}",
@@ -19595,10 +19698,24 @@
   "hash": "#discovery",
   "sentences": [
     "Discovery",
-    "NUGU스마트홈에 가스차단기(GAS_BREAKER)을 등록하고자 할 때 Discovery Request/Response의 예시입니다. 사용자가 NUGU 모바일 앱을 통해 IoT ServiceProvider의 계정을 연동한 후 스마트홈 기기를 등록하려고 시도할 때 NUGU스마트홈이 SmartHomeBackendProxy에 Discovery 요청을 보내고 이 때 등록할 수 있는 스마트홈 기기 정보를 응답해야 합니다.",
+    "NUGU스마트홈에 가스차단기(GAS_BREAKER)을 등록하고자 할 때 Discovery Request/Response의 예시입니다. 사용자가 NUGU 모바일 앱을 통해 IoT ServiceProvider의 계정을 연동한 후 스마트홈 기기를 등록하려고 시도할 때 NUGU스마트홈이 SmartHomeBackendProxy에 Discovery 요청을 보내고 이 때 등록할 수 있는 스마트홈 기기 정보를 응답해야 합니다."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "가스차단기 > Discovery > Discovery Request 예시",
+  "hash": "#discovery-request-예시",
+  "sentences": [
     "Discovery Request 예시",
     "(POST, /nugu/v1/devices)",
-    "{\n  \"token\": \"7KOdwPQdJPZf4KYsjtHdqz3e8fKd\"\n}",
+    "{\n  \"token\": \"7KOdwPQdJPZf4KYsjtHdqz3e8fKd\"\n}"
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "가스차단기 > Discovery > Discovery Response 예시",
+  "hash": "#discovery-response-예시",
+  "sentences": [
     "Discovery Response 예시",
     "{\n  \"devices\": [\n    {\n      \"id\": \"1234567\",\n      \"deviceTypeCode\": \"GAS_BREAKER\",\n      \"deviceTypeName\": \"example_device_type\",\n      \"deviceModelName\": \"example_model_name\",\n      \"friendlyName\": \"부엌\",\n      \"manufacturer\": \"example_manufacturer\",\n      \"supportedCapabilities\": {\n        \"powerControl\": {\n        }\n      },\n      \"customData\": {\n        \"foo\": \"bar\"\n      },\n      \"connectionStatus\": true\n    }\n  ]\n}"
   ]
@@ -19635,7 +19752,14 @@
   "hash": "#discovery",
   "sentences": [
     "Discovery",
-    "NUGU스마트홈에 세탁기(WASHER)를 등록하고자 할 때 Discovery Request/Response의 예시입니다. 사용자가 NUGU 모바일 앱을 통해 IoT ServiceProvider의 계정을 연동한 후 스마트홈 기기를 등록하려고 시도할 때 NUGU스마트홈이 SmartHomeBackendProxy에 Discovery 요청을 보내고 이 때 등록할 수 있는 스마트홈 기기 정보를 응답해야 합니다. 스마트스위치는 스위치를 제어함으로써 실제로 타 유형의 스마트홈 기기를 최종적으로 제어할 수 있습니다. 이 때 다양한 명령어를 통한 기능을 제공하려면 최종제어하는 스마트홈 기기 유형으로 등록해주세요.",
+    "NUGU스마트홈에 세탁기(WASHER)를 등록하고자 할 때 Discovery Request/Response의 예시입니다. 사용자가 NUGU 모바일 앱을 통해 IoT ServiceProvider의 계정을 연동한 후 스마트홈 기기를 등록하려고 시도할 때 NUGU스마트홈이 SmartHomeBackendProxy에 Discovery 요청을 보내고 이 때 등록할 수 있는 스마트홈 기기 정보를 응답해야 합니다. 스마트스위치는 스위치를 제어함으로써 실제로 타 유형의 스마트홈 기기를 최종적으로 제어할 수 있습니다. 이 때 다양한 명령어를 통한 기능을 제공하려면 최종제어하는 스마트홈 기기 유형으로 등록해주세요."
+  ]
+},
+    {
+  "skip_keyword": "data-skip-search-index",
+  "title": "스마트스위치 > Discovery > Discovery Request 예시",
+  "hash": "#discovery-request-예시",
+  "sentences": [
     "Discovery Request 예시",
     "(POST, /nugu/v1/devices)",
     "{\n  \"token\": \"7KOdwPQdJPZf4KYsjtHdqz3e8fKd\"\n}",
