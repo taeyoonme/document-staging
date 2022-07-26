@@ -50,7 +50,7 @@ IoT ServiceProvider 및 제품에 따라 지원하는 Attribute 값이 상이할
 | 4단(계)       | SPEED4           |
 | 5단(계)       | SPEED5           |
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="SetAirflow Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
 ```json
@@ -111,7 +111,7 @@ Airflow를 몇 단계 조절할지에 대한 Attribute value입니다. 해당 At
 미풍 &lt; 약풍 &lt; 중풍 &lt; 강풍 &lt; 터보, 1단 &lt; 2단 &lt; 3단 &lt; 4단 &lt; 5단 순으로 조정되며 이외에는 세기 단위에 포함되지 않은 특수풍으로 구분합니다.
 {% endalerts %}
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="IncreaseAirflow Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
 ```json
@@ -163,7 +163,7 @@ Related to [AirflowControl Interface](./smarthomecapability/airflowcontrol-inter
 
 설정하고자 하는 스마트홈 기기의 밝기 정보입니다. 1부터 100 단계 백분율 정보로 설정할 수 있습니다.
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="SetBrightness Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
 ```json
@@ -210,7 +210,7 @@ Related to [BrightnessControl Interface](./smarthomecapability/brightnesscontrol
 
 스마트홈 기기에 설정된 밝기를 몇 단계 조절할지에 대한 정보입니다. 해당 정보가 없을 경우 1단계를 조절합니다.
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="IncreaseBrightness Directive Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
 ```json
@@ -285,7 +285,7 @@ Related to [BrightnessControl Interface](./smarthomecapability/brightnesscontrol
 | 터키색   | TURQUOISE    | #4affef   |
 | 연보라   | LIGHT_PURPLE | #eaebfe   |
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="ChangeColor Directive Request 예시 (POST, /nugu/v1/capabilities/ColorControl/directives/ChangeColor)"%}
 ```json
@@ -360,7 +360,7 @@ Related to [ColorControl Interface](./smarthomecapability/colorcontrol-interface
 
 스마트홈 기기 자체에 설정하고자 하는 온도 정보입니다. 냉장고, 오븐 등과 같이 스마트홈 기기가 자체 온도를 가질 경우를 지원합니다.
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="SetDeviceTemperatureLevel Directive Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
 ```json
@@ -404,7 +404,7 @@ Related to [DeviceTemperatureControl Interface](./smarthomecapability/devicetemp
 
 스마트홈 기기에 설정하고자 하는 습도 정보입니다. 백분율 단위로 표현합니다.
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="SetHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/SetHumidity)"%}
 ```json
@@ -451,7 +451,7 @@ Related to [HumidityControl Interface](./smarthomecapability/humiditycontrol-int
 
 스마트홈 기기에 설정된 습도를 몇 % 조절할지에 대한 정보입니다. 백분율 단위로 표현합니다.
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="IncreaseHumidity Directive Request 예시 (POST, /nugu/v1/capabilities/HumidityControl/directives/IncreaseHumidity)"%}
 ```json
@@ -557,7 +557,7 @@ Related to [HumidityControl Interface](./smarthomecapability/humiditycontrol-int
 | 쾌속모드        | FAST                        |
 | 스마트 모드      | SMART                       |
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="SetMode Directive Request 예시 (POST, /nugu/v1/capabilities/ModeControl/directives/SetMode)"%}
 ```json
@@ -613,7 +613,7 @@ Related to [ModeControl Interface](./smarthomecapability/modecontrol-interface)
 
 스마트홈 기기에 설정하고자 하는 주변 온도 정보입니다. 섭씨 온도 단위를 지원합니다.
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="SetTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/SetTemperature)"%}
 ```json
@@ -662,7 +662,7 @@ Related to [TemperatureControl Interface](./smarthomecapability/temperaturecontr
 
 스마트홈 기기의 설정된 온도를 조절하기 위한 단위 표현입니다. 섭씨 온도 단위를 지원합니다.
 
-Attribute 사용 예시
+#### Attribute 사용 예시
 
 {% code title="IncreaseTemperature Directive Request 예시 (POST, /nugu/v1/capabilities/TemperatureControl/directives/IncreaseTemperature)"%}
 ```json

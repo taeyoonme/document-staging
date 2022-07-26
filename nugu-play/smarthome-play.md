@@ -64,9 +64,9 @@ NUGU SmartHome Platform은 지금도 계속해서 개발되고 있습니다. 현
 
 SmartHome Play의 동작을 위해서는 SmartHomeServiceProvider의 SmartHomeDevice 정보를 NUGU스마트홈에 등록해야 합니다. 일반 사용자가 NUGU스마트홈에 SmartHomeDevice를 등록하려면 NUGU App의 스마트홈 메뉴에서 "신규 디바이스 등록하기" 기능을 사용해야 합니다. "신규 디바이스 등록하기"를 선택한 후 SmartHome Play를 선택하면 해당 SmartHome Play의 SmartHomeServiceProvider가 제공하는 계정연동(OAUTH 2.0) 웹페이지로 이동하고 계정 연동을 통해 SmartHomeServiceProvider에 등록된 SmartHomeDevice 정보를 불러오게 됩니다. 불러온 SmartHomeDevice 정보 중 사용자가 선택해 등록한 SmartHomeDevice는 NUGU스마트홈을 통해 제어할 수 있게 됩니다. 사용자가 NUGU App을 통해 SmartHome Play의 SmartHomeDevice를 등록하려고 하면 NUGU스마트홈은 SmartHomeServiceProvider에게 Discovey를 요청하고 SmartHomeServiceProvider는 아래 예시와 같이 NUGU스마트홈에 등록할 수 있는 모든 SmartHomeDevice 정보를 응답해야 합니다.
 
-Discovery Request Sample
+### Discovery Request 예시
 
-{% code title="Discovery Request 예시 (POST, /nugu/v1/devices)"%}
+{% code title="(POST, /nugu/v1/devices)"%}
 ```json
 {
   "userIdentifier": "t6Pv9PLAEmYZilNiloUUnZbVDjXgvUCzwpWY1tPq (optional, e.g. hue whitelist identifier)",
@@ -75,9 +75,9 @@ Discovery Request Sample
 ```
 {% endcode %}
 
-Discovery Response Sample
+### Discovery Response Sample
 
-{% code title="Discovery Response 예시"%}
+{% code %}
 ```json
 {
   "devices": [
@@ -113,9 +113,9 @@ Discovery Response Sample
 
 NUGU스마트홈에 등록된 SmartHomeDevice에 제어 요청이 올 경우 NUGU스마트홈은 내부 로에 따라 제어 대상 및 제어 명령을 확정 짓고 Discovery단계에서 등록된 정보를 활용해 SmartHomeServiceProvider에게 제어 명령을 전달합니다. 이때 제어 명령을 실제로 수신하는 것은 SmartHome Play를 제작할 당시에 입력한 SmartHomePlayBackendProxy입니다. 제어명령은 SmartHomeDeviceType과 SmartHomeCapability, SmartHomeDirective로 정리되어 요청되며, SmartHomeCapability, SmartHomeDirective에 따라 부가 정보가 포함되기도 합니다.
 
-Control Request Sample
+### Control Request 예시
 
-{% code title="Control Request 예시 (POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
+{% code title="(POST, /nugu/v1/capabilities/{Capability}/directives/{Directive})"%}
 ```json
 {
   "version": 1,
@@ -149,9 +149,9 @@ Control Request Sample
 ```
 {% endcode %}
 
-Control Response Sample
+### Control Response 예시
 
-{% code title="Control Response 예시" %}
+{% code %}
 ```json
 {
   "resultCode": "OK", // 에러일 경우 에러코드 응답

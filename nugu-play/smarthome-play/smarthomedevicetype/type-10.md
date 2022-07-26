@@ -10,7 +10,7 @@ NUGU스마트홈에서 제공하는 기종 중 스마트스위치(SWITCH) 기종
 
 NUGU스마트홈에 세탁기(WASHER)를 등록하고자 할 때 Discovery Request/Response의 예시입니다. 사용자가 NUGU 모바일 앱을 통해 IoT ServiceProvider의 계정을 연동한 후 스마트홈 기기를 등록하려고 시도할 때 NUGU스마트홈이 SmartHomeBackendProxy에 Discovery 요청을 보내고 이 때 등록할 수 있는 스마트홈 기기 정보를 응답해야 합니다. 스마트스위치는 스위치를 제어함으로써 실제로 타 유형의 스마트홈 기기를 최종적으로 제어할 수 있습니다. 이 때 다양한 명령어를 통한 기능을 제공하려면 최종제어하는 스마트홈 기기 유형으로 등록해주세요.
 
-Discovery Request 예시
+### Discovery Request 예시
 
 {% code title="(POST, /nugu/v1/devices)"%}
 ```json
