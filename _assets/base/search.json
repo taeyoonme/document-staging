@@ -16358,7 +16358,7 @@
     "{\n  \"version\": 1,\n  \"requestId\": \"2019071712638a4378649347bdb21643127a0f6d83\",\n  \"action\": {\n    \"command\": {\n      \"smartHomeCapability\": \"TemperatureControl\",\n      \"smartHomeDirective\": \"SetTemperature\",\n      \"parameters\": {\n        \"temperatureLevel\": 22\n      }\n    },\n    \"smartHomeDevices\": [\n      {\n        \"id\": \"D83077224431\",\n        \"type\": \"에어컨\",\n        \"model\": null,\n        \"friendlyName\": \"거실\",\n        \"customData\": {}\n      }\n    ]\n  },\n  \"context\": {\n    \"session\": {\n      \"id\": \"a5a250af-48f7-4ceb-b099-ea6753afa570\",\n      \"accessToken\": \"DUMMY_ACCESS_TOKEN\",\n      \"userIdentifier\": \"SERVICE_PROVIDER_USER_ID (optional, e.g. Hue whitelist Identifier)\"\n    }\n  }\n}",
     "Control Response Sample",
     "Control Response 예시",
-    "{\n  \"resultCode\": \"OK\", // 에러일 경우 에러코드 응답\n  \"requestId\": \"2019071712638a4378649347bdb21643127a0f6d83\", // request로 받은 값을 그대로 응답\n  \"parameters\": {} <-- directive 마다 필요한 property 채워서 응답.\n}"
+    "{\n  \"resultCode\": \"OK\", // 에러일 경우 에러코드 응답\n  \"requestId\": \"2019071712638a4378649347bdb21643127a0f6d83\", // request로 받은 값을 그대로 응답\n  \"parameters\": {} // directive 마다 필요한 property 채워서 응답.\n}"
   ]
 }
   ]
