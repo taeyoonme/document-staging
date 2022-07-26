@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-25 23:49:50 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-26 00:24:56 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Backend proxy 구축하기">
 <title>Developers | Guide - Backend proxy 구축하기</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy">
@@ -2367,13 +2367,13 @@
 
 <p>NUGU 플랫폼의 Dialog Manager는 지정된 포맷(Backend proxy API 규격)으로 요청을 하기 때문에 외부 서비스의 REST API 포맷이 Backend proxy API 규격과 다르다면 포맷을 변환해주기 위한 Backend proxy 서버를 개발해야 합니다.</p>
 
-<p><img src="/document/assets/images/backend-proxy-01.png" alt="" class="img-internal"></p>
+<p><img src="../../../assets/images/backend-proxy-01.png" alt=""></p>
 
 <p>이 서버는 Play Builder를 통해 Play를 만드는 과정에서 정의한 파라미터와 <a href="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference" class="a-internal">Backend proxy API Reference</a>에서 제공하는 규격을 사용하여 직접 개발해야 합니다.</p>
 
 <p>NUGU 플랫폼에서는 Backend proxy를 구축할 수 있는 클라우드 환경을 제공하고 있지 않으며, Play를 개발하는 곳에서 직접 구축을 하거나 클라우드 서비스를 이용할 수 있습니다.</p>
 
-<p><img src="/document/assets/images/backend-proxy-02.png" alt="" class="img-internal"></p>
+<p><img src="../../../assets/images/backend-proxy-02.png" alt=""></p>
 
 <p>위 그림에서 첫번째 단계와 두번째 단계는 Play Builder에서 설정하는 작업이기 때문에 여기서 추가로 설명하지 않습니다.</p>
 
@@ -2427,9 +2427,9 @@
 
 <p>각각의 정보를 참조하기 위한 Play Builder 화면은 아래와 같습니다.</p>
 
-<p><img src="/document/assets/images/backend-proxy-03.png" alt="" class="img-internal"></p>
+<p><img src="../../../assets/images/backend-proxy-03.png" alt=""></p>
 
-<p><img src="/document/assets/images/backend-proxy-04.png" alt="" class="img-internal"></p>
+<p><img src="../../../assets/images/backend-proxy-04.png" alt=""></p>
 
 <h2 id="request-body">Request Body<a href="#request-body" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy#request-body"></div>
 </h2>
@@ -2463,7 +2463,7 @@
 
 <p>예를 들어 설명하면 아래와 같습니다.</p>
 
-<p><img src="/document/assets/images/backend-proxy-05.png" alt="" class="img-internal"></p>
+<p><img src="../../../assets/images/backend-proxy-05.png" alt=""></p>
 
 <p>Backend Parameter의 경우 Backend proxy에서 처리한 결과를 가져오는 용도로 사용되기 때문에 Request Body에는 null을 갖게 됩니다.</p>
 
@@ -2539,7 +2539,7 @@
 <h3 id="resultcode">resultCode<a href="#resultcode" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy#resultcode"></div>
 </h3>
 
-<p><img src="/document/assets/images/backend-proxy-06.png" alt="" class="img-internal"></p>
+<p><img src="../../../assets/images/backend-proxy-06.png" alt=""></p>
 
 <p>“output” 필드 외에 “resultCode”가 정의되어 있습니다. 이 필드는 위 그림에서 설정한 Exception Code에 의해 결정됩니다.</p>
 
