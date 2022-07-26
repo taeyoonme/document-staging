@@ -20,7 +20,7 @@ NUGU스마트홈에 세탁기(WASHER)를 등록하고자 할 때 Discovery Reque
 ```
 {% endcode %}
 
-Discovery Response 예시
+### Discovery Response 예시
 
 {% code %}
 ```json
@@ -53,7 +53,7 @@ NUGU스마트홈을 통해 스마트스위치(SWITCH)를 제어할 때 권장하
 
 Capability별 상세한 내용은 아래 리스트의 링크를 통해 확인하실 수 있습니다.
 
-| Capability                                                    | Description                                                | 예시발      |
+| Capability                                                    | Description                                                | 예시발화     |
 |:--------------------------------------------------------------|:-----------------------------------------------------------|:---------|
 | [PowerControl](../smarthomecapability/powercontrol-interface) | 스마트스위치 전원 제어 기능입니다.<br/>전원을 켜고 끄며 동작을 제어하는 기능들로 구성되어 있습니다. | "스위치 켜줘" |
 

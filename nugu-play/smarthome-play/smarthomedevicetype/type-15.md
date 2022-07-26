@@ -10,7 +10,7 @@ NUGU스마트홈에서 제공하는 기종 중 에어컨(AIR_CONDITIONER) 기종
 
 NUGU스마트홈에 에어컨(AIR_CONDITIONER)을 등록하고자 할 때 Discovery Request/Response의 예시입니다. 사용자가 NUGU 모바일 앱을 통해 IoT ServiceProvider의 계정을 연동한 후 스마트홈 기기를 등록하려고 시도할 때 NUGU스마트홈이 SmartHomeBackendProxy에 Discovery 요청을 보내고 이 때 등록할 수 있는 스마트홈 기기 정보를 응답해야 합니다.
 
-Discovery Request 예시
+### Discovery Request 예시
 
 {% code title="(POST, /nugu/v1/devices)"%}
 ```json
@@ -20,7 +20,7 @@ Discovery Request 예시
 ```
 {% endcode %}
 
-Discovery Response 예시
+### Discovery Response 예시
 
 {% code %}
 

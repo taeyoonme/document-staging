@@ -10,7 +10,7 @@ NUGU스마트홈 ChargeControl Interface는 NUGU스마트홈에 등록된 SmartH
 
 NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스마트홈에 SmartHomeDevice를 등록해야 합니다. 사용자가 NUGU App을 통해 SmartHomeDevice 등록을 요청하면 SmartHome Play 제작 당시 입력한 SmartHomeBackendProxy URL로 NUGU스마트홈에 등록할 수 있는 SmartHomeDevice 목록에 대한 Discovery 요청이 전달됩니다. SmartHomeBackendProxy는 SmartHomeDevice 목록과 함께 각 SmartHomeDevice별로 지원하는 Capability와 그에 따른 부가적인 Parameter들을 응답해야 합니다.
 
-Discovery Sample Request
+### Discovery Request 예시
 
 {% code title="(POST, /nugu/v1/devices)"%}
 ```json
@@ -20,7 +20,7 @@ Discovery Sample Request
 ```
 {% endcode %}
 
-Discovery Sample Response
+### Discovery Response 예시
 
 {% code %}
 ```json
@@ -67,7 +67,7 @@ Directive : StartCharging
 아리아, {FriendlyName} 충전해줘  
 아리아, {DeviceType} 충전 시작.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/StartCharging)"%}
 ```json
@@ -106,7 +106,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -136,7 +136,7 @@ Directive : StopCharging
 아리아, {FriendlyName} 충전 멈춰줘  
 아리아, {DeviceType} 충전 그만.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/StopCharging)"%}
 ```json
@@ -175,7 +175,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -205,7 +205,7 @@ Directive : CheckRemainingBattery
 아리아, {FriendlyName} 남은 배터리량 알려줘  
 아리아, {DeviceType} 배터리량 조회
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/ChargeControl/directives/CheckRemainingBattery)"%}
 ```json
@@ -244,7 +244,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json

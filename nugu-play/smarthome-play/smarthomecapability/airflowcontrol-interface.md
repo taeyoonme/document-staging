@@ -10,7 +10,7 @@ NUGU 스마트홈 AirflowControl Capability Interface는 NUGU 스마트홈에 �
 
 NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스마트홈에 SmartHomeDevice를 등록해야 합니다. 사용자가 NUGU App을 통해 SmartHomeDevice 등록을 요청하면 SmartHome Play 제작 당시 입력한 SmartHomeBackendProxy URL로 NUGU스마트홈에 등록할 수 있는 SmartHomeDevice 목록에 대한 Discovery 요청이 전달됩니다. SmartHomeBackendProxy는 SmartHomeDevice 목록과 함께 각 SmartHomeDevice별로 지원하는 Capability와 그에 따른 부가적인 Parameter들을 응답해야 합니다.
 
-Discovery Sample Request
+### Discovery Request 예시
 
 {% code title="(POST, /nugu/v1/devices)"%}
 ```json
@@ -20,7 +20,7 @@ Discovery Sample Request
 ```
 {% endcode %}
 
-Discovery Sample Response
+### Discovery Response 예시
 
 {% code %}
 ```json
@@ -83,7 +83,7 @@ Directive : SetAirflow
 아리아, {FriendlyName} 풍량 약풍으로 설정해줘.  
 아리아, {DeviceType} 풍량 3단계로 설정해줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/SetAirflow)"%}
 ```json
@@ -140,7 +140,7 @@ SetAirflow Directive Request parameter details
 | airflowType    | 설정하고자 하는 airflowType의 사용자 발화 정보.<br/>해당 parameter의 value는 Device Discovery 당시 Response한 supprtedAirflowTypes 중 하나로 요청됩니다. | string |
 | rawAirflowType | 사용자가 실제 발화한 AirflowType.<br/>정규화 되지 않은 값                                                                                  | string |
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -186,7 +186,7 @@ Directive : AskAirflow
 아리아, {FriendlyName} 풍량 어떻게 설정되어 있어?  
 아리아, {DeviceType} 풍량 조회해줘
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/AskAirflow)"%}
 ```json
@@ -233,7 +233,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -290,7 +290,7 @@ Directive : IncreaseAirflow
 아리아, {FriendlyName} 풍량 1단계 올려서 설정해줘.  
 아리아, {DeviceType} 풍량 3단계 올려줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/IncreaseAirflow)"%}
 ```json
@@ -342,7 +342,7 @@ IncreaseAirflow Directive request parameter details
 |:---------------|:----------------------------------------------------------|:------|
 |                | 별도의 파라미터는 없고, 1단계씩 올려야 합니다.<br/>n 단계 올리는 스펙은 추후 지원 예정입니다. |       |
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -399,7 +399,7 @@ Directive : DecreaseAirflow
 아리아, {FriendlyName} 풍량 1단계 내려서 설정해줘.  
 아리아, {DeviceType} 풍량 2단계 내려줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/DecreaseAirflow)"%}
 ```json
@@ -451,7 +451,7 @@ DecreaseAirflow Directive request parameter details
 |:---------------|:--------------------------------------------------------|:------|
 |                | 별도의 파라미터는 없 1단계씩 내려야 합니다.<br/>n 단계 내리는 스펙은 추후 지원 예정입니다. |       |
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -487,7 +487,7 @@ Directive : SetAirflowMax
 아리아, {FriendlyName} 풍량 가장 높게 해줘  
 아리아, {DeviceType} 풍량 최대로 해줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/SetAirflowMax)"%}
 ```json
@@ -533,7 +533,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -590,7 +590,7 @@ Directive : SetAirflowMin
 아리아, {FriendlyName} 풍량 가장 낮게 해줘  
 아리아, {DeviceType} 풍량 최소로 해줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/AirflowControl/directives/SetAirflowMin)"%}
 ```json
@@ -636,7 +636,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -718,7 +718,8 @@ Sample Error Response
 응답으로는 각 디바이스별 성공/실패 여부를 data의 하위 리스트에 담을 수 있습니다
 {% endalerts %}
 
-Request sample
+#### Sample Request
+
 {% code %}
 ```json
 {
@@ -784,7 +785,8 @@ Request sample
 ```
 {% endcode %}
 
-Response Sample
+#### Sample Response
+
 {% code %}
 ```json
 {

@@ -10,7 +10,7 @@ NUGU 스마트홈 BrightnessControl Capability Interface는 NUGU 스마트홈에
 
 NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스마트홈에 SmartHomeDevice를 등록해야 합니다. 사용자가 NUGU App을 통해 SmartHomeDevice 등록을 요청하면 SmartHome Play 제작 당시 입력한 SmartHomeBackendProxy URL로 NUGU스마트홈에 등록할 수 있는 SmartHomeDevice 목록에 대한 Discovery 요청이 전달됩니다. SmartHomeBackendProxy는 SmartHomeDevice 목록과 함께 각 SmartHomeDevice별로 지원하는 Capability와 그에 따른 부가적인 Parameter들을 응답해야 합니다.
 
-Discovery Sample Request
+### Discovery Request 예시
 
 {% code title="(POST, /nugu/v1/devices)"%}
 ```json
@@ -20,7 +20,7 @@ Discovery Sample Request
 ```
 {% endcode %}
 
-Discovery Sample Response
+### Discovery Response 예시
 
 {% code %}
 ```json
@@ -94,7 +94,7 @@ Directive : SetBrightness
 아리아, {FriendlyName} 밝기 30%로 설정해줘.  
 아리아, {DeviceType} 밝기 19로 설정해줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightness)"%}
 ```json
@@ -141,7 +141,7 @@ SetBrightness Directive Request parameter details
 |:----------------|:-----------------------------------------------------------------------|:---------------|
 | brightnessLevel | 사용자가 SmartHomeDevice에 설정하고자 하는 밝기의 발화 정보입니다.<br/>1부터 100까지 설정할 수 있습니다. | integer(1~100) |
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -187,7 +187,7 @@ Directive : IncreaseBrightness
 아리아, {FriendlyName} 밝기 3 올려서 설정해줘.  
 아리아, {DeviceType} 밝기 10단계 올려줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/IncreaseBrightness)"%}
 ```json
@@ -237,7 +237,7 @@ IncreaseTemperature Directive request parameter details
 |:----------------|:--------------------------------------------------------------------|:---------------|
 | brightnessDelta | 설정 밝기를 몇 단계 올릴지에 대한 사용자 발화 정보입니다.<br/>해당 정보가 없을 경우 1단계를 올리도록 설정합니다. | integer(1~100) |
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -283,7 +283,7 @@ Directive : DecreaseBrightness
 아리아, {FriendlyName} 밝기 3 내려서 설정해줘.  
 아리아, {DeviceType} 밝기 10단계 내려줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/DecreaseBrightness)"%}
 ```json
@@ -332,7 +332,7 @@ DecreseBrightness Directive request parameter details
 |:----------------|:--------------------------------------------------------------------|:---------------|
 | brightnessDelta | 설정 밝기를 몇 단계 내릴지에 대한 사용자 발화 정보입니다.<br/>해당 정보가 없을 경우 1단계를 내리도록 설정합니다. | integer(1~100) |
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -378,7 +378,7 @@ Directive : SetBrightnessMax
 아리아, {FriendlyName} 가장 밝게 해줘  
 아리아, {DeviceType} 설정 밝기 최대로 해줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMax)"%}
 ```json
@@ -418,7 +418,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -464,7 +464,7 @@ Directive : SetBrightnessMin
 아리아, {FriendlyName} 가장 어둡게 해줘  
 아리아, {DeviceType} 설정 밝기 최하 단계로 해줘.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/BrightnessControl/directives/SetBrightnessMin)"%}
 ```json
@@ -504,7 +504,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json

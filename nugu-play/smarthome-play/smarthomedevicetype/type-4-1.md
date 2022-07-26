@@ -10,7 +10,7 @@ NUGU스마트홈에서 제공하는 기종 중 공기청정기(AIR_CLEANER) 기�
 
 NUGU스마트홈에 공기청정기(AIR_CLEANER)를 등록하고자 할 때 Discovery Request/Response의 예시입니다. 사용자가 NUGU 모바일 앱을 통해 IoT ServiceProvider의 계정을 연동한 후 스마트홈 기기를 등록하려고 시도할 때 NUGU스마트홈이 SmartHomeBackendProxy에 Discovery 요청을 보내고 이 때 등록할 수 있는 스마트홈 기기 정보를 응답해야 합니다.
 
-Discovery Request 예시
+### Discovery Request 예시
 
 {% code title="(POST, /nugu/v1/devices)"%}
 ```json
@@ -20,7 +20,7 @@ Discovery Request 예시
 ```
 {% endcode %}
 
-Discovery Response 예시
+### Discovery Response 예시
 
 {% code %}
 ```json
@@ -40,8 +40,7 @@ Discovery Response 예시
             "MIDDLE",
             "LOW",
             "AUTO"
-          ]
-          // 지원 가능한 Airflow 타입 참고.
+          ] // 지원 가능한 Airflow 타입 참고.
         },
         "airQualityCheck": {},
         "setTimeControl": {},
@@ -71,7 +70,7 @@ NUGU스마트홈을 통해 공기청정기(AIR_CLEANER)를 제어할 때 권장�
 
 Capability별 상세한 내용은 아래 리스트의 링크를 통해 확인하실 수 있습니다.
 
-| Capability                                                          | Description                                                                             | 예시발                   |
+| Capability                                                          | Description                                                                             | 예시발화                  |
 |:--------------------------------------------------------------------|:----------------------------------------------------------------------------------------|:----------------------|
 | [PowerControl](../smarthomecapability/powercontrol-interface)       | 공기청정기 전원 제어 기능입니다.<br/>전원을 켜고 끄며 동작을 제어하는 기능들로 구성되어 있습니다.                               | "공기청정기 켜줘"            |
 | [AirflowControl](../smarthomecapability/airflowcontrol-interface)   | 공기청정기의 풍량 제어 기능입니다.<br/>설정 풍량에 대한 상세한 정보는 SmartHomeAttribute : AirflowType을 참고하시기 바랍니다. | "공기청정기 풍량 강풍으로 설정해줘"  |

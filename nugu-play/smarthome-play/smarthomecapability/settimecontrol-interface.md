@@ -10,7 +10,7 @@ NUGU스마트홈 SetTimeControl Capability Interface는 NUGU 스마트홈에 등
 
 NUGU스마트홈을 통해 SmartHomeDevice를 제어하려면 사전에 NUGU스마트홈에 SmartHomeDevice를 등록해야 합니다. 사용자가 NUGU App을 통해 SmartHomeDevice 등록을 요청하면 SmartHome Play 제작 당시 입력한 SmartHomeBackendProxy URL로 NUGU스마트홈에 등록할 수 있는 SmartHomeDevice 목록에 대한 Discovery 요청이 전달됩니다. SmartHomeBackendProxy는 SmartHomeDevice 목록과 함께 각 SmartHomeDevice별로 지원하는 Capability와 그에 따른 부가적인 Parameter들을 응답해야 합니다.
 
-Discovery Sample Request
+### Discovery Request 예시
 
 {% code title="(POST, /nugu/v1/devices)"%}
 ```json
@@ -20,7 +20,7 @@ Discovery Sample Request
 ```
 {% endcode %}
 
-Discovery Sample Response
+### Discovery Response 예시
 
 {% code %}
 ```json
@@ -48,8 +48,8 @@ Discovery Sample Response
 
 SmartHomeDevice Attribute Parameters
 
-| Attribute  | Description                                                                                                                          |
-|:-----------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| Attribute  | Description                                                                                                                              |
+|:-----------|:-----------------------------------------------------------------------------------------------------------------------------------------|
 | customData | Discovery 시 SmartHomeServiceProvider가 응답할 수 있는 SmartHomeDevice의 부가정보입니다.<br/>customData는 해당 SmartHomeDevice의 제어요청 시 Request에 포함되어 전달됩니다. |
 
 ## Directive
@@ -68,7 +68,7 @@ Directive : SetEndTime
 아리아, {FriendlyName} {DeviceType} 3시로 종료예약해줘.  
 아리아, {DeviceType} 1시간 30분 후 종료예약 설정.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/SetTimeControl/directives/SetEndtime)"%}
 ```json
@@ -117,7 +117,7 @@ SetEndTime Directive Request parameter details
 |:---------------|:-----------------------------------------|:-------|
 | dateTime       | SmartHomeDevice에 설정하고자 하는 종료예약의 시간정보입니다. | string |
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
@@ -148,7 +148,7 @@ Directive : CancelEndTime
 아리아, {FriendlyName} {DeviceType} 꺼짐예약 삭제해줘.  
 아리아, {DeviceType} 종료예약 취소.
 
-Sample Request
+#### Sample Request
 
 {% code title="Control Request 예시 (POST, /nugu/v1/capabilities/SetTimeControl/directives/CancelEndtime)"%}
 ```json
@@ -189,7 +189,7 @@ Sample Request
 ```
 {% endcode %}
 
-Sample Response
+#### Sample Response
 
 {% code %}
 ```json
