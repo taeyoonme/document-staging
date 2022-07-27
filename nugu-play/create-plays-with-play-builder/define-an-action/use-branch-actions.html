@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-27 00:45:37 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-27 00:50:31 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Branch Action (Action Tree)">
 <title>Developers | Guide - Branch Action (Action Tree)</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-play/create-plays-with-play-builder/define-an-action/use-branch-actions">
@@ -2464,15 +2464,12 @@
     <p>이동한 Branch Action 설정 화면의 Trigger 영역에서 조건(Condition)을 추가하기 위해 <code class="language-plaintext highlighter-rouge">+</code> &gt; <code class="language-plaintext highlighter-rouge">Condition</code> 버튼을 클릭하면 하단에 셀렉트 박스(Select Box)가 표시됩니다.</p>
 
     <p><img src="../../../assets/images/use-branch-actions-13.png" alt=""></p>
+
+    <ul>
+      <li>Branch Action의 Trigger는 Intent가 아닌 Precondition 속성으로 자동 선택됩니다.</li>
+      <li>Condition은 Trigger가 될 하나의 조건입니다.</li>
+    </ul>
   </li>
-</ol>
-
-<ul>
-  <li>Branch Action의 Trigger는 Intent가 아닌 Precondition 속성으로 자동 선택됩니다.</li>
-  <li>Condition은 Trigger가 될 하나의 조건입니다.</li>
-</ul>
-
-<ol>
   <li>
     <p>첫 번째 셀렉트 박스에서 <strong>resultcode</strong>를 선택하고, 두 번째 셀렉트 박스에서 <strong>다음과 같을 경우</strong>를 선택한 후, 우측에 생긴 박스에서 <strong>String</strong>을 선택 상태로 두고 ‘정상’ 이라고 입력합니다.</p>
 
@@ -2491,13 +2488,11 @@
       <li>이 Action의 Precondition은 이제 두 개의 Single Condition이 AND 조건으로 묶인 Composite Condition이 되었습니다.</li>
       <li>이것의 의미는 ‘resultcode’라는 그릇 안에 ‘정상’이라는 값이 담겨 있으면서, ‘location’ Parameter가 존재하는 경우’를 말합니다.</li>
     </ul>
+
+    <p>그림으로 나타내어 보면 다음과 같습니다.</p>
+
+    <p><img src="../../../assets/images/use-branch-actions-16.png" alt=""></p>
   </li>
-</ol>
-
-<p>그림으로 나타내어 보면 다음과 같습니다.</p>
-
-<p><img src="../../../assets/images/use-branch-actions-16.png" alt=""></p>
-<ol>
   <li>
     <p>이제 이 페이지의 Output 정의 영역에서 <code class="language-plaintext highlighter-rouge">Response</code> 버튼을 클릭하고, Prompt에 “의 날씨는 .”라고 입력합니다. 이제 첫 번째 ‘a.w.location’ Action의 입력이 완료되었습니다.</p>
 

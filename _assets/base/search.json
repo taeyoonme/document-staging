@@ -21795,16 +21795,15 @@
   "sentences": [
     "a_w_location Branch Action 추가",
     "Branch Action별로 구체적인 설정을 하기 위해 설정할 Branch의 항목 ‘a_w_location’의 편집 버튼을 클릭합니다.",
-    "이동한 Branch Action 설정 화면의 Trigger 영역에서 조건(Condition)을 추가하기 위해 + > Condition 버튼을 클릭하면 하단에 셀렉트 박스(Select Box)가 표시됩니다.",
+    "이동한 Branch Action 설정 화면의 Trigger 영역에서 조건(Condition)을 추가하기 위해 + > Condition 버튼을 클릭하면 하단에 셀렉트 박스(Select Box)가 표시됩니다.\n\n    \n\n    \n      Branch Action의 Trigger는 Intent가 아닌 Precondition 속성으로 자동 선택됩니다.\n      Condition은 Trigger가 될 하나의 조건입니다.",
     "Branch Action의 Trigger는 Intent가 아닌 Precondition 속성으로 자동 선택됩니다.",
     "Condition은 Trigger가 될 하나의 조건입니다.",
-    "첫 번째 셀렉트 박스에서 resultcode를 선택하고, 두 번째 셀렉트 박스에서 다음과 같을 경우를 선택한 후, 우측에 생긴 박스에서 String을 선택 상태로 두고 ‘정상’ 이라고 입력합니다.\n\n    \n\n    \n      이 설정은 resultcode라는 Parameter가 ‘정상’일 경우 이 Branch를 실행한다라는 의미입니다.\n      \n+ 버튼을 클릭하여 조건(Condition)을 하나 더 추가한 후 + 버튼 좌측에 생긴 And/Or 조건은 And를 선택한 상태에서, 첫 번째 셀렉트 박스에서 location를 선택하고, 두 번째 셀렉트 박스에서 존재하는 경우를 선택합니다.\n    \n\n    \n\n    \n      지금까지의 설정으로 첫 번째 Branch Action의 Trigger가 완성되었습니다.\n      이 Action의 Precondition은 이제 두 개의 Single Condition이 AND 조건으로 묶인 Composite Condition이 되었습니다.\n      이것의 의미는 ‘resultcode’라는 그릇 안에 ‘정상’이라는 값이 담겨 있으면서, ‘location’ Parameter가 존재하는 경우’를 말합니다.",
+    "첫 번째 셀렉트 박스에서 resultcode를 선택하고, 두 번째 셀렉트 박스에서 다음과 같을 경우를 선택한 후, 우측에 생긴 박스에서 String을 선택 상태로 두고 ‘정상’ 이라고 입력합니다.\n\n    \n\n    \n      이 설정은 resultcode라는 Parameter가 ‘정상’일 경우 이 Branch를 실행한다라는 의미입니다.\n      \n+ 버튼을 클릭하여 조건(Condition)을 하나 더 추가한 후 + 버튼 좌측에 생긴 And/Or 조건은 And를 선택한 상태에서, 첫 번째 셀렉트 박스에서 location를 선택하고, 두 번째 셀렉트 박스에서 존재하는 경우를 선택합니다.\n    \n\n    \n\n    \n      지금까지의 설정으로 첫 번째 Branch Action의 Trigger가 완성되었습니다.\n      이 Action의 Precondition은 이제 두 개의 Single Condition이 AND 조건으로 묶인 Composite Condition이 되었습니다.\n      이것의 의미는 ‘resultcode’라는 그릇 안에 ‘정상’이라는 값이 담겨 있으면서, ‘location’ Parameter가 존재하는 경우’를 말합니다.\n    \n\n    그림으로 나타내어 보면 다음과 같습니다.",
     "이 설정은 resultcode라는 Parameter가 ‘정상’일 경우 이 Branch를 실행한다라는 의미입니다.",
     "+ 버튼을 클릭하여 조건(Condition)을 하나 더 추가한 후 + 버튼 좌측에 생긴 And/Or 조건은 And를 선택한 상태에서, 첫 번째 셀렉트 박스에서 location를 선택하고, 두 번째 셀렉트 박스에서 존재하는 경우를 선택합니다.",
     "지금까지의 설정으로 첫 번째 Branch Action의 Trigger가 완성되었습니다.",
     "이 Action의 Precondition은 이제 두 개의 Single Condition이 AND 조건으로 묶인 Composite Condition이 되었습니다.",
     "이것의 의미는 ‘resultcode’라는 그릇 안에 ‘정상’이라는 값이 담겨 있으면서, ‘location’ Parameter가 존재하는 경우’를 말합니다.",
-    "그림으로 나타내어 보면 다음과 같습니다.",
     "이제 이 페이지의 Output 정의 영역에서 Response 버튼을 클릭하고, Prompt에 “의 날씨는 .”라고 입력합니다. 이제 첫 번째 ‘a.w.location’ Action의 입력이 완료되었습니다.\n\n    \n\n    \n      resultcode 파라미터값이 ‘정상’이면서 location 파라미터가 존재한다면, 즉 location 이라는 그릇에 아무 값이라도 담겨 있으면 이 ‘a.w.location’ Action이 동작하여 방금 입력한 값(“의 날씨는 .”)으로 응답하게 됩니다.",
     "resultcode 파라미터값이 ‘정상’이면서 location 파라미터가 존재한다면, 즉 location 이라는 그릇에 아무 값이라도 담겨 있으면 이 ‘a.w.location’ Action이 동작하여 방금 입력한 값(“의 날씨는 .”)으로 응답하게 됩니다."
   ]
