@@ -85,8 +85,8 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 
    ![](../../../assets/images/use-branch-actions-13.png)
 
-  * Branch Action의 Trigger는 Intent가 아닌 Precondition 속성으로 자동 선택됩니다.
-  * Condition은 Trigger가 될 하나의 조건입니다.
+   * Branch Action의 Trigger는 Intent가 아닌 Precondition 속성으로 자동 선택됩니다.
+   * Condition은 Trigger가 될 하나의 조건입니다.
 
 3. 첫 번째 셀렉트 박스에서 **resultcode**를 선택하고, 두 번째 셀렉트 박스에서 **다음과 같을 경우**를 선택한 후, 우측에 생긴 박스에서 **String**을 선택 상태로 두고 '정상' 이라고 입력합니다.
 
@@ -101,7 +101,7 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
    * 이 Action의 Precondition은 이제 두 개의 Single Condition이 AND 조건으로 묶인 Composite Condition이 되었습니다.
    * 이것의 의미는 'resultcode'라는 그릇 안에 '정상'이라는 값이 담겨 있으면서, 'location' Parameter가 존재하는 경우'를 말합니다.
 
-  그림으로 나타내어 보면 다음과 같습니다.
+   그림으로 나타내어 보면 다음과 같습니다.
 
    ![](../../../assets/images/use-branch-actions-16.png)
 4. 이제 이 페이지의 Output 정의 영역에서 `Response` 버튼을 클릭하고, Prompt에 "의 날씨는 ."라고 입력합니다. 이제 첫 번째 'a.w.location' Action의 입력이 완료되었습니다.
@@ -154,6 +154,7 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
    * Trigger : == 정상
    * Response : 오늘은
 14. a_w_default
+
    * Trigger : 자동입력
    * Response : 제가 답할 수 없는 요청이에요
 
