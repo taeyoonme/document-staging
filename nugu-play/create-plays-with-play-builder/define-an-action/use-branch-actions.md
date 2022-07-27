@@ -141,26 +141,26 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
    * Response : 에는
 10. a_w_d_present
 
-   * Trigger : day_check == 현재
-   * Response : 지금 밖은
+    * Trigger : day_check == 현재
+    * Response : 지금 밖은
 11. a_w_d_future
 
-   * Trigger : 자동입력
-   * Response : 은
+    * Trigger : 자동입력
+    * Response : 은
 12. 마지막으로, 남은 "a_w_only"와 "a_w_default" Branch Action을 동일한 방법으로 다음과 같이 정의합니다.
 
 13. a_w_only
 
-   * Trigger : == 정상
-   * Response : 오늘은
+    * Trigger : == 정상
+    * Response : 오늘은
 14. a_w_default
 
-   * Trigger : 자동입력
-   * Response : 제가 답할 수 없는 요청이에요
+    * Trigger : 자동입력
+    * Response : 제가 답할 수 없는 요청이에요
 
 15. 이로써 위에서 예로 든 구조의 Action Tree가 구성되었습니다. 이를 다시 그림으로 살펴보면 다음과 같습니다.
 
-   ![](../../../assets/images/use-branch-actions-23.png)
+    ![](../../../assets/images/use-branch-actions-23.png)
 
 {% alerts style="info" %}
 어떤 Action이 Backend proxy를 사용함으로 설정하고 Backend Parameter를 정의하여 값을 받아온 경우 그 하위의 Action들은 해당 Parameter를 사용할 수 있습니다.
