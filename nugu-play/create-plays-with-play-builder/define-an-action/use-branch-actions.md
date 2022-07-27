@@ -87,6 +87,7 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 
   * Branch Action의 Trigger는 Intent가 아닌 Precondition 속성으로 자동 선택됩니다.
   * Condition은 Trigger가 될 하나의 조건입니다.
+
 3. 첫 번째 셀렉트 박스에서 **resultcode**를 선택하고, 두 번째 셀렉트 박스에서 **다음과 같을 경우**를 선택한 후, 우측에 생긴 박스에서 **String**을 선택 상태로 두고 '정상' 이라고 입력합니다.
 
    ![](../../../assets/images/use-branch-actions-14.png)
@@ -138,24 +139,20 @@ Branch Action은 기본적으로 Root Action과 같으나, Trigger가 Intent가 
 
    * Trigger : day_check == 과거
    * Response : 에는
-
 10. a_w_d_present
 
    * Trigger : day_check == 현재
    * Response : 지금 밖은
-
 11. a_w_d_future
 
    * Trigger : 자동입력
    * Response : 은
-
 12. 마지막으로, 남은 "a_w_only"와 "a_w_default" Branch Action을 동일한 방법으로 다음과 같이 정의합니다.
 
 13. a_w_only
 
    * Trigger : == 정상
    * Response : 오늘은
-
 14. a_w_default
    * Trigger : 자동입력
    * Response : 제가 답할 수 없는 요청이에요

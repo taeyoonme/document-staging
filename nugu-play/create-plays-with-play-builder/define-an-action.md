@@ -19,5 +19,5 @@ depth_order: 5
 ![](../../assets/images/define-an-action-02.png)
 
 {% alerts style="info" %}
-Action Tree에 대한 자세한 내용은 [Branch Action 사용하기(Action Tree 만들기)](./define-an-action/use-branch-actions#use-branch-actions)에서 알아보도록 하겠습니다.
+Action Tree에 대한 자세한 내용은 [Branch Action 사용하기(Action Tree 만들기)](./define-an-action/use-branch-actions)에서 알아보도록 하겠습니다.
 {% endalerts %}

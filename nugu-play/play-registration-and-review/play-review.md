@@ -197,7 +197,7 @@ Play 심사가 시작하기 전인 심사 요청 상태(**심사대기** 상태)
 운영자가 심사 요청을 받아 심사를 시작한 경우(`심사중` 상태)에는 심사 취소를 할 수 없습니다.
 {% endalerts %}
 
-1. `Developers Console` > P`lay kit` > `Play 관리`에서 심사를 취소할 **심사대기** 상태의 Play를 클릭하여 선택합니다.
+1. `Developers Console` > `Play kit` > `Play 관리`에서 심사를 취소할 **심사대기** 상태의 Play를 클릭하여 선택합니다.
 2. 배포/심사 정보 페이지 하단에 위치한 `심사취소` 버튼을 클릭하여 심사 취소를 완료합니다.
    
    ![](../../assets/images/simsacancel2.png)

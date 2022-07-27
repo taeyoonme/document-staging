@@ -68,5 +68,5 @@ prompt 대신 [Common Action](./use-common-actions)을 선택하여, 적절한 D
 {% alerts style="info" %}
 이 장과 함께 보면 좋은 도움말
 
-* [Action Tree 알아보기](./use-branch-actions#use-branch-actions)
+* [Action Tree 알아보기](./use-branch-actions)
 {% endalerts %}

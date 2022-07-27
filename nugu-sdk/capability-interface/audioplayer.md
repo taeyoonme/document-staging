@@ -131,7 +131,7 @@ AudioPlayer 로 음원을 재생할 때 화면을 구성하기 위해 필요한 
 
 [Stop](#stop) directive 또는 SDK 내부 timer 등에 의해 종료될 수 있으며, [UpdateMetadata](#updatemetadata) directive 에 의해 변경될 수 있습니다.
 
-[AudioPlayer.Template1](#audioitem-metadata-template-audioplayer-template1) 에 포함된 가사의 화면은 `사용자 발화` 에 따라 [ShowLyrics](#showlyrics), [HideLyrics](#hidelyrics), [ControlLyricsPage](#controllyricspage) directive 로 제어될 수 있습니다.
+[AudioPlayer.Template1](#audioitemmetadatatemplate---audioplayertemplate1) 에 포함된 가사의 화면은 `사용자 발화` 에 따라 [ShowLyrics](#showlyrics), [HideLyrics](#hidelyrics), [ControlLyricsPage](#controllyricspage) directive 로 제어될 수 있습니다.
 
 {% tabs %}
 {% tabs::content title="Android" %}
