@@ -187,7 +187,7 @@ authClient.loginSilentlyWithTid("{refresh-token}", object : NuguOAuthInterface.O
 ```
 {% endcode %}
 
-### **NUGU 회원 미사용 방식으**로 로그인
+### **NUGU 회원 미사용 방식**으로 로그인
 
 #### 로그인 정보 설정
 

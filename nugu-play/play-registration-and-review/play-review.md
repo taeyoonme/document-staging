@@ -204,5 +204,5 @@ Play 심사가 시작하기 전인 심사 요청 상태(**심사대기** 상태)
 3. 심사 취소 요청과 동시에 Play는 등록 중 상태로 바뀝니다.
 
 {% alerts style="info" %}
-Play 등록 상태는 `Developers Console` > P`lay kit` > `Play 관리` 페이지에서 확인할 수 있습니다.
+Play 등록 상태는 `Developers Console` > `Play kit` > `Play 관리` 페이지에서 확인할 수 있습니다.
 {% endalerts %}

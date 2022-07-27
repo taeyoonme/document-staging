@@ -159,7 +159,7 @@ depth_order: 6
 
 ### 2. 향상/변경된 기능
 
-* Utterance Parameter에 Entity mapping 방식 변경 : [자세히 알아보기](./create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter#utterance-parameter)
+* Utterance Parameter에 Entity mapping 방식 변경 : [자세히 알아보기](./create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter#utterance-parameter-등록하기)
 *   Entity value 및 동의어 입력 시 허용 특수기호 추가
 
     ' (Apostrophe), & (Ampersand), - (Hyphen)

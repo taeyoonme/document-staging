@@ -34,7 +34,7 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](./source-code) 에서
 
 ### 2021-06-02
 
-* Capability interface - [Location](./capability-interface/location#locationagent), [Extension](./capability-interface/extension#extensionagent), [Bluetooth](./capability-interface/bluetooth#bluetoothagent), [Mic](./capability-interface/mic#micagent), [Screen](./capability-interface/screen#screenagent), [Battery](./capability-interface/battery#batteryagent), [Sound](./capability-interface/sound#soundagent), [Message](./capability-interface/message#messageagent) 업데이트
+* Capability interface - [Location](./capability-interface/location#LocationAgent-사용), [Extension](./capability-interface/extension#ExtensionAgent-사용), [Bluetooth](./capability-interface/bluetooth#BluetoothAgent-사용), [Mic](./capability-interface/mic#MicAgent-사용), [Screen](./capability-interface/screen#ScreenAgent-사용), [Battery](./capability-interface/battery#BatteryAgent-사용), [Sound](./capability-interface/sound#SoundAgent-사용), [Message](./capability-interface/message#MessageAgent-사용) 업데이트
 
 ### 2021-05-31
 
@@ -70,7 +70,7 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](./source-code) 에서
 
 ### 2021-02-15
 
-* [NUGU 음성인식 사용하기](./platform/android/start#step-5-nugu)(Android) 업데이트
+* [NUGU 음성인식 사용하기](./platform/android/start#step5-nugu-음성인식-사용하기)(Android) 업데이트
 
 ### 2021-02-01
 
@@ -94,7 +94,7 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](./source-code) 에서
 
 ### 2021-01-04
 
-* [Android 구성요소](./platform/android/intro_components#undefined) 중 NuguUXKit 설명 업데이트
+* [Android 구성요소](./platform/android/intro_components) 중 NuguUXKit 설명 업데이트
 * [NUGU Display의 노출과 제어](./platform/android/nugu-display)(Android) 가이드 추가
 * [Display Template](./sdk-design-guide/display-template)(UX) 가이드 추가
 
@@ -105,10 +105,10 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](./source-code) 에서
 
 ### 2020-12-23
 
-* [iOS Configuration 파일 설정하기](./platform/ios/start#configuration) 가이드 추가
-* Configuration 파일 기반으로 [iOS 로그인 추가](./platform/ios/start#step-4-nugu) 가이드 수정
-* [Android Configuration 파일 설정하기](./platform/android/start#configuration) 가이드 추가
-* Configuration 파일 기반으로 [Android 로그인 추가](./platform/android/start#step-4-nugu) 가이드 수정
+* [iOS Configuration 파일 설정하기](./platform/ios/start#configuration-파일-설정하기) 가이드 추가
+* Configuration 파일 기반으로 [iOS 로그인 추가](./platform/ios/start#step-4-nugu-로그인-추가) 가이드 수정
+* [Android Configuration 파일 설정하기](./platform/android/start#configuration-파일-설정하기) 가이드 추가
+* Configuration 파일 기반으로 [Android 로그인 추가](./platform/android/start#step-4-nugu-로그인-추가) 가이드 수정
 
 ### 2020-12-14
 
@@ -121,8 +121,8 @@ Android, iOS, Linux 의 자세한 변경사항은 [Github](./source-code) 에서
 ### 2020-11-26
 
 * [Release note](./release-note) 페이지 추가
-* [iOS NUGU 회원 미사용 방식 연동 가이드](./platform/ios/start#type2) 추가
-* [Android NUGU 회원 미사용 방식 연동 가이드](./platform/android/start#type2) 추가
+* [iOS NUGU 회원 미사용 방식 연동 가이드](./platform/ios/start#nugu-회원-미사용-방식으로-로그인) 추가
+* [Android NUGU 회원 미사용 방식 연동 가이드](./platform/android/start#nugu-회원-미사용-방식으로-로그인) 추가
 * [iOS App background 동작 가이드](./platform/ios/background) 페이지 추가
 * [Android App background 동작 가이드](./platform/android/background) 페이지 추가
 * [System Requirements](./platform#system-requirements) 추가

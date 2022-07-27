@@ -46,7 +46,7 @@ depth_order: 3
 3. 첫 번째 셀렉트 박스에서 `[NPK]context_supportedInterfaces_AudioPlayer_playerActivity`를 선택하고, 두 번째 셀렉트 박스에서 `다음과 같을 경우`를 선택한 후, 우측에 생긴 박스에서 `String`을 선택 상태로 두고 각 Branch Action별로 `PAUSED`, `PLAYING` 이라고 입력합니다.
    * Default로 선택된 Branch Action은 Trigger 정의가 필요없습니다.
    * AudioPlayer 상태는 context.supportedInterfaces.AudioPlayer.playerActivity"에 저장되어 있습니다.
-   * context.supportedInterfaces.AudioPlayer.playerActivity는 Backend proxy API의 Request Body에 정의되어 있습니다. 자세한 내용은 [Backend proxy API Reference](../use-backend-proxy#backend-proxyapireference)를 참고하세요.
+   * context.supportedInterfaces.AudioPlayer.playerActivity는 Backend proxy API의 Request Body에 정의되어 있습니다. 자세한 내용은 [Backend proxy API Reference](../use-backend-proxy/backend-proxy-api-reference)를 참고하세요.
 4. Trigger 다음과 같이 정의하면, 'resumeWhilePause' Branch Action은 PAUSED 상태에서 동작합니다.
    
    ![](../../../assets/images/audioplay-define-built-in-intent-05.gif)
