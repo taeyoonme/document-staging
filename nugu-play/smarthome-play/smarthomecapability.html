@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-26 01:59:00 +0000">
+<meta http-equiv="Last-Modified" content="2022-07-27 00:37:36 +0000">
 <meta http-equiv="Title" content="Developers | Guide - SmartHomeCapability">
 <title>Developers | Guide - SmartHomeCapability</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-play/smarthome-play/smarthomecapability">
@@ -2363,7 +2363,7 @@
                     
                 </div>
                 <div class="content">
-                    <p>SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규격을 의미합니다. 예를 들어 <a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-21" class="a-internal">조명</a>의 전원제어 기능을 지원하기 위해서는 PowerControl Interface를 사용할 수 있고, <a href="/document/nugu-play/smarthomedevicetype/type-21" class="a-internal">조명</a>의 밝기제어를 지원하기 위해서는 BrightnessControl Interface를 활용할 수 있습니다. 아래는 NUGU스마트홈이 지원하는 SmartHomeCapability 리스트입니다. Play Builder를 통해 SmartHome Play를 생성할 때 연동하고자 하는 스마트홈 기기가 지원하는 기능에 따라 SmartHomeCapability를 선택해 사용할 수 있습니다. SmartHome Play를 제작 시 별도로 사용자 발화문을 정의할 필요가 없으며, SmartHome Device의 종류에 따라 지원하는 Capability가 상이할 수 있습니다. SmartHomeCapability는 1개 이상의 SmartHomeDirective를 보유하고 있고, SmartHomeCapability를 지원할 경우 해당 SmartHomeCapability가 보유하고 있는 모든 SmartHomeDirective를 지원해야 합니다. 하나의 기기가 복수개의 SmartHomeCapability를 지원할 수 있습니다.</p>
+                    <p>SmartHome Capability Interface는 스마트홈 기기를 제어하기 위한 규격을 의미합니다. 예를 들어 <a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-21" class="a-internal">조명</a>의 전원제어 기능을 지원하기 위해서는 PowerControl Interface를 사용할 수 있고, <a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-21" class="a-internal">조명</a>의 밝기제어를 지원하기 위해서는 BrightnessControl Interface를 활용할 수 있습니다. 아래는 NUGU스마트홈이 지원하는 SmartHomeCapability 리스트입니다. Play Builder를 통해 SmartHome Play를 생성할 때 연동하고자 하는 스마트홈 기기가 지원하는 기능에 따라 SmartHomeCapability를 선택해 사용할 수 있습니다. SmartHome Play를 제작 시 별도로 사용자 발화문을 정의할 필요가 없으며, SmartHome Device의 종류에 따라 지원하는 Capability가 상이할 수 있습니다. SmartHomeCapability는 1개 이상의 SmartHomeDirective를 보유하고 있고, SmartHomeCapability를 지원할 경우 해당 SmartHomeCapability가 보유하고 있는 모든 SmartHomeDirective를 지원해야 합니다. 하나의 기기가 복수개의 SmartHomeCapability를 지원할 수 있습니다.</p>
 
 <table>
   <thead>
@@ -2378,85 +2378,85 @@
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/airflowcontrol-interface" class="a-internal">AirflowControl</a></td>
       <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 풍량제어방식에 대한 설명입니다.<br>특정 풍량을 설정하거나 풍량 단계를 상향, 하향 조정하는 등의 Directive들로 구성되어 있으며 팬 및 풍량, 풍속을 제어할 수 있는 기능이 있는 모든 SmartHomeDevice를 지원합니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-2" class="a-internal">가습기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-8" class="a-internal">선풍기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a><br><a href="/document/nugu-play/smarthomedevicetype/type-20" class="a-internal">제습기</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-2" class="a-internal">가습기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-8" class="a-internal">선풍기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-20" class="a-internal">제습기</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/airqualitycheck-interface" class="a-internal">AirQualityCheck</a></td>
       <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice에서 주변 공기 상태를 측정하는 방식에 대한 설명입니다.<br>공기질은 1부터 10단계까지의 단계로 응답할 수 있으며 숫자가 작을수록 공기질이 좋은 상태입니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-4" class="a-internal">공기센서</a><br><a href="/document/nugu-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-4" class="a-internal">공기센서</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface" class="a-internal">BrightnessControl</a></td>
       <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 밝기제어방식에 대한 설명입니다.<br>스마트홈 기기의 밝기는 1부터 100단계로 제어할 수 있습니다.</td>
-      <td style="text-align: left"><a href="/document/nugu-play/smarthomedevicetype/type-21" class="a-internal">조명</a></td>
+      <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-21" class="a-internal">조명</a></td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/chargecontrol-interface" class="a-internal">ChargeControl</a></td>
       <td style="text-align: left">NUGU스마트홈에 등록된 SmartHomeDevice의 충전관련 기능들에 대한 설명입니다.<br>충전 기능이 있는 모든 SmartHomeDevice를 지원합니다.</td>
-      <td style="text-align: left"><a href="/document/nugu-play/smarthomedevicetype/type-6" class="a-internal">로봇청소기</a></td>
+      <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-6" class="a-internal">로봇청소기</a></td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/colorcontrol-interface" class="a-internal">ColorControl</a></td>
-      <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 설정된 색 제어방식에 대한 설명입니다.<br>스마트 <a href="/document/nugu-play/smarthomedevicetype/type-21" class="a-internal">조명</a> 등의 색상 변경을 지원합니다.</td>
-      <td style="text-align: left"><a href="/document/nugu-play/smarthomedevicetype/type-21" class="a-internal">조명</a></td>
+      <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 설정된 색 제어방식에 대한 설명입니다.<br>스마트 <a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-21" class="a-internal">조명</a> 등의 색상 변경을 지원합니다.</td>
+      <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-21" class="a-internal">조명</a></td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/devicetemperaturecontrol-interface" class="a-internal">DeviceTemperatureControl</a></td>
       <td style="text-align: left">NUGU스마트홈에 등록된 SmartHomeDevice 자체의 온도제어방식에 대한 설명입니다.<br>TemperatureControl Interface가 주변 온도에 대한 제어 명령이라면 DeviceTemperatureControl Interface는 해당 SmartHomeDevice 자체의 온도 설정에 대한 명령으로 구성되어 있습니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-5" class="a-internal">냉장고</a><br><a href="/document/nugu-play/smarthomedevicetype/type-17" class="a-internal">오븐</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-5" class="a-internal">냉장고</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-17" class="a-internal">오븐</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/humiditycontrol-interface" class="a-internal">HumidityControl</a></td>
       <td style="text-align: left">NUGU스마트홈에 등록된 SmartHomeDevice의 습도제어방식에 대한 설명입니다.<br>제어하고자 하는 습도는 해당 공간의 습도 비율로 %단위로 설정하며 습도를 제어하는 기능을 가진 SmartHomeDevice들을 지원합니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthomedevicetype/type-20" class="a-internal">제습기</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-20" class="a-internal">제습기</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/modecontrol-interface" class="a-internal">ModeControl</a></td>
       <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 모드설정방식에 대한 설명입니다.<br>NUGU스마트홈에는 사전에 정의된 모드명들이 있으며 다양한 표현을 정규화하여 정의된 모드명으로 제어 요청을 보냅니다.<br>IoT ServiceProvider는 제어 대상인 스마트홈 기기의 특성과 모드명으로 적합한 기능을 제어하게 됩니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-2" class="a-internal">가습기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-5" class="a-internal">냉장고</a><br><a href="/document/nugu-play/smarthomedevicetype/type-7" class="a-internal">보일러</a><br><a href="/document/nugu-play/smarthomedevicetype/type-8" class="a-internal">선풍기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a><br><a href="/document/nugu-play/smarthomedevicetype/type-20" class="a-internal">제습기</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-2" class="a-internal">가습기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-5" class="a-internal">냉장고</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-7" class="a-internal">보일러</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-8" class="a-internal">선풍기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-20" class="a-internal">제습기</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/powercheck-interface" class="a-internal">PowerCheck</a></td>
       <td style="text-align: left">NUGU스마트홈에 등록된 SmartHomeDevice의 전력량관련 조회방식에 대한 설명입니다.<br>스마트홈 기기의 사용전력량, 목표전력량 등의 조회 기능을 지원합니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-11" class="a-internal">스마트플러그</a><br><a href="/document/nugu-play/smarthomedevicetype/type-13" class="a-internal">에너지미터</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-11" class="a-internal">스마트플러그</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-13" class="a-internal">에너지미터</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface" class="a-internal">PowerControl</a></td>
       <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 전원제어방식에 대한 설명입니다.<br>전원을 켜고 끄거나 동작을 시작, 중지할 수 있는 모든 종류의 SmartHomeDevice를 지원합니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-1" class="a-internal">가스차단기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-2" class="a-internal">가습기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-3" class="a-internal">건조기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-6" class="a-internal">로봇청소기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-7" class="a-internal">보일러</a><br><a href="/document/nugu-play/smarthomedevicetype/type-8" class="a-internal">선풍기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-9" class="a-internal">세탁기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-10" class="a-internal">스마트스위치</a><br><a href="/document/nugu-play/smarthomedevicetype/type-11" class="a-internal">스마트플러그</a><br><a href="/document/nugu-play/smarthomedevicetype/type-12" class="a-internal">식기세척기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a><br><a href="/document/nugu-play/smarthomedevicetype/type-17" class="a-internal">오븐</a><br><a href="/document/nugu-play/smarthomedevicetype/type-18" class="a-internal">의류관리기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-20" class="a-internal">제습기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-21" class="a-internal">조명</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-1" class="a-internal">가스차단기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-2" class="a-internal">가습기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-3" class="a-internal">건조기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-6" class="a-internal">로봇청소기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-7" class="a-internal">보일러</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-8" class="a-internal">선풍기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-9" class="a-internal">세탁기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-10" class="a-internal">스마트스위치</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-11" class="a-internal">스마트플러그</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-12" class="a-internal">식기세척기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-17" class="a-internal">오븐</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-18" class="a-internal">의류관리기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-20" class="a-internal">제습기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-21" class="a-internal">조명</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface" class="a-internal">SetTimeControl</a></td>
       <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 제어시간설정방식에 대한 설명입니다.<br>스마트홈 기기의 종료예약설정 등을 관리할 수 있습니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-2" class="a-internal">가습기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-7" class="a-internal">보일러</a><br><a href="/document/nugu-play/smarthomedevicetype/type-8" class="a-internal">선풍기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-11" class="a-internal">스마트플러그</a><br><a href="/document/nugu-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a><br><a href="/document/nugu-play/smarthomedevicetype/type-20" class="a-internal">제습기</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-2" class="a-internal">가습기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-4-1" class="a-internal">공기청정기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-7" class="a-internal">보일러</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-8" class="a-internal">선풍기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-11" class="a-internal">스마트플러그</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-14" class="a-internal">에어워셔</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-20" class="a-internal">제습기</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/statecheck-interface" class="a-internal">StateCheck</a></td>
       <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 상태조회방식에 대한 설명입니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-12" class="a-internal">식기세척기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-16" class="a-internal">열림감지센서</a><br><a href="/document/nugu-play/smarthomedevicetype/type-17" class="a-internal">오븐</a><br><a href="/document/nugu-play/smarthomedevicetype/type-18" class="a-internal">의류관리기</a><br><a href="/document/nugu-play/smarthomedevicetype/type-19" class="a-internal">정수기</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-12" class="a-internal">식기세척기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-16" class="a-internal">열림감지센서</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-17" class="a-internal">오븐</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-18" class="a-internal">의류관리기</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-19" class="a-internal">정수기</a>
 </td>
     </tr>
     <tr>
       <td style="text-align: left"><a href="/document/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface" class="a-internal">TemperatureControl</a></td>
       <td style="text-align: left">NUGU 스마트홈에 등록된 SmartHomeDevice의 온도제어방식에 대한 설명입니다.<br>TemperatureControl Interface는 주변 온도를 특정 온도로 설정하기 위한 스마트홈 기기의 제어 명령입니다.</td>
       <td style="text-align: left">
-<a href="/document/nugu-play/smarthomedevicetype/type-7" class="a-internal">보일러</a><br><a href="/document/nugu-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a>
+<a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-7" class="a-internal">보일러</a><br><a href="/document/nugu-play/smarthome-play/smarthomedevicetype/type-15" class="a-internal">에어컨</a>
 </td>
     </tr>
   </tbody>
