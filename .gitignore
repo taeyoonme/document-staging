@@ -8,3 +8,4 @@ vendor
 *.iml
 *.ipr
 normalize
+Gemfile.lock

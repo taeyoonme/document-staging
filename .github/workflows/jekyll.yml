@@ -3,8 +3,6 @@ name: Jekyll site CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -27,4 +25,4 @@ jobs:
         keep_history: true
         target_branch: "gh-pages"
         jekyll_build_options: "--config _config.yml,_config.jekyll_potion.yml,_config.github.yml --trace"
-        token: ${{ secrets.JEKYLL_PAT }}
+        token: ${{ secrets.GITHUB_TOKEN }}
