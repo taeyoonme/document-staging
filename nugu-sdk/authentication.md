@@ -19,27 +19,27 @@ NUGU 플랫폼 인증은 [OAuth 2.0](https://tools.ietf.org/html/rfc6749)의 규
 \*NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
 {% endswagger-description %}
 
-{% swagger-parameter name="client:id" type="string" in="query" %}
+{% swagger-parameter name="client_id" type="string" in="query" required="true" %}
 발급받은 ClientId를 사용 합니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="response:type" type="string" in="query" %}
+{% swagger-parameter name="response_type" type="string" in="query" required="true" %}
 code 만 사용 됩니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="redirect:uri" type="string" in="query" %}
+{% swagger-parameter name="redirect_uri" type="string" in="query" required="true" %}
 설정한 RedirectUri를 사용합니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="scope" type="string" in="query" %}
-(TODO)
+{% swagger-parameter name="scope" type="string" in="query" required="false" %}
+
 {% endswagger-parameter %}
 
-{% swagger-parameter name="data" type="string" in="query" %}
+{% swagger-parameter name="data" type="string" in="query" required="false" %}
 추가적인 데이터를 포함됩니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="state" type="string" in="query" %}
+{% swagger-parameter name="state" type="string" in="query" required="false" %}
 CSRF를 위해 사용 되는 값입니다.
 {% endswagger-parameter %}
 
@@ -65,27 +65,27 @@ Client 인증 정보는 Body Parameter(application/x-www-form-urlencoded)를 사
 NUGU계정 미사용, 체험판 사용 시에는 code와 redirect_url 입력이 불필요합니다.
 {% endswagger-description %}
 
-{% swagger-parameter name="data" type="string" in="body" %}
+{% swagger-parameter name="data" type="string" in="body" required="false" %}
 추가적인 데이터가 포함 됩니다. ex) {"deviceSerialNumber":"DEVICE_SERIAL_NUMBER"}
 {% endswagger-parameter %}
 
-{% swagger-parameter name="grant:type" type="string" in="body" %}
+{% swagger-parameter name="grant_type" type="string" in="body" required="true" %}
 authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험판)
 {% endswagger-parameter %}
 
-{% swagger-parameter name="code" type="string" in="body" %}
+{% swagger-parameter name="code" type="string" in="body" required="false" %}
 응답 받은 code 값을 사용 합니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="redirect:uri" type="string" in="body" %}
+{% swagger-parameter name="redirect_uri" type="string" in="body" required="false" %}
 인증 요청 시 사용된 redirect_uri를 사용합니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:id" type="string" in="body" %}
+{% swagger-parameter name="client_id" type="string" in="body" required="true" %}
 발급 받은 ClientId를 사용합니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:secret" type="string" in="body" %}
+{% swagger-parameter name="client_secret" type="string" in="body" required="true" %}
 발급 받은 ClientSecret을 사용합니다.
 {% endswagger-parameter %}
 
@@ -132,23 +132,23 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 \*NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
 {% endswagger-description %}
 
-{% swagger-parameter name="data" type="string" in="body" %}
+{% swagger-parameter name="data" type="string" in="body" required="false" %}
 추가적인 데이터가 포함 됩니다. ex) {"deviceSerialNumber":"DEVICE_SEERIAL_NUMBER"}
 {% endswagger-parameter %}
 
-{% swagger-parameter name="grant:type" type="string" in="body" %}
+{% swagger-parameter name="grant_type" type="string" in="body" required="true" %}
 refresh_token (갱신)
 {% endswagger-parameter %}
 
-{% swagger-parameter name="refresh:token" type="string" in="body" %}
+{% swagger-parameter name="refresh_token" type="string" in="body" required="true" %}
 신규 발급 시 응답 받은 refresh_token을 사용합니다.
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:id" type="string" in="body" %}
+{% swagger-parameter name="client_id" type="string" in="body" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:secret" type="string" in="body" %}
+{% swagger-parameter name="client_secret" type="string" in="body" required="true" %}
 
 {% endswagger-parameter %}
 
@@ -197,19 +197,19 @@ WWW-Authenticate: Form realm="NUGU", error="invalid_client", error_description="
 
 {% endswagger-description %}
 
-{% swagger-parameter name="data" type="string" in="body" %}
+{% swagger-parameter name="data" type="string" in="body" required="false" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter name="token" type="string" in="body" %}
+{% swagger-parameter name="token" type="string" in="body" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:id" type="string" in="body" %}
+{% swagger-parameter name="client_id" type="string" in="body" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:secret" type="string" in="body" %}
+{% swagger-parameter name="client_secret" type="string" in="body" required="true" %}
 
 {% endswagger-parameter %}
 
@@ -251,19 +251,19 @@ Content-Type: application/json;charset=UTF-8
 
 {% endswagger-description %}
 
-{% swagger-parameter name="data" type="string" in="body" %}
+{% swagger-parameter name="data" type="string" in="body" required="false" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter name="token" type="string" in="body" %}
+{% swagger-parameter name="token" type="string" in="body" required="false" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:id" type="string" in="body" %}
+{% swagger-parameter name="client_id" type="string" in="body" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter name="client:secret" type="string" in="body" %}
+{% swagger-parameter name="client_secret" type="string" in="body" required="true" %}
 
 {% endswagger-parameter %}
 
