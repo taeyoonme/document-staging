@@ -8,16 +8,16 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-07-27 01:07:05 +0000">
+<meta http-equiv="Last-Modified" content="2022-10-06 07:20:02 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Authentication">
 <title>Developers | Guide - Authentication</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document/nugu-sdk/authentication">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Developers | Guide - Authentication">
 <meta property="og:image" content="https://nugudevelopers.github.io/document/assets/img/logo-nugu.svg">
-<script type="text/javascript" src="/document/_assets/base/jquery-3.6.0.min.js"></script><script type="text/javascript" src="/document/_assets/base/tabs.js"></script><script type="text/javascript" src="/document/_assets/base/navigation.js"></script><script type="text/javascript" src="/document/_assets/base/code.js"></script><link rel="stylesheet" href="/document/_assets/css/style.css">
+<script type="text/javascript" src="/document/_assets/base/jquery-3.6.0.min.js"></script><script type="text/javascript" src="/document/_assets/base/navigation.js"></script><script type="text/javascript" src="/document/_assets/base/tabs.js"></script><script type="text/javascript" src="/document/_assets/base/code.js"></script><link rel="stylesheet" href="/document/_assets/css/style.css">
 <link rel="stylesheet" href="/document/_assets/css/syntax.css">
-<script type="text/javascript" src="/document/_assets/js/jsrender.min.js"></script><script type="text/javascript" src="/document/_assets/js/main.js"></script><script type="text/javascript" src="/document/_assets/base/header.js"></script>
+<script type="text/javascript" src="/document/_assets/js/main.js"></script><script type="text/javascript" src="/document/_assets/js/jsrender.min.js"></script><script type="text/javascript" src="/document/_assets/base/header.js"></script>
     <link rel="apple-touch-icon" sizes="57x57" href="/document/_assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/document/_assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/document/_assets/favicon/apple-icon-72x72.png">
@@ -2389,8 +2389,10 @@
         </header>
         <div class="api-summary">인증 요청 (Authorize Endpoint)</div>
         <div class="api-cont">
-            <div class="api-desc">
+            <div class="content gray">
+    
 NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
+
 </div>
 
             <div class="api-cont-wrap">
@@ -2398,47 +2400,47 @@ NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
                 
                 <div class="api-cont-cate-title">Query</div>
                 <div class="api-items">
-                    <div class="api-item">
-    <span class="api-cont-name">client:id</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+                    <div class="parameter">
+    <div class="name">client:id</div>
+    <div class="type">string</div>
+    <div class="description">
 발급받은 ClientId를 사용 합니다.
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">response:type</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">response:type</div>
+    <div class="type">string</div>
+    <div class="description">
 code 만 사용 됩니다.
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">redirect:uri</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">redirect:uri</div>
+    <div class="type">string</div>
+    <div class="description">
 설정한 RedirectUri를 사용합니다.
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">scope</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">scope</div>
+    <div class="type">string</div>
+    <div class="description">
 (TODO)
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">data</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">data</div>
+    <div class="type">string</div>
+    <div class="description">
 추가적인 데이터를 포함됩니다.
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">state</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">state</div>
+    <div class="type">string</div>
+    <div class="description">
 CSRF를 위해 사용 되는 값입니다.
-</span>
+</div>
 </div>
 
                 </div>
@@ -2450,13 +2452,12 @@ CSRF를 위해 사용 되는 값입니다.
             <div class="api-cont-wrap api-type-response">
                 <div class="api-cont-title">Response</div>
                 <div class="api-items">
-                    <div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">302</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+                    <div class="response">
+    <div class="header">
+        <div class="status"><label>302</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -2480,7 +2481,6 @@ CSRF를 위해 사용 되는 값입니다.
 </article>
 
 </div>
-    </div>
 </div>
 
                 </div>
@@ -2509,8 +2509,10 @@ CSRF를 위해 사용 되는 값입니다.
         </header>
         <div class="api-summary">토큰 요청 (Token Endpoint)</div>
         <div class="api-cont">
-            <div class="api-desc">
+            <div class="content gray">
+    
 NUGU계정 미사용, 체험판 사용 시에는 code와 redirect_url 입력이 불필요합니다.
+
 </div>
 
             <div class="api-cont-wrap">
@@ -2521,47 +2523,47 @@ NUGU계정 미사용, 체험판 사용 시에는 code와 redirect_url 입력이 
                 
                 <div class="api-cont-cate-title">Body</div>
                 <div class="api-items">
-                    <div class="api-item">
-    <span class="api-cont-name">data</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+                    <div class="parameter">
+    <div class="name">data</div>
+    <div class="type">string</div>
+    <div class="description">
 추가적인 데이터가 포함 됩니다. ex) {"deviceSerialNumber":"DEVICE_SERIAL_NUMBER"}
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">grant:type</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">grant:type</div>
+    <div class="type">string</div>
+    <div class="description">
 authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험판)
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">code</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">code</div>
+    <div class="type">string</div>
+    <div class="description">
 응답 받은 code 값을 사용 합니다.
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">redirect:uri</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">redirect:uri</div>
+    <div class="type">string</div>
+    <div class="description">
 인증 요청 시 사용된 redirect_uri를 사용합니다.
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">client:id</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">client:id</div>
+    <div class="type">string</div>
+    <div class="description">
 발급 받은 ClientId를 사용합니다.
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">client:secret</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">client:secret</div>
+    <div class="type">string</div>
+    <div class="description">
 발급 받은 ClientSecret을 사용합니다.
-</span>
+</div>
 </div>
 
                 </div>
@@ -2570,13 +2572,12 @@ authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험�
             <div class="api-cont-wrap api-type-response">
                 <div class="api-cont-title">Response</div>
                 <div class="api-items">
-                    <div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">200</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+                    <div class="response">
+    <div class="header">
+        <div class="status"><label>200</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -2631,15 +2632,13 @@ authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험�
 </article>
 
 </div>
-    </div>
 </div>
-<div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">400</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+<div class="response">
+    <div class="header">
+        <div class="status"><label>400</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -2688,15 +2687,13 @@ authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험�
 </article>
 
 </div>
-    </div>
 </div>
-<div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">401</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+<div class="response">
+    <div class="header">
+        <div class="status"><label>401</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -2747,7 +2744,6 @@ authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험�
 </article>
 
 </div>
-    </div>
 </div>
 
                 </div>
@@ -2767,8 +2763,10 @@ authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험�
         </header>
         <div class="api-summary">토큰 갱신 요청 (Token Endpoint)</div>
         <div class="api-cont">
-            <div class="api-desc">
+            <div class="content gray">
+    
 NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
+
 </div>
 
             <div class="api-cont-wrap">
@@ -2779,40 +2777,40 @@ NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.
                 
                 <div class="api-cont-cate-title">Body</div>
                 <div class="api-items">
-                    <div class="api-item">
-    <span class="api-cont-name">data</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+                    <div class="parameter">
+    <div class="name">data</div>
+    <div class="type">string</div>
+    <div class="description">
 추가적인 데이터가 포함 됩니다. ex) {"deviceSerialNumber":"DEVICE_SEERIAL_NUMBER"}
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">grant:type</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">grant:type</div>
+    <div class="type">string</div>
+    <div class="description">
 refresh_token (갱신)
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">refresh:token</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">refresh:token</div>
+    <div class="type">string</div>
+    <div class="description">
 신규 발급 시 응답 받은 refresh_token을 사용합니다.
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">client:id</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
-
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">client:secret</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+<div class="parameter">
+    <div class="name">client:id</div>
+    <div class="type">string</div>
+    <div class="description">
 
-</span>
+</div>
+</div>
+<div class="parameter">
+    <div class="name">client:secret</div>
+    <div class="type">string</div>
+    <div class="description">
+
+</div>
 </div>
 
                 </div>
@@ -2821,13 +2819,12 @@ refresh_token (갱신)
             <div class="api-cont-wrap api-type-response">
                 <div class="api-cont-title">Response</div>
                 <div class="api-items">
-                    <div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">200</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+                    <div class="response">
+    <div class="header">
+        <div class="status"><label>200</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -2882,15 +2879,13 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
-<div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">400</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+<div class="response">
+    <div class="header">
+        <div class="status"><label>400</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -2939,15 +2934,13 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
-<div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">401</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+<div class="response">
+    <div class="header">
+        <div class="status"><label>401</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -2998,7 +2991,6 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
 
                 </div>
@@ -3021,7 +3013,9 @@ refresh_token (갱신)
         </header>
         <div class="api-summary">연결 해제 (Revoke Endpoint)</div>
         <div class="api-cont">
-            <div class="api-desc">
+            <div class="content gray">
+    
+
 
 </div>
 
@@ -3033,33 +3027,33 @@ refresh_token (갱신)
                 
                 <div class="api-cont-cate-title">Body</div>
                 <div class="api-items">
-                    <div class="api-item">
-    <span class="api-cont-name">data</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+                    <div class="parameter">
+    <div class="name">data</div>
+    <div class="type">string</div>
+    <div class="description">
 
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">token</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
-
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">client:id</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+<div class="parameter">
+    <div class="name">token</div>
+    <div class="type">string</div>
+    <div class="description">
 
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">client:secret</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">client:id</div>
+    <div class="type">string</div>
+    <div class="description">
 
-</span>
+</div>
+</div>
+<div class="parameter">
+    <div class="name">client:secret</div>
+    <div class="type">string</div>
+    <div class="description">
+
+</div>
 </div>
 
                 </div>
@@ -3068,13 +3062,12 @@ refresh_token (갱신)
             <div class="api-cont-wrap api-type-response">
                 <div class="api-cont-title">Response</div>
                 <div class="api-items">
-                    <div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">200</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+                    <div class="response">
+    <div class="header">
+        <div class="status"><label>200</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -3117,15 +3110,13 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
-<div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">400</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+<div class="response">
+    <div class="header">
+        <div class="status"><label>400</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -3174,15 +3165,13 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
-<div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">401</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+<div class="response">
+    <div class="header">
+        <div class="status"><label>401</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -3231,7 +3220,6 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
 
                 </div>
@@ -3254,7 +3242,9 @@ refresh_token (갱신)
         </header>
         <div class="api-summary">연결 조회 (Introspect Endpoint)</div>
         <div class="api-cont">
-            <div class="api-desc">
+            <div class="content gray">
+    
+
 
 </div>
 
@@ -3266,33 +3256,33 @@ refresh_token (갱신)
                 
                 <div class="api-cont-cate-title">Body</div>
                 <div class="api-items">
-                    <div class="api-item">
-    <span class="api-cont-name">data</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+                    <div class="parameter">
+    <div class="name">data</div>
+    <div class="type">string</div>
+    <div class="description">
 
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">token</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
-
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">client:id</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+<div class="parameter">
+    <div class="name">token</div>
+    <div class="type">string</div>
+    <div class="description">
 
-</span>
 </div>
-<div class="api-item">
-    <span class="api-cont-name">client:secret</span>
-    <span class="api-cont-type">string</span>
-    <span class="api-cont-desc">
+</div>
+<div class="parameter">
+    <div class="name">client:id</div>
+    <div class="type">string</div>
+    <div class="description">
 
-</span>
+</div>
+</div>
+<div class="parameter">
+    <div class="name">client:secret</div>
+    <div class="type">string</div>
+    <div class="description">
+
+</div>
 </div>
 
                 </div>
@@ -3301,13 +3291,12 @@ refresh_token (갱신)
             <div class="api-cont-wrap api-type-response">
                 <div class="api-cont-title">Response</div>
                 <div class="api-items">
-                    <div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">200</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+                    <div class="response">
+    <div class="header">
+        <div class="status"><label>200</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -3354,15 +3343,13 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
-<div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">400</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+<div class="response">
+    <div class="header">
+        <div class="status"><label>400</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -3411,15 +3398,13 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
-<div class="api-items">
-    <div class="api-item">
-        <div class="api-item-header">
-            <span class="api-cont-status">401</span>
-            <span class="api-cont-type"></span>
-        </div>
-        <div class="api-item-cont">
+<div class="response">
+    <div class="header">
+        <div class="status"><label>401</label></div>
+        <div class="description gray"></div>
+    </div>
+    <div class="content">
 <article class="code">
     
         <header>Header</header>
@@ -3468,7 +3453,6 @@ refresh_token (갱신)
 </article>
 
 </div>
-    </div>
 </div>
 
                 </div>
