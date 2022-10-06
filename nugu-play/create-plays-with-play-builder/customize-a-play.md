@@ -2,7 +2,7 @@
 
 Play를 처음 생성한 뒤 좌측의 `General`의 하위 메뉴에서 Play와 관련된 설정을 할 수 있습니다. 이 설정은 Play를 만드는 데 있어 필수 사항은 아닙니다.
 
-## 기본 정보(`General` > `기본 정보`) <a href="setting" id="setting"></a>
+## 기본 정보(`General` > `기본 정보`) <a href="#setting" id="setting"></a>
 
 **① Play 이름**\
 Play를 생성할 때 등록한 것으로서, Play Builder 내에서 ID 역할을 하며, 중복과 변경이 허용되지 않습니다.
@@ -16,11 +16,11 @@ NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경�
 ![](../../.gitbook/assets/customize-a-play-01.png)
 
 {% hint style="info" %}
-현재는 AudioPlayer Interface와, Display Interface를 지원합니다.  자세한 내용은&#x20;
+현재는 AudioPlayer Interface와, Display Interface를 지원합니다. 자세한 내용은
 
 [AudioPlayer Interface 지원하는 Play 만들기](create-a-play-with-audioplayer/)
 
-[Display Interface ](use-backend-proxy/capability-interfaces/display-interface.md)
+[Display Interface](use-backend-proxy/capability-interfaces/display-interface.md)
 
 를 참고하세요.
 {% endhint %}
@@ -49,13 +49,17 @@ NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경�
 발화 옵션에 대한 자세한 내용은 [발화 옵션 사용하기](define-an-action/use-responses/use-prompts.md#use-utterance-options)를 참고하세요.
 {% endhint %}
 
-## 외부 연동 서버 설정 및 예외 상황 관리(`General` > `외부 서버 연결 정보`) <a href="setting-backend-proxy" id="setting-backend-proxy"></a>
+## 외부 연동 서버 설정 및 예외 상황 관리(`General` > `외부 서버 연결 정보`) <a href="#setting-backend-proxy" id="setting-backend-proxy"></a>
 
 ![](../../.gitbook/assets/customize-a-play-03.jpg)
 
 **⑥ Web URL**\
 외부 연동 서버(Backend proxy)의 Web URL을 입력합니다.\
 http:// 또는 https://를 함께 입력해주세요. 1 글자 이상 입력하면 추가 메뉴가 노출됩니다.
+
+{% hint style="info" %}
+외부 연동 서버(Backend proxy)는 80, 443, 8080, 8443 포트만 지원합니다.
+{% endhint %}
 
 **⑦ 연결 실패 시 Prompt**\
 외부 연동 서버(Backend proxy)와의 연결에 실패한 경우에 제시되는 에러 메시지입니다.\
