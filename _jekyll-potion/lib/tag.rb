@@ -35,6 +35,8 @@ module Jekyll::Potion
     TEMPLATE_DELIMITER = "-"
     ATTRIBUTES_REGEX = /(\S*)="(.*?[^\\])"/
     POTION_TAG_PARAM_REGEX = /(?:#{TEMPLATE_DELIMITER}(\S*) )?((?:#{ATTRIBUTES_REGEX}\s?)*)/
+    POTION_BLOCK_DELIMITER = "::"
+    POTION_BLOCK_DELIMITER_REPLACE = "="
 
     attr_accessor :id
     attr_accessor :template_name
@@ -58,6 +60,10 @@ module Jekyll::Potion
       end
 
       @logger = Logger.new(self)
+
+      if @template_name.include?(POTION_BLOCK_DELIMITER)
+        @template_name.sub!(POTION_BLOCK_DELIMITER, POTION_BLOCK_DELIMITER_REPLACE)
+      end
     end
 
     def id_format
@@ -82,7 +88,7 @@ module Jekyll::Potion
 
     attr_accessor :elements
 
-    FULL_TOKEN = /\A\{%\s*(\w+::(\w+))\s*(.*?)%}\z/om
+    FULL_TOKEN = /\A\{%\s*(\w+#{PotionTag::POTION_BLOCK_DELIMITER}(\w+))\s*(.*?)%}\z/om
 
     def initialize(tag_name, markup, options)
       super
