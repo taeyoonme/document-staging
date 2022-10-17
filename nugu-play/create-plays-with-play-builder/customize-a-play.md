@@ -64,6 +64,10 @@ NUGU에서 제공하는 Capability Interface를 사용하여 Play를 만들 경�
 
 http:// 또는 https://를 함께 입력해주세요. 1 글자 이상 입력하면 추가 메뉴가 노출됩니다.
 
+{% alerts style="info" %}
+외부 연동 서버(Backend proxy)는 80, 443, 8080, 8443 포트만 지원합니다.
+{% endalerts %}
+
 **⑦ 연결 실패 시 Prompt**
 
 외부 연동 서버(Backend proxy)와의 연결에 실패한 경우에 제시되는 에러 메시지입니다.
