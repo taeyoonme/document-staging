@@ -80,7 +80,7 @@
     }
 
     load_search_file(callback) {
-      $.getJSON('/document/_assets/base/search.json', data => {
+      $.getJSON('/document-staging/_assets/base/search.json', data => {
         this.loaded = true
         this.page_indexes = data
         if (callback) {

@@ -1,6 +1,6 @@
 [
   {
-  "url": "/document/nugu-sdk/platform/ios/1.0",
+  "url": "/document-staging/nugu-sdk/platform/ios/1.0",
   "order": 180,
   "indexes": [
     {
@@ -297,7 +297,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/airflowcontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/airflowcontrol-interface",
   "order": 81,
   "indexes": [
     {
@@ -618,7 +618,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/airqualitycheck-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/airqualitycheck-interface",
   "order": 82,
   "indexes": [
     {
@@ -732,7 +732,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android",
+  "url": "/document-staging/nugu-sdk/platform/android",
   "order": 181,
   "indexes": [
     {
@@ -768,7 +768,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-bizuser",
   "order": 137,
   "indexes": [
     {
@@ -888,7 +888,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-shareddevice",
   "order": 136,
   "indexes": [
     {
@@ -1007,7 +1007,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-announcement/api-announcement-usergroup",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-announcement/api-announcement-usergroup",
   "order": 138,
   "indexes": [
     {
@@ -1128,7 +1128,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-announcement",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-announcement",
   "order": 135,
   "indexes": [
     {
@@ -1146,7 +1146,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-creategroup",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-creategroup",
   "order": 120,
   "indexes": [
     {
@@ -1246,7 +1246,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-createtoken",
   "order": 132,
   "indexes": [
     {
@@ -1365,7 +1365,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-deletegroup",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-deletegroup",
   "order": 122,
   "indexes": [
     {
@@ -1418,7 +1418,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-deleteuser",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-deleteuser",
   "order": 128,
   "indexes": [
     {
@@ -1471,7 +1471,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinfo",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinfo",
   "order": 130,
   "indexes": [
     {
@@ -1562,7 +1562,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinviteinfo",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getinviteinfo",
   "order": 131,
   "indexes": [
     {
@@ -1642,7 +1642,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getlist",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-getlist",
   "order": 129,
   "indexes": [
     {
@@ -1728,7 +1728,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getinfo",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getinfo",
   "order": 124,
   "indexes": [
     {
@@ -1812,7 +1812,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getlist",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-group-getlist",
   "order": 123,
   "indexes": [
     {
@@ -1894,7 +1894,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-invite",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-invite",
   "order": 126,
   "indexes": [
     {
@@ -2003,7 +2003,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-modgroup",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz/api-enrolleduser-modgroup",
   "order": 121,
   "indexes": [
     {
@@ -2105,7 +2105,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-moduser",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1/api-enrolleduser-moduser",
   "order": 127,
   "indexes": [
     {
@@ -2207,7 +2207,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser",
   "order": 118,
   "indexes": [
     {
@@ -2224,7 +2224,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/api-references",
+  "url": "/document-staging/nugu-sdk/api-references",
   "order": 196,
   "indexes": [
     {
@@ -2241,7 +2241,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-shareddevice",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-shareddevice",
   "order": 133,
   "indexes": [
     {
@@ -2257,7 +2257,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-shareddevice/api-sharedevice-groupinquiry",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-shareddevice/api-sharedevice-groupinquiry",
   "order": 134,
   "indexes": [
     {
@@ -2333,7 +2333,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/asr",
+  "url": "/document-staging/nugu-sdk/capability-interface/asr",
   "order": 153,
   "indexes": [
     {
@@ -2629,7 +2629,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-action",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-action",
   "order": 42,
   "indexes": [
     {
@@ -2669,7 +2669,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-built-in-intent",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-built-in-intent",
   "order": 43,
   "indexes": [
     {
@@ -2767,7 +2767,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-custom-intent",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer/audioplayer-define-custom-intent",
   "order": 41,
   "indexes": [
     {
@@ -2804,7 +2804,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-display-interface",
   "order": 48,
   "indexes": [
     {
@@ -2940,7 +2940,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-interface",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/audioplayer-interface",
   "order": 47,
   "indexes": [
     {
@@ -3185,7 +3185,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/audioplayer",
+  "url": "/document-staging/nugu-sdk/capability-interface/audioplayer",
   "order": 147,
   "indexes": [
     {
@@ -3877,7 +3877,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/authentication",
+  "url": "/document-staging/nugu-sdk/authentication",
   "order": 145,
   "indexes": [
     {
@@ -3916,13 +3916,13 @@
     "NUGU계정 미사용, 체험판 사용 시에는 불필요합니다.",
     "Parameters",
     "Query",
-    "client:id",
+    "client_id",
     "string",
     "발급받은 ClientId를 사용 합니다.",
-    "response:type",
+    "response_type",
     "string",
     "code 만 사용 됩니다.",
-    "redirect:uri",
+    "redirect_uri",
     "string",
     "설정한 RedirectUri를 사용합니다.",
     "scope",
@@ -3966,19 +3966,19 @@
     "data",
     "string",
     "추가적인 데이터가 포함 됩니다. ex) {\"deviceSerialNumber\":\"DEVICE_SERIAL_NUMBER\"}",
-    "grant:type",
+    "grant_type",
     "string",
     "authorization_code (신규), client_credentials (NUGU 회원 미사용, 체험판)",
     "code",
     "string",
     "응답 받은 code 값을 사용 합니다.",
-    "redirect:uri",
+    "redirect_uri",
     "string",
     "인증 요청 시 사용된 redirect_uri를 사용합니다.",
-    "client:id",
+    "client_id",
     "string",
     "발급 받은 ClientId를 사용합니다.",
-    "client:secret",
+    "client_secret",
     "string",
     "발급 받은 ClientSecret을 사용합니다.",
     "Response",
@@ -4007,15 +4007,15 @@
     "data",
     "string",
     "추가적인 데이터가 포함 됩니다. ex) {\"deviceSerialNumber\":\"DEVICE_SEERIAL_NUMBER\"}",
-    "grant:type",
+    "grant_type",
     "string",
     "refresh_token (갱신)",
-    "refresh:token",
+    "refresh_token",
     "string",
     "신규 발급 시 응답 받은 refresh_token을 사용합니다.",
-    "client:id",
+    "client_id",
     "string",
-    "client:secret",
+    "client_secret",
     "string",
     "Response",
     "200",
@@ -4050,9 +4050,9 @@
     "string",
     "token",
     "string",
-    "client:id",
+    "client_id",
     "string",
-    "client:secret",
+    "client_secret",
     "string",
     "Response",
     "200",
@@ -4112,7 +4112,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy-api-reference",
   "order": 50,
   "indexes": [
     {
@@ -4232,7 +4232,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy",
   "order": 45,
   "indexes": [
     {
@@ -4337,7 +4337,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
   "order": 16,
   "indexes": [
     {
@@ -4367,7 +4367,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/background",
+  "url": "/document-staging/nugu-sdk/platform/ios/background",
   "order": 174,
   "indexes": [
     {
@@ -4392,7 +4392,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/background",
+  "url": "/document-staging/nugu-sdk/platform/android/background",
   "order": 184,
   "indexes": [
     {
@@ -4417,7 +4417,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/battery",
+  "url": "/document-staging/nugu-sdk/capability-interface/battery",
   "order": 161,
   "indexes": [
     {
@@ -4493,7 +4493,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/before-start",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start",
   "order": 13,
   "indexes": [
     {
@@ -4507,7 +4507,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz-1",
   "order": 125,
   "indexes": [
     {
@@ -4528,7 +4528,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api",
+  "url": "/document-staging/work-with-nugu-biz/biz-api",
   "order": 117,
   "indexes": [
     {
@@ -4631,7 +4631,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/manage-enrolled-user/biz-nugu-app",
+  "url": "/document-staging/work-with-nugu-biz/manage-enrolled-user/biz-nugu-app",
   "order": 116,
   "indexes": [
     {
@@ -4679,7 +4679,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/biz-api/api-enrolleduser/biz",
+  "url": "/document-staging/work-with-nugu-biz/biz-api/api-enrolleduser/biz",
   "order": 119,
   "indexes": [
     {
@@ -4698,7 +4698,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/bluetooth",
+  "url": "/document-staging/nugu-sdk/capability-interface/bluetooth",
   "order": 158,
   "indexes": [
     {
@@ -5062,7 +5062,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/sdk-design-guide/booting",
+  "url": "/document-staging/nugu-sdk/sdk-design-guide/booting",
   "order": 200,
   "indexes": [
     {
@@ -5080,7 +5080,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/brightnesscontrol-interface",
   "order": 83,
   "indexes": [
     {
@@ -5336,7 +5336,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/built-in-actions",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/built-in-actions",
   "order": 23,
   "indexes": [
     {
@@ -5404,7 +5404,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-user-utterance-model/built-in-intents",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/built-in-intents",
   "order": 20,
   "indexes": [
     {
@@ -5483,7 +5483,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface",
+  "url": "/document-staging/nugu-sdk/capability-interface",
   "order": 146,
   "indexes": [
     {
@@ -5618,7 +5618,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
   "order": 17,
   "indexes": [
     {
@@ -5665,7 +5665,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces",
   "order": 46,
   "indexes": [
     {
@@ -5743,7 +5743,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/chargecontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/chargecontrol-interface",
   "order": 84,
   "indexes": [
     {
@@ -5916,7 +5916,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/chips",
+  "url": "/document-staging/nugu-sdk/capability-interface/chips",
   "order": 163,
   "indexes": [
     {
@@ -6022,7 +6022,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/colorcontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/colorcontrol-interface",
   "order": 85,
   "indexes": [
     {
@@ -6127,7 +6127,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/component",
+  "url": "/document-staging/nugu-sdk/platform/ios/component",
   "order": 173,
   "indexes": [
     {
@@ -6213,7 +6213,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/linux/component",
+  "url": "/document-staging/nugu-sdk/platform/linux/component",
   "order": 195,
   "indexes": [
     {
@@ -6287,7 +6287,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/configurable-parameter",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/configurable-parameter",
   "order": 29,
   "indexes": [
     {
@@ -6307,7 +6307,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/support-tools/corpus-inspection-1",
   "order": 54,
   "indexes": [
     {
@@ -6363,7 +6363,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/create-a-play-using-backend-proxy",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-using-backend-proxy",
   "order": 37,
   "indexes": [
     {
@@ -6434,7 +6434,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/create-a-play-with-audioplayer",
   "order": 40,
   "indexes": [
     {
@@ -6466,7 +6466,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/hello-aria/create-a-play",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-a-play",
   "order": 9,
   "indexes": [
     {
@@ -6490,7 +6490,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/hello-aria/create-an-action-and-an-answer",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-action-and-an-answer",
   "order": 11,
   "indexes": [
     {
@@ -6544,7 +6544,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/hello-aria/create-an-intent-and-custom-utterances",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/create-an-intent-and-custom-utterances",
   "order": 10,
   "indexes": [
     {
@@ -6592,7 +6592,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder",
   "order": 7,
   "indexes": [
     {
@@ -6647,7 +6647,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/customize-a-play",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/customize-a-play",
   "order": 18,
   "indexes": [
     {
@@ -6708,6 +6708,7 @@
     "⑥ Web URL",
     "외부 연동 서버(Backend proxy)의 Web URL을 입력합니다.",
     "http:// 또는 https://를 함께 입력해주세요. 1 글자 이상 입력하면 추가 메뉴가 노출됩니다.",
+    "외부 연동 서버(Backend proxy)는 80, 443, 8080, 8443 포트만 지원합니다.",
     "⑦ 연결 실패 시 Prompt",
     "외부 연동 서버(Backend proxy)와의 연결에 실패한 경우에 제시되는 에러 메시지입니다.",
     "‘Web URL’ 항목을 입력하면 해당 항목이 나타납니다.",
@@ -6747,7 +6748,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/dark-mode",
+  "url": "/document-staging/nugu-sdk/platform/ios/dark-mode",
   "order": 178,
   "indexes": [
     {
@@ -6784,7 +6785,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/dark-mode",
+  "url": "/document-staging/nugu-sdk/platform/android/dark-mode",
   "order": 191,
   "indexes": [
     {
@@ -6819,7 +6820,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/define-a-parameter",
   "order": 25,
   "indexes": [
     {
@@ -6878,7 +6879,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action",
   "order": 22,
   "indexes": [
     {
@@ -6899,7 +6900,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-response-filters",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-response-filters",
   "order": 38,
   "indexes": [
     {
@@ -6971,7 +6972,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-user-utterance-model",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model",
   "order": 19,
   "indexes": [
     {
@@ -7130,7 +7131,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/describebiz",
+  "url": "/document-staging/work-with-nugu-biz/describebiz",
   "order": 110,
   "indexes": [
     {
@@ -7151,7 +7152,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/describetrial",
+  "url": "/document-staging/nugu-sdk/describetrial",
   "order": 140,
   "indexes": [
     {
@@ -7207,7 +7208,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/nugu-ux/design-a-dialog-flow",
+  "url": "/document-staging/nugu-play/nugu-ux/design-a-dialog-flow",
   "order": 5,
   "indexes": [
     {
@@ -7396,7 +7397,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/devicetemperaturecontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/devicetemperaturecontrol-interface",
   "order": 86,
   "indexes": [
     {
@@ -7538,7 +7539,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/display/display-directive",
+  "url": "/document-staging/nugu-sdk/capability-interface/display/display-directive",
   "order": 149,
   "indexes": [
     {
@@ -8205,7 +8206,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/display/display-event",
+  "url": "/document-staging/nugu-sdk/capability-interface/display/display-event",
   "order": 150,
   "indexes": [
     {
@@ -8287,7 +8288,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface",
   "order": 49,
   "indexes": [
     {
@@ -8971,7 +8972,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/sdk-design-guide/display-template",
+  "url": "/document-staging/nugu-sdk/sdk-design-guide/display-template",
   "order": 202,
   "indexes": [
     {
@@ -8999,7 +9000,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/display",
+  "url": "/document-staging/nugu-sdk/capability-interface/display",
   "order": 148,
   "indexes": [
     {
@@ -9328,7 +9329,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/distribute-and-manage-a-play/distribute-a-play",
+  "url": "/document-staging/nugu-play/distribute-and-manage-a-play/distribute-a-play",
   "order": 102,
   "indexes": [
     {
@@ -9402,7 +9403,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/distribute-and-manage-a-play",
+  "url": "/document-staging/nugu-play/distribute-and-manage-a-play",
   "order": 101,
   "indexes": [
     {
@@ -9422,7 +9423,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz",
+  "url": "/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-biz",
   "order": 115,
   "indexes": [
     {
@@ -9584,7 +9585,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial",
+  "url": "/document-staging/work-with-nugu-biz/manage-enrolled-user/enrolled-user-invitation-trial",
   "order": 114,
   "indexes": [
     {
@@ -9698,7 +9699,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/sdk-design-guide/error-handling",
+  "url": "/document-staging/nugu-sdk/sdk-design-guide/error-handling",
   "order": 204,
   "indexes": [
     {
@@ -9721,7 +9722,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/extension",
+  "url": "/document-staging/nugu-sdk/capability-interface/extension",
   "order": 156,
   "indexes": [
     {
@@ -9889,7 +9890,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/hello-aria",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/hello-aria",
   "order": 8,
   "indexes": [
     {
@@ -9921,7 +9922,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-user-utterance-model/how-to-write-customer-utterances",
   "order": 21,
   "indexes": [
     {
@@ -10008,7 +10009,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/humiditycontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/humiditycontrol-interface",
   "order": 87,
   "indexes": [
     {
@@ -10305,7 +10306,7 @@
   ]
 },
   {
-  "url": "/document/",
+  "url": "/document-staging/",
   "order": 0,
   "indexes": [
     {
@@ -10330,7 +10331,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/before-start/intents-and-entities",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/intents-and-entities",
   "order": 15,
   "indexes": [
     {
@@ -10435,7 +10436,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/intro_components",
+  "url": "/document-staging/nugu-sdk/platform/android/intro_components",
   "order": 183,
   "indexes": [
     {
@@ -10503,7 +10504,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios",
+  "url": "/document-staging/nugu-sdk/platform/ios",
   "order": 171,
   "indexes": [
     {
@@ -10541,7 +10542,7 @@
   ]
 },
   {
-  "url": "/document/reference/layer",
+  "url": "/document-staging/reference/layer",
   "order": 208,
   "indexes": [
     {
@@ -10566,7 +10567,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/link-enrolled-user-api",
   "order": 51,
   "indexes": [
     {
@@ -10597,7 +10598,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/link-oauth20",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/link-oauth20",
   "order": 52,
   "indexes": [
     {
@@ -10873,7 +10874,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/linux",
+  "url": "/document-staging/nugu-sdk/platform/linux",
   "order": 193,
   "indexes": [
     {
@@ -10917,7 +10918,7 @@
   ]
 },
   {
-  "url": "/document/reference/list-of-unit-tags-supported-by-utterance-options",
+  "url": "/document-staging/reference/list-of-unit-tags-supported-by-utterance-options",
   "order": 210,
   "indexes": [
     {
@@ -11077,7 +11078,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/location",
+  "url": "/document-staging/nugu-sdk/capability-interface/location",
   "order": 155,
   "indexes": [
     {
@@ -11155,7 +11156,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/support-tools/log-mining",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining",
   "order": 55,
   "indexes": [
     {
@@ -11254,7 +11255,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/distribute-and-manage-a-play/manage-a-play",
+  "url": "/document-staging/nugu-play/distribute-and-manage-a-play/manage-a-play",
   "order": 104,
   "indexes": [
     {
@@ -11332,7 +11333,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/manage-enrolled-user",
+  "url": "/document-staging/work-with-nugu-biz/manage-enrolled-user",
   "order": 113,
   "indexes": [
     {
@@ -11350,7 +11351,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/manage-exceptions",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/manage-exceptions",
   "order": 35,
   "indexes": [
     {
@@ -11418,7 +11419,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/manage-poc",
+  "url": "/document-staging/nugu-sdk/manage-poc",
   "order": 142,
   "indexes": [
     {
@@ -11433,7 +11434,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/manage-shared-device",
+  "url": "/document-staging/work-with-nugu-biz/manage-shared-device",
   "order": 112,
   "indexes": [
     {
@@ -11639,7 +11640,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/mediaplayer",
+  "url": "/document-staging/nugu-sdk/capability-interface/mediaplayer",
   "order": 167,
   "indexes": [
     {
@@ -12313,7 +12314,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/message",
+  "url": "/document-staging/nugu-sdk/capability-interface/message",
   "order": 166,
   "indexes": [
     {
@@ -12620,7 +12621,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/mic",
+  "url": "/document-staging/nugu-sdk/capability-interface/mic",
   "order": 159,
   "indexes": [
     {
@@ -12736,7 +12737,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/modecontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/modecontrol-interface",
   "order": 88,
   "indexes": [
     {
@@ -12881,7 +12882,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/play-registration-and-review/modify-or-delete-play-information",
+  "url": "/document-staging/nugu-play/play-registration-and-review/modify-or-delete-play-information",
   "order": 99,
   "indexes": [
     {
@@ -12914,7 +12915,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/distribute-and-manage-a-play/monitor-play-stats",
+  "url": "/document-staging/nugu-play/distribute-and-manage-a-play/monitor-play-stats",
   "order": 105,
   "indexes": [
     {
@@ -12974,7 +12975,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/multi-entity-mapping",
   "order": 28,
   "indexes": [
     {
@@ -13013,7 +13014,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/nugu-biz-concept",
+  "url": "/document-staging/work-with-nugu-biz/nugu-biz-concept",
   "order": 109,
   "indexes": [
     {
@@ -13137,7 +13138,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/sdk-design-guide/nugu-device",
+  "url": "/document-staging/nugu-sdk/sdk-design-guide/nugu-device",
   "order": 199,
   "indexes": [
     {
@@ -13280,7 +13281,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/nugu-display-template-server",
+  "url": "/document-staging/nugu-sdk/platform/ios/nugu-display-template-server",
   "order": 176,
   "indexes": [
     {
@@ -13414,7 +13415,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/nugu-display",
+  "url": "/document-staging/nugu-sdk/platform/android/nugu-display",
   "order": 186,
   "indexes": [
     {
@@ -13474,7 +13475,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/sdk-design-guide/nugu-inside",
+  "url": "/document-staging/nugu-sdk/sdk-design-guide/nugu-inside",
   "order": 203,
   "indexes": [
     {
@@ -13557,7 +13558,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play",
+  "url": "/document-staging/nugu-play",
   "order": 1,
   "indexes": [
     {
@@ -13633,7 +13634,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk",
+  "url": "/document-staging/nugu-sdk",
   "order": 139,
   "indexes": [
     {
@@ -13650,7 +13651,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/nugu-user-interface",
+  "url": "/document-staging/nugu-sdk/platform/android/nugu-user-interface",
   "order": 190,
   "indexes": [
     {
@@ -13739,7 +13740,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/nugu-ux",
+  "url": "/document-staging/nugu-play/nugu-ux",
   "order": 2,
   "indexes": [
     {
@@ -13863,7 +13864,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/nugu-web-server",
+  "url": "/document-staging/nugu-sdk/platform/android/nugu-web-server",
   "order": 185,
   "indexes": [
     {
@@ -13943,7 +13944,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/nugu",
+  "url": "/document-staging/nugu-sdk/platform/ios/nugu",
   "order": 177,
   "indexes": [
     {
@@ -14027,7 +14028,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/phonecall",
+  "url": "/document-staging/nugu-sdk/capability-interface/phonecall",
   "order": 165,
   "indexes": [
     {
@@ -14370,7 +14371,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform",
+  "url": "/document-staging/nugu-sdk/platform",
   "order": 170,
   "indexes": [
     {
@@ -14415,7 +14416,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/distribute-and-manage-a-play/play-operation-policy",
+  "url": "/document-staging/nugu-play/distribute-and-manage-a-play/play-operation-policy",
   "order": 106,
   "indexes": [
     {
@@ -14465,7 +14466,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/play-registration-and-review",
+  "url": "/document-staging/nugu-play/play-registration-and-review",
   "order": 96,
   "indexes": [
     {
@@ -14493,7 +14494,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/play-registration-and-review/play-review",
+  "url": "/document-staging/nugu-play/play-registration-and-review/play-review",
   "order": 100,
   "indexes": [
     {
@@ -14748,7 +14749,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/play-registration-and-review/play-smarthome-play",
+  "url": "/document-staging/nugu-play/play-registration-and-review/play-smarthome-play",
   "order": 98,
   "indexes": [
     {
@@ -14779,7 +14780,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/before-start/play",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/play",
   "order": 14,
   "indexes": [
     {
@@ -14955,7 +14956,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/manage-poc/poc",
+  "url": "/document-staging/nugu-sdk/manage-poc/poc",
   "order": 143,
   "indexes": [
     {
@@ -15042,7 +15043,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/powercheck-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/powercheck-interface",
   "order": 89,
   "indexes": [
     {
@@ -15182,7 +15183,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/powercontrol-interface",
   "order": 90,
   "indexes": [
     {
@@ -15315,7 +15316,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz/private-play",
+  "url": "/document-staging/work-with-nugu-biz/private-play",
   "order": 111,
   "indexes": [
     {
@@ -15372,7 +15373,7 @@
   ]
 },
   {
-  "url": "/document/reference",
+  "url": "/document-staging/reference",
   "order": 206,
   "indexes": [
     {
@@ -15386,7 +15387,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/play-registration-and-review/register-a-play",
+  "url": "/document-staging/nugu-play/play-registration-and-review/register-a-play",
   "order": 97,
   "indexes": [
     {
@@ -15579,7 +15580,7 @@
   ]
 },
   {
-  "url": "/document/reference/register-icon",
+  "url": "/document-staging/reference/register-icon",
   "order": 209,
   "indexes": [
     {
@@ -15593,7 +15594,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/release-note",
+  "url": "/document-staging/nugu-sdk/release-note",
   "order": 205,
   "indexes": [
     {
@@ -15833,7 +15834,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/releases",
+  "url": "/document-staging/nugu-play/releases",
   "order": 107,
   "indexes": [
     {
@@ -16235,7 +16236,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/response-with-branch-actions",
   "order": 34,
   "indexes": [
     {
@@ -16286,7 +16287,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/routine",
+  "url": "/document-staging/nugu-sdk/capability-interface/routine",
   "order": 168,
   "indexes": [
     {
@@ -16451,7 +16452,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/screen",
+  "url": "/document-staging/nugu-sdk/capability-interface/screen",
   "order": 160,
   "indexes": [
     {
@@ -16579,7 +16580,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/sdk-design-guide",
+  "url": "/document-staging/nugu-sdk/sdk-design-guide",
   "order": 198,
   "indexes": [
     {
@@ -16593,7 +16594,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/session",
+  "url": "/document-staging/nugu-sdk/capability-interface/session",
   "order": 164,
   "indexes": [
     {
@@ -16702,7 +16703,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/settimecontrol-interface",
   "order": 91,
   "indexes": [
     {
@@ -16839,7 +16840,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/slot-filling-prompt",
   "order": 27,
   "indexes": [
     {
@@ -16900,7 +16901,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play",
+  "url": "/document-staging/nugu-play/smarthome-play",
   "order": 56,
   "indexes": [
     {
@@ -17012,7 +17013,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomeattribute",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomeattribute",
   "order": 94,
   "indexes": [
     {
@@ -17382,7 +17383,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability",
   "order": 80,
   "indexes": [
     {
@@ -17414,7 +17415,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype",
   "order": 57,
   "indexes": [
     {
@@ -17446,7 +17447,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomeerror",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomeerror",
   "order": 95,
   "indexes": [
     {
@@ -17534,7 +17535,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/sound",
+  "url": "/document-staging/nugu-sdk/capability-interface/sound",
   "order": 162,
   "indexes": [
     {
@@ -17667,7 +17668,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/source-code",
+  "url": "/document-staging/nugu-sdk/source-code",
   "order": 197,
   "indexes": [
     {
@@ -17687,7 +17688,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/speaker",
+  "url": "/document-staging/nugu-sdk/capability-interface/speaker",
   "order": 157,
   "indexes": [
     {
@@ -17880,7 +17881,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/start",
+  "url": "/document-staging/nugu-sdk/platform/ios/start",
   "order": 172,
   "indexes": [
     {
@@ -18184,7 +18185,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/linux/start",
+  "url": "/document-staging/nugu-sdk/platform/linux/start",
   "order": 194,
   "indexes": [
     {
@@ -18412,7 +18413,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/start",
+  "url": "/document-staging/nugu-sdk/platform/android/start",
   "order": 182,
   "indexes": [
     {
@@ -18703,7 +18704,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/statecheck-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/statecheck-interface",
   "order": 92,
   "indexes": [
     {
@@ -18842,7 +18843,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/manage-poc/statistic",
+  "url": "/document-staging/nugu-sdk/manage-poc/statistic",
   "order": 144,
   "indexes": [
     {
@@ -18873,7 +18874,7 @@
   ]
 },
   {
-  "url": "/document/reference/status",
+  "url": "/document-staging/reference/status",
   "order": 207,
   "indexes": [
     {
@@ -18906,7 +18907,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/support-tools",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/support-tools",
   "order": 53,
   "indexes": [
     {
@@ -18923,7 +18924,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/system",
+  "url": "/document-staging/nugu-sdk/capability-interface/system",
   "order": 151,
   "indexes": [
     {
@@ -19230,7 +19231,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/nugu-ux/target-user-analysis-and-task-definition",
+  "url": "/document-staging/nugu-play/nugu-ux/target-user-analysis-and-task-definition",
   "order": 3,
   "indexes": [
     {
@@ -19275,7 +19276,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomecapability/temperaturecontrol-interface",
   "order": 93,
   "indexes": [
     {
@@ -19572,7 +19573,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/nugu-display/templatehandler",
+  "url": "/document-staging/nugu-sdk/platform/android/nugu-display/templatehandler",
   "order": 188,
   "indexes": [
     {
@@ -19647,7 +19648,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/nugu-display/templaterenderer",
+  "url": "/document-staging/nugu-sdk/platform/android/nugu-display/templaterenderer",
   "order": 187,
   "indexes": [
     {
@@ -19706,7 +19707,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/nugu-display/templateview",
+  "url": "/document-staging/nugu-sdk/platform/android/nugu-display/templateview",
   "order": 189,
   "indexes": [
     {
@@ -19751,7 +19752,7 @@
   ]
 },
   {
-  "url": "/document/terms",
+  "url": "/document-staging/terms",
   "order": 211,
   "indexes": [
     {
@@ -19784,7 +19785,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/test-a-play",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/test-a-play",
   "order": 39,
   "indexes": [
     {
@@ -19881,7 +19882,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/hello-aria/test-and-build-a-play",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/hello-aria/test-and-build-a-play",
   "order": 12,
   "indexes": [
     {
@@ -19928,7 +19929,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/testing_sdk_integration",
+  "url": "/document-staging/nugu-sdk/platform/ios/testing_sdk_integration",
   "order": 179,
   "indexes": [
     {
@@ -19956,7 +19957,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/android/testing_sdk_integration",
+  "url": "/document-staging/nugu-sdk/platform/android/testing_sdk_integration",
   "order": 192,
   "indexes": [
     {
@@ -19994,7 +19995,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/text",
+  "url": "/document-staging/nugu-sdk/capability-interface/text",
   "order": 154,
   "indexes": [
     {
@@ -20164,7 +20165,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/trialprocess",
+  "url": "/document-staging/nugu-sdk/trialprocess",
   "order": 141,
   "indexes": [
     {
@@ -20281,7 +20282,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/tts",
+  "url": "/document-staging/nugu-sdk/capability-interface/tts",
   "order": 152,
   "indexes": [
     {
@@ -20442,7 +20443,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-1",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-1",
   "order": 58,
   "indexes": [
     {
@@ -20496,7 +20497,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-10",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-10",
   "order": 68,
   "indexes": [
     {
@@ -20550,7 +20551,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-11",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-11",
   "order": 69,
   "indexes": [
     {
@@ -20606,7 +20607,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-12",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-12",
   "order": 70,
   "indexes": [
     {
@@ -20661,7 +20662,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-13",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-13",
   "order": 71,
   "indexes": [
     {
@@ -20715,7 +20716,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-14",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-14",
   "order": 72,
   "indexes": [
     {
@@ -20774,7 +20775,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-15",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-15",
   "order": 73,
   "indexes": [
     {
@@ -20833,7 +20834,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-16",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-16",
   "order": 74,
   "indexes": [
     {
@@ -20887,7 +20888,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-17",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-17",
   "order": 75,
   "indexes": [
     {
@@ -20943,7 +20944,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-18",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-18",
   "order": 76,
   "indexes": [
     {
@@ -20998,7 +20999,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-19",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-19",
   "order": 77,
   "indexes": [
     {
@@ -21052,7 +21053,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-2",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-2",
   "order": 59,
   "indexes": [
     {
@@ -21109,7 +21110,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-20",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-20",
   "order": 78,
   "indexes": [
     {
@@ -21167,7 +21168,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-21",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-21",
   "order": 79,
   "indexes": [
     {
@@ -21223,7 +21224,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-3",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-3",
   "order": 60,
   "indexes": [
     {
@@ -21277,7 +21278,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-4-1",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4-1",
   "order": 62,
   "indexes": [
     {
@@ -21335,7 +21336,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-4",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-4",
   "order": 61,
   "indexes": [
     {
@@ -21388,7 +21389,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-5",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-5",
   "order": 63,
   "indexes": [
     {
@@ -21443,7 +21444,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-6",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-6",
   "order": 64,
   "indexes": [
     {
@@ -21498,7 +21499,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-7",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-7",
   "order": 65,
   "indexes": [
     {
@@ -21555,7 +21556,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-8",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-8",
   "order": 66,
   "indexes": [
     {
@@ -21612,7 +21613,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/smarthome-play/smarthomedevicetype/type-9",
+  "url": "/document-staging/nugu-play/smarthome-play/smarthomedevicetype/type-9",
   "order": 67,
   "indexes": [
     {
@@ -21666,7 +21667,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/distribute-and-manage-a-play/update-a-play",
+  "url": "/document-staging/nugu-play/distribute-and-manage-a-play/update-a-play",
   "order": 103,
   "indexes": [
     {
@@ -21710,7 +21711,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/use-backend-proxy",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy",
   "order": 44,
   "indexes": [
     {
@@ -21730,7 +21731,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-branch-actions",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-branch-actions",
   "order": 33,
   "indexes": [
     {
@@ -21850,7 +21851,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-common-actions",
   "order": 36,
   "indexes": [
     {
@@ -21884,7 +21885,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-directives",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-directives",
   "order": 32,
   "indexes": [
     {
@@ -21953,7 +21954,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters",
   "order": 24,
   "indexes": [
     {
@@ -21981,7 +21982,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses/use-prompts",
   "order": 31,
   "indexes": [
     {
@@ -22201,7 +22202,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-responses",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-responses",
   "order": 30,
   "indexes": [
     {
@@ -22230,7 +22231,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/capability-interface/utility",
+  "url": "/document-staging/nugu-sdk/capability-interface/utility",
   "order": 169,
   "indexes": [
     {
@@ -22292,7 +22293,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/sdk-design-guide/voice-chrome",
+  "url": "/document-staging/nugu-sdk/sdk-design-guide/voice-chrome",
   "order": 201,
   "indexes": [
     {
@@ -22389,7 +22390,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/nugu-ux/voice-interaction-design",
+  "url": "/document-staging/nugu-play/nugu-ux/voice-interaction-design",
   "order": 4,
   "indexes": [
     {
@@ -22445,7 +22446,7 @@
   ]
 },
   {
-  "url": "/document/nugu-sdk/platform/ios/web-server",
+  "url": "/document-staging/nugu-sdk/platform/ios/web-server",
   "order": 175,
   "indexes": [
     {
@@ -22555,7 +22556,7 @@
   ]
 },
   {
-  "url": "/document/work-with-nugu-biz",
+  "url": "/document-staging/work-with-nugu-biz",
   "order": 108,
   "indexes": [
     {
@@ -22596,7 +22597,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/nugu-ux/write-a-prompt",
+  "url": "/document-staging/nugu-play/nugu-ux/write-a-prompt",
   "order": 6,
   "indexes": [
     {
@@ -22696,7 +22697,7 @@
   ]
 },
   {
-  "url": "/document/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/write-responses",
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/define-an-action/use-parameters/write-responses",
   "order": 26,
   "indexes": [
     {
