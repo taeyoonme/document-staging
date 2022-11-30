@@ -20,9 +20,10 @@ TemplateView (이하 View로 표기) 는 버튼이 클릭되거나, 보여지는
 
 | Methods                                                                                                                     |
 |:----------------------------------------------------------------------------------------------------------------------------|
-| **fun onElementSelected(tokenId: String)**<br/>View내 버튼 클릭시 호출된다.                                                           |
+| **fun onElementSelected(tokenId: String, postback : String?)**<br/>View내 버튼 클릭시 호출된다.                                       |
 | **fun onChipSelected(text: String)**<br/>View내 chip(추천 명령어) 클릭시 호출된다.                                                       |
 | **fun onCloseClicked()**<br/>View내 닫기 버튼 클릭시 호출된다.                                                                          |
+| **fun onCloseWithParent()**<br/>Child View의 닫기 버튼 클릭시 호출된다. Parent View 를 함께 종료한다.                                          |
 | **fun onCloseAllClicked()**<br/>View내 홈 버튼 클릭시 호출된다. SDK에서는 노출중인 모든 템플릿을 종료한다.                                              |
 | **fun onNuguButtonSelected()**<br/>View내 누구 버튼 (아리아 호출) 클릭시 호출된다.                                                           |
 | **fun onPlayerCommand(command: String, param: String = ""\)**<br/>미디어 재생 관련 동작이 필요할때 호출된다. (ex. View내 재생/일시정지 버튼 클릭)        |
@@ -31,6 +32,8 @@ TemplateView (이하 View로 표기) 는 버튼이 클릭되거나, 보여지는
 | **fun showActivity(className: String)**<br/>View에서 응용레벨로 Activity 노출을 요청할때 호출된다.                                            |
 | **fun playTTS(text: String)**<br/>View에서 응용레벨로 TTS 재생을 요청할때 호출된다.                                                           |
 | **fun setClientListener(listener: ClientListener)**<br/>handler에 ClientListener를 설정한다.                                      |
+| **fun onClear()**<br/>TemplateView가 종료될때 호출된다.<br/>여기서 사용한 리소스를 해제한다.                                                           |
+| **fun getNuguClient() : NuguAndroidClient?**<br/>TemplateHandler 의 내부 구현에 필요한 NuguAndroidClient 를 리턴한다.                     |
 
 ## TemplateHandler.ClientListener
 

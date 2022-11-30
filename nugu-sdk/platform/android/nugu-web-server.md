@@ -12,7 +12,7 @@ NUGU 서비스 관리 웹에서 사용할 cookie 를 설정합니다.
 
 * authorization: OAuth bearer 토큰
 * pocId: [https://developers.nugu.co.kr/\#/sdk/pocList](https://developers.nugu.co.kr/#/sdk/pocList) 에서 확인 가능
-* redirectUri: NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 호출되는 url (ex&gt; nugu.user.sample://oauth_refresh)
+* redirectUri: NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 호출되는 url (ex> nugu.user.sample://oauth_refresh)
 * appVersion: Application 버전 정보
 * theme: LIGHT 또는 DARK
 
@@ -40,7 +40,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 * `onCloseWindow` : `Activity` 종료 요청. `reason` 이 `WITHDRAWN_USER` 인 경우 회원탈퇴 요청으로 인한 종료이기 때문에, 인증정보 등을 파기해야 합니다.
 
 {% code title="SettingsServiceActivity.kt" %}
-```kotlin
+```swift
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
@@ -62,7 +62,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 * `Const.AGREEMENT_URL`: NUGU 이용약관 웹 사이트
 
 {% code title="SettingsServiceActivity.kt" %}
-```kotlin
+```swift
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
@@ -75,7 +75,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 `redirectUri` 가 호출되며, `WebView` 를 갱신하면 로그인 결과가 웹 페이지에 반영됩니다.
 
-* `redirectUri` 를 받기 위한 `Intent-Filter` 를 등록합니다. (ex&gt; nugu.user.sample://oauth_refresh)
+* `redirectUri` 를 받기 위한 `Intent-Filter` 를 등록합니다. (ex> nugu.user.sample://oauth_refresh)
 
 {% code title="AndroidManifest.xml" %}
 ```xml
@@ -97,7 +97,7 @@ NUGU 서비스 관리 웹 내에서 Play 에 로그인 하고 나면 `redirectUr
 * `Activity` 에서 `Intent`  받으면 `WebView` 를 갱신합니다.
 
 {% code title="SettingsServiceActivity.kt" %}
-```kotlin
+```swift
 override fun onNewIntent(intent: Intent?) {
     super.onNewIntent(intent)
     webView.onNewIntent(intent)

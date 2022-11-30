@@ -6,7 +6,7 @@ depth_order: 1
 
 ## Step 1: 최소 요구사항 확인하기
 
-* Ubuntu xenial(16.04)
+* Ubuntu bionic(18.04)
 
 ## Step 2: NUGU SDK 설치하기
 
@@ -76,7 +76,7 @@ sudo apt-get install libnugu libnugu-plugins-default libnugu-dev libnugu-example
 ### PoC 정보 입력하기
 
 {% alerts style="warning" %}
-NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
+NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 
 * 체험판은 [체험판 신청](https://developers.nugu.co.kr/#/sdk/sdkTrial)을 통해 발급 가능합니다.
@@ -102,8 +102,8 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 
 다운로드가 완료되면, Linux 디바이스에 임의의 디렉토리를 생성한 후, 아래와 같은 파일명으로 복사해 주시면 됩니다.
 
-* `nugu_model_wakeup_net.raw`  - keyword detection에 사용되는 model 파일 (1/2)
-* `nugu_model_wakeup_search.raw`  - keyword detection에 사용되는 model 파일 (2/2)
+* `nugu_model_wakeup_net.raw` - keyword detection에 사용되는 model 파일 (1/2)
+* `nugu_model_wakeup_search.raw` - keyword detection에 사용되는 model 파일 (2/2)
 * `nugu_model_epd.raw` - VAD(Voice Activity Detection) 에 사용되는 model 파일
 
 ### OAuth2 client 구현하기
@@ -119,7 +119,7 @@ NUGU SDK for Linux는 아래의 이유로 인해 iOS, Android와 달리 인증�
 
 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 nugu-config.json 파일을 다운로드 받은 후, Client ID, Client Secret 정보를 활용하여 위 OAuth2 client 예제를 통해 인증을 진행할 수 있습니다.
 
-* 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서  nugu-config.json 파일을 다운로드 받습니다.
+* 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서 nugu-config.json 파일을 다운로드 받습니다.
 
 ## Step 4: NUGU 사용하기
 

@@ -7,7 +7,7 @@ description: 문자 확인 및 전송 기능 제어를 위한 규격
 
 ## Version
 
-최신 버전은 1.4 입니다.
+최신 버전은 1.5 입니다.
 
 | Version | Date       | Description                                                                      |
 |:--------|:-----------|:---------------------------------------------------------------------------------|
@@ -16,6 +16,7 @@ description: 문자 확인 및 전송 기능 제어를 위한 규격
 | 1.2     | 2020.08.13 | contact type 에 EMERGENCY 추가                                                      |
 | 1.3     | 2020.11.02 | SendCandidates directive 에 searchScene 필드 추가<br/>Context 에 searchScene 필드 추가     |
 | 1.4     | 2021.01.19 | Context 에 messageToSend 필드 추가<br/>SendCandidates directive 에 messageToSend 필드 추가 |
+| 1.5     | 2021.08.24 | Contact Object > message.type을 Mandatory N으로 변경                                  |
 
 ## SDK Interface
 
@@ -279,7 +280,7 @@ messageAgent.addOnPlaybackListener(listener)
 | profileImgUrl       | string | N         | -                                                                                                                                                                                                              |
 | message             | object | N         | -                                                                                                                                                                                                              |
 | message.text        | string | Y         | 보내는 or 받는 메세지 내용                                                                                                                                                                                               |
-| message.type        | string | Y         | 메세지의 타입<br/>- **SMS**<br/>- **MMS**                                                                                                                                                                            |
+| message.type        | string | N         | 메세지의 타입<br/>- **SMS**<br/>- **MMS**                                                                                                                                                                            |
 | time                | string | N         | 날짜, 시간 정보로 ISO 8601 포맷 (2007-12-03T10:15:30)                                                                                                                                                                   |
 | numInMessageHistory | string | N         | 문자 수신 내역에 존재하는 건수<br/>0, 1, 2, ... 값을 string 형태로 받음                                                                                                                                                            |
 | token               | string | N         | 사용자 추가 정보를 식별하기 위해 임의로 정의한 key값을 포함 unique 여부는 사용되는 용도에 의해 결정                                                                                                                                                  |

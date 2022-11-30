@@ -7,12 +7,13 @@ description: 음악 앱을 제어하기 위한 규격
 
 ## Version
 
-최신 버전은 1.1 입니다.
+최신 버전은 1.2 입니다.
 
 | Version | Date       | Description                                                                                                                                                                                                                                                                           |
 |:--------|:-----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1.0     | 2020.07.15 | 규격 추가                                                                                                                                                                                                                                                                                 |
 | 1.1     | 2020.10.29 | Song.category: SIMILAR 추가<br/>PlayFailed event(errorCode) : noSimilarSong 추가<br/>HandlePlaylist, HandleLyrics directive 추가<br/>HandlePlaylistSucceeded, HandlePlaylistFailed, HandleLyricsSucceeded, HandleLyricsFailed event 추가<br/>PlaySuspended event 의 issueCode 에 excludeSong 추가 |
+| 1.2     | 2022.05.06 | failed 관련 이벤트에 data 추가                                                                                                                                                                                                                                                                |
 
 ## SDK Interface
 
@@ -785,7 +786,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
@@ -795,6 +797,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 |:----------|:-------|:----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | token     | string | Y         | Directive에서 전달한 token                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **noPlaylist** : 재생 가능 플레이리스트 없음<br/>- **toBeReleased** : 음악이 발매될 예정, 현재는 미발매 상태<br/>- **searchFailed** : 검색 실패, 메타상에 없음<br/>- **disableAll** : 재생 목록에 재생가능 상태 음원이 없음<br/>- **noLikeSong** : 좋아요한 곡이 없음<br/>- **noNowlist** : 현재재생목록 요청했으나 목록에 곡없음<br/>- **noLikeAlbum** : 좋아요한 앨범 없음<br/>- **noLikeTheme** : 좋아요한 테마 없음<br/>- **noLikeArtist** : 좋아요한 가수없음<br/>- **multiPlayingStop** : 멀티 디바이스 중복 재생으로 인한 autonext 시 재생 중단 발생 시<br/>- **requireLogin** : 로그인 기능이 필수인 동작이나, 비로그인상태로 인한 실패<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시<br/>- **noSimilarSong** : 유사곡(SIMILAR) 요청 시, 유사곡이 없는, 지원하지 않는 곡일 경우 |
+| data      | object | N         | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ### StopSucceeded
 
@@ -835,16 +838,18 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
 {% endcode %}
 
-| parameter | type   | mandatory | description                                                                                                                                              |
-|:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| token     | string | Y         | Directive에서 전달한 token                                                                                                                                    |
-| errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| parameter | type   | mandatory | description                                                                                                                                               |
+|:----------|:-------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| token     | string | Y         | Directive에서 전달한 token                                                                                                                                     |
+| errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시  |
+| data      | object | N         | -                                                                                                                                                         |
 
 ### SearchSucceeded
 
@@ -887,16 +892,18 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
 {% endcode %}
 
-| parameter | type   | mandatory | description                                                                                                                                              |
-|:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| token     | string | Y         | Directive에서 전달한 token                                                                                                                                    |
-| errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| parameter | type   | mandatory | description                                                                                                                                               |
+|:----------|:-------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| token     | string | Y         | Directive에서 전달한 token                                                                                                                                     |
+| errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시  |
+| data      | object | N         | -                                                                                                                                                         |
 
 ### PreviousSucceeded
 
@@ -976,7 +983,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
@@ -986,6 +994,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 |:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | token     | string | Y         | Directive에서 전달한 token                                                                                                                                                                                                                                                                                                                  |
 | errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **noPreviousPlaylist** : 다음 플레이리스트 요청 시, 재생 가능한 플레이리스트가 없는 경우<br/>- **noPreviousTrack** : 다음 곡 요청 시, 재생 가능한 다음곡이 없는 경우,<br/>- **noTargetSong** : 플레이어에 재생가능한 곡이 없는 대기상태<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| data      | object | N         | -                                                                                                                                                                                                                                                                                                                                      |
 
 ### NextSucceeded
 
@@ -1065,7 +1074,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
@@ -1075,6 +1085,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 |:----------|:-------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | token     | string | Y         | Directive에서 전달한 token                                                                                                                                                                                                                                                                                                          |
 | errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **noNextPlaylist** : 다음 플레이리스트 요청 시, 재생 가능한 플레이리스트가 없는 경우<br/>- **noNextTrack** : 다음 곡 요청 시, 재생 가능한 다음곡이 없는 경우,<br/>- **noTargetSong** : 플레이어에 재생가능한 곡이 없는 대기상태<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| data      | object | N         | -                                                                                                                                                                                                                                                                                                                              |
 
 ### MoveSucceeded
 
@@ -1117,16 +1128,18 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
 {% endcode %}
 
-| parameter | type   | mandatory | description                                                                                                                                              |
-|:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| token     | string | Y         | Directive에서 전달한 token                                                                                                                                    |
-| errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| parameter | type   | mandatory | description                                                                                                                                               |
+|:----------|:-------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| token     | string | Y         | Directive에서 전달한 token                                                                                                                                     |
+| errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시  |
+| data      | object | N         | -                                                                                                                                                         |
 
 ### PauseSucceeded
 
@@ -1169,16 +1182,18 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
 {% endcode %}
 
-| parameter | type   | mandatory | description                                                                                                                                                                                              |
-|:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| token     | string | Y         | Directive에서 전달한 token                                                                                                                                                                                    |
-| errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시<br/>- **noTargetSong** : 플레이어에 재생가능한 곡이 없는 대기상태 |
+| parameter | type   | mandatory | description                                                                                                                                                                                               |
+|:----------|:-------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| token     | string | Y         | Directive에서 전달한 token                                                                                                                                                                                     |
+| errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시<br/>- **noTargetSong** : 플레이어에 재생가능한 곡이 없는 대기상태  |
+| data      | object | N         | -                                                                                                                                                                                                         |
 
 ### ResumeSucceeded
 
@@ -1221,7 +1236,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
@@ -1231,6 +1247,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 |:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | token     | string | Y         | Directive에서 전달한 token                                                                                                                                                                                    |
 | errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시<br/>- **noTargetSong** : 플레이어에 재생가능한 곡이 없는 대기상태 |
+| data      | object | N         | -                                                                                                                                                                                                        |
 
 ### RewindSucceeded
 
@@ -1273,7 +1290,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
@@ -1283,6 +1301,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 |:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | token     | string | Y         | Directive에서 전달한 token                                                                                                                                                                                    |
 | errorCode | string | Y         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시<br/>- **noTargetSong** : 플레이어에 재생가능한 곡이 없는 대기상태 |
+| data      | object | N         | -                                                                                                                                                                                                        |
 
 ### ToggleSucceeded
 
@@ -1325,7 +1344,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
@@ -1335,6 +1355,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 |:----------|:-------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | token     | string | Y         | Directive에서 전달한 token                                                                                                                                                                                                                                                                                                                                                                                               |
 | errorCode | string | N         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **addLikeAlreadySong** : 이미 좋아요한 곡을 좋아요 추가<br/>- **addLikeExceedSong** : 좋아요 최대등록 수량 초과<br/>- **removeLikeNoSong** : 좋아요 상태가 아닌 곡 좋아요 해제 시도<br/>- **noTargetSong** : 플레이어에 재생가능한 곡이 없는 대기상태<br/>- **requireLogin** : 로그인 기능이 필수인 동작이나, 비로그인상태로 인한 실패<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| data      | object | N         | -                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
 ### GetInfoSucceeded
 
@@ -1382,7 +1403,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   "payload": {
     "playServiceId": "{{STRING}}",
     "token": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
@@ -1392,6 +1414,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 |:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | token     | string | Y         | Directive에서 전달한 token                                                                                                                                    |
 | errorCode | string | N         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| data      | object | N         | -                                                                                                                                                        |
 
 ### HandlePlaylistSucceeded
 
@@ -1426,7 +1449,8 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   },
   "payload": {
     "playServiceId": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
@@ -1435,6 +1459,7 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
 | parameter | type   | mandatory | description                                                                                                                                              |
 |:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | errorCode | string | N         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| data      | object | N         | -                                                                                                                                                        |
 
 ### HandleLyricsSucceeded
 
@@ -1469,12 +1494,14 @@ mediaPlayerAgent.delegate = MyMediaPlayerAgentDelegate()
   },
   "payload": {
     "playServiceId": "{{STRING}}",
-    "errorCode": "{{STRING}}"
+    "errorCode": "{{STRING}}",
+    "data": { # arbitrary object }
   }
 }
 ```
 {% endcode %}
 
-| parameter | type   | mandatory | description                                                                                                                                              |
-|:----------|:-------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| errorCode | string | N         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시 |
+| parameter | type   | mandatory | description                                                                                                                                               |
+|:----------|:-------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| errorCode | string | N         | **(임의의 String으로 SDK에서 enum 처리하면 안됨)**<br/>실패 원인을 의미하며, 여기에 전달하는 string 값을 기반으로 응답 TTS 생성<br/>- **appInternalServerError** : CP의 내부 서버 연동간의 이슈로 응답실패 발생 시  |
+| data      | object | N         | -                                                                                                                                                         |

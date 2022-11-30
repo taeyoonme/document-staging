@@ -7,7 +7,7 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 
 ## Version
 
-최신 버전은 1.7 입니다.
+최신 버전은 1.9 입니다.
 
 | Version | Date       | Description                                                                                                                                                                                                                                                             |
 |:--------|:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -19,6 +19,8 @@ description: Play 에서 전달하는 UI 요소를 화면에 구성하기 규격
 | 1.5     | 2020.09.02 | Template 에 eventType, textInput 필드 추가                                                                                                                                                                                                                                   |
 | 1.6     | 2020.10.16 | BadgeObject, UnifiedSearch1 추가                                                                                                                                                                                                                                          |
 | 1.7     | 2021.05.31 | StyleGrammarGuide, FloatingBannerObject 추가                                                                                                                                                                                                                              |
+| 1.8     | 2021.07.08 | TabExtension 추가                                                                                                                                                                                                                                                         |
+| 1.9     | 2021.09.17 | Button Object 변경                                                                                                                                                                                                                                                        |
 
 ## SDK Interface
 
@@ -346,11 +348,11 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 ```
 {% endcode %}
 
-| parameter | type   | mandatory | description                                                                                                                                                                                                                                                                    |
-|:----------|:-------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| text      | string | Y         | Text 중간에 강조 표현을 위한 마크업 사용 가능 스펙<br/>- 볼드 : `<b>볼드</b>`<br/>- 기울림 : `<i>기울림</i>`<br/>- 밑줄 : `<u>밑줄</u>` - 윗첨자 : `<sup>윗첨자</sup>`<br/>- 아래첨자 : <sub>아래첨자</sub><br/>- 취소선 : `<s>취소선</s>`<br/>- 색상 : `<font color="red">빨강</font>`<br/>위에 요소외 다른 마크업 사용 시 마크업 요소 사용 불가, 원본 표시      |
-| color     | string | N         | color 형식 (RGB)<br/>default 값은 디바이스마다 다름                                                                                                                                                                                                                                        |
-| style     | object | N         | 기본적으로는 상위 스타일(directive 등)을 따름.<br/>CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br/>- text-align : left, center, right<br/>- opacity : 0 ~ 1<br/>- display : block, inline, none<br/>- margin : 10px<br/>- 사용예.  `{ "text-align":"center", "display": "block" }`                         |
+| parameter | type   | mandatory | description                                                                                                                                                                                                                                                                     |
+|:----------|:-------|:----------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| text      | string | Y         | Text 중간에 강조 표현을 위한 마크업 사용 가능 스펙<br/>- 볼드 : `<b>볼드</b>`<br/>- 기울림 : `<i>기울림</i>`<br/>- 밑줄 : `<u>밑줄</u>` - 윗첨자 : `<sup>윗첨자</sup>`<br/>- 아래첨자 : `<sub>아래첨자</sub>`<br/>- 취소선 : `<s>취소선</s>`<br/>- 색상 : `<font color="red">빨강</font>`<br/>위에 요소외 다른 마크업 사용 시 마크업 요소 사용 불가, 원본 표시     |
+| color     | string | N         | color 형식 (RGB)<br/>default 값은 디바이스마다 다름                                                                                                                                                                                                                                         |
+| style     | object | N         | 기본적으로는 상위 스타일(directive 등)을 따름.<br/>CSS 속성은 모두 가능하며, 다음의 값들을 가질 수 있다.<br/>- text-align : left, center, right<br/>- opacity : 0 ~ 1<br/>- display : block, inline, none<br/>- margin : 10px<br/>- 사용예.  `{ "text-align":"center", "display": "block" }`                          |
 
 ### ButtonObject
 
@@ -361,9 +363,18 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
   "text": "{{STRING}}",
   "image": ImageObject,
   "token": "{{STRING}}",
+  "eventType": "{{STRING}}",
   "textInput": {
     "text": "{{STRING}}",
     "playServiceId": "{{STRING}}"
+  },
+  "event": {
+    "type": "{{STRING}}",
+    "data": { # arbitrary JSON object for specific event }
+  },
+  "url": "{{STRING}}",
+  "control": {
+    "type": "{{STRING}}"
   },
   "postback": {},
   "autoTrigger": {
@@ -377,23 +388,29 @@ Template 에 사용되는 공통 object 의 데이터 구조입니다.
 ```
 {% endcode %}
 
-| parameter                       | type                                                                                                                                       | mandatory | description                                                                                                                                                |
-|:--------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type                            | string                                                                                                                                     | N         | text(default), image 중 하나의 값을 가질 수 있습니다.                                                                                                                   |
-| image                           | [ImageObject](../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface#imageobject)        | N         | 버튼 이미지<br/>- type이 image인 경우에 한해 필수이며, 해당 이미지를 이용해 버튼을 표현한다.                                                                                               |
-| text                            | string                                                                                                                                     | N         | 버튼 텍스트<br/>- type이 text인 경우에 한해 필수이며, 해당 텍스트를 이용해 버튼을 표현한다.                                                                                                |
-| token                           | string                                                                                                                                     | Y         | 클릭 시 전달될 토큰 값                                                                                                                                              |
-| eventType                       | string                                                                                                                                     | N         | 클릭 시 플랫폼으로 전달하는 Event Type (Capability 명과 Event를 모두 명시해야 함)<br/>- **Display.ElementSelected** :  default (eventType 값이 없는 경우 기본값)<br/>- **Text.TextInput** |
-| textInput                       | object                                                                                                                                     | N         | eventType == TextTextInput인 경우 필수                                                                                                                          |
-| textInput.text                  | string                                                                                                                                     | Y         | 전달할 텍스트                                                                                                                                                    |
-| textInput.playServiceId         | string                                                                                                                                     | N         | 특정 Play로 지정하여 라우팅하는 경우 사용                                                                                                                                  |
-| postback                        | object                                                                                                                                     | N         | 클릭 시 전달되는 임의의 Object<br/>- 버튼 클릭 시 동작을 위해 필요한 정보를 임의의 JSON 포맷으로 추가 가능<br/>- 기존에 token을 이 용도로 활용하는 경우가 많았는데, token은 identifier 역할을 하도록 하기 위해 추가             |
-| autoTrigger                     | object                                                                                                                                     | N         | 특정 시간이 지난 뒤 ElementSelected Event를 자동으로 발생시키는 경우 포함<br/>하위 parameter들은 autoTrigger가 포함되면 모두 mandatory parameter                                            |
-| autoTrigger.delayInMilliseconds | long                                                                                                                                       | Y         | TTS 종료 후 trigger 시킬때까지의 시간 (msec)                                                                                                                          |
-| autoTrigger.showTimer           | bool                                                                                                                                       | Y         | 버튼에 timer 숫자를 보여줄지 설정                                                                                                                                      |
-| closeTemplateAfter              | bool                                                                                                                                       | N         | trigger 또는 클릭 동작 후 template을 바로 닫을지, 아니면 template의 life cycle 대로 화면에 보여줄지 설정                                                                               |
-| style                           | object                                                                                                                                     | N         | 버튼의 추가적인 style을 정의함.<br/>textObject의 style고 사용법이 동일함.                                                                                                      |
-| disable                         | bool                                                                                                                                       | N         | 이 속성이 true이면 버튼을 disable 처리함.                                                                                                                              |
+| parameter                       | type                                                                                                                                | mandatory | description                                                                                                                                                                                                           |
+|:--------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type                            | string                                                                                                                              | N         | text(default), image 중 하나의 값을 가질 수 있습니다.                                                                                                                                                                              |
+| image                           | [ImageObject](../../nugu-play/create-plays-with-play-builder/use-backend-proxy/capability-interfaces/display-interface#imageobject) | N         | 버튼 이미지<br/>- type이 image인 경우에 한해 필수이며, 해당 이미지를 이용해 버튼을 표현한다.                                                                                                                                                          |
+| text                            | string                                                                                                                              | N         | 버튼 텍스트<br/>- type이 text인 경우에 한해 필수이며, 해당 텍스트를 이용해 버튼을 표현한다.                                                                                                                                                           |
+| token                           | string                                                                                                                              | Y         | 클릭 시 전달될 토큰 값                                                                                                                                                                                                         |
+| eventType                       | string                                                                                                                              | N         | 클릭 시 플랫폼으로 전달하는 Event Type (Capability 명과 Event를 모두 명시해야 함)<br/>- **Display.ElementSelected** :  default (eventType 값이 없는 경우 기본값)<br/>- **Text.TextInput**<br/>- **EVENT**<br/>- CONTROL : Client를 Direct로 제어하기 위해 정의 |
+| triggerChild                    | bool                                                                                                                                | N         | 버튼을 클릭했을때 child template을 실행할 수 있는지 여부                                                                                                                                                                                |
+| textInput                       | object                                                                                                                              | N         | eventType == TextTextInput인 경우 필수                                                                                                                                                                                     |
+| textInput.text                  | string                                                                                                                              | Y         | 전달할 텍스트                                                                                                                                                                                                               |
+| textInput.playServiceId         | string                                                                                                                              | N         | 특정 Play로 지정하여 라우팅하는 경우 사용                                                                                                                                                                                             |
+| event                           | object                                                                                                                              | N         | eventType == Extension.CommandIssued인 경우 필수 기존의 Display.ElementSelected, Text.TextInput 모두 EVENT 타입 사용 가능                                                                                                             |
+| event.type                      | string                                                                                                                              | Y         | Event의 타입<br/>**Extension.CommandIssued**<br/>**Display.TriggerChild**                                                                                                                                                |
+| event.data                      | object                                                                                                                              | Y         | Event에 필요한 JSON object                                                                                                                                                                                                |
+| control                         | string                                                                                                                              | N         | eventType == CONTROL인 경우 필수                                                                                                                                                                                           |
+| control.type                    | string                                                                                                                              | Y         | **TEMPLATE_PREVIOUS** - history가 있는 경우 이전 template으로 이동<br/>**TEMPLATE_CLOSEALL** - history에 있는 모든 template(parent와 child)을 close                                                                                     |
+| postback                        | object                                                                                                                              | N         | 클릭 시 전달되는 임의의 Object<br/>- 버튼 클릭 시 동작을 위해 필요한 정보를 임의의 JSON 포맷으로 추가 가능<br/>- 기존에 token을 이 용도로 활용하는 경우가 많았는데, token은 identifier 역할을 하도록 하기 위해 추가                                                                        |
+| autoTrigger                     | object                                                                                                                              | N         | 특정 시간이 지난 뒤 ElementSelected Event를 자동으로 발생시키는 경우 포함<br/>하위 parameter들은 autoTrigger가 포함되면 모두 mandatory parameter                                                                                                       |
+| autoTrigger.delayInMilliseconds | long                                                                                                                                | Y         | TTS 종료 후 trigger 시킬때까지의 시간 (msec)                                                                                                                                                                                     |
+| autoTrigger.showTimer           | bool                                                                                                                                | Y         | 버튼에 timer 숫자를 보여줄지 설정                                                                                                                                                                                                 |
+| closeTemplateAfter              | bool                                                                                                                                | N         | trigger 또는 클릭 동작 후 template을 바로 닫을지, 아니면 template의 life cycle 대로 화면에 보여줄지 설정                                                                                                                                          |
+| style                           | object                                                                                                                              | N         | 버튼의 추가적인 style을 정의함.<br/>textObject의 style고 사용법이 동일함.                                                                                                                                                                 |
+| disable                         | bool                                                                                                                                | N         | 이 속성이 true이면 버튼을 disable 처리함.                                                                                                                                                                                         |
 
 ### TitleObject
 
@@ -468,11 +485,11 @@ GrammarGuide의 확장된 발화가이드 입니다.
 ```
 {% endcode %}
 
-| parameter | type   | mandatory | description                                           |
-|:----------|:-------|:----------|:------------------------------------------------------|
-| text      | string | Y         | 화면에 표시할 문자열들을 정의합니다.                                  |
-| type      | string | Y         | NONE: 기본 UI<br/>NUDGE: 넛지 UI<br/>STYLE: style 필드를 사용  |
-| style     | object | N         | uiType 이 STYLE 일 때, 필수 CSS 속성은 모두 가능                  |
+| parameter | type   | mandatory | description                                                             |
+|:----------|:-------|:----------|:------------------------------------------------------------------------|
+| text      | string | Y         | 화면에 표시할 문자열들을 정의합니다.                                                    |
+| type      | string | Y         | NONE, NUDGE, STYLE NONE: 기본 UI<br/>NUDGE: 넛지 UI<br/>STYLE: style 필드를 사용 |
+| style     | object | N         | uiType 이 STYLE 일 때, 필수 CSS 속성은 모두 가능                                    |
 
 ### FloatingBannerObject
 

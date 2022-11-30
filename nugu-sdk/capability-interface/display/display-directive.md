@@ -1463,3 +1463,32 @@ List 의 스크롤 이동 요청입니다.
 | supportVisibleTokenList           | boolean                                             | N         | Context에 있는 visibleTokenList가 지원되어야 하는지 여부                                                                                                                                                   |
 | data                              | Object                                              | N         | 서비스에서 필요한 데이터를 JSON 포맷으로 추가 가능                                                                                                                                                               |
 
+### RedirectTriggerChild
+
+Display.TriggerChild Event를 생성
+
+{% code %}
+```json
+{
+  "header": {
+    "namespace": "Display",
+    "name": "RedirectTriggerChild",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.9"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "targetPlayServiceId": "{{STRING}}",
+    "parentToken": "{{STRING}}",
+    "data": {}
+  }
+}
+```
+{% endcode %}
+
+| parameter           | type   | mandatory | description                             |
+|---------------------|--------|-----------|-----------------------------------------|
+| targetPlayServiceId | string | Y         | TriggerChild Event를 라우팅할 playServiceId  |
+| parentToken         | string | Y         | Child를 trigger시킨 Parent template의 token |
+| data                | object | Y         | TriggerChild Event의 data에 들어가는 정보       |

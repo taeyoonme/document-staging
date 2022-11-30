@@ -30,7 +30,7 @@ repositories {
 
 ### 의존성 추가하기
 
-어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니다.  
+어플리케이션 모듈의 build.gradle에, 전체 라이브러리를 사용하기 위해 아래 의존성을 추가합니다.\
 (전체 라이브러리에 대한 의존성은 [여기](https://github.com/nugu-developers/nugu-android)를 참조)
 
 {% code %}
@@ -51,7 +51,7 @@ dependencies {
 ### PoC 정보 입력하기
 
 {% alerts style="warning" %}
-NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.  
+NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요합니다.\
 더 자세한 내용은 [NUGU SDK 소개](https://developers.nugu.co.kr/#/sdk/nuguSdkInfo)에서 확인이 가능합니다.
 
 * 체험판은 [체험판 신청](https://developers.nugu.co.kr/#/sdk/sdkTrial)을 통해 발급 가능합니다.
@@ -62,7 +62,7 @@ NUGU PoC를 생성하기 위해서는 NUGU Developers를 통해 제휴가 필요
 * 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서 확인 가능합니다.
 
 {% alerts style="success" %}
-NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,  
+NUGU SDK를 사용하는 앱 간에 URL Scheme 충돌을 방지하기 위해,\
 Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합니다.
 
 * 체험판은 Redirect URI가 필요하지 않습니다.
@@ -70,7 +70,7 @@ Redirect URI는 `nugu.user.{client-id}://auth`로 설정하는 것을 권고합�
 
 #### 리소스에 정보 추가하기
 
-strings.xml 파일에 _nugu_redirect_scheme_, _nugu_redirect_host_를 추가합니다. 예를들어 redirectUri가 **"example://sample"** 라면 아래와 같이 추가합니다.
+strings.xml 파일에 nugu_redirect_scheme, nugu_redirect_host를 추가합니다. 예를들어 redirectUri가 **"example://sample"** 라면 아래와 같이 추가합니다.
 
 {% code %}
 ```xml
@@ -86,6 +86,19 @@ strings.xml 파일에 _nugu_redirect_scheme_, _nugu_redirect_host_를 추가합�
 [NUGU SDK PoC목록](https://developers.nugu.co.kr/#/sdk/pocList)에서 음성인식 모델 파일을 다운로드 받습니다.
 
 * 체험판은 [체험판 신청 내역](https://developers.nugu.co.kr/#/sdk/sdkTrial)에서 음성인식 모델파일을 다운로드 받습니다.
+
+음성인식 파일 리소스에 대해서 압축되지 않도록 build.gradle 설정이 필요합니다.
+
+{% code %}
+```groovy
+android {
+   ...
+   aaptOptions {
+       noCompress "raw"
+   }
+}
+```
+{% endcode %}
 
 ### Configuration 파일 설정하기
 
@@ -128,7 +141,7 @@ NUGU 로그인은 **NUGU 회원 연동 방식**과 **NUGU 회원 미사용 방�
 * 체험판은 NUGU 회원 미사용 방식만 가능합니다.
 
 {% alerts style="info" %}
-NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.  
+NUGU 서비스를 이용하기 위해서는 OAuth 2.0 인증이 필요합니다.\
 OAuth 2.0 API 는 [Authentication](../../authentication) 에서 확인이 가능합니다.
 {% endalerts %}
 
@@ -268,7 +281,9 @@ authClient.loginAnonymously(object : NuguOAuthInterface.OnLoginListener {
 
    client.asrAgent?.addOnResultListener(...)
    client.asrAgent?.addOnStateChangeListener(...)
-   client.asrAgent?.startRecognition()
+   // 음성인식 시작
+   client.asrAgent?.startRecognition(initiator = ASRAgentInterface.Initiator.TAP)
+
    ```
 {% endcode %}
 

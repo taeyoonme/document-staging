@@ -7,7 +7,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 
 ## Version
 
-최신 버전은 1.6 입니다.
+최신 버전은 1.7 입니다.
 
 | Version | Date       | Description                                                                                                |
 |:--------|:-----------|:-----------------------------------------------------------------------------------------------------------|
@@ -18,6 +18,7 @@ description: 음성인식 결과를 Play 로 전달하기 위한 규격
 | 1.4     | 2020.11.18 | ExpectSpeech directive 에 epd 필드 추가                                                                         |
 | 1.5     | 2021.03.03 | Context 에 state, initiator 필드 추가                                                                           |
 | 1.6     | 2021.05.31 | ASR.ExpectSpeech directive 에 listenTimeoutFailBeep 필드 추가                                                   |
+| 1.7     | 2022.07.04 | ASR.ExpectSpeech directive의 asrContext에 isAddListen 추가                                                     |
 
 ## State Diagram
 
@@ -342,7 +343,8 @@ asr_handler->stopRecognition()
       "sceneText": [
         "{{STRING}}"
       ],
-      "playServiceId" : "playServiceId"
+      "playServiceId" : "playServiceId",
+      "isAddListen" : {{BOOLEAN}}
     },
     "epd": {
       "timeoutMilliseconds": {{LONG}},
@@ -365,6 +367,7 @@ asr_handler->stopRecognition()
 | asrContext.sceneId                | string          | N         | -                                                                                                                                     |
 | asrContext.sceneText              | array of string | N         | -                                                                                                                                     |
 | asrContext.playServiceId          | string          | N         | -                                                                                                                                     |
+| asrContext.isAddListen            | boolean         | N         | add-listen으로 인입된 발화 여부                                                                                                                |
 | epd                               | object          | N         | End Point Detection 관련 정보 없으면 device의 default 값을 사용<br/>하위의 3개 파라미터도 optional이기 때문에 존재하는 파라미터만 업데이트하고, 없는 파라미터는 device의 default 값을 사용 |
 | epd.timeoutMilliseconds           | long            | N         | Wake up 후 종료까지 대기 시간 (단위: msec)<br/>**이 값은 위의 timeoutInMilliseconds와는 다른 epd 전용값**                                                    |
 | epd.silenceIntervalInMilliseconds | long            | N         | end point detection 전에 기다리는 묵음 구간 (단위: msec)                                                                                          |
@@ -474,34 +477,34 @@ asr_handler->stopRecognition()
 ```
 {% endcode %}
 
-| parameter                  | type            | mandatory | description                                                                                                        |
-|:---------------------------|:----------------|:----------|:-------------------------------------------------------------------------------------------------------------------|
-| codec                      | string          | Y         | SPEEX                                                                                                              |
-| playServiceId              | string          | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용                                                      |
-| property                   | string          | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 property를 적용                                                           |
-| domainTypes                | array of string | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 domainTypes를 적용                                                        |
-| language                   | string          | N         | **KOR**, **ENG**, **JPN**, **CHN**, ...<br/>default 값은 KOR                                                         |
-| endpointing                | string          | Y         | **CLIENT** : 클라이언트 EPD(EndPointDetector) 사용<br/>**SERVER** : 서버 EPD 사용                                             |
-| encoding                   | string          | N         | **PARTIAL** : 사용자 발화의 일부분<br/>**COMPLETE** : 사용자 발화의 전체 문장 (default)                                               |
-| wakeup                     | object          | N         | 서버 EPD 사용시 필수 값.<br/>wakeup을 포함해서 서버에 전달하는 경우 포함<br/>wakeup 정보를 전달하는 경우 포함 (전달하는 pcm에 wakeup이 포함되지 않더라도 필요한 경우 전달) |
-| wakeup.word                | string          | Y         | 전송하는 stream에 포함된 wakeup word( ex "아리아")                                                                            |
-| wakeup.boundary            | object          | N         | 전송하는 stream에서 wakeup word에 대한 boundary 정보                                                                          |
-| wakeup.boundary.start      | long            | Y         | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br/>sample count for start time                     |
-| wakeup.boundary.end        | long            | Y         | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br/>sample count for end time                       |
-| wakeup.boundary.detection  | long            | Y         | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br/>sample count for detection time                 |
-| wakeup.boundary.metric     | string          | N         | **sample(default)** / **byte** / **frame** / **time**<br/>현재 sample 만 지원되며, 추후 byte / frame / time 속성 지원 예정        |
-| wakeup.power               | object          | N         | 전송하는 stream에 포함된 wakeup pcm의 power값                                                                                |
-| wakeup.power.noise         | float           | Y         | wakeup pcm의 power중 noise를 의미하는 값 (주로 min값)                                                                         |
-| wakeup.power.speech        | float           | Y         | wakeup pcm의 power중 speech를 의미하는 값 (주로 max값)                                                                        |
-| asrContext                 | object          | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 asrContext를 적용                                                         |
-| asrContext.task            | string          | N         | -                                                                                                                  |
-| asrContext.sceneId         | string          | N         | -                                                                                                                  |
-| asrContext.sceneText       | array of string | N         | -                                                                                                                  |
-| asrContext.playServiceId   | string          | N         | -                                                                                                                  |
-| timeout                    | object          | N         | Server EPD 사용시 필수 값.                                                                                               |
-| timeout.listen             | long            | Y         | SOS 를 기다리는 시간 (milliseconds)                                                                                       |
-| timeout.maxSpeech          | long            | Y         | SOS이후 EOS를 기다리는 시간 (milliseconds)                                                                                  |
-| timeout.response           | long            | Y         | EOS 이후 응답을 기다리는 시간 (milliseconds)                                                                                  |
+| parameter                 | type            | mandatory | description                                                                                                        |
+|:--------------------------|:----------------|:----------|:-------------------------------------------------------------------------------------------------------------------|
+| codec                     | string          | Y         | SPEEX                                                                                                              |
+| playServiceId             | string          | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용                                                      |
+| property                  | string          | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 property를 적용                                                           |
+| domainTypes               | array of string | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 domainTypes를 적용                                                        |
+| language                  | string          | N         | **KOR**, **ENG**, **JPN**, **CHN**, ...<br/>default 값은 KOR                                                         |
+| endpointing               | string          | Y         | **CLIENT** : 클라이언트 EPD(EndPointDetector) 사용<br/>**SERVER** : 서버 EPD 사용                                             |
+| encoding                  | string          | N         | **PARTIAL** : 사용자 발화의 일부분<br/>**COMPLETE** : 사용자 발화의 전체 문장 (default)                                               |
+| wakeup                    | object          | N         | 서버 EPD 사용시 필수 값.<br/>wakeup을 포함해서 서버에 전달하는 경우 포함<br/>wakeup 정보를 전달하는 경우 포함 (전달하는 pcm에 wakeup이 포함되지 않더라도 필요한 경우 전달) |
+| wakeup.word               | string          | Y         | 전송하는 stream에 포함된 wakeup word( ex "아리아")                                                                            |
+| wakeup.boundary           | object          | N         | 전송하는 stream에서 wakeup word에 대한 boundary 정보                                                                          |
+| wakeup.boundary.start     | long            | Y         | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br/>sample count for start time                     |
+| wakeup.boundary.end       | long            | Y         | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br/>sample count for end time                       |
+| wakeup.boundary.detection | long            | Y         | wakeup module 에서 얻은 milliseconds 를 sample count 로 변환해서 전송해야 함.<br/>sample count for detection time                 |
+| wakeup.boundary.metric    | string          | N         | **sample(default)** / **byte** / **frame** / **time**<br/>현재 sample 만 지원되며, 추후 byte / frame / time 속성 지원 예정        |
+| wakeup.power              | object          | N         | 전송하는 stream에 포함된 wakeup pcm의 power값                                                                                |
+| wakeup.power.noise        | float           | Y         | wakeup pcm의 power중 noise를 의미하는 값 (주로 min값)                                                                         |
+| wakeup.power.speech       | float           | Y         | wakeup pcm의 power중 speech를 의미하는 값 (주로 max값)                                                                        |
+| asrContext                | object          | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 asrContext를 적용                                                         |
+| asrContext.task           | string          | N         | -                                                                                                                  |
+| asrContext.sceneId        | string          | N         | -                                                                                                                  |
+| asrContext.sceneText      | array of string | N         | -                                                                                                                  |
+| asrContext.playServiceId  | string          | N         | -                                                                                                                  |
+| timeout                   | object          | N         | Server EPD 사용시 필수 값.                                                                                               |
+| timeout.listen            | long            | Y         | SOS 를 기다리는 시간 (milliseconds)                                                                                       |
+| timeout.maxSpeech         | long            | Y         | SOS이후 EOS를 기다리는 시간 (milliseconds)                                                                                  |
+| timeout.response          | long            | Y         | EOS 이후 응답을 기다리는 시간 (milliseconds)                                                                                  |
 
 ### ResponseTimeout
 
@@ -602,4 +605,3 @@ asr_handler->stopRecognition()
 | parameter     | type   | mandatory | description                                                   |
 |:--------------|:-------|:----------|:--------------------------------------------------------------|
 | playServiceId | string | N         | ExpectSpeech에 의한 발화인 경우에만 ExpectSpeech에서 받은 playServiceId를 적용 |
-

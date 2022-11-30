@@ -7,13 +7,14 @@ description: 전화 수/발신 기능 제어를 위한 규격
 
 ## Version
 
-최신 버전은 1.2 입니다.
+최신 버전은 1.3 입니다.
 
 | Version | Date       | Description                                                                                                                                                                               |
 |:--------|:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 1.0     | 2020.07.06 | 규격 추가                                                                                                                                                                                     |
 | 1.1     | 2020.08.28 | SendCandidates directive 에 clientSearchTargetList 추가                                                                                                                                      |
 | 1.2     | 2020.11.02 | Context 에 searchScene 추가<br/>SendCandidates directive 에 searchScene 추가<br/>SendCandidates directive 의 clientSearchTargetList 삭제<br/>Context 에 recipient 추가<br/>MakeCallSucceeded event 추가 |
+| 1.3     | 2022.02.15 | Context,SendCandidates intent에 "SAVE_CONTACT", "BLOCK", "EXACT_ONE" 추가<br/>Contact Object 에 isBlocked 추가<br/>Person Object에 poiId 추가<br/>BlockNumber 디렉티브 추가                              |
 
 ## State Diagram
 
@@ -274,32 +275,34 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
       "candidates": [Person]
     },
     "recipient": {
-            "name": "{{STRING}}",
-            "token": "{{STRING}}",
-            "isMobile": "{{STRING}}",
-            "isRecentMissed": "{{STRING}}"
-        }
+        "name": "{{STRING}}",
+        "token": "{{STRING}}",
+        "isMobile": "{{STRING}}",
+        "isRecentMissed": "{{STRING}}"
+    },
+    "numberBlockable": "{{STRING}}"
   }
 }
 ```
 {% endcode %}
 
-| parameter                       | type                        | mandatory | description                                                                                                                                              |
-|:--------------------------------|:----------------------------|:----------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| state                           | string                      | Y         | **IDLE**<br/>**OUTGOING**<br/>**INCOMING**<br/>**ESTABLISHED**                                                                                           |
-| template                        | object                      | N         | Play 에서 진행중인 intent 를 알 수 있도록 SendCandidates event 에서 전달받은 data 를 유지해야 함                                                                                 |
-| template.intent                 | string                      | N         | candidates의 용도<br/>- **CALL** : 전화걸어줘<br/>- **SEARCH** : 찾아줘<br/>- **HISTORY** : 최근 통화 목록<br/>- **REDIAL** : 재발신<br/>- **MISSED** : 부재중통화<br/>- **NONE** |
-| template.callType               | string                      | N         | **NORMAL** : 일반 전화<br/>**SPEAKER** : 스피커폰<br/>**VIDEO** : 비디오콜<br/>**CALLAR** : 콜라                                                                       |
-| template.recipientIntended      | object                      | N         | 발화에서 분석된 recipient 정보                                                                                                                                    |
-| template.recipientIntended.name | string                      | N         | 검색에 요청할때 사용된 상대방 이름   (NLU 분석으로 나온 이름)                                                                                                                   |
-| template.label                  | string                      | N         | NLU 분석 결과 label (집, 회사, ...) 정규화되어 있지 않고, 사용자 발화에서 분석된 값을 그대로 보냄                                                                                         |
-| template.searchScene            | string                      | N         | [SendCandidates](#sendcandidates) 참조                                                                                                                     |
-| template.candidates             | array of [Person](#person)  | N         | 화면에 검색 결과 리스트를 디스플레이하는 중에만 context에 추가                                                                                                                   |
-| recipient                       | object                      | N         | 통화 상대방에 대한 정보 수신중(INCOMING) 상태에서는 발신자 정보를 세팅 (CallArrived Event의 caller 정보)                                                                              |
-| recipient.name                  | string                      | N         | 통화 상대방의 이름                                                                                                                                               |
-| recipient.token                 | string                      | N         | 통화 상대방을 식별하기 위한 unique 값                                                                                                                                 |
-| recipient.isMobile              | string                      | N         | 통화 상대방 전화번호가 모바일 폰인지 여부 (TRUE/FALSE)                                                                                                                     |
-| recipient.isRecentMissed        | string                      | N         | 통화 상대방과의 가장 최근 통화가 부재중 통화인지 여부<br/>- **TRUE** : 수신 중인 전화번호의 가장 최근 수신 이력이 있지만 못받은 경우<br/>- **FALSE** : 수신 중인 전화번호의 수신 이력이 없거나, 있는데 부재중 통화가 아닌 경우          |
+| parameter                       | type                       | mandatory | description                                                                                                                                                                                                                                                                        |
+|:--------------------------------|:---------------------------|:----------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| state                           | string                     | Y         | **IDLE**<br/>**OUTGOING**<br/>**INCOMING**<br/>**ESTABLISHED**                                                                                                                                                                                                                     |
+| template                        | object                     | N         | Play 에서 진행중인 intent 를 알 수 있도록 SendCandidates event 에서 전달받은 data 를 유지해야 함                                                                                                                                                                                                           |
+| template.intent                 | string                     | N         | candidates의 용도<br/>- **CALL** : 전화걸어줘<br/>- **SEARCH** : 찾아줘<br/>- **HISTORY** : 최근 통화 목록<br/>- **REDIAL** : 재발신<br/>- **MISSED** : 부재중통화<br/>- **EXACT_ONE** : 전화추천 (전달된 candidates에 새로운 수신자 후보를 추가하지 않고 동명이 있을 경우 하나만 전달)<br/>- **SAVE_CONTACT**<br/>- **BLOCK**<br/>- **NONE**  |
+| template.callType               | string                     | N         | **NORMAL** : 일반 전화<br/>**SPEAKER** : 스피커폰<br/>**VIDEO** : 비디오콜<br/>**CALLAR** : 콜라                                                                                                                                                                                                 |
+| template.recipientIntended      | object                     | N         | 발화에서 분석된 recipient 정보                                                                                                                                                                                                                                                              |
+| template.recipientIntended.name | string                     | N         | 검색에 요청할때 사용된 상대방 이름   (NLU 분석으로 나온 이름)                                                                                                                                                                                                                                             |
+| template.label                  | string                     | N         | NLU 분석 결과 label (집, 회사, ...) 정규화되어 있지 않고, 사용자 발화에서 분석된 값을 그대로 보냄                                                                                                                                                                                                                   |
+| template.searchScene            | string                     | N         | [SendCandidates](#sendcandidates) 참조                                                                                                                                                                                                                                               |
+| template.candidates             | array of [Person](#person) | N         | 화면에 검색 결과 리스트를 디스플레이하는 중에만 context에 추가                                                                                                                                                                                                                                             |
+| recipient                       | object                     | N         | 통화 상대방에 대한 정보 수신중(INCOMING) 상태에서는 발신자 정보를 세팅 (CallArrived Event의 caller 정보)                                                                                                                                                                                                        |
+| recipient.name                  | string                     | N         | 통화 상대방의 이름                                                                                                                                                                                                                                                                         |
+| recipient.token                 | string                     | N         | 통화 상대방을 식별하기 위한 unique 값                                                                                                                                                                                                                                                           |
+| recipient.isMobile              | string                     | N         | 통화 상대방 전화번호가 모바일 폰인지 여부 (TRUE/FALSE)                                                                                                                                                                                                                                               |
+| recipient.isRecentMissed        | string                     | N         | 통화 상대방과의 가장 최근 통화가 부재중 통화인지 여부<br/>- **TRUE** : 수신 중인 전화번호의 가장 최근 수신 이력이 있지만 못받은 경우<br/>- **FALSE** : 수신 중인 전화번호의 수신 이력이 없거나, 있는데 부재중 통화가 아닌 경우                                                                                                                                    |
+| numberBlockable                 | string                     | N         | <p>수신차단 전화번호 추가 가능 여부 (수신차단 번호가 1,000개 초과하면 false)</p><p><strong>TRUE, FALSE</strong>(default)</p>                                                                                                                                                                                 |
 
 ## Common Objects
 
@@ -331,7 +334,8 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
   "numInCallHistory": "{{STRING}}",
   "token": "{{STRING}}",
   "score": "{{STRING}}",
-  "contacts": [Contact]
+  "contacts": [Contact],
+  "poiId": "{{STRING}}"
 }
 ```
 {% endcode %}
@@ -357,6 +361,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 | token               | string                       | N         | 사용자 추가 정보를 식별하기 위해 임의로 정의한 key값을 포함 unique 여부는 사용되는 용도에 의해 결정                                                                                                                                                                                                                                              |
 | score               | string                       | N         | 검색 결과의 신뢰도                                                                                                                                                                                                                                                                                                 |
 | contacts            | array of [Contact](#contact) | N         | -                                                                                                                                                                                                                                                                                                          |
+| poiId               | string                       | N         | 상호명 발화시 tmap등을 연결하기 위한 poi\_id                                                                                                                                                                                                                                                                             |
 
 ### Contact
 
@@ -366,7 +371,8 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 ```json
 {
   "label": "{{STRING}}",
-  "number": "{{STRING}}"
+  "number": "{{STRING}}",
+  "isBlocked": "{{STRING}}"
 }
 ```
 {% endcode %}
@@ -375,6 +381,7 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 |:----------|:-------|:----------|:--------------------------------------------------------------------------------------|
 | label     | string | N         | **MOBILE**<br/>**COMPANY**<br/>**HOME**<br/>**USER_DEFINED** : 사용자가 지정한 값도 필요할지 검토 필요 |
 | number    | string | N         | 전화번호                                                                                  |
+| isBlocked | string | N         | 수신 차단 여부<br/>**TRUE**, **FALSE**(default)                                             |
 
 ## Directives
 
@@ -504,6 +511,33 @@ CapabilityFactory::makeCapability<PhoneCallAgent, IPhoneCallHandler>(phonecall_l
 }
 ```
 {% endcode %}
+
+### BlockNumber
+
+{% code %}
+```json
+{
+  "header": {
+    "namespace": "PhoneCall",
+    "name": "BlockNumber",
+    "messageId": "{{STRING}}",
+    "dialogRequestId": "{{STRING}}",
+    "version": "1.0"
+  },
+  "payload": {
+    "playServiceId": "{{STRING}}",
+    "number": "{{STRING}}",
+    "blockType": "{{STRING}}"
+  }
+}
+```
+{% endcode %}
+
+| parameter | type   | mandatory | description                              |
+|-----------|--------|-----------|------------------------------------------|
+| number    | string | Y         | 전화번호                                     |
+| blockType | string | Y         | **EXACT**<br/>**PREFIX**<br/>**POSTFIX** |
+
 
 ## Events
 
