@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2022 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 module Jekyll::Potion
   class CodeTag < Liquid::Block
     CODE_BLOCK_START = Regexp.new(%r!\A`{3,}!im).freeze

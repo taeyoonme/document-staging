@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2022 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 module Jekyll::Potion
   class TabsTag < PotionBlock
     DEFAULT_CONFIG = {

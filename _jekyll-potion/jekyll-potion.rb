@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2022 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 require_relative "lib/models/favicon"
 require_relative "lib/models/page-potion"
 require_relative "lib/models/potion-page"

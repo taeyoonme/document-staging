@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2022 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 module Jekyll::Potion
   class RewriteImgProcessor < Processor
     HTTP_SCHEME = %r!\Ahttp(s)?://!im.freeze
@@ -13,7 +16,7 @@ module Jekyll::Potion
         html.css("img[src]").each { |img_tag|
           src = img_tag["src"]
 
-          next img_tag.has_attribute?(@config[:skip_keyword])
+          next if img_tag.has_attribute?(@config[:skip_keyword])
           next if src.strip.empty?
 
           unless img_tag.parent.text.strip.empty?

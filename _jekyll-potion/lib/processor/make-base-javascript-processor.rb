@@ -1,3 +1,5 @@
+
+
 module Jekyll::Potion
   class MakeBaseJavascriptProcessor < Processor
     priority :site_after_init, :high

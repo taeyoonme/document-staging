@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: Copyright 2022 SK TELECOM CO., LTD.
+# SPDX-License-Identifier: Apache-2.0
+
 require "nokogiri"
 require "json"
 
@@ -22,7 +25,7 @@ module Jekyll::Potion
     end
 
     def self.title(titles)
-      titles.select { |title| !title.empty? }.join(" > ")
+      titles.select { |title| !title.empty? }.map { |title| title.strip }.join(" > ").strip
     end
 
     def self.parse(skip_keyword, page, html, content_x_path)
@@ -35,24 +38,20 @@ module Jekyll::Potion
       titles = [page.data["title"], "", "", "", "", "", ""]
 
       html.css(content_x_path).children.each { |tag|
-        if tag.name =~ /h(\d+)/
-          unless tag.text.strip.empty?
-            page_index.add_index(search_index)
+        search_index.parse(tag) { |heading|
+          page_index.add_index(search_index)
 
-            current = $1.to_i + 1
+          current = $1.to_i + 1
 
-            (current..7).each { |i| titles[i] = "" }
+          (current..7).each { |i| titles[i] = "" }
 
-            titles[current] = tag.text.strip
+          titles[current] = heading.text.strip
 
-            search_index = SearchIndex.from_hash(skip_keyword, self.title(titles), tag["id"])
-            search_index.add_sentence(tag.text.strip) unless tag.text.empty?
-          end
-        else
-          search_index.parse(tag)
-        end
+          search_index = SearchIndex.from_hash(skip_keyword, self.title(titles), heading["id"])
+          search_index.add_sentence(heading.text.strip)
+        }
       }
-      page_index.add_index(search_index)
+
       page_index
     end
   end
@@ -64,7 +63,7 @@ module Jekyll::Potion
       @hash = hash
       @sentences = []
 
-      @hash = "##{@hash}" unless hash.empty?
+      @hash = "##{@hash}" unless hash.nil? or hash.empty?
     end
 
     def add_sentence(sentence)
@@ -75,8 +74,13 @@ module Jekyll::Potion
       @sentences.concat(sentences)
     end
 
-    def parse(tag)
+    def parse (tag, &block)
       unless tag.has_attribute?(@skip_keyword)
+        if tag.name =~ /h(\d+)/ and not tag.text.strip.empty?
+          yield tag
+          return
+        end
+
         case tag.name
         when "ul", "ol"
           tag.css("li").each { |li|
@@ -99,10 +103,10 @@ module Jekyll::Potion
           end
         else
           tag.children.each { |child_tag|
-            if child_tag.is_a?(Nokogiri::XML::Text)
+            if child_tag.is_a?(Nokogiri::XML::Text) or child_tag.name == "p"
               @sentences << child_tag.text.strip unless child_tag.text.strip.empty?
             else
-              parse(child_tag)
+              parse(child_tag, &block)
             end
           }
         end
@@ -114,7 +118,13 @@ module Jekyll::Potion
     end
 
     def to_json(_)
-      JSON.pretty_generate(instance_variables.map { |var| [var.to_s.delete("@"), instance_variable_get(var)] }.to_h)
+      JSON.pretty_generate(
+        instance_variables
+          .filter { |var| not var.to_s == "@skip_keyword" }
+          .map { |var|
+            [var.to_s.delete("@"), instance_variable_get(var)]
+          }.to_h
+      )
     end
 
     def self.from_potion(skip_keyword, potion)
