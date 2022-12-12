@@ -37,7 +37,9 @@ module Jekyll::Potion
       order = 0
       @root_potions.each { |potion| order = potion.set_order(order) }
 
-      sorted_potions = potion_map.values.sort_by { |potion| potion.order }
+      sorted_potions = potion_map.values
+                                 .select { |potion| not potion.order.nil? }
+                                 .sort_by { |potion| potion.order }
 
       sorted_potions[1..sorted_potions.size].each_with_index { |potion, index|
         potion.before = sorted_potions[index]
