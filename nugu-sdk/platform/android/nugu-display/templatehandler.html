@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-10-26 04:28:58 +0000">
+<meta http-equiv="Last-Modified" content="2022-12-12 07:10:21 +0000">
 <meta http-equiv="Title" content="Developers | Guide - TemplateHandler">
 <meta http-equiv="Description" content="Template, 응용레벨 사이의 상호작용 커스텀">
 <title>Developers | Guide - TemplateHandler</title>
@@ -2392,7 +2392,7 @@
   <tbody>
     <tr>
       <td style="text-align: left">
-<strong>fun onElementSelected(tokenId: String)</strong><br>View내 버튼 클릭시 호출된다.</td>
+<strong>fun onElementSelected(tokenId: String, postback : String?)</strong><br>View내 버튼 클릭시 호출된다.</td>
     </tr>
     <tr>
       <td style="text-align: left">
@@ -2401,6 +2401,10 @@
     <tr>
       <td style="text-align: left">
 <strong>fun onCloseClicked()</strong><br>View내 닫기 버튼 클릭시 호출된다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">
+<strong>fun onCloseWithParent()</strong><br>Child View의 닫기 버튼 클릭시 호출된다. Parent View 를 함께 종료한다.</td>
     </tr>
     <tr>
       <td style="text-align: left">
@@ -2433,6 +2437,14 @@
     <tr>
       <td style="text-align: left">
 <strong>fun setClientListener(listener: ClientListener)</strong><br>handler에 ClientListener를 설정한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">
+<strong>fun onClear()</strong><br>TemplateView가 종료될때 호출된다.<br>여기서 사용한 리소스를 해제한다.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">
+<strong>fun getNuguClient() : NuguAndroidClient?</strong><br>TemplateHandler 의 내부 구현에 필요한 NuguAndroidClient 를 리턴한다.</td>
     </tr>
   </tbody>
 </table>

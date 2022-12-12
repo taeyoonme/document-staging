@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-10-26 04:28:58 +0000">
+<meta http-equiv="Last-Modified" content="2022-12-12 07:10:21 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Display-Event">
 <title>Developers | Guide - Display-Event</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document-staging/nugu-sdk/capability-interface/display/display-event">
@@ -2751,6 +2751,78 @@
       <td style="text-align: left">string</td>
       <td style="text-align: left">N</td>
       <td style="text-align: left">PREVIOUS, NEXT</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="triggerchild">TriggerChild<a href="#triggerchild" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/capability-interface/display/display-event#triggerchild"></div>
+</h2>
+
+<p>다른 Play에 의해 실행되며 template을 child로 노출시켜야 하는 경우 사용하는 Event</p>
+
+<article class="code">
+    
+    <div class="copy">
+        <span class="copy-text" data-skip-search-index="">복사성공!</span>
+        <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
+    </div>
+    <div class="body">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td>
+<td class="rouge-code"><pre><span class="p">{</span><span class="w">
+  </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Display"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TriggerChild"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"messageId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dialogRequestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.9"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"parentToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">arbitrary</span><span class="w"> </span><span class="err">JSON</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td>
+</tr></tbody></table></code></pre></div></div>
+</div>
+</article>
+
+<table>
+  <thead>
+    <tr>
+      <th>parameter</th>
+      <th>type</th>
+      <th>mandatory</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>parentToken</td>
+      <td>string</td>
+      <td>Y</td>
+      <td>Child를 trigger시킨 Parent template의 token</td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td>object</td>
+      <td>Y</td>
+      <td>임의의 JSON object</td>
     </tr>
   </tbody>
 </table>

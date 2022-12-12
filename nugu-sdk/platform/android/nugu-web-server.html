@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-10-26 04:28:58 +0000">
+<meta http-equiv="Last-Modified" content="2022-12-12 07:10:21 +0000">
 <meta http-equiv="Title" content="Developers | Guide - NUGU 서비스 관리 web server 연동">
 <title>Developers | Guide - NUGU 서비스 관리 web server 연동</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document-staging/nugu-sdk/platform/android/nugu-web-server">
@@ -2440,7 +2440,7 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
@@ -2454,12 +2454,12 @@
 11
 12
 </pre></td>
-<td class="rouge-code"><pre><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+<td class="rouge-code"><pre><span class="k">override</span> <span class="n">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="nv">savedInstanceState</span><span class="p">:</span> <span class="kt">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
 
-     <span class="n">webView</span><span class="p">.</span><span class="n">windowListener</span> <span class="p">=</span> <span class="k">object</span><span class="p">:</span> <span class="p">{</span>
-        <span class="k">override</span> <span class="k">fun</span> <span class="nf">onCloseWindow</span><span class="p">(</span><span class="n">reason</span><span class="p">:</span> <span class="nc">String</span><span class="p">?)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="n">reason</span> <span class="p">==</span> <span class="s">"WITHDRAWN_USER"</span> <span class="p">{</span>
+     <span class="n">webView</span><span class="o">.</span><span class="n">windowListener</span> <span class="o">=</span> <span class="nv">object</span><span class="p">:</span> <span class="p">{</span>
+        <span class="k">override</span> <span class="n">fun</span> <span class="nf">onCloseWindow</span><span class="p">(</span><span class="nv">reason</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">reason</span> <span class="o">==</span> <span class="s">"WITHDRAWN_USER"</span> <span class="p">{</span>
                 <span class="c1">// 인증 정보 파기</span>
             <span class="p">}</span>
             <span class="nf">finish</span><span class="p">()</span>
@@ -2490,17 +2490,17 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 5
 </pre></td>
-<td class="rouge-code"><pre><span class="k">override</span> <span class="k">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">:</span> <span class="nc">Bundle</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
+<td class="rouge-code"><pre><span class="k">override</span> <span class="n">fun</span> <span class="nf">onCreate</span><span class="p">(</span><span class="nv">savedInstanceState</span><span class="p">:</span> <span class="kt">Bundle</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">onCreate</span><span class="p">(</span><span class="n">savedInstanceState</span><span class="p">)</span>
 
-    <span class="n">webView</span><span class="p">.</span><span class="nf">loadUrl</span><span class="p">(</span><span class="nc">Const</span><span class="p">.</span><span class="nc">SERVICE_SETTING_URL</span><span class="p">)</span>
+    <span class="n">webView</span><span class="o">.</span><span class="nf">loadUrl</span><span class="p">(</span><span class="kt">Const</span><span class="o">.</span><span class="kt">SERVICE_SETTING_URL</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
@@ -2571,15 +2571,15 @@
         <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
     </div>
     <div class="body">
-<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
 <td class="rouge-gutter gl"><pre class="lineno">1
 2
 3
 4
 </pre></td>
-<td class="rouge-code"><pre><span class="k">override</span> <span class="k">fun</span> <span class="nf">onNewIntent</span><span class="p">(</span><span class="n">intent</span><span class="p">:</span> <span class="nc">Intent</span><span class="p">?)</span> <span class="p">{</span>
-    <span class="k">super</span><span class="p">.</span><span class="nf">onNewIntent</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
-    <span class="n">webView</span><span class="p">.</span><span class="nf">onNewIntent</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+<td class="rouge-code"><pre><span class="k">override</span> <span class="n">fun</span> <span class="nf">onNewIntent</span><span class="p">(</span><span class="nv">intent</span><span class="p">:</span> <span class="kt">Intent</span><span class="p">?)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="o">.</span><span class="nf">onNewIntent</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
+    <span class="n">webView</span><span class="o">.</span><span class="nf">onNewIntent</span><span class="p">(</span><span class="n">intent</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></td>
 </tr></tbody></table></code></pre></div></div>

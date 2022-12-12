@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-10-26 04:28:58 +0000">
+<meta http-equiv="Last-Modified" content="2022-12-12 07:10:21 +0000">
 <meta http-equiv="Title" content="Developers | Guide - 시작하기">
 <title>Developers | Guide - 시작하기</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document-staging/nugu-sdk/platform/android/start">
@@ -2484,7 +2484,7 @@ Redirect URI는 <code class="language-plaintext highlighter-rouge">nugu.user.{cl
 <h4 id="리소스에-정보-추가하기">리소스에 정보 추가하기<a href="#%EB%A6%AC%EC%86%8C%EC%8A%A4%EC%97%90-%EC%A0%95%EB%B3%B4-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/platform/android/start#리소스에-정보-추가하기"></div>
 </h4>
 
-<p>strings.xml 파일에 <em>nugu_redirect_scheme</em>, _nugu_redirect_host_를 추가합니다. 예를들어 redirectUri가 <strong>“example://sample”</strong> 라면 아래와 같이 추가합니다.</p>
+<p>strings.xml 파일에 nugu_redirect_scheme, nugu_redirect_host를 추가합니다. 예를들어 redirectUri가 <strong>“example://sample”</strong> 라면 아래와 같이 추가합니다.</p>
 
 <article class="code">
     
@@ -2516,6 +2516,34 @@ Redirect URI는 <code class="language-plaintext highlighter-rouge">nugu.user.{cl
 <ul>
   <li>체험판은 <a href="https://developers.nugu.co.kr/#/sdk/sdkTrial">체험판 신청 내역</a>에서 음성인식 모델파일을 다운로드 받습니다.</li>
 </ul>
+
+<p>음성인식 파일 리소스에 대해서 압축되지 않도록 build.gradle 설정이 필요합니다.</p>
+
+<article class="code">
+    
+    <div class="copy">
+        <span class="copy-text" data-skip-search-index="">복사성공!</span>
+        <button type="button" class="icon icon--copy" data-code-copy-target-id=""></button>
+    </div>
+    <div class="body">
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr>
+<td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td>
+<td class="rouge-code"><pre><span class="n">android</span> <span class="o">{</span>
+   <span class="o">...</span>
+   <span class="n">aaptOptions</span> <span class="o">{</span>
+       <span class="n">noCompress</span> <span class="s2">"raw"</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></td>
+</tr></tbody></table></code></pre></div></div>
+</div>
+</article>
 
 <h3 id="configuration-파일-설정하기">Configuration 파일 설정하기<a href="#configuration-%ED%8C%8C%EC%9D%BC-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/platform/android/start#configuration-파일-설정하기"></div>
 </h3>
@@ -2881,6 +2909,8 @@ OAuth 2.0 API 는 <a href="/document-staging/nugu-sdk/authentication" class="a-i
 7
 8
 9
+10
+11
 </pre></td>
 <td class="rouge-code"><pre>   <span class="kd">val</span> <span class="py">client</span> <span class="p">=</span> <span class="nc">NuguAndroidClient</span><span class="p">.</span><span class="nc">Builder</span><span class="p">(</span>
       <span class="n">context</span><span class="p">,</span>    <span class="c1">// Android Context</span>
@@ -2890,7 +2920,9 @@ OAuth 2.0 API 는 <a href="/document-staging/nugu-sdk/authentication" class="a-i
 
    <span class="n">client</span><span class="p">.</span><span class="n">asrAgent</span><span class="o">?.</span><span class="nf">addOnResultListener</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
    <span class="n">client</span><span class="p">.</span><span class="n">asrAgent</span><span class="o">?.</span><span class="nf">addOnStateChangeListener</span><span class="p">(</span><span class="o">..</span><span class="p">.)</span>
-   <span class="n">client</span><span class="p">.</span><span class="n">asrAgent</span><span class="o">?.</span><span class="nf">startRecognition</span><span class="p">()</span>
+   <span class="c1">// 음성인식 시작</span>
+   <span class="n">client</span><span class="p">.</span><span class="n">asrAgent</span><span class="o">?.</span><span class="nf">startRecognition</span><span class="p">(</span><span class="n">initiator</span> <span class="p">=</span> <span class="nc">ASRAgentInterface</span><span class="p">.</span><span class="nc">Initiator</span><span class="p">.</span><span class="nc">TAP</span><span class="p">)</span>
+
 </pre></td>
 </tr></tbody></table></code></pre></div></div>
 </div>

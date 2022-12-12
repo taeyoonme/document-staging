@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-10-26 04:28:58 +0000">
+<meta http-equiv="Last-Modified" content="2022-12-12 07:10:21 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Display">
 <meta http-equiv="Description" content="Play 에서 전달하는 UI 요소를 화면에 구성하기 규격">
 <title>Developers | Guide - Display</title>
@@ -2372,7 +2372,7 @@
                     <h2 id="version">Version<a href="#version" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/capability-interface/display#version"></div>
 </h2>
 
-<p>최신 버전은 1.7 입니다.</p>
+<p>최신 버전은 1.9 입니다.</p>
 
 <table>
   <thead>
@@ -2423,6 +2423,16 @@
       <td style="text-align: left">2021.05.31</td>
       <td style="text-align: left">StyleGrammarGuide, FloatingBannerObject 추가</td>
     </tr>
+    <tr>
+      <td style="text-align: left">1.8</td>
+      <td style="text-align: left">2021.07.08</td>
+      <td style="text-align: left">TabExtension 추가</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">1.9</td>
+      <td style="text-align: left">2021.09.17</td>
+      <td style="text-align: left">Button Object 변경</td>
+    </tr>
   </tbody>
 </table>
 
@@ -2434,17 +2444,17 @@
 
 <p>Display interface 규격에 따른 디바이스의 동작 제어는 DisplayAgent 가 처리합니다.</p>
 
-<div id="tabs-22" class="tabs">
+<div id="tabs-24" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-23" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-25" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-41" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-43" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-51" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-53" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-23" class="tab-cont active">
+    <div id="tab-content-25" class="tab-cont active">
     
 <p>NuguAndroidClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.</p>
 
@@ -2484,7 +2494,7 @@
 
 
 </div>
-<div id="tab-content-41" class="tab-cont">
+<div id="tab-content-43" class="tab-cont">
     
 <p>NuguClient instance 를 통해 DisplayAgent instance 에 접근할 수 있습니다.</p>
 
@@ -2506,7 +2516,7 @@
 
 
 </div>
-<div id="tab-content-51" class="tab-cont">
+<div id="tab-content-53" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6">CapabilityFactory::makeCapability</a> 함수로 <a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IDisplayHandler.html">DisplayAgent</a> 를 생성하고 <a href="https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html">NuguClient</a> 에 추가해 주어야합니다.</p>
 
@@ -2546,15 +2556,15 @@
 
 <p><a href="#ui-1" class="hash-internal a-internal">UI 제어</a> 기능을 사용하기 위해서는 template 화면의 상태 정보를 <a href="#context" class="hash-internal a-internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
-<div id="tabs-71" class="tabs">
+<div id="tabs-73" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-72" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-74" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-94" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-96" class=""><span>iOS</span></li>
         
     </ul>
-    <div id="tab-content-72" class="tab-cont active">
+    <div id="tab-content-74" class="tab-cont active">
     
 <p>DisplayAggregatorInterface.Controller 를 추가합니다.</p>
 
@@ -2600,7 +2610,7 @@
 
 
 </div>
-<div id="tab-content-94" class="tab-cont">
+<div id="tab-content-96" class="tab-cont">
     
 <p>DisplayAgentDelegate 를 추가합니다.</p>
 
@@ -2649,17 +2659,17 @@
 
 <p>Template 의 focus 와 scroll 은 <code class="language-plaintext highlighter-rouge">사용자 발화</code> 에 따라 <a href="/document-staging/nugu-sdk/capability-interface/display/display-directive#controlfocus" class="a-internal">ControlFocus</a>, <a href="/document-staging/nugu-sdk/capability-interface/display/display-directive#controlscroll" class="a-internal">ControlScroll</a> directive 로 제어될 수 있습니다.</p>
 
-<div id="tabs-120" class="tabs">
+<div id="tabs-122" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-121" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-123" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-156" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-158" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-181" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-183" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-121" class="tab-cont active">
+    <div id="tab-content-123" class="tab-cont active">
     
 <p>DisplayAggregatorInterface.Renderer 를 추가합니다.</p>
 <article class="code">
@@ -2734,7 +2744,7 @@
 
 
 </div>
-<div id="tab-content-156" class="tab-cont">
+<div id="tab-content-158" class="tab-cont">
     
 <p>DisplayAgentDelegate 를 추가합니다.</p>
 
@@ -2786,7 +2796,7 @@
 
 
 </div>
-<div id="tab-content-181" class="tab-cont">
+<div id="tab-content-183" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IDisplayListener.html">IDisplayListener</a> 를 추가합니다.</p>
 
@@ -2850,17 +2860,17 @@
 
 <p>Template 하위 항목 선택시 <a href="/document-staging/nugu-sdk/capability-interface/display/display-event#elementselected" class="a-internal">ElementSelected</a> event 가 전달됩니다.</p>
 
-<div id="tabs-213" class="tabs">
+<div id="tabs-215" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-214" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-216" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-222" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-224" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-230" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-232" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-214" class="tab-cont active">
+    <div id="tab-content-216" class="tab-cont active">
     
 <article class="code">
     
@@ -2880,7 +2890,7 @@
 
 
 </div>
-<div id="tab-content-222" class="tab-cont">
+<div id="tab-content-224" class="tab-cont">
     
 <article class="code">
     
@@ -2900,7 +2910,7 @@
 
 
 </div>
-<div id="tab-content-230" class="tab-cont">
+<div id="tab-content-232" class="tab-cont">
     
 <article class="code">
     
@@ -2925,17 +2935,17 @@
 
 <p>Template 에 화면에 대한 사용자 interaction 발생시 SDK 로 notify 해주어야 내부 timer(template 일정시간 노출 후 종료하기 위한) 가 갱신됩니다.</p>
 
-<div id="tabs-241" class="tabs">
+<div id="tabs-243" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-242" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-244" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-250" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-252" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-258" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-260" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-242" class="tab-cont active">
+    <div id="tab-content-244" class="tab-cont active">
     
 <article class="code">
     
@@ -2955,7 +2965,7 @@
 
 
 </div>
-<div id="tab-content-250" class="tab-cont">
+<div id="tab-content-252" class="tab-cont">
     
 <article class="code">
     
@@ -2975,7 +2985,7 @@
 
 
 </div>
-<div id="tab-content-258" class="tab-cont">
+<div id="tab-content-260" class="tab-cont">
     
 <article class="code">
     
@@ -3233,7 +3243,7 @@
       <td style="text-align: left">text</td>
       <td style="text-align: left">string</td>
       <td style="text-align: left">Y</td>
-      <td style="text-align: left">Text 중간에 강조 표현을 위한 마크업 사용 가능 스펙<br>- 볼드 : <code class="language-plaintext highlighter-rouge">&lt;b&gt;볼드&lt;/b&gt;</code><br>- 기울림 : <code class="language-plaintext highlighter-rouge">&lt;i&gt;기울림&lt;/i&gt;</code><br>- 밑줄 : <code class="language-plaintext highlighter-rouge">&lt;u&gt;밑줄&lt;/u&gt;</code> - 윗첨자 : <code class="language-plaintext highlighter-rouge">&lt;sup&gt;윗첨자&lt;/sup&gt;</code><br>- 아래첨자 : <sub>아래첨자</sub><br>- 취소선 : <code class="language-plaintext highlighter-rouge">&lt;s&gt;취소선&lt;/s&gt;</code><br>- 색상 : <code class="language-plaintext highlighter-rouge">&lt;font color="red"&gt;빨강&lt;/font&gt;</code><br>위에 요소외 다른 마크업 사용 시 마크업 요소 사용 불가, 원본 표시</td>
+      <td style="text-align: left">Text 중간에 강조 표현을 위한 마크업 사용 가능 스펙<br>- 볼드 : <code class="language-plaintext highlighter-rouge">&lt;b&gt;볼드&lt;/b&gt;</code><br>- 기울림 : <code class="language-plaintext highlighter-rouge">&lt;i&gt;기울림&lt;/i&gt;</code><br>- 밑줄 : <code class="language-plaintext highlighter-rouge">&lt;u&gt;밑줄&lt;/u&gt;</code> - 윗첨자 : <code class="language-plaintext highlighter-rouge">&lt;sup&gt;윗첨자&lt;/sup&gt;</code><br>- 아래첨자 : <code class="language-plaintext highlighter-rouge">&lt;sub&gt;아래첨자&lt;/sub&gt;</code><br>- 취소선 : <code class="language-plaintext highlighter-rouge">&lt;s&gt;취소선&lt;/s&gt;</code><br>- 색상 : <code class="language-plaintext highlighter-rouge">&lt;font color="red"&gt;빨강&lt;/font&gt;</code><br>위에 요소외 다른 마크업 사용 시 마크업 요소 사용 불가, 원본 표시</td>
     </tr>
     <tr>
       <td style="text-align: left">color</td>
@@ -3280,15 +3290,33 @@
 16
 17
 18
+19
+20
+21
+22
+23
+24
+25
+26
+27
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="err">ImageObject</span><span class="p">,</span><span class="w">
   </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"eventType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"textInput"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"playServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"event"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">arbitrary</span><span class="w"> </span><span class="err">JSON</span><span class="w"> </span><span class="err">object</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">specific</span><span class="w"> </span><span class="err">event</span><span class="w"> </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"control"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{{STRING}}"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nl">"postback"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
   </span><span class="nl">"autoTrigger"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3342,8 +3370,13 @@
       <td style="text-align: left">eventType</td>
       <td style="text-align: left">string</td>
       <td style="text-align: left">N</td>
-      <td style="text-align: left">클릭 시 플랫폼으로 전달하는 Event Type (Capability 명과 Event를 모두 명시해야 함)<br>- <strong>Display.ElementSelected</strong> :  default (eventType 값이 없는 경우 기본값)<br>- <strong>Text.TextInput</strong>
-</td>
+      <td style="text-align: left">클릭 시 플랫폼으로 전달하는 Event Type (Capability 명과 Event를 모두 명시해야 함)<br>- <strong>Display.ElementSelected</strong> :  default (eventType 값이 없는 경우 기본값)<br>- <strong>Text.TextInput</strong><br>- <strong>EVENT</strong><br>- CONTROL : Client를 Direct로 제어하기 위해 정의</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">triggerChild</td>
+      <td style="text-align: left">bool</td>
+      <td style="text-align: left">N</td>
+      <td style="text-align: left">버튼을 클릭했을때 child template을 실행할 수 있는지 여부</td>
     </tr>
     <tr>
       <td style="text-align: left">textInput</td>
@@ -3362,6 +3395,38 @@
       <td style="text-align: left">string</td>
       <td style="text-align: left">N</td>
       <td style="text-align: left">특정 Play로 지정하여 라우팅하는 경우 사용</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">event</td>
+      <td style="text-align: left">object</td>
+      <td style="text-align: left">N</td>
+      <td style="text-align: left">eventType == Extension.CommandIssued인 경우 필수 기존의 Display.ElementSelected, Text.TextInput 모두 EVENT 타입 사용 가능</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">event.type</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">Y</td>
+      <td style="text-align: left">Event의 타입<br><strong>Extension.CommandIssued</strong><br><strong>Display.TriggerChild</strong>
+</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">event.data</td>
+      <td style="text-align: left">object</td>
+      <td style="text-align: left">Y</td>
+      <td style="text-align: left">Event에 필요한 JSON object</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">control</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">N</td>
+      <td style="text-align: left">eventType == CONTROL인 경우 필수</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">control.type</td>
+      <td style="text-align: left">string</td>
+      <td style="text-align: left">Y</td>
+      <td style="text-align: left">
+<strong>TEMPLATE_PREVIOUS</strong> - history가 있는 경우 이전 template으로 이동<br><strong>TEMPLATE_CLOSEALL</strong> - history에 있는 모든 template(parent와 child)을 close</td>
     </tr>
     <tr>
       <td style="text-align: left">postback</td>
@@ -3642,7 +3707,7 @@
       <td style="text-align: left">type</td>
       <td style="text-align: left">string</td>
       <td style="text-align: left">Y</td>
-      <td style="text-align: left">NONE: 기본 UI<br>NUDGE: 넛지 UI<br>STYLE: style 필드를 사용</td>
+      <td style="text-align: left">NONE, NUDGE, STYLE NONE: 기본 UI<br>NUDGE: 넛지 UI<br>STYLE: style 필드를 사용</td>
     </tr>
     <tr>
       <td style="text-align: left">style</td>

@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-10-26 04:28:58 +0000">
+<meta http-equiv="Last-Modified" content="2022-12-12 07:10:21 +0000">
 <meta http-equiv="Title" content="Developers | Guide - ASR">
 <meta http-equiv="Description" content="음성인식 결과를 Play 로 전달하기 위한 규격">
 <title>Developers | Guide - ASR</title>
@@ -2372,7 +2372,7 @@
                     <h2 id="version">Version<a href="#version" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/capability-interface/asr#version"></div>
 </h2>
 
-<p>최신 버전은 1.6 입니다.</p>
+<p>최신 버전은 1.7 입니다.</p>
 
 <table>
   <thead>
@@ -2418,13 +2418,18 @@
       <td style="text-align: left">2021.05.31</td>
       <td style="text-align: left">ASR.ExpectSpeech directive 에 listenTimeoutFailBeep 필드 추가</td>
     </tr>
+    <tr>
+      <td style="text-align: left">1.7</td>
+      <td style="text-align: left">2022.07.04</td>
+      <td style="text-align: left">ASR.ExpectSpeech directive의 asrContext에 isAddListen 추가</td>
+    </tr>
   </tbody>
 </table>
 
 <h2 id="state-diagram">State Diagram<a href="#state-diagram" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/capability-interface/asr#state-diagram"></div>
 </h2>
 
-<p><img src="../../assets/images/asr-01.png" alt=""></p>
+<p><img src="/document-staging/assets/images/asr-01.png" alt="" class="img-internal"></p>
 
 <h2 id="sdk-interface">SDK Interface<a href="#sdk-interface" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/capability-interface/asr#sdk-interface"></div>
 </h2>
@@ -2434,17 +2439,17 @@
 
 <p>ASR interface 규격에 따른 디바이스의 동작 제어는 ASRAgent 가 처리합니다.</p>
 
-<div id="tabs-25" class="tabs">
+<div id="tabs-26" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-26" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-27" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-76" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-77" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-111" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-112" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-26" class="tab-cont active">
+    <div id="tab-content-27" class="tab-cont active">
     
 <p>NuguAndroidClient instance 를 통해 ASRAgent instance 에 접근할 수 있습니다.</p>
 
@@ -2552,7 +2557,7 @@
 
 
 </div>
-<div id="tab-content-76" class="tab-cont">
+<div id="tab-content-77" class="tab-cont">
     
 <p>NuguClient instance 를 통해 ASRAgent instance 에 접근할 수 있습니다.</p>
 
@@ -2630,7 +2635,7 @@
 
 
 </div>
-<div id="tab-content-111" class="tab-cont">
+<div id="tab-content-112" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6">CapabilityFactory::makeCapability</a> 함수로 <a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRHandler.html">ASRAgent</a> 를 생성하고 <a href="https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html">NuguClient</a> 에 추가해 주어야합니다.</p>
 
@@ -2688,17 +2693,17 @@
 
 <p><code class="language-plaintext highlighter-rouge">아리아</code> 발화 또는 NUGU Button 선택 시 <a href="#recognize" class="hash-internal a-internal">Recognize</a> event 를 전달하여 음성인식을 시작할 수 있습니다.</p>
 
-<div id="tabs-139" class="tabs">
+<div id="tabs-140" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-140" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-141" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-148" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-149" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-157" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-158" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-140" class="tab-cont active">
+    <div id="tab-content-141" class="tab-cont active">
     
 <article class="code">
     
@@ -2718,7 +2723,7 @@
 
 
 </div>
-<div id="tab-content-148" class="tab-cont">
+<div id="tab-content-149" class="tab-cont">
     
 <article class="code">
     
@@ -2740,7 +2745,7 @@
 
 
 </div>
-<div id="tab-content-157" class="tab-cont">
+<div id="tab-content-158" class="tab-cont">
     
 <article class="code">
     
@@ -2770,17 +2775,17 @@
 
 <p>음성인식에 대한 STT(SpeechToText) 결과가 <a href="#notifyresult" class="hash-internal a-internal">NotifyResult</a> directive 로 전달됩니다.</p>
 
-<div id="tabs-172" class="tabs">
+<div id="tabs-173" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-173" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-174" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-209" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-210" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-229" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-230" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-173" class="tab-cont active">
+    <div id="tab-content-174" class="tab-cont active">
     
 <p>SpeechRecognizerAggregatorInterface.OnStateChangeListener 를 추가합니다.</p>
 
@@ -2856,7 +2861,7 @@
 
 
 </div>
-<div id="tab-content-209" class="tab-cont">
+<div id="tab-content-210" class="tab-cont">
     
 <p>ASRAgentDelegate 를 추가합니다.</p>
 
@@ -2898,7 +2903,7 @@
 
 
 </div>
-<div id="tab-content-229" class="tab-cont">
+<div id="tab-content-230" class="tab-cont">
     
 <p>음성인식 진행 상태를 모니터링 하려면 <a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IASRListener.html">IASRListener</a> 를 추가합니다.</p>
 
@@ -2976,17 +2981,17 @@
 
 <p>사용자가 음성 인식 중단 요청을 <a href="#stoprecognize" class="hash-internal a-internal">StopRecognize</a> event 로 전달할 수 있습니다.</p>
 
-<div id="tabs-268" class="tabs">
+<div id="tabs-269" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-269" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-270" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-277" class=""><span>iOS</span></li>
+            <li data-tabs-content-id="tab-content-278" class=""><span>iOS</span></li>
         
-            <li data-tabs-content-id="tab-content-285" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-286" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-269" class="tab-cont active">
+    <div id="tab-content-270" class="tab-cont active">
     
 <article class="code">
     
@@ -3006,7 +3011,7 @@
 
 
 </div>
-<div id="tab-content-277" class="tab-cont">
+<div id="tab-content-278" class="tab-cont">
     
 <article class="code">
     
@@ -3026,7 +3031,7 @@
 
 
 </div>
-<div id="tab-content-285" class="tab-cont">
+<div id="tab-content-286" class="tab-cont">
     
 <article class="code">
     
@@ -3154,6 +3159,7 @@
 25
 26
 27
+28
 </pre></td>
 <td class="rouge-code"><pre><span class="p">{</span><span class="w">
   </span><span class="nl">"header"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3172,7 +3178,8 @@
       </span><span class="nl">"sceneText"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="s2">"{{STRING}}"</span><span class="w">
       </span><span class="p">],</span><span class="w">
-      </span><span class="nl">"playServiceId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"playServiceId"</span><span class="w">
+      </span><span class="nl">"playServiceId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"playServiceId"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"isAddListen"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">BOOLEAN</span><span class="p">}}</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"epd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nl">"timeoutMilliseconds"</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">LONG</span><span class="p">}},</span><span class="w">
@@ -3246,6 +3253,12 @@
       <td style="text-align: left">string</td>
       <td style="text-align: left">N</td>
       <td style="text-align: left">-</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">asrContext.isAddListen</td>
+      <td style="text-align: left">boolean</td>
+      <td style="text-align: left">N</td>
+      <td style="text-align: left">add-listen으로 인입된 발화 여부</td>
     </tr>
     <tr>
       <td style="text-align: left">epd</td>

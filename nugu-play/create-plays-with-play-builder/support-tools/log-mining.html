@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-10-26 04:28:58 +0000">
+<meta http-equiv="Last-Modified" content="2022-12-12 07:10:21 +0000">
 <meta http-equiv="Title" content="Developers | Guide - 실패 발화 분석">
 <title>Developers | Guide - 실패 발화 분석</title>
 <meta property="og:url" content="https://nugudevelopers.github.io/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining">
@@ -2400,7 +2400,7 @@
 
 <p>Play 개발자가 요청한 학습 데이터를 기반으로 생성된 User Utterance Model 만으로는 NLU 엔진이 해당 발화를 분석할 수 없는 경우 해당 발화를 보여주며, 그 중 해결 방안을 제안할 수 있는 경우 이를 보여줍니다. 이 도구가 제시하는 해결 방안은 크게 두 가지 <code class="language-plaintext highlighter-rouge">Entity 등록</code>과 <code class="language-plaintext highlighter-rouge">용언 등록</code>이 있습니다.</p>
 
-<p><img src="../../../assets/images/log-mining-01.png" alt=""></p>
+<p><img src="/document-staging/assets/images/log-mining-01.png" alt="" class="img-internal"></p>
 
 <h3 id="추천-해결-방안-1--entity-등록-">추천 해결 방안 1 : Entity 등록 <a id="log-mining-entity" href="#log-mining-entity" class="go-hash hash-internal a-internal"></a>
 <div class="copy-link" data-header-link="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining#log-mining-entity"></div>
@@ -2408,7 +2408,7 @@
 
 <p>NLU 분석 실패 발화 내의 특정 단어가 Entity일 가능성이 있어서 Entity로 등록할 필요가 있다고 분석되는 경우에 추천 방안이 제시됩니다. 이 추천 결과를 통해 (1) 해당 문장 자체를 기존 Intent의 예상 발화로 추가하거나, (2) 발화 내의 특정 단어를 Entity로 추가하여 Model을 수정하는 것을 권장합니다.</p>
 
-<p><img src="../../../assets/images/log-mining-02.png" alt=""></p>
+<p><img src="/document-staging/assets/images/log-mining-02.png" alt="" class="img-internal"></p>
 
 <h4 id="1-이-문장과-유사한-훈련-문장이-있는-intent">(1) 이 문장과 유사한 훈련 문장이 있는 Intent<a href="#1-%EC%9D%B4-%EB%AC%B8%EC%9E%A5%EA%B3%BC-%EC%9C%A0%EC%82%AC%ED%95%9C-%ED%9B%88%EB%A0%A8-%EB%AC%B8%EC%9E%A5%EC%9D%B4-%EC%9E%88%EB%8A%94-intent" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-play/create-plays-with-play-builder/support-tools/log-mining#1-이-문장과-유사한-훈련-문장이-있는-intent"></div>
 </h4>
@@ -2426,7 +2426,7 @@
 
 <p>NLU 분석의 원인이 용언인 경우, 그 문장과 유사한 의미로 분석되는 학습 문장 및 Intent을 추천합니다. 이 용언은 기존 데이터에 포함되지 않은 새로운 용언일 가능성이 높습니다. 이 용언과 기존 학습 문장을 조합하여 새로운 학습 문장 및 Intent를 추천하게 되며, 이때 학습 문장에 Entity 태깅이 필요하다면, Entity 태깅된 학습 문장이 추천됩니다.</p>
 
-<p><img src="../../../assets/images/log-mining-03.png" alt=""></p>
+<p><img src="/document-staging/assets/images/log-mining-03.png" alt="" class="img-internal"></p>
 
 <p>추천된 문장의 의도가 Intent와 유사하다고 판단된다면, 우측 버튼을 통해 훈련 문장으로 추가하는 것을 권장합니다.</p>
 

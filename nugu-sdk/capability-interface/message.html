@@ -8,7 +8,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-<meta http-equiv="Last-Modified" content="2022-10-26 04:28:58 +0000">
+<meta http-equiv="Last-Modified" content="2022-12-12 07:10:21 +0000">
 <meta http-equiv="Title" content="Developers | Guide - Message">
 <meta http-equiv="Description" content="문자 확인 및 전송 기능 제어를 위한 규격">
 <title>Developers | Guide - Message</title>
@@ -2372,7 +2372,7 @@
                     <h2 id="version">Version<a href="#version" class="go-hash hash-internal a-internal"></a><div class="copy-link" data-header-link="/document-staging/nugu-sdk/capability-interface/message#version"></div>
 </h2>
 
-<p>최신 버전은 1.4 입니다.</p>
+<p>최신 버전은 1.5 입니다.</p>
 
 <table>
   <thead>
@@ -2408,6 +2408,11 @@
       <td style="text-align: left">2021.01.19</td>
       <td style="text-align: left">Context 에 messageToSend 필드 추가<br>SendCandidates directive 에 messageToSend 필드 추가</td>
     </tr>
+    <tr>
+      <td style="text-align: left">1.5</td>
+      <td style="text-align: left">2021.08.24</td>
+      <td style="text-align: left">Contact Object &gt; message.type을 Mandatory N으로 변경</td>
+    </tr>
   </tbody>
 </table>
 
@@ -2419,15 +2424,15 @@
 
 <p>MessageCall interface 규격에 따른 디바이스의 동작 제어는 MessageAgent 가 처리합니다.</p>
 
-<div id="tabs-19" class="tabs">
+<div id="tabs-20" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-20" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-21" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-42" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-43" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-20" class="tab-cont active">
+    <div id="tab-content-21" class="tab-cont active">
     
 <p>NuguAndroidClient instance 를 통해 MessageAgent instance 에 접근할 수 있습니다.</p>
 
@@ -2475,7 +2480,7 @@
 
 
 </div>
-<div id="tab-content-42" class="tab-cont">
+<div id="tab-content-43" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1CapabilityFactory.html#a46d96b1bc96903f02905c92ba8794bf6">CapabilityFactory::makeCapability</a> 함수로 <a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageHandler.html">MessageAgent</a> 를 생성하고 <a href="https://nugu-developers.github.io/nugu-linux/classNuguClientKit_1_1NuguClient.html">NuguClient</a> 에 추가해 주어야합니다.</p>
 
@@ -2515,13 +2520,13 @@
 
 <p>문자 기능과 관련된 상태 정보를 <a href="#context" class="hash-internal a-internal">Context</a> 에 포함시켜 주어야 합니다.</p>
 
-<div id="tabs-62" class="tabs">
+<div id="tabs-63" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-63" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-64" class="active"><span>Android</span></li>
         
     </ul>
-    <div id="tab-content-63" class="tab-cont active">
+    <div id="tab-content-64" class="tab-cont active">
     
 <p>MessageClient 를 구현합니다.</p>
 
@@ -2563,15 +2568,15 @@
 
 <p>문자 전송이 <a href="#sendcandidates" class="hash-internal a-internal">SendCandidates</a>, <a href="#sendmessage" class="hash-internal a-internal">SendMessage</a> directive 로 요청될 수 있습니다.</p>
 
-<div id="tabs-84" class="tabs">
+<div id="tabs-85" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-85" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-86" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-107" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-108" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-85" class="tab-cont active">
+    <div id="tab-content-86" class="tab-cont active">
     
 <p>MessageClient 를 구현합니다.</p>
 
@@ -2617,7 +2622,7 @@
 
 
 </div>
-<div id="tab-content-107" class="tab-cont">
+<div id="tab-content-108" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageListener.html">IMessageListener</a> 를 추가합니다.</p>
 
@@ -2681,15 +2686,15 @@
 
 <p>문자 읽기가 <a href="#getmessage" class="hash-internal a-internal">GetMessage</a>, <a href="#readmessage" class="hash-internal a-internal">ReadMessage</a> directive 로 요청될 수 있습니다.</p>
 
-<div id="tabs-139" class="tabs">
+<div id="tabs-140" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-140" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-141" class="active"><span>Android</span></li>
         
-            <li data-tabs-content-id="tab-content-158" class=""><span>Linux</span></li>
+            <li data-tabs-content-id="tab-content-159" class=""><span>Linux</span></li>
         
     </ul>
-    <div id="tab-content-140" class="tab-cont active">
+    <div id="tab-content-141" class="tab-cont active">
     
 <p>MessageClient 를 구현합니다.</p>
 
@@ -2724,7 +2729,7 @@
 <p>문자 재생은 SDK 에서 실행됩니다.</p>
 
 </div>
-<div id="tab-content-158" class="tab-cont">
+<div id="tab-content-159" class="tab-cont">
     
 <p><a href="https://nugu-developers.github.io/nugu-linux/classNuguCapability_1_1IMessageListener.html">IMessageListener</a> 를 추가합니다.</p>
 
@@ -2778,13 +2783,13 @@
 
 <p><a href="#readmessage" class="hash-internal a-internal">ReadMessage</a> directive 로 전달된 문자에 대한 재생 상태를 모니터링 할 수 있습니다.</p>
 
-<div id="tabs-185" class="tabs">
+<div id="tabs-186" class="tabs">
     <ul class="tab-nav">
         
-            <li data-tabs-content-id="tab-content-186" class="active"><span>Android</span></li>
+            <li data-tabs-content-id="tab-content-187" class="active"><span>Android</span></li>
         
     </ul>
-    <div id="tab-content-186" class="tab-cont active">
+    <div id="tab-content-187" class="tab-cont active">
     
 <p>MessageAgentInterface.OnPlaybackListener 를 추가합니다.</p>
 
@@ -3065,7 +3070,7 @@
     <tr>
       <td style="text-align: left">message.type</td>
       <td style="text-align: left">string</td>
-      <td style="text-align: left">Y</td>
+      <td style="text-align: left">N</td>
       <td style="text-align: left">메세지의 타입<br>- <strong>SMS</strong><br>- <strong>MMS</strong>
 </td>
     </tr>
