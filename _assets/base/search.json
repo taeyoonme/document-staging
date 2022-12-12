@@ -3428,13 +3428,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
-  "order": 16,
-  "indexes": [
-
-  ]
-},
-  {
   "url": "/document-staging/nugu-play/create-plays-with-play-builder/use-backend-proxy/backend-proxy",
   "order": 45,
   "indexes": [
@@ -3523,8 +3516,15 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/ios/background",
-  "order": 174,
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/backend-proxy",
+  "order": 16,
+  "indexes": [
+
+  ]
+},
+  {
+  "url": "/document-staging/nugu-sdk/platform/android/background",
+  "order": 184,
   "indexes": [
     {
   "title": "Background 동작 처리",
@@ -3538,8 +3538,8 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-sdk/platform/android/background",
-  "order": 184,
+  "url": "/document-staging/nugu-sdk/platform/ios/background",
+  "order": 174,
   "indexes": [
     {
   "title": "Background 동작 처리",
@@ -3674,7 +3674,7 @@
   "hash": "#4오류--400-응답시",
   "sentences": [
     "4.오류 : 400 응답시",
-    "성공응답, 400응답을 제외한 나머지의 Http Status 응답값은 body를 가지고 있지 않는다."
+    "성공응답, 400응답을 제외한 나머지의 Http Status 응답값은 body를 가지고 있지 않습니다."
   ]
 },
     {
@@ -4395,38 +4395,6 @@
   ]
 },
   {
-  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
-  "order": 17,
-  "indexes": [
-    {
-  "title": "Capability interface",
-  "hash": "",
-  "sentences": [
-    "Capability interface",
-    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
-    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
-    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Built-in Intent",
-  "hash": "#built-in-intent",
-  "sentences": [
-    "Built-in Intent",
-    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
-  ]
-},
-    {
-  "title": "Capability interface > Directive",
-  "hash": "#directive",
-  "sentences": [
-    "Directive",
-    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
-  ]
-}
-  ]
-},
-  {
   "url": "/document-staging/nugu-sdk/capability-interface",
   "order": 146,
   "indexes": [
@@ -4518,6 +4486,38 @@
     "그 외 event\n    \n      해당 capability interface 의 context\n      다른 capability interface 의 context 중 version 만 포함",
     "해당 capability interface 의 context",
     "다른 capability interface 의 context 중 version 만 포함"
+  ]
+}
+  ]
+},
+  {
+  "url": "/document-staging/nugu-play/create-plays-with-play-builder/before-start/capability-interface",
+  "order": 17,
+  "indexes": [
+    {
+  "title": "Capability interface",
+  "hash": "",
+  "sentences": [
+    "Capability interface",
+    "디바이스의 여러 기능을 제어하기 위한 규격을 Capability Interface라 합니다. 응답을 재생하는 기능 외에 오디오 재생, 무드등 제어, 음량 조절 등 다양한 기능을 제어할 수 있습니다.",
+    "현재는 디바이스에서 오디오 스트리밍을 통해 음악을 재생하기 위한 AudioPlayer Interface와  NUGU nemo, Btv, T전화 등 Display Device에서 Display template를 사용할 수 있는 Display Interface 지원됩니다. Play를 생성하는 시점에 Play에서 지원하고자 하는 Capability Interface를 선택하면 사용할 수 있습니다.",
+    "각 Capability Interface는 다음의 세 요소로 구성되어 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Built-in Intent",
+  "hash": "#built-in-intent",
+  "sentences": [
+    "Built-in Intent",
+    "기능을 제어하기 위해 기본으로 제공하는 Intent입니다. 사용자가 직접 정의하지 않아도 사용할 수 있습니다."
+  ]
+},
+    {
+  "title": "Capability interface > Directive",
+  "hash": "#directive",
+  "sentences": [
+    "Directive",
+    "디바이스의 기능을 제어하기 위해 Play에서 디바이스로 전달하는 명령어입니다."
   ]
 }
   ]
@@ -10314,6 +10314,7 @@
     "NUGU 디바이스(NUGU device)",
     "인공지능 서비스 NUGU를 이용할 수 있는 기기들입니다. 현재 Biz Kit에서 활용 가능한 NUGU 디바이스는 아래와 같으며, 추후 다른 기기들이 확대될 예정입니다.",
     "Biz 사용자 이용 가능 디바이스",
+    "(play 기준)",
     "제한 없음",
     "Biz 전용 디바이스로 등록 가능한 디바이스 (디바이스 Setup Tool 등록 가능 디바이스)",
     "NUGU | NU100",
@@ -13394,15 +13395,15 @@
   "order": 56,
   "indexes": [
     {
-  "title": "Pre-built Play Builder로 스마트홈 Play 만들기",
+  "title": "Pre-built Play Builder로 스마트홈 Play를 만들기",
   "hash": "",
   "sentences": [
-    "Pre-built Play Builder로 스마트홈 Play 만들기",
+    "Pre-built Play Builder로 스마트홈 Play를 만들기",
     "NUGU 스마트홈을 활용해 SmartHome Play 제작하면 NUGU 클라이언가 탑재된 다양한 기기(NUGU 스피커, T map, B tv STB, T 전화 )등에서 음성 인터페이스를 활용하여 스마트홈 기기들을 제어하고 확인할 수 있습니다. 이 문서에서는 NUGU스마트홈을 통해 서비스를 제공하고 싶은 IoT Service Provider에게 규격 및 개발 가이드와 API 레퍼런스, 샘플코드, NUGU SmartHome Play Builder 사용 가이드 등을 제공합니다. NUGU스마트홈은 계속 개발되고 있으며, 관련 규격들은 지속적으로 업데이트됩니다."
   ]
 },
     {
-  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > SmartHome Play 만들기",
+  "title": "Pre-built Play Builder로 스마트홈 Play를 만들기 > SmartHome Play 만들기",
   "hash": "#smarthome-play-만들기",
   "sentences": [
     "SmartHome Play 만들기",
@@ -13442,7 +13443,7 @@
   ]
 },
     {
-  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Discovery",
+  "title": "Pre-built Play Builder로 스마트홈 Play를 만들기 > Discovery",
   "hash": "#discovery",
   "sentences": [
     "Discovery",
@@ -13450,7 +13451,7 @@
   ]
 },
     {
-  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Discovery Request 예시",
+  "title": "Pre-built Play Builder로 스마트홈 Play를 만들기 > Discovery Request 예시",
   "hash": "#discovery-request-예시",
   "sentences": [
     "Discovery Request 예시",
@@ -13459,7 +13460,7 @@
   ]
 },
     {
-  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Discovery Response Sample",
+  "title": "Pre-built Play Builder로 스마트홈 Play를 만들기 > Discovery Response Sample",
   "hash": "#discovery-response-sample",
   "sentences": [
     "Discovery Response Sample",
@@ -13467,7 +13468,7 @@
   ]
 },
     {
-  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Control",
+  "title": "Pre-built Play Builder로 스마트홈 Play를 만들기 > Control",
   "hash": "#control",
   "sentences": [
     "Control",
@@ -13475,7 +13476,7 @@
   ]
 },
     {
-  "title": "Pre-built Play Builder로 스마트홈 Play 만들기 > Control Request 예시",
+  "title": "Pre-built Play Builder로 스마트홈 Play를 만들기 > Control Request 예시",
   "hash": "#control-request-예시",
   "sentences": [
     "Control Request 예시",
@@ -15684,8 +15685,8 @@
   ]
 },
   {
-  "url": "/document-staging/terms",
-  "order": 211,
+  "url": "/document-staging/testetc/terms",
+  "order": null,
   "indexes": [
 
   ]
